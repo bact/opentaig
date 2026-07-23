@@ -7,7 +7,7 @@
 
 site:
   title: "OpenTAIG"
-  tagline: "Open Problems in Technical AI Governance"
+  tagline: "Open source tools for problems in technical AI governance"
   description: >
     A community-maintained catalog of open technical problems in AI
     governance, mapped to relevant principles/regulations and linked to
@@ -124,7 +124,7 @@ columns:
 frameworks:
   - key: rgaf
     column: "RGAF"
-    label: "LF AI & Data RGAF"
+    label: "Responsible Generative AI Framework"
     doc_url: "https://lfaidata.foundation/rgaf/"
   - key: euaiact
     column: "EUAIAct"
@@ -132,11 +132,11 @@ frameworks:
     doc_url: "https://artificialintelligenceact.eu/"
   - key: unescoai
     column: "UNESCOAI"
-    label: "UNESCO Ethics of AI"
+    label: "UNESCO Recommendation on the Ethics of AI"
     doc_url: "https://www.unesco.org/en/artificial-intelligence/recommendation-ethics"
   - key: aseanai
     column: "ASEANAI"
-    label: "ASEAN AI Governance & Ethics"
+    label: "ASEAN Guide on AI Governance and Ethics"
     doc_url: "https://asean.org/wp-content/uploads/2024/02/ASEAN-Guide-on-AI-Governance-and-Ethics_beautified_16-February-2024_pdf.pdf"
   - key: coeai
     column: "CoEAI"
