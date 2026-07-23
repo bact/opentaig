@@ -1,4 +1,4 @@
-RQ_No,Research_Question,RGAF,EU_AI_Act,UNESCO,ASEAN,CoE,Tools
+RQ_No,Research_Question,RGAF,EUAIAct,UNESCOAI,ASEANAI,CoEAI,Tools
 1,IGNORE ME -- this text must never be used; question text comes from the TAIG sheet,rgaf-safe; rgaf-transparent,euaiact-a10,unescoai-transparency; unescoai-proportionality,aseanai-privacy,coeai-a11; coeai-a13,
 3,IGNORE ME -- this text must never be used; question text comes from the TAIG sheet,rgaf-accountable; rgaf-compliant,euaiact-a15; euaiact-a10,unescoai-accountability; unescoai-multistakeholder; unescoai-privacy,aseanai-accountability; aseanai-privacy,coeai-a11; coeai-a12; coeai-a9,scancode-toolkit
 7,IGNORE ME -- this text must never be used; question text comes from the TAIG sheet,rgaf-accountable; rgaf-compliant,euaiact-a11; euaiact-a10; euaiact-a8,unescoai-accountability; unescoai-transparency; unescoai-privacy,aseanai-transparency; aseanai-accountability; aseanai-privacy,coeai-a11; coeai-a8; coeai-a9,

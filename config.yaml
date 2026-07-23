@@ -38,10 +38,10 @@ output_dir: "site"
 #                   the upstream source.
 #   3. "tools"   -- OUR open-source tool catalog (a tab in the OpenTAIG
 #                   sheet), referenced by id from the mapping tab's Tools col.
-#   4. "terms"   -- OUR RGAF/EU_AI_Act/UNESCO/ASEAN/CoE term catalog (a tab
-#                   in the OpenTAIG sheet), one shared tab across all five
-#                   frameworks, referenced by id from the mapping tab's five
-#                   framework columns.
+#   4. "terms"   -- OUR RGAF/EUAIAct/UNESCOAI/ASEANAI/CoEAI term catalog (a
+#                   tab in the OpenTAIG sheet), one shared tab across all
+#                   five frameworks, referenced by id from the mapping
+#                   tab's five framework columns.
 #
 # The OpenTAIG sheet's three tabs are literally named "map", "tools", "terms".
 #
@@ -89,7 +89,7 @@ columns:
   # Our mapping tab. `rq_no` joins to taig.question_number. The mapping tab's
   # own "Research_Question" column is a human data-entry aid and is IGNORED by
   # the build -- question text always comes from the TAIG sheet. The five
-  # framework columns (RGAF/EU_AI_Act/UNESCO/ASEAN/CoE, listed below under
+  # framework columns (RGAF/EUAIAct/UNESCOAI/ASEANAI/CoEAI, listed below under
   # `frameworks:`) and `tools` all hold semicolon-separated ids referencing
   # the `terms`/`tools` catalogs, not free text.
   mapping:
@@ -97,6 +97,7 @@ columns:
     tools: "Tools"
   tools:
     id: "id"
+    tool_type: "tool_type"
     name: "name"
     summary: "summary"
     license: "license"
@@ -125,20 +126,20 @@ frameworks:
     column: "RGAF"
     label: "LF AI & Data RGAF"
     doc_url: "https://lfaidata.foundation/rgaf/"
-  - key: eu_ai_act
-    column: "EU_AI_Act"
+  - key: euaiact
+    column: "EUAIAct"
     label: "EU AI Act"
     doc_url: "https://artificialintelligenceact.eu/"
-  - key: unesco
-    column: "UNESCO"
+  - key: unescoai
+    column: "UNESCOAI"
     label: "UNESCO Ethics of AI"
     doc_url: "https://www.unesco.org/en/artificial-intelligence/recommendation-ethics"
-  - key: asean
-    column: "ASEAN"
+  - key: aseanai
+    column: "ASEANAI"
     label: "ASEAN AI Governance & Ethics"
     doc_url: "https://asean.org/wp-content/uploads/2024/02/ASEAN-Guide-on-AI-Governance-and-Ethics_beautified_16-February-2024_pdf.pdf"
-  - key: coe
-    column: "CoE"
+  - key: coeai
+    column: "CoEAI"
     label: "CoE Framework Convention on AI"
     doc_url: "https://rm.coe.int/1680afae3c"
 

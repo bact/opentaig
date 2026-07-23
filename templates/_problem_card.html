@@ -26,7 +26,7 @@
   <div class="tool-row">
     <span class="tool-row-label">Tools:</span>
     {% for t in p.tools %}
-    <a class="tool-link" href="{{ root }}tools/{{ t.slug }}.html">{{ t.name }}</a>{{ ", " if not loop.last }}
+    <a class="tool-link" href="{{ root }}tools/{{ t.slug }}.html" title="{{ t.tool_type }}">{{ t.name }}</a>{{ ", " if not loop.last }}
     {% endfor %}
   </div>
   {% endif %}

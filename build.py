@@ -56,6 +56,7 @@ class Tool:
     id: str
     slug: str
     name: str
+    tool_type: str = ""
     summary: str = ""
     license: str = ""
     homepage: str = ""
@@ -244,6 +245,7 @@ def build_tool_catalog(rows: list, colmap: dict, warnings: list) -> dict:
             id=raw_id,
             slug=safe_id_for_path(raw_id),
             name=(row.get(colmap["name"]) or "").strip() or raw_id,
+            tool_type=(row.get(colmap["tool_type"]) or "").strip(),
             summary=(row.get(colmap["summary"]) or "").strip(),
             license=(row.get(colmap["license"]) or "").strip(),
             homepage=(row.get(colmap["homepage"]) or "").strip(),

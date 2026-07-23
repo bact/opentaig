@@ -79,11 +79,11 @@ Three tabs, named **`map`**, **`tools`**, and **`terms`**.
 | `RQ_No` | Join key — must match a `Question number (in paper)` value in the `TAIG` sheet. |
 | `Research_Question` | **Ignored by the build.** A human-only aid so whoever is filling in a row can see which question they're annotating without cross-referencing the `TAIG` sheet — the site always displays the question text from the `TAIG` sheet instead. |
 | `RGAF` | [LF AI & Data RGAF](https://lfaidata.foundation/rgaf/) dimension **ids**, referencing the `terms` tab. |
-| `EU_AI_Act` | EU AI Act article/obligation **ids**, referencing the `terms` tab. |
-| `UNESCO` | UNESCO Ethics of AI principle **ids**, referencing the `terms` tab. |
-| `ASEAN` | ASEAN AI Governance & Ethics guide principle **ids**, referencing the `terms` tab. |
-| `CoE` | CoE Framework Convention on AI article **ids**, referencing the `terms` tab. |
-| `Tools` | Open-source tool **ids**, referencing the `tools` tab below. |
+| `EUAIAct` | EU AI Act article/obligation **ids**, referencing the `terms` tab. |
+| `UNESCOAI` | UNESCO Ethics of AI principle **ids**, referencing the `terms` tab. |
+| `ASEANAI` | ASEAN AI Governance & Ethics guide principle **ids**, referencing the `terms` tab. |
+| `CoEAI` | CoE Framework Convention on AI article **ids**, referencing the `terms` tab. |
+| `Tools` | Open-source tool/specification **ids**, referencing the `tools` tab below. |
 
 **Every column above holds ids, not free text — separate multiple ids with a
 semicolon `;`.** Example `RGAF` cell (referencing two rows in the `terms`
@@ -98,7 +98,7 @@ doesn't match any `TAIG` row (a typo, or a question renumbered/removed
 upstream) is skipped with a build warning, not a failure. A `TAIG` row with
 no matching `map` row is normal — it just has no mappings or tools yet. An
 id that doesn't exist in the `terms`/`tools` catalog, or that exists but
-belongs to the wrong framework (e.g. a CoE id pasted into the `ASEAN`
+belongs to the wrong framework (e.g. a CoE id pasted into the `ASEANAI`
 column), also produces a build warning rather than failing.
 
 **`terms` tab** — the shared catalog of RGAF/EU AI Act/UNESCO/ASEAN/CoE
@@ -108,7 +108,7 @@ by id from as many `map` rows as apply:
 | Column | Meaning |
 |---|---|
 | `id` | A **globally unique, namespaced** id: `<namespace>-<local-part>`, dash-separated (e.g. `euaiact-a8`, `coeai-a8`, `rgaf-safe`). See "Term id namespaces" below. |
-| `framework` | One of `rgaf`, `eu_ai_act`, `unesco`, `asean`, `coe` — must match a `key` in `config.yaml`'s `frameworks:` list. |
+| `framework` | One of `rgaf`, `euaiact`, `unescoai`, `aseanai`, `coeai` — must match a `key` in `config.yaml`'s `frameworks:` list. |
 | `name` | Full display text (the chip label), e.g. `Article 15 (Accuracy, robustness and cybersecurity)`. |
 | `summary` | Optional one-paragraph plain-language description. Blank is fine. |
 | `url` | Optional direct link to this specific term's source text (e.g. straight to Article 15, not just the EU AI Act's homepage). When blank, the site falls back to that framework's `doc_url` in `config.yaml`. |
@@ -135,6 +135,7 @@ metadata never drifts out of sync across multiple mentions:
 | Column | Meaning |
 |---|---|
 | `id` | Short unique identifier, referenced from `map.Tools` (e.g. `scancode-toolkit`). |
+| `tool_type` | Free-text category, e.g. `software` or `specification` — not a fixed enum. Some open problems are better addressed by an open standard than by executable software (e.g. `spdx3`, `croissant`); this lets both live in one catalog. Rendered as a small chip, same treatment as `license`. |
 | `name` | Display name. |
 | `summary` | One or two sentence description. |
 | `license` | **SPDX License ID** (e.g. `Apache-2.0`, `MIT`, `GPL-2.0-or-later`) — see [spdx.org/licenses](https://spdx.org/licenses/). |

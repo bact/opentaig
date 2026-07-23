@@ -49,6 +49,7 @@
     {% for t in problem.tools %}
     <li>
       <a href="{{ root }}tools/{{ t.slug }}.html">{{ t.name }}</a>
+      {% if t.tool_type %}<span class="chip chip-tool-type">{{ t.tool_type }}</span>{% endif %}
       {% if t.license %}<span class="chip chip-license">{{ t.license }}</span>{% endif %}
       {% if t.summary %}<p class="tool-summary">{{ t.summary }}</p>{% endif %}
     </li>
