@@ -93,7 +93,13 @@ def clean(value: Optional[str]) -> str:
 
 
 def fetch_source(source_cfg: dict, label: str, warnings: list) -> str:
-    """Return CSV text for a data source, preferring a local `file` override."""
+    """Return CSV text for a data source, preferring a local `file` override.
+
+    Prefers `sheet_name` (the tab's visible name) over `gid` (the tab's
+    opaque numeric id) when both are absent-or-present, since a tab name is
+    stable and human-verifiable, whereas a wrong/stale gid produces a bare
+    "400 Bad Request" from Google's export endpoint with no clue why.
+    """
     file_path = source_cfg.get("file")
     if file_path:
         p = Path(file_path)
@@ -102,8 +108,18 @@ def fetch_source(source_cfg: dict, label: str, warnings: list) -> str:
             return f.read()
 
     sheet_id = source_cfg["sheet_id"]
-    gid = source_cfg.get("gid", 0)
-    url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid={gid}"
+    sheet_name = source_cfg.get("sheet_name")
+    if sheet_name:
+        from urllib.parse import quote
+
+        url = (
+            f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq"
+            f"?tqx=out:csv&sheet={quote(sheet_name)}"
+        )
+    else:
+        gid = source_cfg.get("gid", 0)
+        url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid={gid}"
+
     print(f"[data] {label}: fetching {url}")
     last_err = None
     for attempt in range(1, 4):
@@ -117,7 +133,9 @@ def fetch_source(source_cfg: dict, label: str, warnings: list) -> str:
             print(f"[data] {label}: attempt {attempt} failed ({e})", file=sys.stderr)
     raise SystemExit(
         f"Failed to fetch {label} from {url} after 3 attempts: {last_err}\n"
-        "Is the sheet shared as 'Anyone with the link'? Is the gid correct?"
+        "Is the sheet shared as 'Anyone with the link'? Is the sheet_name/gid correct? "
+        "A '400 Bad Request' here almost always means the tab name or gid doesn't "
+        "match any tab in the spreadsheet -- open the tab and check its exact name."
     )
 
 
