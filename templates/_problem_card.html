@@ -2,17 +2,23 @@
   data-capacity="{{ p.capacity }}"
   data-target="{{ p.target }}"
   data-has-tool="{{ '1' if p.tools else '0' }}"
-  data-search="{{ (p.question ~ ' ' ~ (p.mappings.values() | sum(start=[]) | join(' ')) ~ ' ' ~ (p.tools | map(attribute='name') | join(' ')))|lower }}"
-  {% for fw in frameworks %}
-  data-fw-{{ fw.key }}="|{{ p.mappings.get(fw.key, []) | join('|') }}|"
+  data-search="{{ (p.question ~ ' ' ~ p.problem_area ~ ' ' ~ (p.mappings.values() | sum(start=[]) | join(' ')) ~ ' ' ~ (p.tools | map(attribute='name') | join(' ')))|lower }}"
+  {% for facet in facets %}
+  data-fw-{{ facet.key }}="|{{ p.mappings.get(facet.key, []) | join('|') }}|"
   {% endfor %}
 >
-  <h4 class="problem-question"><a href="{{ root }}problems/{{ p.slug }}.html">{{ p.question }}</a></h4>
+  <h5 class="problem-question">
+    {% if p.rq_no %}<span class="rq-no">#{{ p.rq_no }}</span> {% endif %}
+    <a href="{{ root }}problems/{{ p.slug }}.html">{{ p.question }}</a>
+  </h5>
   <div class="chip-row">
     {% for fw in frameworks %}
       {% for term in p.mappings.get(fw.key, []) %}
       <a class="chip chip-{{ fw.key }}" href="{{ root }}frameworks/{{ fw.key }}/{{ term_slugs.get(fw.key, {}).get(term, '') }}.html" title="{{ fw.label }}">{{ term }}</a>
       {% endfor %}
+    {% endfor %}
+    {% for term in p.mappings.get(expertise.key, []) %}
+    <span class="chip chip-expertise" title="{{ expertise.label }}">{{ term }}</span>
     {% endfor %}
   </div>
   {% if p.tools %}

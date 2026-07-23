@@ -2,7 +2,7 @@
 #
 # This file controls where the build pulls data from and how it is labeled.
 # Column names below must match the header row of the corresponding Google
-# Sheet tab exactly (case-sensitive). If you rename a header in the sheet,
+# Sheet tab exactly (case-sensitive). If you rename a header in a sheet,
 # update the matching entry here -- no code changes needed.
 
 site:
@@ -24,34 +24,61 @@ site:
 
 output_dir: "site"
 
-# --- Data source -----------------------------------------------------------
-# The sheet must be shared as "Anyone with the link" (Viewer) so the CSV
-# export endpoint works without credentials. Two tabs are read:
-#   - "questions": one row per open problem (the spine of the site)
-#   - "tools":     one row per open-source tool, referenced by id from the
-#                  questions tab's Tools column
+# --- Data sources -----------------------------------------------------------
+# The site is generated from TWO decoupled Google Sheets, joined by research
+# question number (RQ_No):
 #
-# To find a tab's gid: open the tab in Google Sheets, look at the URL -- the
-# number after "#gid=" is the gid for that tab.
+#   1. "taig"    -- the upstream TAIG paper data (question text + taxonomy +
+#                   citations + expertise). Manually kept in sync with the
+#                   Stanford TAIG database. This is the spine of the site.
+#   2. "mapping" -- OUR framework/regulation mappings + tool ids, keyed by
+#                   RQ_No. Lives in a separate sheet so our editorial work is
+#                   decoupled from the upstream source.
+#   3. "tools"   -- OUR open-source tool catalog (a second tab in the OpenTAIG
+#                   sheet), referenced by id from the mapping tab's Tools col.
+#
+# The OpenTAIG sheet's two tabs are literally named "map" and "tools".
+#
+# Each sheet must be shared as "Anyone with the link" (Viewer) so the CSV
+# export endpoint works without credentials. To find a tab's gid: open the
+# tab in Google Sheets, look at the URL -- the number after "#gid=" is the
+# gid for that tab.
 #
 # For local development you can bypass the network fetch entirely by setting
-# `file:` to a local CSV path (used instead of `url` when present).
+# `file:` to a local CSV path (used instead of the sheet when present).
 data:
-  sheet_id: "1netgfFKee13Z3_i-ructJkgg08HAPlBKgF-a35bs_ks"
-  questions:
+  taig:
+    sheet_id: "1uLYmyC9wBSssO5l5dSf6gYv_2-WoMPBR15q0r2kKsyA"
+    gid: 0
+    file: null
+  mapping:
+    sheet_id: "1netgfFKee13Z3_i-ructJkgg08HAPlBKgF-a35bs_ks"
     gid: 0
     file: null
   tools:
-    # TODO: update this once the "Tools" tab has been added to the sheet.
+    sheet_id: "1netgfFKee13Z3_i-ructJkgg08HAPlBKgF-a35bs_ks"
+    # TODO: confirm this gid from the "tools" tab's URL (#gid=...).
     gid: 1
     file: null
 
 # --- Column mapping ----------------------------------------------------------
 columns:
-  questions:
-    question: "Question"
+  # Upstream TAIG sheet (the spine). `question_number` is the join key.
+  taig:
+    question: "Research Question"
+    question_number: "Question number (in paper)"
+    section_number: "Section Number"
+    target: "Target(s)"
     capacity: "Capacity"
-    target: "Target"
+    problem_area: "Problem Area (from Problem Areas)"
+    existing_work: "Existing work & resources"
+    relevant_expertise: "Relevant expertise"
+    new_work: "New work (since publication)"
+  # Our mapping tab. `rq_no` joins to taig.question_number. The mapping tab's
+  # own "Research_Question" column is a human data-entry aid and is IGNORED by
+  # the build -- question text always comes from the TAIG sheet.
+  mapping:
+    rq_no: "RQ_No"
     tools: "Tools"
   tools:
     id: "id"
@@ -64,9 +91,9 @@ columns:
     funding: "funding"
 
 # --- Framework / regulation mapping columns ---------------------------------
-# `key` is used internally (URLs, data attributes); `column` must match the
-# sheet header; `label` is the display name; `doc_url` is an optional link to
-# the source document (shown as the chip group's "learn more" link).
+# These columns live on the MAPPING tab. `key` is used internally (URLs, data
+# attributes); `column` must match the mapping-tab header; `label` is the
+# display name; `doc_url` is an optional link to the source document.
 frameworks:
   - key: rgaf
     column: "RGAF"
@@ -89,22 +116,29 @@ frameworks:
     label: "CoE Framework Convention on AI"
     doc_url: "https://rm.coe.int/1680afae3c"
 
+# --- Relevant expertise (a filter facet, sourced from the TAIG sheet) -------
+# Rendered as chips and offered as a filter, reusing the framework machinery,
+# but styled distinctly since it is not a principle/regulation.
+expertise:
+  key: expertise
+  label: "Relevant Expertise"
+
 # --- Taxonomy (used for grouping on the main page) --------------------------
+# Values must match those used in the TAIG sheet's Capacity / Target(s)
+# columns. Ordering here controls section order on the home page; anything
+# not listed is appended after, with `uncategorized_label` always last.
 taxonomy:
   capacities:
     - "Assessment"
     - "Access"
     - "Verification"
     - "Security"
-    - "Operationalization"
+    - "Operationalisation"
     - "Ecosystem Monitoring"
   targets:
     - "Data"
     - "Compute"
-    - "Models"
+    - "Model & Algorithms"
     - "Deployment"
+    - "All"
   uncategorized_label: "Uncategorized"
-  # Optional convenience fallback: question -> capacity/target mapping, used
-  # only when the sheet's Capacity/Target columns are blank for a row. The
-  # sheet's own values always win.
-  seed_file: "data/seed_taxonomy.csv"

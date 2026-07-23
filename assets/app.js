@@ -19,6 +19,7 @@
   var cards = Array.prototype.slice.call(document.querySelectorAll(".problem-card"));
   var capacityGroups = Array.prototype.slice.call(document.querySelectorAll(".capacity-group"));
   var targetGroups = Array.prototype.slice.call(document.querySelectorAll(".target-group"));
+  var areaGroups = Array.prototype.slice.call(document.querySelectorAll(".area-group"));
 
   function matches(card) {
     var q = searchInput.value.trim().toLowerCase();
@@ -52,6 +53,14 @@
       var show = matches(card);
       card.hidden = !show;
       if (show) visibleCount++;
+    });
+
+    areaGroups.forEach(function (group) {
+      var anyVisible = Array.prototype.some.call(
+        group.querySelectorAll(".problem-card"),
+        function (c) { return !c.hidden; }
+      );
+      group.hidden = !anyVisible;
     });
 
     targetGroups.forEach(function (group) {

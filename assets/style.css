@@ -14,6 +14,7 @@
   --chip-asean-bg: #f3e8fd;     --chip-asean-fg: #6b21a8;
   --chip-coe-bg: #fdeaea;       --chip-coe-fg: #a3242c;
   --chip-license-bg: #eef0f3;   --chip-license-fg: #3a4149;
+  --chip-expertise-bg: #eef0f3; --chip-expertise-fg: #3a4149;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,6 +34,7 @@
     --chip-asean-bg: #2c1f42;     --chip-asean-fg: #d3b3f7;
     --chip-coe-bg: #3a1a1c;       --chip-coe-fg: #f3a6ac;
     --chip-license-bg: #262b31;   --chip-license-fg: #c3cad2;
+    --chip-expertise-bg: #262b31; --chip-expertise-fg: #c3cad2;
   }
 }
 
@@ -100,8 +102,11 @@ main.wrap { padding-top: 28px; padding-bottom: 60px; min-height: 60vh; }
 .capacity-group { margin-top: 34px; }
 .capacity-group > h2 { border-bottom: 2px solid var(--border); padding-bottom: 8px; }
 .target-group { margin-top: 18px; }
-.target-group > h3 { color: var(--fg-muted); font-size: 1rem; text-transform: uppercase; letter-spacing: 0.03em; }
+.target-group > h3 { color: var(--fg-muted); font-size: 1rem; text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 6px; }
+.area-group { margin: 14px 0 14px 2px; padding-left: 12px; border-left: 3px solid var(--border); }
+.area-heading { margin: 0 0 10px; font-size: 0.95rem; font-weight: 600; color: var(--fg); }
 .count { color: var(--fg-muted); font-weight: 400; font-size: 0.85em; }
+.rq-no { color: var(--fg-muted); font-weight: 600; font-variant-numeric: tabular-nums; }
 
 .problem-list { display: grid; gap: 12px; }
 .problem-card {
@@ -122,6 +127,7 @@ main.wrap { padding-top: 28px; padding-bottom: 60px; min-height: 60vh; }
 .chip-asean { background: var(--chip-asean-bg); color: var(--chip-asean-fg); }
 .chip-coe { background: var(--chip-coe-bg); color: var(--chip-coe-fg); }
 .chip-license { background: var(--chip-license-bg); color: var(--chip-license-fg); }
+.chip-expertise { background: var(--chip-expertise-bg); color: var(--chip-expertise-fg); font-style: italic; }
 
 .tool-row { margin-top: 8px; font-size: 0.9rem; }
 .tool-row-label { color: var(--fg-muted); margin-right: 4px; }
@@ -147,6 +153,9 @@ main.wrap { padding-top: 28px; padding-bottom: 60px; min-height: 60vh; }
 }
 .tool-summary { color: var(--fg-muted); margin: 6px 0 0; }
 .tool-links { padding-left: 20px; }
+
+.citation-list { padding-left: 20px; }
+.citation-list li { margin-bottom: 4px; color: var(--fg-muted); font-size: 0.92rem; }
 
 .tools-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
 .tools-table th, .tools-table td {

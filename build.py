@@ -1,17 +1,24 @@
 #!/usr/bin/env python3
 """Build script for OpenTAIG.
 
-Fetches the "Questions" and "Tools" tabs of a Google Sheet as CSV, normalizes
-them into a set of open-problem records, and renders a static site with
-Jinja2 templates. Designed to be run once per generation (manually, or on a
-schedule via GitHub Actions) -- there are no runtime calls back to the sheet.
+Generates a static site from TWO decoupled Google Sheets, joined by research
+question number (RQ_No):
+
+  * "taig"    -- upstream TAIG paper data (question text + taxonomy +
+                 citations + expertise). The spine of the site.
+  * "mapping" -- our framework/regulation mappings + tool ids, keyed by RQ_No.
+  * "tools"   -- our open-source tool catalog (a tab in the mapping sheet).
+
+Renders the site with Jinja2. Designed to run once per generation (manually,
+or on a schedule via GitHub Actions) -- there are no runtime calls back to the
+sheets.
 
 Usage:
     python build.py [--config config.yaml] [--frameworks frameworks.yaml]
 
-For local development without network access, set a `file:` path under
-`data.questions` / `data.tools` in config.yaml to read from a local CSV
-instead of fetching from Google Sheets.
+For local development without network access, set a `file:` path under any
+`data.*` source in config.yaml to read from a local CSV instead of fetching
+from Google Sheets.
 """
 from __future__ import annotations
 
@@ -55,10 +62,15 @@ class Tool:
 @dataclasses.dataclass
 class Problem:
     slug: str
+    rq_no: str
     question: str
     capacity: str
     target: str
-    mappings: dict  # fw_key -> list[str]
+    problem_area: str
+    section_number: str
+    mappings: dict  # facet_key -> list[str] (5 frameworks + "expertise")
+    existing_work: list  # list[str]
+    new_work: list  # list[str]
     tools: list  # list[Tool]
     order: int
 
@@ -72,7 +84,15 @@ def load_yaml(path: Path) -> dict:
         return yaml.safe_load(f)
 
 
-def fetch_source(source_cfg: dict, sheet_id: str, label: str, warnings: list) -> str:
+def clean(value: Optional[str]) -> str:
+    """Strip surrounding whitespace and collapse stray newlines that Google
+    Sheets sometimes leaves inside a cell (e.g. "Data\n")."""
+    if value is None:
+        return ""
+    return " ".join(value.split()).strip()
+
+
+def fetch_source(source_cfg: dict, label: str, warnings: list) -> str:
     """Return CSV text for a data source, preferring a local `file` override."""
     file_path = source_cfg.get("file")
     if file_path:
@@ -81,6 +101,7 @@ def fetch_source(source_cfg: dict, sheet_id: str, label: str, warnings: list) ->
         with open(p, "r", encoding="utf-8-sig") as f:
             return f.read()
 
+    sheet_id = source_cfg["sheet_id"]
     gid = source_cfg.get("gid", 0)
     url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid={gid}"
     print(f"[data] {label}: fetching {url}")
@@ -104,9 +125,8 @@ def parse_csv_text(text: str) -> list:
     reader = csv.DictReader(io.StringIO(text))
     rows = []
     for row in reader:
-        # Strip whitespace from header keys defensively (Google Sheets export
-        # is well-behaved here, but stray leading/trailing spaces in a header
-        # cell would otherwise silently break column lookups).
+        # Strip whitespace from header keys defensively (a stray leading/
+        # trailing space in a header cell would otherwise break lookups).
         rows.append({(k or "").strip(): v for k, v in row.items()})
     return rows
 
@@ -135,13 +155,12 @@ def greedy_vocab_match(raw: str, vocab: list) -> tuple:
 
 
 def split_multi(raw: Optional[str], vocab: Optional[list], warnings: list, context: str) -> list:
-    """Split a mapping cell into a list of terms.
+    """Split a framework mapping cell into a list of terms.
 
-    Primary format: semicolon-separated values, e.g.
-      "Robust, Reliable & Safe; Transparent & Explainable"
-    Fallback: comma-separated legacy cells are parsed via longest-match
-    against `vocab` (if supplied), since canonical terms may themselves
-    contain commas.
+    Primary format: semicolon-separated values. Fallback: comma-separated
+    legacy cells are parsed via longest-match against `vocab` (if supplied),
+    since canonical terms may themselves contain commas (e.g.
+    "Article 15 (Accuracy, robustness and cybersecurity)").
     """
     if raw is None:
         return []
@@ -174,16 +193,36 @@ def split_multi(raw: Optional[str], vocab: Optional[list], warnings: list, conte
     return [raw]
 
 
+def split_simple_list(raw: Optional[str]) -> list:
+    """Split a cell on either ';' or ',' -- for values whose individual terms
+    have no internal punctuation (e.g. expertise tags like 'ML Theory')."""
+    if raw is None:
+        return []
+    raw = raw.strip()
+    if raw.lower() in UNMAPPED_TOKENS:
+        return []
+    parts = re.split(r"[;,]", raw)
+    return [p.strip() for p in parts if p.strip() and p.strip().lower() not in UNMAPPED_TOKENS]
+
+
+def split_semicolon(raw: Optional[str]) -> list:
+    """Split a cell on ';' only -- for citation lists where commas appear
+    inside individual author lists (e.g. 'Li et al., 2024; Wei et al., 2024')."""
+    if raw is None:
+        return []
+    raw = raw.strip()
+    if raw.lower() in UNMAPPED_TOKENS:
+        return []
+    return [p.strip() for p in raw.split(";") if p.strip()]
+
+
 def parse_tool_ids(raw: Optional[str], warnings: list, context: str) -> list:
     if raw is None:
         return []
     raw = raw.strip()
     if raw.lower() in UNMAPPED_TOKENS:
         return []
-    if ";" in raw:
-        parts = raw.split(";")
-    else:
-        parts = raw.split(",")
+    parts = raw.split(";") if ";" in raw else raw.split(",")
     return [p.strip() for p in parts if p.strip()]
 
 
@@ -238,66 +277,83 @@ def build_tool_catalog(rows: list, colmap: dict, warnings: list) -> dict:
 
 
 # --------------------------------------------------------------------------
-# Build problems
+# Build mapping index (RQ_No -> our annotations)
 # --------------------------------------------------------------------------
 
-def load_seed_taxonomy(path: Optional[Path]) -> dict:
-    if not path or not path.exists():
-        return {}
-    seed = {}
-    with open(path, "r", encoding="utf-8-sig") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            q = (row.get("question") or "").strip()
-            if not q:
-                continue
-            seed[q] = {
-                "capacity": (row.get("capacity") or "").strip(),
-                "target": (row.get("target") or "").strip(),
-            }
-    return seed
+def build_mapping_index(rows: list, colmap: dict, framework_defs: list, vocab: dict, warnings: list) -> dict:
+    """Return {rq_no: {fw_key: [...], ..., "tool_ids": [...]}} from the mapping
+    tab. The mapping tab's own question-text column is intentionally ignored."""
+    index = {}
+    for i, row in enumerate(rows):
+        rq_no = (row.get(colmap["rq_no"]) or "").strip()
+        if not rq_no:
+            # A wholly blank trailing row is common in exports; only warn if the
+            # row actually carries mapping content that will be silently lost.
+            has_content = any((row.get(fw["column"]) or "").strip() for fw in framework_defs) or \
+                (row.get(colmap["tools"]) or "").strip()
+            if has_content:
+                warnings.append(f"mapping row {i + 2}: blank RQ_No but has mapping content; row ignored")
+            continue
+        if rq_no in index:
+            warnings.append(f"mapping row {i + 2}: duplicate RQ_No {rq_no!r}, keeping last")
+        entry = {}
+        for fw in framework_defs:
+            raw = row.get(fw["column"])
+            context = f"mapping RQ {rq_no} [{fw['column']}]"
+            entry[fw["key"]] = split_multi(raw, vocab.get(fw["key"]), warnings, context)
+        entry["tool_ids"] = parse_tool_ids(row.get(colmap["tools"]), warnings, f"mapping RQ {rq_no} [Tools]")
+        index[rq_no] = entry
+    return index
 
+
+# --------------------------------------------------------------------------
+# Build problems (TAIG sheet is the spine)
+# --------------------------------------------------------------------------
 
 def build_problems(
-    rows: list,
+    taig_rows: list,
     colmap: dict,
     framework_defs: list,
-    vocab: dict,
+    expertise_key: str,
+    mapping_index: dict,
     tool_catalog: dict,
-    seed_taxonomy: dict,
     uncategorized_label: str,
     warnings: list,
 ) -> list:
     problems = []
     seen_slugs = {}
-    for i, row in enumerate(rows):
-        question = (row.get(colmap["question"]) or "").strip()
+    used_rqnos = set()
+
+    for i, row in enumerate(taig_rows):
+        question = clean(row.get(colmap["question"]))
         if not question:
             continue
 
-        capacity = (row.get(colmap["capacity"]) or "").strip()
-        target = (row.get(colmap["target"]) or "").strip()
-        if not capacity or not target:
-            seed = seed_taxonomy.get(question)
-            if seed:
-                capacity = capacity or seed.get("capacity", "")
-                target = target or seed.get("target", "")
-        capacity = capacity or uncategorized_label
-        target = target or uncategorized_label
+        rq_no = clean(row.get(colmap["question_number"]))
+        capacity = clean(row.get(colmap["capacity"])) or uncategorized_label
+        target = clean(row.get(colmap["target"])) or uncategorized_label
+        problem_area = clean(row.get(colmap["problem_area"])) or uncategorized_label
+        section_number = clean(row.get(colmap["section_number"]))
+        existing_work = split_semicolon(row.get(colmap["existing_work"]))
+        new_work = split_semicolon(row.get(colmap["new_work"]))
+        expertise = split_simple_list(row.get(colmap["relevant_expertise"]))
+
+        mapping = mapping_index.get(rq_no) if rq_no else None
+        if mapping is not None:
+            used_rqnos.add(rq_no)
 
         mappings = {}
         for fw in framework_defs:
-            raw = row.get(fw["column"])
-            context = f"questions row {i + 2} [{fw['column']}]"
-            mappings[fw["key"]] = split_multi(raw, vocab.get(fw["key"]), warnings, context)
+            mappings[fw["key"]] = (mapping or {}).get(fw["key"], [])
+        mappings[expertise_key] = expertise
 
-        tool_ids = parse_tool_ids(row.get(colmap["tools"]), warnings, f"questions row {i + 2} [Tools]")
+        tool_ids = (mapping or {}).get("tool_ids", [])
         tools = []
         for tid in tool_ids:
             tool = tool_catalog.get(tid)
             if tool is None:
                 warnings.append(
-                    f"questions row {i + 2}: tool id {tid!r} not found in the Tools tab "
+                    f"RQ {rq_no}: tool id {tid!r} not found in the Tools tab "
                     f"(check for typos or a missing catalog entry)"
                 )
                 continue
@@ -305,20 +361,33 @@ def build_problems(
 
         slug = stable_slug(question)
         if slug in seen_slugs:
-            warnings.append(f"questions row {i + 2}: slug collision with row {seen_slugs[slug]} (duplicate question?)")
+            warnings.append(f"TAIG row {i + 2}: slug collision with row {seen_slugs[slug]} (duplicate question?)")
         seen_slugs[slug] = i + 2
 
         problems.append(
             Problem(
                 slug=slug,
+                rq_no=rq_no,
                 question=question,
                 capacity=capacity,
                 target=target,
+                problem_area=problem_area,
+                section_number=section_number,
                 mappings=mappings,
+                existing_work=existing_work,
+                new_work=new_work,
                 tools=tools,
                 order=i,
             )
         )
+
+    # Surface orphaned annotations: mapping rows whose RQ_No matched no TAIG row.
+    for rq_no in mapping_index:
+        if rq_no not in used_rqnos:
+            warnings.append(
+                f"mapping RQ {rq_no!r}: no matching row in the TAIG sheet "
+                f"(orphaned annotation -- typo, or question removed/renumbered upstream)"
+            )
     return problems
 
 
@@ -335,7 +404,17 @@ def ordered_present(values_present: set, configured_order: list, uncategorized_l
     return ordered
 
 
+def order_by_first_appearance(problems: list) -> list:
+    """Problem-area names in the order they first appear in the (section-
+    ordered) TAIG sheet."""
+    first = {}
+    for p in sorted(problems, key=lambda p: p.order):
+        first.setdefault(p.problem_area, p.order)
+    return sorted(first, key=lambda name: first[name])
+
+
 def group_by_taxonomy(problems: list, capacities_order: list, targets_order: list, uncategorized_label: str) -> list:
+    """Capacity -> Target -> Problem Area -> [problems]."""
     capacities_present = {p.capacity for p in problems}
     cap_order = ordered_present(capacities_present, capacities_order, uncategorized_label)
 
@@ -344,11 +423,17 @@ def group_by_taxonomy(problems: list, capacities_order: list, targets_order: lis
         cap_problems = [p for p in problems if p.capacity == cap]
         targets_present = {p.target for p in cap_problems}
         tgt_order = ordered_present(targets_present, targets_order, uncategorized_label)
-        subgroups = []
+        target_groups = []
         for tgt in tgt_order:
-            sub_problems = sorted((p for p in cap_problems if p.target == tgt), key=lambda p: p.order)
-            subgroups.append({"name": tgt, "problems": sub_problems, "count": len(sub_problems)})
-        groups.append({"name": cap, "subgroups": subgroups, "count": len(cap_problems)})
+            tgt_problems = [p for p in cap_problems if p.target == tgt]
+            area_groups = []
+            for area in order_by_first_appearance(tgt_problems):
+                area_problems = sorted(
+                    (p for p in tgt_problems if p.problem_area == area), key=lambda p: p.order
+                )
+                area_groups.append({"name": area, "problems": area_problems, "count": len(area_problems)})
+            target_groups.append({"name": tgt, "areas": area_groups, "count": len(tgt_problems)})
+        groups.append({"name": cap, "targets": target_groups, "count": len(cap_problems)})
     return groups
 
 
@@ -358,15 +443,15 @@ def build_tools_index(problems: list, tool_catalog: dict) -> list:
         for t in p.tools:
             usage.setdefault(t.id, [])
             usage[t.id].append(p)
-    entries = []
-    for tid, tool in tool_catalog.items():
-        entries.append({"tool": tool, "problems": usage.get(tid, [])})
+    entries = [{"tool": tool, "problems": usage.get(tid, [])} for tid, tool in tool_catalog.items()]
     entries.sort(key=lambda e: e["tool"].name.lower())
     return entries
 
 
-def build_frameworks_index(problems: list, framework_defs: list) -> dict:
-    """fw_key -> {term: {"problems": [...], "slug": str}}, insertion-ordered by first appearance."""
+def build_frameworks_index(problems: list, framework_defs: list) -> tuple:
+    """fw_key -> {term: {"problems": [...], "slug": str}}, in first-appearance
+    order. Only the regulatory frameworks get browse pages -- expertise does
+    not (it is filter + chips only)."""
     index = {}
     term_slugs = {}
     for fw in framework_defs:
@@ -377,8 +462,7 @@ def build_frameworks_index(problems: list, framework_defs: list) -> dict:
             for term in p.mappings.get(key, []):
                 if term not in terms:
                     base = slugify(term, max_len=50)
-                    s = base
-                    n = 2
+                    s, n = base, 2
                     while s in used_slugs:
                         s = f"{base}-{n}"
                         n += 1
@@ -397,10 +481,15 @@ def build_frameworks_index(problems: list, framework_defs: list) -> dict:
 def problem_to_public_dict(p: Problem) -> dict:
     return {
         "slug": p.slug,
+        "rq_no": p.rq_no,
         "question": p.question,
         "capacity": p.capacity,
         "target": p.target,
+        "problem_area": p.problem_area,
+        "section_number": p.section_number,
         "mappings": p.mappings,
+        "existing_work": p.existing_work,
+        "new_work": p.new_work,
         "tools": [{"id": t.id, "name": t.name, "homepage": t.homepage} for t in p.tools],
     }
 
@@ -409,6 +498,8 @@ def render_site(
     out_dir: Path,
     config: dict,
     framework_defs: list,
+    expertise_def: dict,
+    facet_defs: list,
     problems: list,
     groups: list,
     tool_catalog: dict,
@@ -426,7 +517,13 @@ def render_site(
         lstrip_blocks=True,
     )
 
-    facet_terms = {key: sorted(terms.keys(), key=str.lower) for key, terms in frameworks_index.items()}
+    expertise_key = expertise_def["key"]
+    facet_terms = {}
+    for key, terms in frameworks_index.items():
+        facet_terms[key] = sorted(terms.keys(), key=str.lower)
+    expertise_terms = sorted({t for p in problems for t in p.mappings.get(expertise_key, [])}, key=str.lower)
+    facet_terms[expertise_key] = expertise_terms
+
     capacities_list = [g["name"] for g in groups]
     targets_present = {p.target for p in problems}
     targets_list = ordered_present(
@@ -437,6 +534,8 @@ def render_site(
         "site": config["site"],
         "generated_at": generated_at,
         "frameworks": framework_defs,
+        "expertise": expertise_def,
+        "facets": facet_defs,
         "term_slugs": term_slugs,
         "facet_terms": facet_terms,
         "capacities_list": capacities_list,
@@ -458,14 +557,11 @@ def render_site(
         tmpl = env.get_template(template_name)
         path.write_text(tmpl.render(**site_ctx, **ctx), encoding="utf-8")
 
-    # Home
     write(out_dir / "index.html", "index.html", root="", groups=groups, active="home")
 
-    # Problem detail pages
     for p in problems:
         write(out_dir / "problems" / f"{p.slug}.html", "problem.html", root="../", problem=p, active="problem")
 
-    # Tools
     write(out_dir / "tools" / "index.html", "tools_index.html", root="../", entries=tools_index, active="tools")
     for entry in tools_index:
         tool = entry["tool"]
@@ -478,7 +574,6 @@ def render_site(
             active="tools",
         )
 
-    # Frameworks
     write(
         out_dir / "frameworks" / "index.html",
         "frameworks_index.html",
@@ -487,10 +582,9 @@ def render_site(
         active="frameworks",
     )
     for fw in framework_defs:
-        key = fw["key"]
-        for term, data in frameworks_index.get(key, {}).items():
+        for term, data in frameworks_index.get(fw["key"], {}).items():
             write(
-                out_dir / "frameworks" / key / f"{data['slug']}.html",
+                out_dir / "frameworks" / fw["key"] / f"{data['slug']}.html",
                 "framework_term.html",
                 root="../../",
                 framework=fw,
@@ -499,7 +593,6 @@ def render_site(
                 active="frameworks",
             )
 
-    # data.json (baked snapshot, not required by app.js but kept for reuse/transparency)
     data_json = {
         "generated_at": generated_at,
         "problems": [problem_to_public_dict(p) for p in problems],
@@ -507,10 +600,7 @@ def render_site(
     }
     (out_dir / "data.json").write_text(json.dumps(data_json, indent=2), encoding="utf-8")
 
-    # Static assets
-    assets_src = Path(__file__).parent / "assets"
-    shutil.copytree(assets_src, out_dir / "assets")
-
+    shutil.copytree(Path(__file__).parent / "assets", out_dir / "assets")
     (out_dir / ".nojekyll").write_text("", encoding="utf-8")
 
     if warnings:
@@ -531,38 +621,40 @@ def main() -> None:
 
     config = load_yaml(Path(args.config))
     vocab = load_yaml(Path(args.frameworks)) or {}
-
     warnings: list = []
 
-    sheet_id = config["data"]["sheet_id"]
-    questions_csv = fetch_source(config["data"]["questions"], sheet_id, "questions", warnings)
-    tools_csv = fetch_source(config["data"]["tools"], sheet_id, "tools", warnings)
+    taig_csv = fetch_source(config["data"]["taig"], "taig", warnings)
+    mapping_csv = fetch_source(config["data"]["mapping"], "mapping", warnings)
+    tools_csv = fetch_source(config["data"]["tools"], "tools", warnings)
 
-    questions_rows = parse_csv_text(questions_csv)
+    taig_rows = parse_csv_text(taig_csv)
+    mapping_rows = parse_csv_text(mapping_csv)
     tools_rows = parse_csv_text(tools_csv)
 
     colmap = config["columns"]
-    tool_catalog = build_tool_catalog(tools_rows, colmap["tools"], warnings)
-
-    seed_path = config["taxonomy"].get("seed_file")
-    seed_taxonomy = load_seed_taxonomy(Path(seed_path) if seed_path else None)
-
     framework_defs = config["frameworks"]
+    expertise_def = config["expertise"]
+    expertise_key = expertise_def["key"]
+    facet_defs = list(framework_defs) + [expertise_def]
+
+    tool_catalog = build_tool_catalog(tools_rows, colmap["tools"], warnings)
+    mapping_index = build_mapping_index(mapping_rows, colmap["mapping"], framework_defs, vocab, warnings)
+
     problems = build_problems(
-        questions_rows,
-        colmap["questions"],
+        taig_rows,
+        colmap["taig"],
         framework_defs,
-        vocab,
+        expertise_key,
+        mapping_index,
         tool_catalog,
-        seed_taxonomy,
         config["taxonomy"]["uncategorized_label"],
         warnings,
     )
 
     if not problems:
         raise SystemExit(
-            "No problems parsed from the Questions tab. Check that the sheet has a "
-            f"'{colmap['questions']['question']}' column with data, and that the gid in "
+            "No problems parsed from the TAIG sheet. Check that it has a "
+            f"'{colmap['taig']['question']}' column with data and that the gid in "
             "config.yaml points at the right tab."
         )
 
@@ -582,6 +674,8 @@ def main() -> None:
         out_dir,
         config,
         framework_defs,
+        expertise_def,
+        facet_defs,
         problems,
         groups,
         tool_catalog,

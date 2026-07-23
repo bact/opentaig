@@ -19,19 +19,32 @@ site:
 output_dir: "site"
 
 data:
-  sheet_id: "unused-when-file-is-set"
-  questions:
+  taig:
+    sheet_id: "unused-when-file-is-set"
     gid: 0
-    file: "tests/fixtures/questions.csv"
+    file: "tests/fixtures/taig.csv"
+  mapping:
+    sheet_id: "unused-when-file-is-set"
+    gid: 0
+    file: "tests/fixtures/mapping.csv"
   tools:
+    sheet_id: "unused-when-file-is-set"
     gid: 1
     file: "tests/fixtures/tools.csv"
 
 columns:
-  questions:
-    question: "Question"
+  taig:
+    question: "Research Question"
+    question_number: "Question number (in paper)"
+    section_number: "Section Number"
+    target: "Target(s)"
     capacity: "Capacity"
-    target: "Target"
+    problem_area: "Problem Area (from Problem Areas)"
+    existing_work: "Existing work & resources"
+    relevant_expertise: "Relevant expertise"
+    new_work: "New work (since publication)"
+  mapping:
+    rq_no: "RQ_No"
     tools: "Tools"
   tools:
     id: "id"
@@ -65,18 +78,22 @@ frameworks:
     label: "CoE Framework Convention on AI"
     doc_url: "https://rm.coe.int/1680afae3c"
 
+expertise:
+  key: expertise
+  label: "Relevant Expertise"
+
 taxonomy:
   capacities:
     - "Assessment"
     - "Access"
     - "Verification"
     - "Security"
-    - "Operationalization"
+    - "Operationalisation"
     - "Ecosystem Monitoring"
   targets:
     - "Data"
     - "Compute"
-    - "Models"
+    - "Model & Algorithms"
     - "Deployment"
+    - "All"
   uncategorized_label: "Uncategorized"
-  seed_file: "data/seed_taxonomy.csv"

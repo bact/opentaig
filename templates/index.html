@@ -26,11 +26,11 @@
     </select>
   </label>
 
-  {% for fw in frameworks %}
-  <label>{{ fw.label }}
-    <select class="filter-framework" data-framework="{{ fw.key }}">
+  {% for facet in facets %}
+  <label>{{ facet.label }}
+    <select class="filter-framework" data-framework="{{ facet.key }}">
       <option value="">All</option>
-      {% for term in facet_terms.get(fw.key, []) %}
+      {% for term in facet_terms.get(facet.key, []) %}
       <option value="{{ term }}">{{ term }}</option>
       {% endfor %}
     </select>
@@ -49,14 +49,19 @@
 {% for group in groups %}
 <section class="capacity-group" data-group-name="{{ group.name }}">
   <h2>{{ group.name }} <span class="count">({{ group.count }})</span></h2>
-  {% for sub in group.subgroups %}
-  <div class="target-group" data-subgroup-name="{{ sub.name }}">
-    <h3>{{ sub.name }} <span class="count">({{ sub.count }})</span></h3>
-    <div class="problem-list">
-      {% for p in sub.problems %}
-      {% include "_problem_card.html" %}
-      {% endfor %}
+  {% for tgt in group.targets %}
+  <div class="target-group" data-subgroup-name="{{ tgt.name }}">
+    <h3>{{ tgt.name }} <span class="count">({{ tgt.count }})</span></h3>
+    {% for area in tgt.areas %}
+    <div class="area-group" data-area-name="{{ area.name }}">
+      <h4 class="area-heading">{{ area.name }} <span class="count">({{ area.count }})</span></h4>
+      <div class="problem-list">
+        {% for p in area.problems %}
+        {% include "_problem_card.html" %}
+        {% endfor %}
+      </div>
     </div>
+    {% endfor %}
   </div>
   {% endfor %}
 </section>
