@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block title %}{{ problem.question }} — {{ site.title }}{% endblock %}
+{% block content %}
+<article class="problem-detail">
+  <p class="breadcrumb"><a href="{{ root }}index.html">&larr; All open problems</a></p>
+  <h1>{% if problem.rq_no %}<span class="rq-no">#{{ problem.rq_no }}</span> {% endif %}{{ problem.question }}</h1>
+  <p class="tags">
+    <span class="tag">Capacity: {{ problem.capacity }}</span>
+    <span class="tag">Target: {{ problem.target }}</span>
+    {% if problem.problem_area %}<span class="tag">Problem area: {{ problem.problem_area }}</span>{% endif %}
+    {% if problem.section_number %}<span class="tag">Section {{ problem.section_number }}</span>{% endif %}
+  </p>
+
+  {% if problem.mappings.get(expertise.key, []) %}
+  <h2>{{ expertise.label }}</h2>
+  <div class="chip-row">
+    {% for term in problem.mappings.get(expertise.key, []) %}
+    <span class="chip chip-expertise">{{ term }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <h2>Mapped principles &amp; regulations</h2>
+  {% set ns = namespace(any=false) %}
+  <dl class="mapping-list">
+    {% for fw in frameworks %}
+      {% set terms = problem.mappings.get(fw.key, []) %}
+      {% if terms %}
+      {% set ns.any = true %}
+      <dt>
+        {{ fw.label }}
+        {% if fw.doc_url %}<a class="doc-link" href="{{ fw.doc_url }}">(source)</a>{% endif %}
+      </dt>
+      <dd>
+        {% for term in terms %}
+        <a class="chip chip-{{ fw.key }}" href="{{ root }}frameworks/{{ fw.key }}/{{ term_slugs.get(fw.key, {}).get(term, '') }}.html">{{ term }}</a>
+        {% endfor %}
+      </dd>
+      {% endif %}
+    {% endfor %}
+  </dl>
+  {% if not ns.any %}
+  <p class="empty-note">No framework mappings recorded yet for this question.</p>
+  {% endif %}
+
+  <h2>Open-source tools</h2>
+  {% if problem.tools %}
+  <ul class="tool-detail-list">
+    {% for t in problem.tools %}
+    <li>
+      <a href="{{ root }}tools/{{ t.slug }}.html">{{ t.name }}</a>
+      {% if t.license %}<span class="chip chip-license">{{ t.license }}</span>{% endif %}
+      {% if t.summary %}<p class="tool-summary">{{ t.summary }}</p>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="empty-note">No open-source tool linked yet. Know one? Add it to the mapping sheet.</p>
+  {% endif %}
+
+  {% if problem.existing_work %}
+  <h2>Existing work &amp; resources</h2>
+  <ul class="citation-list">
+    {% for c in problem.existing_work %}
+    <li>{{ c }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  {% if problem.new_work %}
+  <h2>New work (since publication)</h2>
+  <ul class="citation-list">
+    {% for c in problem.new_work %}
+    <li>{{ c }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</article>
+{% endblock %}

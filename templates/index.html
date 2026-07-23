@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="intro">
+  <h1>Open Problems in Technical AI Governance</h1>
+  <p>{{ site.description }}</p>
+</section>
+
+<section class="filter-bar" id="filter-bar">
+  <input type="search" id="filter-search" placeholder="Search questions and mappings&hellip;" aria-label="Search open problems">
+
+  <label>Capacity
+    <select id="filter-capacity">
+      <option value="">All</option>
+      {% for c in capacities_list %}
+      <option value="{{ c }}">{{ c }}</option>
+      {% endfor %}
+    </select>
+  </label>
+
+  <label>Target
+    <select id="filter-target">
+      <option value="">All</option>
+      {% for t in targets_list %}
+      <option value="{{ t }}">{{ t }}</option>
+      {% endfor %}
+    </select>
+  </label>
+
+  {% for facet in facets %}
+  <label>{{ facet.label }}
+    <select class="filter-framework" data-framework="{{ facet.key }}">
+      <option value="">All</option>
+      {% for term in facet_terms.get(facet.key, []) %}
+      <option value="{{ term }}">{{ term }}</option>
+      {% endfor %}
+    </select>
+  </label>
+  {% endfor %}
+
+  <label class="filter-checkbox">
+    <input type="checkbox" id="filter-has-tool">
+    Has open-source tool
+  </label>
+
+  <button type="button" id="filter-reset">Reset filters</button>
+  <span id="filter-count" class="filter-count" aria-live="polite"></span>
+</section>
+
+{% for group in groups %}
+<section class="capacity-group" data-group-name="{{ group.name }}">
+  <h2>{{ group.name }} <span class="count">({{ group.count }})</span></h2>
+  {% for tgt in group.targets %}
+  <div class="target-group" data-subgroup-name="{{ tgt.name }}">
+    <h3>{{ tgt.name }} <span class="count">({{ tgt.count }})</span></h3>
+    {% for area in tgt.areas %}
+    <div class="area-group" data-area-name="{{ area.name }}">
+      <h4 class="area-heading">{{ area.name }} <span class="count">({{ area.count }})</span></h4>
+      <div class="problem-list">
+        {% for p in area.problems %}
+        {% include "_problem_card.html" %}
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endfor %}
+</section>
+{% endfor %}
+
+<p id="no-results" class="no-results" hidden>No open problems match the current filters.</p>
+{% endblock %}

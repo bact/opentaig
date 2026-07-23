@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Principles &amp; Regulations — {{ site.title }}{% endblock %}
+{% block content %}
+<h1>Principles &amp; Regulations</h1>
+<p>Browse open problems by the principle, obligation, or regulation article they map to.</p>
+
+{% for fw in frameworks %}
+<section class="framework-group">
+  <h2>{{ fw.label }} {% if fw.doc_url %}<a class="doc-link" href="{{ fw.doc_url }}">(source)</a>{% endif %}</h2>
+  {% set terms = frameworks_index.get(fw.key, {}) %}
+  {% if terms %}
+  <ul class="term-list">
+    {% for term, data in terms.items() | sort(attribute="0") %}
+    <li>
+      <a class="chip chip-{{ fw.key }}" href="{{ root }}frameworks/{{ fw.key }}/{{ data.slug }}.html">{{ term }}</a>
+      <span class="count">({{ data.problems | length }})</span>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="empty-note">No mappings recorded yet.</p>
+  {% endif %}
+</section>
+{% endfor %}
+{% endblock %}
