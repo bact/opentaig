@@ -1,0 +1,8 @@
+question,capacity,target
+"How can methods for identifying problematic data be scaled to large (on the magnitude of trillions of tokens/samples) datasets?",Assessment,Data
+"How can licence collection be automated to prevent training on unlicensed data?",Assessment,Data
+"How can the accuracy of licences be ensured when aggregating datasets from multiple sources?",Assessment,Data
+"How can it be verified that a model was (not) trained on a given dataset?",Verification,Data
+"How can the location of AI hardware be verified?",Verification,Compute
+"How can output watermarking schemes be made robust to adversarial attempts at removal?",Security,Models
+"What information about systems is needed to accurately assess the environmental impact of its development and deployment?",Assessment,Deployment

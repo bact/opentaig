@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}{{ problem.question }} — {{ site.title }}{% endblock %}
+{% block content %}
+<article class="problem-detail">
+  <p class="breadcrumb"><a href="{{ root }}index.html">&larr; All open problems</a></p>
+  <h1>{{ problem.question }}</h1>
+  <p class="tags">
+    <span class="tag">Capacity: {{ problem.capacity }}</span>
+    <span class="tag">Target: {{ problem.target }}</span>
+  </p>
+
+  <h2>Mapped principles &amp; regulations</h2>
+  {% set any_mapping = false %}
+  <dl class="mapping-list">
+    {% for fw in frameworks %}
+      {% set terms = problem.mappings.get(fw.key, []) %}
+      {% if terms %}
+      {% set any_mapping = true %}
+      <dt>
+        {{ fw.label }}
+        {% if fw.doc_url %}<a class="doc-link" href="{{ fw.doc_url }}">(source)</a>{% endif %}
+      </dt>
+      <dd>
+        {% for term in terms %}
+        <a class="chip chip-{{ fw.key }}" href="{{ root }}frameworks/{{ fw.key }}/{{ term_slugs.get(fw.key, {}).get(term, '') }}.html">{{ term }}</a>
+        {% endfor %}
+      </dd>
+      {% endif %}
+    {% endfor %}
+  </dl>
+  {% if not any_mapping %}
+  <p class="empty-note">No framework mappings recorded yet for this question.</p>
+  {% endif %}
+
+  <h2>Open-source tools</h2>
+  {% if problem.tools %}
+  <ul class="tool-detail-list">
+    {% for t in problem.tools %}
+    <li>
+      <a href="{{ root }}tools/{{ t.slug }}.html">{{ t.name }}</a>
+      {% if t.license %}<span class="chip chip-license">{{ t.license }}</span>{% endif %}
+      {% if t.summary %}<p class="tool-summary">{{ t.summary }}</p>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="empty-note">No open-source tool linked yet. Know one? Add it to the sheet's Tools tab.</p>
+  {% endif %}
+</article>
+{% endblock %}

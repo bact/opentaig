@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Open Source Tools — {{ site.title }}{% endblock %}
+{% block content %}
+<h1>Open Source Tools</h1>
+<p>Open-source tools referenced across the open-problems catalog, and which open problems they help address.</p>
+
+<table class="tools-table">
+  <thead>
+    <tr>
+      <th>Tool</th>
+      <th>License</th>
+      <th>Summary</th>
+      <th>Open problems addressed</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for entry in entries %}
+    <tr>
+      <td><a href="{{ root }}tools/{{ entry.tool.slug }}.html">{{ entry.tool.name }}</a></td>
+      <td>{% if entry.tool.license %}<span class="chip chip-license">{{ entry.tool.license }}</span>{% endif %}</td>
+      <td>{{ entry.tool.summary }}</td>
+      <td>{{ entry.problems | length }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{{ site.title }} — {{ site.tagline }}{% endblock %}</title>
+<meta name="description" content="{{ site.description }}">
+<link rel="stylesheet" href="{{ root }}assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="{{ root }}index.html">
+      <span class="brand-title">{{ site.title }}</span>
+      <span class="brand-tagline">{{ site.tagline }}</span>
+    </a>
+    <nav class="site-nav">
+      <a href="{{ root }}index.html" class="{{ 'active' if active == 'home' or active == 'problem' else '' }}">Open Problems</a>
+      <a href="{{ root }}tools/index.html" class="{{ 'active' if active == 'tools' else '' }}">Open Source Tools</a>
+      <a href="{{ root }}frameworks/index.html" class="{{ 'active' if active == 'frameworks' else '' }}">Principles &amp; Regulations</a>
+      <a href="{{ site.repo_url }}">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+{% block content %}{% endblock %}
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>
+      {{ problem_count }} open problems &middot; {{ tool_count }} open-source tools &middot;
+      generated {{ generated_at }}
+    </p>
+    <p>
+      Inspired by
+      <a href="{{ site.taig_database_url }}">Stanford TAIG</a> and
+      <a href="{{ site.source_paper_url }}">Reuel, Bucknall, et al. (2025), &ldquo;Open Problems in Technical AI Governance&rdquo;</a>.
+      Source and data-update instructions on <a href="{{ site.repo_url }}">GitHub</a>.
+    </p>
+  </div>
+</footer>
+<script src="{{ root }}assets/app.js"></script>
+</body>
+</html>

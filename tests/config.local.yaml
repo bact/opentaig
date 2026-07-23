@@ -1,0 +1,82 @@
+# Example config for building against local CSV fixtures instead of fetching
+# from Google Sheets -- handy for offline development, and used by CI-less
+# local verification of build.py. Run from the repo root:
+#
+#   python build.py --config tests/config.local.yaml
+#
+site:
+  title: "OpenTAIG"
+  tagline: "Open Problems in Technical AI Governance"
+  description: >
+    A community-maintained catalog of open technical problems in AI
+    governance, mapped to relevant principles/regulations and linked to
+    open-source tools that help address them.
+  base_path: ""
+  repo_url: "https://github.com/bact/opentaig"
+  source_paper_url: "https://arxiv.org/abs/2407.14981"
+  taig_database_url: "https://taig.stanford.edu/taig_database.html"
+
+output_dir: "site"
+
+data:
+  sheet_id: "unused-when-file-is-set"
+  questions:
+    gid: 0
+    file: "tests/fixtures/questions.csv"
+  tools:
+    gid: 1
+    file: "tests/fixtures/tools.csv"
+
+columns:
+  questions:
+    question: "Question"
+    capacity: "Capacity"
+    target: "Target"
+    tools: "Tools"
+  tools:
+    id: "id"
+    name: "name"
+    summary: "summary"
+    license: "license"
+    homepage: "homepage"
+    source: "source"
+    documentation: "documentation"
+    funding: "funding"
+
+frameworks:
+  - key: rgaf
+    column: "RGAF"
+    label: "LF AI & Data RGAF"
+    doc_url: "https://lfaidata.foundation/rgaf/"
+  - key: eu_ai_act
+    column: "EU_AI_Act"
+    label: "EU AI Act"
+    doc_url: "https://artificialintelligenceact.eu/"
+  - key: unesco
+    column: "UNESCO"
+    label: "UNESCO Ethics of AI"
+    doc_url: "https://www.unesco.org/en/artificial-intelligence/recommendation-ethics"
+  - key: asean
+    column: "ASEAN"
+    label: "ASEAN AI Governance & Ethics"
+    doc_url: "https://asean.org/wp-content/uploads/2024/02/ASEAN-Guide-on-AI-Governance-and-Ethics_beautified_16-February-2024_pdf.pdf"
+  - key: coe
+    column: "CoE"
+    label: "CoE Framework Convention on AI"
+    doc_url: "https://rm.coe.int/1680afae3c"
+
+taxonomy:
+  capacities:
+    - "Assessment"
+    - "Access"
+    - "Verification"
+    - "Security"
+    - "Operationalization"
+    - "Ecosystem Monitoring"
+  targets:
+    - "Data"
+    - "Compute"
+    - "Models"
+    - "Deployment"
+  uncategorized_label: "Uncategorized"
+  seed_file: "data/seed_taxonomy.csv"

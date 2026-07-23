@@ -1,0 +1,110 @@
+# OpenTAIG site configuration.
+#
+# This file controls where the build pulls data from and how it is labeled.
+# Column names below must match the header row of the corresponding Google
+# Sheet tab exactly (case-sensitive). If you rename a header in the sheet,
+# update the matching entry here -- no code changes needed.
+
+site:
+  title: "OpenTAIG"
+  tagline: "Open Problems in Technical AI Governance"
+  description: >
+    A community-maintained catalog of open technical problems in AI
+    governance, mapped to relevant principles/regulations and linked to
+    open-source tools that help address them. Inspired by the Stanford
+    TAIG database (taig.stanford.edu) and the paper "Open Problems in
+    Technical AI Governance" (Reuel, Bucknall, et al., 2025).
+  # If served from a GitHub Pages project site (https://<user>.github.io/<repo>/),
+  # set this to "/<repo>" so internal links resolve correctly. Leave "" for a
+  # user/org root site (https://<user>.github.io/) or a custom domain.
+  base_path: ""
+  repo_url: "https://github.com/bact/opentaig"
+  source_paper_url: "https://arxiv.org/abs/2407.14981"
+  taig_database_url: "https://taig.stanford.edu/taig_database.html"
+
+output_dir: "site"
+
+# --- Data source -----------------------------------------------------------
+# The sheet must be shared as "Anyone with the link" (Viewer) so the CSV
+# export endpoint works without credentials. Two tabs are read:
+#   - "questions": one row per open problem (the spine of the site)
+#   - "tools":     one row per open-source tool, referenced by id from the
+#                  questions tab's Tools column
+#
+# To find a tab's gid: open the tab in Google Sheets, look at the URL -- the
+# number after "#gid=" is the gid for that tab.
+#
+# For local development you can bypass the network fetch entirely by setting
+# `file:` to a local CSV path (used instead of `url` when present).
+data:
+  sheet_id: "1netgfFKee13Z3_i-ructJkgg08HAPlBKgF-a35bs_ks"
+  questions:
+    gid: 0
+    file: null
+  tools:
+    # TODO: update this once the "Tools" tab has been added to the sheet.
+    gid: 1
+    file: null
+
+# --- Column mapping ----------------------------------------------------------
+columns:
+  questions:
+    question: "Question"
+    capacity: "Capacity"
+    target: "Target"
+    tools: "Tools"
+  tools:
+    id: "id"
+    name: "name"
+    summary: "summary"
+    license: "license"
+    homepage: "homepage"
+    source: "source"
+    documentation: "documentation"
+    funding: "funding"
+
+# --- Framework / regulation mapping columns ---------------------------------
+# `key` is used internally (URLs, data attributes); `column` must match the
+# sheet header; `label` is the display name; `doc_url` is an optional link to
+# the source document (shown as the chip group's "learn more" link).
+frameworks:
+  - key: rgaf
+    column: "RGAF"
+    label: "LF AI & Data RGAF"
+    doc_url: "https://lfaidata.foundation/rgaf/"
+  - key: eu_ai_act
+    column: "EU_AI_Act"
+    label: "EU AI Act"
+    doc_url: "https://artificialintelligenceact.eu/"
+  - key: unesco
+    column: "UNESCO"
+    label: "UNESCO Ethics of AI"
+    doc_url: "https://www.unesco.org/en/artificial-intelligence/recommendation-ethics"
+  - key: asean
+    column: "ASEAN"
+    label: "ASEAN AI Governance & Ethics"
+    doc_url: "https://asean.org/wp-content/uploads/2024/02/ASEAN-Guide-on-AI-Governance-and-Ethics_beautified_16-February-2024_pdf.pdf"
+  - key: coe
+    column: "CoE"
+    label: "CoE Framework Convention on AI"
+    doc_url: "https://rm.coe.int/1680afae3c"
+
+# --- Taxonomy (used for grouping on the main page) --------------------------
+taxonomy:
+  capacities:
+    - "Assessment"
+    - "Access"
+    - "Verification"
+    - "Security"
+    - "Operationalization"
+    - "Ecosystem Monitoring"
+  targets:
+    - "Data"
+    - "Compute"
+    - "Models"
+    - "Deployment"
+  uncategorized_label: "Uncategorized"
+  # Optional convenience fallback: question -> capacity/target mapping, used
+  # only when the sheet's Capacity/Target columns are blank for a row. The
+  # sheet's own values always win.
+  seed_file: "data/seed_taxonomy.csv"

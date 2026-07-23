@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}{{ term }} — {{ framework.label }} — {{ site.title }}{% endblock %}
+{% block content %}
+<p class="breadcrumb"><a href="{{ root }}frameworks/index.html">&larr; All principles &amp; regulations</a></p>
+<h1><span class="chip chip-{{ framework.key }}">{{ term }}</span></h1>
+<p>{{ framework.label }}{% if framework.doc_url %} &middot; <a href="{{ framework.doc_url }}">source document</a>{% endif %}</p>
+
+<h2>Open problems mapped to this ({{ problems | length }})</h2>
+<ul class="problem-links">
+  {% for p in problems %}
+  <li><a href="{{ root }}problems/{{ p.slug }}.html">{{ p.question }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}

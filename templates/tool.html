@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}{{ tool.name }} — {{ site.title }}{% endblock %}
+{% block content %}
+<p class="breadcrumb"><a href="{{ root }}tools/index.html">&larr; All tools</a></p>
+<article class="tool-detail">
+  <h1>{{ tool.name }}</h1>
+  {% if tool.license %}<p><span class="chip chip-license">{{ tool.license }}</span>
+    <a class="doc-link" href="https://spdx.org/licenses/{{ tool.license }}.html">(license text)</a></p>{% endif %}
+  {% if tool.summary %}<p>{{ tool.summary }}</p>{% endif %}
+
+  <ul class="tool-links">
+    {% if tool.homepage %}<li><a href="{{ tool.homepage }}">Homepage</a></li>{% endif %}
+    {% if tool.source %}<li><a href="{{ tool.source }}">Source code</a></li>{% endif %}
+    {% if tool.documentation %}<li><a href="{{ tool.documentation }}">Documentation</a></li>{% endif %}
+    {% if tool.funding %}<li><a href="{{ tool.funding }}">Funding / sponsor this project</a></li>{% endif %}
+  </ul>
+
+  <h2>Open problems this tool helps address ({{ problems | length }})</h2>
+  {% if problems %}
+  <ul class="problem-links">
+    {% for p in problems %}
+    <li><a href="{{ root }}problems/{{ p.slug }}.html">{{ p.question }}</a></li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="empty-note">Not yet linked to any open problem in the sheet.</p>
+  {% endif %}
+</article>
+{% endblock %}
