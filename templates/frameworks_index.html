@@ -10,7 +10,7 @@
   {% set terms = frameworks_index.get(fw.key, {}) %}
   {% if terms %}
   <ul class="term-list">
-    {% for term_id, data in terms.items() | sort(attribute="1.term.name") %}
+    {% for term_id, data in terms.items() %}
     <li>
       <a class="chip chip-{{ fw.key }}" href="{{ root }}frameworks/{{ fw.key }}/{{ term_id }}.html">{{ data.term.name }}</a>
       <span class="count">({{ data.problems | length }})</span>
