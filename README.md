@@ -126,12 +126,15 @@ metadata never drifts out of sync across multiple mentions:
 so the schema isn't inventing its own vocabulary.) Leave any column blank if
 not applicable — the site simply omits blank fields.
 
-### Finding a tab's `gid`
+### Identifying a tab
 
-Open the tab in Google Sheets and look at the URL: the number after `#gid=`
-is that tab's `gid`. All three gids are configured in
-[`config.yaml`](config.yaml) under `data.taig.gid` / `data.mapping.gid` /
-`data.tools.gid` — update them there if you reorder tabs.
+Each source in [`config.yaml`](config.yaml) is looked up by **`sheet_name`**
+— the tab's visible name, exactly as shown on the tab at the bottom of the
+Google Sheets window (e.g. `map`, `tools`). This is preferred over the
+older `gid` (a tab's opaque numeric id, found after `#gid=` in the tab's
+URL): a wrong `sheet_name` is easy to spot, while a wrong `gid` just
+produces a bare `400 Bad Request` from Google's export endpoint. If you
+rename a tab, update the matching `sheet_name` in `config.yaml`.
 
 ## Running a build locally
 

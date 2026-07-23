@@ -40,25 +40,27 @@ output_dir: "site"
 # The OpenTAIG sheet's two tabs are literally named "map" and "tools".
 #
 # Each sheet must be shared as "Anyone with the link" (Viewer) so the CSV
-# export endpoint works without credentials. To find a tab's gid: open the
-# tab in Google Sheets, look at the URL -- the number after "#gid=" is the
-# gid for that tab.
+# export endpoint works without credentials. Each source below is looked up
+# by `sheet_name` (the tab's visible name, exactly as shown on the tab) --
+# preferred over the older `gid` (a tab's opaque numeric id) because a wrong
+# gid produces a bare "400 Bad Request" with no clue why, whereas a wrong
+# sheet_name is easy to spot and fix. `gid` still works as a fallback if
+# `sheet_name` is omitted.
 #
 # For local development you can bypass the network fetch entirely by setting
 # `file:` to a local CSV path (used instead of the sheet when present).
 data:
   taig:
     sheet_id: "1uLYmyC9wBSssO5l5dSf6gYv_2-WoMPBR15q0r2kKsyA"
-    gid: 0
+    sheet_name: "Grid view"
     file: null
   mapping:
     sheet_id: "1netgfFKee13Z3_i-ructJkgg08HAPlBKgF-a35bs_ks"
-    gid: 0
+    sheet_name: "map"
     file: null
   tools:
     sheet_id: "1netgfFKee13Z3_i-ructJkgg08HAPlBKgF-a35bs_ks"
-    # TODO: confirm this gid from the "tools" tab's URL (#gid=...).
-    gid: 1
+    sheet_name: "tools"
     file: null
 
 # --- Column mapping ----------------------------------------------------------
