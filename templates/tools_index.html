@@ -8,6 +8,7 @@
   <thead>
     <tr>
       <th>Tool</th>
+      <th>Type</th>
       <th>License</th>
       <th>Summary</th>
       <th>Open problems addressed</th>
@@ -17,6 +18,7 @@
   {% for entry in entries %}
     <tr>
       <td><a href="{{ root }}tools/{{ entry.tool.slug }}.html">{{ entry.tool.name }}</a></td>
+      <td>{% if entry.tool.tool_type %}<span class="chip chip-tool-type">{{ entry.tool.tool_type }}</span>{% endif %}</td>
       <td>{% if entry.tool.license %}<span class="chip chip-license">{{ entry.tool.license }}</span>{% endif %}</td>
       <td>{{ entry.tool.summary }}</td>
       <td>{{ entry.problems | length }}</td>

@@ -31,6 +31,10 @@ data:
     sheet_id: "unused-when-file-is-set"
     gid: 1
     file: "tests/fixtures/tools.csv"
+  terms:
+    sheet_id: "unused-when-file-is-set"
+    gid: 2
+    file: "tests/fixtures/terms.csv"
 
 columns:
   taig:
@@ -48,6 +52,7 @@ columns:
     tools: "Tools"
   tools:
     id: "id"
+    tool_type: "tool_type"
     name: "name"
     summary: "summary"
     license: "license"
@@ -55,26 +60,32 @@ columns:
     source: "source"
     documentation: "documentation"
     funding: "funding"
+  terms:
+    id: "id"
+    framework: "framework"
+    name: "name"
+    summary: "summary"
+    url: "url"
 
 frameworks:
   - key: rgaf
     column: "RGAF"
     label: "LF AI & Data RGAF"
     doc_url: "https://lfaidata.foundation/rgaf/"
-  - key: eu_ai_act
-    column: "EU_AI_Act"
+  - key: euaiact
+    column: "EUAIAct"
     label: "EU AI Act"
     doc_url: "https://artificialintelligenceact.eu/"
-  - key: unesco
-    column: "UNESCO"
+  - key: unescoai
+    column: "UNESCOAI"
     label: "UNESCO Ethics of AI"
     doc_url: "https://www.unesco.org/en/artificial-intelligence/recommendation-ethics"
-  - key: asean
-    column: "ASEAN"
+  - key: aseanai
+    column: "ASEANAI"
     label: "ASEAN AI Governance & Ethics"
     doc_url: "https://asean.org/wp-content/uploads/2024/02/ASEAN-Guide-on-AI-Governance-and-Ethics_beautified_16-February-2024_pdf.pdf"
-  - key: coe
-    column: "CoE"
+  - key: coeai
+    column: "CoEAI"
     label: "CoE Framework Convention on AI"
     doc_url: "https://rm.coe.int/1680afae3c"
 

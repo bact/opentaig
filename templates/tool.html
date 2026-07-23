@@ -4,8 +4,13 @@
 <p class="breadcrumb"><a href="{{ root }}tools/index.html">&larr; All tools</a></p>
 <article class="tool-detail">
   <h1>{{ tool.name }}</h1>
-  {% if tool.license %}<p><span class="chip chip-license">{{ tool.license }}</span>
-    <a class="doc-link" href="https://spdx.org/licenses/{{ tool.license }}.html">(license text)</a></p>{% endif %}
+  {% if tool.tool_type or tool.license %}
+  <p>
+    {% if tool.tool_type %}<span class="chip chip-tool-type">{{ tool.tool_type }}</span>{% endif %}
+    {% if tool.license %}<span class="chip chip-license">{{ tool.license }}</span>
+    <a class="doc-link" href="https://spdx.org/licenses/{{ tool.license }}.html">(license text)</a>{% endif %}
+  </p>
+  {% endif %}
   {% if tool.summary %}<p>{{ tool.summary }}</p>{% endif %}
 
   <ul class="tool-links">
