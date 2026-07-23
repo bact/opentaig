@@ -67,9 +67,9 @@ come from here, never from the `OpenTAIG` sheet.
 | `Relevant expertise` | Disciplines useful for this problem (e.g. `Cryptography`, `ML Theory`). Shown as chips and offered as a filter facet on the home page. |
 | `New work (since publication)` | Citations for follow-up work since the paper published. |
 
-### 2. `OpenTAIG` sheet — our mappings & tool catalog
+### 2. `OpenTAIG` sheet — our mappings, tool catalog & terms catalog
 
-Two tabs, named **`map`** and **`tools`**.
+Three tabs, named **`map`**, **`tools`**, and **`terms`**.
 
 **`map` tab** — one row per annotated question, joined to the `TAIG` sheet by
 `RQ_No`:
@@ -78,33 +78,55 @@ Two tabs, named **`map`** and **`tools`**.
 |---|---|
 | `RQ_No` | Join key — must match a `Question number (in paper)` value in the `TAIG` sheet. |
 | `Research_Question` | **Ignored by the build.** A human-only aid so whoever is filling in a row can see which question they're annotating without cross-referencing the `TAIG` sheet — the site always displays the question text from the `TAIG` sheet instead. |
-| `RGAF` | Matching [LF AI & Data RGAF](https://lfaidata.foundation/rgaf/) dimension(s). |
-| `EU_AI_Act` | Matching EU AI Act article/obligation(s). |
-| `UNESCO` | Matching UNESCO Ethics of AI principle(s). |
-| `ASEAN` | Matching ASEAN AI Governance & Ethics guide principle(s). |
-| `CoE` | Matching CoE Framework Convention on AI article(s). |
-| `Tools` | Open-source tool **ids** that help address this question (see the `tools` tab below). |
+| `RGAF` | [LF AI & Data RGAF](https://lfaidata.foundation/rgaf/) dimension **ids**, referencing the `terms` tab. |
+| `EU_AI_Act` | EU AI Act article/obligation **ids**, referencing the `terms` tab. |
+| `UNESCO` | UNESCO Ethics of AI principle **ids**, referencing the `terms` tab. |
+| `ASEAN` | ASEAN AI Governance & Ethics guide principle **ids**, referencing the `terms` tab. |
+| `CoE` | CoE Framework Convention on AI article **ids**, referencing the `terms` tab. |
+| `Tools` | Open-source tool **ids**, referencing the `tools` tab below. |
 
-**Multiple values in one cell → separate with a semicolon `;`, not a comma.**
-Many canonical terms already contain commas (e.g. *"Robust, Reliable & Safe"*,
-*"Article 15 (Accuracy, robustness and cybersecurity)"*), so commas can't
-double as the list separator without ambiguity. Example:
-
-```
-Robust, Reliable & Safe; Transparent & Explainable
-```
-
-Leave a mapping cell **blank** if there's no match. `Tools` cell example,
-referencing two tool ids from the `tools` tab:
+**Every column above holds ids, not free text — separate multiple ids with a
+semicolon `;`.** Example `RGAF` cell (referencing two rows in the `terms`
+tab):
 
 ```
-scancode-toolkit; fossology
+rgaf-safe; rgaf-transparent
 ```
 
-A `map` row whose `RQ_No` doesn't match any `TAIG` row (a typo, or a question
-renumbered/removed upstream) is skipped with a build warning, not a failure.
-A `TAIG` row with no matching `map` row is normal — it just has no mappings
-or tools yet.
+Leave a cell **blank** if there's no match. A `map` row whose `RQ_No`
+doesn't match any `TAIG` row (a typo, or a question renumbered/removed
+upstream) is skipped with a build warning, not a failure. A `TAIG` row with
+no matching `map` row is normal — it just has no mappings or tools yet. An
+id that doesn't exist in the `terms`/`tools` catalog, or that exists but
+belongs to the wrong framework (e.g. a CoE id pasted into the `ASEAN`
+column), also produces a build warning rather than failing.
+
+**`terms` tab** — the shared catalog of RGAF/EU AI Act/UNESCO/ASEAN/CoE
+terms, **one tab across all five frameworks**, defined once and referenced
+by id from as many `map` rows as apply:
+
+| Column | Meaning |
+|---|---|
+| `id` | A **globally unique, namespaced** id: `<namespace>-<local-part>`, dash-separated (e.g. `euaiact-a8`, `coeai-a8`, `rgaf-safe`). See "Term id namespaces" below. |
+| `framework` | One of `rgaf`, `eu_ai_act`, `unesco`, `asean`, `coe` — must match a `key` in `config.yaml`'s `frameworks:` list. |
+| `name` | Full display text (the chip label), e.g. `Article 15 (Accuracy, robustness and cybersecurity)`. |
+| `summary` | Optional one-paragraph plain-language description. Blank is fine. |
+| `url` | Optional direct link to this specific term's source text (e.g. straight to Article 15, not just the EU AI Act's homepage). When blank, the site falls back to that framework's `doc_url` in `config.yaml`. |
+
+#### Term id namespaces
+
+Ids are dash-separated: `<namespace>-<local-part>`. The **namespace** token
+must never itself contain a dash, so it's always unambiguous where it ends
+— use `rgaf`, `euaiact`, `unescoai`, `aseanai`, or `coeai`. The **local
+part** is free-form (a short mnemonic like `a8` or `safe`, or a longer
+slug) — the only hard requirement is that the full id is unique across the
+*entire* tab, which the build enforces with a warning on any duplicate.
+
+This exists because two different legal instruments can use identical
+wording: both the EU AI Act and the CoE Framework Convention on AI have an
+"Article 8 (Transparency and oversight)". Namespacing (`euaiact-a8` vs.
+`coeai-a8`) keeps them distinct without any special-case logic in the
+build — every id is just globally unique by construction.
 
 **`tools` tab** — the open-source tool catalog, one row per tool, defined
 **once** and referenced by id from as many `map` rows as apply, so tool
@@ -130,9 +152,9 @@ not applicable — the site simply omits blank fields.
 
 Each source in [`config.yaml`](config.yaml) is looked up by **`sheet_name`**
 — the tab's visible name, exactly as shown on the tab at the bottom of the
-Google Sheets window (e.g. `map`, `tools`). This is preferred over the
-older `gid` (a tab's opaque numeric id, found after `#gid=` in the tab's
-URL): a wrong `sheet_name` is easy to spot, while a wrong `gid` just
+Google Sheets window (e.g. `map`, `tools`, `terms`). This is preferred over
+the older `gid` (a tab's opaque numeric id, found after `#gid=` in the
+tab's URL): a wrong `sheet_name` is easy to spot, while a wrong `gid` just
 produces a bare `400 Bad Request` from Google's export endpoint. If you
 rename a tab, update the matching `sheet_name` in `config.yaml`.
 
@@ -147,10 +169,10 @@ This writes the full site to `site/` (git-ignored). Open `site/index.html`
 in a browser to preview.
 
 For offline development without hitting Google Sheets, set a `file:` path
-under `data.taig` / `data.mapping` / `data.tools` in `config.yaml` (or a copy
-of it) to point at a local CSV instead of a URL — see
-[`tests/config.local.yaml`](tests/config.local.yaml) for a working example
-against the fixtures in `tests/fixtures/`.
+under `data.taig` / `data.mapping` / `data.tools` / `data.terms` in
+`config.yaml` (or a copy of it) to point at a local CSV instead of a URL —
+see [`tests/config.local.yaml`](tests/config.local.yaml) for a working
+example against the fixtures in `tests/fixtures/`.
 
 ## One-time GitHub Pages setup
 
@@ -161,9 +183,8 @@ no `gh-pages` branch is used.
 ## Repository layout
 
 ```
-config.yaml          site title, sheet ids + tab gids, column names, taxonomy order
-frameworks.yaml       fallback vocabulary for legacy comma-separated cells
-build.py              fetch (taig + map + tools) -> join by RQ_No -> render
+config.yaml          site title, sheet ids + tab names, column names, taxonomy order
+build.py              fetch (taig + map + tools + terms) -> join by RQ_No/id -> render
 templates/            Jinja2 templates
 assets/               CSS + vanilla JS (client-side search/filter, no network calls)
 tests/fixtures/       local CSV fixtures for offline build verification

@@ -31,6 +31,10 @@ data:
     sheet_id: "unused-when-file-is-set"
     gid: 1
     file: "tests/fixtures/tools.csv"
+  terms:
+    sheet_id: "unused-when-file-is-set"
+    gid: 2
+    file: "tests/fixtures/terms.csv"
 
 columns:
   taig:
@@ -55,6 +59,12 @@ columns:
     source: "source"
     documentation: "documentation"
     funding: "funding"
+  terms:
+    id: "id"
+    framework: "framework"
+    name: "name"
+    summary: "summary"
+    url: "url"
 
 frameworks:
   - key: rgaf

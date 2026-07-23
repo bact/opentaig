@@ -33,7 +33,7 @@
       </dt>
       <dd>
         {% for term in terms %}
-        <a class="chip chip-{{ fw.key }}" href="{{ root }}frameworks/{{ fw.key }}/{{ term_slugs.get(fw.key, {}).get(term, '') }}.html">{{ term }}</a>
+        <a class="chip chip-{{ fw.key }}" href="{{ root }}frameworks/{{ fw.key }}/{{ term.id }}.html">{{ term.name }}</a>
         {% endfor %}
       </dd>
       {% endif %}
