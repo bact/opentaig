@@ -37,7 +37,7 @@
       var sel = frameworkSelects[i];
       var term = sel.value;
       if (!term) continue;
-      var key = sel.dataset.framework; // e.g. "eu_ai_act" (matches build.py's fw["key"])
+      var key = sel.dataset.framework; // e.g. "euaiact" (matches build.py's fw["key"])
       // data-fw-<key> attributes are stored as "|term1|term2|" for safe substring
       // matching. Read via getAttribute rather than .dataset, since underscores in
       // `key` don't convert predictably through the dataset camelCase rules.
