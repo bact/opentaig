@@ -51,6 +51,7 @@ import argparse
 import csv
 import datetime
 import json
+import os
 import re
 import sys
 import time
@@ -160,7 +161,6 @@ def main() -> None:
                          help="skip the per-repo README fetch (faster, but no README-length filtering)")
     args = parser.parse_args()
 
-    import os
     token = os.environ.get("GITHUB_TOKEN")
     if not token:
         raise SystemExit(
@@ -211,6 +211,7 @@ def main() -> None:
         print(f"  -> {kept} new candidate(s) passed the README-length filter")
 
     out_path = Path(args.out_candidates)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
     with open(out_path, "w", encoding="utf-8", newline="") as f:
         fieldnames = ["full_name", "html_url", "description", "stars", "pushed_at",
                       "language", "license_spdx_id", "homepage", "found_via_keyword"]

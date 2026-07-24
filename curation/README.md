@@ -80,7 +80,7 @@ judgment steps need a model.
 - **Strongest available model, as an isolated subagent** for step 5 (the
   final implement/eval RQ judgment) — give it *only* {candidate summary +
   README excerpt + paper abstract} × {the pre-filtered RQ shortlist}, never
-  the whole session history or all ~98 RQs. A human review gate follows
+  the whole session history or the entire research-question catalog. A human review gate follows
   regardless, so it's fine to try the cheaper model for step 5 first and
   escalate only where review shows it's too noisy.
 
@@ -99,8 +99,8 @@ That's why steps 3 onward should run locally from here on.
 Setup, once, on your machine:
 
 ```bash
-git clone <this repo> && cd opentaig   # or: git pull, if already cloned
-git checkout claude/open-problems-database-site-23cro2  # or main, once merged
+git clone https://github.com/bact/opentaig.git && cd opentaig   # or: git pull, if already cloned
+git checkout main   # this pipeline is merged into main
 pip install -r requirements.txt
 export GITHUB_TOKEN=<a personal access token, no special scopes needed —
                       `gh auth token` works if you use the gh CLI>
@@ -110,7 +110,7 @@ Then, each curation run:
 
 ```bash
 python build.py                          # fetches the LIVE sheets directly (works fine locally)
-python curation/export_rq_context.py      # refresh rq_context.json from the real 98-question catalog
+python curation/export_rq_context.py      # refresh rq_context.json from the full live catalog
 python curation/search_repos.py --keyword "..." --keyword "..."   # step 3
 ```
 
