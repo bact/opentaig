@@ -6,7 +6,7 @@
 #
 site:
   title: "OpenTAIG"
-  tagline: "Open Problems in Technical AI Governance"
+  tagline: "Open source tools for problems in technical AI governance"
   description: >
     A community-maintained catalog of open technical problems in AI
     governance, mapped to relevant principles/regulations and linked to
