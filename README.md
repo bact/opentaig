@@ -2,8 +2,8 @@
 
 A community-maintained catalog of **open problems in technical AI governance**,
 each mapped to relevant principles/regulations and linked to open-source tools
-that help address it. Inspired by Stanford's
-[TAIG database](https://taig.stanford.edu/taig_database.html) and the paper
+that help address it.
+Inspired by [TAIG database](https://taig.stanford.edu/taig_database.html) and the paper
 [*Open Problems in Technical AI Governance*](https://arxiv.org/abs/2407.14981)
 (Reuel, Bucknall, et al., 2025).
 
@@ -14,7 +14,7 @@ in this repo.
 
 ## How it works
 
-```
+```text
 TAIG sheet  ---\
                 >-- (CSV export, fetched once per build) --> build.py --> site/ --> GitHub Pages
 OpenTAIG sheet -/
