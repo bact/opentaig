@@ -1,0 +1,231 @@
+#!/usr/bin/env python3
+"""Search GitHub for candidate open-source tools, by keyword.
+
+Uses the real GitHub REST Search API (``/search/repositories``), so it needs
+a ``GITHUB_TOKEN`` env var and normal, unrestricted network access to
+``api.github.com``. **This does not run inside a Claude Code session whose
+GitHub access is bound to a single repository** (you'll get a 403 with
+"sessions are bound to their configured repositories") -- run it on a
+machine/CI runner with its own token instead. See curation/README.md's
+"Running locally" section.
+
+Applies the same qualifiers as a manual GitHub search:
+
+    <keyword> stars:>{min_stars} pushed:>{cutoff_date} archived:false fork:false
+
+`min_stars` is kept deliberately low (default 19, i.e. 20+) so solid but
+lesser-known academic/research tools aren't filtered out just for having a
+small audience -- the point is excluding noise (empty scaffolds, abandoned
+forks), not popularity contests. `pushed_after_months` (default 12) excludes
+dead projects.
+
+That query already filters archived/forked/inactive/low-star repos
+server-side. A **second, local** filter then drops repos whose README is too
+short to be a real description (e.g. a 1-line README that just repeats the
+title) -- this needs a follow-up request per repo, so it's kept as a
+separate, cheaper-to-skip stage.
+
+Output (kept deliberately as two files, per the "keep the full list
+somewhere, filter before the mapping step" instruction):
+
+  - ``curation/state/search_raw/<keyword-slug>.json`` -- every repo the
+    GitHub query returned (already past the stars/pushed/archived/fork
+    filters), one file per keyword, for full auditability.
+  - ``curation/state/search_candidates.csv`` -- the above, deduplicated
+    across all keywords searched so far, MINUS repos with a too-short
+    README. This is what step "Map to RQ" should read from.
+
+Usage:
+
+    export GITHUB_TOKEN=ghp_...
+    python curation/search_repos.py --keyword "bias detection dataset audit" \\
+        --keyword "training data license scanner"
+
+Re-run with more/different --keyword values over time; --out-candidates is
+appended-and-deduplicated, not overwritten, so this can be run incrementally
+across many sessions.
+"""
+from __future__ import annotations
+
+import argparse
+import csv
+import datetime
+import json
+import re
+import sys
+import time
+from pathlib import Path
+
+import requests
+
+GITHUB_API = "https://api.github.com"
+DEFAULT_MIN_STARS = 19  # query is stars:>19, i.e. 20 or more
+DEFAULT_PUSHED_AFTER_MONTHS = 12
+DEFAULT_MIN_README_CHARS = 200  # excludes ~1-line "This is X." READMEs
+_slug_re = re.compile(r"[^a-z0-9]+")
+
+
+def slugify(text: str) -> str:
+    return _slug_re.sub("-", text.strip().lower()).strip("-") or "keyword"
+
+
+def cutoff_date(months: int) -> str:
+    # No dateutil dependency: step back by (roughly) `months` months using a
+    # fixed 30.44-day average -- fine for a coarse "still active" filter.
+    dt = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(days=months * 30.44)
+    return dt.strftime("%Y-%m-%d")
+
+
+def build_query(keyword: str, min_stars: int, pushed_after: str) -> str:
+    return f"{keyword} stars:>{min_stars} pushed:>{pushed_after} archived:false fork:false"
+
+
+def search_repositories(session: requests.Session, query: str, warnings: list) -> list:
+    """One page (up to 100) of GitHub's repository search, sorted by stars.
+    The search endpoint is rate-limited to 30 req/min authenticated -- fine
+    for the handful of keyword queries a single curation run makes."""
+    resp = session.get(
+        f"{GITHUB_API}/search/repositories",
+        params={"q": query, "sort": "stars", "order": "desc", "per_page": 100},
+        timeout=30,
+    )
+    if resp.status_code == 403 and "rate limit" in resp.text.lower():
+        reset = resp.headers.get("X-RateLimit-Reset")
+        warnings.append(f"rate limited on query {query!r}; resets at {reset}")
+        return []
+    resp.raise_for_status()
+    return resp.json().get("items", [])
+
+
+def fetch_readme_text(session: requests.Session, full_name: str, warnings: list) -> str:
+    """Plain-text README via the contents API's raw media type. Returns ''
+    on any failure (private/no README/rate limit) -- treated as "too short"
+    downstream, not a hard error, since a missing README is itself a signal
+    this repo isn't ready to recommend."""
+    try:
+        resp = session.get(
+            f"{GITHUB_API}/repos/{full_name}/readme",
+            headers={"Accept": "application/vnd.github.raw+json"},
+            timeout=30,
+        )
+        if resp.status_code != 200:
+            return ""
+        return resp.text
+    except requests.RequestException as e:
+        warnings.append(f"{full_name}: README fetch failed ({e})")
+        return ""
+
+
+def readme_content_length(readme_text: str) -> int:
+    """Strip markdown badges/images and bare links before measuring length,
+    so a README that's ALL badges (common auto-generated boilerplate) reads
+    as short, not padded out by badge markup."""
+    text = re.sub(r"!\[[^\]]*\]\([^)]*\)", "", readme_text)  # ![alt](url) images/badges
+    text = re.sub(r"\[!\[[^\]]*\]\([^)]*\)\]\([^)]*\)", "", text)  # linked badges
+    text = re.sub(r"^#+\s.*$", "", text, flags=re.MULTILINE)  # heading lines (often just the title)
+    return len(text.strip())
+
+
+def to_row(item: dict) -> dict:
+    license_info = item.get("license") or {}
+    return {
+        "full_name": item.get("full_name", ""),
+        "html_url": item.get("html_url", ""),
+        "description": (item.get("description") or "").strip(),
+        "stars": item.get("stargazers_count", 0),
+        "pushed_at": item.get("pushed_at", ""),
+        "language": item.get("language") or "",
+        "license_spdx_id": license_info.get("spdx_id") or "",
+        "homepage": item.get("homepage") or "",
+    }
+
+
+def load_existing_candidates(path: Path) -> dict:
+    if not path.exists():
+        return {}
+    with open(path, "r", encoding="utf-8") as f:
+        return {row["full_name"]: row for row in csv.DictReader(f)}
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--keyword", action="append", required=True, dest="keywords",
+                         help="search keyword/phrase; repeat --keyword for multiple")
+    parser.add_argument("--min-stars", type=int, default=DEFAULT_MIN_STARS)
+    parser.add_argument("--pushed-after-months", type=int, default=DEFAULT_PUSHED_AFTER_MONTHS)
+    parser.add_argument("--min-readme-chars", type=int, default=DEFAULT_MIN_README_CHARS)
+    parser.add_argument("--raw-dir", default="curation/state/search_raw")
+    parser.add_argument("--out-candidates", default="curation/state/search_candidates.csv")
+    parser.add_argument("--skip-readme-check", action="store_true",
+                         help="skip the per-repo README fetch (faster, but no README-length filtering)")
+    args = parser.parse_args()
+
+    import os
+    token = os.environ.get("GITHUB_TOKEN")
+    if not token:
+        raise SystemExit(
+            "GITHUB_TOKEN is not set. This script needs a personal access token with "
+            "public read access (no special scopes needed) -- see curation/README.md."
+        )
+
+    session = requests.Session()
+    session.headers.update({
+        "Authorization": f"Bearer {token}",
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+    })
+
+    pushed_after = cutoff_date(args.pushed_after_months)
+    warnings: list = []
+    raw_dir = Path(args.raw_dir)
+    raw_dir.mkdir(parents=True, exist_ok=True)
+
+    candidates = load_existing_candidates(Path(args.out_candidates))
+    seen_before = set(candidates)
+
+    for keyword in args.keywords:
+        query = build_query(keyword, args.min_stars, pushed_after)
+        print(f"[search] {query!r}")
+        items = search_repositories(session, query, warnings)
+        rows = [to_row(item) for item in items]
+
+        raw_path = raw_dir / f"{slugify(keyword)}.json"
+        with open(raw_path, "w", encoding="utf-8") as f:
+            json.dump({"keyword": keyword, "query": query, "count": len(rows), "repos": rows}, f, indent=2)
+        print(f"  -> {len(rows)} repo(s), full list saved to {raw_path}")
+
+        kept = 0
+        for row in rows:
+            full_name = row["full_name"]
+            if full_name in candidates:
+                continue  # already a candidate from an earlier keyword/run
+            if not args.skip_readme_check:
+                readme = fetch_readme_text(session, full_name, warnings)
+                length = readme_content_length(readme)
+                if length < args.min_readme_chars:
+                    continue
+                time.sleep(0.2)  # be polite to the contents API between repos
+            row["found_via_keyword"] = keyword
+            candidates[full_name] = row
+            kept += 1
+        print(f"  -> {kept} new candidate(s) passed the README-length filter")
+
+    out_path = Path(args.out_candidates)
+    with open(out_path, "w", encoding="utf-8", newline="") as f:
+        fieldnames = ["full_name", "html_url", "description", "stars", "pushed_at",
+                      "language", "license_spdx_id", "homepage", "found_via_keyword"]
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        for row in candidates.values():
+            writer.writerow({k: row.get(k, "") for k in fieldnames})
+
+    new_count = len(candidates) - len(seen_before)
+    print(f"\nwrote {len(candidates)} total candidate(s) ({new_count} new this run) to {out_path}")
+    if warnings:
+        print(f"\n{len(warnings)} warning(s):", file=sys.stderr)
+        for w in warnings:
+            print(f"  - {w}", file=sys.stderr)
+
+
+if __name__ == "__main__":
+    main()
