@@ -9,11 +9,10 @@ site:
   title: "OpenTAIG"
   tagline: "Open source tools for problems in technical AI governance"
   description: >
-    A community-maintained catalog of open technical problems in AI
-    governance, mapped to relevant principles/regulations and linked to
-    open-source tools that help address them. Inspired by the Stanford
-    TAIG database (taig.stanford.edu) and the paper "Open Problems in
-    Technical AI Governance" (Reuel, Bucknall, et al., 2025).
+    A community-maintained catalog of open problems in technical AI governance
+    (Reuel, Bucknall, et al., 2025),
+    mapped to relevant principles/regulations and linked to
+    open-source tools that help address them.
   # If served from a GitHub Pages project site (https://<user>.github.io/<repo>/),
   # set this to "/<repo>" so internal links resolve correctly. Leave "" for a
   # user/org root site (https://<user>.github.io/) or a custom domain.
