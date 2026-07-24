@@ -1,4 +1,4 @@
-id,framework,name,summary,url
+id,framework_id,name,summary,url
 rgaf-safe,rgaf,"Robust, Reliable & Safe",,
 rgaf-transparent,rgaf,Transparent & Explainable,,
 rgaf-accountable,rgaf,Accountable & Rectifiable,,

@@ -1,0 +1,6 @@
+id,name,fullname,summary,homepage,source,group
+rgaf,Responsible Generative AI Framework,Responsible Generative AI Framework,,https://lfaidata.foundation/blog/2025/03/19/responsible-generative-ai-framework-rgaf-version-0-9-now-available/,https://lfaidata.foundation/wp-content/uploads/sites/3/2025/03/lfn_wp_rgaf_032025a.pdf,The Linux Foundation
+euaiact,EU AI Act,Artificial Intelligence Act,,https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai,https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689,European Union
+unescoai,UNESCO Recommendation on the Ethics of AI,Recommendation on the Ethics of Artificial Intelligence,,https://www.unesco.org/en/artificial-intelligence/recommendation-ethics,,UNESCO
+coeai,CoE Framework Convention on AI,"Council of Europe Framework Convention on Artificial Intelligence and Human Rights, Democracy and the Rule of Law",,https://www.coe.int/en/web/artificial-intelligence/the-framework-convention-on-artificial-intelligence,https://rm.coe.int/1680afae3c,Council of Europe
+notwired,Not Wired Framework,A framework tab row with no matching config.yaml frameworks entry -- orphan test,,https://example.org,,Example Org
