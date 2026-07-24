@@ -7,6 +7,13 @@
 {% for fw in frameworks %}
 <section class="framework-group">
   <h2>{{ fw.label }} {% if fw.doc_url %}<a class="doc-link" href="{{ fw.doc_url }}">(source)</a>{% endif %}</h2>
+  {% if fw.fullname and fw.fullname != fw.label or fw.group %}
+  <p class="framework-subtitle">
+    {% if fw.fullname and fw.fullname != fw.label %}{{ fw.fullname }}{% endif %}
+    {% if fw.fullname and fw.fullname != fw.label and fw.group %} &middot; {% endif %}
+    {% if fw.group %}{{ fw.group }}{% endif %}
+  </p>
+  {% endif %}
   {% set terms = frameworks_index.get(fw.key, {}) %}
   {% if terms %}
   <ul class="term-list">

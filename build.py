@@ -63,6 +63,8 @@ class Tool:
     source: str = ""
     documentation: str = ""
     funding: str = ""
+    implement: list = dataclasses.field(default_factory=list)  # list[Term]
+    eval: list = dataclasses.field(default_factory=list)  # list[Term]
 
 
 @dataclasses.dataclass
@@ -86,7 +88,8 @@ class Problem:
     mappings: dict  # facet_key -> list[Term] (5 frameworks) or list[str] ("expertise")
     existing_work: list  # list[str]
     new_work: list  # list[str]
-    tools: list  # list[Tool]
+    tools_implement: list  # list[Tool]
+    tools_eval: list  # list[Tool]
     search_text: str  # precomputed lowercased text for the client-side search box
     order: int
 
@@ -233,7 +236,10 @@ def safe_id_for_path(tool_id: str) -> str:
 # Build tool catalog
 # --------------------------------------------------------------------------
 
-def build_tool_catalog(rows: list, colmap: dict, warnings: list) -> dict:
+def build_tool_catalog(rows: list, colmap: dict, terms_catalog: dict, warnings: list) -> dict:
+    """Return {id: Tool}. `implement`/`eval` cells hold semicolon-separated
+    term ids (from the terms tab) resolved against `terms_catalog` -- same
+    warn-on-unknown-id pattern used for the map tab's framework columns."""
     catalog = {}
     for i, row in enumerate(rows):
         raw_id = (row.get(colmap["id"]) or "").strip()
@@ -241,6 +247,20 @@ def build_tool_catalog(rows: list, colmap: dict, warnings: list) -> dict:
             continue
         if raw_id in catalog:
             warnings.append(f"tools row {i + 2}: duplicate tool id {raw_id!r}, overwriting earlier entry")
+
+        def resolve_terms(column_key: str) -> list:
+            terms = []
+            for tid in parse_id_list(row.get(colmap[column_key])):
+                term = terms_catalog.get(tid)
+                if term is None:
+                    warnings.append(
+                        f"tools row {i + 2} ({raw_id!r}): term id {tid!r} referenced in "
+                        f"[{colmap[column_key]}] not found in the terms tab"
+                    )
+                    continue
+                terms.append(term)
+            return terms
+
         catalog[raw_id] = Tool(
             id=raw_id,
             slug=safe_id_for_path(raw_id),
@@ -252,6 +272,8 @@ def build_tool_catalog(rows: list, colmap: dict, warnings: list) -> dict:
             source=(row.get(colmap["source"]) or "").strip(),
             documentation=(row.get(colmap["documentation"]) or "").strip(),
             funding=(row.get(colmap["funding"]) or "").strip(),
+            implement=resolve_terms("implement"),
+            eval=resolve_terms("eval"),
         )
     return catalog
 
@@ -283,15 +305,78 @@ def build_terms_catalog(rows: list, colmap: dict, warnings: list) -> dict:
 
 
 # --------------------------------------------------------------------------
+# Build framework catalog (descriptive metadata, one row per framework key)
+# --------------------------------------------------------------------------
+
+def build_framework_catalog(rows: list, colmap: dict, warnings: list) -> dict:
+    """Return {id: {name, fullname, summary, homepage, source, group}} from
+    the "framework" tab -- mirrors build_tool_catalog/build_terms_catalog
+    (flat dict by id, duplicate-id warning)."""
+    catalog = {}
+    for i, row in enumerate(rows):
+        raw_id = (row.get(colmap["id"]) or "").strip()
+        if not raw_id:
+            continue
+        if raw_id in catalog:
+            warnings.append(f"framework row {i + 2}: duplicate framework id {raw_id!r}, overwriting earlier entry")
+        catalog[raw_id] = {
+            "name": (row.get(colmap["name"]) or "").strip(),
+            "fullname": (row.get(colmap["fullname"]) or "").strip(),
+            "summary": (row.get(colmap["summary"]) or "").strip(),
+            "homepage": (row.get(colmap["homepage"]) or "").strip(),
+            "source": (row.get(colmap["source"]) or "").strip(),
+            "group": (row.get(colmap["group"]) or "").strip(),
+        }
+    return catalog
+
+
+def merge_framework_defs(frameworks_config: list, framework_catalog: dict, warnings: list) -> list:
+    """Merge each `frameworks:` config entry (key, column -- the build
+    wiring) with its descriptive metadata from the "framework" tab. `label`
+    is the tab's `name`; `doc_url` is the tab's `source`, falling back to
+    `homepage` if `source` is blank (some frameworks, e.g. unescoai, only
+    have a homepage on file)."""
+    merged = []
+    for fw in frameworks_config:
+        key = fw["key"]
+        info = framework_catalog.get(key)
+        if info is None:
+            warnings.append(
+                f"framework {key!r}: no matching row in the framework tab "
+                f"(falling back to the key itself as label, no doc_url)"
+            )
+            info = {"name": "", "fullname": "", "summary": "", "homepage": "", "source": "", "group": ""}
+        merged.append(
+            {
+                "key": key,
+                "column": fw["column"],
+                "label": info["name"] or key,
+                "fullname": info["fullname"],
+                "summary": info["summary"],
+                "group": info["group"],
+                "doc_url": info["source"] or info["homepage"],
+            }
+        )
+    configured_keys = {fw["key"] for fw in frameworks_config}
+    for fw_id in framework_catalog:
+        if fw_id not in configured_keys:
+            warnings.append(
+                f"framework tab: id {fw_id!r} has no matching entry in config.yaml's "
+                f"`frameworks:` list (orphaned metadata, not wired to any mapping column)"
+            )
+    return merged
+
+
+# --------------------------------------------------------------------------
 # Build mapping index (RQ_No -> our annotations)
 # --------------------------------------------------------------------------
 
 def build_mapping_index(rows: list, colmap: dict, framework_defs: list, warnings: list) -> dict:
-    """Return {rq_no: {fw_key: [term_ids...], ..., "tool_ids": [...]}} from
-    the mapping tab. The mapping tab's own question-text column is
-    intentionally ignored. Cells are plain id lists (';'-separated) --
-    resolution against the terms/tools catalogs happens in build_problems,
-    same as tool ids already work."""
+    """Return {rq_no: {fw_key: [term_ids...], ..., "tool_ids_implement": [...],
+    "tool_ids_eval": [...]}} from the mapping tab. The mapping tab's own
+    question-text column is intentionally ignored. Cells are plain id lists
+    (';'-separated) -- resolution against the terms/tools catalogs happens
+    in build_problems."""
     index = {}
     for i, row in enumerate(rows):
         rq_no = (row.get(colmap["rq_no"]) or "").strip()
@@ -299,7 +384,8 @@ def build_mapping_index(rows: list, colmap: dict, framework_defs: list, warnings
             # A wholly blank trailing row is common in exports; only warn if the
             # row actually carries mapping content that will be silently lost.
             has_content = any((row.get(fw["column"]) or "").strip() for fw in framework_defs) or \
-                (row.get(colmap["tools"]) or "").strip()
+                (row.get(colmap["tools_implement"]) or "").strip() or \
+                (row.get(colmap["tools_eval"]) or "").strip()
             if has_content:
                 warnings.append(f"mapping row {i + 2}: blank RQ_No but has mapping content; row ignored")
             continue
@@ -308,7 +394,8 @@ def build_mapping_index(rows: list, colmap: dict, framework_defs: list, warnings
         entry = {}
         for fw in framework_defs:
             entry[fw["key"]] = parse_id_list(row.get(fw["column"]))
-        entry["tool_ids"] = parse_id_list(row.get(colmap["tools"]))
+        entry["tool_ids_implement"] = parse_id_list(row.get(colmap["tools_implement"]))
+        entry["tool_ids_eval"] = parse_id_list(row.get(colmap["tools_eval"]))
         index[rq_no] = entry
     return index
 
@@ -373,17 +460,21 @@ def build_problems(
             mappings[fw_key] = terms
         mappings[expertise_key] = expertise
 
-        tool_ids = (mapping or {}).get("tool_ids", [])
-        tools = []
-        for tid in tool_ids:
-            tool = tool_catalog.get(tid)
-            if tool is None:
-                warnings.append(
-                    f"RQ {rq_no}: tool id {tid!r} not found in the Tools tab "
-                    f"(check for typos or a missing catalog entry)"
-                )
-                continue
-            tools.append(tool)
+        def resolve_tools(role: str) -> list:
+            resolved = []
+            for tid in (mapping or {}).get(f"tool_ids_{role}", []):
+                tool = tool_catalog.get(tid)
+                if tool is None:
+                    warnings.append(
+                        f"RQ {rq_no}: tool id {tid!r} referenced in [tools_{role}] not found "
+                        f"in the Tools tab (check for typos or a missing catalog entry)"
+                    )
+                    continue
+                resolved.append(tool)
+            return resolved
+
+        tools_implement = resolve_tools("implement")
+        tools_eval = resolve_tools("eval")
 
         slug = stable_slug(question)
         if slug in seen_slugs:
@@ -394,7 +485,8 @@ def build_problems(
         for fw in framework_defs:
             search_parts.extend(t.name for t in mappings[fw["key"]])
         search_parts.extend(expertise)
-        search_parts.extend(t.name for t in tools)
+        search_parts.extend(t.name for t in tools_implement)
+        search_parts.extend(t.name for t in tools_eval)
         search_text = " ".join(search_parts).lower()
 
         problems.append(
@@ -409,7 +501,8 @@ def build_problems(
                 mappings=mappings,
                 existing_work=existing_work,
                 new_work=new_work,
-                tools=tools,
+                tools_implement=tools_implement,
+                tools_eval=tools_eval,
                 search_text=search_text,
                 order=i,
             )
@@ -474,9 +567,10 @@ def group_by_taxonomy(problems: list, capacities_order: list, targets_order: lis
 def build_tools_index(problems: list, tool_catalog: dict) -> list:
     usage = {tid: [] for tid in tool_catalog}
     for p in problems:
-        for t in p.tools:
+        for t in list(p.tools_implement) + list(p.tools_eval):
             usage.setdefault(t.id, [])
-            usage[t.id].append(p)
+            if p not in usage[t.id]:
+                usage[t.id].append(p)
     entries = [{"tool": tool, "problems": usage.get(tid, [])} for tid, tool in tool_catalog.items()]
     entries.sort(key=lambda e: e["tool"].name.lower())
     return entries
@@ -525,7 +619,8 @@ def problem_to_public_dict(p: Problem, expertise_key: str) -> dict:
         "mappings": mappings_out,
         "existing_work": p.existing_work,
         "new_work": p.new_work,
-        "tools": [{"id": t.id, "name": t.name, "homepage": t.homepage} for t in p.tools],
+        "tools_implement": [{"id": t.id, "name": t.name, "homepage": t.homepage} for t in p.tools_implement],
+        "tools_eval": [{"id": t.id, "name": t.name, "homepage": t.homepage} for t in p.tools_eval],
     }
 
 
@@ -658,20 +753,23 @@ def main() -> None:
     mapping_csv = fetch_source(config["data"]["mapping"], "mapping", warnings)
     tools_csv = fetch_source(config["data"]["tools"], "tools", warnings)
     terms_csv = fetch_source(config["data"]["terms"], "terms", warnings)
+    framework_csv = fetch_source(config["data"]["framework"], "framework", warnings)
 
     taig_rows = parse_csv_text(taig_csv)
     mapping_rows = parse_csv_text(mapping_csv)
     tools_rows = parse_csv_text(tools_csv)
     terms_rows = parse_csv_text(terms_csv)
+    framework_rows = parse_csv_text(framework_csv)
 
     colmap = config["columns"]
-    framework_defs = config["frameworks"]
+    framework_catalog = build_framework_catalog(framework_rows, colmap["framework"], warnings)
+    framework_defs = merge_framework_defs(config["frameworks"], framework_catalog, warnings)
     expertise_def = config["expertise"]
     expertise_key = expertise_def["key"]
     facet_defs = list(framework_defs) + [expertise_def]
 
-    tool_catalog = build_tool_catalog(tools_rows, colmap["tools"], warnings)
     terms_catalog = build_terms_catalog(terms_rows, colmap["terms"], warnings)
+    tool_catalog = build_tool_catalog(tools_rows, colmap["tools"], terms_catalog, warnings)
     mapping_index = build_mapping_index(mapping_rows, colmap["mapping"], framework_defs, warnings)
 
     problems = build_problems(

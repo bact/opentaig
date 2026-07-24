@@ -35,6 +35,10 @@ data:
     sheet_id: "unused-when-file-is-set"
     gid: 2
     file: "tests/fixtures/terms.csv"
+  framework:
+    sheet_id: "unused-when-file-is-set"
+    gid: 3
+    file: "tests/fixtures/framework.csv"
 
 columns:
   taig:
@@ -49,7 +53,8 @@ columns:
     new_work: "New work (since publication)"
   mapping:
     rq_no: "RQ_No"
-    tools: "Tools"
+    tools_implement: "tools_implement"
+    tools_eval: "tools_eval"
   tools:
     id: "id"
     tool_type: "tool_type"
@@ -60,34 +65,34 @@ columns:
     source: "source"
     documentation: "documentation"
     funding: "funding"
+    implement: "implement"
+    eval: "eval"
   terms:
     id: "id"
-    framework: "framework"
+    framework: "framework_id"
     name: "name"
     summary: "summary"
     url: "url"
+  framework:
+    id: "id"
+    name: "name"
+    fullname: "fullname"
+    summary: "summary"
+    homepage: "homepage"
+    source: "source"
+    group: "group"
 
 frameworks:
   - key: rgaf
     column: "RGAF"
-    label: "LF AI & Data RGAF"
-    doc_url: "https://lfaidata.foundation/rgaf/"
   - key: euaiact
     column: "EUAIAct"
-    label: "EU AI Act"
-    doc_url: "https://artificialintelligenceact.eu/"
   - key: unescoai
     column: "UNESCOAI"
-    label: "UNESCO Ethics of AI"
-    doc_url: "https://www.unesco.org/en/artificial-intelligence/recommendation-ethics"
   - key: aseanai
     column: "ASEANAI"
-    label: "ASEAN AI Governance & Ethics"
-    doc_url: "https://asean.org/wp-content/uploads/2024/02/ASEAN-Guide-on-AI-Governance-and-Ethics_beautified_16-February-2024_pdf.pdf"
   - key: coeai
     column: "CoEAI"
-    label: "CoE Framework Convention on AI"
-    doc_url: "https://rm.coe.int/1680afae3c"
 
 expertise:
   key: expertise

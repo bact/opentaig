@@ -43,10 +43,26 @@
   <p class="empty-note">No framework mappings recorded yet for this question.</p>
   {% endif %}
 
-  <h2>Open-source tools</h2>
-  {% if problem.tools %}
+  <h2>Tools to help implement a solution</h2>
+  {% if problem.tools_implement %}
   <ul class="tool-detail-list">
-    {% for t in problem.tools %}
+    {% for t in problem.tools_implement %}
+    <li>
+      <a href="{{ root }}tools/{{ t.slug }}.html">{{ t.name }}</a>
+      {% if t.tool_type %}<span class="chip chip-tool-type">{{ t.tool_type }}</span>{% endif %}
+      {% if t.license %}<span class="chip chip-license">{{ t.license }}</span>{% endif %}
+      {% if t.summary %}<p class="tool-summary">{{ t.summary }}</p>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="empty-note">No open-source tool linked yet. Know one? Add it to the mapping sheet.</p>
+  {% endif %}
+
+  <h2>Tools to help evaluate or audit a solution</h2>
+  {% if problem.tools_eval %}
+  <ul class="tool-detail-list">
+    {% for t in problem.tools_eval %}
     <li>
       <a href="{{ root }}tools/{{ t.slug }}.html">{{ t.name }}</a>
       {% if t.tool_type %}<span class="chip chip-tool-type">{{ t.tool_type }}</span>{% endif %}

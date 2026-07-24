@@ -1,7 +1,7 @@
 <article class="problem-card"
   data-capacity="{{ p.capacity }}"
   data-target="{{ p.target }}"
-  data-has-tool="{{ '1' if p.tools else '0' }}"
+  data-has-tool="{{ '1' if (p.tools_implement or p.tools_eval) else '0' }}"
   data-search="{{ p.search_text }}"
   {% for fw in frameworks %}
   data-fw-{{ fw.key }}="|{{ p.mappings.get(fw.key, []) | map(attribute='name') | join('|') }}|"
@@ -22,10 +22,18 @@
     <span class="chip chip-expertise" title="{{ expertise.label }}">{{ term }}</span>
     {% endfor %}
   </div>
-  {% if p.tools %}
+  {% if p.tools_implement %}
   <div class="tool-row">
-    <span class="tool-row-label">Tools:</span>
-    {% for t in p.tools %}
+    <span class="tool-row-label">Implement:</span>
+    {% for t in p.tools_implement %}
+    <a class="tool-link" href="{{ root }}tools/{{ t.slug }}.html" title="{{ t.tool_type }}">{{ t.name }}</a>{{ ", " if not loop.last }}
+    {% endfor %}
+  </div>
+  {% endif %}
+  {% if p.tools_eval %}
+  <div class="tool-row">
+    <span class="tool-row-label">Evaluate:</span>
+    {% for t in p.tools_eval %}
     <a class="tool-link" href="{{ root }}tools/{{ t.slug }}.html" title="{{ t.tool_type }}">{{ t.name }}</a>{{ ", " if not loop.last }}
     {% endfor %}
   </div>
