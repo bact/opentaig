@@ -1,62 +1,89 @@
-# Tool curation working files
+# Tool curation
 
-This directory holds **review artifacts only** — nothing here is read by
-`build.py` or deployed with the site. This session has no write access to
-Google Sheets, so every file here is meant to be reviewed and then pasted
-into the live `OpenTAIG` sheet by hand, the same way every prior data
-migration in this project has worked.
+Working files for **discovering open-source tools and mapping them to the
+open problems (research questions) they help address.**
+
+Nothing in this directory is read by `build.py` or deployed with the site.
+The Google Sheets connector is read-only, so — as with every prior data
+change in this project — the output here is **candidate CSVs for human
+review**, which a person then pastes into the live `OpenTAIG` sheet. That
+review step is also the quality gate against false positives.
+
+## The one rule that shapes everything: the research question is the spine
+
+Tools map **directly** to research questions. Terms/principles map
+**directly** to research questions. Both hang off the `RQ_No` independently
+— a tool is **never** attached to a question *because* they happen to share
+a principle. Concretely, discovery decides "does this tool help address
+question _N_?" by reading the tool's README / linked paper and comparing it
+to question _N_'s own text — not by matching principle tags.
+
+The schema already supports this: the `map` tab's `tools_implement` /
+`tools_eval` columns are per-`RQ_No` tool-id lists (which tools help
+*implement* vs. *evaluate/audit* a solution to that question).
+
+> An earlier version of this directory tried to derive `RQ ↔ tool` mappings
+> from *shared principle ids* (term overlap). That is exactly the
+> indirection the rule above rules out, and it was too noisy to be useful.
+> Those files (`generate_candidate_mapping.py`, `candidate_mapping*.csv`,
+> `live_map_snapshot.csv`) have been removed.
+
+## Pipeline
+
+Deterministic work lives in Python scripts (no model needed); only the
+judgment steps need a model. See `../` plan notes for the model-tiering
+rationale (scripts = no model; Sonnet for orchestration/scoping/pre-filter;
+Opus, as an isolated subagent on a compact payload, only for the final
+RQ-mapping judgment).
+
+1. **Export RQ context** — `python build.py && python curation/export_rq_context.py`
+   → `rq_context.json` (git-ignored, regenerated each run): every research
+   question with its text, taxonomy, and the tool ids already mapped to it.
+   This is the spine the agent reads so it maps new tools directly to
+   questions and never re-proposes an existing one.
+2. **Scope** *(agent, Sonnet)* — draft/refine search keywords per problem
+   area for a bounded slice of questions.
+3. **Search** *(script, planned: `search_repos.py`)* — run keywords against
+   the GitHub search API (+ the agent's built-in web search for
+   blog/paper-surfaced tools); collect candidate repos.
+4. **Extract** *(script + agent)* — fetch each candidate's README + host
+   metadata (name, license, homepage, source); the agent distils a one-line
+   `summary` and notes any linked paper. Leave `license` blank rather than
+   guess.
+5. **Map to RQ** *(agent, Opus subagent — the core step)* — read the
+   README/paper and decide which `RQ_No`(s) it genuinely helps address, and
+   whether each is `implement` or `eval`, with a one-line rationale per pair.
+6. **Dedup** *(script)* — drop anything already in `tools` or in the
+   seen-repos log; record verdicts so future runs don't repeat.
+7. **Emit** *(script)* — two review CSVs in exact live-tab column order:
+   `candidate_tools.csv` (new `tools` rows) and `candidate_map_updates.csv`
+   (`RQ_No, tool_id, role, rationale`, one row per pair).
+8. **Review & merge** *(human)* — accept/edit, then paste accepted rows into
+   the `tools` and `map` tabs. **Merge, don't overwrite** — some `RQ_No`
+   rows already have `tools_implement`/`tools_eval` values that must be
+   preserved. The next site build picks up the changes.
 
 ## Files
 
+- **`export_rq_context.py`** — built. Reshapes a local `site/data.json`
+  into `rq_context.json`. Deterministic; no model, no network.
 - **`candidate_tools_from_rgaf.csv`** — the 32 tools from the sheet's
-  `tools-rgaf` tab (itself a curation-only staging tab seeded from the LF
-  AI & Data community blog post ["Putting RGAF to Work"](https://lfaidata.foundation/communityblog/2026/04/22/putting-rgaf-to-work-build-and-audit-responsible-ai-with-open-source/)),
-  reformatted to the `tools` tab's exact column order. No id collides with
-  the 3 rows already live in `tools` (`scancode-toolkit`, `spdx3`,
-  `croissant`). **To use:** review, then append these rows to the live
-  `tools` tab.
+  `tools-rgaf` staging tab (seeded from the LF AI & Data blog post
+  ["Putting RGAF to Work"](https://lfaidata.foundation/communityblog/2026/04/22/putting-rgaf-to-work-build-and-audit-responsible-ai-with-open-source/)),
+  in the `tools` tab's exact column order. No id collides with the rows
+  already live in `tools`. **To use:** review, then append to the `tools`
+  tab. (These rows carry `implement`/`eval` *term* tags from the source;
+  those are descriptive metadata only — they are **not** how the tools get
+  mapped to questions.)
+- **`rq_context.json`** — generated (git-ignored), see step 1.
+- *Planned:* `search_repos.py`, `keywords.yaml`, `state/seen_repos.csv`,
+  `state/search_log.csv`, `candidate_tools.csv`, `candidate_map_updates.csv`.
 
-- **`live_map_snapshot.csv`** — a point-in-time snapshot (fetched this
-  session) of the live `map` tab's 5 framework columns only (`RQ_No`,
-  `RGAF`, `EUAIAct`, `UNESCOAI`, `ASEANAI`, `CoEAI`) — the input to the
-  script below. Not authoritative; re-fetch before re-running if the sheet
-  has changed since.
+## Automation (later)
 
-- **`generate_candidate_mapping.py`** — intersects each candidate tool's
-  `implement`/`eval` term ids against each RQ's mapped term ids (across
-  all 5 frameworks, not just RGAF, so it keeps working if a future tool
-  declares e.g. an EU AI Act article). Produces:
-  - `candidate_mapping.csv` — tidy form, one row per
-    `(RQ_No, tool_id, role, shared_term)`. This is the source of truth —
-    it shows *which* term justified each suggestion.
-  - `candidate_mapping_by_rq.csv` — the same data pivoted to one row per
-    `RQ_No` with semicolon-joined tool lists, easier to scan.
-
-  Re-run with `python curation/generate_candidate_mapping.py` after
-  updating either input CSV.
-
-## Important caveat: this is a rough shortlist, not an answer
-
-The current `tools-rgaf` seed only tags tools against the 9 broad RGAF
-principles (e.g. `rgaf-safe`, `rgaf-transparent`) — there's no finer
-granularity yet. Since many RQs and many tools all share the same handful
-of broad principles, the overlap signal is **noisy**: `candidate_mapping.csv`
-has 1,462 rows across 83 RQs and 32 tools, and several RQs get 10+
-candidate tools per role. Term overlap means "plausibly relevant," not
-"definitely relevant" — **read `candidate_mapping_by_rq.csv` and
-hand-pick the tools that actually fit each question** before pasting
-anything into the live `map` tab's `tools_implement`/`tools_eval` columns.
-Don't paste either file in wholesale.
-
-When pasting, **merge, don't overwrite**: some `RQ_No` rows already have
-values in `tools_implement`/`tools_eval` (e.g. RQ 3 already has
-`scancode-toolkit` in `tools_eval`) that must be preserved.
-
-## Deferred (not built here)
-
-Broader web search/crawling for tools beyond the two named seed sources
-(the LF AI & Data post, already in `tools-rgaf`; OECD's AI tools catalogue
-at oecd.ai/en/catalogue/tools, not yet pulled in — this sandbox's network
-policy blocks that domain) stays out of scope for this pass. A future
-pass could also add finer-grained (non-RGAF) term tags to more tools to
-sharpen the overlap signal above.
+Once the on-demand pipeline is proven on a problem area, steps 1–7 can be
+wrapped in a scheduled agent that opens a candidate PR each period —
+preferably a scheduled Routine in the Claude environment (no repo secret
+needed), or a GitHub Actions + Claude Code Action job (needs an
+`ANTHROPIC_API_KEY` secret, open-internet runner). Each run should handle a
+bounded slice of questions to cap cost and keep the review PR small.
