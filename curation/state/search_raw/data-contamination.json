@@ -1,0 +1,97 @@
+{
+  "keyword": "data contamination",
+  "query": "data contamination stars:>19 pushed:>2025-07-24 archived:false fork:false",
+  "count": 9,
+  "repos": [
+    {
+      "full_name": "SeekingDream/Static-to-Dynamic-LLMEval",
+      "html_url": "https://github.com/SeekingDream/Static-to-Dynamic-LLMEval",
+      "description": "The official GitHub repository of the paper \"Recent advances in large language model benchmarks against data contamination: From static to dynamic evaluation\"",
+      "stars": 500,
+      "pushed_at": "2026-03-03T15:53:10Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": "https://arxiv.org/abs/2502.17521"
+    },
+    {
+      "full_name": "SeekingDream/DyCodeEval",
+      "html_url": "https://github.com/SeekingDream/DyCodeEval",
+      "description": "Official repository of the ICML2025 paper \u201cDynamic Benchmarking of Reasoning Capabilities in Code Large Language Models Under Data Contamination\u201d",
+      "stars": 226,
+      "pushed_at": "2025-12-23T14:50:22Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://arxiv.org/abs/2503.04149"
+    },
+    {
+      "full_name": "benjjneb/decontam",
+      "html_url": "https://github.com/benjjneb/decontam",
+      "description": "Simple statistical identification and removal of contaminants in marker-gene and metagenomics sequencing data",
+      "stars": 174,
+      "pushed_at": "2025-09-04T21:35:55Z",
+      "language": "HTML",
+      "license_spdx_id": "",
+      "homepage": "https://benjjneb.github.io/decontam/"
+    },
+    {
+      "full_name": "lyy1994/awesome-data-contamination",
+      "html_url": "https://github.com/lyy1994/awesome-data-contamination",
+      "description": "The Paper List on Data Contamination for Large Language Models Evaluation.",
+      "stars": 117,
+      "pushed_at": "2026-06-02T03:50:23Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "StevenWingett/FastQ-Screen",
+      "html_url": "https://github.com/StevenWingett/FastQ-Screen",
+      "description": "Detecting contamination in NGS data and multi-species analysis",
+      "stars": 87,
+      "pushed_at": "2025-11-07T14:49:25Z",
+      "language": "HTML",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://stevenwingett.github.io/FastQ-Screen/"
+    },
+    {
+      "full_name": "Okes2024/Data-driven-assessment-of-soil-heavy-metal-contamination-Rivers-State-Nigeria-using-multivariate-",
+      "html_url": "https://github.com/Okes2024/Data-driven-assessment-of-soil-heavy-metal-contamination-Rivers-State-Nigeria-using-multivariate-",
+      "description": "This study leverages data science methodologies to quantitatively assess soil contamination in Joinkrama, Ahoada West LGA, Rivers State, Nigeria. Employing a structured geospatial and statistical pipeline, soil samples were collected across stratified",
+      "stars": 59,
+      "pushed_at": "2025-11-24T14:57:46Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://hal.science/hal-05196742/"
+    },
+    {
+      "full_name": "Dogiye12/Heavy-Metal-Prediction-in-Groundwater",
+      "html_url": "https://github.com/Dogiye12/Heavy-Metal-Prediction-in-Groundwater",
+      "description": "Heavy-Metal-Prediction-in-Groundwater generates synthetic groundwater quality data and applies machine learning to predict heavy metal concentrations (Pb, As). It enables modeling, evaluation, and analysis of contamination risks with exportable datasets and models, designed for research, teaching, and demonstration purposes.",
+      "stars": 47,
+      "pushed_at": "2025-08-25T11:58:53Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "metagenopolis/CroCoDeEL",
+      "html_url": "https://github.com/metagenopolis/CroCoDeEL",
+      "description": "CroCoDeEL is a tool that detects cross-sample contamination in shotgun metagenomic data",
+      "stars": 31,
+      "pushed_at": "2026-06-12T17:34:53Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "Leey21/data-lineage",
+      "html_url": "https://github.com/Leey21/data-lineage",
+      "description": "Trace origins, shared sources, and contamination risk",
+      "stars": 25,
+      "pushed_at": "2026-05-27T06:04:18Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+full_name,verdict,timestamp_utc,note
+fossology/fossology,accept,2026-07-24T17:43:42+00:00,
+anchore/grant,accept,2026-07-24T17:43:42+00:00,
+getprovenant/provenant,accept,2026-07-24T17:43:42+00:00,
+Samsung/LPVS,accept,2026-07-24T17:43:42+00:00,
+SecObserve/SecObserve,reject,2026-07-24T17:43:42+00:00,"Primarily a vulnerability-management dashboard that ingests and displays third-party scanner output; its license 'management' is thin reporting rather than actual license detection/collection or cross-source reconciliation, so it only has superficial overlap with RQ2/RQ3."
+americanexpress/earlybird,accept,2026-07-24T17:43:42+00:00,
+DataFog/datafog-python,accept,2026-07-24T17:43:42+00:00,
+awslabs/ferret-scan,accept,2026-07-24T17:43:42+00:00,
+kadir/cloakrs,accept,2026-07-24T17:43:42+00:00,
+PovertyAction/PII_detection,accept,2026-07-24T17:43:42+00:00,
+sam247/openredaction,accept,2026-07-24T17:43:42+00:00,
+GoogleCloudPlatform/dlp-pdf-redaction,accept,2026-07-24T17:43:42+00:00,
+karant-dev/AutoRedact,accept,2026-07-24T17:43:42+00:00,
+itext/itext-pdfsweep-java,accept,2026-07-24T17:43:42+00:00,
+taylorwilsdon/reddacted,reject,2026-07-24T17:43:42+00:00,Narrow personal-privacy utility for auditing and bulk-deleting your own Reddit comment history via the Reddit API; it is not a general dataset-curation tool for identifying or removing problematic data from training corpora.
+microsoft/responsible-ai-toolbox-privacy,reject,2026-07-24T17:43:42+00:00,"It statistically estimates differential-privacy epsilon from the confusion matrix of a membership-inference attack; this is privacy-budget accounting/auditing, not identification/removal of problematic data, license handling, or eval-time contamination detection, so it does not fit any of RQ1-6."
+IntelLabs/atlas-cli,accept,2026-07-24T17:43:42+00:00,
+Leey21/data-lineage,accept,2026-07-24T17:43:42+00:00,
+SeekingDream/DyCodeEval,accept,2026-07-24T17:43:42+00:00,
+TracyWang95/DataInfra-RedactionEverything,accept,2026-07-24T17:43:42+00:00,

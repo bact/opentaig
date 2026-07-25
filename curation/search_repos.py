@@ -148,6 +148,25 @@ def load_existing_candidates(path: Path) -> dict:
         return {row["full_name"]: row for row in csv.DictReader(f)}
 
 
+LOG_FIELDNAMES = ["timestamp_utc", "keyword", "query", "raw_count", "new_candidates",
+                   "min_stars", "pushed_after_months", "min_readme_chars", "notes"]
+
+
+def append_search_log(log_path: Path, rows: list) -> None:
+    """Append one row per keyword searched this run -- the provenance trail
+    of every query issued against the live GitHub Search API (what was
+    tried, when, and how many hits), kept separately from
+    search_candidates.csv because a keyword can be searched again later
+    with different filters and both runs are worth keeping on record."""
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+    is_new = not log_path.exists()
+    with open(log_path, "a", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=LOG_FIELDNAMES)
+        if is_new:
+            writer.writeheader()
+        writer.writerows(rows)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--keyword", action="append", required=True, dest="keywords",
@@ -157,6 +176,8 @@ def main() -> None:
     parser.add_argument("--min-readme-chars", type=int, default=DEFAULT_MIN_README_CHARS)
     parser.add_argument("--raw-dir", default="curation/state/search_raw")
     parser.add_argument("--out-candidates", default="curation/state/search_candidates.csv")
+    parser.add_argument("--log-path", default="curation/state/search_log.csv",
+                         help="provenance log of every keyword searched, appended to (never overwritten)")
     parser.add_argument("--skip-readme-check", action="store_true",
                          help="skip the per-repo README fetch (faster, but no README-length filtering)")
     args = parser.parse_args()
@@ -182,6 +203,8 @@ def main() -> None:
 
     candidates = load_existing_candidates(Path(args.out_candidates))
     seen_before = set(candidates)
+    log_rows = []
+    run_timestamp = datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds")
 
     for keyword in args.keywords:
         query = build_query(keyword, args.min_stars, pushed_after)
@@ -209,6 +232,20 @@ def main() -> None:
             candidates[full_name] = row
             kept += 1
         print(f"  -> {kept} new candidate(s) passed the README-length filter")
+        log_rows.append({
+            "timestamp_utc": run_timestamp,
+            "keyword": keyword,
+            "query": query,
+            "raw_count": len(rows),
+            "new_candidates": kept,
+            "min_stars": args.min_stars,
+            "pushed_after_months": args.pushed_after_months,
+            "min_readme_chars": args.min_readme_chars if not args.skip_readme_check else "skipped",
+            "notes": "",
+        })
+
+    append_search_log(Path(args.log_path), log_rows)
+    print(f"logged {len(log_rows)} keyword run(s) to {args.log_path}")
 
     out_path = Path(args.out_candidates)
     out_path.parent.mkdir(parents=True, exist_ok=True)

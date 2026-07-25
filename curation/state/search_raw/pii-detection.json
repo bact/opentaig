@@ -1,0 +1,167 @@
+{
+  "keyword": "PII detection",
+  "query": "PII detection stars:>19 pushed:>2025-07-24 archived:false fork:false",
+  "count": 16,
+  "repos": [
+    {
+      "full_name": "americanexpress/earlybird",
+      "html_url": "https://github.com/americanexpress/earlybird",
+      "description": "EarlyBird is a sensitive data detection tool capable of scanning source code repositories for clear text password violations, PII, outdated cryptography methods, key files and more.",
+      "stars": 774,
+      "pushed_at": "2026-05-26T06:46:44Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "zeroc00I/DontFeedTheAI",
+      "html_url": "https://github.com/zeroc00I/DontFeedTheAI",
+      "description": "Transparent anonymization proxy for AI-assisted pentesting. Strips IPs, credentials, hostnames and PII before they reach any LLM (Claude, OpenAI, OpenRouter). Local Ollama + regex detection. Per-engagement vault.",
+      "stars": 644,
+      "pushed_at": "2026-07-08T03:38:44Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "data-privacy-stack/presidio-research",
+      "html_url": "https://github.com/data-privacy-stack/presidio-research",
+      "description": "This package features data-science related tasks for developing new recognizers for Presidio. It is used for the evaluation of the entire system, as well as for evaluating specific PII recognizers or PII detection models.",
+      "stars": 299,
+      "pushed_at": "2026-07-23T08:08:17Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://data-privacy-stack.github.io/presidio-research/"
+    },
+    {
+      "full_name": "taylorwilsdon/reddacted",
+      "html_url": "https://github.com/taylorwilsdon/reddacted",
+      "description": "reddacted lets you analyze & sanitize your online footprint using LLMs, PII detection & sentiment analysis to identify anything that might reveal personal info you may not want correlated with your anonymous profile",
+      "stars": 128,
+      "pushed_at": "2025-07-26T15:27:59Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "sam247/openredaction",
+      "html_url": "https://github.com/sam247/openredaction",
+      "description": "Open Source PII detection and redaction for JavaScript/Typescript. Achieve enterprise compliance and unparalleled, lightning fast performance, all 100% local.",
+      "stars": 97,
+      "pushed_at": "2026-07-22T16:22:03Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://openredaction.com"
+    },
+    {
+      "full_name": "vstorm-co/pydantic-ai-shields",
+      "html_url": "https://github.com/vstorm-co/pydantic-ai-shields",
+      "description": "Guardrail capabilities for Pydantic AI \u2014 cost tracking, prompt injection detection, PII filtering, secret redaction, tool permissions, and async guardrails. Built on pydantic-ai's native capabilities API.",
+      "stars": 84,
+      "pushed_at": "2026-07-22T09:42:30Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://vstorm-co.github.io/pydantic-ai-shields/"
+    },
+    {
+      "full_name": "seehiong/ats-buddy",
+      "html_url": "https://github.com/seehiong/ats-buddy",
+      "description": "ATS Buddy is a production-ready, serverless AI resume analyzer built on AWS Bedrock (Nova Lite). It intelligently compares resumes against job descriptions, providing compatibility scores, missing keyword detection, and AI-powered resume enhancements\u2014all while ensuring enterprise-grade PII protection and cost-efficient auto-scaling.",
+      "stars": 72,
+      "pushed_at": "2025-10-11T12:52:27Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://seehiong.github.io/posts/2025/10/ats-buddy-privacy-first-resume-ai/"
+    },
+    {
+      "full_name": "DataFog/datafog-python",
+      "html_url": "https://github.com/DataFog/datafog-python",
+      "description": "Offline PII firewall for AI agents and LLM apps: fast local detection and redaction, Claude Code hook, LiteLLM guardrail. Zero network calls, one dependency.",
+      "stars": 66,
+      "pushed_at": "2026-07-23T05:29:38Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://datafog.ai"
+    },
+    {
+      "full_name": "kadir/cloakrs",
+      "html_url": "https://github.com/kadir/cloakrs",
+      "description": "A blazingly fast PII detection, masking, and anonymization engine written in Rust. Library + CLI.",
+      "stars": 54,
+      "pushed_at": "2026-05-24T19:29:45Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "techlab-innov/llmtrace",
+      "html_url": "https://github.com/techlab-innov/llmtrace",
+      "description": "Zero-code LLM security & observability proxy. Real-time prompt injection detection, PII scanning, and cost control for OpenAI-compatible APIs. Built in Rust.",
+      "stars": 54,
+      "pushed_at": "2026-07-16T11:29:52Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "http://docs.llmtrace.io/"
+    },
+    {
+      "full_name": "ax128/AegisGate",
+      "html_url": "https://github.com/ax128/AegisGate",
+      "description": "Open-source security gateway for LLM APIs \u2014 prompt injection detection, PII redaction, dangerous response   sanitization, and audit logging. OpenAI/Claude compatible, MCP & Agent SKILL support. Drop-in proxy for AI coding   agents (Cursor, Claude Code, Codex).",
+      "stars": 52,
+      "pushed_at": "2026-06-14T07:03:08Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://github.com/ax128/AegisGate"
+    },
+    {
+      "full_name": "PovertyAction/PII_detection",
+      "html_url": "https://github.com/PovertyAction/PII_detection",
+      "description": "Application and python script to identify, remove, and/or recode personally identifiable information (PII) from field experiment datasets.",
+      "stars": 47,
+      "pushed_at": "2026-01-07T00:41:47Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "secretsifter/secretsifter-burp",
+      "html_url": "https://github.com/secretsifter/secretsifter-burp",
+      "description": "Burp Suite extension \u2014 passively detects secrets, API keys, credentials, JWTs & PII in HTTP traffic. 160+ detection rules, bulk scan, entropy analysis, HTML reports & more.",
+      "stars": 34,
+      "pushed_at": "2026-05-15T23:37:55Z",
+      "language": "Java",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "thyrisAI/safe-zone",
+      "html_url": "https://github.com/thyrisAI/safe-zone",
+      "description": "TSZ (Thyris Safe Zone) is an open-source PII detection and guardrails engine that prevents sensitive data from leaking to LLMs and third-party APIs.",
+      "stars": 28,
+      "pushed_at": "2026-07-15T07:53:20Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://thyris.ai"
+    },
+    {
+      "full_name": "yemrealtanay/llm-hasher",
+      "html_url": "https://github.com/yemrealtanay/llm-hasher",
+      "description": "Privacy-first PII tokenization middleware for LLM pipelines \u2014 local detection, encrypted vault, zero cloud dependency.",
+      "stars": 24,
+      "pushed_at": "2026-04-11T22:34:59Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "WilliamGTa/ATS-buddy",
+      "html_url": "https://github.com/WilliamGTa/ATS-buddy",
+      "description": "ATS Buddy is a production-ready, serverless AI resume analyzer built on AWS Bedrock. It intelligently compares resumes against job descriptions, providing compatibility scores, missing keyword detection, and AI-powered resume enhancements\u2014all while ensuring enterprise-grade PII protection and cost-efficient auto-scaling.",
+      "stars": 21,
+      "pushed_at": "2026-04-06T02:29:20Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}

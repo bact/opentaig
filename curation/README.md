@@ -28,6 +28,21 @@ The schema already supports this: the `map` tab's `tools_implement` /
 > Those files (`generate_candidate_mapping.py`, `candidate_mapping*.csv`,
 > `live_map_snapshot.csv`) have been removed.
 
+Two consequences of judging strictly against each question's own text,
+worth keeping in mind so they don't get "corrected" away in a future run:
+
+- **One tool answering several questions is expected, not a smell.** A
+  license scanner can plausibly help both *automate* collection (RQ2) and
+  let you *verify accuracy* when aggregating sources (RQ3). Map each
+  `RQ_No` it genuinely earns, independently — don't cap a tool at one
+  question to look conservative.
+- **A question with zero mapped tools is a real, useful finding** —
+  evidence of a coverage gap in the open-source ecosystem, not a failed
+  search. Don't treat an empty result as something to fix by loosening the
+  matching rule; report it as-is. Coverage gaps are exactly the kind of
+  signal worth surfacing (e.g. for a paper analyzing which research
+  questions currently have no open tooling at all).
+
 ## Pipeline
 
 Deterministic work lives in Python scripts (no model needed); only the

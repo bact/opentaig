@@ -1,0 +1,137 @@
+{
+  "keyword": "data redaction",
+  "query": "data redaction stars:>19 pushed:>2025-07-24 archived:false fork:false",
+  "count": 13,
+  "repos": [
+    {
+      "full_name": "superagent-ai/vibekit",
+      "html_url": "https://github.com/superagent-ai/vibekit",
+      "description": "Run Claude Code, Gemini, Codex \u2014 or any coding agent \u2014 in a clean, isolated sandbox with sensitive data redaction and observability baked in.",
+      "stars": 1829,
+      "pushed_at": "2026-01-13T18:48:57Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://vibekit.sh"
+    },
+    {
+      "full_name": "TracyWang95/DataInfra-RedactionEverything",
+      "html_url": "https://github.com/TracyWang95/DataInfra-RedactionEverything",
+      "description": "DataInfra Series. Redact EVERYTHING with local llms and vlms.",
+      "stars": 1151,
+      "pushed_at": "2026-07-22T06:00:47Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "karant-dev/AutoRedact",
+      "html_url": "https://github.com/karant-dev/AutoRedact",
+      "description": "\ud83d\udee1\ufe0f Client-side, privacy-first image redaction tool. Automatically detects and blurs PII (Emails, IPs, Keys) using local OCR. No server, no data leaks.",
+      "stars": 77,
+      "pushed_at": "2026-07-24T13:48:44Z",
+      "language": "TypeScript",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://autoredact.karant.dev"
+    },
+    {
+      "full_name": "GoogleCloudPlatform/dlp-pdf-redaction",
+      "html_url": "https://github.com/GoogleCloudPlatform/dlp-pdf-redaction",
+      "description": "This solution provides an automated, serverless way to redact sensitive data from PDF files using Google Cloud Services like Data Loss Prevention (DLP), Cloud Workflows, and Cloud Run.",
+      "stars": 66,
+      "pushed_at": "2026-02-20T22:59:53Z",
+      "language": "HCL",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "DataFog/datafog-python",
+      "html_url": "https://github.com/DataFog/datafog-python",
+      "description": "Offline PII firewall for AI agents and LLM apps: fast local detection and redaction, Claude Code hook, LiteLLM guardrail. Zero network calls, one dependency.",
+      "stars": 66,
+      "pushed_at": "2026-07-23T05:29:38Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://datafog.ai"
+    },
+    {
+      "full_name": "awslabs/ferret-scan",
+      "html_url": "https://github.com/awslabs/ferret-scan",
+      "description": "Find and redact sensitive data before it leaks \u2014 a fast, offline CLI and Go library that detects PII, secrets, and credentials in files and streams, scores them with context-aware confidence, and redacts them format-preserving. Nothing leaves your host.",
+      "stars": 56,
+      "pushed_at": "2026-07-23T20:59:12Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.ferretscan.com"
+    },
+    {
+      "full_name": "waguriagentic/HAR",
+      "html_url": "https://github.com/waguriagentic/HAR",
+      "description": "Auto-capture network traffic from Chrome \u2014 including requests Chrome DevTools itself misses \u2014 view requests live in a desktop app with virtualized timeline, persist sessions to SQLite, and export to HAR or ZIP \u2014 with optional sensitive-data redaction.",
+      "stars": 53,
+      "pushed_at": "2026-07-10T13:00:07Z",
+      "language": "TypeScript",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "itext/itext-pdfsweep-java",
+      "html_url": "https://github.com/itext/itext-pdfsweep-java",
+      "description": "Remove content from your digital documents irretrievably instead of just covering it up. Redact text, images, parts of images or drawings for complete confidentiality. iText pdfSweep complies with GDPR for data redaction.",
+      "stars": 47,
+      "pushed_at": "2026-07-08T07:20:14Z",
+      "language": "Java",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://itextpdf.com/en/products/itext-7/pdfsweep"
+    },
+    {
+      "full_name": "primait/veil",
+      "html_url": "https://github.com/primait/veil",
+      "description": "Rust derive macro for redacting sensitive data in std::fmt::Debug",
+      "stars": 37,
+      "pushed_at": "2026-07-24T03:03:17Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "itext/itext-pdfsweep-dotnet",
+      "html_url": "https://github.com/itext/itext-pdfsweep-dotnet",
+      "description": "Remove content from your digital documents irretrievably instead of just covering it up. Redact text, images, parts of images or drawings for complete confidentiality. iText pdfSweep complies with GDPR for data redaction.",
+      "stars": 31,
+      "pushed_at": "2026-07-08T07:20:24Z",
+      "language": "C#",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://itextpdf.com/en/products/itext-7/pdfsweep"
+    },
+    {
+      "full_name": "zolderio/token-proxy",
+      "html_url": "https://github.com/zolderio/token-proxy",
+      "description": "A transparent PII redaction proxy for LLM API traffic. Sits between an application and an LLM provider (currently Anthropic), pseudonymizing sensitive data outbound and restoring it inbound. Built with FastAPI + httpx.",
+      "stars": 28,
+      "pushed_at": "2026-04-13T21:35:36Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "aks129/HealthClawGuardrails",
+      "html_url": "https://github.com/aks129/HealthClawGuardrails",
+      "description": "Open-source guardrails between AI agents and FHIR clinical data \u2014 PHI redaction, immutable audit, step-up auth, tenant isolation. MCP server + OpenAI/Gemini adapters. A healthclaw.io project.",
+      "stars": 27,
+      "pushed_at": "2026-07-24T11:29:32Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.healthclaw.io"
+    },
+    {
+      "full_name": "screenpipe/screenleak",
+      "html_url": "https://github.com/screenpipe/screenleak",
+      "description": "Multi-modal benchmark for measuring sensitive-information redaction in human recording data",
+      "stars": 24,
+      "pushed_at": "2026-06-06T00:21:58Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://screenpipe.github.io/screenleak/"
+    }
+  ]
+}

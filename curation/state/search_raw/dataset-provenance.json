@@ -1,0 +1,67 @@
+{
+  "keyword": "dataset provenance",
+  "query": "dataset provenance stars:>19 pushed:>2025-07-24 archived:false fork:false",
+  "count": 6,
+  "repos": [
+    {
+      "full_name": "paxlabs-inc/machine-genome",
+      "html_url": "https://github.com/paxlabs-inc/machine-genome",
+      "description": "Machine Genome is an open identity and provenance protocol for models, agents, harnesses, datasets, and the artifacts that connect them.",
+      "stars": 212,
+      "pushed_at": "2026-07-20T13:25:58Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://machinegenome.org/"
+    },
+    {
+      "full_name": "ATOM00blue/machine-learning-library",
+      "html_url": "https://github.com/ATOM00blue/machine-learning-library",
+      "description": "A hand-curated, topic-organized library of the best ML education \u2014 923 docs (391 arXiv papers, 474 Stanford/MIT/Karpathy/fast.ai lectures, 58 explainer articles), normalized to Markdown with full provenance. Open it in Obsidian or point your agent at it. A clean ML corpus for learning, RAG & fine-tuning.",
+      "stars": 207,
+      "pushed_at": "2026-05-29T16:36:38Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "nealgatech-web/conversion-fraud-event-dedup",
+      "html_url": "https://github.com/nealgatech-web/conversion-fraud-event-dedup",
+      "description": "Adaptive event deduplication and fraud provenance system \u2014 detects replayed or duplicated conversion events using self-tuning heuristics, FastAPI service endpoints, and reproducible synthetic datasets.",
+      "stars": 101,
+      "pushed_at": "2025-11-08T06:51:41Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "ontogen/ontogen",
+      "html_url": "https://github.com/ontogen/ontogen",
+      "description": "A version control system for RDF datasets",
+      "stars": 42,
+      "pushed_at": "2026-04-06T20:37:32Z",
+      "language": "Elixir",
+      "license_spdx_id": "MIT",
+      "homepage": "https://ontogen.io"
+    },
+    {
+      "full_name": "JustVugg/distillery",
+      "html_url": "https://github.com/JustVugg/distillery",
+      "description": "Turn documents into high-quality instruction datasets with grounding, quality filtering, deduplication, and provenance.",
+      "stars": 24,
+      "pushed_at": "2026-04-23T08:48:35Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "IntelLabs/atlas-cli",
+      "html_url": "https://github.com/IntelLabs/atlas-cli",
+      "description": "A command-line interface tool for creating, managing, and verifying Content Provenance and Authenticity (C2PA) manifests for machine learning models, datasets, and related artifacts.",
+      "stars": 23,
+      "pushed_at": "2026-06-23T06:38:45Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    }
+  ]
+}

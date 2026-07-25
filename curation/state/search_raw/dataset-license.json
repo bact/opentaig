@@ -1,0 +1,67 @@
+{
+  "keyword": "dataset license",
+  "query": "dataset license stars:>19 pushed:>2025-07-24 archived:false fork:false",
+  "count": 6,
+  "repos": [
+    {
+      "full_name": "thorstenMueller/Thorsten-Voice",
+      "html_url": "https://github.com/thorstenMueller/Thorsten-Voice",
+      "description": "Thorsten-Voice: A free to use, offline working, high quality german TTS voice should be available for every project without any license struggling.",
+      "stars": 723,
+      "pushed_at": "2026-07-03T16:37:35Z",
+      "language": "Python",
+      "license_spdx_id": "CC0-1.0",
+      "homepage": "http://www.thorsten-voice.de"
+    },
+    {
+      "full_name": "bennjordan/ALPRovingGround",
+      "html_url": "https://github.com/bennjordan/ALPRovingGround",
+      "description": "A simple Python application to test adversarial noise attacks on license plate recognition systems (see my PlateShapez demo) and create an output dataset to train more effective attack models.",
+      "stars": 143,
+      "pushed_at": "2025-08-10T04:30:48Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "raysonlaroca/ufpr-alpr-dataset",
+      "html_url": "https://github.com/raysonlaroca/ufpr-alpr-dataset",
+      "description": "UFPR-ALPR: a dataset for license plate detection and recognition that includes 4,500 fully annotated images acquired in real-world scenarios where both the vehicle and the camera (inside another vehicle) are moving.",
+      "stars": 91,
+      "pushed_at": "2026-07-17T18:56:13Z",
+      "language": "",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://www.doi.org/10.1109/IJCNN.2018.8489629"
+    },
+    {
+      "full_name": "alitourani/Iranis-dataset",
+      "html_url": "https://github.com/alitourani/Iranis-dataset",
+      "description": "A Large-scale Dataset of Farsi License Plate Characters",
+      "stars": 64,
+      "pushed_at": "2025-12-08T20:09:01Z",
+      "language": "",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://alitourani.github.io/Iranis-dataset/"
+    },
+    {
+      "full_name": "Azure-Samples/function-calling-data-synthesizer",
+      "html_url": "https://github.com/Azure-Samples/function-calling-data-synthesizer",
+      "description": "Automated pipeline for generating, verifying, and preparing high-quality function calling datasets for model fine-tuning. Reduces manual annotation through multi-stage validation and conversion to training formats. Built for Azure ML with permissive license models (Phi3.5 MoE, Phi4 etc).",
+      "stars": 33,
+      "pushed_at": "2026-07-24T13:59:28Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "ramajoballester/UC3M-LP",
+      "html_url": "https://github.com/ramajoballester/UC3M-LP",
+      "description": "UC3M License Plate detection and recognition dataset",
+      "stars": 27,
+      "pushed_at": "2026-07-24T02:50:26Z",
+      "language": "Python",
+      "license_spdx_id": "ODbL-1.0",
+      "homepage": ""
+    }
+  ]
+}

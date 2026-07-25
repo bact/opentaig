@@ -1,0 +1,97 @@
+{
+  "keyword": "license scanner",
+  "query": "license scanner stars:>19 pushed:>2025-07-24 archived:false fork:false",
+  "count": 9,
+  "repos": [
+    {
+      "full_name": "fossology/fossology",
+      "html_url": "https://github.com/fossology/fossology",
+      "description": "FOSSology is an open source license compliance software system and toolkit.  As a toolkit you can run license, copyright and export control scans from the command line.  As a system, a database and web ui are provided to give you a compliance workflow. License, copyright and export scanners are tools used in the workflow.",
+      "stars": 1010,
+      "pushed_at": "2026-07-21T13:29:36Z",
+      "language": "HTML",
+      "license_spdx_id": "GPL-2.0",
+      "homepage": "https://fossology.github.io/"
+    },
+    {
+      "full_name": "SecObserve/SecObserve",
+      "html_url": "https://github.com/SecObserve/SecObserve",
+      "description": "SecObserve is an open source vulnerability and license management system for software development teams and cloud environments. It supports a variety of open source vulnerability scanners and integrates easily into CI/CD pipelines.",
+      "stars": 279,
+      "pushed_at": "2026-07-24T15:44:56Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://secobserve.github.io/SecObserve/"
+    },
+    {
+      "full_name": "anchore/grant",
+      "html_url": "https://github.com/anchore/grant",
+      "description": "A license scanner for container images and filesystems.",
+      "stars": 178,
+      "pushed_at": "2026-07-24T13:08:59Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "getprovenant/provenant",
+      "html_url": "https://github.com/getprovenant/provenant",
+      "description": "Fast Rust scanner for licenses, copyrights, package metadata, SBOMs, and provenance data.",
+      "stars": 37,
+      "pushed_at": "2026-07-24T15:32:43Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://getprovenant.github.io"
+    },
+    {
+      "full_name": "easypro-tech/brs-xss",
+      "html_url": "https://github.com/easypro-tech/brs-xss",
+      "description": "MIT license BRS-XSS is a modular Python CLI scanner for XSS vulnerabilities. Features context-aware payloads, WAF evasion, DOM analysis via Playwright, ML-based risk scoring, and export in HTML/JSON/SARIF. Designed for integration with Brabus Recon Suite (BRS).",
+      "stars": 33,
+      "pushed_at": "2026-01-12T03:55:26Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://brs-xss.easypro.tech"
+    },
+    {
+      "full_name": "Samsung/LPVS",
+      "html_url": "https://github.com/Samsung/LPVS",
+      "description": "License Pre-Validation Service analyzes which open source components and licenses are used in every patch. It returns the list of restricted licenses and the possibility of license violation on the comment with the exact code location and the open source component information.",
+      "stars": 30,
+      "pushed_at": "2026-07-24T09:26:36Z",
+      "language": "Java",
+      "license_spdx_id": "MIT",
+      "homepage": "https://samsung.github.io/LPVS/"
+    },
+    {
+      "full_name": "kby-ai/IDCardRecognition-Android",
+      "html_url": "https://github.com/kby-ai/IDCardRecognition-Android",
+      "description": "ID Card Recognition, Intelligent ID OCR, Global ID Document Recognition, ID Card Recognition, Passport Recognition, Driver License Recognition, ID Scanner, ID Document Reader, ID Card OCR, ID Document OCR",
+      "stars": 24,
+      "pushed_at": "2026-06-15T00:38:22Z",
+      "language": "Kotlin",
+      "license_spdx_id": "",
+      "homepage": "https://kby-ai.com/id-document-recognition-sdk/"
+    },
+    {
+      "full_name": "kby-ai/IDCard-Recognition-SDK",
+      "html_url": "https://github.com/kby-ai/IDCard-Recognition-SDK",
+      "description": "Intelligent ID OCR, Global ID Document Recognition, ID Card Recognition, Passport Recognition, Driver License Recognition, ID Scanner, ID Document Reader, ID Card OCR, ID Document OCR",
+      "stars": 24,
+      "pushed_at": "2026-06-19T16:00:00Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": "https://kby-ai.com/id-document-recognition-sdk/"
+    },
+    {
+      "full_name": "kby-ai/IDCardRecognition-Docker",
+      "html_url": "https://github.com/kby-ai/IDCardRecognition-Docker",
+      "description": "Intelligent ID OCR, ID document recognition on server to read ID card, passport and driver license, which is most powerful ID scanner and ID document reader",
+      "stars": 23,
+      "pushed_at": "2026-06-15T00:39:17Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://kby-ai.com/id-document-recognition-sdk/"
+    }
+  ]
+}

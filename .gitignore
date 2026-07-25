@@ -6,3 +6,7 @@ __pycache__/
 # Regenerated per curation run from a fresh site/data.json (see
 # curation/export_rq_context.py) -- a transient input, not source.
 curation/rq_context.json
+
+# Regenerated per curation run by dedup_candidates.py (derivable from
+# search_candidates.csv + seen_repos.csv + site/data.json) -- not source.
+curation/state/candidates_to_review.csv

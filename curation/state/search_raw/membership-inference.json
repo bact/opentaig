@@ -1,0 +1,67 @@
+{
+  "keyword": "membership inference",
+  "query": "membership inference stars:>19 pushed:>2025-07-24 archived:false fork:false",
+  "count": 6,
+  "repos": [
+    {
+      "full_name": "HongshengHu/membership-inference-machine-learning-literature",
+      "html_url": "https://github.com/HongshengHu/membership-inference-machine-learning-literature",
+      "description": "",
+      "stars": 373,
+      "pushed_at": "2026-04-08T08:36:36Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "microsoft/responsible-ai-toolbox-privacy",
+      "html_url": "https://github.com/microsoft/responsible-ai-toolbox-privacy",
+      "description": "A library for statistically estimating the privacy of ML pipelines from membership inference attacks",
+      "stars": 37,
+      "pushed_at": "2025-08-21T16:29:59Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "LiQiiiii/Vid-SME",
+      "html_url": "https://github.com/LiQiiiii/Vid-SME",
+      "description": "[NeurIPS\u201825] Vid-SME: Membership Inference Attacks against Large Video Understanding Models",
+      "stars": 26,
+      "pushed_at": "2026-06-20T16:09:02Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "KaiyuanZh/SOFT",
+      "html_url": "https://github.com/KaiyuanZh/SOFT",
+      "description": "[USENIX Security 2025] SOFT: Selective Data Obfuscation for Protecting LLM Fine-tuning against Membership Inference Attacks",
+      "stars": 23,
+      "pushed_at": "2025-09-18T11:09:05Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://soft-mia.github.io"
+    },
+    {
+      "full_name": "mengtong0110/Tokenizer-MIA",
+      "html_url": "https://github.com/mengtong0110/Tokenizer-MIA",
+      "description": "[USENIX Security 2026] Membership Inference Attacks on Tokenizers of Large Language Models",
+      "stars": 21,
+      "pushed_at": "2026-05-22T07:03:28Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "KarloKnezevic/ANFIS",
+      "html_url": "https://github.com/KarloKnezevic/ANFIS",
+      "description": "\ud83e\udde0 ANFIS Framework (Java)  A generic, extensible Java implementation of ANFIS (Adaptive Neuro-Fuzzy Inference System) \u2014 combining neural network learning with fuzzy logic interpretability. Supports configurable membership functions and T-norms for building flexible, trainable models.",
+      "stars": 20,
+      "pushed_at": "2025-08-27T21:24:57Z",
+      "language": "Java",
+      "license_spdx_id": "",
+      "homepage": ""
+    }
+  ]
+}
