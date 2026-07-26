@@ -46,12 +46,13 @@
   <h2>Tools to help implement a solution</h2>
   {% if problem.tools_implement %}
   <ul class="tool-detail-list">
-    {% for t in problem.tools_implement %}
+    {% for pairing in problem.tools_implement %}
     <li>
-      <a href="{{ root }}tools/{{ t.slug }}.html">{{ t.name }}</a>
-      {% if t.tool_type %}<span class="chip chip-tool-type">{{ t.tool_type }}</span>{% endif %}
-      {% if t.license %}<span class="chip chip-license">{{ t.license }}</span>{% endif %}
-      {% if t.summary %}<p class="tool-summary">{{ t.summary }}</p>{% endif %}
+      <a href="{{ root }}tools/{{ pairing.tool.slug }}.html">{{ pairing.tool.name }}</a>
+      {% if pairing.tool.tool_type %}<span class="chip chip-tool-type">{{ pairing.tool.tool_type }}</span>{% endif %}
+      {% if pairing.tool.license %}<span class="chip chip-license">{{ pairing.tool.license }}</span>{% endif %}
+      {% if pairing.tool.summary %}<p class="tool-summary">{{ pairing.tool.summary }}</p>{% endif %}
+      {% if pairing.rationale %}<p class="tool-rationale">{{ pairing.rationale }}</p>{% endif %}
     </li>
     {% endfor %}
   </ul>
@@ -62,12 +63,13 @@
   <h2>Tools to help evaluate or audit a solution</h2>
   {% if problem.tools_eval %}
   <ul class="tool-detail-list">
-    {% for t in problem.tools_eval %}
+    {% for pairing in problem.tools_eval %}
     <li>
-      <a href="{{ root }}tools/{{ t.slug }}.html">{{ t.name }}</a>
-      {% if t.tool_type %}<span class="chip chip-tool-type">{{ t.tool_type }}</span>{% endif %}
-      {% if t.license %}<span class="chip chip-license">{{ t.license }}</span>{% endif %}
-      {% if t.summary %}<p class="tool-summary">{{ t.summary }}</p>{% endif %}
+      <a href="{{ root }}tools/{{ pairing.tool.slug }}.html">{{ pairing.tool.name }}</a>
+      {% if pairing.tool.tool_type %}<span class="chip chip-tool-type">{{ pairing.tool.tool_type }}</span>{% endif %}
+      {% if pairing.tool.license %}<span class="chip chip-license">{{ pairing.tool.license }}</span>{% endif %}
+      {% if pairing.tool.summary %}<p class="tool-summary">{{ pairing.tool.summary }}</p>{% endif %}
+      {% if pairing.rationale %}<p class="tool-rationale">{{ pairing.rationale }}</p>{% endif %}
     </li>
     {% endfor %}
   </ul>

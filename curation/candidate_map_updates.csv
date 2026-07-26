@@ -1,4 +1,4 @@
-RQ_No,tool_id,role,rationale
+rq_no,tool_id,role,rationale
 2,fossology,implement,"It runs automated license and copyright scanners from the command line and emits SPDX, giving a concrete way to auto-collect license information from source material."
 3,fossology,implement,"Its deduplication and one-click SPDX/notice generation reconcile license and copyright findings aggregated across an entire distribution, supporting accurate license tracking when combining many sources."
 2,anchore-grant,implement,"It automatically lists licenses found in images, directories and SBOMs, providing an automated license-collection step."

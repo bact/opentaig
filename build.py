@@ -4,13 +4,17 @@
 Generates a static site from TWO decoupled Google Sheets, joined by research
 question number (RQ_No):
 
-  * "taig"    -- upstream TAIG paper data (question text + taxonomy +
+  * "taig"     -- upstream TAIG paper data (question text + taxonomy +
                  citations + expertise). The spine of the site.
-  * "mapping" -- our framework/regulation mappings + tool ids, keyed by RQ_No.
-                 Cells hold semicolon-separated ids referencing the "terms"
-                 and "tools" catalogs below, not free text.
-  * "tools"   -- our open-source tool catalog (a tab in the mapping sheet).
-  * "terms"   -- our RGAF/EU_AI_Act/UNESCO/ASEAN/CoE term catalog (a tab in
+  * "mapping"  -- our framework/regulation mappings, keyed by RQ_No. Cells
+                 hold semicolon-separated ids referencing the "terms"
+                 catalog below, not free text.
+  * "tool_map" -- our research-question-to-tool mappings: one row per
+                 (RQ_No, tool_id, role) pairing plus a rationale, rather
+                 than a semicolon list, so a tool can answer more than one
+                 RQ and each pairing can carry its own explanation.
+  * "tools"    -- our open-source tool catalog (a tab in the mapping sheet).
+  * "terms"    -- our RGAF/EU_AI_Act/UNESCO/ASEAN/CoE term catalog (a tab in
                  the mapping sheet), one shared tab across all frameworks,
                  with globally-unique namespaced ids (e.g. `euaiact-a8`).
 
@@ -68,6 +72,16 @@ class Tool:
 
 
 @dataclasses.dataclass
+class ToolRationale:
+    """A single (tool, why-it-answers-this-RQ) pairing -- one row from the
+    tool_map tab, resolved against the tool catalog. Distinct from Tool
+    itself because the same Tool can appear under different RQs with a
+    different rationale each time, so the rationale can't live on Tool."""
+    tool: "Tool"
+    rationale: str = ""
+
+
+@dataclasses.dataclass
 class Term:
     id: str
     framework: str
@@ -88,8 +102,8 @@ class Problem:
     mappings: dict  # facet_key -> list[Term] (5 frameworks) or list[str] ("expertise")
     existing_work: list  # list[str]
     new_work: list  # list[str]
-    tools_implement: list  # list[Tool]
-    tools_eval: list  # list[Tool]
+    tools_implement: list  # list[ToolRationale]
+    tools_eval: list  # list[ToolRationale]
     search_text: str  # precomputed lowercased text for the client-side search box
     order: int
 
@@ -372,20 +386,18 @@ def merge_framework_defs(frameworks_config: list, framework_catalog: dict, warni
 # --------------------------------------------------------------------------
 
 def build_mapping_index(rows: list, colmap: dict, framework_defs: list, warnings: list) -> dict:
-    """Return {rq_no: {fw_key: [term_ids...], ..., "tool_ids_implement": [...],
-    "tool_ids_eval": [...]}} from the mapping tab. The mapping tab's own
-    question-text column is intentionally ignored. Cells are plain id lists
-    (';'-separated) -- resolution against the terms/tools catalogs happens
-    in build_problems."""
+    """Return {rq_no: {fw_key: [term_ids...], ...}} from the mapping tab. The
+    mapping tab's own question-text column is intentionally ignored. Cells
+    are plain id lists (';'-separated) -- resolution against the terms
+    catalog happens in build_problems. Tool mappings are NOT here -- see
+    build_tool_role_index / the tool_map tab."""
     index = {}
     for i, row in enumerate(rows):
         rq_no = (row.get(colmap["rq_no"]) or "").strip()
         if not rq_no:
             # A wholly blank trailing row is common in exports; only warn if the
             # row actually carries mapping content that will be silently lost.
-            has_content = any((row.get(fw["column"]) or "").strip() for fw in framework_defs) or \
-                (row.get(colmap["tools_implement"]) or "").strip() or \
-                (row.get(colmap["tools_eval"]) or "").strip()
+            has_content = any((row.get(fw["column"]) or "").strip() for fw in framework_defs)
             if has_content:
                 warnings.append(f"mapping row {i + 2}: blank RQ_No but has mapping content; row ignored")
             continue
@@ -394,9 +406,48 @@ def build_mapping_index(rows: list, colmap: dict, framework_defs: list, warnings
         entry = {}
         for fw in framework_defs:
             entry[fw["key"]] = parse_id_list(row.get(fw["column"]))
-        entry["tool_ids_implement"] = parse_id_list(row.get(colmap["tools_implement"]))
-        entry["tool_ids_eval"] = parse_id_list(row.get(colmap["tools_eval"]))
         index[rq_no] = entry
+    return index
+
+
+# --------------------------------------------------------------------------
+# Build tool-role index (RQ_No -> tool pairings, tool_map tab)
+# --------------------------------------------------------------------------
+
+VALID_TOOL_ROLES = {"implement", "eval"}
+
+
+def build_tool_role_index(rows: list, colmap: dict, warnings: list) -> dict:
+    """Return {rq_no: {"implement": [(tool_id, rationale), ...], "eval": [...]}}
+    from the tool_map tab -- one row per (RQ_No, tool_id, role) pairing, long
+    format rather than a semicolon list, so a rationale has somewhere to
+    live and adding a pairing never means hand-editing an existing cell.
+    Resolution against the tool catalog happens in build_problems, same
+    deferred-resolution pattern as build_mapping_index."""
+    index: dict = {}
+    seen_pairs = set()
+    for i, row in enumerate(rows):
+        rq_no = (row.get(colmap["rq_no"]) or "").strip()
+        tool_id = (row.get(colmap["tool_id"]) or "").strip()
+        role = (row.get(colmap["role"]) or "").strip()
+        rationale = (row.get(colmap["rationale"]) or "").strip()
+        if not rq_no and not tool_id and not role:
+            continue  # blank trailing row
+        if not rq_no or not tool_id:
+            warnings.append(f"tool_map row {i + 2}: missing RQ_No or tool_id; row ignored")
+            continue
+        if role not in VALID_TOOL_ROLES:
+            warnings.append(
+                f"tool_map row {i + 2}: role {role!r} must be exactly 'implement' or 'eval'; row ignored"
+            )
+            continue
+        pair_key = (rq_no, tool_id, role)
+        if pair_key in seen_pairs:
+            warnings.append(f"tool_map row {i + 2}: duplicate ({rq_no}, {tool_id}, {role}) pairing; row ignored")
+            continue
+        seen_pairs.add(pair_key)
+        entry = index.setdefault(rq_no, {"implement": [], "eval": []})
+        entry[role].append((tool_id, rationale))
     return index
 
 
@@ -410,6 +461,7 @@ def build_problems(
     framework_defs: list,
     expertise_key: str,
     mapping_index: dict,
+    tool_role_index: dict,
     tool_catalog: dict,
     terms_catalog: dict,
     uncategorized_label: str,
@@ -460,17 +512,21 @@ def build_problems(
             mappings[fw_key] = terms
         mappings[expertise_key] = expertise
 
+        tool_pairs = tool_role_index.get(rq_no) if rq_no else None
+        if tool_pairs is not None:
+            used_rqnos.add(rq_no)
+
         def resolve_tools(role: str) -> list:
             resolved = []
-            for tid in (mapping or {}).get(f"tool_ids_{role}", []):
+            for tid, rationale in (tool_pairs or {}).get(role, []):
                 tool = tool_catalog.get(tid)
                 if tool is None:
                     warnings.append(
-                        f"RQ {rq_no}: tool id {tid!r} referenced in [tools_{role}] not found "
+                        f"RQ {rq_no}: tool id {tid!r} referenced in tool_map [{role}] not found "
                         f"in the Tools tab (check for typos or a missing catalog entry)"
                     )
                     continue
-                resolved.append(tool)
+                resolved.append(ToolRationale(tool=tool, rationale=rationale))
             return resolved
 
         tools_implement = resolve_tools("implement")
@@ -485,8 +541,8 @@ def build_problems(
         for fw in framework_defs:
             search_parts.extend(t.name for t in mappings[fw["key"]])
         search_parts.extend(expertise)
-        search_parts.extend(t.name for t in tools_implement)
-        search_parts.extend(t.name for t in tools_eval)
+        search_parts.extend(t.tool.name for t in tools_implement)
+        search_parts.extend(t.tool.name for t in tools_eval)
         search_text = " ".join(search_parts).lower()
 
         problems.append(
@@ -508,12 +564,18 @@ def build_problems(
             )
         )
 
-    # Surface orphaned annotations: mapping rows whose RQ_No matched no TAIG row.
+    # Surface orphaned annotations: mapping/tool_map rows whose RQ_No matched no TAIG row.
     for rq_no in mapping_index:
         if rq_no not in used_rqnos:
             warnings.append(
                 f"mapping RQ {rq_no!r}: no matching row in the TAIG sheet "
                 f"(orphaned annotation -- typo, or question removed/renumbered upstream)"
+            )
+    for rq_no in tool_role_index:
+        if rq_no not in used_rqnos:
+            warnings.append(
+                f"tool_map RQ {rq_no!r}: no matching row in the TAIG sheet "
+                f"(orphaned tool pairing -- typo, or question removed/renumbered upstream)"
             )
     return problems
 
@@ -567,10 +629,11 @@ def group_by_taxonomy(problems: list, capacities_order: list, targets_order: lis
 def build_tools_index(problems: list, tool_catalog: dict) -> list:
     usage = {tid: [] for tid in tool_catalog}
     for p in problems:
-        for t in list(p.tools_implement) + list(p.tools_eval):
-            usage.setdefault(t.id, [])
-            if p not in usage[t.id]:
-                usage[t.id].append(p)
+        for pairing in list(p.tools_implement) + list(p.tools_eval):
+            tid = pairing.tool.id
+            usage.setdefault(tid, [])
+            if p not in usage[tid]:
+                usage[tid].append(p)
     entries = [{"tool": tool, "problems": usage.get(tid, [])} for tid, tool in tool_catalog.items()]
     entries.sort(key=lambda e: e["tool"].name.lower())
     return entries
@@ -619,8 +682,14 @@ def problem_to_public_dict(p: Problem, expertise_key: str) -> dict:
         "mappings": mappings_out,
         "existing_work": p.existing_work,
         "new_work": p.new_work,
-        "tools_implement": [{"id": t.id, "name": t.name, "homepage": t.homepage} for t in p.tools_implement],
-        "tools_eval": [{"id": t.id, "name": t.name, "homepage": t.homepage} for t in p.tools_eval],
+        "tools_implement": [
+            {"id": t.tool.id, "name": t.tool.name, "homepage": t.tool.homepage, "rationale": t.rationale}
+            for t in p.tools_implement
+        ],
+        "tools_eval": [
+            {"id": t.tool.id, "name": t.tool.name, "homepage": t.tool.homepage, "rationale": t.rationale}
+            for t in p.tools_eval
+        ],
     }
 
 
@@ -751,12 +820,14 @@ def main() -> None:
 
     taig_csv = fetch_source(config["data"]["taig"], "taig", warnings)
     mapping_csv = fetch_source(config["data"]["mapping"], "mapping", warnings)
+    tool_map_csv = fetch_source(config["data"]["tool_map"], "tool_map", warnings)
     tools_csv = fetch_source(config["data"]["tools"], "tools", warnings)
     terms_csv = fetch_source(config["data"]["terms"], "terms", warnings)
     framework_csv = fetch_source(config["data"]["framework"], "framework", warnings)
 
     taig_rows = parse_csv_text(taig_csv)
     mapping_rows = parse_csv_text(mapping_csv)
+    tool_map_rows = parse_csv_text(tool_map_csv)
     tools_rows = parse_csv_text(tools_csv)
     terms_rows = parse_csv_text(terms_csv)
     framework_rows = parse_csv_text(framework_csv)
@@ -771,6 +842,7 @@ def main() -> None:
     terms_catalog = build_terms_catalog(terms_rows, colmap["terms"], warnings)
     tool_catalog = build_tool_catalog(tools_rows, colmap["tools"], terms_catalog, warnings)
     mapping_index = build_mapping_index(mapping_rows, colmap["mapping"], framework_defs, warnings)
+    tool_role_index = build_tool_role_index(tool_map_rows, colmap["tool_map"], warnings)
 
     problems = build_problems(
         taig_rows,
@@ -778,6 +850,7 @@ def main() -> None:
         framework_defs,
         expertise_key,
         mapping_index,
+        tool_role_index,
         tool_catalog,
         terms_catalog,
         config["taxonomy"]["uncategorized_label"],

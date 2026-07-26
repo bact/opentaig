@@ -155,6 +155,7 @@ main.wrap { padding-top: 28px; padding-bottom: 60px; min-height: 60vh; }
   border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; margin-bottom: 8px;
 }
 .tool-summary { color: var(--fg-muted); margin: 6px 0 0; }
+.tool-rationale { color: var(--fg-muted); font-style: italic; margin: 6px 0 0; font-size: 0.92rem; }
 .tool-links { padding-left: 20px; }
 
 .citation-list { padding-left: 20px; }

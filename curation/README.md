@@ -18,9 +18,14 @@ a principle. Concretely, discovery decides "does this tool help address
 question _N_?" by reading the tool's README / linked paper and comparing it
 to question _N_'s own text — not by matching principle tags.
 
-The schema already supports this: the `map` tab's `tools_implement` /
-`tools_eval` columns are per-`RQ_No` tool-id lists (which tools help
-*implement* vs. *evaluate/audit* a solution to that question).
+The schema supports this via the `tool_map` tab: one row per `(RQ_No,
+tool_id, role)` pairing, plus a free-text `rationale` for *why* that tool
+addresses that specific question. Long/tidy format rather than a
+semicolon-list cell on the `map` tab, precisely so a tool answering several
+questions or a question answered by several tools is just more rows, never
+a cell to hand-edit. (This used to live as `tools_implement`/`tools_eval`
+columns on the `map` tab itself; that couldn't hold a rationale and made
+adding one pairing risk clobbering another already in the same cell.)
 
 > An earlier version of this directory tried to derive `RQ ↔ tool` mappings
 > from *shared principle ids* (term overlap). That is exactly the
@@ -74,16 +79,24 @@ judgment steps need a model.
    is `implement` or `eval`, with a one-line rationale per pair. **Direct**
    judgment against the question text (from `rq_context.json`) — never via
    shared principle ids.
-6. **Dedup** *(script, planned)* — drop anything already in `tools` or in a
-   `state/seen_repos.csv` log; record verdicts so future runs don't repeat.
-7. **Emit** *(script, planned)* — two review CSVs in exact live-tab column
-   order: `candidate_tools.csv` (new `tools` rows) and
-   `candidate_map_updates.csv` (`RQ_No, tool_id, role, rationale`, one row
-   per pair).
-8. **Review & merge** *(human)* — accept/edit, then paste accepted rows into
-   the `tools` and `map` tabs. **Merge, don't overwrite** — some `RQ_No`
-   rows already have `tools_implement`/`tools_eval` values that must be
-   preserved. The next site build picks up the changes.
+6. **Dedup** *(script: `dedup_candidates.py`, built)* — drop anything already
+   in `tools` or in a `state/seen_repos.csv` log; record verdicts so future
+   runs don't repeat.
+7. **Emit** *(script: `emit_candidates.py`, built)* — two review CSVs in
+   exact live-tab column order: `candidate_tools.csv` (new `tools` rows) and
+   `candidate_map_updates.csv` (`rq_no, tool_id, role, rationale`, one row
+   per pair) — which is now also the exact column order of the `tool_map`
+   tab itself, so step 8 is a straight append, not a merge.
+8. **Review & merge** *(human)* — accept/edit, then:
+   - paste accepted rows from `candidate_tools.csv` into the `tools` tab
+     (fine to be selective here, e.g. only tools with a confirmed
+     open-source license);
+   - **append** (don't merge-into-a-cell) matching rows from
+     `candidate_map_updates.csv` into the `tool_map` tab — drop any row
+     whose `tool_id` you didn't add to `tools`. Since `tool_map` is one row
+     per pairing rather than a semicolon list, there's no existing-cell
+     content to preserve or clobber.
+   - The next site build picks up the changes.
 
 ### Model tiering (cost control)
 
@@ -136,22 +149,40 @@ documents all its flags (`--min-stars`, `--pushed-after-months`,
 `--min-readme-chars` are all overridable if the defaults need adjusting
 after seeing real results).
 
-**Still not built** (steps 6–7): a dedup/seen-log script and the final CSV
-emitter. These are straightforward once you have real `search_candidates.csv`
-output to shape them against — build them next, once step 3 has run for
-real and you can see actual candidate data.
+### Live sheet setup: the `tool_map` tab
+
+The OpenTAIG sheet needs a `tool_map` tab before `build.py` will run
+against it — a one-time setup step, done once:
+
+1. Add a tab named exactly `tool_map`, header row `rq_no, tool_id, role,
+   rationale`.
+2. Migrate the one pairing that used to live in `map`'s `tools_implement`/
+   `tools_eval` columns: `rq_no=3, tool_id=scancode-toolkit, role=eval` (add
+   a `rationale` if you have one handy; blank is fine, it just won't render
+   a caption on the site until filled in).
+3. Optional cleanup: the `tools_implement`/`tools_eval` columns on `map` are
+   no longer read by the build, so you can delete them from that tab — but
+   leaving them is harmless, they're just inert now.
 
 ## Files
 
 - **`export_rq_context.py`** — built. Reshapes a local `site/data.json`
   into `rq_context.json`. Deterministic; no model, no network.
 - **`search_repos.py`** — built. Real GitHub Search API + README-length
-  filter. Deterministic; no model; needs `GITHUB_TOKEN` + unrestricted
-  network (see "Running locally" above — verified via dry-run against a
-  mocked API response, but never executed against the live API since this
-  session can't reach it).
+  filter, plus a `state/search_log.csv` provenance log (every keyword tried,
+  exact query, hit counts — kept for methodology/paper documentation, not
+  just the surviving candidates). Deterministic; no model; needs
+  `GITHUB_TOKEN` + unrestricted network (see "Running locally" above).
+- **`dedup_candidates.py`** — built. Drops candidates already live in
+  `tools` (matched by GitHub repo path) or already judged in
+  `state/seen_repos.csv`. Deterministic; no model, no network. Writes
+  `state/candidates_to_review.csv` (git-ignored, regenerated each run).
+- **`emit_candidates.py`** — built. Takes a judgments JSON (step 4+5 output)
+  and writes `candidate_tools.csv` + `candidate_map_updates.csv`, and
+  appends every judged repo (accept or reject) to `state/seen_repos.csv`.
+  Deterministic; no model, no network.
 - **`candidate_tools_from_rgaf.csv`** — the 32 tools from the sheet's
-  `tools-rgaf` staging tab (seeded from the LF AI & Data blog post
+  `tools_rgaf_seed` staging tab (seeded from the LF AI & Data blog post
   ["Putting RGAF to Work"](https://lfaidata.foundation/communityblog/2026/04/22/putting-rgaf-to-work-build-and-audit-responsible-ai-with-open-source/)),
   in the `tools` tab's exact column order. No id collides with the rows
   already live in `tools`. **To use:** review, then append to the `tools`
@@ -160,12 +191,16 @@ real and you can see actual candidate data.
   mapped to questions.)
 - **`rq_context.json`** — generated (git-ignored, purely derived from a
   fresh `site/data.json`), see step 1.
-- **`state/search_raw/*.json`**, **`state/search_candidates.csv`** —
-  generated, but **commit these**: unlike `rq_context.json` they're the
-  running audit trail / dedup base across runs (and contributors), not a
-  disposable snapshot. See step 3.
-- *Not yet built:* `state/seen_repos.csv`, `candidate_tools.csv`,
-  `candidate_map_updates.csv` (steps 6–7).
+- **`state/search_raw/*.json`**, **`state/search_candidates.csv`**,
+  **`state/search_log.csv`**, **`state/seen_repos.csv`** — generated, but
+  **commit these**: unlike `rq_context.json` they're the running audit
+  trail / dedup base / provenance log across runs (and contributors), not a
+  disposable snapshot. See steps 3 and 6.
+- **`candidate_tools.csv`**, **`candidate_map_updates.csv`** — generated by
+  `emit_candidates.py` (step 7), one batch at a time. Commit them alongside
+  the run that produced them if you want a record of what was proposed
+  before human review, or just leave the latest batch in place — either
+  way they get overwritten by the next `emit_candidates.py` run.
 
 ## Automation (later)
 

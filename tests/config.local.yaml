@@ -27,6 +27,10 @@ data:
     sheet_id: "unused-when-file-is-set"
     gid: 0
     file: "tests/fixtures/mapping.csv"
+  tool_map:
+    sheet_id: "unused-when-file-is-set"
+    gid: 0
+    file: "tests/fixtures/tool_map.csv"
   tools:
     sheet_id: "unused-when-file-is-set"
     gid: 1
@@ -52,9 +56,12 @@ columns:
     relevant_expertise: "Relevant expertise"
     new_work: "New work (since publication)"
   mapping:
-    rq_no: "RQ_No"
-    tools_implement: "tools_implement"
-    tools_eval: "tools_eval"
+    rq_no: "rq_no"
+  tool_map:
+    rq_no: "rq_no"
+    tool_id: "tool_id"
+    role: "role"
+    rationale: "rationale"
   tools:
     id: "id"
     tool_type: "tool_type"
@@ -84,15 +91,15 @@ columns:
 
 frameworks:
   - key: rgaf
-    column: "RGAF"
+    column: "rgaf"
   - key: euaiact
-    column: "EUAIAct"
+    column: "euaiact"
   - key: unescoai
-    column: "UNESCOAI"
+    column: "unescoai"
   - key: aseanai
-    column: "ASEANAI"
+    column: "aseanai"
   - key: coeai
-    column: "CoEAI"
+    column: "coeai"
 
 expertise:
   key: expertise

@@ -37,9 +37,10 @@ Output:
     RGAF-style term tags on the tool itself (per the live schema), left
     blank unless the judgment supplied them -- NOT the RQ mapping, which is
     the other file.
-  - `curation/candidate_map_updates.csv` -- `RQ_No, tool_id, role,
-    rationale`, one row per (tool, RQ) pair, for a human to merge into the
-    map tab's existing `tools_implement`/`tools_eval` semicolon lists.
+  - `curation/candidate_map_updates.csv` -- `rq_no, tool_id, role,
+    rationale`, one row per (tool, RQ) pair. Same column order as the live
+    `tool_map` tab, so a human appends these rows directly -- no merging
+    into an existing cell needed.
   - `curation/state/seen_repos.csv` -- appended (not overwritten) with one
     row per judged repo, accept or reject, so `dedup_candidates.py` skips
     it on future runs.
@@ -58,19 +59,19 @@ from pathlib import Path
 
 TOOLS_FIELDNAMES = ["id", "tool_type", "name", "summary", "license", "homepage",
                      "source", "documentation", "funding", "implement", "eval"]
-MAP_FIELDNAMES = ["RQ_No", "tool_id", "role", "rationale"]
+MAP_FIELDNAMES = ["rq_no", "tool_id", "role", "rationale"]  # matches the live tool_map tab's header exactly
 SEEN_FIELDNAMES = ["full_name", "verdict", "timestamp_utc", "note"]
 
 VALID_ROLES = {"implement", "eval"}
 
 
-def load_existing_rows(path: Path, key_field: str) -> tuple:
-    """Returns (fieldnames_or_None, list_of_existing_rows) for append-and-dedup."""
+def load_existing_keys(path: Path, key_field: str) -> set:
+    """Returns the set of `key_field` values already present in `path`, so a
+    caller can skip rows it would otherwise append a second time."""
     if not path.exists():
-        return None, []
+        return set()
     with open(path, "r", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        return reader.fieldnames, list(reader)
+        return {row[key_field] for row in csv.DictReader(f)}
 
 
 def main() -> None:
@@ -86,6 +87,7 @@ def main() -> None:
 
     tool_rows, map_rows, seen_rows = [], [], []
     seen_ids = set()
+    seen_repos_in_batch = set()
     timestamp = datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds")
     errors = []
 
@@ -95,6 +97,10 @@ def main() -> None:
         if verdict not in ("accept", "reject"):
             errors.append(f"{repo}: verdict must be 'accept' or 'reject', got {verdict!r}")
             continue
+        if repo in seen_repos_in_batch:
+            errors.append(f"{repo}: duplicate repo entry in this batch")
+            continue
+        seen_repos_in_batch.add(repo)
 
         note = j.get("reject_reason", "") if verdict == "reject" else ""
         seen_rows.append({"full_name": repo, "verdict": verdict, "timestamp_utc": timestamp, "note": note})
@@ -134,9 +140,9 @@ def main() -> None:
                 errors.append(f"{repo}: mapping role must be 'implement' or 'eval', got {role!r}")
                 continue
             if not m.get("rationale"):
-                errors.append(f"{repo}: RQ_No {m.get('rq_no')} mapping missing a rationale")
+                errors.append(f"{repo}: rq_no {m.get('rq_no')} mapping missing a rationale")
             map_rows.append({
-                "RQ_No": m.get("rq_no", ""),
+                "rq_no": m.get("rq_no", ""),
                 "tool_id": tool_id,
                 "role": role,
                 "rationale": m.get("rationale", ""),
@@ -163,16 +169,20 @@ def main() -> None:
 
     seen_path = Path(args.seen_repos)
     seen_path.parent.mkdir(parents=True, exist_ok=True)
+    already_seen = load_existing_keys(seen_path, "full_name")
+    new_seen_rows = [row for row in seen_rows if row["full_name"] not in already_seen]
+    skipped = len(seen_rows) - len(new_seen_rows)
     is_new = not seen_path.exists()
     with open(seen_path, "a", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=SEEN_FIELDNAMES)
         if is_new:
             writer.writeheader()
-        writer.writerows(seen_rows)
+        writer.writerows(new_seen_rows)
 
     print(f"{len(tool_rows)} accepted tool(s) -> {tools_out}")
     print(f"{len(map_rows)} RQ mapping(s) -> {map_out}")
-    print(f"{len(seen_rows)} repo(s) logged (accept+reject) -> {seen_path}")
+    print(f"{len(new_seen_rows)} repo(s) newly logged -> {seen_path}"
+          + (f" ({skipped} already logged, skipped)" if skipped else ""))
 
 
 if __name__ == "__main__":
