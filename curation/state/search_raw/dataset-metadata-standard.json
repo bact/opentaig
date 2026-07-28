@@ -1,0 +1,27 @@
+{
+  "keyword": "dataset metadata standard",
+  "query": "dataset metadata standard stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 2,
+  "repos": [
+    {
+      "full_name": "frictionlessdata/datapackage",
+      "html_url": "https://github.com/frictionlessdata/datapackage",
+      "description": "Data Package is a standard consisting of a set of simple yet extensible specifications to describe datasets, data files and tabular data. It is a data definition language (DDL) and data API that facilitates findability, accessibility, interoperability, and reusability (FAIR) of data.",
+      "stars": 580,
+      "pushed_at": "2026-05-05T15:04:00Z",
+      "language": "MDX",
+      "license_spdx_id": "Unlicense",
+      "homepage": "https://datapackage.org"
+    },
+    {
+      "full_name": "bigbio/proteomics-sample-metadata",
+      "html_url": "https://github.com/bigbio/proteomics-sample-metadata",
+      "description": "SDRF: The Proteomics sample metadata: Standard for experimental design annotation in proteomics datasets",
+      "stars": 115,
+      "pushed_at": "2026-07-28T07:56:36Z",
+      "language": "HTML",
+      "license_spdx_id": "GPL-2.0",
+      "homepage": ""
+    }
+  ]
+}

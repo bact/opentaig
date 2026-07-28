@@ -1,1 +1,2 @@
 id,tool_type,name,summary,license,homepage,source,documentation,funding,implement,eval,datetime_added,datetime_checked,datetime_updated
+frictionless-data-package,specification,Frictionless Data Package,"Open specification for describing and packaging datasets with structured metadata (schema, provenance, licensing), enabling consistent assessment of a dataset's fitness for a given use.",Unlicense,https://datapackage.org,https://github.com/frictionlessdata/datapackage,https://datapackage.org,,,,2026-07-28 21:46,2026-07-28 21:46,2026-07-28 21:46

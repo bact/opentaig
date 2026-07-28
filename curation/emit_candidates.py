@@ -39,7 +39,12 @@ candidates, of which M were open source" a query rather than an archaeology
 exercise, and lets a bad search keyword be spotted from the shape of what it
 rejected. `curation/report_triage.py` does both readings.
 
-Output:
+Output. All three files are **appended, not overwritten** -- running this
+script across several batches in a session accumulates candidates from all
+of them, so a human reviewing/merging only has to open+paste each file
+once, not once per batch (the previous overwrite-per-run behaviour meant a
+batch's output was silently destroyed by the next batch's run unless it was
+copied out first):
 
   - `curation/candidate_tools.csv` -- new `tools` tab rows, exact live
     column order (id, tool_type, name, summary, license, homepage, source,
@@ -51,12 +56,14 @@ Output:
     since a freshly emitted row was just added, checked, and updated at
     once -- formatted "YYYY-MM-DD HH:MM" (UTC, no seconds, no offset) to
     match every existing datetime_* cell in the live sheet exactly, so
-    pasting a batch in doesn't require reformatting.
+    pasting a batch in doesn't require reformatting. Deduplicated on `id`
+    across runs -- re-running the same judgments file twice doesn't
+    duplicate a row.
   - `curation/candidate_map_updates.csv` -- `rq_no, tool_id, role,
     rationale, datetime_added, datetime_checked, datetime_updated`, one row
     per (tool, RQ) pair. Same column order as the live `tool_map` tab, so a
     human appends these rows directly -- no merging into an existing cell
-    needed.
+    needed. Deduplicated on `(rq_no, tool_id, role)` across runs.
   - `curation/state/seen_repos.csv` -- appended (not overwritten) with one
     row per judged repo, accept or reject, so `dedup_candidates.py` skips
     it on future runs. Doubles as the triage record: verdict,
@@ -64,7 +71,16 @@ Output:
     surfaced it. Licence and keyword are looked up from
     `state/search_candidates.csv` rather than re-typed, so they're recorded
     for rejects too -- which is the whole point, since the rejects are where
-    the "found N, only M open source" figure comes from.
+    the "found N, only M open source" figure comes from. Deduplicated on
+    `full_name` across runs.
+
+**After merging accepted rows into the live sheet, clear (empty, keeping
+just the header row) `candidate_tools.csv` and `candidate_map_updates.csv`**
+-- otherwise already-merged rows keep accumulating alongside genuinely new
+ones and the file stops being a clean "what's pending review" list. They're
+safe to clear: nothing reads them back except a human pasting them in, and
+`state/seen_repos.csv` (never cleared) is what actually prevents a merged
+tool from being re-proposed.
 
 Usage:
 
@@ -111,13 +127,32 @@ REJECT_CATEGORIES = {
 }
 
 
-def load_existing_keys(path: Path, key_field: str) -> set:
-    """Returns the set of `key_field` values already present in `path`, so a
-    caller can skip rows it would otherwise append a second time."""
+def load_existing_keys_multi(path: Path, key_fields: list) -> set:
+    """Same as `load_existing_keys`, for a composite key (e.g. the
+    (rq_no, tool_id, role) triple that makes a `tool_map` row unique)."""
     if not path.exists():
         return set()
     with open(path, "r", encoding="utf-8") as f:
-        return {row[key_field] for row in csv.DictReader(f)}
+        return {tuple(row[field] for field in key_fields) for row in csv.DictReader(f)}
+
+
+def append_rows(path: Path, fieldnames: list, rows: list, key_fields: list) -> tuple:
+    """Appends `rows` to the CSV at `path`, writing a header only if the file
+    is new, and skipping any row whose `key_fields` already appear in the
+    file -- so running the same batch twice (or several batches across a
+    session) accumulates rather than duplicates. Returns (written, skipped)
+    counts."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    existing = load_existing_keys_multi(path, key_fields)
+    new_rows = [r for r in rows if tuple(r[f] for f in key_fields) not in existing]
+    skipped = len(rows) - len(new_rows)
+    is_new = not path.exists()
+    with open(path, "a", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        if is_new:
+            writer.writeheader()
+        writer.writerows(new_rows)
+    return len(new_rows), skipped
 
 
 def load_search_metadata(path: Path) -> dict:
@@ -270,34 +305,20 @@ def main() -> None:
         raise SystemExit(1)
 
     tools_out = Path(args.tools_out)
-    tools_out.parent.mkdir(parents=True, exist_ok=True)
-    with open(tools_out, "w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=TOOLS_FIELDNAMES)
-        writer.writeheader()
-        writer.writerows(tool_rows)
+    tools_written, tools_skipped = append_rows(tools_out, TOOLS_FIELDNAMES, tool_rows, ["id"])
 
     map_out = Path(args.map_out)
-    with open(map_out, "w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=MAP_FIELDNAMES)
-        writer.writeheader()
-        writer.writerows(map_rows)
+    map_written, map_skipped = append_rows(map_out, MAP_FIELDNAMES, map_rows, ["rq_no", "tool_id", "role"])
 
     seen_path = Path(args.seen_repos)
-    seen_path.parent.mkdir(parents=True, exist_ok=True)
-    already_seen = load_existing_keys(seen_path, "full_name")
-    new_seen_rows = [row for row in seen_rows if row["full_name"] not in already_seen]
-    skipped = len(seen_rows) - len(new_seen_rows)
-    is_new = not seen_path.exists()
-    with open(seen_path, "a", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=SEEN_FIELDNAMES)
-        if is_new:
-            writer.writeheader()
-        writer.writerows(new_seen_rows)
+    seen_written, seen_skipped = append_rows(seen_path, SEEN_FIELDNAMES, seen_rows, ["full_name"])
 
-    print(f"{len(tool_rows)} accepted tool(s) -> {tools_out}")
-    print(f"{len(map_rows)} RQ mapping(s) -> {map_out}")
-    print(f"{len(new_seen_rows)} repo(s) newly logged -> {seen_path}"
-          + (f" ({skipped} already logged, skipped)" if skipped else ""))
+    print(f"{tools_written} accepted tool(s) -> {tools_out}"
+          + (f" ({tools_skipped} already present, skipped)" if tools_skipped else ""))
+    print(f"{map_written} RQ mapping(s) -> {map_out}"
+          + (f" ({map_skipped} already present, skipped)" if map_skipped else ""))
+    print(f"{seen_written} repo(s) newly logged -> {seen_path}"
+          + (f" ({seen_skipped} already logged, skipped)" if seen_skipped else ""))
 
 
 if __name__ == "__main__":

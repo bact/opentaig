@@ -1,1 +1,2 @@
 rq_no,tool_id,role,rationale,datetime_added,datetime_checked,datetime_updated
+10,frictionless-data-package,implement,"An established open specification for exactly the kind of structured dataset metadata (schema, provenance, licensing) needed to determine a dataset's suitability for training, which is RQ10's question.",2026-07-28 21:46,2026-07-28 21:46,2026-07-28 21:46

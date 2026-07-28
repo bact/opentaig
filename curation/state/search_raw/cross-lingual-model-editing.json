@@ -1,0 +1,17 @@
+{
+  "keyword": "cross-lingual model editing",
+  "query": "cross-lingual model editing stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "stepfun-ai/Step-Audio-EditX",
+      "html_url": "https://github.com/stepfun-ai/Step-Audio-EditX",
+      "description": "A powerful 3B-parameter, LLM-based Reinforcement Learning audio edit model excels at editing emotion, speaking style, and paralinguistics, and features robust zero-shot text-to-speech",
+      "stars": 955,
+      "pushed_at": "2026-04-09T02:27:46Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    }
+  ]
+}

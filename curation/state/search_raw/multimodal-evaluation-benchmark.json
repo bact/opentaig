@@ -1,0 +1,307 @@
+{
+  "keyword": "multimodal evaluation benchmark",
+  "query": "multimodal evaluation benchmark stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 30,
+  "repos": [
+    {
+      "full_name": "EvolvingLMMs-Lab/lmms-eval",
+      "html_url": "https://github.com/EvolvingLMMs-Lab/lmms-eval",
+      "description": "One-for-All Multimodal Evaluation Toolkit Across Text, Image, Video, and Audio Tasks",
+      "stars": 4337,
+      "pushed_at": "2026-07-23T03:28:25Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://www.lmms-lab.com"
+    },
+    {
+      "full_name": "embeddings-benchmark/mteb",
+      "html_url": "https://github.com/embeddings-benchmark/mteb",
+      "description": "MTEB: State-of-the-art evaluation of embeddings across languages and modalities",
+      "stars": 3372,
+      "pushed_at": "2026-07-28T19:55:10Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.mteb.org"
+    },
+    {
+      "full_name": "MMMU-Benchmark/MMMU",
+      "html_url": "https://github.com/MMMU-Benchmark/MMMU",
+      "description": "This repo contains evaluation code for the paper \"MMMU: A Massive Multi-discipline Multimodal Understanding and Reasoning Benchmark for Expert AGI\"",
+      "stars": 590,
+      "pushed_at": "2026-07-28T02:29:26Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://mmmu-benchmark.github.io/"
+    },
+    {
+      "full_name": "gameworld-project/GameWorld",
+      "html_url": "https://github.com/gameworld-project/GameWorld",
+      "description": "GameWorld: Towards Standardized and Verifiable Evaluation of Multimodal Game Agents",
+      "stars": 213,
+      "pushed_at": "2026-07-21T07:56:17Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://gameworld-project.github.io/"
+    },
+    {
+      "full_name": "zeyofu/BLINK_Benchmark",
+      "html_url": "https://github.com/zeyofu/BLINK_Benchmark",
+      "description": "This repo contains evaluation code for the paper \"BLINK: Multimodal Large Language Models Can See but Not Perceive\".     https://arxiv.org/abs/2404.12390  [ECCV 2024]",
+      "stars": 171,
+      "pushed_at": "2025-09-27T20:06:21Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://zeyofu.github.io/blink/"
+    },
+    {
+      "full_name": "swordlidev/Evaluation-Multimodal-LLMs-Survey",
+      "html_url": "https://github.com/swordlidev/Evaluation-Multimodal-LLMs-Survey",
+      "description": "A Survey on Benchmarks of Multimodal Large Language Models",
+      "stars": 157,
+      "pushed_at": "2026-07-13T11:29:32Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "ahammadmejbah/Awesome-Datasets-Hub",
+      "html_url": "https://github.com/ahammadmejbah/Awesome-Datasets-Hub",
+      "description": "A curated collection of datasets for Large Language Models (LLMs), covering medical AI, NLP, multimodal learning, instruction tuning, reasoning, code generation, and evaluation benchmarks.",
+      "stars": 146,
+      "pushed_at": "2026-06-20T07:06:51Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": "https://intelligenceacademy.ai/datasets"
+    },
+    {
+      "full_name": "Emo-gml/EmoBench-M",
+      "html_url": "https://github.com/Emo-gml/EmoBench-M",
+      "description": "EmoBench-M: A benchmark for evaluating Emotional Intelligence in Multimodal Large Language Models (MM 2026)",
+      "stars": 146,
+      "pushed_at": "2026-07-12T11:29:36Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://emo-gml.github.io/"
+    },
+    {
+      "full_name": "OS-Copilot/ScienceBoard",
+      "html_url": "https://github.com/OS-Copilot/ScienceBoard",
+      "description": "[ICLR 2026] Code, benchmark and environment for \"ScienceBoard: Evaluating Multimodal Autonomous Agents in Realistic Scientific Workflows\"",
+      "stars": 132,
+      "pushed_at": "2026-02-02T06:26:48Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://qiushisun.github.io/ScienceBoard-Home/"
+    },
+    {
+      "full_name": "haolpku/K12-KGraph",
+      "html_url": "https://github.com/haolpku/K12-KGraph",
+      "description": "A curriculum-aligned knowledge graph, benchmark, and multimodal training dataset for evaluating and improving curriculum cognition in educational LLMs.",
+      "stars": 131,
+      "pushed_at": "2026-05-06T03:06:08Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://haolpku.github.io/K12-KGraph-page/"
+    },
+    {
+      "full_name": "OpenGVLab/MMT-Bench",
+      "html_url": "https://github.com/OpenGVLab/MMT-Bench",
+      "description": "[ICML 2024] | MMT-Bench: A Comprehensive Multimodal Benchmark for Evaluating Large Vision-Language Models Towards Multitask AGI",
+      "stars": 119,
+      "pushed_at": "2026-04-06T12:08:19Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "YanqiDai/MMRole",
+      "html_url": "https://github.com/YanqiDai/MMRole",
+      "description": "[ICLR 2025] A Comprehensive Framework for Developing and Evaluating Multimodal Role-Playing Agents",
+      "stars": 101,
+      "pushed_at": "2026-02-02T10:46:25Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "LanceZPF/MDK12",
+      "html_url": "https://github.com/LanceZPF/MDK12",
+      "description": "Official Implementation of MDK12-Bench: A Multi-Discipline Benchmark for Evaluating Reasoning in Multimodal Large Language Models",
+      "stars": 87,
+      "pushed_at": "2025-11-01T03:12:36Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "rustyneuron01/AI-Generated-Content-Detection",
+      "html_url": "https://github.com/rustyneuron01/AI-Generated-Content-Detection",
+      "description": "Multi-modal AI-generated content detection: image, video, and audio. Benchmarks, training code (DINOv2, DINOv3, ReStraV, BreathNet), and evaluation pipeline for real vs. synthetic classification with calibration-aware metrics.",
+      "stars": 86,
+      "pushed_at": "2026-03-13T07:06:56Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "meituan-longcat/UNO-Bench",
+      "html_url": "https://github.com/meituan-longcat/UNO-Bench",
+      "description": "Omni Model Benchmark with high quality and diversity, which reveals the Compositional Law. We\u2019re now focused on Chinese scenarios \u2014 and actively seeking partners to co-build English & multilingual versions! Let\u2019s expand global impact together.",
+      "stars": 78,
+      "pushed_at": "2026-01-12T02:51:14Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://agi-eval.org/evaluation/detail?id=139"
+    },
+    {
+      "full_name": "jiaxiaojunQAQ/OmniSafeBench-MM",
+      "html_url": "https://github.com/jiaxiaojunQAQ/OmniSafeBench-MM",
+      "description": "A Unified Benchmark and Toolbox for Multimodal Jailbreak Attack\u2013Defense Evaluation",
+      "stars": 75,
+      "pushed_at": "2026-05-08T14:06:28Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "killthefullmoon/PhyX",
+      "html_url": "https://github.com/killthefullmoon/PhyX",
+      "description": "PhyX: Does Your Model Have the \"Wits\" for Physical Reasoning?",
+      "stars": 54,
+      "pushed_at": "2026-03-16T09:46:58Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://phyx-bench.github.io/"
+    },
+    {
+      "full_name": "MERA-Evaluation/MERA",
+      "html_url": "https://github.com/MERA-Evaluation/MERA",
+      "description": "MERA (Multimodal Evaluation for Russian-language Architectures) is a new open benchmark for the Russian language for evaluating SOTA models.",
+      "stars": 48,
+      "pushed_at": "2026-07-23T11:10:00Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://mera.a-ai.ru/ru"
+    },
+    {
+      "full_name": "QwenAudio/MME-Emotion",
+      "html_url": "https://github.com/QwenAudio/MME-Emotion",
+      "description": "Official repository for the paper \u201cMME-Emotion: A Holistic Evaluation Benchmark for Emotional Intelligence in Multimodal Large Language Models\u201d",
+      "stars": 47,
+      "pushed_at": "2026-01-17T10:51:50Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "MiroMindAI/MiroEval",
+      "html_url": "https://github.com/MiroMindAI/MiroEval",
+      "description": "MiroEval: A benchmark and evaluation framework for deep research agents \u2014 100 tasks (70 text, 30 multimodal) assessed across synthesis quality, factuality, and research process. 13 systems evaluated.",
+      "stars": 46,
+      "pushed_at": "2026-07-06T14:50:47Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "bunnelab/mtbbench",
+      "html_url": "https://github.com/bunnelab/mtbbench",
+      "description": "MTBBench is a benchmark designed to evaluate the reasoning capabilities of multimodal large language models (LLMs) in complex clinical decision-making scenarios. It focuses on two core challenges in oncology: multimodal integration (e.g., pathology, genomics, radiology) and longitudinal reasoning across patient timelines.",
+      "stars": 39,
+      "pushed_at": "2025-10-23T09:29:15Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "vision-x-nyu/vstat",
+      "html_url": "https://github.com/vision-x-nyu/vstat",
+      "description": "Evaluation code for \"Benchmarking Visual State Tracking in Multimodal Video Understanding\"",
+      "stars": 38,
+      "pushed_at": "2026-06-03T02:32:34Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "USTC-StarTeam/ChemEval",
+      "html_url": "https://github.com/USTC-StarTeam/ChemEval",
+      "description": "ICLR 2026 | ChemEval: 4-level, 13-dimension, 62-task text/multimodal chemistry benchmark for evaluating LLMs and MLLMs.",
+      "stars": 33,
+      "pushed_at": "2026-06-09T05:26:59Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://ustc-starteam.github.io/ChemEval/"
+    },
+    {
+      "full_name": "thuiar/MMLA",
+      "html_url": "https://github.com/thuiar/MMLA",
+      "description": "The first comprehensive multimodal language analysis benchmark for evaluating foundation models",
+      "stars": 32,
+      "pushed_at": "2025-09-22T03:32:13Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "HiThink-Research/FinMTM",
+      "html_url": "https://github.com/HiThink-Research/FinMTM",
+      "description": "FinMTM: A Multi-Turn Multimodal Benchmark for Financial Reasoning and Agent Evaluation",
+      "stars": 31,
+      "pushed_at": "2026-07-27T17:25:38Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "synvo-ai/HippoCamp",
+      "html_url": "https://github.com/synvo-ai/HippoCamp",
+      "description": "A benchmark for evaluating contextual agents on realistic multimodal personal-computer environments with profiling and factual-retention tasks.",
+      "stars": 29,
+      "pushed_at": "2026-04-02T09:26:04Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "CSU-JPG/Chart2Code",
+      "html_url": "https://github.com/CSU-JPG/Chart2Code",
+      "description": "[ACL-main-2026]We introduce Chart2Code, the first user-driven, hierarchical benchmark that systematically evaluates Large Multimodal Models on chart-to-code tasks of increasing difficulty.",
+      "stars": 29,
+      "pushed_at": "2026-01-27T13:04:22Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://csu-jpg.github.io/Chart2Code/"
+    },
+    {
+      "full_name": "chuntianli666/CrossVid",
+      "html_url": "https://github.com/chuntianli666/CrossVid",
+      "description": "[AAAI 2026] CrossVid: A Comprehensive Benchmark for Evaluating Cross-Video Reasoning in Multimodal Large Language Models",
+      "stars": 23,
+      "pushed_at": "2026-07-09T01:27:28Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Yuan-Hou/Human-MME",
+      "html_url": "https://github.com/Yuan-Hou/Human-MME",
+      "description": "Official repository for \"Human-MME: A Holistic Evaluation Benchmark for Human-Centric Multimodal Large Language Models\"",
+      "stars": 22,
+      "pushed_at": "2025-12-02T11:24:22Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "IntMeGroup/LMM4LMM",
+      "html_url": "https://github.com/IntMeGroup/LMM4LMM",
+      "description": "[ICCV 2025 Highlight] LMM4LMM: Benchmarking and Evaluating Large-multimodal Image Generation with LMMs",
+      "stars": 20,
+      "pushed_at": "2025-11-16T06:52:30Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    }
+  ]
+}

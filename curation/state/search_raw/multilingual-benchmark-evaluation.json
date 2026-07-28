@@ -1,0 +1,17 @@
+{
+  "keyword": "multilingual benchmark evaluation",
+  "query": "multilingual benchmark evaluation stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "meituan-longcat/UNO-Bench",
+      "html_url": "https://github.com/meituan-longcat/UNO-Bench",
+      "description": "Omni Model Benchmark with high quality and diversity, which reveals the Compositional Law. We\u2019re now focused on Chinese scenarios \u2014 and actively seeking partners to co-build English & multilingual versions! Let\u2019s expand global impact together.",
+      "stars": 78,
+      "pushed_at": "2026-01-12T02:51:14Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://agi-eval.org/evaluation/detail?id=139"
+    }
+  ]
+}

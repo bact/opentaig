@@ -1,0 +1,37 @@
+{
+  "keyword": "evaluation as a service",
+  "query": "evaluation as a service stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 3,
+  "repos": [
+    {
+      "full_name": "google/fuzzbench",
+      "html_url": "https://github.com/google/fuzzbench",
+      "description": "FuzzBench - Fuzzer benchmarking as a service.",
+      "stars": 1204,
+      "pushed_at": "2026-01-26T08:55:21Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://google.github.io/fuzzbench/"
+    },
+    {
+      "full_name": "opengeospatial/teamengine",
+      "html_url": "https://github.com/opengeospatial/teamengine",
+      "description": "TEAM Engine (Test, Evaluation, And Measurement Engine) is an engine for testing web services and other resources written in JAVA. It executes test scripts written in Compliance Test Language (CTL), TestNG and other languages. It is lightweight and easy to run as a command line or to setup as a service. It can be used to test any type of service or encoding. It is also the official tool used by the Open Geospatial Consortium (OGC) for compliance testing.",
+      "stars": 55,
+      "pushed_at": "2026-05-18T20:44:34Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "Azure-Samples/rag-as-a-service-with-vision",
+      "html_url": "https://github.com/Azure-Samples/rag-as-a-service-with-vision",
+      "description": "This repository offers a Python framework for a retrieval-augmented generation (RAG) pipeline using text and images from MHTML documents, leveraging Azure AI and OpenAI services. It includes ingestion and enrichment flows, a RAG with Vision pipeline, and evaluation tools.",
+      "stars": 36,
+      "pushed_at": "2025-11-17T04:00:07Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}
