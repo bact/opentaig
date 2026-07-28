@@ -35,8 +35,6 @@ from pathlib import Path
 
 REPO_PATH_RE = re.compile(r"github\.com[:/]+([^/]+/[^/.]+?)(?:\.git)?/?$")
 
-SEEN_FIELDNAMES = ["full_name", "verdict", "timestamp_utc", "note"]
-
 
 def repo_path(url: str) -> str:
     """Extract 'org/repo' from a GitHub URL, lowercased for comparison.

@@ -56,6 +56,16 @@ worth keeping in mind so they don't get "corrected" away in a future run:
   the `license` column (don't normalize it to something it isn't), and note
   the licensing anomaly in the mapping `rationale` so a reader doesn't have
   to go re-derive it.
+- **Judge the thing that was actually found, not the platform it lives
+  inside.** A candidate that's a feature/module bundled inside a much
+  larger general-purpose platform (e.g. a governance feature inside an
+  MLOps suite) isn't independently distributable, installable, or
+  documented — so it isn't a standalone tool and gets rejected
+  (`out-of-scope-narrow`) even if the host platform is itself relevant.
+  This doesn't rule the host platform out — it just means the platform
+  would need its own separate judgment, against its own README/docs and
+  a specific question's own text, in its own right — not inherited from
+  the sub-feature that surfaced it.
 
 ## Pipeline
 
@@ -87,7 +97,9 @@ judgment steps need a model.
    and decide which `rq_no`(s) it genuinely helps address, and whether each
    is `implement` or `eval`, with a one-line rationale per pair. **Direct**
    judgment against the question text (from `rq_context.json`) — never via
-   shared principle ids.
+   shared principle ids. A `reject` verdict needs a `reject_category` from
+   the closed vocabulary in `emit_candidates.py`'s `REJECT_CATEGORIES`, not
+   just free text — see "Rejection tracking & licence classification" below.
 6. **Dedup** *(script: `dedup_candidates.py`, built)* — drop anything already
    in `tools` or in a `state/seen_repos.csv` log; record verdicts so future
    runs don't repeat.
@@ -98,7 +110,9 @@ judgment steps need a model.
    tab itself, so step 8 is a straight append, not a merge. Each freshly
    emitted row is also stamped with `datetime_added`, `datetime_checked`,
    and `datetime_updated` all set to the run time (see "Freshness columns"
-   below).
+   below). Every judged repo — accepted or rejected — is logged to
+   `state/seen_repos.csv` with its licence classification and reject
+   category; pass `--problem-area "..."` so that's recorded too.
 8. **Review & merge** *(human)* — accept/edit, then:
    - paste accepted rows from `candidate_tools.csv` into the `tools` tab
      (fine to be selective here, e.g. only tools with a confirmed
@@ -129,6 +143,44 @@ the values yet. They exist so a future scheduler/crawler can decide what's
 stale enough to re-fetch. `emit_candidates.py` stamps all three to the same
 run timestamp on newly emitted rows, since a row that's just been added has
 also, trivially, just been checked and updated.
+
+### Rejection tracking & licence classification
+
+`state/seen_repos.csv` (step 6/7) is the running log of every judged repo —
+**this is the methodology data for a paper claim like "area X surfaced N
+candidates, of which M were open source."** It used to record only
+`full_name, verdict, timestamp_utc, note`, which made that claim
+unanswerable without re-reading 80+ free-text rejection notes by hand. It
+now also carries:
+
+| Column | Meaning |
+|---|---|
+| `reject_category` | One value from `emit_candidates.py`'s `REJECT_CATEGORIES` — a closed vocabulary (`not-open-source`, `not-relevant`, `not-a-tool-linklist`, `not-a-tool-dataset`, `not-a-tool-paper-artifact`, `adversarial-purpose`, `commercial-sdk`, `low-substance`, `out-of-scope-narrow`, `redundant`). `emit_candidates.py` requires one on every `reject` verdict now — a bare `reject_reason` string is no longer enough. |
+| `license_spdx_id` | The judgment's `license` field, falling back to the SPDX id `search_repos.py` captured from the GitHub API. Recorded on **accepts too**, not just rejects — you can't compute "M of N were open source" from the rejects alone. |
+| `license_class` | `license_spdx_id` run through `licenses.py`'s `classify()` against the *official* SPDX license list's `isOsiApproved`/`isFsfLibre` flags — not a hand-maintained guess. One of `osi-approved`, `free-not-osi` (FSF-libre but not OSI, e.g. `CC-BY-4.0`), `non-free` (a real SPDX id that's neither, e.g. `CC-BY-NC-4.0`), `source-available` (GitHub found a LICENSE file it couldn't match — `NOASSERTION`), `none-declared`, or `unknown`. `emit_candidates.py` cross-checks this against `reject_category`: rejecting something as `not-open-source` while its licence classifies as open is an error, not a warning. |
+| `problem_area` | The problem area this batch was searched for — pass `--problem-area "..."` to `emit_candidates.py`, or set a per-judgment `problem_area` key to override it for one row. |
+| `found_via_keyword`, `stars` | Also pulled from `search_candidates.csv` by repo — provenance for *how* a candidate was found, alongside *why* it was accepted/rejected. |
+
+`report_triage.py` reads the log and prints two tables: found/accepted/
+open-source/rejected counts grouped by `problem_area` (or `--by keyword`),
+and a breakdown of rejections by category and of all judged repos by
+licence class:
+
+```bash
+python curation/report_triage.py
+python curation/report_triage.py --by keyword
+```
+
+The 144 rows written before this schema existed were backfilled by
+`curation/backfill_triage_columns.py` (a one-time migration, kept in the
+repo — not deleted after running — so the reconstruction stays auditable:
+licence/keyword/stars came from an exact join against
+`search_candidates.csv`; `problem_area` from which of four timestamp
+clusters a row falls in; `reject_category` from a regex pass over the
+existing free-text notes, with every low-confidence fallback printed for a
+manual look rather than silently guessed). Going forward every new run
+populates these columns itself — the migration script never needs to run
+again.
 
 ### Model tiering (cost control)
 
@@ -222,7 +274,25 @@ tab/column name used to be a mix of casings, e.g. `RQ_No`, `RGAF`,
   and writes `candidate_tools.csv` + `candidate_map_updates.csv` (each row
   stamped with `datetime_added`/`datetime_checked`/`datetime_updated` set
   to the run time), and appends every judged repo (accept or reject) to
-  `state/seen_repos.csv`. Deterministic; no model, no network.
+  `state/seen_repos.csv`, with a validated `reject_category` and licence
+  classification — see "Rejection tracking & licence classification" above.
+  Deterministic; no model, no network.
+- **`licenses.py`** — built. Classifies a GitHub-reported SPDX license id as
+  `osi-approved` / `free-not-osi` / `non-free` / `source-available` /
+  `none-declared` / `unknown`, from the official SPDX license list's
+  `isOsiApproved`/`isFsfLibre` flags (fetched once, cached to
+  `state/spdx_licenses.json`). Deterministic; no model; network only on
+  first run or `refresh=True`. Field names (`is_osi_approved`,
+  `is_fsf_libre`) follow the SPDX 3.0 model / the `is-osi`/`is-fsf`
+  predicates in [bact/licenseid](https://github.com/bact/licenseid) — see
+  that project instead if the input is unstructured license *text* rather
+  than an already-resolved SPDX id.
+- **`report_triage.py`** — built. Reads `state/seen_repos.csv` and prints
+  found/accepted/open-source/rejected counts by problem area (or keyword),
+  plus breakdowns by reject category and licence class. Deterministic; no
+  model, no network.
+- **`backfill_triage_columns.py`** — one-time migration, already run; kept
+  for auditability. See "Rejection tracking & licence classification" above.
 - **`candidate_tools_from_rgaf.csv`** — historical snapshot: the original 32
   tools pulled from the sheet's `tools_rgaf_seed` staging tab (seeded from
   the LF AI & Data blog post ["Putting RGAF to Work"](https://lfaidata.foundation/communityblog/2026/04/22/putting-rgaf-to-work-build-and-audit-responsible-ai-with-open-source/)),
@@ -235,10 +305,12 @@ tab/column name used to be a mix of casings, e.g. `RQ_No`, `RGAF`,
 - **`rq_context.json`** — generated (git-ignored, purely derived from a
   fresh `site/data.json`), see step 1.
 - **`state/search_raw/*.json`**, **`state/search_candidates.csv`**,
-  **`state/search_log.csv`**, **`state/seen_repos.csv`** — generated, but
-  **commit these**: unlike `rq_context.json` they're the running audit
-  trail / dedup base / provenance log across runs (and contributors), not a
-  disposable snapshot. See steps 3 and 6.
+  **`state/search_log.csv`**, **`state/seen_repos.csv`**,
+  **`state/spdx_licenses.json`** — generated, but **commit these**: unlike
+  `rq_context.json` they're the running audit trail / dedup base /
+  provenance log / licence-classification cache across runs (and
+  contributors), not a disposable snapshot. See steps 3, 6, and "Rejection
+  tracking & licence classification".
 - **`candidate_tools.csv`**, **`candidate_map_updates.csv`** — generated by
   `emit_candidates.py` (step 7), one batch at a time. Commit them alongside
   the run that produced them if you want a record of what was proposed

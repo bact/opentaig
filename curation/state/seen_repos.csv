@@ -1,145 +1,145 @@
-full_name,verdict,timestamp_utc,note
-fossology/fossology,accept,2026-07-24T17:43:42+00:00,
-anchore/grant,accept,2026-07-24T17:43:42+00:00,
-getprovenant/provenant,accept,2026-07-24T17:43:42+00:00,
-Samsung/LPVS,accept,2026-07-24T17:43:42+00:00,
-SecObserve/SecObserve,reject,2026-07-24T17:43:42+00:00,"Primarily a vulnerability-management dashboard that ingests and displays third-party scanner output; its license 'management' is thin reporting rather than actual license detection/collection or cross-source reconciliation, so it only has superficial overlap with RQ2/RQ3."
-americanexpress/earlybird,accept,2026-07-24T17:43:42+00:00,
-DataFog/datafog-python,accept,2026-07-24T17:43:42+00:00,
-awslabs/ferret-scan,accept,2026-07-24T17:43:42+00:00,
-kadir/cloakrs,accept,2026-07-24T17:43:42+00:00,
-PovertyAction/PII_detection,accept,2026-07-24T17:43:42+00:00,
-sam247/openredaction,accept,2026-07-24T17:43:42+00:00,
-GoogleCloudPlatform/dlp-pdf-redaction,accept,2026-07-24T17:43:42+00:00,
-karant-dev/AutoRedact,accept,2026-07-24T17:43:42+00:00,
-itext/itext-pdfsweep-java,accept,2026-07-24T17:43:42+00:00,
-taylorwilsdon/reddacted,reject,2026-07-24T17:43:42+00:00,Narrow personal-privacy utility for auditing and bulk-deleting your own Reddit comment history via the Reddit API; it is not a general dataset-curation tool for identifying or removing problematic data from training corpora.
-microsoft/responsible-ai-toolbox-privacy,reject,2026-07-24T17:43:42+00:00,"It statistically estimates differential-privacy epsilon from the confusion matrix of a membership-inference attack; this is privacy-budget accounting/auditing, not identification/removal of problematic data, license handling, or eval-time contamination detection, so it does not fit any of RQ1-6."
-IntelLabs/atlas-cli,accept,2026-07-24T17:43:42+00:00,
-Leey21/data-lineage,accept,2026-07-24T17:43:42+00:00,
-SeekingDream/DyCodeEval,accept,2026-07-24T17:43:42+00:00,
-TracyWang95/DataInfra-RedactionEverything,accept,2026-07-24T17:43:42+00:00,
-trusted-ai/adversarial-robustness-toolbox,accept,2026-07-28T06:52:16+00:00,
-dssg/aequitas,accept,2026-07-28T06:52:16+00:00,
-Trusted-AI/AIX360,accept,2026-07-28T06:52:16+00:00,
-Trusted-AI/AIF360,accept,2026-07-28T06:52:16+00:00,
-Japan-AISI/aisev,accept,2026-07-28T06:52:16+00:00,
-PKU-Alignment/safe-rlhf,accept,2026-07-28T06:52:16+00:00,
-GraySwanAI/circuit-breakers,accept,2026-07-28T06:52:16+00:00,
-mlco2/codecarbon,accept,2026-07-28T06:52:16+00:00,
-compl-ai/compl-ai,accept,2026-07-28T06:52:16+00:00,
-AI-secure/DecodingTrust,accept,2026-07-28T06:52:16+00:00,
-data-prep-kit/data-prep-kit,accept,2026-07-28T06:52:16+00:00,
-evidentlyai/evidently,accept,2026-07-28T06:52:16+00:00,
-fairlearn/fairlearn,accept,2026-07-28T06:52:16+00:00,
-NVIDIA/garak,accept,2026-07-28T06:52:16+00:00,
-guardrails-ai/guardrails,accept,2026-07-28T06:52:16+00:00,
-inclusionAI/HeartBench,accept,2026-07-28T06:52:16+00:00,
-UKGovernmentBEIS/inspect_ai,accept,2026-07-28T06:52:16+00:00,
-PAIR-code/lit,accept,2026-07-28T06:52:16+00:00,
-mlflow/mlflow,reject,2026-07-28T06:52:16+00:00,"MemAlign is a judge-alignment optimizer bundled inside MLflow, a very large general-purpose MLOps/AI-engineering platform, so it is not an independently distributable standalone tool, and the available README is for the whole platform and provides no evidence about MemAlign itself."
-SonySemiconductorSolutions/mct-model-optimization,reject,2026-07-28T06:52:16+00:00,"The Model Compression Toolkit performs quantization (PTQ/GPTQ/QAT) to shrink models for edge hardware; it reduces compute but provides no facility for measuring or reporting energy use, emissions or any other environmental impact, so RQ98 does not fit."
-lfai/model_openness_tool,accept,2026-07-28T06:52:16+00:00,
-NVIDIA-NeMo/Guardrails,accept,2026-07-28T06:52:16+00:00,
-intel/neural-compressor,reject,2026-07-28T06:52:16+00:00,"Intel Neural Compressor is a quantization and model-compression library (static/dynamic/weight-only quantization, QAT, mixed precision); it optimises inference efficiency but offers no measurement or accounting of energy consumption or environmental impact, so RQ98 does not fit."
-data-privacy-stack/presidio,accept,2026-07-28T06:52:16+00:00,
-privacytrustlab/ml_privacy_meter,accept,2026-07-28T06:52:16+00:00,
-aiverify-foundation/moonshot,accept,2026-07-28T06:52:16+00:00,
-vgel/repeng,accept,2026-07-28T06:52:16+00:00,
-andyzoujm/representation-engineering,accept,2026-07-28T06:52:16+00:00,
-aws/amazon-sagemaker-clarify,accept,2026-07-28T06:52:16+00:00,
-trustyai-explainability/trustyai-explainability,accept,2026-07-28T06:52:16+00:00,
-HowieHwong/TrustLLM,accept,2026-07-28T06:52:16+00:00,
-PAIR-code/what-if-tool,accept,2026-07-28T06:52:16+00:00,
-contentauth/c2pa-rs,accept,2026-07-28T12:58:33+00:00,
-THU-BPM/MarkLLM,accept,2026-07-28T12:58:33+00:00,
-SCLBD/DeepfakeBench,accept,2026-07-28T12:58:33+00:00,
-siddharthksah/DeepSafe,accept,2026-07-28T12:58:33+00:00,
-lynote-ai/ai-text-detector,accept,2026-07-28T12:58:33+00:00,
-aboutcode-org/scancode-toolkit,accept,2026-07-28T12:58:33+00:00,
-D-Ogi/WatermarkRemover-AI,reject,2026-07-28T12:58:33+00:00,Adversarial to this problem area -- removes watermarks rather than applying/verifying them.
-ngmisl/C2PAremover,reject,2026-07-28T12:58:33+00:00,"Adversarial -- strips C2PA content-provenance metadata, opposite of what RQ65/66 need."
-mohammedelahmar/tiktok-agent,reject,2026-07-28T12:58:33+00:00,"Off-topic false positive from the 'AI content watermarking' keyword; it's a TikTok content-repurposing agent, not a watermarking/provenance tool."
-SamurAIGPT/AI-Youtube-Shorts-Generator,reject,2026-07-28T12:58:33+00:00,Off-topic false positive from the 'LLM watermark' keyword; it's a video-clip generator with no watermarking/provenance functionality.
-Tooooa/AgentMark,reject,2026-07-28T12:58:33+00:00,"Single-paper research artifact (ACL 2026) accompanying a specific publication, not a maintained general-purpose toolkit."
-facebookresearch/three_bricks,reject,2026-07-28T12:58:33+00:00,"Single-paper research code release, not a maintained general-purpose watermarking toolkit."
-ai-kunkun/PASA,reject,2026-07-28T12:58:33+00:00,"Single-paper research artifact (ICML 2026), narrow scope, not a general-purpose tool."
-Daisy-Zhang/Awesome-Deepfakes-Detection,reject,2026-07-28T12:58:33+00:00,"Curated link list (awesome-list), not a usable tool."
-flyingby/Awesome-Deepfake-Generation-and-Detection,reject,2026-07-28T12:58:33+00:00,"Curated link list (awesome-list / survey paper repo), not a usable tool."
-qiqitao77/Awesome-Comprehensive-Deepfake-Detection,reject,2026-07-28T12:58:33+00:00,"Curated link list (awesome-list), not a usable tool."
-plll4zzx/Awesome-LLM-Watermark,reject,2026-07-28T12:58:33+00:00,"Curated link list (awesome-list), not a usable tool."
-Xuzhenhua55/awesome-llm-copyright-protection,reject,2026-07-28T12:58:33+00:00,"Curated link list (awesome-list), not a usable tool."
-OpenTAI/wild-deepfake,reject,2026-07-28T12:58:33+00:00,"A dataset repository, not a tool."
-MI-BioLab/AI-GenBench,reject,2026-07-28T12:58:33+00:00,"A benchmark dataset/paper release, not a runnable detection tool."
-IntMeGroup/DFBench,reject,2026-07-28T12:58:33+00:00,"A benchmark dataset paper release (ACM MM), not a runnable tool -- DeepfakeBench already covers the general benchmark-suite role for this batch."
-hi-paris/FakeParts,reject,2026-07-28T12:58:33+00:00,"A dataset release, not a tool."
-xieyuankun/FSD-Dataset,reject,2026-07-28T12:58:33+00:00,"A dataset release, not a tool."
-OpenRL-Lab/DeepFakeFace,reject,2026-07-28T12:58:33+00:00,"A dataset release accompanying a paper, not a tool."
-10Ring/LAA-Net,reject,2026-07-28T12:58:33+00:00,"Single-paper research code release, not a maintained general-purpose detection tool."
-laiyingxin2/DADF,reject,2026-07-28T12:58:33+00:00,"Single-paper research code release, not a maintained general-purpose detection tool."
-hzlsaber/SIDA,reject,2026-07-28T12:58:33+00:00,"Single-paper research code release, not a maintained general-purpose detection tool."
-EricTan7/Veritas,reject,2026-07-28T12:58:33+00:00,"Single-paper research code release (ICLR 2026), not a maintained general-purpose detection tool."
-erprogs/GenConViT,reject,2026-07-28T12:58:33+00:00,"Single-paper research code release, not a maintained general-purpose detection tool."
-erprogs/CViT,reject,2026-07-28T12:58:33+00:00,"Single-paper research code release, not a maintained general-purpose detection tool."
-chuangchuangtan/C2P-CLIP-DeepfakeDetection,reject,2026-07-28T12:58:33+00:00,"Single-paper research code release, not a maintained general-purpose detection tool."
-sfimediafutures/CLIPping-the-Deception,reject,2026-07-28T12:58:33+00:00,"Single-paper research code release, not a maintained general-purpose detection tool."
-yermandy/deepfake-detection,reject,2026-07-28T12:58:33+00:00,"Single-paper research code release, not a maintained general-purpose detection tool."
-Balaji-Kartheek/DeepFake_Detection,reject,2026-07-28T12:58:33+00:00,"Student/tutorial project, thin and not maintained as a general-purpose tool."
-aaronchong888/DeepFake-Detect,reject,2026-07-28T12:58:33+00:00,"Educational/tutorial repo for training your own model, not a ready-to-use detection tool."
-VeridisQuo-orga/VeridisQuo,reject,2026-07-28T12:58:33+00:00,"Low-substance individual project, thin README, not clearly maintained."
-Gayatri2207/Deepfake-detection-,reject,2026-07-28T12:58:33+00:00,"Low-substance individual project, no description, not clearly maintained."
-yermandy/GenD,reject,2026-07-28T12:58:33+00:00,"Single-paper research code release (WACV 2026), not a maintained general-purpose detection tool."
-hongsong-wang/LOTA,reject,2026-07-28T12:58:33+00:00,"Single-paper research code release, not a maintained general-purpose detection tool."
-10Ring/FakeSTormer,reject,2026-07-28T12:58:33+00:00,"Single-paper research code release (ICCV 2025), not a maintained general-purpose detection tool."
-Coral79/CDDB,reject,2026-07-28T12:58:33+00:00,"Single-paper research code/dataset release (WACV 2023), not a maintained general-purpose detection tool."
-chandlerbing65nm/FakeImageDetection,reject,2026-07-28T12:58:33+00:00,"Single-paper research code release, not a maintained general-purpose detection tool."
-Yaselley/SSL_Layerwise_Deepfake,reject,2026-07-28T12:58:33+00:00,"Single-paper research code release (audio deepfake), not a maintained general-purpose detection tool."
-apple-yinhan/EnvSDD,reject,2026-07-28T12:58:33+00:00,"Single-paper research code/dataset release (environmental sound deepfakes), out of scope and not a maintained tool."
-TRahulsingh/DeepfakeDetector,reject,2026-07-28T12:58:33+00:00,"Low-substance individual project, not clearly maintained as a general-purpose tool."
-tuffy-studio/HAVIC,reject,2026-07-28T12:58:33+00:00,"Single-paper research code release (CVPR 2026 Findings), not a maintained general-purpose detection tool."
-beenuar/shieldapp-android,reject,2026-07-28T12:58:33+00:00,"Broad mobile security-suite app with deepfake detection as one minor feature; not a focused, verifiable detection tool for this catalog."
-10Ring/FakeFormer,reject,2026-07-28T12:58:33+00:00,"Single-paper research code release, not a maintained general-purpose detection tool."
-resemble-ai/detect-skill,reject,2026-07-28T12:58:33+00:00,"Thin agent-skill wrapper repo, not a standalone detection tool in its own right."
-Pranesh-2005/AI-Generated-Video-Detector,reject,2026-07-28T12:58:33+00:00,"Low-substance individual project, not clearly maintained as a general-purpose tool."
-echefulouis/deepFake-detection-application,reject,2026-07-28T12:58:33+00:00,"Low-substance individual/demo project, not clearly maintained as a general-purpose tool."
-Yaselley/deepfense-framework,reject,2026-07-28T12:58:33+00:00,"Thin framework repo tied to the same author's single-paper releases, not independently established as a maintained general-purpose tool."
-rama0126/PwTF-DVD,reject,2026-07-28T12:58:33+00:00,"Single-paper research code release, not a maintained general-purpose detection tool."
-MaxMassi/Face-Swapper,reject,2026-07-28T12:58:33+00:00,"A deepfake *generation* tool (face-swapping), not a detection/verification tool -- wrong side of this problem area."
-Faceplugin-ltd/FaceLivenessDetection-Linux,reject,2026-07-28T12:58:33+00:00,"Commercial-SDK marketing repo for biometric liveness detection (anti-spoofing at capture time), a different problem (identity/liveness) from AI-generated-content verification."
-Faceplugin-ltd/Face-Liveness-Detection-SDK,reject,2026-07-28T12:58:33+00:00,"Commercial-SDK marketing repo for biometric liveness detection, different problem area from AI-generated-content verification."
-Faceplugin-ltd/FaceLivenessDetection-Android,reject,2026-07-28T12:58:33+00:00,"Commercial-SDK marketing repo for biometric liveness detection, different problem area from AI-generated-content verification."
-BioID-GmbH/FaceLivenessDetection,reject,2026-07-28T12:58:33+00:00,"Commercial-SDK marketing repo for biometric liveness detection, different problem area from AI-generated-content verification."
-DoubangoTelecom/ultimateFace-SDK,reject,2026-07-28T12:58:33+00:00,"Commercial-SDK marketing repo for face recognition/liveness, different problem area from AI-generated-content verification."
-DadaNanjesha/AI-content-detector-Humanizer,reject,2026-07-28T12:58:33+00:00,"Mixed-purpose repo that also 'humanizes' text to evade detectors (partly adversarial to this problem area), low stars, unclear maintenance."
-Ram-nishal/ai-content-authenticity-detector-using-metadata,reject,2026-07-28T12:58:33+00:00,"Low-substance individual project, not clearly maintained as a general-purpose tool."
-zkonduit/ezkl,accept,2026-07-28T13:43:57+00:00,
-jina-ai/embedding-fingerprints,accept,2026-07-28T13:43:57+00:00,
-HoneyMeta/ccfingerprint,accept,2026-07-28T13:43:57+00:00,
-demml/opsml,accept,2026-07-28T13:43:57+00:00,
-Lagrange-Labs/deep-prove,reject,2026-07-28T13:43:57+00:00,"Custom proprietary 'Lagrange License' (a restrictive corporate software agreement, not an OSI-approved open-source license) -- not open source despite the public repo."
-inference-labs-inc/JSTprove,reject,2026-07-28T13:43:57+00:00,"Custom 'Source Access Grant' license with redistribution conditions -- source-available, not a standard permissive/copyleft open-source license."
-inference-labs-inc/dsperse,reject,2026-07-28T13:43:57+00:00,Orchestration/slicing layer built on top of JSTprove (already rejected for its license); thinner and redundant with the accepted ezkl for this batch.
-inference-labs-inc/zkml-blueprints,reject,2026-07-28T13:43:57+00:00,"A collection of mathematical formulations/circuit designs, not a runnable tool."
-inference-labs-inc/subnet-2,reject,2026-07-28T13:43:57+00:00,"Bittensor-subnet-specific verifiable inference product, narrow crypto-network use case rather than a general-purpose tool."
-gizatechxyz/LuminAIR,reject,2026-07-28T13:43:57+00:00,"No declared license, low stars, and redundant zkML coverage given the already-accepted ezkl in this batch."
-agencyenterprise/zkgraph-bnb-hack,reject,2026-07-28T13:43:57+00:00,"Hackathon demo project ('BNB Q3 Winner'), not evidence of an established, maintained tool."
-lfedgeai/AegisSovereignAI,reject,2026-07-28T13:43:57+00:00,"A whitepaper/vision-document repo ('Executive Summary', architecture proposal) with no evidence of a runnable implementation; also off-topic for zkML specifically."
-EvanZhouDev/umr,reject,2026-07-28T13:43:57+00:00,"A local model-weight deduplication/cache-sharing tool across desktop AI apps, despite the name it is not an audit or verification registry -- off-topic for this problem area."
-Y0oshi/Project-Deep-Focus,reject,2026-07-28T13:43:57+00:00,"Off-topic false positive from 'model fingerprinting' -- a network reconnaissance tool ('personal Shodan'), unrelated to AI model verification."
-grip-unina/noiseprint,reject,2026-07-28T13:43:57+00:00,"Camera-sensor forensic fingerprinting for image forensics, a different domain from AI model identity verification."
-Shivadharshini-V/Fingerprint-Recognition,reject,2026-07-28T13:43:57+00:00,"Off-topic false positive -- biometric (human) fingerprint recognition, unrelated to AI models."
-sergezuber/FABULA-LLM-5,reject,2026-07-28T13:43:57+00:00,"Vague, low-substance repo with unclear scope and functionality."
-shaoshuo-ss/Awesome-LLM-Fingerprinting,reject,2026-07-28T13:43:57+00:00,"Curated paper list (awesome-list), not a usable tool."
-ssloxford/SatIQ,reject,2026-07-28T13:43:57+00:00,"Off-topic -- satellite signal fingerprinting, unrelated to AI model verification."
-AmanPriyanshu/GPT-OSS-MoE-ExpertFingerprinting,reject,2026-07-28T13:43:57+00:00,"Single-paper/research-notebook artifact analyzing MoE expert behavior, not a maintained general-purpose verification tool."
-FranciscoMoretti/ai-registry,reject,2026-07-28T13:43:57+00:00,"A browsing/comparison UI for Vercel AI Gateway's model catalog, not an audit or provenance registry."
-truefoundry/models,reject,2026-07-28T13:43:57+00:00,"Thin community-maintained list of model configuration files, not an audit/verification registry."
-den-vasyliev/agentregistry-inventory,reject,2026-07-28T13:43:57+00:00,"Kubernetes infrastructure inventory/control-plane tool, off-topic for audit registries."
-nirholas/mcp-notify,reject,2026-07-28T13:43:57+00:00,"Monitors the Model Context Protocol registry for new server listings, off-topic -- not an AI model audit registry."
-olamide226/ollama-gguf-downloader,reject,2026-07-28T13:43:57+00:00,"A model file downloader CLI, off-topic for audit/verification registries."
-lechmazur/writing_styles,reject,2026-07-28T13:43:57+00:00,"Off-topic false positive from 'model fingerprinting' -- documents literary writing-style analysis, unrelated to AI model verification."
-Redomic/NeuThera-Drug-Discovery-Toolkit,reject,2026-07-28T13:43:57+00:00,"Off-topic -- a drug-discovery toolkit, unrelated to AI model fingerprinting/verification."
-AmirhosseinHonardoust/Onchain-Security-Suite,reject,2026-07-28T13:43:57+00:00,"Off-topic -- Web3/crypto token security toolkit, unrelated to AI model registries."
-devallibus/shiplog,reject,2026-07-28T13:43:57+00:00,"A git-based AI-assisted development tracking tool, off-topic for model provenance verification."
-Zhonghao1995/agentic-swmm-workflow,reject,2026-07-28T13:43:57+00:00,"Off-topic -- an automated stormwater-modeling workflow, unrelated to AI model provenance."
-SaravananJaichandar/world-model-mcp,reject,2026-07-28T13:43:57+00:00,"Vague, low-substance repo (20 stars) without clear evidence of a working, maintained tool."
+full_name,verdict,reject_category,note,license_spdx_id,license_class,problem_area,found_via_keyword,stars,timestamp_utc
+fossology/fossology,accept,,,GPL-2.0,osi-approved,Identification of Problematic Data,license scanner,1010,2026-07-24T17:43:42+00:00
+anchore/grant,accept,,,Apache-2.0,osi-approved,Identification of Problematic Data,license scanner,178,2026-07-24T17:43:42+00:00
+getprovenant/provenant,accept,,,Apache-2.0,osi-approved,Identification of Problematic Data,license scanner,37,2026-07-24T17:43:42+00:00
+Samsung/LPVS,accept,,,MIT,osi-approved,Identification of Problematic Data,license scanner,30,2026-07-24T17:43:42+00:00
+SecObserve/SecObserve,reject,not-open-source,"Primarily a vulnerability-management dashboard that ingests and displays third-party scanner output; its license 'management' is thin reporting rather than actual license detection/collection or cross-source reconciliation, so it only has superficial overlap with RQ2/RQ3.",NOASSERTION,source-available,Identification of Problematic Data,license scanner,279,2026-07-24T17:43:42+00:00
+americanexpress/earlybird,accept,,,Apache-2.0,osi-approved,Identification of Problematic Data,PII detection,774,2026-07-24T17:43:42+00:00
+DataFog/datafog-python,accept,,,MIT,osi-approved,Identification of Problematic Data,PII detection,66,2026-07-24T17:43:42+00:00
+awslabs/ferret-scan,accept,,,Apache-2.0,osi-approved,Identification of Problematic Data,data redaction,56,2026-07-24T17:43:42+00:00
+kadir/cloakrs,accept,,,MIT,osi-approved,Identification of Problematic Data,PII detection,54,2026-07-24T17:43:42+00:00
+PovertyAction/PII_detection,accept,,,MIT,osi-approved,Identification of Problematic Data,PII detection,47,2026-07-24T17:43:42+00:00
+sam247/openredaction,accept,,,MIT,osi-approved,Identification of Problematic Data,PII detection,97,2026-07-24T17:43:42+00:00
+GoogleCloudPlatform/dlp-pdf-redaction,accept,,,Apache-2.0,osi-approved,Identification of Problematic Data,data redaction,66,2026-07-24T17:43:42+00:00
+karant-dev/AutoRedact,accept,,,GPL-3.0,osi-approved,Identification of Problematic Data,data redaction,77,2026-07-24T17:43:42+00:00
+itext/itext-pdfsweep-java,accept,,,NOASSERTION,source-available,Identification of Problematic Data,data redaction,47,2026-07-24T17:43:42+00:00
+taylorwilsdon/reddacted,reject,out-of-scope-narrow,Narrow personal-privacy utility for auditing and bulk-deleting your own Reddit comment history via the Reddit API; it is not a general dataset-curation tool for identifying or removing problematic data from training corpora.,MIT,osi-approved,Identification of Problematic Data,PII detection,128,2026-07-24T17:43:42+00:00
+microsoft/responsible-ai-toolbox-privacy,reject,not-open-source,"It statistically estimates differential-privacy epsilon from the confusion matrix of a membership-inference attack; this is privacy-budget accounting/auditing, not identification/removal of problematic data, license handling, or eval-time contamination detection, so it does not fit any of RQ1-6.",MIT,osi-approved,Identification of Problematic Data,membership inference,37,2026-07-24T17:43:42+00:00
+IntelLabs/atlas-cli,accept,,,Apache-2.0,osi-approved,Identification of Problematic Data,dataset provenance,23,2026-07-24T17:43:42+00:00
+Leey21/data-lineage,accept,,,,none-declared,Identification of Problematic Data,data contamination,25,2026-07-24T17:43:42+00:00
+SeekingDream/DyCodeEval,accept,,,,none-declared,Identification of Problematic Data,data contamination,226,2026-07-24T17:43:42+00:00
+TracyWang95/DataInfra-RedactionEverything,accept,,,NOASSERTION,source-available,Identification of Problematic Data,data redaction,1151,2026-07-24T17:43:42+00:00
+trusted-ai/adversarial-robustness-toolbox,accept,,,MIT,osi-approved,rgaf-seed-triage,,,2026-07-28T06:52:16+00:00
+dssg/aequitas,accept,,,MIT,osi-approved,rgaf-seed-triage,,,2026-07-28T06:52:16+00:00
+Trusted-AI/AIX360,accept,,,Apache-2.0,osi-approved,rgaf-seed-triage,,,2026-07-28T06:52:16+00:00
+Trusted-AI/AIF360,accept,,,Apache-2.0,osi-approved,rgaf-seed-triage,,,2026-07-28T06:52:16+00:00
+Japan-AISI/aisev,accept,,,Apache-2.0,osi-approved,rgaf-seed-triage,,,2026-07-28T06:52:16+00:00
+PKU-Alignment/safe-rlhf,accept,,,Apache-2.0,osi-approved,rgaf-seed-triage,,,2026-07-28T06:52:16+00:00
+GraySwanAI/circuit-breakers,accept,,,MIT,osi-approved,rgaf-seed-triage,,,2026-07-28T06:52:16+00:00
+mlco2/codecarbon,accept,,,MIT,osi-approved,rgaf-seed-triage,,,2026-07-28T06:52:16+00:00
+compl-ai/compl-ai,accept,,,Apache-2.0,osi-approved,rgaf-seed-triage,,,2026-07-28T06:52:16+00:00
+AI-secure/DecodingTrust,accept,,,CC-BY-SA-4.0,free-not-osi,rgaf-seed-triage,,,2026-07-28T06:52:16+00:00
+data-prep-kit/data-prep-kit,accept,,,Apache-2.0,osi-approved,rgaf-seed-triage,,,2026-07-28T06:52:16+00:00
+evidentlyai/evidently,accept,,,Apache-2.0,osi-approved,rgaf-seed-triage,,,2026-07-28T06:52:16+00:00
+fairlearn/fairlearn,accept,,,MIT,osi-approved,rgaf-seed-triage,,,2026-07-28T06:52:16+00:00
+NVIDIA/garak,accept,,,Apache-2.0,osi-approved,rgaf-seed-triage,,,2026-07-28T06:52:16+00:00
+guardrails-ai/guardrails,accept,,,Apache-2.0,osi-approved,rgaf-seed-triage,,,2026-07-28T06:52:16+00:00
+inclusionAI/HeartBench,accept,,,Apache-2.0,osi-approved,rgaf-seed-triage,,,2026-07-28T06:52:16+00:00
+UKGovernmentBEIS/inspect_ai,accept,,,MIT,osi-approved,rgaf-seed-triage,,,2026-07-28T06:52:16+00:00
+PAIR-code/lit,accept,,,Apache-2.0,osi-approved,rgaf-seed-triage,,,2026-07-28T06:52:16+00:00
+mlflow/mlflow,reject,out-of-scope-narrow,"MemAlign is a judge-alignment optimizer bundled inside MLflow, a very large general-purpose MLOps/AI-engineering platform, so it is not an independently distributable standalone tool, and the available README is for the whole platform and provides no evidence about MemAlign itself.",Apache-2.0,osi-approved,rgaf-seed-triage,,,2026-07-28T06:52:16+00:00
+SonySemiconductorSolutions/mct-model-optimization,reject,out-of-scope-narrow,"The Model Compression Toolkit performs quantization (PTQ/GPTQ/QAT) to shrink models for edge hardware; it reduces compute but provides no facility for measuring or reporting energy use, emissions or any other environmental impact, so RQ98 does not fit.",Apache-2.0,osi-approved,rgaf-seed-triage,,,2026-07-28T06:52:16+00:00
+lfai/model_openness_tool,accept,,,MIT,osi-approved,rgaf-seed-triage,,,2026-07-28T06:52:16+00:00
+NVIDIA-NeMo/Guardrails,accept,,,Apache-2.0,osi-approved,rgaf-seed-triage,,,2026-07-28T06:52:16+00:00
+intel/neural-compressor,reject,out-of-scope-narrow,"Intel Neural Compressor is a quantization and model-compression library (static/dynamic/weight-only quantization, QAT, mixed precision); it optimises inference efficiency but offers no measurement or accounting of energy consumption or environmental impact, so RQ98 does not fit.",Apache-2.0,osi-approved,rgaf-seed-triage,,,2026-07-28T06:52:16+00:00
+data-privacy-stack/presidio,accept,,,MIT,osi-approved,rgaf-seed-triage,,,2026-07-28T06:52:16+00:00
+privacytrustlab/ml_privacy_meter,accept,,,MIT,osi-approved,rgaf-seed-triage,,,2026-07-28T06:52:16+00:00
+aiverify-foundation/moonshot,accept,,,Apache-2.0,osi-approved,rgaf-seed-triage,,,2026-07-28T06:52:16+00:00
+vgel/repeng,accept,,,MIT,osi-approved,rgaf-seed-triage,,,2026-07-28T06:52:16+00:00
+andyzoujm/representation-engineering,accept,,,MIT,osi-approved,rgaf-seed-triage,,,2026-07-28T06:52:16+00:00
+aws/amazon-sagemaker-clarify,accept,,,Apache-2.0,osi-approved,rgaf-seed-triage,,,2026-07-28T06:52:16+00:00
+trustyai-explainability/trustyai-explainability,accept,,,Apache-2.0,osi-approved,rgaf-seed-triage,,,2026-07-28T06:52:16+00:00
+HowieHwong/TrustLLM,accept,,,MIT,osi-approved,rgaf-seed-triage,,,2026-07-28T06:52:16+00:00
+PAIR-code/what-if-tool,accept,,,Apache-2.0,osi-approved,rgaf-seed-triage,,,2026-07-28T06:52:16+00:00
+contentauth/c2pa-rs,accept,,,NOASSERTION,source-available,Verification of AI-generated Content,C2PA content provenance,373,2026-07-28T12:58:33+00:00
+THU-BPM/MarkLLM,accept,,,Apache-2.0,osi-approved,Verification of AI-generated Content,LLM watermark,1016,2026-07-28T12:58:33+00:00
+SCLBD/DeepfakeBench,accept,,,NOASSERTION,source-available,Verification of AI-generated Content,deepfake detection,1073,2026-07-28T12:58:33+00:00
+siddharthksah/DeepSafe,accept,,,MIT,osi-approved,Verification of AI-generated Content,deepfake detection,113,2026-07-28T12:58:33+00:00
+lynote-ai/ai-text-detector,accept,,,MIT,osi-approved,Verification of AI-generated Content,AI generated content detector,430,2026-07-28T12:58:33+00:00
+aboutcode-org/scancode-toolkit,accept,,,,none-declared,Verification of AI-generated Content,,,2026-07-28T12:58:33+00:00
+D-Ogi/WatermarkRemover-AI,reject,adversarial-purpose,Adversarial to this problem area -- removes watermarks rather than applying/verifying them.,MIT,osi-approved,Verification of AI-generated Content,AI content watermarking,1544,2026-07-28T12:58:33+00:00
+ngmisl/C2PAremover,reject,adversarial-purpose,"Adversarial -- strips C2PA content-provenance metadata, opposite of what RQ65/66 need.",Unlicense,osi-approved,Verification of AI-generated Content,C2PA content provenance,31,2026-07-28T12:58:33+00:00
+mohammedelahmar/tiktok-agent,reject,not-relevant,"Off-topic false positive from the 'AI content watermarking' keyword; it's a TikTok content-repurposing agent, not a watermarking/provenance tool.",MIT,osi-approved,Verification of AI-generated Content,AI content watermarking,26,2026-07-28T12:58:33+00:00
+SamurAIGPT/AI-Youtube-Shorts-Generator,reject,not-relevant,Off-topic false positive from the 'LLM watermark' keyword; it's a video-clip generator with no watermarking/provenance functionality.,,none-declared,Verification of AI-generated Content,LLM watermark,4402,2026-07-28T12:58:33+00:00
+Tooooa/AgentMark,reject,not-a-tool-paper-artifact,"Single-paper research artifact (ACL 2026) accompanying a specific publication, not a maintained general-purpose toolkit.",MIT,osi-approved,Verification of AI-generated Content,LLM watermark,90,2026-07-28T12:58:33+00:00
+facebookresearch/three_bricks,reject,not-a-tool-paper-artifact,"Single-paper research code release, not a maintained general-purpose watermarking toolkit.",NOASSERTION,source-available,Verification of AI-generated Content,LLM watermark,53,2026-07-28T12:58:33+00:00
+ai-kunkun/PASA,reject,not-a-tool-paper-artifact,"Single-paper research artifact (ICML 2026), narrow scope, not a general-purpose tool.",,none-declared,Verification of AI-generated Content,LLM watermark,23,2026-07-28T12:58:33+00:00
+Daisy-Zhang/Awesome-Deepfakes-Detection,reject,not-a-tool-linklist,"Curated link list (awesome-list), not a usable tool.",MIT,osi-approved,Verification of AI-generated Content,deepfake detection,1805,2026-07-28T12:58:33+00:00
+flyingby/Awesome-Deepfake-Generation-and-Detection,reject,not-a-tool-linklist,"Curated link list (awesome-list / survey paper repo), not a usable tool.",,none-declared,Verification of AI-generated Content,deepfake detection,643,2026-07-28T12:58:33+00:00
+qiqitao77/Awesome-Comprehensive-Deepfake-Detection,reject,not-a-tool-linklist,"Curated link list (awesome-list), not a usable tool.",,none-declared,Verification of AI-generated Content,deepfake detection,319,2026-07-28T12:58:33+00:00
+plll4zzx/Awesome-LLM-Watermark,reject,not-a-tool-linklist,"Curated link list (awesome-list), not a usable tool.",,none-declared,Verification of AI-generated Content,LLM watermark,64,2026-07-28T12:58:33+00:00
+Xuzhenhua55/awesome-llm-copyright-protection,reject,not-a-tool-linklist,"Curated link list (awesome-list), not a usable tool.",NOASSERTION,source-available,Verification of AI-generated Content,LLM watermark,52,2026-07-28T12:58:33+00:00
+OpenTAI/wild-deepfake,reject,not-a-tool-dataset,"A dataset repository, not a tool.",,none-declared,Verification of AI-generated Content,deepfake detection,242,2026-07-28T12:58:33+00:00
+MI-BioLab/AI-GenBench,reject,not-a-tool-dataset,"A benchmark dataset/paper release, not a runnable detection tool.",BSD-3-Clause,osi-approved,Verification of AI-generated Content,deepfake detection,36,2026-07-28T12:58:33+00:00
+IntMeGroup/DFBench,reject,not-a-tool-dataset,"A benchmark dataset paper release (ACM MM), not a runnable tool -- DeepfakeBench already covers the general benchmark-suite role for this batch.",,none-declared,Verification of AI-generated Content,deepfake detection,27,2026-07-28T12:58:33+00:00
+hi-paris/FakeParts,reject,not-a-tool-dataset,"A dataset release, not a tool.",NOASSERTION,source-available,Verification of AI-generated Content,deepfake detection,26,2026-07-28T12:58:33+00:00
+xieyuankun/FSD-Dataset,reject,not-a-tool-dataset,"A dataset release, not a tool.",NOASSERTION,source-available,Verification of AI-generated Content,deepfake detection,24,2026-07-28T12:58:33+00:00
+OpenRL-Lab/DeepFakeFace,reject,not-a-tool-dataset,"A dataset release accompanying a paper, not a tool.",Apache-2.0,osi-approved,Verification of AI-generated Content,deepfake detection,58,2026-07-28T12:58:33+00:00
+10Ring/LAA-Net,reject,not-a-tool-paper-artifact,"Single-paper research code release, not a maintained general-purpose detection tool.",NOASSERTION,source-available,Verification of AI-generated Content,deepfake detection,177,2026-07-28T12:58:33+00:00
+laiyingxin2/DADF,reject,not-a-tool-paper-artifact,"Single-paper research code release, not a maintained general-purpose detection tool.",MIT,osi-approved,Verification of AI-generated Content,deepfake detection,163,2026-07-28T12:58:33+00:00
+hzlsaber/SIDA,reject,not-a-tool-paper-artifact,"Single-paper research code release, not a maintained general-purpose detection tool.",,none-declared,Verification of AI-generated Content,deepfake detection,162,2026-07-28T12:58:33+00:00
+EricTan7/Veritas,reject,not-a-tool-paper-artifact,"Single-paper research code release (ICLR 2026), not a maintained general-purpose detection tool.",Apache-2.0,osi-approved,Verification of AI-generated Content,deepfake detection,122,2026-07-28T12:58:33+00:00
+erprogs/GenConViT,reject,not-a-tool-paper-artifact,"Single-paper research code release, not a maintained general-purpose detection tool.",MIT,osi-approved,Verification of AI-generated Content,deepfake detection,111,2026-07-28T12:58:33+00:00
+erprogs/CViT,reject,not-a-tool-paper-artifact,"Single-paper research code release, not a maintained general-purpose detection tool.",GPL-3.0,osi-approved,Verification of AI-generated Content,deepfake detection,106,2026-07-28T12:58:33+00:00
+chuangchuangtan/C2P-CLIP-DeepfakeDetection,reject,not-a-tool-paper-artifact,"Single-paper research code release, not a maintained general-purpose detection tool.",,none-declared,Verification of AI-generated Content,deepfake detection,102,2026-07-28T12:58:33+00:00
+sfimediafutures/CLIPping-the-Deception,reject,not-a-tool-paper-artifact,"Single-paper research code release, not a maintained general-purpose detection tool.",MIT,osi-approved,Verification of AI-generated Content,deepfake detection,89,2026-07-28T12:58:33+00:00
+yermandy/deepfake-detection,reject,not-a-tool-paper-artifact,"Single-paper research code release, not a maintained general-purpose detection tool.",MIT,osi-approved,Verification of AI-generated Content,deepfake detection,78,2026-07-28T12:58:33+00:00
+Balaji-Kartheek/DeepFake_Detection,reject,low-substance,"Student/tutorial project, thin and not maintained as a general-purpose tool.",,none-declared,Verification of AI-generated Content,deepfake detection,70,2026-07-28T12:58:33+00:00
+aaronchong888/DeepFake-Detect,reject,low-substance,"Educational/tutorial repo for training your own model, not a ready-to-use detection tool.",MIT,osi-approved,Verification of AI-generated Content,deepfake detection,160,2026-07-28T12:58:33+00:00
+VeridisQuo-orga/VeridisQuo,reject,low-substance,"Low-substance individual project, thin README, not clearly maintained.",Apache-2.0,osi-approved,Verification of AI-generated Content,deepfake detection,61,2026-07-28T12:58:33+00:00
+Gayatri2207/Deepfake-detection-,reject,low-substance,"Low-substance individual project, no description, not clearly maintained.",,none-declared,Verification of AI-generated Content,deepfake detection,59,2026-07-28T12:58:33+00:00
+yermandy/GenD,reject,not-a-tool-paper-artifact,"Single-paper research code release (WACV 2026), not a maintained general-purpose detection tool.",MIT,osi-approved,Verification of AI-generated Content,deepfake detection,58,2026-07-28T12:58:33+00:00
+hongsong-wang/LOTA,reject,not-a-tool-paper-artifact,"Single-paper research code release, not a maintained general-purpose detection tool.",MIT,osi-approved,Verification of AI-generated Content,deepfake detection,53,2026-07-28T12:58:33+00:00
+10Ring/FakeSTormer,reject,not-a-tool-paper-artifact,"Single-paper research code release (ICCV 2025), not a maintained general-purpose detection tool.",NOASSERTION,source-available,Verification of AI-generated Content,deepfake detection,51,2026-07-28T12:58:33+00:00
+Coral79/CDDB,reject,not-a-tool-dataset,"Single-paper research code/dataset release (WACV 2023), not a maintained general-purpose detection tool.",,none-declared,Verification of AI-generated Content,deepfake detection,47,2026-07-28T12:58:33+00:00
+chandlerbing65nm/FakeImageDetection,reject,not-a-tool-paper-artifact,"Single-paper research code release, not a maintained general-purpose detection tool.",Apache-2.0,osi-approved,Verification of AI-generated Content,deepfake detection,44,2026-07-28T12:58:33+00:00
+Yaselley/SSL_Layerwise_Deepfake,reject,not-a-tool-paper-artifact,"Single-paper research code release (audio deepfake), not a maintained general-purpose detection tool.",,none-declared,Verification of AI-generated Content,deepfake detection,36,2026-07-28T12:58:33+00:00
+apple-yinhan/EnvSDD,reject,not-a-tool-dataset,"Single-paper research code/dataset release (environmental sound deepfakes), out of scope and not a maintained tool.",MIT,osi-approved,Verification of AI-generated Content,deepfake detection,35,2026-07-28T12:58:33+00:00
+TRahulsingh/DeepfakeDetector,reject,low-substance,"Low-substance individual project, not clearly maintained as a general-purpose tool.",MIT,osi-approved,Verification of AI-generated Content,deepfake detection,33,2026-07-28T12:58:33+00:00
+tuffy-studio/HAVIC,reject,not-a-tool-paper-artifact,"Single-paper research code release (CVPR 2026 Findings), not a maintained general-purpose detection tool.",MIT,osi-approved,Verification of AI-generated Content,deepfake detection,33,2026-07-28T12:58:33+00:00
+beenuar/shieldapp-android,reject,out-of-scope-narrow,"Broad mobile security-suite app with deepfake detection as one minor feature; not a focused, verifiable detection tool for this catalog.",MIT,osi-approved,Verification of AI-generated Content,deepfake detection,32,2026-07-28T12:58:33+00:00
+10Ring/FakeFormer,reject,not-a-tool-paper-artifact,"Single-paper research code release, not a maintained general-purpose detection tool.",NOASSERTION,source-available,Verification of AI-generated Content,deepfake detection,32,2026-07-28T12:58:33+00:00
+resemble-ai/detect-skill,reject,low-substance,"Thin agent-skill wrapper repo, not a standalone detection tool in its own right.",Apache-2.0,osi-approved,Verification of AI-generated Content,deepfake detection,31,2026-07-28T12:58:33+00:00
+Pranesh-2005/AI-Generated-Video-Detector,reject,low-substance,"Low-substance individual project, not clearly maintained as a general-purpose tool.",MIT,osi-approved,Verification of AI-generated Content,deepfake detection,29,2026-07-28T12:58:33+00:00
+echefulouis/deepFake-detection-application,reject,low-substance,"Low-substance individual/demo project, not clearly maintained as a general-purpose tool.",,none-declared,Verification of AI-generated Content,deepfake detection,27,2026-07-28T12:58:33+00:00
+Yaselley/deepfense-framework,reject,not-a-tool-paper-artifact,"Thin framework repo tied to the same author's single-paper releases, not independently established as a maintained general-purpose tool.",Apache-2.0,osi-approved,Verification of AI-generated Content,deepfake detection,27,2026-07-28T12:58:33+00:00
+rama0126/PwTF-DVD,reject,not-a-tool-paper-artifact,"Single-paper research code release, not a maintained general-purpose detection tool.",MIT,osi-approved,Verification of AI-generated Content,deepfake detection,21,2026-07-28T12:58:33+00:00
+MaxMassi/Face-Swapper,reject,adversarial-purpose,"A deepfake *generation* tool (face-swapping), not a detection/verification tool -- wrong side of this problem area.",,none-declared,Verification of AI-generated Content,deepfake detection,20,2026-07-28T12:58:33+00:00
+Faceplugin-ltd/FaceLivenessDetection-Linux,reject,commercial-sdk,"Commercial-SDK marketing repo for biometric liveness detection (anti-spoofing at capture time), a different problem (identity/liveness) from AI-generated-content verification.",NOASSERTION,source-available,Verification of AI-generated Content,deepfake detection,86,2026-07-28T12:58:33+00:00
+Faceplugin-ltd/Face-Liveness-Detection-SDK,reject,commercial-sdk,"Commercial-SDK marketing repo for biometric liveness detection, different problem area from AI-generated-content verification.",,none-declared,Verification of AI-generated Content,deepfake detection,52,2026-07-28T12:58:33+00:00
+Faceplugin-ltd/FaceLivenessDetection-Android,reject,commercial-sdk,"Commercial-SDK marketing repo for biometric liveness detection, different problem area from AI-generated-content verification.",,none-declared,Verification of AI-generated Content,deepfake detection,44,2026-07-28T12:58:33+00:00
+BioID-GmbH/FaceLivenessDetection,reject,commercial-sdk,"Commercial-SDK marketing repo for biometric liveness detection, different problem area from AI-generated-content verification.",MIT,osi-approved,Verification of AI-generated Content,deepfake detection,43,2026-07-28T12:58:33+00:00
+DoubangoTelecom/ultimateFace-SDK,reject,commercial-sdk,"Commercial-SDK marketing repo for face recognition/liveness, different problem area from AI-generated-content verification.",,none-declared,Verification of AI-generated Content,deepfake detection,22,2026-07-28T12:58:33+00:00
+DadaNanjesha/AI-content-detector-Humanizer,reject,adversarial-purpose,"Mixed-purpose repo that also 'humanizes' text to evade detectors (partly adversarial to this problem area), low stars, unclear maintenance.",MIT,osi-approved,Verification of AI-generated Content,AI generated content detector,85,2026-07-28T12:58:33+00:00
+Ram-nishal/ai-content-authenticity-detector-using-metadata,reject,low-substance,"Low-substance individual project, not clearly maintained as a general-purpose tool.",,none-declared,Verification of AI-generated Content,AI generated content detector,27,2026-07-28T12:58:33+00:00
+zkonduit/ezkl,accept,,,,none-declared,Verifiable Audits,zkml,1218,2026-07-28T13:43:57+00:00
+jina-ai/embedding-fingerprints,accept,,,,none-declared,Verifiable Audits,model fingerprinting,21,2026-07-28T13:43:57+00:00
+HoneyMeta/ccfingerprint,accept,,,MIT,osi-approved,Verifiable Audits,model fingerprinting,28,2026-07-28T13:43:57+00:00
+demml/opsml,accept,,,NOASSERTION,source-available,Verifiable Audits,AI model registry,39,2026-07-28T13:43:57+00:00
+Lagrange-Labs/deep-prove,reject,not-open-source,"Custom proprietary 'Lagrange License' (a restrictive corporate software agreement, not an OSI-approved open-source license) -- not open source despite the public repo.",NOASSERTION,source-available,Verifiable Audits,zkml,3355,2026-07-28T13:43:57+00:00
+inference-labs-inc/JSTprove,reject,not-open-source,"Custom 'Source Access Grant' license with redistribution conditions -- source-available, not a standard permissive/copyleft open-source license.",NOASSERTION,source-available,Verifiable Audits,zkml,1227,2026-07-28T13:43:57+00:00
+inference-labs-inc/dsperse,reject,not-open-source,Orchestration/slicing layer built on top of JSTprove (already rejected for its license); thinner and redundant with the accepted ezkl for this batch.,NOASSERTION,source-available,Verifiable Audits,zkml,1245,2026-07-28T13:43:57+00:00
+inference-labs-inc/zkml-blueprints,reject,not-a-tool-paper-artifact,"A collection of mathematical formulations/circuit designs, not a runnable tool.",NOASSERTION,source-available,Verifiable Audits,zkml,1784,2026-07-28T13:43:57+00:00
+inference-labs-inc/subnet-2,reject,out-of-scope-narrow,"Bittensor-subnet-specific verifiable inference product, narrow crypto-network use case rather than a general-purpose tool.",MIT,osi-approved,Verifiable Audits,zkml,2362,2026-07-28T13:43:57+00:00
+gizatechxyz/LuminAIR,reject,not-open-source,"No declared license, low stars, and redundant zkML coverage given the already-accepted ezkl in this batch.",,none-declared,Verifiable Audits,zkml,58,2026-07-28T13:43:57+00:00
+agencyenterprise/zkgraph-bnb-hack,reject,low-substance,"Hackathon demo project ('BNB Q3 Winner'), not evidence of an established, maintained tool.",MIT,osi-approved,Verifiable Audits,zkml,48,2026-07-28T13:43:57+00:00
+lfedgeai/AegisSovereignAI,reject,not-a-tool-paper-artifact,"A whitepaper/vision-document repo ('Executive Summary', architecture proposal) with no evidence of a runnable implementation; also off-topic for zkML specifically.",Apache-2.0,osi-approved,Verifiable Audits,zkml,20,2026-07-28T13:43:57+00:00
+EvanZhouDev/umr,reject,not-relevant,"A local model-weight deduplication/cache-sharing tool across desktop AI apps, despite the name it is not an audit or verification registry -- off-topic for this problem area.",AGPL-3.0,osi-approved,Verifiable Audits,AI model registry,59,2026-07-28T13:43:57+00:00
+Y0oshi/Project-Deep-Focus,reject,not-relevant,"Off-topic false positive from 'model fingerprinting' -- a network reconnaissance tool ('personal Shodan'), unrelated to AI model verification.",MIT,osi-approved,Verifiable Audits,model fingerprinting,213,2026-07-28T13:43:57+00:00
+grip-unina/noiseprint,reject,not-relevant,"Camera-sensor forensic fingerprinting for image forensics, a different domain from AI model identity verification.",NOASSERTION,source-available,Verifiable Audits,model fingerprinting,157,2026-07-28T13:43:57+00:00
+Shivadharshini-V/Fingerprint-Recognition,reject,not-relevant,"Off-topic false positive -- biometric (human) fingerprint recognition, unrelated to AI models.",,none-declared,Verifiable Audits,model fingerprinting,53,2026-07-28T13:43:57+00:00
+sergezuber/FABULA-LLM-5,reject,low-substance,"Vague, low-substance repo with unclear scope and functionality.",MIT,osi-approved,Verifiable Audits,model fingerprinting,54,2026-07-28T13:43:57+00:00
+shaoshuo-ss/Awesome-LLM-Fingerprinting,reject,not-a-tool-linklist,"Curated paper list (awesome-list), not a usable tool.",MIT,osi-approved,Verifiable Audits,model fingerprinting,29,2026-07-28T13:43:57+00:00
+ssloxford/SatIQ,reject,not-relevant,"Off-topic -- satellite signal fingerprinting, unrelated to AI model verification.",GPL-3.0,osi-approved,Verifiable Audits,model fingerprinting,28,2026-07-28T13:43:57+00:00
+AmanPriyanshu/GPT-OSS-MoE-ExpertFingerprinting,reject,not-a-tool-paper-artifact,"Single-paper/research-notebook artifact analyzing MoE expert behavior, not a maintained general-purpose verification tool.",Apache-2.0,osi-approved,Verifiable Audits,model fingerprinting,27,2026-07-28T13:43:57+00:00
+FranciscoMoretti/ai-registry,reject,not-relevant,"A browsing/comparison UI for Vercel AI Gateway's model catalog, not an audit or provenance registry.",MIT,osi-approved,Verifiable Audits,AI model registry,45,2026-07-28T13:43:57+00:00
+truefoundry/models,reject,low-substance,"Thin community-maintained list of model configuration files, not an audit/verification registry.",MIT,osi-approved,Verifiable Audits,AI model registry,30,2026-07-28T13:43:57+00:00
+den-vasyliev/agentregistry-inventory,reject,not-relevant,"Kubernetes infrastructure inventory/control-plane tool, off-topic for audit registries.",Apache-2.0,osi-approved,Verifiable Audits,AI model registry,25,2026-07-28T13:43:57+00:00
+nirholas/mcp-notify,reject,not-relevant,"Monitors the Model Context Protocol registry for new server listings, off-topic -- not an AI model audit registry.",NOASSERTION,source-available,Verifiable Audits,AI model registry,28,2026-07-28T13:43:57+00:00
+olamide226/ollama-gguf-downloader,reject,not-relevant,"A model file downloader CLI, off-topic for audit/verification registries.",MIT,osi-approved,Verifiable Audits,AI model registry,25,2026-07-28T13:43:57+00:00
+lechmazur/writing_styles,reject,not-relevant,"Off-topic false positive from 'model fingerprinting' -- documents literary writing-style analysis, unrelated to AI model verification.",,none-declared,Verifiable Audits,model fingerprinting,25,2026-07-28T13:43:57+00:00
+Redomic/NeuThera-Drug-Discovery-Toolkit,reject,not-relevant,"Off-topic -- a drug-discovery toolkit, unrelated to AI model fingerprinting/verification.",MIT,osi-approved,Verifiable Audits,model fingerprinting,23,2026-07-28T13:43:57+00:00
+AmirhosseinHonardoust/Onchain-Security-Suite,reject,not-relevant,"Off-topic -- Web3/crypto token security toolkit, unrelated to AI model registries.",MIT,osi-approved,Verifiable Audits,AI model registry,22,2026-07-28T13:43:57+00:00
+devallibus/shiplog,reject,not-relevant,"A git-based AI-assisted development tracking tool, off-topic for model provenance verification.",MIT,osi-approved,Verifiable Audits,model provenance verification,54,2026-07-28T13:43:57+00:00
+Zhonghao1995/agentic-swmm-workflow,reject,not-relevant,"Off-topic -- an automated stormwater-modeling workflow, unrelated to AI model provenance.",MIT,osi-approved,Verifiable Audits,model provenance verification,21,2026-07-28T13:43:57+00:00
+SaravananJaichandar/world-model-mcp,reject,low-substance,"Vague, low-substance repo (20 stars) without clear evidence of a working, maintained tool.",MIT,osi-approved,Verifiable Audits,model provenance verification,20,2026-07-28T13:43:57+00:00

@@ -1,0 +1,2937 @@
+{
+ "licenseListVersion": "e4c1f27",
+ "licenses": {
+  "0BSD": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "3D-Slicer-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "AAL": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "ADSL": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "AFL-1.1": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "AFL-1.2": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "AFL-2.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "AFL-2.1": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "AFL-3.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "AGPL-1.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "AGPL-1.0-only": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "AGPL-1.0-or-later": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "AGPL-3.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "AGPL-3.0-only": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "AGPL-3.0-or-later": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "ALGLIB-Documentation": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "AMD-newlib": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "AMDPLPA": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "AML": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "AML-glslang": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "AMPAS": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "ANTLR-PD": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "ANTLR-PD-fallback": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "APAFML": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "APL-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "APSL-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "APSL-1.1": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "APSL-1.2": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "APSL-2.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "ASWF-Digital-Assets-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "ASWF-Digital-Assets-1.1": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Abstyles": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "AdaCore-doc": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Adobe-2006": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Adobe-Display-PostScript": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Adobe-Glyph": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Adobe-Utopia": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Advanced-Cryptics-Dictionary": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Afmparse": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Aladdin": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Apache-1.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "Apache-1.1": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "Apache-2.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "App-s2p": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Arphic-1999": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Artistic-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "Artistic-1.0-Perl": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "Artistic-1.0-cl8": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "Artistic-2.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "Artistic-dist": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Aspell-RU": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BOLA-1.1": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BSD-1-Clause": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "BSD-2-Clause": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "BSD-2-Clause-Darwin": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BSD-2-Clause-FreeBSD": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "BSD-2-Clause-NetBSD": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "BSD-2-Clause-Patent": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "BSD-2-Clause-Views": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BSD-2-Clause-first-lines": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BSD-2-Clause-pkgconf-disclaimer": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BSD-3-Clause": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "BSD-3-Clause-Attribution": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BSD-3-Clause-Clear": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "BSD-3-Clause-HP": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BSD-3-Clause-LBNL": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "BSD-3-Clause-Modification": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BSD-3-Clause-No-Military-License": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BSD-3-Clause-No-Nuclear-License": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BSD-3-Clause-No-Nuclear-License-2014": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BSD-3-Clause-No-Nuclear-Warranty": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BSD-3-Clause-Open-MPI": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "BSD-3-Clause-Sun": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BSD-3-Clause-Tso": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BSD-3-Clause-acpica": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BSD-3-Clause-flex": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BSD-4-Clause": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "BSD-4-Clause-Shortened": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BSD-4-Clause-UC": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BSD-4.3RENO": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BSD-4.3TAHOE": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BSD-Advertising-Acknowledgement": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BSD-Attribution-HPND-disclaimer": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BSD-Inferno-Nettverk": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BSD-Mark-Modifications": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BSD-Protection": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BSD-Source-Code": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BSD-Source-beginning-file": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BSD-Systemics": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BSD-Systemics-W3Works": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BSL-1.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "BUSL-1.1": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Baekmuk": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Bahyph": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Barr": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Beerware": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BitTorrent-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BitTorrent-1.1": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "Bitstream-Charter": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Bitstream-Vera": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "BlueOak-1.0.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "Boehm-GC": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Boehm-GC-without-fee": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Borceux": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Brian-Gladman-2-Clause": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Brian-Gladman-3-Clause": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Brian-Gladman-3-Clause-no-conversion": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Buddy": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Bugroff": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "C-UDA-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CAL-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "CAL-1.0-Combined-Work-Exception": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "CAPEC-tou": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CATOSL-1.1": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "CC-BY-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-2.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-2.5": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-2.5-AU": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-3.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-3.0-AT": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-3.0-AU": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-3.0-DE": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-3.0-IGO": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-3.0-NL": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-3.0-US": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-4.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "CC-BY-NC-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-NC-2.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-NC-2.5": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-NC-3.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-NC-3.0-DE": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-NC-3.0-IGO": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-NC-4.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-NC-ND-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-NC-ND-2.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-NC-ND-2.5": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-NC-ND-3.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-NC-ND-3.0-DE": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-NC-ND-3.0-IGO": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-NC-ND-4.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-NC-SA-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-NC-SA-2.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-NC-SA-2.0-DE": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-NC-SA-2.0-FR": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-NC-SA-2.0-UK": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-NC-SA-2.5": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-NC-SA-3.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-NC-SA-3.0-DE": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-NC-SA-3.0-IGO": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-NC-SA-4.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-ND-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-ND-2.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-ND-2.5": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-ND-3.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-ND-3.0-DE": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-ND-4.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-SA-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-SA-2.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-SA-2.0-UK": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-SA-2.1-JP": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-SA-2.5": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-SA-3.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-SA-3.0-AT": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-SA-3.0-DE": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-SA-3.0-IGO": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-BY-SA-4.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "CC-PDDC": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-PDM-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC-SA-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CC0-1.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "CDDL-1.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "CDDL-1.1": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "CDL-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CDLA-Permissive-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CDLA-Permissive-2.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CDLA-Sharing-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CECILL-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CECILL-1.1": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CECILL-2.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "CECILL-2.1": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "CECILL-B": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "CECILL-C": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "CERN-OHL-1.1": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CERN-OHL-1.2": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CERN-OHL-P-2.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "CERN-OHL-S-2.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "CERN-OHL-W-2.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "CFITSIO": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CMU-Mach": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CMU-Mach-nodoc": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CNRI-Jython": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CNRI-Python": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "CNRI-Python-GPL-Compatible": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "COIL-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CPAL-1.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "CPL-1.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "CPOL-1.02": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CUA-OPL-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "Caldera": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Caldera-no-preamble": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Catharon": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "ClArtistic": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "Clips": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Community-Spec-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Condor-1.1": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "Cornell-Lossless-JPEG": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Cronyx": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Crossword": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CryptoSwift": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "CrystalStacker": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Cube": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "D-FSL-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "DEC-3-Clause": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "DL-DE-BY-2.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "DL-DE-ZERO-2.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "DOC": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "DRL-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "DRL-1.1": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "DSDP": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "DocBook-DTD": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "DocBook-Schema": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "DocBook-Stylesheet": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "DocBook-XML": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Dotseqn": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "ECL-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "ECL-2.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "EFL-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "EFL-2.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "EPICS": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "EPL-1.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "EPL-2.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "ESA-PL-permissive-2.4": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "ESA-PL-strong-copyleft-2.4": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "ESA-PL-weak-copyleft-2.4": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "EUDatagrid": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "EUPL-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "EUPL-1.1": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "EUPL-1.2": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "Elastic-2.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Entessa": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "ErlPL-1.1": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Eurosym": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "FBM": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "FDK-AAC": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "FSFAP": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "FSFAP-no-warranty-disclaimer": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "FSFUL": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "FSFULLR": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "FSFULLRSD": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "FSFULLRWD": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "FSL-1.1-ALv2": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "FSL-1.1-MIT": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "FTL": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "Fair": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "Ferguson-Twofish": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Frameworx-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "FreeBSD-DOC": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "FreeImage": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Furuseth": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "GCR-docs": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "GD": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "GFDL-1.1": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "GFDL-1.1-invariants-only": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "GFDL-1.1-invariants-or-later": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "GFDL-1.1-no-invariants-only": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "GFDL-1.1-no-invariants-or-later": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "GFDL-1.1-only": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "GFDL-1.1-or-later": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "GFDL-1.2": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "GFDL-1.2-invariants-only": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "GFDL-1.2-invariants-or-later": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "GFDL-1.2-no-invariants-only": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "GFDL-1.2-no-invariants-or-later": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "GFDL-1.2-only": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "GFDL-1.2-or-later": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "GFDL-1.3": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "GFDL-1.3-invariants-only": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "GFDL-1.3-invariants-or-later": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "GFDL-1.3-no-invariants-only": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "GFDL-1.3-no-invariants-or-later": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "GFDL-1.3-only": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "GFDL-1.3-or-later": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "GL2PS": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "GLWTPL": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "GPL-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "GPL-1.0+": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "GPL-1.0-only": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "GPL-1.0-or-later": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "GPL-2.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "GPL-2.0+": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "GPL-2.0-only": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "GPL-2.0-or-later": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "GPL-2.0-with-GCC-exception": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "GPL-2.0-with-autoconf-exception": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "GPL-2.0-with-bison-exception": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "GPL-2.0-with-classpath-exception": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "GPL-2.0-with-font-exception": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "GPL-3.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "GPL-3.0+": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "GPL-3.0-only": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "GPL-3.0-or-later": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "GPL-3.0-with-GCC-exception": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "GPL-3.0-with-autoconf-exception": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Game-Programming-Gems": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Giftware": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Glide": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Glulxe": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Graphics-Gems": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Gutmann": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "HDF5": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "HIDAPI": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "HP-1986": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "HP-1989": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "HPND": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "HPND-DEC": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "HPND-Fenneberg-Livingston": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "HPND-INRIA-IMAG": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "HPND-Intel": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "HPND-Kevlin-Henney": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "HPND-MIT-disclaimer": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "HPND-Markus-Kuhn": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "HPND-Netrek": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "HPND-Pbmplus": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "HPND-SMC": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "HPND-UC": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "HPND-UC-export-US": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "HPND-doc": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "HPND-doc-sell": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "HPND-export-US": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "HPND-export-US-acknowledgement": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "HPND-export-US-modify": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "HPND-export2-US": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "HPND-merchantability-variant": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "HPND-sell-MIT-disclaimer-xserver": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "HPND-sell-regexpr": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "HPND-sell-variant": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "HPND-sell-variant-MIT-disclaimer": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "HPND-sell-variant-MIT-disclaimer-rev": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "HPND-sell-variant-critical-systems": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "HTMLTIDY": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "HaskellReport": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Hippocratic-2.1": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "IBM-pibs": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "ICU": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "IEC-Code-Components-EULA": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "IJG": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "IJG-short": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "IPA": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "IPL-1.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "ISC": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "ISC-Veillard": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "ISO-permission": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "ImageMagick": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Imlib2": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "Info-ZIP": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Informatica": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Inner-Net-2.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "InnoSetup": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Intel": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "Intel-ACPI": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Interbase-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "JPL-image": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "JPNIC": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "JSON": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Jam": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "JasPer-2.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Kastrup": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Kazlib": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Knuth-CTAN": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "LAL-1.2": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "LAL-1.3": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "LGPL-2.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "LGPL-2.0+": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "LGPL-2.0-only": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "LGPL-2.0-or-later": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "LGPL-2.1": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "LGPL-2.1+": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "LGPL-2.1-only": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "LGPL-2.1-or-later": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "LGPL-3.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "LGPL-3.0+": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "LGPL-3.0-only": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "LGPL-3.0-or-later": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "LGPLLR": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "LOOP": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "LPD-document": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "LPL-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "LPL-1.02": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "LPPL-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "LPPL-1.1": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "LPPL-1.2": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "LPPL-1.3a": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "LPPL-1.3c": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "LZMA-SDK-9.11-to-9.20": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "LZMA-SDK-9.22": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Latex2e": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Latex2e-translated-notice": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Leptonica": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "LiLiQ-P-1.1": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "LiLiQ-R-1.1": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "LiLiQ-Rplus-1.1": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "Libpng": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Linux-OpenIB": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Linux-man-pages-1-para": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Linux-man-pages-copyleft": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Linux-man-pages-copyleft-2-para": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Linux-man-pages-copyleft-var": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Lucida-Bitmap-Fonts": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "MIPS": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "MIT": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "MIT-0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "MIT-CMU": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "MIT-Click": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "MIT-Festival": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "MIT-Khronos-old": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "MIT-Modern-Variant": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "MIT-STK": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "MIT-Wu": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "MIT-advertising": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "MIT-enna": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "MIT-feh": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "MIT-open-group": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "MIT-testregex": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "MITNFA": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "MMIXware": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "MMPL-1.0.1": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "MPEG-SSG": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "MPL-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "MPL-1.1": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "MPL-2.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "MPL-2.0-no-copyleft-exception": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "MS-LPL": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "MS-PL": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "MS-RL": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "MTLL": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "MVT-1.1": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Mackerras-3-Clause": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Mackerras-3-Clause-acknowledgment": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "MakeIndex": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Martin-Birgmeier": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "McPhee-slideshow": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Minpack": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "MirOS": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "Motosoto": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "MulanPSL-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "MulanPSL-2.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "Multics": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "Mup": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "NAIST-2003": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "NASA-1.3": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "NBPL-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "NCBI-PD": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "NCGL-UK-2.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "NCL": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "NCSA": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "NGPL": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "NICTA-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "NIST-PD": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "NIST-PD-TNT": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "NIST-PD-fallback": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "NIST-Software": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "NLOD-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "NLOD-2.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "NLPL": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "NOSL": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "NPL-1.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "NPL-1.1": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "NPOSL-3.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "NRL": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "NTIA-PD": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "NTP": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "NTP-0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Naumen": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "Net-SNMP": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "NetCDF": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Newsletr": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Nokia": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "Noweb": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Nunit": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "O-UDA-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OAR": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OCCT-PL": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OCLC-2.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "ODC-By-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "ODbL-1.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "OFFIS": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OFL-1.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "OFL-1.0-RFN": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OFL-1.0-no-RFN": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OFL-1.1": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "OFL-1.1-RFN": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "OFL-1.1-no-RFN": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "OGC-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OGDL-Taiwan-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OGL-Canada-2.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OGL-UK-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OGL-UK-2.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OGL-UK-3.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OGTSL": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "OLDAP-1.1": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OLDAP-1.2": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OLDAP-1.3": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OLDAP-1.4": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OLDAP-2.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OLDAP-2.0.1": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OLDAP-2.1": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OLDAP-2.2": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OLDAP-2.2.1": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OLDAP-2.2.2": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OLDAP-2.3": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "OLDAP-2.4": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OLDAP-2.5": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OLDAP-2.6": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OLDAP-2.7": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "OLDAP-2.8": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "OLFL-1.3": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "OML": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OPL-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OPL-UK-3.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OPUBL-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OSC-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "OSET-PL-2.1": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "OSL-1.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "OSL-1.1": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "OSL-2.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "OSL-2.1": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "OSL-3.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "OSSP": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OpenMDW-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OpenPBS-2.3": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OpenSSL": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "OpenSSL-standalone": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "OpenVision": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "PADL": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "PDDL-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "PHP-3.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "PHP-3.01": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "PPL": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "PSF-2.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "ParaType-Free-Font-1.3": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Parity-6.0.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Parity-7.0.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Pixar": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Plexus": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "PolyForm-Noncommercial-1.0.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "PolyForm-Small-Business-1.0.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "PostgreSQL": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "Python-2.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "Python-2.0.1": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "QPL-1.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "QPL-1.0-INRIA-2004": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Qhull": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "RHeCos-1.1": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "RPL-1.1": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "RPL-1.5": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "RPSL-1.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "RSA-MD": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "RSCPL": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "Rdisc": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Ruby": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "Ruby-pty": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "SAX-PD": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "SAX-PD-2.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "SCEA": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "SGI-B-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "SGI-B-1.1": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "SGI-B-2.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "SGI-OpenGL": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "SGMLUG-PM": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "SGP4": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "SHL-0.5": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "SHL-0.51": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "SISSL": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "SISSL-1.2": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "SL": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "SMAIL-GPL": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "SMLNJ": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "SMPPL": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "SNIA": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "SOFA": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "SPL-1.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "SSH-OpenSSH": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "SSH-short": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "SSLeay-standalone": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "SSPL-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "SUL-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "SWL": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Saxpath": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "SchemeReport": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Sendmail": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Sendmail-8.23": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Sendmail-Open-Source-1.1": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "SimPL-2.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "Sleepycat": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "Soundex": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Spencer-86": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Spencer-94": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Spencer-99": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "StandardML-NJ": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "SugarCRM-1.1.3": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Sun-PPP": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Sun-PPP-2000": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "SunPro": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Symlinks": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "TAPR-OHL-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "TCL": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "TCP-wrappers": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "TGPPL-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "TMate": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "TORQUE-1.1": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "TOSL": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "TPDL": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "TPL-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "TTWL": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "TTYP0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "TU-Berlin-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "TU-Berlin-2.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "TekHVC": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "TermReadKey": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "ThirdEye": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "TrustedQSL": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "UCAR": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "UCL-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "UMich-Merit": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "UPL-1.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "URT-RLE": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Ubuntu-font-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "UnRAR": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Unicode-3.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "Unicode-DFS-2015": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Unicode-DFS-2016": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "Unicode-TOU": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "UnixCrypt": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Unlicense": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "Unlicense-libtelnet": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Unlicense-libwhirlpool": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "VOSTROM": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "VSL-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "Vim": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "Vixie-Cron": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "W3C": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "W3C-19980720": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "W3C-20150513": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "WTFNMFPL": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "WTFPL": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "Watcom-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "Widget-Workshop": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "WordNet": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "Wsuipa": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "X11": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "X11-distribute-modifications-variant": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "X11-no-permit-persons": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "X11-swapped": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "XFree86-1.1": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "XSkat": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Xdebug-1.03": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Xerox": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Xfig": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Xnet": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "YPL-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "YPL-1.1": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "ZPL-1.1": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "ZPL-2.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "ZPL-2.1": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "Zed": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Zeeff": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Zend-2.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "Zimbra-1.3": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "Zimbra-1.4": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "Zlib": {
+   "is_fsf_libre": true,
+   "is_osi_approved": true
+  },
+  "any-OSI": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "any-OSI-perl-modules": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "atc-game": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "bcrypt-Solar-Designer": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "blessing": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "bzip2-1.0.5": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "bzip2-1.0.6": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "check-cvs": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "checkmk": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "copyleft-next-0.3.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "copyleft-next-0.3.1": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "curl": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "cve-tou": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "diffmark": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "dtoa": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "dvipdfm": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "eCos-2.0": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "eGenix": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "etalab-2.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "fwlw": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "gSOAP-1.3b": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "generic-xts": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "gnuplot": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "gtkbook": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "hdparm": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "hyphen-bulgarian": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "iMatix": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "jove": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "libpng-1.6.35": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "libpng-2.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "libselinux-1.0": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "libtiff": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "libutil-David-Nugent": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "lsof": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "magaz": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "mailprio": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "man2html": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "metamail": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "mpi-permissive": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "mpich2": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "mplus": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "ngrep": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "pkgconf": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "pnmstitch": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "psfrag": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "psutils": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "python-ldap": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "radvd": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "snprintf": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "softSurfer": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "ssh-keyscan": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "swrule": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "threeparttable": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "ulem": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "w3m": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "wwl": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "wxWindows": {
+   "is_fsf_libre": false,
+   "is_osi_approved": true
+  },
+  "xinetd": {
+   "is_fsf_libre": true,
+   "is_osi_approved": false
+  },
+  "xkeyboard-config-Zinoviev": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "xlock": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "xpp": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "xzoom": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  },
+  "zlib-acknowledgement": {
+   "is_fsf_libre": false,
+   "is_osi_approved": false
+  }
+ }
+}
