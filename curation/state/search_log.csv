@@ -121,3 +121,6 @@ timestamp_utc,keyword,query,raw_count,new_candidates,min_stars,pushed_after_mont
 2026-07-28T21:43:30+00:00,vision language model unlearning,vision language model unlearning stars:>19 pushed:>2025-07-28 archived:false fork:false,0,0,19,12,200,
 2026-07-28T21:43:30+00:00,dataset metadata standard,dataset metadata standard stars:>19 pushed:>2025-07-28 archived:false fork:false,2,2,19,12,200,
 2026-07-28T21:43:30+00:00,training data suitability,training data suitability stars:>19 pushed:>2025-07-28 archived:false fork:false,0,0,19,12,200,
+2026-07-28T23:22:21+00:00,proof of learning,proof of learning stars:>19 pushed:>2025-07-28 archived:false fork:false,9,9,19,12,200,
+2026-07-28T23:22:21+00:00,extraction attack detection,extraction attack detection stars:>19 pushed:>2025-07-28 archived:false fork:false,0,0,19,12,200,
+2026-07-28T23:22:21+00:00,model ownership verification,model ownership verification stars:>19 pushed:>2025-07-28 archived:false fork:false,0,0,19,12,200,

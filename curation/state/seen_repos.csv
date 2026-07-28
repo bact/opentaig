@@ -189,3 +189,26 @@ Azure-Samples/rag-as-a-service-with-vision,reject,low-substance,A thin Azure sam
 frictionlessdata/datapackage,accept,,,Unlicense,osi-approved,Infrastructure and Metadata to Analyze Large Datasets,dataset metadata standard,580,2026-07-28T21:46:52+00:00
 stepfun-ai/Step-Audio-EditX,reject,not-relevant,"An audio generation/editing model, not a model-unlearning tool; off-topic false positive from shared 'editing' vocabulary.",Apache-2.0,osi-approved,Model Disgorgement and Machine Unlearning,cross-lingual model editing,955,2026-07-28T21:46:52+00:00
 bigbio/proteomics-sample-metadata,reject,out-of-scope-narrow,"A proteomics/bioinformatics-specific sample metadata standard (SDRF), too domain-narrow for general AI training-data suitability.",GPL-2.0,osi-approved,Infrastructure and Metadata to Analyze Large Datasets,dataset metadata standard,115,2026-07-28T21:46:52+00:00
+mlcommons/croissant,accept,,,,none-declared,Infrastructure and Metadata to Analyze Large Datasets,,,2026-07-28T23:09:43+00:00
+spdx/spdx-spec,accept,,,Community-Spec-1.0,non-free,Identification of Problematic Data,,,2026-07-28T23:09:43+00:00
+seekingdream/DyCodeEval,accept,,,,none-declared,Preservation of Evaluation Data Integrity,,,2026-07-28T23:12:21+00:00
+microsoft/presidio,accept,,,,none-declared,Verification of Training Data,,,2026-07-28T23:12:21+00:00
+nexB/scancode-toolkit,accept,,,,none-declared,Identification of Problematic Data,,,2026-07-28T23:12:21+00:00
+IntelLabs/ATLAS-CLI,accept,,,,none-declared,Verifiable Audits,,,2026-07-28T23:18:30+00:00
+(embedding-fingerprints repo),accept,,,,none-declared,Facilitation of Third-Party Access to Models,,,2026-07-28T23:18:30+00:00
+(llm-attributor repo),accept,,,,none-declared,Verification of Training Data,,,2026-07-28T23:18:30+00:00
+(ai-explainability-360 repo),accept,,,,none-declared,Verification of Model Properties,,,2026-07-28T23:19:05+00:00
+SCLBD/IMDL-BenCo,accept,,,,none-declared,Verification of AI-generated Content,,,2026-07-28T23:19:05+00:00
+zjunlp/EasyEdit,accept,,,MIT,osi-approved,Model Disgorgement and Machine Unlearning,LLM unlearning,2886,2026-07-28T23:22:00+00:00
+HongshengHu/membership-inference-machine-learning-literature,reject,not-a-tool-linklist,"Bare literature/paper list on membership inference, no description or runnable code; found via 'membership inference' keyword.",,none-declared,Verification of Training Data,membership inference,373,2026-07-28T23:22:00+00:00
+cirosantilli/china-dictatorship,reject,not-relevant,"Political content archive, off-topic false positive from the 'dataset audit' keyword.",CC-BY-SA-4.0,free-not-osi,Infrastructure and Metadata to Analyze Large Datasets,dataset audit,3116,2026-07-28T23:22:00+00:00
+gumityolcu/dualxda-pip,reject,low-substance,22-star PyPI package wrapper for a single paper's data-attribution method; llm-attributor already covers this RQ with a more established tool.,NOASSERTION,source-available,Attribution of Model Behavior to Data,training data attribution,22,2026-07-28T23:22:00+00:00
+matter-labs/awesome-zero-knowledge-proofs,reject,not-a-tool-linklist,"Curated awesome-list, not a tool.",NOASSERTION,source-available,Proof of Learning,proof of learning,5805,2026-07-28T23:23:19+00:00
+sergio11/vehicle_detection_tracker,reject,not-relevant,"'Proof of Concept' vehicle tracker, false positive on 'proof of' substring, unrelated to proof-of-learning.",MIT,osi-approved,Proof of Learning,proof of learning,144,2026-07-28T23:23:19+00:00
+HugoXOX3/PythonBitcoinMiner,reject,not-relevant,"Bitcoin proof-of-work miner, unrelated crypto-mining false positive.",MIT,osi-approved,Proof of Learning,proof of learning,132,2026-07-28T23:23:19+00:00
+VirtualAlllocEx/HWBP-DEP-Bypass,reject,not-relevant,"DEP/NX exploit proof-of-concept, unrelated security research.",MIT,osi-approved,Proof of Learning,proof of learning,100,2026-07-28T23:23:19+00:00
+10x-Aero/ESC-Development-Board,reject,not-relevant,"Hardware ESC board proof-of-concept, unrelated to AI.",,none-declared,Proof of Learning,proof of learning,56,2026-07-28T23:23:19+00:00
+uncomputable/zkp-workshop,reject,not-a-tool-linklist,"ZKP learning workshop/tutorial material, not a proof-of-learning tool.",CC0-1.0,free-not-osi,Proof of Learning,proof of learning,46,2026-07-28T23:23:19+00:00
+TheMalwareGuardian/Bootkits-Development-Starter-Pack,reject,not-relevant,"Bootkit development starter pack, unrelated security research.",GPL-3.0,osi-approved,Proof of Learning,proof of learning,24,2026-07-28T23:23:19+00:00
+wkta/ReadableCryptoMiner,reject,not-relevant,"Monero proof-of-work crypto miner, unrelated to model proof-of-learning.",NOASSERTION,source-available,Proof of Learning,proof of learning,23,2026-07-28T23:23:19+00:00
+TheMalwareGuardian/Rootkits-Development-Starter-Pack,reject,not-relevant,"Rootkit development starter pack, unrelated security research.",GPL-3.0,osi-approved,Proof of Learning,proof of learning,22,2026-07-28T23:23:19+00:00
