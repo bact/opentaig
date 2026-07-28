@@ -1,0 +1,27 @@
+{
+  "keyword": "AI impact assessment",
+  "query": "AI impact assessment stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 2,
+  "repos": [
+    {
+      "full_name": "canada-ca/aia-eia-js",
+      "html_url": "https://github.com/canada-ca/aia-eia-js",
+      "description": "Algorithmic Impact Assessment - \u00c9valuation de l'incidence algorithmique (TS/JS)",
+      "stars": 73,
+      "pushed_at": "2025-10-03T15:31:04Z",
+      "language": "Vue",
+      "license_spdx_id": "MIT",
+      "homepage": "https://canada-ca.github.io/aia-eia-js/"
+    },
+    {
+      "full_name": "Hack23/cia-compliance-manager",
+      "html_url": "https://github.com/Hack23/cia-compliance-manager",
+      "description": "The CIA Compliance Manager is an application that helps organizations assess and manage the availability, integrity, and confidentiality of their systems and data based on customizable security levels, providing real-time cost estimates, business impact assessments, and technical implementation details.",
+      "stars": 20,
+      "pushed_at": "2026-07-28T18:30:02Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://ciacompliancemanager.com/"
+    }
+  ]
+}

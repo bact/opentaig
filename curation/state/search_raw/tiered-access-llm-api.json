@@ -1,0 +1,37 @@
+{
+  "keyword": "tiered access LLM API",
+  "query": "tiered access LLM API stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 3,
+  "repos": [
+    {
+      "full_name": "mfoud444/ollamafreeapi",
+      "html_url": "https://github.com/mfoud444/ollamafreeapi",
+      "description": "OllamaFreeAPI: Free Distributed API for Ollama LLMs  Public gateway to our managed Ollama servers with: - Zero-configuration access to 50+ models - Auto load-balanced across global nodes - Free tier with no API keys required - Built on ollama-python",
+      "stars": 277,
+      "pushed_at": "2026-04-15T12:42:44Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "dyneth02/Air-Quality-Trends-Analysis-Project",
+      "html_url": "https://github.com/dyneth02/Air-Quality-Trends-Analysis-Project",
+      "description": "Full-stack air quality analytics platform built with FastAPI, React, and MySQL. Aggregates multi-source PM2.5/PM10 data, performs multi-city comparison and time-series forecasting (SARIMAX), and integrates an LLM-based planning agent with tiered access, secure APIs, and PDF reporting.",
+      "stars": 29,
+      "pushed_at": "2026-01-05T08:22:34Z",
+      "language": "JavaScript",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "STAR-173/LLMSession-Docker",
+      "html_url": "https://github.com/STAR-173/LLMSession-Docker",
+      "description": "A unified REST API that wraps web-based LLM sessions (ChatGPT, Claude, Google AI Studio) into a standard interface using headless automation. Access your web-tier subscriptions programmatically without per-token API costs.",
+      "stars": 22,
+      "pushed_at": "2025-12-01T00:44:34Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}

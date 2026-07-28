@@ -1,0 +1,67 @@
+{
+  "keyword": "secure multiparty computation",
+  "query": "secure multiparty computation stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 6,
+  "repos": [
+    {
+      "full_name": "multiparty/jiff",
+      "html_url": "https://github.com/multiparty/jiff",
+      "description": "JavaScript library for building web-based applications that employ secure multi-party computation (MPC).",
+      "stars": 274,
+      "pushed_at": "2026-02-13T15:04:28Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://multiparty.org/jiff/"
+    },
+    {
+      "full_name": "facebookresearch/fbpcf",
+      "html_url": "https://github.com/facebookresearch/fbpcf",
+      "description": "Private computation framework library allows developers to perform randomized controlled trials, without leaking information about who participated or what action an individual took. It uses secure multiparty computation to guarantee this privacy. It is suitable for conducting A/B testing, or measuring advertising lift and learning the aggregate statistics without sharing information on the individual level.",
+      "stars": 143,
+      "pushed_at": "2025-10-13T16:47:56Z",
+      "language": "C++",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "carbynestack/carbynestack",
+      "html_url": "https://github.com/carbynestack/carbynestack",
+      "description": "Cloud native Secure Multiparty Computation Stack",
+      "stars": 93,
+      "pushed_at": "2025-10-27T05:33:53Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://carbynestack.io"
+    },
+    {
+      "full_name": "emp-toolkit/emp-agmpc",
+      "html_url": "https://github.com/emp-toolkit/emp-agmpc",
+      "description": "Global-Scale Secure Multiparty Computation",
+      "stars": 51,
+      "pushed_at": "2026-06-23T01:23:28Z",
+      "language": "C++",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "world-federation-of-advertisers/cross-media-measurement",
+      "html_url": "https://github.com/world-federation-of-advertisers/cross-media-measurement",
+      "description": "A privacy centric system for cross publisher, cross media ads measurement through secure multiparty computations.",
+      "stars": 49,
+      "pushed_at": "2026-07-28T17:10:27Z",
+      "language": "Kotlin",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://halo.wfanet.org/"
+    },
+    {
+      "full_name": "chart21/hpmpc",
+      "html_url": "https://github.com/chart21/hpmpc",
+      "description": "High Performance Implementation of Secure Multiparty Computation protocols",
+      "stars": 33,
+      "pushed_at": "2026-07-25T00:13:12Z",
+      "language": "C",
+      "license_spdx_id": "MIT",
+      "homepage": "https://c.harth-kitzerow.com/mkdocs-hpmpc/"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "keyword": "dataset deduplication tool",
+  "query": "dataset deduplication tool stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "allenai/duplodocus",
+      "html_url": "https://github.com/allenai/duplodocus",
+      "description": "Tooling for exact and MinHash deduplication of large-scale text datasets",
+      "stars": 92,
+      "pushed_at": "2026-03-24T22:35:11Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    }
+  ]
+}

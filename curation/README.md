@@ -196,6 +196,91 @@ again.
   regardless, so it's fine to try the cheaper model for step 5 first and
   escalate only where review shows it's too noisy.
 
+### Keyword expansion (phase 2)
+
+Phase 1 (rounds 1–3+) scoped keywords by reading each target RQ's own text
+and improvising short phrases from it, one problem area at a time. That
+works but is manual and only mines one source of vocabulary. Phase 2 —
+started once every RQ range has had at least one real search pass — adds
+four more systematic keyword sources on top of it, plus two hard-learned
+mechanical rules that apply to all five:
+
+- **GitHub's search API ANDs every unquoted word.** A 4-5 word free-text
+  query routinely returns zero hits even when good candidates exist —
+  every multi-word query in round 3 with 4+ unquoted words returned 0. Keep
+  free-text queries to 2-3 words. For a literal pattern (see strategy 2
+  below) use an exact quoted phrase instead, which GitHub matches as a
+  substring rather than an AND of words.
+- **Log every keyword regardless of hit count.** A 0-hit query is not
+  wasted effort — `search_repos.py` already logs it to `search_log.csv`
+  unconditionally, and it's real negative evidence for the paper (which
+  phrasings are too narrow for GitHub's index vs. genuinely describe an
+  empty space). When a query returns nothing, the fix is to broaden
+  (fewer/more common words) not to add more qualifying terms.
+
+The five keyword sources, in the order worth trying:
+
+1. **Mine vocabulary from our own accepted tools.** Extract recurring
+   2-3 word technical phrases from the live `tools.summary` and
+   `tool_map.rationale` columns that haven't been tried as search keywords
+   yet (check against `search_log.csv`). This is the cheapest source —
+   it's grounded in terms that have *already* proven to surface real tools
+   for adjacent RQs, so it's likely to surface siblings. Deterministic
+   extraction (n-gram frequency) is fine for generating the candidate
+   list; still worth a human/agent pass to drop generic noise (e.g. "open
+   source", "machine learning") before searching.
+2. **`"alternative to <name>"` / `"similar to <name>"` as exact quoted
+   phrases.** Many READMEs literally self-describe this way ("X is an
+   open-source alternative to Y"), so this is a real, high-precision
+   pattern, not a hopeful guess — but only when `<name>` is an actual
+   product genuinely relevant to the target RQ (a well-known proprietary
+   tool in that space, or one of our own already-accepted OSS tools to
+   find its competitors). Don't invent placeholder names to fill the
+   pattern.
+3. **`"open source"` / `"free software"` + a *named standard or
+   principle*.** Deprioritized as a blanket strategy — GitHub results are
+   already software repos, so literally adding "open source" to a generic
+   query is mostly redundant with the star/license filters already
+   applied. Where it *does* earn its keep: searching by an exact
+   framework/principle name we haven't searched by yet (e.g. "NIST AI RMF
+   implementation", "ISO 42001 audit", "RGAF compliance checklist") to
+   catch standard-anchored tools that don't share vocabulary with any RQ's
+   own phrasing.
+4. **RQ text keywords, formalized.** This is what phase 1 already did
+   informally each round — keep doing it as the default per-RQ source, but
+   apply the 2-3-word-query rule explicitly rather than improvising full
+   phrases that turn out to be 4+ words.
+5. **AI risk taxonomies as a keyword reference corpus**, not a blind
+   batch-search source. Three sources, layered:
+   - [**"The AI Risk Repository: A Comprehensive Meta-Review, Database, and
+     Taxonomy of Risks From Artificial Intelligence"**](https://arxiv.org/abs/2407.01294)
+     (Slattery et al., 2024) — the actual taxonomy paper: a causal taxonomy
+     (7 risk domains, 24 subdomains) plus a database of 700+ risks
+     extracted from 40+ existing frameworks. This is the primary source,
+     not just methodology background for the navigator below.
+   - [**airisk.mit.edu/navigator**](https://airisk.mit.edu/navigator#/taxonomies)
+     — the browsable web app over the same repository/taxonomy, easier for
+     an agent to search interactively than the paper's PDF tables; see
+     also the [*Patterns* write-up](https://www.cell.com/patterns/fulltext/S2666-3899(26)00026-7)
+     of the repository's ongoing use.
+   - The named Mitigation/Control categories in
+     ["Mapping AI Risk Mitigations"](https://cdn.prod.website-files.com/669550d38372f33552d2516e/6887e58496902e3bcad04a5a_1b0850b4406f7dc6a79365c4b56f0f51_Mapping%20AI%20Risk%20Mitigations.pdf)
+     — a separate, complementary document once a risk domain is
+     identified, giving the *mitigation-technique* vocabulary (not just
+     risk-category vocabulary) to search with.
+
+   Together these give a structured, pre-classified vocabulary of risk
+   categories and named mitigation techniques (red-teaming, watermarking,
+   differential privacy, content provenance, bias auditing, ...) that map
+   cleanly to searchable tool categories — and the classification comes
+   free, useful for the paper independent of search. Use it the same way
+   as source 4:
+   cross-reference each target RQ against the taxonomy first to find the
+   1-2 most relevant risk/mitigation entries, *then* derive a short
+   keyword from that — don't batch-search the whole taxonomy blind. Cache
+   the source documents locally on first use (same pattern as
+   `licenses.py`'s SPDX cache) rather than re-fetching every session.
+
 ## Running locally (do this next)
 
 **This pipeline was built inside a Claude Code Remote sandbox whose GitHub

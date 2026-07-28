@@ -1,0 +1,67 @@
+{
+  "keyword": "differential privacy library",
+  "query": "differential privacy library stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 6,
+  "repos": [
+    {
+      "full_name": "google/differential-privacy",
+      "html_url": "https://github.com/google/differential-privacy",
+      "description": "Google's differential privacy libraries.",
+      "stars": 3337,
+      "pushed_at": "2026-07-24T17:04:56Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "IBM/differential-privacy-library",
+      "html_url": "https://github.com/IBM/differential-privacy-library",
+      "description": "Diffprivlib: The IBM Differential Privacy Library",
+      "stars": 918,
+      "pushed_at": "2025-09-17T20:40:13Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://diffprivlib.readthedocs.io"
+    },
+    {
+      "full_name": "OpenMined/PyDP",
+      "html_url": "https://github.com/OpenMined/PyDP",
+      "description": "The Python Differential Privacy Library. Built on top of: https://github.com/google/differential-privacy",
+      "stars": 549,
+      "pushed_at": "2026-05-11T08:29:17Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "opendp/opendp",
+      "html_url": "https://github.com/opendp/opendp",
+      "description": "The core library of differential privacy algorithms powering the OpenDP Project.",
+      "stars": 426,
+      "pushed_at": "2026-07-28T18:09:36Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": "https://docs.opendp.org"
+    },
+    {
+      "full_name": "sunchang0124/dp_cgans",
+      "html_url": "https://github.com/sunchang0124/dp_cgans",
+      "description": "A library to generate synthetic tabular or RDF data using Conditional Generative Adversary Networks (GANs) combined with Differential Privacy techniques.",
+      "stars": 99,
+      "pushed_at": "2026-05-12T11:54:34Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "opendp/dpcreator",
+      "html_url": "https://github.com/opendp/dpcreator",
+      "description": "Web application that makes data releases that satisfy differential privacy using the OpenDP Library",
+      "stars": 22,
+      "pushed_at": "2026-04-17T18:55:22Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}
