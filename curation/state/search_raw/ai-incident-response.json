@@ -1,0 +1,137 @@
+{
+  "keyword": "AI incident response",
+  "query": "AI incident response stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 13,
+  "repos": [
+    {
+      "full_name": "The-Art-of-Hacking/h4cker",
+      "html_url": "https://github.com/The-Art-of-Hacking/h4cker",
+      "description": "This repository is maintained by Omar Santos (@santosomar) and includes thousands of resources related to ethical hacking, bug bounties, digital forensics and incident response (DFIR), AI security, vulnerability research, exploit development, reverse engineering, and more. \ud83d\udd25 Also check: https://hackertraining.org",
+      "stars": 28694,
+      "pushed_at": "2026-07-23T11:59:52Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://hackerrepo.org"
+    },
+    {
+      "full_name": "Raiders0786/web3-security-resources",
+      "html_url": "https://github.com/Raiders0786/web3-security-resources",
+      "description": "Curated Web3 security learning hub for smart contract auditors and protocol teams: roadmaps, audit tools, public reports, fuzzing, formal verification, AI-assisted workflows, offchain security, incident response, and launch checklists.",
+      "stars": 427,
+      "pushed_at": "2026-05-27T11:59:41Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://raiders0786.github.io/web3-security-resources/"
+    },
+    {
+      "full_name": "thomasxm/CrowdSentinels-AI-MCP",
+      "html_url": "https://github.com/thomasxm/CrowdSentinels-AI-MCP",
+      "description": "AI-powered threat hunting and incident response MCP server for Elasticsearch/OpenSearch",
+      "stars": 204,
+      "pushed_at": "2026-07-19T21:09:49Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "Houseofmvps/ultraship",
+      "html_url": "https://github.com/Houseofmvps/ultraship",
+      "description": "\"ULTRASHIP\" Claude Code plugin \u2014 39 skills, 33 tools, 11 agents for ship-ready workflows: planning, review, pentesting, safety guardrails, canary monitoring, SEO/AI-readiness check, penetration testing, code review, competitive analysis, incident response. 1 dependency. 180 tests. MIT.",
+      "stars": 113,
+      "pushed_at": "2026-07-08T00:07:40Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.npmjs.com/package/ultraship"
+    },
+    {
+      "full_name": "YanpengQi7/ai-reliability-copilot",
+      "html_url": "https://github.com/YanpengQi7/ai-reliability-copilot",
+      "description": "Turn a production incident into a structured 9-section LLM response (severity, root cause, mitigation, postmortem). Ships with a 5-scenario regression suite + LLM-as-judge eval pipeline.",
+      "stars": 102,
+      "pushed_at": "2026-06-24T03:28:11Z",
+      "language": "TypeScript",
+      "license_spdx_id": "",
+      "homepage": "https://ai-reliability-copilot.vercel.app"
+    },
+    {
+      "full_name": "AppliedIR/Valhuntir",
+      "html_url": "https://github.com/AppliedIR/Valhuntir",
+      "description": "Valhuntir CLI \u2014 AI-augmented incident response platform",
+      "stars": 90,
+      "pushed_at": "2026-07-18T17:04:32Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://appliedir.github.io/Valhuntir/"
+    },
+    {
+      "full_name": "pavangudiwada/awesome-ai-sre",
+      "html_url": "https://github.com/pavangudiwada/awesome-ai-sre",
+      "description": "AI SRE tools for RCA, Incident Response, Cost-Saving, Infra management, DevOps and more",
+      "stars": 65,
+      "pushed_at": "2026-07-13T02:44:56Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://aisrewatchlist.vercel.app"
+    },
+    {
+      "full_name": "MohamedMostafa010/ExeRay",
+      "html_url": "https://github.com/MohamedMostafa010/ExeRay",
+      "description": "ExeRay AI detects malicious Windows executables using ML. Analyzes entropy, imports, and metadata for rapid classification, aiding incident response. Built with Python and scikit-learn.",
+      "stars": 62,
+      "pushed_at": "2026-03-30T03:18:46Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "M507/AI-SOC-Agent",
+      "html_url": "https://github.com/M507/AI-SOC-Agent",
+      "description": "Blackhat 2025 presentation and codebase: AI SOC agent & MCP server for automated security investigation, alert triage, and incident response. Integrates with ELK, IRIS, and other platforms.",
+      "stars": 45,
+      "pushed_at": "2025-12-28T14:25:04Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "BagelHole/DevOps-Security-Agent-Skills",
+      "html_url": "https://github.com/BagelHole/DevOps-Security-Agent-Skills",
+      "description": "Agent-ready DevOps, security, infrastructure, and compliance knowledge base with 80+ skills across Kubernetes, Terraform, AWS/Azure/GCP, AI platform operations, container hardening, SOC2/ISO27001, and incident response\u2014plus ready-to-run scripts, templates, and playbooks for SRE, platform, and security teams.",
+      "stars": 44,
+      "pushed_at": "2026-05-22T13:07:20Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "leestott/On-Call-Copilot-Multi-Agent",
+      "html_url": "https://github.com/leestott/On-Call-Copilot-Multi-Agent",
+      "description": "On-Call Copilot is an open-source multi-agent AI system built on Microsoft Agent Framework and Agent Services v2 Hosted Agents that automates incident response. It runs four specialist agents concurrently Triage, Summary, Comms, and PIR, returning root cause analysis, a plain-language narrative, Slack and stakeholder update",
+      "stars": 41,
+      "pushed_at": "2026-06-18T06:18:55Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "donaldraph/ares-ai",
+      "html_url": "https://github.com/donaldraph/ares-ai",
+      "description": "Autonomous AI SRE platform with a single decision authority model, adaptive learning, and a tactical operations center dashboard \u2014 built for intelligent incident detection, triage, and response at scale.",
+      "stars": 33,
+      "pushed_at": "2026-06-17T08:56:38Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "0xJaeg3r/backdoorsandbreaches-socinvader",
+      "html_url": "https://github.com/0xJaeg3r/backdoorsandbreaches-socinvader",
+      "description": "\ud83c\udfae AI-powered solo mode for Backdoors & Breaches. Train incident response skills anytime with an LLM Incident Master. Arcade-themed fork of BHIS's tabletop IR game. No facilitator needed\u2014just you vs the breach.",
+      "stars": 28,
+      "pushed_at": "2025-12-27T09:51:29Z",
+      "language": "JavaScript",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "keyword": "image manipulation detection",
+  "query": "image manipulation detection stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 2,
+  "repos": [
+    {
+      "full_name": "mjkwon2021/CAT-Net",
+      "html_url": "https://github.com/mjkwon2021/CAT-Net",
+      "description": "Official code for CAT-Net: Compression Artifact Tracing Network. Image manipulation detection and localization.",
+      "stars": 312,
+      "pushed_at": "2025-07-29T12:51:40Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "scu-zjz/IMDLBenCo",
+      "html_url": "https://github.com/scu-zjz/IMDLBenCo",
+      "description": "[NeurIPS'24 Spotlight] A comprehensive benchmark & codebase for Image manipulation detection/localization.",
+      "stars": 310,
+      "pushed_at": "2026-07-07T14:57:27Z",
+      "language": "Python",
+      "license_spdx_id": "CC-BY-4.0",
+      "homepage": "https://scu-zjz.github.io/IMDLBenCo-doc"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "keyword": "role based access LLM",
+  "query": "role based access LLM stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "dreamfactorysoftware/dreamfactory",
+      "html_url": "https://github.com/dreamfactorysoftware/dreamfactory",
+      "description": "DreamFactory is a secure, self-hosted enterprise data access platform that provides governed API access to any data source, connecting enterprise applications and on-prem LLMs with role-based access and identity passthrough.",
+      "stars": 1773,
+      "pushed_at": "2026-06-26T19:26:01Z",
+      "language": "Shell",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.dreamfactory.com"
+    }
+  ]
+}

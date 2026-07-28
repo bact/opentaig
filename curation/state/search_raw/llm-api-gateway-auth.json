@@ -1,0 +1,37 @@
+{
+  "keyword": "LLM API gateway auth",
+  "query": "LLM API gateway auth stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 3,
+  "repos": [
+    {
+      "full_name": "lightseekorg/smg",
+      "html_url": "https://github.com/lightseekorg/smg",
+      "description": "Engine-agnostic LLM gateway in Rust. Full OpenAI & Anthropic API compatibility across vLLM, TRT-LLM, TokenSpeed, SGLang, OpenAI, Gemini & more. Industry-first gRPC pipeline, KV cache-aware routing, chat history, tokenization caching, Responses API, embeddings, WASM plugins, MCP, and multi-tenant auth.",
+      "stars": 421,
+      "pushed_at": "2026-07-28T20:28:53Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://lightseek.org/smg"
+    },
+    {
+      "full_name": "agentrhq/authsome",
+      "html_url": "https://github.com/agentrhq/authsome",
+      "description": "Credential gateway for AI agents. Log in once via Oauth2 or API Key. Every agent stays authenticated \u2014 headless, no SaaS, agents never see your credentials.",
+      "stars": 72,
+      "pushed_at": "2026-07-24T23:13:46Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://authsome.ai/docs"
+    },
+    {
+      "full_name": "firslov/modelheart",
+      "html_url": "https://github.com/firslov/modelheart",
+      "description": "Enterprise LLM API gateway for multi-model routing and unified auth.",
+      "stars": 24,
+      "pushed_at": "2026-07-25T15:55:21Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://api.aihao.world"
+    }
+  ]
+}

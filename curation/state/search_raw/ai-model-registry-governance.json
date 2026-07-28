@@ -1,0 +1,17 @@
+{
+  "keyword": "AI model registry governance",
+  "query": "AI model registry governance stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "demml/opsml",
+      "html_url": "https://github.com/demml/opsml",
+      "description": "AI lifecycle platform for classical ML and agentic systems. Versioned, encrypted registries for data, models, experiments, prompts, agents, MCPs, and skills.   Pre/deploy/post-deployment patterns. Real-time monitoring and evaluation via Scouter. Rust core, governed by design",
+      "stars": 39,
+      "pushed_at": "2026-05-16T20:05:01Z",
+      "language": "Rust",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://docs.demml.io/opsml"
+    }
+  ]
+}

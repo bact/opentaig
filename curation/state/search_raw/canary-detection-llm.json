@@ -1,0 +1,17 @@
+{
+  "keyword": "canary detection LLM",
+  "query": "canary detection LLM stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "hermes-labs-ai/little-canary",
+      "html_url": "https://github.com/hermes-labs-ai/little-canary",
+      "description": "little-canary is a prompt-injection detector that reads attacks by their effect on a sacrificial canary model before they reach production. Puts a small canary model in front of your app, watches whether untrusted input compromises it, and returns block, flag, or pass as an inbound preflight check before your primary model acts.",
+      "stars": 25,
+      "pushed_at": "2026-07-25T03:25:04Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://littlecanary.ai"
+    }
+  ]
+}

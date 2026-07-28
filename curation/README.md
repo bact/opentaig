@@ -15,8 +15,8 @@ Tools map **directly** to research questions. Terms/principles map
 **directly** to research questions. Both hang off the `rq_no` independently
 — a tool is **never** attached to a question *because* they happen to share
 a principle. Concretely, discovery decides "does this tool help address
-question _N_?" by reading the tool's README / linked paper and comparing it
-to question _N_'s own text — not by matching principle tags.
+question *N*?" by reading the tool's README / linked paper and comparing it
+to question *N*'s own text — not by matching principle tags.
 
 The schema supports this via the `tool_map` tab: one row per `(rq_no,
 tool_id, role)` pairing, plus a free-text `rationale` for *why* that tool
@@ -154,7 +154,7 @@ unanswerable without re-reading 80+ free-text rejection notes by hand. It
 now also carries:
 
 | Column | Meaning |
-|---|---|
+| --- | --- |
 | `reject_category` | One value from `emit_candidates.py`'s `REJECT_CATEGORIES` — a closed vocabulary (`not-open-source`, `not-relevant`, `not-a-tool-linklist`, `not-a-tool-dataset`, `not-a-tool-paper-artifact`, `adversarial-purpose`, `commercial-sdk`, `low-substance`, `out-of-scope-narrow`, `redundant`). `emit_candidates.py` requires one on every `reject` verdict now — a bare `reject_reason` string is no longer enough. |
 | `license_spdx_id` | The judgment's `license` field, falling back to the SPDX id `search_repos.py` captured from the GitHub API. Recorded on **accepts too**, not just rejects — you can't compute "M of N were open source" from the rejects alone. |
 | `license_class` | `license_spdx_id` run through `licenses.py`'s `classify()` against the *official* SPDX license list's `isOsiApproved`/`isFsfLibre` flags — not a hand-maintained guess. One of `osi-approved`, `free-not-osi` (FSF-libre but not OSI, e.g. `CC-BY-4.0`), `non-free` (a real SPDX id that's neither, e.g. `CC-BY-NC-4.0`), `source-available` (GitHub found a LICENSE file it couldn't match — `NOASSERTION`), `none-declared`, or `unknown`. `emit_candidates.py` cross-checks this against `reject_category`: rejecting something as `not-open-source` while its licence classifies as open is an error, not a warning. |
@@ -251,18 +251,28 @@ The five keyword sources, in the order worth trying:
    apply the 2-3-word-query rule explicitly rather than improvising full
    phrases that turn out to be 4+ words.
 5. **AI risk taxonomies as a keyword reference corpus**, not a blind
-   batch-search source. Three sources, layered:
+   batch-search source. Four sources, layered:
    - [**"The AI Risk Repository: A Comprehensive Meta-Review, Database, and
-     Taxonomy of Risks From Artificial Intelligence"**](https://arxiv.org/abs/2407.01294)
-     (Slattery et al., 2024) — the actual taxonomy paper: a causal taxonomy
-     (7 risk domains, 24 subdomains) plus a database of 700+ risks
-     extracted from 40+ existing frameworks. This is the primary source,
-     not just methodology background for the navigator below.
+     Taxonomy of Risks From Artificial Intelligence"**](https://arxiv.org/abs/2408.12622)
+     (Slattery et al., 2024) — a causal taxonomy (entity/intentionality/
+     timing) plus a domain taxonomy (7 societal-impact domains) over 700+
+     risks extracted from 40+ existing frameworks. The primary source, not
+     just methodology background for the navigator below.
    - [**airisk.mit.edu/navigator**](https://airisk.mit.edu/navigator#/taxonomies)
      — the browsable web app over the same repository/taxonomy, easier for
      an agent to search interactively than the paper's PDF tables; see
      also the [*Patterns* write-up](https://www.cell.com/patterns/fulltext/S2666-3899(26)00026-7)
      of the repository's ongoing use.
+   - [**"A Collaborative, Human-Centred Taxonomy of AI, Algorithmic, and
+     Automation Harms"**](https://arxiv.org/abs/2407.01294) (Abercrombie,
+     Benbouzid, et al.) — a distinct taxonomy (not the same paper as
+     Slattery et al. above, despite the similar subject), built through
+     expert consultation and crowdsourced testing to stay legible to a
+     broad, non-specialist audience — civil society, educators,
+     policymakers, product teams — not just practitioners. Its
+     harm-category vocabulary is more accessible/concrete than the
+     Repository's, so worth checking both when a target RQ doesn't map
+     cleanly onto the Repository's domain taxonomy.
    - The named Mitigation/Control categories in
      ["Mapping AI Risk Mitigations"](https://cdn.prod.website-files.com/669550d38372f33552d2516e/6887e58496902e3bcad04a5a_1b0850b4406f7dc6a79365c4b56f0f51_Mapping%20AI%20Risk%20Mitigations.pdf)
      — a separate, complementary document once a risk domain is
@@ -320,8 +330,10 @@ after seeing real results).
 
 ### Live sheet schema (current)
 
-All tab and column names are lowercase with underscores. Five tabs are
-owned by this pipeline, each carrying the three freshness columns above:
+Quick recap for curation work — see [`docs/data-schema.md`](../docs/data-schema.md)
+for the full column-by-column reference. All tab and column names are
+lowercase with underscores. Five tabs are owned by this pipeline, each
+carrying the three freshness columns above:
 
 - **`map`** — `rq_no` + one column per framework (`rgaf`, `euaiact`,
   `unescoai`, `aseanai`, `coeai`) + freshness columns.
@@ -331,7 +343,7 @@ owned by this pipeline, each carrying the three freshness columns above:
   documentation, funding, implement, eval` + freshness columns.
 - **`terms`** — `id, framework_id, name, summary, url` + freshness columns.
 - **`framework`** — `id, name, fullname, summary, homepage, source, group`
-  + freshness columns.
+  - freshness columns.
 
 `tools_rgaf_seed` is a staging-only tab (not read by `build.py`) holding
 tools sourced from the LF AI & Data RGAF blog post, pending triage into

@@ -1,0 +1,17 @@
+{
+  "keyword": "multimodal unlearning",
+  "query": "multimodal unlearning stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "somvy/multimodal_unlearning",
+      "html_url": "https://github.com/somvy/multimodal_unlearning",
+      "description": "Experiments for our CLEAR benchmark of unlearning methods in a multimodal setup",
+      "stars": 23,
+      "pushed_at": "2025-08-06T12:00:20Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://huggingface.co/datasets/therem/CLEAR"
+    }
+  ]
+}
