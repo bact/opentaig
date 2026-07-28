@@ -84,15 +84,17 @@ judgment steps need a model.
    fork:false`, plus a README-length filter to drop 1-line stubs), writing
    the full raw hit list per keyword (`state/search_raw/`) and a
    deduplicated, README-filtered candidate list (`state/search_candidates.csv`).
-   **Needs a real GitHub token and unrestricted network — see "Running
-   locally" below, this is why that matters.** The agent's built-in web
+   **Needs a real GitHub token and unrestricted network — see "Setup"
+   below.** The agent's built-in web
    search can supplement this for blog/paper-surfaced tools GitHub search
    misses (it goes through a different path and isn't subject to the same
    restriction).
 4. **Extract** *(script + agent)* — for each surviving candidate, distil a
    one-line `summary` and note any linked paper from the README. Leave
    `license` blank rather than guess (the script already captures the SPDX
-   id from the GitHub API when present).
+   id from the GitHub API when present). **Follow the README's outbound
+   links when they're cheap to check** — see "Outbound links as judgment
+   signal" below.
 5. **Map to RQ** *(agent — the core judgment step)* — read the README/paper
    and decide which `rq_no`(s) it genuinely helps address, and whether each
    is `implement` or `eval`, with a one-line rationale per pair. **Direct**
@@ -148,6 +150,47 @@ stale enough to re-fetch. `emit_candidates.py` stamps all three to the same
 run timestamp on newly emitted rows, since a row that's just been added has
 also, trivially, just been checked and updated.
 
+### Outbound links as judgment signal
+
+A repo's README usually links out — to an arXiv paper, a benchmark or
+leaderboard entry, a docs site, a project page. Those links are cheap,
+high-value context for the step 4/5 judgment, and often settle questions
+the README alone leaves open:
+
+- **An arXiv link** gives you the abstract, which usually states the
+  problem being solved far more precisely than a README's marketing
+  paragraph. This is frequently what decides whether a tool genuinely
+  addresses an RQ or just shares vocabulary with it.
+- **A benchmark/leaderboard entry** is evidence the tool is actually used
+  and evaluated by others, not just published — useful against the
+  `low-substance` and `not-a-tool-paper-artifact` reject categories.
+- **A docs site** (vs. only a README) is a decent proxy for the tool being
+  independently installable and maintained, which is exactly the
+  `out-of-scope-narrow` question of whether something is a standalone tool
+  or a feature inside a larger platform.
+
+One caveat worth knowing, because it shows up constantly in real READMEs:
+**Papers With Code (`paperswithcode.com`) was shut down by Meta in July
+2025** and now redirects to Hugging Face. Many repos still carry PWC badges
+and links that no longer resolve to what they advertise — a dead PWC badge
+is *not* evidence against a tool, it's just a stale link. For the same
+signal today, use:
+
+- [Hugging Face Papers](https://huggingface.co/papers) — the official
+  successor, paper-to-code links and trending papers.
+- [`paperswithcode/paperswithcode-data`](https://github.com/paperswithcode/paperswithcode-data)
+  — the archived PWC dataset (papers, abstracts, paper↔code links,
+  evaluation tables). Frozen, not updated, but still the best historical
+  record for anything published before the sunset.
+
+Community successors exist (CodeSOTA, OpenCodePapers, and others) but
+none are verified here — treat them as leads, not citations, and prefer
+the primary source (the arXiv paper itself) when it's one click away.
+
+Don't over-invest: this is a judgment aid, not a required research step.
+Follow a link when the README is ambiguous and the link is one fetch away;
+skip it when the README already answers the question.
+
 ### Rejection tracking & licence classification
 
 `state/seen_repos.csv` (step 6/7) is the running log of every judged repo —
@@ -202,7 +245,7 @@ again.
 
 ### Keyword expansion (phase 2)
 
-Phase 1 (rounds 1–3+) scoped keywords by reading each target RQ's own text
+Phase 1 (rounds 1–9) scoped keywords by reading each target RQ's own text
 and improvising short phrases from it, one problem area at a time. That
 works but is manual and only mines one source of vocabulary. Phase 2 —
 started once every RQ range has had at least one real search pass — adds
@@ -295,42 +338,275 @@ The five keyword sources, in the order worth trying:
    the source documents locally on first use (same pattern as
    `licenses.py`'s SPDX cache) rather than re-fetching every session.
 
-## Running locally (do this next)
+### Starter prompts (for reproducibility)
 
-**This pipeline was built inside a Claude Code Remote sandbox whose GitHub
-access is hard-bound to a single repository at the network layer** — not
-just the GitHub MCP tool, but *any* HTTP call to `api.github.com` from that
-session gets `403 sessions are bound to their configured repositories` for
-anything outside that one repo, including the Search API `search_repos.py`
-needs. It also can't reach `docs.google.com` directly (worked around there
-via a separate Drive connector). **None of this applies to a normal local
-Claude Code session** — normal internet, your own GitHub token, no binding.
-That's why steps 3 onward should run locally from here on.
+The two prompts below are what actually kicked off real discovery rounds in
+this project, generalized from their original session-specific form (which
+named particular tools to re-check, exact round counts, etc.) so someone
+else — or a future you — can point a fresh Claude Code session at this repo
+and get a *methodologically equivalent* run. "Equivalent" is the honest
+word, not "identical": GitHub's index changes daily, so re-running this
+won't surface the exact same candidates. What should reproduce is the
+*process* — which areas get searched, how candidates get judged, what gets
+logged and why — which is what actually matters for a methods section.
 
-Setup, once, on your machine:
+#### Phase 1 prompt
+
+```text
+Read curation/README.md in full before doing anything else — it's the
+methodology doc for this tool-discovery pipeline (the "RQ is the spine"
+rule, model tiering, the live sheet schema, and the reject/licence
+tracking). Also read docs/data-schema.md for the exact tab/column layout.
+
+The whole pipeline is built and has already been run against live data —
+nothing here is a scaffold. Tabs and columns are all lowercase with
+underscores: `map`, `tool_map`, `tools`, `terms`, `framework`, plus any
+`tools_*_seed` staging tabs. RQ↔tool mappings live in `tool_map`, one row
+per (rq_no, tool_id, role) pairing with a free-text rationale — never a
+semicolon-list cell.
+
+Do, in order:
+
+1. `pip install -r requirements.txt`
+2. Confirm GITHUB_TOKEN is set (`export GITHUB_TOKEN=$(gh auth token)` if I
+   use the gh CLI). Shell state doesn't persist between tool calls, so
+   re-export it in each Bash call that needs it.
+3. `python build.py` (fetches the live sheets directly) then
+   `python curation/export_rq_context.py` — refresh rq_context.json against
+   the real catalog. Report any build warnings; there should be zero,
+   including freshness-column ones (every live row carries datetime_added /
+   datetime_checked / datetime_updated).
+4. If any staging tab (e.g. `tools_rgaf_seed`) still has untriaged rows,
+   fold them into this round rather than leaving them.
+5. Pick one problem area from rq_context.json that has thin or zero tool
+   coverage, propose 2-3-word search keywords for it (GitHub's search API
+   ANDs every unquoted word — longer phrases return zero hits more often
+   than not), then run `python curation/search_repos.py --keyword "..."`
+   for real. Every keyword tried gets logged to state/search_log.csv
+   automatically, hit or not — that provenance log is for a paper, so
+   don't skip or hand-edit it.
+6. Show me state/search_candidates.csv before going further. I want to see
+   real candidate quality and tune the filters (--min-stars /
+   --pushed-after-months / --min-readme-chars) if needed.
+7. Then continue the pipeline: `dedup_candidates.py` → extract/map
+   judgments → `emit_candidates.py`. Stop after emit and show me
+   candidate_tools.csv + candidate_map_updates.csv for human review — I
+   paste into the sheet myself, you never write to it. (These two files
+   accumulate across runs now — clear them back to just their header row
+   after I confirm a batch is merged, so the next batch starts clean.)
+
+Judgment rules that matter (details in curation/README.md):
+- Map a tool to an RQ by reading its README/paper against that question's
+  own text. Never via shared principle/term tags.
+- One tool legitimately answering several RQs is expected, not a smell.
+- An RQ with zero tools is a real finding worth reporting, not a search
+  failure to paper over by loosening the matching rule.
+- Every reject needs a `reject_category` from emit_candidates.py's
+  REJECT_CATEGORIES, not just free text.
+- A licence GitHub reports as NOASSERTION may just be a detector miss on a
+  custom-preamble LICENSE file (check the raw file before assuming it's
+  non-standard) -- and a non-OSI licence (e.g. a Creative Commons one) is
+  not itself a rejection reason; accept and record it honestly instead.
+- When a README is ambiguous, follow its outbound links before judging --
+  an arXiv abstract usually states the problem far more precisely than the
+  README, and a benchmark/leaderboard entry or real docs site is evidence
+  against `low-substance` / `not-a-tool-paper-artifact`. See "Outbound
+  links as judgment signal" in curation/README.md. Note that Papers With
+  Code shut down in July 2025, so stale PWC badges in a README resolve to
+  nothing -- that's not evidence against the tool.
+
+Model tiering: no model inside the scripts; cheaper model for keyword
+scoping, summary distillation, and the coarse RQ pre-filter; strongest
+model only for the final per-tool implement/eval judgment, as an isolated
+subagent given just {summary + README excerpt + pre-filtered RQ shortlist}
+— never the whole session history or the full research-question catalog.
+If you split a large batch across parallel subagents, synthesize their
+results yourself: each one only sees its own slice and will make
+locally-true, globally-false claims about RQ coverage.
+```
+
+#### Phase 2 prompt
+
+Use once phase 1 has had at least one real pass over every RQ range — see
+"Keyword expansion (phase 2)" above for what this adds and why.
+
+Phase 2 applies to **every** RQ, not only the thin ones: a broader keyword
+vocabulary can surface a better or complementary tool for a well-covered
+question just as easily as a first tool for an empty one. Thin/zero RQs are
+worth doing *first* — coverage going 0→1 is unambiguous evidence the
+expansion worked, where a 3rd tool on an already-covered RQ is a judgment
+call — but they aren't the scope.
+
+Phase 2 also has a second workstream that isn't keyword search at all, and
+it exists because of a structural blind spot: `dedup_candidates.py` drops
+any candidate already in the `tools` tab, so a search that surfaces an
+*already-accepted* tool for a new RQ is silently discarded before judgment.
+Every mapping in `tool_map` was therefore created at the single moment its
+tool was first accepted, judged only against the area being searched right
+then — which is why most tools in the catalog carry exactly one mapping
+despite this project's own rule that multi-RQ tools are expected. Re-judging
+the existing catalog against the full RQ set needs no search at all and is
+probably the highest-yield thing in phase 2.
+
+```text
+Read curation/README.md in full, especially the "Keyword expansion (phase
+2)" section — it documents 5 keyword sources, plus two mechanical rules
+learned the hard way (GitHub's search API ANDs every unquoted word, so keep
+free-text queries to 2-3 words; log every keyword including 0-hit ones).
+
+Every RQ range should already have had at least one real search-and-
+judgment pass (phase 1). This session is phase 2, which has two separate
+workstreams. Do pass A first — it needs no network search and is where the
+cheap wins are.
+
+Work in bounded batches either way: one problem area, or ~5-10 RQs, per
+batch, stopping for my review after each. Don't try to cover all 97 RQs in
+one run.
+
+=== PASS A: re-map the existing catalog (no search) ===
+
+`dedup_candidates.py` drops candidates already in the `tools` tab, so
+keyword search structurally cannot find a new RQ for a tool we already
+have. Every existing mapping was made when its tool was first accepted,
+judged only against the problem area being searched at that moment. So:
+
+Take the tools already in the live catalog and re-judge them against RQs
+they are NOT currently mapped to. Prioritise tools currently carrying only
+one mapping, and RQs with zero coverage. Use the same judgment rules and
+the same model tiering as any other batch — read the tool's README/docs
+against the candidate RQ's own text, no forced matches.
+
+Feed accepted new pairings through `emit_candidates.py` as normal. A
+judgment whose repo is already in `seen_repos.csv` will be skipped for the
+seen-log (correct — it's already logged) but its `mappings` still emit to
+`candidate_map_updates.csv`, which is what pass A produces. Do NOT re-emit
+a `tools` row for a tool already live; only new (rq_no, tool_id, role)
+pairings.
+
+Also check for tools present in the `tools` tab with no `tool_map` row at
+all — those are unreachable from the site's problem pages and are pure
+loss.
+
+=== PASS B: expanded keyword search (all RQs, thin ones first) ===
+
+Apply the 5 keyword sources from the README's "Keyword expansion (phase 2)"
+section. Source 4 (the RQ's own text) is what phase 1 already used; sources
+1, 2, 3 and 5 are the new ones:
+
+1. Mine 2-3 word phrases from the live `tools.summary` /
+   `tool_map.rationale` columns that haven't been tried yet (cross-check
+   against curation/state/search_log.csv).
+2. `"alternative to <name>"` / `"similar to <name>"` as exact quoted
+   phrases, where `<name>` is a real product genuinely relevant to the
+   target RQ — either a known proprietary tool in that space, or one of
+   our own already-accepted OSS tools (to find its competitors/siblings).
+   Don't invent placeholder names to fill the pattern.
+3. `"open source"` + a named standard/framework/principle we haven't
+   searched by yet (e.g. "NIST AI RMF", "ISO 42001", "RGAF") — only worth
+   it for standard-anchored tools, not as a blanket prefix.
+5. AI risk taxonomies as a keyword *reference*, not a blind batch-search
+   source: the MIT AI Risk Repository (https://airisk.mit.edu/navigator#/taxonomies,
+   paper https://arxiv.org/abs/2408.12622, Slattery et al. 2024, also
+   published in https://www.cell.com/patterns/fulltext/S2666-3899(26)00026-7),
+   the distinct "A Collaborative, Human-Centred Taxonomy of AI, Algorithmic,
+   and Automation Harms" (https://arxiv.org/abs/2407.01294, Abercrombie,
+   Benbouzid, et al. — not the same paper as the Repository above, worth
+   checking both since its harm categories are pitched more accessibly),
+   and the named Mitigation/Control categories in "Mapping AI Risk
+   Mitigations"
+   (https://cdn.prod.website-files.com/669550d38372f33552d2516e/6887e58496902e3bcad04a5a_1b0850b4406f7dc6a79365c4b56f0f51_Mapping%20AI%20Risk%20Mitigations.pdf).
+   Cross-reference each target RQ against these taxonomies first to find
+   the 1-2 most relevant risk/mitigation entries, then derive a short
+   keyword from that — don't batch-search the whole taxonomy blind.
+
+Cover every RQ eventually, ordering thin/zero-coverage ones first because
+their success is measurable (0→1 coverage is unambiguous). Already-covered
+RQs still get a pass — a better or complementary tool is a legitimate find.
+
+=== Steps ===
+
+1. `pip install -r requirements.txt`, then confirm GITHUB_TOKEN is set
+   (`export GITHUB_TOKEN=$(gh auth token)` if I use the gh CLI). Shell
+   state doesn't persist between tool calls, so re-export it in each Bash
+   call that needs it.
+2. `python build.py` then `python curation/export_rq_context.py` — refresh
+   against the live sheets. Confirm zero build warnings before anything
+   else.
+3. Record the baseline: per-problem-area coverage counts from
+   rq_context.json, plus `python curation/report_triage.py`. Re-run both at
+   the end of the session and show me the before/after — measuring whether
+   the expanded strategy actually moved coverage is the point of phase 2,
+   and the delta is paper-relevant.
+4. Run pass A on a bounded batch. Show me the proposed new mappings for
+   review before moving on.
+5. Run pass B on a bounded batch: propose 2-4 new keywords per area not
+   already in curation/state/search_log.csv, run them via
+   curation/search_repos.py, then show me the real candidate quality before
+   judging anything — same review gate as phase 1.
+6. Continue the pipeline (dedup_candidates.py → judgment →
+   emit_candidates.py, passing `--problem-area "..."`). Stop after emit and
+   show me candidate_tools.csv + candidate_map_updates.csv for review — I
+   paste into the live sheet myself, you never write to it. Those two files
+   accumulate across runs; clear them back to just their header row once I
+   confirm a batch is merged.
+
+Judgment rules (details in curation/README.md — same as phase 1):
+- Map a tool to an RQ by reading its README/paper against that question's
+  own text. Never via shared principle/term tags.
+- One tool legitimately answering several RQs is expected, not a smell.
+  This matters more in phase 2 than phase 1 — pass A exists precisely
+  because that rule was under-applied when tools were first judged.
+- An RQ with zero tools after a real search attempt is a finding worth
+  reporting as-is, not a failure to paper over by loosening the matching
+  rule. In our own phase-1 run the hardware/compute-verification areas
+  (chip specs, anti-tamper hardware, chip location, workload verification,
+  compute-usage enforcement) and the pure-policy/forecasting questions
+  stayed at zero across many keyword angles. Treat that as a prior to
+  verify, not an assumption — but don't force a weak taxonomy-derived
+  match just to move the number.
+- Every reject needs a `reject_category` from emit_candidates.py's
+  REJECT_CATEGORIES, not just free text.
+- A licence GitHub reports as NOASSERTION may just be a detector miss on a
+  custom-preamble LICENSE file (check the raw file before assuming it's
+  non-standard) — and a non-OSI licence (e.g. a Creative Commons one) is
+  not itself a rejection reason; accept and record it honestly instead.
+- When a README is ambiguous, follow its outbound links before judging —
+  an arXiv abstract usually states the problem far more precisely than the
+  README, and a benchmark/leaderboard entry or real docs site is evidence
+  against `low-substance` / `not-a-tool-paper-artifact`. See "Outbound
+  links as judgment signal" in curation/README.md. Note that Papers With
+  Code shut down in July 2025, so stale PWC badges in a README resolve to
+  nothing — that's not evidence against the tool. This matters more in
+  pass A than pass B: re-judging an existing tool against a *new* RQ is
+  exactly the case where the README's headline framing (written for its
+  original use case) is least likely to settle the question on its own.
+
+Model tiering per the README: no model in the scripts; cheaper model for
+keyword scoping and the coarse RQ pre-filter; strongest model only for the
+final per-tool implement/eval judgment, as an isolated subagent given just
+{tool summary + README excerpt + pre-filtered RQ shortlist} — never the
+whole session history or the full RQ catalog. If you split a batch across
+parallel subagents, synthesize their results yourself: each only sees its
+own slice and will make locally-true, globally-false claims about coverage.
+```
+
+## Setup
+
+Base setup (clone, `pip install -r requirements.txt`) is in
+[`docs/development.md`](../docs/development.md). Curation additionally
+needs a GitHub token, since `search_repos.py` hits the real GitHub Search
+API:
 
 ```bash
-git clone https://github.com/bact/opentaig.git && cd opentaig   # or: git pull, if already cloned
-git checkout main   # this pipeline is merged into main
-pip install -r requirements.txt
 export GITHUB_TOKEN=<a personal access token, no special scopes needed —
                       `gh auth token` works if you use the gh CLI>
 ```
 
-Then, each curation run:
-
-```bash
-python build.py                          # fetches the LIVE sheets directly (works fine locally)
-python curation/export_rq_context.py      # refresh rq_context.json from the full live catalog
-python curation/search_repos.py --keyword "..." --keyword "..."   # step 3
-```
-
-Then continue in that local Claude Code session with steps 2 (scoping,
-before searching) and 4–8 above — point it at this file for the full
-pipeline description and the RQ-is-the-spine rule. `search_repos.py --help`
-documents all its flags (`--min-stars`, `--pushed-after-months`,
-`--min-readme-chars` are all overridable if the defaults need adjusting
-after seeing real results).
+Shell state doesn't persist between separate tool-call invocations in an
+agent session, so re-export it in each one that runs a curation script.
+`search_repos.py --help` documents its flags (`--min-stars`,
+`--pushed-after-months`, `--min-readme-chars` are all overridable if the
+defaults need adjusting after seeing real results).
 
 ### Live sheet schema (current)
 
@@ -347,16 +623,12 @@ carrying the three freshness columns above:
   documentation, funding, implement, eval` + freshness columns.
 - **`terms`** — `id, framework_id, name, summary, url` + freshness columns.
 - **`framework`** — `id, name, fullname, summary, homepage, source, group`
-  - freshness columns.
+  + freshness columns.
 
 `tools_rgaf_seed` is a staging-only tab (not read by `build.py`) holding
-tools sourced from the LF AI & Data RGAF blog post, pending triage into
-`tools`/`tool_map`.
-
-(Historical note: the `tool_map` tab replaced `tools_implement`/
-`tools_eval` semicolon-list columns that used to live on `map`, and every
-tab/column name used to be a mix of casings, e.g. `RQ_No`, `RGAF`,
-`tools-rgaf`. That migration is done; nothing left to set up.)
+the 32 tools sourced from the LF AI & Data RGAF blog post. All 32 have now
+been triaged (accepted into `tools`/`tool_map`, or rejected) — see
+`state/seen_repos.csv` rows with `problem_area=rgaf-seed-triage`.
 
 ## Files
 
@@ -366,7 +638,7 @@ tab/column name used to be a mix of casings, e.g. `RQ_No`, `RGAF`,
   filter, plus a `state/search_log.csv` provenance log (every keyword tried,
   exact query, hit counts — kept for methodology/paper documentation, not
   just the surviving candidates). Deterministic; no model; needs
-  `GITHUB_TOKEN` + unrestricted network (see "Running locally" above).
+  `GITHUB_TOKEN` + unrestricted network (see "Setup" above).
 - **`dedup_candidates.py`** — built. Drops candidates already live in
   `tools` (matched by GitHub repo path) or already judged in
   `state/seen_repos.csv`. Deterministic; no model, no network. Writes
@@ -396,15 +668,13 @@ tab/column name used to be a mix of casings, e.g. `RQ_No`, `RGAF`,
   model, no network.
 - **`backfill_triage_columns.py`** — one-time migration, already run; kept
   for auditability. See "Rejection tracking & licence classification" above.
-- **`candidate_tools_from_rgaf.csv`** — historical snapshot: the original 32
-  tools pulled from the sheet's `tools_rgaf_seed` staging tab (seeded from
-  the LF AI & Data blog post ["Putting RGAF to Work"](https://lfaidata.foundation/communityblog/2026/04/22/putting-rgaf-to-work-build-and-audit-responsible-ai-with-open-source/)),
-  before triage. Most have since been triaged (real GitHub repo resolved,
-  README read, mapped into `tools`/`tool_map`, or rejected) directly in the
-  live `tools_rgaf_seed` tab; a handful remain untriaged there. **To
-  continue:** run the same discovery→judgment steps (4–5) against the
-  remaining rows in the live tab, same as any other candidate batch — this
-  file itself is not kept in sync with that progress.
+- **`candidate_tools_from_rgaf.csv`** — historical snapshot only: the
+  original 32 tools pulled from the sheet's `tools_rgaf_seed` staging tab
+  (seeded from the LF AI & Data blog post ["Putting RGAF to Work"](https://lfaidata.foundation/communityblog/2026/04/22/putting-rgaf-to-work-build-and-audit-responsible-ai-with-open-source/)),
+  before triage. All 32 have since been triaged directly in the live
+  `tools_rgaf_seed` tab (see "Live sheet schema" above) — this file was
+  never updated to reflect that and is kept only as a record of the
+  starting batch, not a to-do list.
 - **`rq_context.json`** — generated (git-ignored, purely derived from a
   fresh `site/data.json`), see step 1.
 - **`state/search_raw/*.json`**, **`state/search_candidates.csv`**,
