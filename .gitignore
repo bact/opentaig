@@ -2,6 +2,7 @@ site/
 __pycache__/
 *.pyc
 .DS_Store
+.python-version
 
 # Regenerated per curation run from a fresh site/data.json (see
 # curation/export_rq_context.py) -- a transient input, not source.

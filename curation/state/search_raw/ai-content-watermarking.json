@@ -1,0 +1,27 @@
+{
+  "keyword": "AI content watermarking",
+  "query": "AI content watermarking stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 2,
+  "repos": [
+    {
+      "full_name": "D-Ogi/WatermarkRemover-AI",
+      "html_url": "https://github.com/D-Ogi/WatermarkRemover-AI",
+      "description": "AI-Powered Watermark Remover using Florence-2 and LaMA: Remove watermarks from images and videos, including AI-generated content from Sora, Runway, and others. Features a modern PyWebview GUI.",
+      "stars": 1544,
+      "pushed_at": "2026-03-29T20:46:06Z",
+      "language": "HTML",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "mohammedelahmar/tiktok-agent",
+      "html_url": "https://github.com/mohammedelahmar/tiktok-agent",
+      "description": "\ud83c\udf1f TikTok Agent - An AI-powered tool that automatically extracts viral-worthy clips from videos and formats them for TikTok. Using engagement modeling, it identifies the most promising segments of content and transforms them into platform-ready vertical videos with options for watermarking, face detection, and custom formatting (crop, blur, or bars",
+      "stars": 26,
+      "pushed_at": "2026-02-23T12:06:26Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}

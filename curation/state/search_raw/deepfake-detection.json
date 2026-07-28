@@ -1,0 +1,47 @@
+{
+  "keyword": "deepfake detection",
+  "query": "deepfake detection stars:>300 pushed:>2025-07-28 archived:false fork:false",
+  "count": 4,
+  "repos": [
+    {
+      "full_name": "Daisy-Zhang/Awesome-Deepfakes-Detection",
+      "html_url": "https://github.com/Daisy-Zhang/Awesome-Deepfakes-Detection",
+      "description": "A list of tools, papers and code related to Deepfake Detection.",
+      "stars": 1805,
+      "pushed_at": "2025-09-02T01:56:45Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "SCLBD/DeepfakeBench",
+      "html_url": "https://github.com/SCLBD/DeepfakeBench",
+      "description": "A comprehensive benchmark of deepfake detection",
+      "stars": 1073,
+      "pushed_at": "2025-08-20T08:03:47Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "flyingby/Awesome-Deepfake-Generation-and-Detection",
+      "html_url": "https://github.com/flyingby/Awesome-Deepfake-Generation-and-Detection",
+      "description": "[CSUR 2026] A Survey on Deepfake Generation and Detection",
+      "stars": 643,
+      "pushed_at": "2026-05-14T12:59:04Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "qiqitao77/Awesome-Comprehensive-Deepfake-Detection",
+      "html_url": "https://github.com/qiqitao77/Awesome-Comprehensive-Deepfake-Detection",
+      "description": "",
+      "stars": 319,
+      "pushed_at": "2026-07-22T04:41:18Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    }
+  ]
+}

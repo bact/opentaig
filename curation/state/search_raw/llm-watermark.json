@@ -1,0 +1,77 @@
+{
+  "keyword": "LLM watermark",
+  "query": "LLM watermark stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 7,
+  "repos": [
+    {
+      "full_name": "SamurAIGPT/AI-Youtube-Shorts-Generator",
+      "html_url": "https://github.com/SamurAIGPT/AI-Youtube-Shorts-Generator",
+      "description": "Open-source alternative to Opus Clip, Vidyo.ai, Klap & SubMagic. Turn long-form YouTube videos into viral 9:16 shorts using LLM highlight detection, Whisper transcription, and auto vertical cropping \u2014 free, no watermarks, no per-clip credits.",
+      "stars": 4402,
+      "pushed_at": "2026-07-21T10:05:01Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://www.vadoo.tv/ai-youtube-shorts-generator"
+    },
+    {
+      "full_name": "THU-BPM/MarkLLM",
+      "html_url": "https://github.com/THU-BPM/MarkLLM",
+      "description": "[EMNLP 2024 Demo] MarkLLM: An Open-Source Toolkit for LLM Watermarking",
+      "stars": 1016,
+      "pushed_at": "2026-07-10T14:28:38Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://aclanthology.org/2024.emnlp-demo.7/"
+    },
+    {
+      "full_name": "Tooooa/AgentMark",
+      "html_url": "https://github.com/Tooooa/AgentMark",
+      "description": "\u3010ACL 2026 Main\u3011AgentMark: Utility-Preserving Behavioral Watermarking for Agents",
+      "stars": 90,
+      "pushed_at": "2026-04-08T08:00:45Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://arxiv.org/abs/2601.03294"
+    },
+    {
+      "full_name": "plll4zzx/Awesome-LLM-Watermark",
+      "html_url": "https://github.com/plll4zzx/Awesome-LLM-Watermark",
+      "description": "A collection list for Large Language Model (LLM) Watermark",
+      "stars": 64,
+      "pushed_at": "2026-03-30T22:40:02Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "facebookresearch/three_bricks",
+      "html_url": "https://github.com/facebookresearch/three_bricks",
+      "description": "Official Implementation of the paper \"Three Bricks to Consolidate Watermarks for LLMs\"",
+      "stars": 53,
+      "pushed_at": "2026-07-13T20:50:38Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "Xuzhenhua55/awesome-llm-copyright-protection",
+      "html_url": "https://github.com/Xuzhenhua55/awesome-llm-copyright-protection",
+      "description": "A curated collection of research and techniques for protecting intellectual property of large language models, including watermarking, fingerprinting, and more.",
+      "stars": 52,
+      "pushed_at": "2026-06-10T01:31:11Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://xuzhenhua55.github.io/awesome-llm-copyright-protection/"
+    },
+    {
+      "full_name": "ai-kunkun/PASA",
+      "html_url": "https://github.com/ai-kunkun/PASA",
+      "description": "[ICML 2026] PASA: A Principled Embedding-Space Watermarking Approach for LLM-Generated Text under Semantic-Invariant Attacks",
+      "stars": 23,
+      "pushed_at": "2026-05-13T04:08:46Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://ai-kunkun.github.io/PASA_page/"
+    }
+  ]
+}

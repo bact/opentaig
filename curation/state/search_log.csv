@@ -23,3 +23,13 @@ timestamp_utc,keyword,query,raw_count,new_candidates,min_stars,pushed_after_mont
 2026-07-24T00:10:00+00:00,data redaction,data redaction stars:>19 pushed:>2025-07-24 archived:false fork:false,13,12,19,12,200,"iter2: real run via search_repos.py, problem area Identification of Problematic Data (RQ1-6)"
 2026-07-24T00:10:00+00:00,dataset provenance,dataset provenance stars:>19 pushed:>2025-07-24 archived:false fork:false,6,6,19,12,200,"iter2: real run via search_repos.py, problem area Identification of Problematic Data (RQ1-6)"
 2026-07-24T00:10:00+00:00,membership inference,membership inference stars:>19 pushed:>2025-07-24 archived:false fork:false,6,6,19,12,200,"iter2: real run via search_repos.py, problem area Identification of Problematic Data (RQ1-6)"
+2026-07-28T11:50:49+00:00,AI content watermarking,AI content watermarking stars:>19 pushed:>2025-07-28 archived:false fork:false,2,2,19,12,200,
+2026-07-28T11:50:49+00:00,LLM watermark,LLM watermark stars:>19 pushed:>2025-07-28 archived:false fork:false,7,7,19,12,200,
+2026-07-28T11:50:49+00:00,image watermark generative AI,image watermark generative AI stars:>19 pushed:>2025-07-28 archived:false fork:false,0,0,19,12,200,
+2026-07-28T11:50:49+00:00,C2PA content provenance,C2PA content provenance stars:>19 pushed:>2025-07-28 archived:false fork:false,3,2,19,12,200,
+2026-07-28T11:50:49+00:00,AI generated content detector,AI generated content detector stars:>19 pushed:>2025-07-28 archived:false fork:false,3,3,19,12,200,
+2026-07-28T11:50:49+00:00,deepfake detection,deepfake detection stars:>19 pushed:>2025-07-28 archived:false fork:false,46,46,19,12,200,
+2026-07-28T11:54:41+00:00,deepfake detection toolkit,deepfake detection toolkit stars:>300 pushed:>2025-07-28 archived:false fork:false,0,0,300,12,200,
+2026-07-28T11:54:41+00:00,deepfake detection framework,deepfake detection framework stars:>300 pushed:>2025-07-28 archived:false fork:false,0,0,300,12,200,
+2026-07-28T11:54:41+00:00,deepfake detection sdk,deepfake detection sdk stars:>300 pushed:>2025-07-28 archived:false fork:false,0,0,300,12,200,
+2026-07-28T11:54:52+00:00,deepfake detection,deepfake detection stars:>300 pushed:>2025-07-28 archived:false fork:false,4,0,300,12,200,

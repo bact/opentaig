@@ -1,0 +1,37 @@
+{
+  "keyword": "C2PA content provenance",
+  "query": "C2PA content provenance stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 3,
+  "repos": [
+    {
+      "full_name": "contentauth/c2pa-rs",
+      "html_url": "https://github.com/contentauth/c2pa-rs",
+      "description": "Rust SDK for the core C2PA (Coalition for Content Provenance and Authenticity) specification",
+      "stars": 373,
+      "pushed_at": "2026-07-27T22:35:26Z",
+      "language": "Rust",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://contentauthenticity.org/"
+    },
+    {
+      "full_name": "ngmisl/C2PAremover",
+      "html_url": "https://github.com/ngmisl/C2PAremover",
+      "description": "A command-line tool to detect and remove Content Authenticity Initiative (CAI) metadata, also known as C2PA (Coalition for Content Provenance and Authenticity) metadata, from image files.",
+      "stars": 31,
+      "pushed_at": "2026-07-16T04:29:40Z",
+      "language": "Go",
+      "license_spdx_id": "Unlicense",
+      "homepage": ""
+    },
+    {
+      "full_name": "IntelLabs/atlas-cli",
+      "html_url": "https://github.com/IntelLabs/atlas-cli",
+      "description": "A command-line interface tool for creating, managing, and verifying Content Provenance and Authenticity (C2PA) manifests for machine learning models, datasets, and related artifacts.",
+      "stars": 23,
+      "pushed_at": "2026-07-27T06:53:57Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    }
+  ]
+}

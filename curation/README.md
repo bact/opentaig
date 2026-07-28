@@ -47,6 +47,15 @@ worth keeping in mind so they don't get "corrected" away in a future run:
   matching rule; report it as-is. Coverage gaps are exactly the kind of
   signal worth surfacing (e.g. for a paper analyzing which research
   questions currently have no open tooling at all).
+- **A Creative Commons license (e.g. `CC-BY-NC-4.0`) is not a reason to
+  reject a candidate.** CC licenses aren't OSI-approved for software and
+  are unusual to see on a code repo (they're intended for creative/data
+  works, not source code) — but that unusualness is itself worth keeping,
+  not filtering away: it's exactly the kind of observation a paper on tool
+  curation would want data on. Accept the tool, record the license as-is in
+  the `license` column (don't normalize it to something it isn't), and note
+  the licensing anomaly in the mapping `rationale` so a reader doesn't have
+  to go re-derive it.
 
 ## Pipeline
 
