@@ -8,9 +8,9 @@ site:
   title: "OpenTAIG"
   tagline: "Open source tools for problems in technical AI governance"
   description: >
-    A community-maintained catalog of open technical problems in AI
-    governance, mapped to relevant principles/regulations and linked to
-    open-source tools that help address them.
+    A catalog of open-source tools mapped to open problems in technical AI
+    governance (Reuel, Bucknall, et al., 2025) and linked to relevant
+    principles and regulations.
   base_path: ""
   repo_url: "https://github.com/bact/opentaig"
   source_paper_url: "https://arxiv.org/abs/2407.14981"

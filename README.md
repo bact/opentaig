@@ -1,9 +1,10 @@
 # OpenTAIG
 
-A community-maintained catalog of **open problems in technical AI governance**,
-each mapped to relevant principles/regulations and linked to open-source tools
-that help address it.
-Inspired by [TAIG database](https://taig.stanford.edu/taig_database.html) and the paper
+A catalog of open-source tools mapped to open problems in technical
+AI governance and linked to relevant principles and regulations.
+
+Inspired by [TAIG database](https://taig.stanford.edu/taig_database.html)
+and the paper
 [*Open Problems in Technical AI Governance*](https://arxiv.org/abs/2407.14981)
 (Reuel, Bucknall, et al., 2025).
 
