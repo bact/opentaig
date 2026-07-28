@@ -1,0 +1,87 @@
+{
+  "keyword": "AI model registry",
+  "query": "AI model registry stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 8,
+  "repos": [
+    {
+      "full_name": "EvanZhouDev/umr",
+      "html_url": "https://github.com/EvanZhouDev/umr",
+      "description": "The Unified Model Registry for all your local AI apps.",
+      "stars": 59,
+      "pushed_at": "2026-04-09T01:59:11Z",
+      "language": "TypeScript",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://www.npmjs.com/package/umr-cli"
+    },
+    {
+      "full_name": "FranciscoMoretti/ai-registry",
+      "html_url": "https://github.com/FranciscoMoretti/ai-registry",
+      "description": "Explore models form Vercel AI Gateway. Filter and compare by provider, context window, and pricing.",
+      "stars": 45,
+      "pushed_at": "2026-04-12T10:43:03Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://airegistry.app"
+    },
+    {
+      "full_name": "demml/opsml",
+      "html_url": "https://github.com/demml/opsml",
+      "description": "AI lifecycle platform for classical ML and agentic systems. Versioned, encrypted registries for data, models, experiments, prompts, agents, MCPs, and skills.   Pre/deploy/post-deployment patterns. Real-time monitoring and evaluation via Scouter. Rust core, governed by design",
+      "stars": 39,
+      "pushed_at": "2026-05-16T20:05:01Z",
+      "language": "Rust",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://docs.demml.io/opsml"
+    },
+    {
+      "full_name": "truefoundry/models",
+      "html_url": "https://github.com/truefoundry/models",
+      "description": "Community-maintained registry of AI/LLM model configurations - pricing, features, and limits across 19 providers and 1000+ models",
+      "stars": 30,
+      "pushed_at": "2026-07-28T13:19:37Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.truefoundry.com/models"
+    },
+    {
+      "full_name": "nirholas/mcp-notify",
+      "html_url": "https://github.com/nirholas/mcp-notify",
+      "description": "Monitor the Model Context Protocol (MCP) Registry for new, updated, and removed servers. Get real-time notifications via Discord, Slack, Email, Telegram, Microsoft Teams, Webhooks, or RSS feeds. Includes CLI, Go SDK, REST API, and MCP server for AI assistants.",
+      "stars": 28,
+      "pushed_at": "2026-07-14T03:34:03Z",
+      "language": "Go",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://mcp-notify-eta.vercel.app"
+    },
+    {
+      "full_name": "den-vasyliev/agentregistry-inventory",
+      "html_url": "https://github.com/den-vasyliev/agentregistry-inventory",
+      "description": "The Control Plane for AI Infrastructure Kubernetes-native registry for MCP servers, agents, skills & models",
+      "stars": 25,
+      "pushed_at": "2026-07-01T22:10:44Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "olamide226/ollama-gguf-downloader",
+      "html_url": "https://github.com/olamide226/ollama-gguf-downloader",
+      "description": "A simple CLI tool to effortlessly download GGUF model files from Ollama's registry. Once downloaded, these GGUF files can be seamlessly integrated with tools like llama.cpp for model training, inference, and other advanced AI use cases.",
+      "stars": 25,
+      "pushed_at": "2026-06-23T20:17:53Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "AmirhosseinHonardoust/Onchain-Security-Suite",
+      "html_url": "https://github.com/AmirhosseinHonardoust/Onchain-Security-Suite",
+      "description": "A complete Web3 security toolkit combining AI-powered token auditing, ML-based deployer reputation scoring, and live Etherscan V2 data. Includes static analysis for rugpull detection, RandomForest reputation modeling, contract-fetching automation, and Solidity on-chain registries for transparent, reproducible security insights.",
+      "stars": 22,
+      "pushed_at": "2025-11-20T10:14:35Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}

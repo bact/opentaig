@@ -1,0 +1,127 @@
+{
+  "keyword": "model fingerprinting",
+  "query": "model fingerprinting stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 12,
+  "repos": [
+    {
+      "full_name": "Y0oshi/Project-Deep-Focus",
+      "html_url": "https://github.com/Y0oshi/Project-Deep-Focus",
+      "description": "Your personal 'Mini Shodan'. A high-performance network reconnaissance engine designed for massive scale asset discovery. Specializes in identifying unsecured services (Open RTSP Cameras, No-Auth VNC, Anonymous FTP) and deeply fingerprints device models with a beautiful real-time terminal dashboard.",
+      "stars": 213,
+      "pushed_at": "2026-01-17T07:51:25Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "grip-unina/noiseprint",
+      "html_url": "https://github.com/grip-unina/noiseprint",
+      "description": "Noiseprint, a CNN-based camera model fingerprint",
+      "stars": 157,
+      "pushed_at": "2026-03-27T09:29:24Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://grip-unina.github.io/noiseprint/"
+    },
+    {
+      "full_name": "sergezuber/FABULA-LLM-5",
+      "html_url": "https://github.com/sergezuber/FABULA-LLM-5",
+      "description": "Frontier models sell confidence. FABULA ships proof \u2014 an agent harness where any model is a swappable chip and every finished run mints a replayable, context-fingerprinted Proof-of-Done receipt. Sovereign, local, air-gapped-capable. macOS \u00b7 Apple Silicon (today).",
+      "stars": 54,
+      "pushed_at": "2026-07-28T10:42:08Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://github.com/sergezuber/FABULA-LLM-5/blob/main/docs/GREENPAPER.md"
+    },
+    {
+      "full_name": "Shivadharshini-V/Fingerprint-Recognition",
+      "html_url": "https://github.com/Shivadharshini-V/Fingerprint-Recognition",
+      "description": "This project implements a fingerprint recognition system using ORB for feature extraction and SVM for classification in Python. It preprocesses fingerprint images, trains a machine learning model, and predicts the person ID from new inputs. The system is designed for beginners to learn biometric authentication and image processing.",
+      "stars": 53,
+      "pushed_at": "2026-02-11T03:52:46Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "Xuzhenhua55/awesome-llm-copyright-protection",
+      "html_url": "https://github.com/Xuzhenhua55/awesome-llm-copyright-protection",
+      "description": "A curated collection of research and techniques for protecting intellectual property of large language models, including watermarking, fingerprinting, and more.",
+      "stars": 52,
+      "pushed_at": "2026-06-10T01:31:11Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://xuzhenhua55.github.io/awesome-llm-copyright-protection/"
+    },
+    {
+      "full_name": "shaoshuo-ss/Awesome-LLM-Fingerprinting",
+      "html_url": "https://github.com/shaoshuo-ss/Awesome-LLM-Fingerprinting",
+      "description": "Paper list of LLM fingerprinting, based on our paper titled \"SoK: Large Language Model Copyright Auditing via Fingerprinting\".",
+      "stars": 29,
+      "pushed_at": "2025-08-28T03:24:42Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "ssloxford/SatIQ",
+      "html_url": "https://github.com/ssloxford/SatIQ",
+      "description": "Data collection, models, and fingerprinting code for \"Watch This Space: Securing Satellite Communication through Resilient Transmitter Fingerprinting\"",
+      "stars": 28,
+      "pushed_at": "2025-09-05T11:45:31Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "HoneyMeta/ccfingerprint",
+      "html_url": "https://github.com/HoneyMeta/ccfingerprint",
+      "description": "\ud83d\udd0d AI Model Identity Fingerprinting Tool - Verify AI model identity through self-Q&A | AI \u6a21\u578b\u8eab\u4efd\u6307\u7eb9\u8bc6\u522b\u5de5\u5177 - \u901a\u8fc7\u81ea\u95ee\u81ea\u7b54\u9a8c\u8bc1\u6a21\u578b\u771f\u5b9e\u8eab\u4efd",
+      "stars": 28,
+      "pushed_at": "2026-06-29T04:06:05Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://honeymeta.com/ccfingerprint"
+    },
+    {
+      "full_name": "AmanPriyanshu/GPT-OSS-MoE-ExpertFingerprinting",
+      "html_url": "https://github.com/AmanPriyanshu/GPT-OSS-MoE-ExpertFingerprinting",
+      "description": "ExpertFingerprinting: Behavioral Pattern Analysis and Specialization Mapping of Experts in GPT-OSS-20B's Mixture-of-Experts Architecture",
+      "stars": 27,
+      "pushed_at": "2026-02-03T08:13:49Z",
+      "language": "HTML",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://amanpriyanshu.github.io/GPT-OSS-MoE-ExpertFingerprinting/"
+    },
+    {
+      "full_name": "lechmazur/writing_styles",
+      "html_url": "https://github.com/lechmazur/writing_styles",
+      "description": "Documents the style side of the short-story Creative Writing LLM benchmark: we generated many short stories with a range of LLMs, then analyzed those stories for stylistic fingerprints and within-model diversity. This study focuses on how models write, how their outputs differ, and how varied each model is across its own stories.",
+      "stars": 25,
+      "pushed_at": "2025-12-18T21:57:05Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "Redomic/NeuThera-Drug-Discovery-Toolkit",
+      "html_url": "https://github.com/Redomic/NeuThera-Drug-Discovery-Toolkit",
+      "description": "NeuThera is a modular drug discovery starter toolkit, integrating multiple state-of-the-art generative molecular design models such as TamGen, chemBERTa, and DeepPurpose with other advanced tooling like graph-based retrieval, molecular fingerprint embeddings, ADMET profiling, etc.",
+      "stars": 23,
+      "pushed_at": "2025-11-08T12:18:42Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "jina-ai/embedding-fingerprints",
+      "html_url": "https://github.com/jina-ai/embedding-fingerprints",
+      "description": "Identify which embedding model produced a vector using digit-level tokenization and a tiny transformer",
+      "stars": 21,
+      "pushed_at": "2026-03-07T02:00:38Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://embedding-inversion-demo.jina.ai"
+    }
+  ]
+}

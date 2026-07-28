@@ -1,0 +1,47 @@
+{
+  "keyword": "model provenance verification",
+  "query": "model provenance verification stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 4,
+  "repos": [
+    {
+      "full_name": "devallibus/shiplog",
+      "html_url": "https://github.com/devallibus/shiplog",
+      "description": "SUPERCHARGE AI-assisted development by using Git. Cross-model review gates, evidence-linked closure, verification profiles, model-tier routing, artifact envelopes, and provenance signing \u2014 all from a single skill for Claude Code, Codex, and Cursor.",
+      "stars": 54,
+      "pushed_at": "2026-04-22T10:57:47Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "IntelLabs/atlas-cli",
+      "html_url": "https://github.com/IntelLabs/atlas-cli",
+      "description": "A command-line interface tool for creating, managing, and verifying Content Provenance and Authenticity (C2PA) manifests for machine learning models, datasets, and related artifacts.",
+      "stars": 23,
+      "pushed_at": "2026-07-27T06:53:57Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "Zhonghao1995/agentic-swmm-workflow",
+      "html_url": "https://github.com/Zhonghao1995/agentic-swmm-workflow",
+      "description": "Agentic SWMM is an automated, auditable, and memory-informed framework for reproducible stormwater modelling, integrating QGIS and EPA SWMM through the aiswmm runtime, reusable Skills, and MCP interfaces, with QA verification, provenance tracking, calibration support, and Codex, Hermes, Claude code as well as OpenClaw compatibility",
+      "stars": 21,
+      "pushed_at": "2026-07-25T06:56:50Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://aiswmm.com"
+    },
+    {
+      "full_name": "SaravananJaichandar/world-model-mcp",
+      "html_url": "https://github.com/SaravananJaichandar/world-model-mcp",
+      "description": "Temporal knowledge graph + authenticated audit chain for AI coding agents. Prevents hallucinations, repeated mistakes, regressions across 12 runtime adapters (Claude Code, Cursor, Codex, Copilot, Cline, Continue, and more). FIPS 205 hybrid signing (Ed25519 + SLH-DSA), streaming offline reference verifier. Hosted companion: etch.systems.",
+      "stars": 20,
+      "pushed_at": "2026-07-27T19:17:28Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://etch.systems"
+    }
+  ]
+}

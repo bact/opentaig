@@ -1,0 +1,97 @@
+{
+  "keyword": "zkml",
+  "query": "zkml stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 9,
+  "repos": [
+    {
+      "full_name": "Lagrange-Labs/deep-prove",
+      "html_url": "https://github.com/Lagrange-Labs/deep-prove",
+      "description": "Framework to prove inference of ML models blazingly fast",
+      "stars": 3355,
+      "pushed_at": "2026-05-31T20:11:18Z",
+      "language": "Rust",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://lagrange.dev"
+    },
+    {
+      "full_name": "inference-labs-inc/subnet-2",
+      "html_url": "https://github.com/inference-labs-inc/subnet-2",
+      "description": "Verifiable inference on Bittensor",
+      "stars": 2362,
+      "pushed_at": "2026-07-27T21:19:16Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": "https://subnet2.inferencelabs.com"
+    },
+    {
+      "full_name": "inference-labs-inc/zkml-blueprints",
+      "html_url": "https://github.com/inference-labs-inc/zkml-blueprints",
+      "description": "Mathematical formulations and circuit designs for zero-knowledge proofs.",
+      "stars": 1784,
+      "pushed_at": "2026-01-28T15:43:42Z",
+      "language": "",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "inference-labs-inc/dsperse",
+      "html_url": "https://github.com/inference-labs-inc/dsperse",
+      "description": "Distributed zkML",
+      "stars": 1245,
+      "pushed_at": "2026-07-14T15:01:25Z",
+      "language": "Rust",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://pypi.org/project/dsperse/"
+    },
+    {
+      "full_name": "inference-labs-inc/JSTprove",
+      "html_url": "https://github.com/inference-labs-inc/JSTprove",
+      "description": "JSTprove - Fast, verifiable AI",
+      "stars": 1227,
+      "pushed_at": "2026-04-23T17:01:09Z",
+      "language": "Rust",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "zkonduit/ezkl",
+      "html_url": "https://github.com/zkonduit/ezkl",
+      "description": "ezkl is an engine for doing inference for deep learning models and other computational graphs in a zk-snark (ZKML). Use it from Python, Javascript, or the command line.",
+      "stars": 1218,
+      "pushed_at": "2026-02-20T14:40:56Z",
+      "language": "Rust",
+      "license_spdx_id": "",
+      "homepage": "https://docs.ezkl.xyz/"
+    },
+    {
+      "full_name": "gizatechxyz/LuminAIR",
+      "html_url": "https://github.com/gizatechxyz/LuminAIR",
+      "description": "A zkML framework for ensuring the integrity of computational graphs using Circle STARK proofs",
+      "stars": 58,
+      "pushed_at": "2025-09-03T10:34:28Z",
+      "language": "Rust",
+      "license_spdx_id": "",
+      "homepage": "https://luminair.gizatech.xyz"
+    },
+    {
+      "full_name": "agencyenterprise/zkgraph-bnb-hack",
+      "html_url": "https://github.com/agencyenterprise/zkgraph-bnb-hack",
+      "description": "BNB Q3 Winner. A zkml framework based on the Libra procotol for proving onnx and general numpy computations built with pure python.",
+      "stars": 48,
+      "pushed_at": "2026-04-27T19:45:20Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "lfedgeai/AegisSovereignAI",
+      "html_url": "https://github.com/lfedgeai/AegisSovereignAI",
+      "description": "AegisSovereignAI: The Cross-Ecosystem Trust Layer for the Distributed Enterprise. Verifiable Identity, Hardware-Rooted Integrity, and Sovereign AI Governance - from Silicon to Prompt. Unifying AI, Cloud-Native, and Decentralized architectures.",
+      "stars": 20,
+      "pushed_at": "2026-05-02T14:48:53Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/lfedgeai/AegisSovereignAI"
+    }
+  ]
+}
