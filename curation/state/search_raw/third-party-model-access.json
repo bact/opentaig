@@ -1,0 +1,37 @@
+{
+  "keyword": "third party model access",
+  "query": "third party model access stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 3,
+  "repos": [
+    {
+      "full_name": "lukegood/ConfigBox",
+      "html_url": "https://github.com/lukegood/ConfigBox",
+      "description": "ConfigBox is a web-based tool for switching Claude Code / Codex / OpenCode configurations, supporting the access of third-party models to Codex, and enabling use on servers without a graphical interface. ConfigBox\u662f\u4e00\u4e2aWeb\u7aef\u7684Claude Code / Codex / OpenCode\u914d\u7f6e\u5207\u6362\u5de5\u5177\uff0c\u652f\u6301\u7b2c\u4e09\u65b9\u6a21\u578b\u63a5\u5165Codex\uff0c\u652f\u6301\u5728\u65e0\u56fe\u5f62\u754c\u9762\u7684\u670d\u52a1\u5668\u4e0a\u4f7f\u7528",
+      "stars": 33,
+      "pushed_at": "2026-06-15T12:47:22Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "shrestha-bishal/BankoneerCompleteBankingSystemCore",
+      "html_url": "https://github.com/shrestha-bishal/BankoneerCompleteBankingSystemCore",
+      "description": "BANKONEER (A Co-operative Banking System Software with Online Banking) [JAVA, PHP, HTML & CSS, JS, MS-SQL With ODBC-Connector Driver] BANKONEER,  a  Co-operative  Banking  System  Software  for  handling transactions carried  in co-operative banks  daily  in a computerized manner  &  to  nurture the needs  of an end banking by providing various ways to perform  banking tasks  with different  departments  as  CEO,  account,  loan,  e-banking,  cashier  and  online  banking.  BANKONEER  system  comes  in  three  platforms  as  Desktop  Workstation  software  used  in  co-operative  administrative  and  administration  (JAVA  platform  & framework), Online Banking for members  of co-operative banks  (PHP,  HTML, CSS  & JS with ODBC connector driver) & MS-SQL (server). The system is designed with  simple GUI for effective user interaction and increased effectiveness for handling the  transactions  and  flow of the  financials  in a computerized manner with sophisticated  algorithms.  With  Online  Banking  the  members  of  the  co-operative  banks  can  be  transparent.  Also  the  features  like  Transactions,  Loans  Details  (on-going  & completed)  &  the  installments, Third-Party Transfer, Wallet Concept etc.  have made  the software stand-out.  The system deals with data entry, validation  &  confirmation,  handling  transactions and  financials  flow,  updating  etc.  We have also developed our  own  Online  Payment  Portal  \u2018B-Payment\u2019  and  embedded  it  with  BANKONEER  for  third-party transfer.  Thus BANKONEER  designed according to the specifications  & requirements  saves  transaction  time,  increase  efficiency  &  also  makes  the  bond  between co-operative banks and its members stronger. \u201cBANKONEER,  Co-operative  Banking  System  Software  with  Online  Banking\u201d  project  is  a  model  desktop  application  and  internet  banking  site  for  complete  cooperative  banking  transactions  and  to  maintain  all  related  issues  in  very  efficient  manner in computerized way. This project enables both bank staffs to handle day to  day  co-operative  banking  operations  and  costumers  to  perform  the  basic  banking  transactions  through online too. This system provides banking operations handling to  banking  staff  at  one  end  whereas  the  access  to  the  customer  to  create  an  account,  deposit/withdraw  the cash from  account,  third-party transfers, wallet  and  also to view  reports of all accounts, transactions and loan details(on-going and completed)  at the  other  end.  The  customers  can  access  the  banks  website  for  viewing  their  account  details and perform the transactions on account as per their requirements. The  simple  GUI  (Graphical  User  Interface)  in  desktop  application  makes  it  user  friendly  and  efficient  to  handle  all  the  transactions  for  admins  or  staffs.  Bank  administrative  have  full  control  over  the  system  as  they  can  add,  remove,  manage  transactions/financials  and manage other utilities.  Customers can also make account  form their home with required paperwork and verifications from administrative.  With  this  system  the  brick  and  mortar  structure  of  traditional  co-operative  banking  gets  converted into a click and portal model, thereby giving a concept of virtual banking a  real  shape  in  our  sole  purpose.  E-banking/Online  Banking  facilitates  banking  transactions by  members  round the clock globally.  The primary aim of this project is  to provide an improved design methodology which envisages the future expansions  and  modification  necessary  for  the  core  sector  like  banking.  This  necessitates  the  design to be expandable and modifiable and so a modular approach in this bank can  become a member of banking system.",
+      "stars": 22,
+      "pushed_at": "2026-06-22T04:11:29Z",
+      "language": "Java",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "sheikhuzairhussain/codex-cursor-proxy",
+      "html_url": "https://github.com/sheikhuzairhussain/codex-cursor-proxy",
+      "description": "A small CLI proxy that lets you use your ChatGPT Plus/Pro subscription to access Codex models in third-party harnesses.",
+      "stars": 20,
+      "pushed_at": "2026-04-07T00:55:27Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}

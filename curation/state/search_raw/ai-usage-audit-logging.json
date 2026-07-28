@@ -1,0 +1,17 @@
+{
+  "keyword": "AI usage audit logging",
+  "query": "AI usage audit logging stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "Adversis/mcp-snitch",
+      "html_url": "https://github.com/Adversis/mcp-snitch",
+      "description": "MCP Snitch is a macOS application that intercepts and monitors MCP server communications, providing security analysis, access control, and audit logging for AI tool usage.",
+      "stars": 94,
+      "pushed_at": "2025-10-14T20:39:43Z",
+      "language": "Swift",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    }
+  ]
+}

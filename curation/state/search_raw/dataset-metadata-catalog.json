@@ -1,0 +1,17 @@
+{
+  "keyword": "dataset metadata catalog",
+  "query": "dataset metadata catalog stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "TheBeastCoding/glaucoma-dataset-metadata",
+      "html_url": "https://github.com/TheBeastCoding/glaucoma-dataset-metadata",
+      "description": "Actively maintained and comprehensive public glaucoma dataset catalog",
+      "stars": 79,
+      "pushed_at": "2026-01-02T03:21:20Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    }
+  ]
+}

@@ -1,0 +1,1007 @@
+{
+  "keyword": "LLM agent benchmark",
+  "query": "LLM agent benchmark stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 100,
+  "repos": [
+    {
+      "full_name": "AgentOps-AI/agentops",
+      "html_url": "https://github.com/AgentOps-AI/agentops",
+      "description": "Python SDK for AI agent monitoring, LLM cost tracking, benchmarking, and more. Integrates with most LLMs and agent frameworks including CrewAI, Agno, OpenAI Agents SDK, Langchain, Autogen, AG2, and CamelAI",
+      "stars": 5736,
+      "pushed_at": "2026-06-25T08:25:03Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://agentops.ai"
+    },
+    {
+      "full_name": "FareedKhan-dev/all-agentic-architectures",
+      "html_url": "https://github.com/FareedKhan-dev/all-agentic-architectures",
+      "description": "35 production-grade agentic AI architectures (Reflexion, LATS, GraphRAG, MemGPT, Voyager, BrowserAgent, ...) \u2014 a Python library and runnable textbook with multi-provider LLM support and a 17-task benchmark leaderboard.",
+      "stars": 4019,
+      "pushed_at": "2026-06-22T06:16:53Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://fareedkhan-dev.github.io/all-agentic-architectures/"
+    },
+    {
+      "full_name": "THUDM/AgentBench",
+      "html_url": "https://github.com/THUDM/AgentBench",
+      "description": "A Comprehensive Benchmark to Evaluate LLMs as Agents (ICLR'24)",
+      "stars": 3612,
+      "pushed_at": "2026-02-08T17:01:05Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "xlang-ai/OSWorld",
+      "html_url": "https://github.com/xlang-ai/OSWorld",
+      "description": "[NeurIPS 2024] OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments",
+      "stars": 3045,
+      "pushed_at": "2026-07-28T12:30:35Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://os-world.github.io"
+    },
+    {
+      "full_name": "Xnhyacinth/Awesome-LLM-Long-Context-Modeling",
+      "html_url": "https://github.com/Xnhyacinth/Awesome-LLM-Long-Context-Modeling",
+      "description": "\ud83d\udcf0 Must-read papers and blogs on LLM based Long Context Modeling \ud83d\udd25",
+      "stars": 2147,
+      "pushed_at": "2026-07-27T06:00:10Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": "https://arxiv.org/abs/2503.17407"
+    },
+    {
+      "full_name": "Doorman11991/smallcode",
+      "html_url": "https://github.com/Doorman11991/smallcode",
+      "description": "AI coding agent optimized for small LLMs. 87% benchmark with 4B-active model.",
+      "stars": 1999,
+      "pushed_at": "2026-07-25T13:43:01Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "sierra-research/tau2-bench",
+      "html_url": "https://github.com/sierra-research/tau2-bench",
+      "description": "\u03c4-Bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains",
+      "stars": 1685,
+      "pushed_at": "2026-07-24T19:47:15Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.taubench.com"
+    },
+    {
+      "full_name": "Barca0412/Introduction-to-Quantitative-Finance",
+      "html_url": "https://github.com/Barca0412/Introduction-to-Quantitative-Finance",
+      "description": "AI+\u91d1\u878d\uff08\u91cf\u5316\uff09\uff1a1.\u591a\u56e0\u5b50\u80a1\u7968\u91cf\u5316\u6846\u67b6\u5f00\u6e90\u6559\u7a0b 2.\u5b66\u754c\u548c\u4e1a\u754c\u7684\u7ecf\u5178\u8d44\u6599\u6536\u5f55 3.AI + \u91d1\u878d\u7684\u76f8\u5173\u5de5\u4f5c\uff0c\u5305\u62ecLLM, Agent, benchmark(evaluation), etc.",
+      "stars": 1590,
+      "pushed_at": "2026-07-23T22:21:51Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://barca0412.github.io/Introduction-to-Quantitative-Finance/"
+    },
+    {
+      "full_name": "AutoTrustAI/PaperGuru-Benchmark",
+      "html_url": "https://github.com/AutoTrustAI/PaperGuru-Benchmark",
+      "description": "Lifecycle-Aware Memory for long-horizon LLM agents \u2014 66.05% on PaperBench, 94.66% on SurveyBench, 10 peer-reviewed acceptances at FSE/ICML/TOSEM/AEI/ICoGB",
+      "stars": 1314,
+      "pushed_at": "2026-06-08T21:14:07Z",
+      "language": "TeX",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "CyberStrikeus/CyberStrike",
+      "html_url": "https://github.com/CyberStrikeus/CyberStrike",
+      "description": "Open-source AI-augmented offensive security harness. 13+ autonomous agents, 150+ LLM providers, 5,300+ models, 7,600+ Ed25519-signed attack skills, 56+ built-in tools, 176+ MCP tools. MITRE ATT&CK, OWASP WSTG, CIS Benchmarks. Post-exploit: Linux/Windows/macOS/AWS/Azure/K8s/CI-CD. Web UI + Cloudflare Tunnel. Your AI red team.",
+      "stars": 1304,
+      "pushed_at": "2026-07-28T13:42:30Z",
+      "language": "TypeScript",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://cyberstrike.io"
+    },
+    {
+      "full_name": "pinchbench/skill",
+      "html_url": "https://github.com/pinchbench/skill",
+      "description": "PinchBench is a benchmarking system for evaluating LLM models as OpenClaw coding agents. Made with \ud83e\udd80 by the humans at https://kilo.ai",
+      "stars": 1300,
+      "pushed_at": "2026-07-02T01:44:55Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://pinchbench.com"
+    },
+    {
+      "full_name": "huhusmang/Awesome-LLMs-for-Vulnerability-Detection",
+      "html_url": "https://github.com/huhusmang/Awesome-LLMs-for-Vulnerability-Detection",
+      "description": "The community's most comprehensive, continuously-updated index of research on Large Language Models for software vulnerability detection \u2014 papers across function-level, repository-level, agentic, and smart-contract detection, plus datasets, benchmarks, and surveys.",
+      "stars": 1198,
+      "pushed_at": "2026-07-28T01:19:52Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "OSU-NLP-Group/Mind2Web",
+      "html_url": "https://github.com/OSU-NLP-Group/Mind2Web",
+      "description": "[NeurIPS'23 Spotlight] \"Mind2Web: Towards a Generalist Agent for the Web\" -- the first LLM-based web agent and benchmark for generalist web agents",
+      "stars": 1016,
+      "pushed_at": "2025-11-05T00:38:41Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://osu-nlp-group.github.io/Mind2Web/"
+    },
+    {
+      "full_name": "suyoumo/ClawProBench",
+      "html_url": "https://github.com/suyoumo/ClawProBench",
+      "description": "ClawProBench is a live-first benchmark harness for evaluating LLM agents   in the OpenClaw runtime with deterministic grading and repeated-trial   reliability.",
+      "stars": 821,
+      "pushed_at": "2026-06-28T17:00:10Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://suyoumo.github.io/bench/"
+    },
+    {
+      "full_name": "NirDiamant/Agent_Memory_Techniques",
+      "html_url": "https://github.com/NirDiamant/Agent_Memory_Techniques",
+      "description": "Agent memory for LLMs: 30 runnable Jupyter notebooks covering conversation buffers, vector stores, knowledge graphs, episodic and semantic memory, MemGPT, Mem0, Letta, Zep, Graphiti, LoCoMo benchmarks, and production patterns.",
+      "stars": 820,
+      "pushed_at": "2026-07-14T18:50:35Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://diamantai.substack.com/"
+    },
+    {
+      "full_name": "benchflow-ai/awesome-evals",
+      "html_url": "https://github.com/benchflow-ai/awesome-evals",
+      "description": "A curated, non-BS library of the best resources for building and evaluating AI agents \u2014 papers, blogs, talks, tools, benchmarks. Maintained by BenchFlow.",
+      "stars": 762,
+      "pushed_at": "2026-07-01T22:53:19Z",
+      "language": "",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "TheAgentCompany/TheAgentCompany",
+      "html_url": "https://github.com/TheAgentCompany/TheAgentCompany",
+      "description": "An agent benchmark with tasks in a simulated software company.",
+      "stars": 752,
+      "pushed_at": "2025-11-17T20:31:16Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://the-agent-company.com"
+    },
+    {
+      "full_name": "Purewhiter/mobilegym",
+      "html_url": "https://github.com/Purewhiter/mobilegym",
+      "description": "MobileGym: A Verifiable and Highly Parallel Simulation Platform for Mobile GUI Agent Research \u00b7 \u6d4f\u89c8\u5668\u91cc\u8fd0\u884c\u7684\u5b89\u5353\u6a21\u62df\u5668 \u00b7 Browser-hosted Android Simulator \u00b7 Verifiable Evaluation \u00b7 Scalable Online RL Training",
+      "stars": 740,
+      "pushed_at": "2026-07-01T08:30:21Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://mobilegym.dev"
+    },
+    {
+      "full_name": "ethz-spylab/agentdojo",
+      "html_url": "https://github.com/ethz-spylab/agentdojo",
+      "description": "A Dynamic Environment to Evaluate Attacks and Defenses for LLM Agents.",
+      "stars": 690,
+      "pushed_at": "2026-06-02T10:01:31Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://agentdojo.spylab.ai/"
+    },
+    {
+      "full_name": "DataScienceUIBK/Rankify",
+      "html_url": "https://github.com/DataScienceUIBK/Rankify",
+      "description": "\ud83d\udd25 Rankify: A Comprehensive Python Toolkit for Retrieval, Re-Ranking, and Retrieval-Augmented Generation \ud83d\udd25. Our toolkit integrates 40 pre-retrieved benchmark datasets and supports 7+ retrieval techniques, 24+ state-of-the-art Reranking models, and multiple RAG methods.",
+      "stars": 680,
+      "pushed_at": "2026-05-06T23:15:39Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://rankify.readthedocs.io/"
+    },
+    {
+      "full_name": "Tencent/AICGSecEval",
+      "html_url": "https://github.com/Tencent/AICGSecEval",
+      "description": "A.S.E (AICGSecEval) is a repository-level AI-generated code security evaluation benchmark developed by Tencent Wukong Code Security Team.",
+      "stars": 647,
+      "pushed_at": "2026-05-25T07:33:16Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://aicgseceval.tencent.com"
+    },
+    {
+      "full_name": "Ar9av/PaperOrchestra",
+      "html_url": "https://github.com/Ar9av/PaperOrchestra",
+      "description": "An automated AI research-paper writer based off Google's PaperOrchestra paper's implementation through a skills -  benchmark + autoraters using any coding agent (Claude Code, Cursor, Antigravity, Cline, Aider). No API keys, no LLM SDKs.",
+      "stars": 622,
+      "pushed_at": "2026-07-09T18:49:14Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://arxiv.org/pdf/2604.05018"
+    },
+    {
+      "full_name": "ServiceNow/AgentLab",
+      "html_url": "https://github.com/ServiceNow/AgentLab",
+      "description": "AgentLab: An open-source framework for developing, testing, and benchmarking web agents on diverse tasks, designed for scalability and reproducibility.",
+      "stars": 610,
+      "pushed_at": "2026-07-17T18:09:43Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "llm-as-a-verifier/llm-as-a-verifier",
+      "html_url": "https://github.com/llm-as-a-verifier/llm-as-a-verifier",
+      "description": "LLM-as-a-Verifier is a general-purpose framework that provides fine-grained feedback for any agent without requiring additional training. It achieves SOTA performance across coding, robotics, and medical agentic benchmarks.",
+      "stars": 607,
+      "pushed_at": "2026-07-07T22:19:16Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://llm-as-a-verifier.com/docs/"
+    },
+    {
+      "full_name": "TeleAI-UAGI/Awesome-Agent-Memory",
+      "html_url": "https://github.com/TeleAI-UAGI/Awesome-Agent-Memory",
+      "description": "Curated systems, benchmarks, and papers etc. on memory for LLMs/MLLMs --- long-term context, retrieval, and reasoning.",
+      "stars": 563,
+      "pushed_at": "2026-07-24T06:33:50Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "run-llama/ParseBench",
+      "html_url": "https://github.com/run-llama/ParseBench",
+      "description": "ParseBench - A Document Parsing Benchmark for AI Agents",
+      "stars": 537,
+      "pushed_at": "2026-07-27T21:25:19Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://arxiv.org/abs/2604.08538"
+    },
+    {
+      "full_name": "facebookresearch/meta-agents-research-environments",
+      "html_url": "https://github.com/facebookresearch/meta-agents-research-environments",
+      "description": "Meta Agents Research Environments is a comprehensive platform designed to evaluate AI agents in dynamic, realistic scenarios. Unlike static benchmarks, this platform introduces evolving environments where agents must adapt their strategies as new information becomes available, mirroring real-world challenges.",
+      "stars": 532,
+      "pushed_at": "2026-07-26T22:46:01Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://facebookresearch.github.io/meta-agents-research-environments/"
+    },
+    {
+      "full_name": "TIGER-AI-Lab/ClawBench",
+      "html_url": "https://github.com/TIGER-AI-Lab/ClawBench",
+      "description": "Open-source benchmark for browser AI agents on daily tasks.",
+      "stars": 532,
+      "pushed_at": "2026-07-28T18:10:03Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://claw-bench.com"
+    },
+    {
+      "full_name": "Accenture/mcp-bench",
+      "html_url": "https://github.com/Accenture/mcp-bench",
+      "description": "MCP-Bench: Benchmarking Tool-Using LLM Agents with Complex Real-World Tasks via MCP Servers",
+      "stars": 496,
+      "pushed_at": "2025-10-07T17:22:43Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://www.arxiv.org/pdf/2508.20453"
+    },
+    {
+      "full_name": "us/crw",
+      "html_url": "https://github.com/us/crw",
+      "description": "Fast, lightweight Firecrawl/Tavily alternative in Rust. Web scraper, crawler & search API with MCP server for AI agents. Drop-in Firecrawl-compatible API (/scrape, /crawl, /search). 2.3x faster than Tavily, 1.5x faster than Firecrawl in 1K-URL benchmarks. 6 MB RAM, single binary. Self-host or use managed cloud.",
+      "stars": 494,
+      "pushed_at": "2026-07-26T14:42:03Z",
+      "language": "Rust",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://fastcrw.com"
+    },
+    {
+      "full_name": "reyamira/models",
+      "html_url": "https://github.com/reyamira/models",
+      "description": "TUI and CLI for browsing AI models, benchmarks, coding agents, and statuses for AI providers.",
+      "stars": 479,
+      "pushed_at": "2026-07-28T19:18:42Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": "https://reyamira.github.io/models/"
+    },
+    {
+      "full_name": "Tura-AI/tura",
+      "html_url": "https://github.com/Tura-AI/tura",
+      "description": "Across 348 long-horizon benchmark sessions, Tura used up to 83.1% fewer turns on the rewrite benchmark and improved the DeepSWE pass rate by up to 16.7 percentage points compared with Codex CLI.",
+      "stars": 474,
+      "pushed_at": "2026-07-28T10:31:44Z",
+      "language": "Rust",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://turaai.net/"
+    },
+    {
+      "full_name": "StonyBrookNLP/appworld",
+      "html_url": "https://github.com/StonyBrookNLP/appworld",
+      "description": "\ud83c\udf0d AppWorld: A Controllable World of Apps and People for Benchmarking Function Calling and Interactive Coding Agent, ACL'24 Best Resource Paper.",
+      "stars": 472,
+      "pushed_at": "2026-02-17T22:41:42Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://appworld.dev/"
+    },
+    {
+      "full_name": "0ca/BoxPwnr",
+      "html_url": "https://github.com/0ca/BoxPwnr",
+      "description": "A modular framework for benchmarking LLMs and agentic strategies on security challenges across HackTheBox, TryHackMe, PortSwigger Labs, Cybench, picoCTF and more.",
+      "stars": 435,
+      "pushed_at": "2026-07-24T13:54:48Z",
+      "language": "Python",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "ag2ai/Agents_Failure_Attribution",
+      "html_url": "https://github.com/ag2ai/Agents_Failure_Attribution",
+      "description": "Benchmark for automated failure attributions in agentic systems (\ud83c\udfc6 ICML 2025 Spotlight)",
+      "stars": 381,
+      "pushed_at": "2026-02-11T17:30:51Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://ag2ai.github.io/Agents_Failure_Attribution/"
+    },
+    {
+      "full_name": "stanfordmlgroup/MedAgentBench",
+      "html_url": "https://github.com/stanfordmlgroup/MedAgentBench",
+      "description": "MedAgentBench: A Realistic Virtual EHR Environment to Benchmark Medical LLM Agents",
+      "stars": 308,
+      "pushed_at": "2025-11-21T18:39:26Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://ai.nejm.org/doi/full/10.1056/AIdbp2500144"
+    },
+    {
+      "full_name": "ARUNAGIRINATHAN-K/awesome-ai-agents-2026",
+      "html_url": "https://github.com/ARUNAGIRINATHAN-K/awesome-ai-agents-2026",
+      "description": "Awesome AI Agents for 2026 - 300+ AI Agents, Frameworks & Coding \u2022 Creative \u2022 Voice \u2022 Research \u2022 Enterprise. Comparison guides, benchmarks & deep dives",
+      "stars": 274,
+      "pushed_at": "2026-07-28T16:58:17Z",
+      "language": "",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "balrog-ai/BALROG",
+      "html_url": "https://github.com/balrog-ai/BALROG",
+      "description": "Benchmarking Agentic LLM and VLM Reasoning On Games",
+      "stars": 261,
+      "pushed_at": "2026-04-09T10:40:53Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://balrogai.com"
+    },
+    {
+      "full_name": "Tongyi-MAI/MobileWorld",
+      "html_url": "https://github.com/Tongyi-MAI/MobileWorld",
+      "description": "Benchmarking Autonomous Mobile Agents in Agent-User Interactive and MCP-Augmented Environments (ACL 2026)",
+      "stars": 245,
+      "pushed_at": "2026-07-02T08:53:51Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://tongyi-mai.github.io/MobileWorld/"
+    },
+    {
+      "full_name": "laiso/ts-bench",
+      "html_url": "https://github.com/laiso/ts-bench",
+      "description": "Benchmark CLI for comparing AI coding agents on TypeScript workloads.",
+      "stars": 239,
+      "pushed_at": "2026-06-23T12:03:17Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://laiso.github.io/ts-bench/"
+    },
+    {
+      "full_name": "modelscope/AgentJet",
+      "html_url": "https://github.com/modelscope/AgentJet",
+      "description": "Cutting-edge platform for LLM agent tuning. Deliver RL tuning with flexibility, reliability, speed, multi-agent optimization and realtime community benchmarking.",
+      "stars": 230,
+      "pushed_at": "2026-07-02T07:10:39Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://modelscope.github.io/AgentJet/"
+    },
+    {
+      "full_name": "InternScience/ResearchClawBench",
+      "html_url": "https://github.com/InternScience/ResearchClawBench",
+      "description": "\ud83e\udd9e ResearchClawBench: Evaluating AI Agents for Automated Research from Re-Discovery to New-Discovery",
+      "stars": 227,
+      "pushed_at": "2026-07-28T14:32:28Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://internscience.github.io/ResearchClawBench-Home/"
+    },
+    {
+      "full_name": "eli-labz/Cognitive-Core-Skills",
+      "html_url": "https://github.com/eli-labz/Cognitive-Core-Skills",
+      "description": "A universal, industry-neutral taxonomy of cognitive core skills (perception, memory, reasoning, planning, action, verification, learning, governance) for LLMs, SLMs, AI agents, and world models \u2014 with schemas, 159 skill cards, benchmarks, and CI.",
+      "stars": 214,
+      "pushed_at": "2026-07-05T23:22:11Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "xlang-ai/OSWorld-V2",
+      "html_url": "https://github.com/xlang-ai/OSWorld-V2",
+      "description": "OSWorld 2.0: Benchmarking Computer Use Agents on Long-Horizon Real-World Tasks",
+      "stars": 210,
+      "pushed_at": "2026-07-28T18:10:12Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://osworld-v2.xlang.ai"
+    },
+    {
+      "full_name": "Lolner95/AIGX",
+      "html_url": "https://github.com/Lolner95/AIGX",
+      "description": "Open, MIT context format for AI coding agents: centralized .aigx/ rules + a per-file boundary index that targets the right rules, forbidden imports, and gotchas to each file. The only context format validated in a controlled benchmark. Tool-agnostic; nothing injected into your source.",
+      "stars": 207,
+      "pushed_at": "2026-06-20T19:56:26Z",
+      "language": "JavaScript",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://github.com/Lolner95/AIGX#readme"
+    },
+    {
+      "full_name": "xxyQwQ/ComfyBench",
+      "html_url": "https://github.com/xxyQwQ/ComfyBench",
+      "description": "Implementation for the paper \"ComfyBench: Benchmarking LLM-based Agents in ComfyUI for Autonomously Designing Collaborative AI Systems\".",
+      "stars": 205,
+      "pushed_at": "2025-12-24T05:26:19Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://xxyqwq.github.io/ComfyBench/"
+    },
+    {
+      "full_name": "Green-PT/honey-for-devs",
+      "html_url": "https://github.com/Green-PT/honey-for-devs",
+      "description": "Honey (I Shrunk the AI) by GreenPT: a cross-tool coding skill that cuts AI coding-agent token usage and LLM API costs \u2014 write less code, less prose, and denser agent-to-agent handoffs (\u221253%, lossless in benchmarks) with no loss of quality. Works with Claude Code, Cursor, GitHub Copilot, Codex, Gemini CLI, Windsurf, Cline & Kiro.",
+      "stars": 194,
+      "pushed_at": "2026-07-20T06:06:55Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://github.com/Green-PT/honey-for-devs"
+    },
+    {
+      "full_name": "rzhub/GateMem",
+      "html_url": "https://github.com/rzhub/GateMem",
+      "description": "GateMem: a benchmark and evaluation toolkit for memory governance in multi-principal shared-memory LLM agents.",
+      "stars": 192,
+      "pushed_at": "2026-06-21T07:46:56Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://rzhub.github.io/GateMem/project.html"
+    },
+    {
+      "full_name": "Shiyao-Huang/awesome-agent-evolution",
+      "html_url": "https://github.com/Shiyao-Huang/awesome-agent-evolution",
+      "description": "Open survey and evidence map for AI agent evolution, self-evolving agents, memory, skills, harnesses, benchmarks, and agent-swarm systems.",
+      "stars": 170,
+      "pushed_at": "2026-07-04T23:44:26Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://agent-evolution.com/"
+    },
+    {
+      "full_name": "zhangxjohn/LLM-Agent-Benchmark-List",
+      "html_url": "https://github.com/zhangxjohn/LLM-Agent-Benchmark-List",
+      "description": "A banchmark list for evaluation of large language models.",
+      "stars": 167,
+      "pushed_at": "2026-07-10T03:15:55Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "InternScience/SGI-Bench",
+      "html_url": "https://github.com/InternScience/SGI-Bench",
+      "description": "Probing Scientific General Intelligence of LLMs with Scientist-Aligned Workflows",
+      "stars": 167,
+      "pushed_at": "2026-06-02T11:59:11Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://internscience.github.io/SGI-Page/"
+    },
+    {
+      "full_name": "Yeti-791/Awesome-Offensive-AI-Agentic-Landscape",
+      "html_url": "https://github.com/Yeti-791/Awesome-Offensive-AI-Agentic-Landscape",
+      "description": "This document curates open-source projects, academic papers, capability benchmarks, and commercial solutions (international & China) in AI penetration testing, LLM red teaming, autonomous offensive agents, and vulnerability discovery\u2014aimed at helping researchers, security engineers, and enterprise decision-makers quickly form a holistic view.",
+      "stars": 164,
+      "pushed_at": "2026-07-20T06:05:10Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "meituan-longcat/vitabench",
+      "html_url": "https://github.com/meituan-longcat/vitabench",
+      "description": "[ICLR 2026] VitaBench: Benchmarking LLM Agents with Versatile Interactive Tasks in Real-world Applications",
+      "stars": 161,
+      "pushed_at": "2026-02-22T16:08:39Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://vitabench.github.io/"
+    },
+    {
+      "full_name": "zapier/AutomationBench",
+      "html_url": "https://github.com/zapier/AutomationBench",
+      "description": "A benchmark for evaluating AI agents on realistic business workflows",
+      "stars": 159,
+      "pushed_at": "2026-07-16T17:35:33Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://zapier.com/benchmarks"
+    },
+    {
+      "full_name": "OpenDCAI/One-Eval",
+      "html_url": "https://github.com/OpenDCAI/One-Eval",
+      "description": "Automated system for LLM evaluation via agents.    Doc as below:",
+      "stars": 159,
+      "pushed_at": "2026-07-03T06:17:54Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://wcny4qa9krto.feishu.cn/wiki/AJX6w5SbGiJxctkQQdfckVqKnYf"
+    },
+    {
+      "full_name": "mahmoudrabie/agentic-ai",
+      "html_url": "https://github.com/mahmoudrabie/agentic-ai",
+      "description": "Agentic AI research papers, benchmarks, frameworks, and tools curated across 24 domains.",
+      "stars": 156,
+      "pushed_at": "2026-07-20T20:09:33Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "HKUST-KnowComp/NewtonBench",
+      "html_url": "https://github.com/HKUST-KnowComp/NewtonBench",
+      "description": "[ICLR2026] NewtonBench: Benchmarking Generalizable Scientific Law Discovery in LLM Agents",
+      "stars": 153,
+      "pushed_at": "2026-02-27T01:04:09Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "ByteDance-Seed/WideSearch",
+      "html_url": "https://github.com/ByteDance-Seed/WideSearch",
+      "description": "WideSearch: Benchmarking Agentic Broad Info-Seeking",
+      "stars": 149,
+      "pushed_at": "2025-10-09T06:37:22Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://widesearch-seed.github.io/"
+    },
+    {
+      "full_name": "MemTensor/HaluMem",
+      "html_url": "https://github.com/MemTensor/HaluMem",
+      "description": "HaluMem is the first operation level hallucination evaluation benchmark tailored to agent memory systems.",
+      "stars": 148,
+      "pushed_at": "2026-04-30T09:46:05Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "facebookresearch/llm-speedrunner",
+      "html_url": "https://github.com/facebookresearch/llm-speedrunner",
+      "description": "The Automated LLM Speedrunning Benchmark measures how well LLM agents can reproduce previous innovations and discover new ones in language modeling.",
+      "stars": 145,
+      "pushed_at": "2026-05-06T19:28:03Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "microsoft/SecRL",
+      "html_url": "https://github.com/microsoft/SecRL",
+      "description": "Benchmarking LLM agents on Cyber Threat Investigation.",
+      "stars": 138,
+      "pushed_at": "2026-05-04T17:00:49Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://arxiv.org/abs/2507.14201"
+    },
+    {
+      "full_name": "Future-House/BixBench",
+      "html_url": "https://github.com/Future-House/BixBench",
+      "description": "Benchmark for LLM-based Agents in Computational Biology",
+      "stars": 133,
+      "pushed_at": "2025-10-06T21:54:03Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://arxiv.org/abs/2503.00096"
+    },
+    {
+      "full_name": "openclaw/shellbench",
+      "html_url": "https://github.com/openclaw/shellbench",
+      "description": "The agent benchmark that scores the full stack \u2014 harness, config, and model \u2014 not just the LLM. Trace-based scoring, reliability metrics, configuration diagnostics.",
+      "stars": 133,
+      "pushed_at": "2026-07-28T18:55:27Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://huggingface.co/spaces/ScoootScooob/clawbench"
+    },
+    {
+      "full_name": "lmwilki/civ6-mcp",
+      "html_url": "https://github.com/lmwilki/civ6-mcp",
+      "description": "An MCP server that lets LLM agents play Civilization VI.",
+      "stars": 126,
+      "pushed_at": "2026-06-21T22:36:44Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://civ6-mcp.lwilko.com"
+    },
+    {
+      "full_name": "OpenDataBox/MemoryData",
+      "html_url": "https://github.com/OpenDataBox/MemoryData",
+      "description": "A Unified Memory Benchmark Suite for Memory-Augmented Agents",
+      "stars": 124,
+      "pushed_at": "2026-07-05T03:15:53Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://arxiv.org/abs/2606.24775"
+    },
+    {
+      "full_name": "Nexis-AI/NexBench",
+      "html_url": "https://github.com/Nexis-AI/NexBench",
+      "description": "NEXBENCH measures what an autonomous agent can actually do on-chain \u2014 execute transactions, route swaps, bridge funds, manage DeFi positions, research tokens, catch drainers, reconstruct portfolios, and run treasury governance \u2014 across 214 tasks in 8 categories, each run 5 times against deterministic forked-mainnet environments.",
+      "stars": 123,
+      "pushed_at": "2026-07-17T16:07:16Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://nex-t1.ai"
+    },
+    {
+      "full_name": "LAMDA-NeSy/ChinaTravel",
+      "html_url": "https://github.com/LAMDA-NeSy/ChinaTravel",
+      "description": "ChinaTravel: A Real-World Benchmark for Language Agents in Chinese Travel Planning",
+      "stars": 120,
+      "pushed_at": "2026-07-28T14:02:22Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://www.lamda.nju.edu.cn/shaojj/chinatravel/"
+    },
+    {
+      "full_name": "xxzcc/Awesome-Credit-Assignment-in-LLM-RL",
+      "html_url": "https://github.com/xxzcc/Awesome-Credit-Assignment-in-LLM-RL",
+      "description": "Curated papers, taxonomy, benchmarks, and decision guides for credit assignment in reasoning and agentic LLM reinforcement learning.",
+      "stars": 118,
+      "pushed_at": "2026-07-27T06:01:58Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://arxiv.org/abs/2604.09459"
+    },
+    {
+      "full_name": "minghinmatthewlam/openbench",
+      "html_url": "https://github.com/minghinmatthewlam/openbench",
+      "description": "Same model, different wrapper: a from-scratch benchmark comparing coding-agent harnesses (codex, pi, opencode, cursor, devin) and open models on correctness, speed, and token cost",
+      "stars": 116,
+      "pushed_at": "2026-07-28T17:10:14Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "smixs/skill-conductor",
+      "html_url": "https://github.com/smixs/skill-conductor",
+      "description": "Architecture-first skill lifecycle for AI agents. 5 modes: CREATE \u2192 EVAL \u2192 EDIT \u2192 REVIEW \u2192 PACKAGE. Integrates Anthropic's eval engine (grader/comparator/analyzer agents, blind A/B, benchmarks) with architecture patterns, TDD baseline, and 5-axis scoring. Not just testing - full design-to-distribution.",
+      "stars": 116,
+      "pushed_at": "2026-07-21T02:45:14Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://t.me/aimastersme"
+    },
+    {
+      "full_name": "Lordog/R-Judge",
+      "html_url": "https://github.com/Lordog/R-Judge",
+      "description": "R-Judge: Benchmarking Safety Risk Awareness for LLM Agents (EMNLP Findings 2024)",
+      "stars": 108,
+      "pushed_at": "2026-01-11T01:45:49Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://arxiv.org/abs/2401.10019"
+    },
+    {
+      "full_name": "AMD-AGI/AgentKernelArena",
+      "html_url": "https://github.com/AMD-AGI/AgentKernelArena",
+      "description": "AgentKernelArena provides an end-to-end siloed-benchmarking environment where different LLM-powered agents\u2014such as Cursor Agent, Claude Code, Codex, SWE-agent, and GEAK\u2014can be evaluated side-by-side on the same GPU kernel tasks, using objective and reproducible metrics.",
+      "stars": 107,
+      "pushed_at": "2026-07-28T05:47:30Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "facebookresearch/airs-bench",
+      "html_url": "https://github.com/facebookresearch/airs-bench",
+      "description": "AIRS-Bench: an AI Research Science benchmark for quantifying the end-to-end AI research abilities of LLM agents",
+      "stars": 104,
+      "pushed_at": "2026-05-05T14:30:25Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "microsoft/LLF-Bench",
+      "html_url": "https://github.com/microsoft/LLF-Bench",
+      "description": "A benchmark for evaluating learning agents based on just language feedback",
+      "stars": 98,
+      "pushed_at": "2026-03-26T08:58:26Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://microsoft.github.io/LLF-Bench/"
+    },
+    {
+      "full_name": "agentscope-ai/PawBench",
+      "html_url": "https://github.com/agentscope-ai/PawBench",
+      "description": "A benchmark for evaluating LLM \u00d7 harness performance.",
+      "stars": 96,
+      "pushed_at": "2026-07-22T07:15:56Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://agentscope-ai.github.io/PawBench/"
+    },
+    {
+      "full_name": "lbaa2022/LLMTaskPlanning",
+      "html_url": "https://github.com/lbaa2022/LLMTaskPlanning",
+      "description": "LoTa-Bench: Benchmarking Language-oriented Task Planners for Embodied Agents (ICLR 2024)",
+      "stars": 94,
+      "pushed_at": "2026-02-08T12:25:19Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "oneal2000/SR-Agents",
+      "html_url": "https://github.com/oneal2000/SR-Agents",
+      "description": "SRA-Bench and SR-Agents: a benchmark and toolkit for skill-retrieval-augmented LLM agents.",
+      "stars": 93,
+      "pushed_at": "2026-07-02T02:09:37Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://sr-agents.github.io/"
+    },
+    {
+      "full_name": "cornell-zhang/heurigym",
+      "html_url": "https://github.com/cornell-zhang/heurigym",
+      "description": "Agentic Benchmark for LLM-Crafted Heuristics in Combinatorial Optimization (ICLR'26)",
+      "stars": 92,
+      "pushed_at": "2026-04-25T20:15:22Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://arxiv.org/abs/2506.07972"
+    },
+    {
+      "full_name": "lechmazur/step_game",
+      "html_url": "https://github.com/lechmazur/step_game",
+      "description": "Multi-Agent Step Race Benchmark: Assessing LLM Collaboration and Deception Under Pressure. A multi-player \u201cstep-race\u201d that challenges LLMs to engage in public conversation before secretly picking a move (1, 3, or 5 steps). Whenever two or more players choose the same number, all colliding players fail to advance.",
+      "stars": 89,
+      "pushed_at": "2025-12-09T01:26:33Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "SEC-bench/SEC-bench",
+      "html_url": "https://github.com/SEC-bench/SEC-bench",
+      "description": "Automated Benchmarking of LLM Agents on Real-World Software Security Tasks [NeurIPS 2025]",
+      "stars": 88,
+      "pushed_at": "2026-01-27T06:24:17Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://sec-bench.github.io"
+    },
+    {
+      "full_name": "SAP/agent-quality-inspect",
+      "html_url": "https://github.com/SAP/agent-quality-inspect",
+      "description": "Evaluation package that allows benchmarking of agentic AIs from various sources and frameworks by producing statistical results which can be compared across different use cases and datasets.",
+      "stars": 79,
+      "pushed_at": "2026-06-26T05:40:53Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://sap.github.io/agent-quality-inspect/"
+    },
+    {
+      "full_name": "0ca/BoxPwnr-Traces",
+      "html_url": "https://github.com/0ca/BoxPwnr-Traces",
+      "description": "LLM agent solving traces, leaderboards, and benchmark results across security CTF and hacking platforms",
+      "stars": 77,
+      "pushed_at": "2026-07-22T03:17:42Z",
+      "language": "Python",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://boxpwnr.info/"
+    },
+    {
+      "full_name": "iuyup/AgentFlow",
+      "html_url": "https://github.com/iuyup/AgentFlow",
+      "description": "Multi-Agent Collaboration Design Patterns         Built on LangGraph with 10+ battle-tested patterns, each with complete code, architecture diagrams, and benchmarks.",
+      "stars": 74,
+      "pushed_at": "2026-04-09T13:45:38Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://iuyup.github.io/AgentFlow/"
+    },
+    {
+      "full_name": "AMD-AGI/Apex",
+      "html_url": "https://github.com/AMD-AGI/Apex",
+      "description": "Agents, and RL environment, for optimizing GPU kernels on AMD ROCm using LLM agents. Benchmarks LLM serving workloads end-to-end, profiles bottleneck kernels, optimizes them via Claude Code or Codex, and scores on compilation, correctness, and speedup.",
+      "stars": 73,
+      "pushed_at": "2026-07-28T00:38:09Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "THUDM/DataSciBench",
+      "html_url": "https://github.com/THUDM/DataSciBench",
+      "description": "DataSciBench: An LLM Agent Benchmark for Data Science (Findings of ACL 2026)",
+      "stars": 66,
+      "pushed_at": "2026-01-21T06:17:23Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "Liu-Hy/GenoTEX",
+      "html_url": "https://github.com/Liu-Hy/GenoTEX",
+      "description": "GenoTEX: An expert-curated benchmark for evaluating LLM agents on real-world gene expression analysis tasks. (MLCB 2025 Oral)",
+      "stars": 64,
+      "pushed_at": "2026-05-13T16:01:54Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://liu-hy.github.io/GenoTEX/"
+    },
+    {
+      "full_name": "AQ-MedAI/MedMemoryBench",
+      "html_url": "https://github.com/AQ-MedAI/MedMemoryBench",
+      "description": "The source code and data link of paper \"MedMemoryBench: Benchmarking Agent Memory in Personalized Healthcare\".",
+      "stars": 64,
+      "pushed_at": "2026-07-22T09:15:58Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://x.com/AQ_MedAI"
+    },
+    {
+      "full_name": "thu-ml/MLA-Trust",
+      "html_url": "https://github.com/thu-ml/MLA-Trust",
+      "description": "A toolbox for benchmarking Multimodal LLM Agents trustworthiness across truthfulness, controllability, safety and privacy dimensions through 34 interactive tasks",
+      "stars": 63,
+      "pushed_at": "2026-01-09T12:01:45Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://mla-trust.github.io"
+    },
+    {
+      "full_name": "SwarmOne/agentic-swarm-bench",
+      "html_url": "https://github.com/SwarmOne/agentic-swarm-bench",
+      "description": "Open-source benchmark for LLM inference under agentic swarm workloads",
+      "stars": 62,
+      "pushed_at": "2026-05-19T22:22:22Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://swarmone.ai/agentic-swarm-bench"
+    },
+    {
+      "full_name": "yhzhu99/MedAgentBoard",
+      "html_url": "https://github.com/yhzhu99/MedAgentBoard",
+      "description": "[NeurIPS 2025] MedAgentBoard: Benchmarking Multi-Agent Collaboration with Conventional Methods for Diverse Medical Tasks",
+      "stars": 59,
+      "pushed_at": "2026-03-13T09:51:47Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://medagentboard.netlify.app/"
+    },
+    {
+      "full_name": "instadeepai/DebateLLM",
+      "html_url": "https://github.com/instadeepai/DebateLLM",
+      "description": "Benchmarking Multi-Agent Debate between Language Models for Truthfulness in Q&A.",
+      "stars": 58,
+      "pushed_at": "2026-03-26T05:37:14Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "nagi-studio/nagi-bench",
+      "html_url": "https://github.com/nagi-studio/nagi-bench",
+      "description": "One-shot LLM eval cases by NAGI STUDIO - same prompt, different agents (model + harness), runnable artifacts side by side.",
+      "stars": 55,
+      "pushed_at": "2026-07-24T22:47:49Z",
+      "language": "HTML",
+      "license_spdx_id": "",
+      "homepage": "http://bench.nagi.fun/"
+    },
+    {
+      "full_name": "Infatoshi/kernelbench.com",
+      "html_url": "https://github.com/Infatoshi/kernelbench.com",
+      "description": "kernelbench.com \u2014 GPU kernel engineering benchmarks for autonomous LLM coding agents. v3 archive + v-hard latest.",
+      "stars": 55,
+      "pushed_at": "2026-07-28T09:09:52Z",
+      "language": "HTML",
+      "license_spdx_id": "",
+      "homepage": "https://kernelbench.com"
+    },
+    {
+      "full_name": "humanlaya/OneMillion-Bench",
+      "html_url": "https://github.com/humanlaya/OneMillion-Bench",
+      "description": "Evals Harness for $OneMillion-Bench",
+      "stars": 48,
+      "pushed_at": "2026-04-21T07:24:16Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "yang-ai-lab/HEARTS",
+      "html_url": "https://github.com/yang-ai-lab/HEARTS",
+      "description": "[ICML 2026] HEARTS: Benchmarking LLM Reasoning on Health Time Series",
+      "stars": 48,
+      "pushed_at": "2026-06-29T18:33:53Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://yang-ai-lab.github.io/HEARTS/"
+    },
+    {
+      "full_name": "HealthRex/PhysicianBench",
+      "html_url": "https://github.com/HealthRex/PhysicianBench",
+      "description": "The benchmark tasks and evaluation harness for \"PhysicianBench: Evaluating LLM Agents in Real-World EHR Environments\".",
+      "stars": 48,
+      "pushed_at": "2026-07-10T17:06:50Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://healthrex.github.io/PhysicianBench/"
+    },
+    {
+      "full_name": "lgy0404/LearnAct",
+      "html_url": "https://github.com/lgy0404/LearnAct",
+      "description": "[ACL 2026] LearnAct: Few-Shot Mobile GUI Agent with a Unified Demonstration Benchmark",
+      "stars": 48,
+      "pushed_at": "2026-04-18T15:50:23Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://lgy0404.github.io/LearnAct/"
+    },
+    {
+      "full_name": "cameronangliss/vgc-bench",
+      "html_url": "https://github.com/cameronangliss/vgc-bench",
+      "description": "An AI benchmark for Pok\u00e9mon VGC with agent implementations using multi-agent reinforcement learning, behavior cloning, LLMs, and heuristics",
+      "stars": 46,
+      "pushed_at": "2026-07-25T19:38:59Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://arxiv.org/abs/2506.10326"
+    },
+    {
+      "full_name": "OpenDataBox/Workspace-Bench",
+      "html_url": "https://github.com/OpenDataBox/Workspace-Bench",
+      "description": "Benchmark self-evolving Agent upon realistic large-scale file workspaces",
+      "stars": 46,
+      "pushed_at": "2026-07-26T11:18:33Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://workspace-bench.github.io"
+    },
+    {
+      "full_name": "claudlos/hermes-katana",
+      "html_url": "https://github.com/claudlos/hermes-katana",
+      "description": "Defense-in-depth security toolkit for LLM agents \u2014 taint tracking, proxy secret guard, policy engine, and red-team benchmarking",
+      "stars": 45,
+      "pushed_at": "2026-07-27T13:10:40Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://claudlos.github.io/hermes-katana/"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "keyword": "training data extraction LLM",
+  "query": "training data extraction LLM stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "bespokelabsai/curator",
+      "html_url": "https://github.com/bespokelabsai/curator",
+      "description": "Synthetic data curation for post-training and structured data extraction",
+      "stars": 1705,
+      "pushed_at": "2026-07-22T14:53:26Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.bespokelabs.ai/bespoke-curator"
+    }
+  ]
+}

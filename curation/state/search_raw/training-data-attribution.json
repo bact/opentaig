@@ -1,0 +1,27 @@
+{
+  "keyword": "training data attribution",
+  "query": "training data attribution stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 2,
+  "repos": [
+    {
+      "full_name": "poloclub/LLM-Attributor",
+      "html_url": "https://github.com/poloclub/LLM-Attributor",
+      "description": "LLM Attributor: Attribute LLM's Generated Text to Training Data",
+      "stars": 88,
+      "pushed_at": "2025-09-17T05:00:11Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "gumityolcu/dualxda-pip",
+      "html_url": "https://github.com/gumityolcu/dualxda-pip",
+      "description": "PyPI package for DualXDA for efficient data attribution and feature-level explanations of training data influence",
+      "stars": 22,
+      "pushed_at": "2026-03-06T14:58:06Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    }
+  ]
+}

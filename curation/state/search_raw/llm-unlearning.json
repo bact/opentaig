@@ -1,0 +1,117 @@
+{
+  "keyword": "LLM unlearning",
+  "query": "LLM unlearning stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 11,
+  "repos": [
+    {
+      "full_name": "zjunlp/EasyEdit",
+      "html_url": "https://github.com/zjunlp/EasyEdit",
+      "description": "[ACL 2024] An Easy-to-use Knowledge Editing Framework for LLMs.",
+      "stars": 2886,
+      "pushed_at": "2026-07-14T12:47:07Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://zjunlp.github.io/project/KnowEdit"
+    },
+    {
+      "full_name": "chrisliu298/awesome-llm-unlearning",
+      "html_url": "https://github.com/chrisliu298/awesome-llm-unlearning",
+      "description": "A resource repository for machine unlearning in large language models",
+      "stars": 618,
+      "pushed_at": "2026-07-26T00:50:34Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "locuslab/open-unlearning",
+      "html_url": "https://github.com/locuslab/open-unlearning",
+      "description": "[NeurIPS D&B '25] The one-stop repository for LLM unlearning",
+      "stars": 574,
+      "pushed_at": "2026-03-18T15:31:54Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "OPTML-Group/Unlearn-Simple",
+      "html_url": "https://github.com/OPTML-Group/Unlearn-Simple",
+      "description": "[NeurIPS25] Official repo for \"Simplicity Prevails: Rethinking Negative Preference Optimization for LLM Unlearning\"",
+      "stars": 45,
+      "pushed_at": "2025-10-03T17:39:54Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "partial-model-collapse-unlearning/pmc-unlearning",
+      "html_url": "https://github.com/partial-model-collapse-unlearning/pmc-unlearning",
+      "description": "ICLR 2026: Implementation of our unlearning method \"Partial Model Collapse\" introduced in: \"Model Collapse Is Not a Bug but a Feature in Machine Unlearning for LLMs\".",
+      "stars": 29,
+      "pushed_at": "2026-01-04T17:19:33Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://arxiv.org/abs/2507.04219"
+    },
+    {
+      "full_name": "KID-22/LLM-Unlearning-Paper-List",
+      "html_url": "https://github.com/KID-22/LLM-Unlearning-Paper-List",
+      "description": "",
+      "stars": 28,
+      "pushed_at": "2025-12-18T06:01:11Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "CharlesJW222/FALCON",
+      "html_url": "https://github.com/CharlesJW222/FALCON",
+      "description": "FALCON: Fine-grained Activation Manipulation for LLM Unlearning (NeurIPS 2025)",
+      "stars": 26,
+      "pushed_at": "2026-07-07T22:01:51Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "OPTML-Group/Unlearn-Trace",
+      "html_url": "https://github.com/OPTML-Group/Unlearn-Trace",
+      "description": "[ICLR26] Unlearning Isn't Invisible: Detecting Unlearning Traces  in LLMs from Model Outputs",
+      "stars": 24,
+      "pushed_at": "2026-04-08T03:24:39Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "OPTML-Group/Unlearn-Smooth",
+      "html_url": "https://github.com/OPTML-Group/Unlearn-Smooth",
+      "description": "[ICML25] Official repo for \"Towards LLM Unlearning Resilient to Relearning Attacks: A Sharpness-Aware Minimization Perspective and Beyond\"",
+      "stars": 24,
+      "pushed_at": "2025-09-27T18:34:01Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "somvy/multimodal_unlearning",
+      "html_url": "https://github.com/somvy/multimodal_unlearning",
+      "description": "Experiments for our CLEAR benchmark of unlearning methods in a multimodal setup",
+      "stars": 23,
+      "pushed_at": "2025-08-06T12:00:20Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://huggingface.co/datasets/therem/CLEAR"
+    },
+    {
+      "full_name": "facebookresearch/LUNAR",
+      "html_url": "https://github.com/facebookresearch/LUNAR",
+      "description": "Code base for LLM Unlearning via Neural Activation Redirection (NeurIPS 2025).",
+      "stars": 21,
+      "pushed_at": "2025-11-19T19:44:16Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}

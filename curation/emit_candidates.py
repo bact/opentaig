@@ -49,7 +49,9 @@ Output:
     blank unless the judgment supplied them -- NOT the RQ mapping, which is
     the other file. All three timestamps are stamped with the run time,
     since a freshly emitted row was just added, checked, and updated at
-    once.
+    once -- formatted "YYYY-MM-DD HH:MM" (UTC, no seconds, no offset) to
+    match every existing datetime_* cell in the live sheet exactly, so
+    pasting a batch in doesn't require reformatting.
   - `curation/candidate_map_updates.csv` -- `rq_no, tool_id, role,
     rationale, datetime_added, datetime_checked, datetime_updated`, one row
     per (tool, RQ) pair. Same column order as the live `tool_map` tab, so a
@@ -153,7 +155,16 @@ def main() -> None:
     tool_rows, map_rows, seen_rows = [], [], []
     seen_ids = set()
     seen_repos_in_batch = set()
-    timestamp = datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds")
+    now = datetime.datetime.now(datetime.timezone.utc)
+    # seen_repos.csv is our own audit log, never pasted into the sheet, so it
+    # keeps full ISO precision. candidate_tools.csv / candidate_map_updates.csv
+    # get pasted directly into sheet cells, and every existing datetime_* cell
+    # in the live sheet uses "YYYY-MM-DD HH:MM" (UTC, no seconds, no offset) --
+    # matching that means a human can paste without reformatting, which is the
+    # difference between the timestamp columns actually getting filled in and
+    # quietly getting skipped (as happened to the previous batch).
+    timestamp = now.isoformat(timespec="seconds")
+    sheet_timestamp = now.strftime("%Y-%m-%d %H:%M")
     errors = []
 
     for j in judgments:
@@ -227,9 +238,9 @@ def main() -> None:
             "funding": j.get("funding", ""),
             "implement": j.get("implement", ""),
             "eval": j.get("eval", ""),
-            "datetime_added": timestamp,
-            "datetime_checked": timestamp,
-            "datetime_updated": timestamp,
+            "datetime_added": sheet_timestamp,
+            "datetime_checked": sheet_timestamp,
+            "datetime_updated": sheet_timestamp,
         })
 
         mappings = j.get("mappings", [])
@@ -247,9 +258,9 @@ def main() -> None:
                 "tool_id": tool_id,
                 "role": role,
                 "rationale": m.get("rationale", ""),
-                "datetime_added": timestamp,
-                "datetime_checked": timestamp,
-                "datetime_updated": timestamp,
+                "datetime_added": sheet_timestamp,
+                "datetime_checked": sheet_timestamp,
+                "datetime_updated": sheet_timestamp,
             })
 
     if errors:

@@ -1,0 +1,147 @@
+{
+  "keyword": "audit logging LLM",
+  "query": "audit logging LLM stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 14,
+  "repos": [
+    {
+      "full_name": "ThinkWatchProject/ThinkWatch",
+      "html_url": "https://github.com/ThinkWatchProject/ThinkWatch",
+      "description": "Enterprise AI bastion host for secure AI API and MCP access, with unified proxying, RBAC, audit logs, rate limiting, and cost tracking across OpenAI, Anthropic, Gemini, and self-hosted LLMs.",
+      "stars": 950,
+      "pushed_at": "2026-05-27T16:56:12Z",
+      "language": "Rust",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://thinkwat.ch"
+    },
+    {
+      "full_name": "juyterman1000/entroly",
+      "html_url": "https://github.com/juyterman1000/entroly",
+      "description": "Compress tool outputs, logs, files, conversations, and RAG context before they reach the model.  On measured workloads, Entroly reduces unnecessary tokens by up to 90% while preserving answer-critical evidence through budget-aware selection, content-addressed recovery, and auditable Context Receipt. Works with Claude, Chatgpt/Codex,Openclaw.",
+      "stars": 431,
+      "pushed_at": "2026-07-28T14:45:55Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://juyterman1000.github.io/entroly/docs/index.html"
+    },
+    {
+      "full_name": "node9-ai/node9-proxy",
+      "html_url": "https://github.com/node9-ai/node9-proxy",
+      "description": "The Execution Security Layer for the Agentic Era. Providing deterministic \"Sudo\" governance and audit logs for autonomous AI agents.",
+      "stars": 210,
+      "pushed_at": "2026-07-27T12:32:25Z",
+      "language": "TypeScript",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://node9.ai/"
+    },
+    {
+      "full_name": "elzobrito/ESAA-Security",
+      "html_url": "https://github.com/elzobrito/ESAA-Security",
+      "description": "ESAA-Security applies the ESAA architecture to automated security auditing. LLM-based agents execute a structured audit across 16 security domains, governed by the same immutable append-only event log, boundary contracts, and hash-verified projections that ESAA provides for software engineering workflows. Every finding, classification, and remediat",
+      "stars": 200,
+      "pushed_at": "2026-06-26T18:14:40Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "gebruder/wirken",
+      "html_url": "https://github.com/gebruder/wirken",
+      "description": "The enterprise gateway for autonomous agents. Identity management, per-channel isolation, credential vault, per-session tamper-evident audit log.",
+      "stars": 163,
+      "pushed_at": "2026-07-25T11:06:08Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": "https://wirken.ai"
+    },
+    {
+      "full_name": "el1ght/aulite",
+      "html_url": "https://github.com/el1ght/aulite",
+      "description": "EU AI Act compliance proxy for AI systems. Drop-in HTTP proxy that monitors every AI interaction for regulatory risks, logs to a tamper-proof audit trail, and generates legal-grade PDF reports. 143 rules across 8 Annex III domains. Self-hosted, open-core",
+      "stars": 121,
+      "pushed_at": "2026-06-14T21:47:10Z",
+      "language": "TypeScript",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "fu351/Doberman-Core",
+      "html_url": "https://github.com/fu351/Doberman-Core",
+      "description": "Doberman is an AI agent security framework for guardrails, prompt injection defense, runtime policy enforcement, tool-use permissions, agent monitoring, audit logs, LLM safety, autonomous workflow protection and secure AI deployment.",
+      "stars": 113,
+      "pushed_at": "2026-07-27T06:01:30Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://pypi.org/project/doberman-core/"
+    },
+    {
+      "full_name": "Emmimal/control-layer",
+      "html_url": "https://github.com/Emmimal/control-layer",
+      "description": "A production-grade control layer that sits between your application logic and any LLM \u2014 input validation, schema enforcement, circuit breaking, targeted retry, and audit logging in one composable pipeline.",
+      "stars": 62,
+      "pushed_at": "2026-05-25T07:00:39Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "ax128/AegisGate",
+      "html_url": "https://github.com/ax128/AegisGate",
+      "description": "Open-source security gateway for LLM APIs \u2014 prompt injection detection, PII redaction, dangerous response   sanitization, and audit logging. OpenAI/Claude compatible, MCP & Agent SKILL support. Drop-in proxy for AI coding   agents (Cursor, Claude Code, Codex).",
+      "stars": 52,
+      "pushed_at": "2026-06-14T07:03:08Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://github.com/ax128/AegisGate"
+    },
+    {
+      "full_name": "openagentidentityprotocol/agentidentityprotocol",
+      "html_url": "https://github.com/openagentidentityprotocol/agentidentityprotocol",
+      "description": "Agent Identity Protocol - Zero-trust security layer for AI agents. Policy enforcement proxy for MCP with Human-in-the-Loop approval, DLP scanning, and audit logging.",
+      "stars": 35,
+      "pushed_at": "2026-03-05T13:49:19Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/openagentidentityprotocol/openagentidentityprotocol#readme"
+    },
+    {
+      "full_name": "romanklis/openclaw-contained",
+      "html_url": "https://github.com/romanklis/openclaw-contained",
+      "description": "TaskForge runs AI agents in sandboxed Docker containers with capability-based security. Agents start with minimal permissions and must request new capabilities (packages, network access, tools) through a human-in-the-loop approval process. Every approval triggers a container image rebuild, and every LLM interaction is logged for audit.",
+      "stars": 29,
+      "pushed_at": "2026-07-20T14:38:30Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "prime-radiant-inc/llm-proxy",
+      "html_url": "https://github.com/prime-radiant-inc/llm-proxy",
+      "description": "Transparent logging proxy for LLM API traffic that auto-configures clients and records every request and response to Claude, OpenAI, and other providers for debugging, auditing, and analysis.",
+      "stars": 25,
+      "pushed_at": "2026-07-23T21:29:11Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "cloakllm/CloakLLM",
+      "html_url": "https://github.com/cloakllm/CloakLLM",
+      "description": "Open-source PII cloaking + tamper-evident audit logs for LLM API calls",
+      "stars": 25,
+      "pushed_at": "2026-07-17T12:13:58Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": "https://asciinema.org/a/odNEs0kWP51YRGtl"
+    },
+    {
+      "full_name": "Alexi5000/ClawKeeper",
+      "html_url": "https://github.com/Alexi5000/ClawKeeper",
+      "description": "Governed Claude agent control plane: deterministic policy engine runs before every LLM call, $0 default autonomous spend, database-enforced immutable audit log. 147 passing tests. MIT.",
+      "stars": 20,
+      "pushed_at": "2026-07-07T12:23:11Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}

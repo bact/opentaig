@@ -1,0 +1,97 @@
+{
+  "keyword": "multi-agent evaluation framework",
+  "query": "multi-agent evaluation framework stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 9,
+  "repos": [
+    {
+      "full_name": "raga-ai-hub/RagaAI-Catalyst",
+      "html_url": "https://github.com/raga-ai-hub/RagaAI-Catalyst",
+      "description": "Python SDK for Agent AI Observability, Monitoring and Evaluation Framework. Includes features like agent, llm and tools tracing, debugging multi-agentic system, self-hosted dashboard and advanced analytics with timeline and execution graph view",
+      "stars": 16139,
+      "pushed_at": "2026-02-11T14:43:33Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://catalyst.raga.ai/"
+    },
+    {
+      "full_name": "IBM/AssetOpsBench",
+      "html_url": "https://github.com/IBM/AssetOpsBench",
+      "description": "AssetOpsBench - Industry 4.0: A unified benchmark and framework for building, orchestrating, and evaluating domain-specific AI agents for Industry 4.0 asset operations and maintenance, with 460+ scenarios, 5 specialist agents (IoT, FMSR, TSFM, Work Order,...), and multi-agent orchestration blueprints (MetaAgent, AgentHive) over MCP.",
+      "stars": 2071,
+      "pushed_at": "2026-07-28T07:29:55Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "trpc-group/trpc-agent-go",
+      "html_url": "https://github.com/trpc-group/trpc-agent-go",
+      "description": "A Go framework for building production agent systems with graph workflows, tools, memory, A2A, AG-UI, MCP, evaluation, and observability.",
+      "stars": 1601,
+      "pushed_at": "2026-07-28T13:24:49Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://trpc-group.github.io/trpc-agent-go/"
+    },
+    {
+      "full_name": "RouteWorks/RouterArena",
+      "html_url": "https://github.com/RouteWorks/RouterArena",
+      "description": "RouterArena: An open framework for evaluating LLM routers with standardized datasets, metrics, an automated framework, and a live leaderboard.",
+      "stars": 114,
+      "pushed_at": "2026-07-23T16:27:52Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://routeworks.github.io/"
+    },
+    {
+      "full_name": "jinsong8/FinRpt",
+      "html_url": "https://github.com/jinsong8/FinRpt",
+      "description": "[AAAI 2026] The offical implementation of paper \"FinRpt: Dataset, Evaluation System and LLM-based Multi-agent Framework for Equity Research Report Generation\"",
+      "stars": 38,
+      "pushed_at": "2025-12-04T04:27:31Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "LINs-lab/MASArena",
+      "html_url": "https://github.com/LINs-lab/MASArena",
+      "description": "A comprehensive framework for benchmarking single and multi-agent systems across a wide range of tasks\u2014evaluating performance, accuracy, and efficiency with built-in visualization and tool integration.",
+      "stars": 38,
+      "pushed_at": "2026-06-05T01:54:47Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://lins-lab.github.io/MASArena/"
+    },
+    {
+      "full_name": "cortex-grid/AI-Agent-Studio",
+      "html_url": "https://github.com/cortex-grid/AI-Agent-Studio",
+      "description": "Agent Canvas helps teams describe, prototype, evaluate, and export multi-agent systems that run on the Microsoft Agent Framework. Start from a Lovable-inspired landing page, prompt an initial design, refine it on the canvas, and ship a paired FastAPI backend + React frontend deliverable.",
+      "stars": 36,
+      "pushed_at": "2025-11-17T20:36:15Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "GISense/CartoAgent",
+      "html_url": "https://github.com/GISense/CartoAgent",
+      "description": "The official repository for \"CartoAgent: a multimodal large language model-powered multi-agent cartographic framework for map style transfer and evaluation\".",
+      "stars": 34,
+      "pushed_at": "2025-12-13T06:50:48Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "kongusen/loom-agent",
+      "html_url": "https://github.com/kongusen/loom-agent",
+      "description": "Python agent framework with AgentHarness: planner \u2192 generator \u21c4 evaluator loops for long-running tasks\u2014plus sessions, tool/safety policies, and Claude, GPT, or Gemini.",
+      "stars": 25,
+      "pushed_at": "2026-04-30T15:16:56Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    }
+  ]
+}
