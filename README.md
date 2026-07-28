@@ -21,17 +21,17 @@ OpenTAIG sheet -/
 ```
 
 The data is split across **two decoupled sheets**, joined by research
-question number (`RQ_No`), so upstream paper content and our own annotations
+question number (`rq_no`), so upstream paper content and our own annotations
 can evolve independently:
 
 - **`TAIG` sheet** — the question text and taxonomy *as published by
   Stanford's TAIG database*. You update this manually whenever the upstream
   source changes; `build.py` never writes to it.
 - **`OpenTAIG` sheet** — our own framework/regulation mappings and tool
-  catalog, keyed by `RQ_No`. This is where our editorial work happens,
+  catalog, keyed by `rq_no`. This is where our editorial work happens,
   independent of upstream updates.
 
-`build.py` fetches both sheets, joins them by `RQ_No`, normalizes the result
+`build.py` fetches both sheets, joins them by `rq_no`, normalizes the result
 into a set of "open problem" records, and renders the static site with
 Jinja2 templates. It runs in GitHub Actions:
 
@@ -58,7 +58,7 @@ come from here, never from the `OpenTAIG` sheet.
 | Column | Meaning |
 |---|---|
 | `Research Question` | The open problem's text, as published upstream. |
-| `Question number (in paper)` | The paper's own numbering (**`RQ_No`** — the join key to the `OpenTAIG` sheet's `map` tab). Numbers aren't necessarily contiguous (the paper itself has gaps); that's expected. |
+| `Question number (in paper)` | The paper's own numbering (**`rq_no`** — the join key to the `OpenTAIG` sheet's `map` and `tool_map` tabs). Numbers aren't necessarily contiguous (the paper itself has gaps); that's expected. |
 | `Section Number` | The paper's section reference (e.g. `3.1.1`), shown on the problem detail page. |
 | `Target(s)` | One of: `Data`, `Compute`, `Model & Algorithms`, `Deployment`, `All` (cross-cutting). Second-level grouping on the home page. |
 | `Capacity` | One of: `Assessment`, `Access`, `Verification`, `Security`, `Operationalisation`, `Ecosystem Monitoring`. Top-level grouping on the home page. |
@@ -69,27 +69,29 @@ come from here, never from the `OpenTAIG` sheet.
 
 ### 2. `OpenTAIG` sheet — our mappings, tool catalog, terms & framework catalogs
 
-Four tabs, named **`map`**, **`tools`**, **`terms`**, and **`framework`**.
+Five tabs, named **`map`**, **`tool_map`**, **`tools`**, **`terms`**, and
+**`framework`**. All tab and column names are lowercase with underscores.
 
-Any tab named **`tools-*`** (e.g. `tools-rgaf`) is a **curation-only staging
-area** — a place to paste in a candidate tool list (from a blog post, a
-catalogue, etc.) before reviewing and copying entries into the real `tools`
-tab. The build reads only `tools`; it never reads `tools-*` tabs.
+Any tab named **`tools_*_seed`** (e.g. `tools_rgaf_seed`) is a
+**curation-only staging area** — a place to paste in a candidate tool list
+(from a blog post, a catalogue, etc.) before reviewing and copying entries
+into the real `tools`/`tool_map` tabs. The build reads only `tools` and
+`tool_map`; it never reads staging tabs.
+
+Every row on all five tabs also carries three freshness/bookkeeping
+columns — see "Freshness columns" below.
 
 **`map` tab** — one row per annotated question, joined to the `TAIG` sheet by
-`RQ_No`:
+`rq_no`:
 
 | Column | Meaning |
 |---|---|
-| `RQ_No` | Join key — must match a `Question number (in paper)` value in the `TAIG` sheet. |
-| `Research_Question` | **Ignored by the build.** A human-only aid so whoever is filling in a row can see which question they're annotating without cross-referencing the `TAIG` sheet — the site always displays the question text from the `TAIG` sheet instead. |
-| `RGAF` | [LF AI & Data RGAF](https://lfaidata.foundation/rgaf/) dimension **ids**, referencing the `terms` tab. |
-| `EUAIAct` | EU AI Act article/obligation **ids**, referencing the `terms` tab. |
-| `UNESCOAI` | UNESCO Ethics of AI principle **ids**, referencing the `terms` tab. |
-| `ASEANAI` | ASEAN AI Governance & Ethics guide principle **ids**, referencing the `terms` tab. |
-| `CoEAI` | CoE Framework Convention on AI article **ids**, referencing the `terms` tab. |
-| `tools_implement` | Open-source tool/specification **ids** that help *implement* a solution to this question, referencing the `tools` tab below. |
-| `tools_eval` | Tool/specification **ids** that help *evaluate or audit* a solution to this question, referencing the `tools` tab below. |
+| `rq_no` | Join key — must match a `Question number (in paper)` value in the `TAIG` sheet. |
+| `rgaf` | [LF AI & Data RGAF](https://lfaidata.foundation/rgaf/) dimension **ids**, referencing the `terms` tab. |
+| `euaiact` | EU AI Act article/obligation **ids**, referencing the `terms` tab. |
+| `unescoai` | UNESCO Ethics of AI principle **ids**, referencing the `terms` tab. |
+| `aseanai` | ASEAN AI Governance & Ethics guide principle **ids**, referencing the `terms` tab. |
+| `coeai` | CoE Framework Convention on AI article **ids**, referencing the `terms` tab. |
 
 These 5 framework columns are deliberately kept separate rather than merged
 into one (even though term ids are already globally unique) — each column
@@ -97,20 +99,37 @@ acts as a per-row checklist while filling in a new question, and it powers
 the "pasted into the wrong column" sanity-check warning described below.
 
 **Every column above holds ids, not free text — separate multiple ids with a
-semicolon `;`.** Example `RGAF` cell (referencing two rows in the `terms`
+semicolon `;`.** Example `rgaf` cell (referencing two rows in the `terms`
 tab):
 
 ```
 rgaf-safe; rgaf-transparent
 ```
 
-Leave a cell **blank** if there's no match. A `map` row whose `RQ_No`
+Leave a cell **blank** if there's no match. A `map` row whose `rq_no`
 doesn't match any `TAIG` row (a typo, or a question renumbered/removed
 upstream) is skipped with a build warning, not a failure. A `TAIG` row with
 no matching `map` row is normal — it just has no mappings or tools yet. An
-id that doesn't exist in the `terms`/`tools` catalog, or that exists but
-belongs to the wrong framework (e.g. a CoE id pasted into the `ASEANAI`
-column), also produces a build warning rather than failing.
+id that doesn't exist in the `terms` catalog, or that exists but belongs to
+the wrong framework (e.g. a CoE id pasted into the `aseanai` column), also
+produces a build warning rather than failing.
+
+**`tool_map` tab** — our research-question-to-tool mappings, **long/tidy
+format**: one row per `(rq_no, tool_id, role)` pairing, so a tool answering
+several questions, or a question answered by several tools, is just more
+rows, never a semicolon-list cell to hand-edit:
+
+| Column | Meaning |
+|---|---|
+| `rq_no` | Join key — must match a `Question number (in paper)` value in the `TAIG` sheet. |
+| `tool_id` | Must match an `id` in the `tools` tab below. |
+| `role` | Exactly `implement` or `eval` — whether this tool helps *implement* a solution to this question, or *evaluate/audit* one. |
+| `rationale` | Free-text, one-line explanation of *why* this specific tool addresses this specific question. |
+
+Tools map **directly** to research questions by reading the tool's
+README/paper against that question's own text — never via shared
+principle/term tags. See [`curation/README.md`](curation/README.md) for the
+full discovery/mapping methodology.
 
 **`terms` tab** — the shared catalog of RGAF/EU AI Act/UNESCO/ASEAN/CoE
 terms, **one tab across all five frameworks**, defined once and referenced
@@ -145,7 +164,7 @@ metadata never drifts out of sync across multiple mentions:
 
 | Column | Meaning |
 |---|---|
-| `id` | Short unique identifier, referenced from `map.tools_implement`/`map.tools_eval` (e.g. `scancode-toolkit`). |
+| `id` | Short unique identifier, referenced from `tool_map.tool_id` (e.g. `scancode-toolkit`). |
 | `tool_type` | Free-text category, e.g. `software` or `specification` — not a fixed enum. Some open problems are better addressed by an open standard than by executable software (e.g. `spdx3`, `croissant`); this lets both live in one catalog. Rendered as a small chip, same treatment as `license`. |
 | `name` | Display name. |
 | `summary` | One or two sentence description. |
@@ -183,6 +202,21 @@ itself as the display label, with no source link — a build warning, not a
 failure. A row here with no matching `key` in `config.yaml` is also just a
 warning (orphaned metadata, not wired to any mapping column).
 
+### Freshness columns
+
+Every tab above (`map`, `tool_map`, `tools`, `terms`, `framework`) also
+carries three timestamp columns, expected to be filled in on every row:
+
+| Column | Meaning |
+|---|---|
+| `datetime_added` | When the row was first added. |
+| `datetime_checked` | When the row was last reviewed for staleness (content re-fetched/re-read and compared against what's already there). |
+| `datetime_updated` | When the row's content actually last changed. A check that finds nothing new bumps `datetime_checked` only — `datetime_updated` stays put. |
+
+These are informational bookkeeping for a future scheduler/crawler to decide
+what's stale enough to re-fetch; a blank value on any of the three produces
+a build warning, but nothing in `build.py` reads or compares the values yet.
+
 ### Identifying a tab
 
 Each source in [`config.yaml`](config.yaml) is looked up by **`sheet_name`**
@@ -204,10 +238,11 @@ This writes the full site to `site/` (git-ignored). Open `site/index.html`
 in a browser to preview.
 
 For offline development without hitting Google Sheets, set a `file:` path
-under `data.taig` / `data.mapping` / `data.tools` / `data.terms` /
-`data.framework` in `config.yaml` (or a copy of it) to point at a local CSV instead of a URL —
-see [`tests/config.local.yaml`](tests/config.local.yaml) for a working
-example against the fixtures in `tests/fixtures/`.
+under `data.taig` / `data.mapping` / `data.tool_map` / `data.tools` /
+`data.terms` / `data.framework` in `config.yaml` (or a copy of it) to point
+at a local CSV instead of a URL — see
+[`tests/config.local.yaml`](tests/config.local.yaml) for a working example
+against the fixtures in `tests/fixtures/`.
 
 ## One-time GitHub Pages setup
 
@@ -219,7 +254,7 @@ no `gh-pages` branch is used.
 
 ```
 config.yaml          site title, sheet ids + tab names, column names, taxonomy order
-build.py              fetch (taig + map + tools + terms + framework) -> join by RQ_No/id -> render
+build.py              fetch (taig + map + tool_map + tools + terms + framework) -> join by rq_no/id -> render
 templates/            Jinja2 templates
 assets/               CSS + vanilla JS (client-side search/filter, no network calls)
 tests/fixtures/       local CSV fixtures for offline build verification

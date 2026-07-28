@@ -33,14 +33,18 @@ Output:
 
   - `curation/candidate_tools.csv` -- new `tools` tab rows, exact live
     column order (id, tool_type, name, summary, license, homepage, source,
-    documentation, funding, implement, eval). `implement`/`eval` here are
+    documentation, funding, implement, eval, datetime_added,
+    datetime_checked, datetime_updated). `implement`/`eval` here are
     RGAF-style term tags on the tool itself (per the live schema), left
     blank unless the judgment supplied them -- NOT the RQ mapping, which is
-    the other file.
+    the other file. All three timestamps are stamped with the run time,
+    since a freshly emitted row was just added, checked, and updated at
+    once.
   - `curation/candidate_map_updates.csv` -- `rq_no, tool_id, role,
-    rationale`, one row per (tool, RQ) pair. Same column order as the live
-    `tool_map` tab, so a human appends these rows directly -- no merging
-    into an existing cell needed.
+    rationale, datetime_added, datetime_checked, datetime_updated`, one row
+    per (tool, RQ) pair. Same column order as the live `tool_map` tab, so a
+    human appends these rows directly -- no merging into an existing cell
+    needed.
   - `curation/state/seen_repos.csv` -- appended (not overwritten) with one
     row per judged repo, accept or reject, so `dedup_candidates.py` skips
     it on future runs.
@@ -58,8 +62,10 @@ import json
 from pathlib import Path
 
 TOOLS_FIELDNAMES = ["id", "tool_type", "name", "summary", "license", "homepage",
-                     "source", "documentation", "funding", "implement", "eval"]
-MAP_FIELDNAMES = ["rq_no", "tool_id", "role", "rationale"]  # matches the live tool_map tab's header exactly
+                     "source", "documentation", "funding", "implement", "eval",
+                     "datetime_added", "datetime_checked", "datetime_updated"]
+MAP_FIELDNAMES = ["rq_no", "tool_id", "role", "rationale",
+                   "datetime_added", "datetime_checked", "datetime_updated"]  # matches the live tool_map tab's header exactly
 SEEN_FIELDNAMES = ["full_name", "verdict", "timestamp_utc", "note"]
 
 VALID_ROLES = {"implement", "eval"}
@@ -129,6 +135,9 @@ def main() -> None:
             "funding": j.get("funding", ""),
             "implement": j.get("implement", ""),
             "eval": j.get("eval", ""),
+            "datetime_added": timestamp,
+            "datetime_checked": timestamp,
+            "datetime_updated": timestamp,
         })
 
         mappings = j.get("mappings", [])
@@ -146,6 +155,9 @@ def main() -> None:
                 "tool_id": tool_id,
                 "role": role,
                 "rationale": m.get("rationale", ""),
+                "datetime_added": timestamp,
+                "datetime_checked": timestamp,
+                "datetime_updated": timestamp,
             })
 
     if errors:

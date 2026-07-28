@@ -57,11 +57,17 @@ columns:
     new_work: "New work (since publication)"
   mapping:
     rq_no: "rq_no"
+    datetime_added: "datetime_added"
+    datetime_checked: "datetime_checked"
+    datetime_updated: "datetime_updated"
   tool_map:
     rq_no: "rq_no"
     tool_id: "tool_id"
     role: "role"
     rationale: "rationale"
+    datetime_added: "datetime_added"
+    datetime_checked: "datetime_checked"
+    datetime_updated: "datetime_updated"
   tools:
     id: "id"
     tool_type: "tool_type"
@@ -74,12 +80,18 @@ columns:
     funding: "funding"
     implement: "implement"
     eval: "eval"
+    datetime_added: "datetime_added"
+    datetime_checked: "datetime_checked"
+    datetime_updated: "datetime_updated"
   terms:
     id: "id"
     framework: "framework_id"
     name: "name"
     summary: "summary"
     url: "url"
+    datetime_added: "datetime_added"
+    datetime_checked: "datetime_checked"
+    datetime_updated: "datetime_updated"
   framework:
     id: "id"
     name: "name"
@@ -88,6 +100,9 @@ columns:
     homepage: "homepage"
     source: "source"
     group: "group"
+    datetime_added: "datetime_added"
+    datetime_checked: "datetime_checked"
+    datetime_updated: "datetime_updated"
 
 frameworks:
   - key: rgaf

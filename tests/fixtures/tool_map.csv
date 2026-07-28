@@ -1,8 +1,8 @@
-rq_no,tool_id,role,rationale
-3,scancode-toolkit,eval,"Scans source trees to verify declared license/copyright, useful for auditing accuracy when aggregating datasets from multiple sources."
-71,weightwatcher,implement,Diagnoses model weight quality without needing access to training or test data.
-71,fossology,implement,
-86,tool-does-not-exist,eval,"This tool id is intentionally absent from tools.csv -- tests the ""not found in the Tools tab"" warning."
-91,scancode-toolkit,not-a-real-role,"This role is invalid -- tests the ""role must be exactly implement or eval"" warning."
-71,weightwatcher,implement,Duplicate of the row above -- tests the duplicate-pairing warning.
-9998,fossology,implement,This RQ_No has no matching row in the TAIG sheet -- tests the tool_map orphan-annotation warning.
+rq_no,tool_id,role,rationale,datetime_added,datetime_checked,datetime_updated
+3,scancode-toolkit,eval,"Scans source trees to verify declared license/copyright, useful for auditing accuracy when aggregating datasets from multiple sources.",2026-07-24T17:43:42+00:00,2026-07-24T17:43:42+00:00,2026-07-24T17:43:42+00:00
+71,weightwatcher,implement,Diagnoses model weight quality without needing access to training or test data.,,,
+71,fossology,implement,,,,
+86,tool-does-not-exist,eval,"This tool id is intentionally absent from tools.csv -- tests the ""not found in the Tools tab"" warning.",,,
+91,scancode-toolkit,not-a-real-role,"This role is invalid -- tests the ""role must be exactly implement or eval"" warning.",,,
+71,weightwatcher,implement,Duplicate of the row above -- tests the duplicate-pairing warning.,,,
+9998,fossology,implement,This RQ_No has no matching row in the TAIG sheet -- tests the tool_map orphan-annotation warning.,,,

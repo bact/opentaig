@@ -25,18 +25,18 @@ output_dir: "site"
 
 # --- Data sources -----------------------------------------------------------
 # The site is generated from TWO decoupled Google Sheets, joined by research
-# question number (RQ_No):
+# question number (rq_no):
 #
 #   1. "taig"     -- the upstream TAIG paper data (question text + taxonomy +
 #                   citations + expertise). Manually kept in sync with the
 #                   Stanford TAIG database. This is the spine of the site.
-#   2. "mapping"  -- OUR framework/regulation mappings, keyed by RQ_No. Cells
+#   2. "mapping"  -- OUR framework/regulation mappings, keyed by rq_no. Cells
 #                   hold semicolon-separated term ids referencing the "terms"
 #                   catalog below, not free text. Lives in a separate sheet
 #                   so our editorial work is decoupled from the upstream
 #                   source. Does NOT carry tool ids -- see "tool_map" below.
 #   3. "tool_map" -- OUR research-question-to-tool mappings, one row per
-#                   (RQ_No, tool_id, role) triple, plus a free-text rationale
+#                   (rq_no, tool_id, role) triple, plus a free-text rationale
 #                   explaining why that tool addresses that specific
 #                   question. Long/tidy format rather than a semicolon list
 #                   so it's easy to append a new pairing without
@@ -115,9 +115,22 @@ columns:
   # framework columns (RGAF/EUAIAct/UNESCOAI/ASEANAI/CoEAI, listed below under
   # `frameworks:`) hold semicolon-separated term ids. Tool mappings live in
   # the separate `tool_map` tab, not here.
+  #
+  # `datetime_added`/`datetime_checked`/`datetime_updated` (present on every
+  # OUR tab below -- mapping, tool_map, tools, terms, framework) are
+  # freshness bookkeeping, not build inputs: when a row was first added, when
+  # it was last reviewed for staleness, and when its content last actually
+  # changed (a review that confirms nothing changed updates only
+  # `datetime_checked`). Not yet used by any build logic or rendered on the
+  # site -- currently just carried through into data.json so a future
+  # scheduler/crawler can read them to decide what needs re-fetching. Blank
+  # is valid (older rows predate the columns).
   mapping:
     rq_no: "rq_no"
-  # Our tool_map tab: one row per (RQ_No, tool_id, role) pairing. `role` must
+    datetime_added: "datetime_added"
+    datetime_checked: "datetime_checked"
+    datetime_updated: "datetime_updated"
+  # Our tool_map tab: one row per (rq_no, tool_id, role) pairing. `role` must
   # be exactly "implement" or "eval" (case-sensitive) -- anything else is a
   # build warning and the row is skipped. `tool_id` must match an `id` in
   # the tools tab. `rationale` is free text and optional (renders as a
@@ -127,6 +140,9 @@ columns:
     tool_id: "tool_id"
     role: "role"
     rationale: "rationale"
+    datetime_added: "datetime_added"
+    datetime_checked: "datetime_checked"
+    datetime_updated: "datetime_updated"
   tools:
     id: "id"
     tool_type: "tool_type"
@@ -142,6 +158,9 @@ columns:
     # standing tool metadata -- independent of any specific RQ.
     implement: "implement"
     eval: "eval"
+    datetime_added: "datetime_added"
+    datetime_checked: "datetime_checked"
+    datetime_updated: "datetime_updated"
   # Shared term catalog across all five frameworks. `id` is a globally
   # unique, namespaced identifier (e.g. `euaiact-a8`, `coeai-a8`, `rgaf-safe`)
   # -- see README for the namespacing convention. `framework_id` must be one
@@ -153,6 +172,9 @@ columns:
     name: "name"
     summary: "summary"
     url: "url"
+    datetime_added: "datetime_added"
+    datetime_checked: "datetime_checked"
+    datetime_updated: "datetime_updated"
   # Descriptive metadata about each framework/regulation itself, one row per
   # `key` in `frameworks:` below. Purely informational -- `label`/`doc_url`
   # in the merged framework_defs are derived from this tab's `name`/`source`
@@ -165,6 +187,9 @@ columns:
     homepage: "homepage"
     source: "source"
     group: "group"
+    datetime_added: "datetime_added"
+    datetime_checked: "datetime_checked"
+    datetime_updated: "datetime_updated"
 
 # --- Framework / regulation mapping columns ---------------------------------
 # `key` matches both the `framework_id` column values in the terms tab and

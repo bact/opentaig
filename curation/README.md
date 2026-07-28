@@ -12,13 +12,13 @@ review step is also the quality gate against false positives.
 ## The one rule that shapes everything: the research question is the spine
 
 Tools map **directly** to research questions. Terms/principles map
-**directly** to research questions. Both hang off the `RQ_No` independently
+**directly** to research questions. Both hang off the `rq_no` independently
 — a tool is **never** attached to a question *because* they happen to share
 a principle. Concretely, discovery decides "does this tool help address
 question _N_?" by reading the tool's README / linked paper and comparing it
 to question _N_'s own text — not by matching principle tags.
 
-The schema supports this via the `tool_map` tab: one row per `(RQ_No,
+The schema supports this via the `tool_map` tab: one row per `(rq_no,
 tool_id, role)` pairing, plus a free-text `rationale` for *why* that tool
 addresses that specific question. Long/tidy format rather than a
 semicolon-list cell on the `map` tab, precisely so a tool answering several
@@ -39,7 +39,7 @@ worth keeping in mind so they don't get "corrected" away in a future run:
 - **One tool answering several questions is expected, not a smell.** A
   license scanner can plausibly help both *automate* collection (RQ2) and
   let you *verify accuracy* when aggregating sources (RQ3). Map each
-  `RQ_No` it genuinely earns, independently — don't cap a tool at one
+  `rq_no` it genuinely earns, independently — don't cap a tool at one
   question to look conservative.
 - **A question with zero mapped tools is a real, useful finding** —
   evidence of a coverage gap in the open-source ecosystem, not a failed
@@ -75,7 +75,7 @@ judgment steps need a model.
    `license` blank rather than guess (the script already captures the SPDX
    id from the GitHub API when present).
 5. **Map to RQ** *(agent — the core judgment step)* — read the README/paper
-   and decide which `RQ_No`(s) it genuinely helps address, and whether each
+   and decide which `rq_no`(s) it genuinely helps address, and whether each
    is `implement` or `eval`, with a one-line rationale per pair. **Direct**
    judgment against the question text (from `rq_context.json`) — never via
    shared principle ids.
@@ -86,7 +86,10 @@ judgment steps need a model.
    exact live-tab column order: `candidate_tools.csv` (new `tools` rows) and
    `candidate_map_updates.csv` (`rq_no, tool_id, role, rationale`, one row
    per pair) — which is now also the exact column order of the `tool_map`
-   tab itself, so step 8 is a straight append, not a merge.
+   tab itself, so step 8 is a straight append, not a merge. Each freshly
+   emitted row is also stamped with `datetime_added`, `datetime_checked`,
+   and `datetime_updated` all set to the run time (see "Freshness columns"
+   below).
 8. **Review & merge** *(human)* — accept/edit, then:
    - paste accepted rows from `candidate_tools.csv` into the `tools` tab
      (fine to be selective here, e.g. only tools with a confirmed
@@ -98,13 +101,33 @@ judgment steps need a model.
      content to preserve or clobber.
    - The next site build picks up the changes.
 
+### Freshness columns
+
+Every tab `build.py` owns (`map`, `tool_map`, `tools`, `terms`, `framework`)
+carries three timestamp columns, and every row is expected to have all
+three filled in:
+
+- **`datetime_added`** — when the row was first added.
+- **`datetime_checked`** — when the row was last reviewed for staleness
+  (content re-fetched/re-read and compared against what's already there).
+- **`datetime_updated`** — when the row's content actually last changed. A
+  check that finds nothing new bumps `datetime_checked` only —
+  `datetime_updated` stays put.
+
+These are purely informational today: `build.py` warns (doesn't fail) if
+any of the three is blank on a row, but no build logic reads or compares
+the values yet. They exist so a future scheduler/crawler can decide what's
+stale enough to re-fetch. `emit_candidates.py` stamps all three to the same
+run timestamp on newly emitted rows, since a row that's just been added has
+also, trivially, just been checked and updated.
+
 ### Model tiering (cost control)
 
 - **No model** for anything in `search_repos.py` / `export_rq_context.py` —
   pure Python, keep it that way.
 - **Cheaper model** for orchestration: keyword scoping (step 2), one-line
   summary distillation (step 4), and a coarse pre-filter narrowing each
-  candidate to ~3–5 plausible `RQ_No`s before the expensive step.
+  candidate to ~3–5 plausible `rq_no`s before the expensive step.
 - **Strongest available model, as an isolated subagent** for step 5 (the
   final implement/eval RQ judgment) — give it *only* {candidate summary +
   README excerpt + paper abstract} × {the pre-filtered RQ shortlist}, never
@@ -149,20 +172,29 @@ documents all its flags (`--min-stars`, `--pushed-after-months`,
 `--min-readme-chars` are all overridable if the defaults need adjusting
 after seeing real results).
 
-### Live sheet setup: the `tool_map` tab
+### Live sheet schema (current)
 
-The OpenTAIG sheet needs a `tool_map` tab before `build.py` will run
-against it — a one-time setup step, done once:
+All tab and column names are lowercase with underscores. Five tabs are
+owned by this pipeline, each carrying the three freshness columns above:
 
-1. Add a tab named exactly `tool_map`, header row `rq_no, tool_id, role,
-   rationale`.
-2. Migrate the one pairing that used to live in `map`'s `tools_implement`/
-   `tools_eval` columns: `rq_no=3, tool_id=scancode-toolkit, role=eval` (add
-   a `rationale` if you have one handy; blank is fine, it just won't render
-   a caption on the site until filled in).
-3. Optional cleanup: the `tools_implement`/`tools_eval` columns on `map` are
-   no longer read by the build, so you can delete them from that tab — but
-   leaving them is harmless, they're just inert now.
+- **`map`** — `rq_no` + one column per framework (`rgaf`, `euaiact`,
+  `unescoai`, `aseanai`, `coeai`) + freshness columns.
+- **`tool_map`** — `rq_no, tool_id, role, rationale` + freshness columns.
+  One row per `(rq_no, tool_id, role)` pairing.
+- **`tools`** — `id, tool_type, name, summary, license, homepage, source,
+  documentation, funding, implement, eval` + freshness columns.
+- **`terms`** — `id, framework_id, name, summary, url` + freshness columns.
+- **`framework`** — `id, name, fullname, summary, homepage, source, group`
+  + freshness columns.
+
+`tools_rgaf_seed` is a staging-only tab (not read by `build.py`) holding
+tools sourced from the LF AI & Data RGAF blog post, pending triage into
+`tools`/`tool_map`.
+
+(Historical note: the `tool_map` tab replaced `tools_implement`/
+`tools_eval` semicolon-list columns that used to live on `map`, and every
+tab/column name used to be a mix of casings, e.g. `RQ_No`, `RGAF`,
+`tools-rgaf`. That migration is done; nothing left to set up.)
 
 ## Files
 
@@ -178,17 +210,19 @@ against it — a one-time setup step, done once:
   `state/seen_repos.csv`. Deterministic; no model, no network. Writes
   `state/candidates_to_review.csv` (git-ignored, regenerated each run).
 - **`emit_candidates.py`** — built. Takes a judgments JSON (step 4+5 output)
-  and writes `candidate_tools.csv` + `candidate_map_updates.csv`, and
-  appends every judged repo (accept or reject) to `state/seen_repos.csv`.
-  Deterministic; no model, no network.
-- **`candidate_tools_from_rgaf.csv`** — the 32 tools from the sheet's
-  `tools_rgaf_seed` staging tab (seeded from the LF AI & Data blog post
-  ["Putting RGAF to Work"](https://lfaidata.foundation/communityblog/2026/04/22/putting-rgaf-to-work-build-and-audit-responsible-ai-with-open-source/)),
-  in the `tools` tab's exact column order. No id collides with the rows
-  already live in `tools`. **To use:** review, then append to the `tools`
-  tab. (These rows carry `implement`/`eval` *term* tags from the source;
-  those are descriptive metadata only — they are **not** how the tools get
-  mapped to questions.)
+  and writes `candidate_tools.csv` + `candidate_map_updates.csv` (each row
+  stamped with `datetime_added`/`datetime_checked`/`datetime_updated` set
+  to the run time), and appends every judged repo (accept or reject) to
+  `state/seen_repos.csv`. Deterministic; no model, no network.
+- **`candidate_tools_from_rgaf.csv`** — historical snapshot: the original 32
+  tools pulled from the sheet's `tools_rgaf_seed` staging tab (seeded from
+  the LF AI & Data blog post ["Putting RGAF to Work"](https://lfaidata.foundation/communityblog/2026/04/22/putting-rgaf-to-work-build-and-audit-responsible-ai-with-open-source/)),
+  before triage. Most have since been triaged (real GitHub repo resolved,
+  README read, mapped into `tools`/`tool_map`, or rejected) directly in the
+  live `tools_rgaf_seed` tab; a handful remain untriaged there. **To
+  continue:** run the same discovery→judgment steps (4–5) against the
+  remaining rows in the live tab, same as any other candidate batch — this
+  file itself is not kept in sync with that progress.
 - **`rq_context.json`** — generated (git-ignored, purely derived from a
   fresh `site/data.json`), see step 1.
 - **`state/search_raw/*.json`**, **`state/search_candidates.csv`**,

@@ -56,6 +56,19 @@ UNMAPPED_TOKENS = {"", "unmapped", "n/a", "none"}
 # --------------------------------------------------------------------------
 
 @dataclasses.dataclass
+class Freshness:
+    """Row-level bookkeeping, present on every OUR-owned tab (mapping,
+    tool_map, tools, terms, framework): when a row was first added, when it
+    was last reviewed for staleness, and when its content last actually
+    changed (a review that finds nothing new updates only `checked`, not
+    `updated`). Purely informational -- no build logic reads these yet, they
+    exist so a future scheduler/crawler can decide what needs re-fetching."""
+    added: str = ""
+    checked: str = ""
+    updated: str = ""
+
+
+@dataclasses.dataclass
 class Tool:
     id: str
     slug: str
@@ -69,6 +82,7 @@ class Tool:
     funding: str = ""
     implement: list = dataclasses.field(default_factory=list)  # list[Term]
     eval: list = dataclasses.field(default_factory=list)  # list[Term]
+    freshness: Freshness = dataclasses.field(default_factory=Freshness)
 
 
 @dataclasses.dataclass
@@ -79,6 +93,7 @@ class ToolRationale:
     different rationale each time, so the rationale can't live on Tool."""
     tool: "Tool"
     rationale: str = ""
+    freshness: Freshness = dataclasses.field(default_factory=Freshness)
 
 
 @dataclasses.dataclass
@@ -88,6 +103,7 @@ class Term:
     name: str
     summary: str = ""
     url: str = ""
+    freshness: Freshness = dataclasses.field(default_factory=Freshness)
 
 
 @dataclasses.dataclass
@@ -106,6 +122,7 @@ class Problem:
     tools_eval: list  # list[ToolRationale]
     search_text: str  # precomputed lowercased text for the client-side search box
     order: int
+    mapping_freshness: Freshness = dataclasses.field(default_factory=Freshness)  # from the `mapping` tab's row for this RQ_No
 
 
 # --------------------------------------------------------------------------
@@ -222,6 +239,27 @@ def parse_id_list(raw: Optional[str]) -> list:
     return [p.strip() for p in parts if p.strip()]
 
 
+def parse_freshness(row: dict, colmap: dict, warnings: list, context: str) -> "Freshness":
+    """Read the `datetime_added`/`datetime_checked`/`datetime_updated` trio
+    present on every OUR-owned tab. Every row is expected to carry all three
+    -- warn (don't fail) if any is blank, so a straggler row that predates
+    or skipped the freshness bookkeeping gets surfaced for cleanup rather
+    than silently passing through. Free-text passthrough, not parsed into a
+    datetime: the build has no logic that compares or sorts them, it just
+    carries them into data.json for a future scheduler to read."""
+    fresh = Freshness(
+        added=(row.get(colmap.get("datetime_added", "")) or "").strip(),
+        checked=(row.get(colmap.get("datetime_checked", "")) or "").strip(),
+        updated=(row.get(colmap.get("datetime_updated", "")) or "").strip(),
+    )
+    missing = [name for name, value in
+               (("datetime_added", fresh.added), ("datetime_checked", fresh.checked), ("datetime_updated", fresh.updated))
+               if not value]
+    if missing:
+        warnings.append(f"{context}: missing {', '.join(missing)} (every row is expected to carry all three)")
+    return fresh
+
+
 # --------------------------------------------------------------------------
 # Slugs
 # --------------------------------------------------------------------------
@@ -288,6 +326,7 @@ def build_tool_catalog(rows: list, colmap: dict, terms_catalog: dict, warnings: 
             funding=(row.get(colmap["funding"]) or "").strip(),
             implement=resolve_terms("implement"),
             eval=resolve_terms("eval"),
+            freshness=parse_freshness(row, colmap, warnings, f"tools row {i + 2} ({raw_id!r})"),
         )
     return catalog
 
@@ -314,6 +353,7 @@ def build_terms_catalog(rows: list, colmap: dict, warnings: list) -> dict:
             name=(row.get(colmap["name"]) or "").strip() or raw_id,
             summary=(row.get(colmap["summary"]) or "").strip(),
             url=(row.get(colmap["url"]) or "").strip(),
+            freshness=parse_freshness(row, colmap, warnings, f"terms row {i + 2} ({raw_id!r})"),
         )
     return catalog
 
@@ -340,6 +380,7 @@ def build_framework_catalog(rows: list, colmap: dict, warnings: list) -> dict:
             "homepage": (row.get(colmap["homepage"]) or "").strip(),
             "source": (row.get(colmap["source"]) or "").strip(),
             "group": (row.get(colmap["group"]) or "").strip(),
+            "freshness": parse_freshness(row, colmap, warnings, f"framework row {i + 2} ({raw_id!r})"),
         }
     return catalog
 
@@ -359,7 +400,8 @@ def merge_framework_defs(frameworks_config: list, framework_catalog: dict, warni
                 f"framework {key!r}: no matching row in the framework tab "
                 f"(falling back to the key itself as label, no doc_url)"
             )
-            info = {"name": "", "fullname": "", "summary": "", "homepage": "", "source": "", "group": ""}
+            info = {"name": "", "fullname": "", "summary": "", "homepage": "", "source": "", "group": "",
+                    "freshness": Freshness()}
         merged.append(
             {
                 "key": key,
@@ -369,6 +411,7 @@ def merge_framework_defs(frameworks_config: list, framework_catalog: dict, warni
                 "summary": info["summary"],
                 "group": info["group"],
                 "doc_url": info["source"] or info["homepage"],
+                "freshness": info["freshness"],
             }
         )
     configured_keys = {fw["key"] for fw in frameworks_config}
@@ -403,7 +446,7 @@ def build_mapping_index(rows: list, colmap: dict, framework_defs: list, warnings
             continue
         if rq_no in index:
             warnings.append(f"mapping row {i + 2}: duplicate RQ_No {rq_no!r}, keeping last")
-        entry = {}
+        entry = {"freshness": parse_freshness(row, colmap, warnings, f"mapping row {i + 2} (RQ_No {rq_no!r})")}
         for fw in framework_defs:
             entry[fw["key"]] = parse_id_list(row.get(fw["column"]))
         index[rq_no] = entry
@@ -418,7 +461,7 @@ VALID_TOOL_ROLES = {"implement", "eval"}
 
 
 def build_tool_role_index(rows: list, colmap: dict, warnings: list) -> dict:
-    """Return {rq_no: {"implement": [(tool_id, rationale), ...], "eval": [...]}}
+    """Return {rq_no: {"implement": [(tool_id, rationale, freshness), ...], "eval": [...]}}
     from the tool_map tab -- one row per (RQ_No, tool_id, role) pairing, long
     format rather than a semicolon list, so a rationale has somewhere to
     live and adding a pairing never means hand-editing an existing cell.
@@ -447,7 +490,8 @@ def build_tool_role_index(rows: list, colmap: dict, warnings: list) -> dict:
             continue
         seen_pairs.add(pair_key)
         entry = index.setdefault(rq_no, {"implement": [], "eval": []})
-        entry[role].append((tool_id, rationale))
+        context = f"tool_map row {i + 2} (RQ_No {rq_no!r}, tool_id {tool_id!r})"
+        entry[role].append((tool_id, rationale, parse_freshness(row, colmap, warnings, context)))
     return index
 
 
@@ -518,7 +562,7 @@ def build_problems(
 
         def resolve_tools(role: str) -> list:
             resolved = []
-            for tid, rationale in (tool_pairs or {}).get(role, []):
+            for tid, rationale, pair_freshness in (tool_pairs or {}).get(role, []):
                 tool = tool_catalog.get(tid)
                 if tool is None:
                     warnings.append(
@@ -526,7 +570,7 @@ def build_problems(
                         f"in the Tools tab (check for typos or a missing catalog entry)"
                     )
                     continue
-                resolved.append(ToolRationale(tool=tool, rationale=rationale))
+                resolved.append(ToolRationale(tool=tool, rationale=rationale, freshness=pair_freshness))
             return resolved
 
         tools_implement = resolve_tools("implement")
@@ -561,6 +605,7 @@ def build_problems(
                 tools_eval=tools_eval,
                 search_text=search_text,
                 order=i,
+                mapping_freshness=(mapping or {}).get("freshness", Freshness()),
             )
         )
 
@@ -670,7 +715,10 @@ def problem_to_public_dict(p: Problem, expertise_key: str) -> dict:
         if key == expertise_key:
             mappings_out[key] = value  # plain list[str]
         else:
-            mappings_out[key] = [{"id": t.id, "name": t.name, "url": t.url} for t in value]
+            mappings_out[key] = [
+                {"id": t.id, "name": t.name, "url": t.url, "freshness": dataclasses.asdict(t.freshness)}
+                for t in value
+            ]
     return {
         "slug": p.slug,
         "rq_no": p.rq_no,
@@ -682,12 +730,15 @@ def problem_to_public_dict(p: Problem, expertise_key: str) -> dict:
         "mappings": mappings_out,
         "existing_work": p.existing_work,
         "new_work": p.new_work,
+        "mapping_freshness": dataclasses.asdict(p.mapping_freshness),
         "tools_implement": [
-            {"id": t.tool.id, "name": t.tool.name, "homepage": t.tool.homepage, "rationale": t.rationale}
+            {"id": t.tool.id, "name": t.tool.name, "homepage": t.tool.homepage, "rationale": t.rationale,
+             "freshness": dataclasses.asdict(t.freshness)}
             for t in p.tools_implement
         ],
         "tools_eval": [
-            {"id": t.tool.id, "name": t.tool.name, "homepage": t.tool.homepage, "rationale": t.rationale}
+            {"id": t.tool.id, "name": t.tool.name, "homepage": t.tool.homepage, "rationale": t.rationale,
+             "freshness": dataclasses.asdict(t.freshness)}
             for t in p.tools_eval
         ],
     }
