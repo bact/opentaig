@@ -104,5 +104,31 @@
 </section>
 {% endfor %}
 
+{% if orphan_tools %}
+<section class="capacity-group orphan-tools-group" data-group-name="Open for Questions">
+  <h2>Open for Questions <span class="count">({{ orphan_tools | length }})</span></h2>
+  <div class="problem-list">
+    <article class="problem-card orphan-tools-card"
+      data-has-tool="1"
+      data-search="{{ (['open for questions'] + (orphan_tools | map(attribute='name') | list)) | join(' ') | lower }}"
+    >
+      <p class="pair-label pair-label-problem">Problem <span class="rq-no">#0</span></p>
+      <h5 class="problem-question">Open for Questions</h5>
+      <p class="empty-note">No relevant question is currently being asked for these solutions &mdash; or they haven&rsquo;t been mapped yet.</p>
+
+      {% set orphan_spec = orphan_tools | selectattr('tool_type', 'equalto', 'specification') | list %}
+      {% set orphan_soft = orphan_tools | selectattr('tool_type', 'equalto', 'software') | list %}
+      <p class="pair-label pair-label-solution">Solution</p>
+      {% if orphan_spec %}
+      <p class="tool-row"><span class="tool-row-label">Spec:</span> {% for t in orphan_spec %}<a class="tool-link" href="{{ root }}tools/{{ t.slug }}.html">{{ t.name }}</a>{{ ", " if not loop.last }}{% endfor %}</p>
+      {% endif %}
+      {% if orphan_soft %}
+      <p class="tool-row"><span class="tool-row-label">Software:</span> {% for t in orphan_soft %}<a class="tool-link" href="{{ root }}tools/{{ t.slug }}.html">{{ t.name }}</a>{{ ", " if not loop.last }}{% endfor %}</p>
+      {% endif %}
+    </article>
+  </div>
+</section>
+{% endif %}
+
 <p id="no-results" class="no-results" hidden>No open problems match the current filters.</p>
 {% endblock %}

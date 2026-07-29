@@ -805,7 +805,12 @@ def render_site(
         tmpl = env.get_template(template_name)
         path.write_text(tmpl.render(**site_ctx, **ctx), encoding="utf-8")
 
-    write(out_dir / "index.html", "index.html", root="", groups=groups, active="home")
+    # Tools with zero tool_map rows -- not wrong data, just not curated yet
+    # (or genuinely unaddressed by any of the 98 RQs). Surfaced on the index
+    # page as a special "RQ #0" card rather than silently vanishing from the
+    # open-problems view; they still list normally on the tools index.
+    orphan_tools = sorted((e["tool"] for e in tools_index if not e["problems"]), key=lambda t: t.name.lower())
+    write(out_dir / "index.html", "index.html", root="", groups=groups, orphan_tools=orphan_tools, active="home")
 
     for p in problems:
         write(out_dir / "problems" / f"{p.slug}.html", "problem.html", root="../", problem=p, active="problem")

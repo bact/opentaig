@@ -181,6 +181,13 @@ main.wrap { padding-top: 28px; padding-bottom: 60px; min-height: 60vh; }
 
 .capacity-group { margin-top: 34px; }
 .capacity-group > h2 { border-bottom: 2px solid var(--border); padding-bottom: 8px; }
+/* The RQ #0 catch-all at the very bottom of the list: same card mechanics
+   as a real capacity group (so search/filter hide-logic applies for free),
+   styled apart with a dashed rule so it doesn't read as just one more
+   taxonomy bucket. */
+.orphan-tools-group { margin-top: 46px; padding-top: 22px; border-top: 2px dashed var(--border); }
+.orphan-tools-group > h2 { border-bottom: none; }
+.orphan-tools-card .problem-question { font-style: italic; color: var(--fg-muted); }
 .target-group { margin-top: 18px; }
 .target-group > h3 { color: var(--fg-muted); font-size: 1rem; text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 6px; }
 .area-group { margin: 14px 0 14px 2px; padding-left: 12px; border-left: 3px solid var(--border); }
