@@ -8,13 +8,14 @@
 <link rel="stylesheet" href="{{ root }}assets/style.css">
 </head>
 <body data-fw-keys="{{ frameworks | map(attribute='key') | join(',') }}">
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="{{ root }}index.html">
       <span class="brand-title">{{ site.title }}</span>
       <span class="brand-tagline">{{ site.tagline }}</span>
     </a>
-    <nav class="site-nav">
+    <nav class="site-nav" aria-label="Primary">
       <a href="{{ root }}index.html" class="{{ 'active' if active == 'home' or active == 'problem' else '' }}">Open Problems</a>
       <a href="{{ root }}tools/index.html" class="{{ 'active' if active == 'tools' else '' }}">Open Source Tools</a>
       <a href="{{ root }}frameworks/index.html" class="{{ 'active' if active == 'frameworks' else '' }}">Principles &amp; Regulations</a>
@@ -23,7 +24,7 @@
   </div>
 </header>
 
-<main class="wrap">
+<main class="wrap" id="main-content" tabindex="-1">
 {% block content %}{% endblock %}
 </main>
 

@@ -17,6 +17,15 @@
   --chip-expertise-bg: #eef0f3; --chip-expertise-fg: #3a4149;
   --chip-tool-type-bg: #eef0f3; --chip-tool-type-fg: #3a4149;
   --chip-aiaaic-bg: #fff3e0;    --chip-aiaaic-fg: #8a5300;
+
+  /* Problem/solution pair labels -- deliberately distinct hues (not just a
+     text-weight difference) so the two halves of each RQ/tool pairing read
+     apart at a glance. Both checked against --bg/--bg-alt for >=4.5:1
+     contrast (WCAG 2.2 SC 1.4.3) since color is a secondary cue here, not
+     the only one -- "Problem"/"Solution" are also always spelled out as
+     text, never conveyed by color alone (SC 1.4.1). */
+  --problem-color: #1a56db;
+  --solution-color: #0f7a45;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -39,6 +48,9 @@
     --chip-expertise-bg: #262b31; --chip-expertise-fg: #c3cad2;
     --chip-tool-type-bg: #262b31; --chip-tool-type-fg: #c3cad2;
     --chip-aiaaic-bg: #3d2c10;    --chip-aiaaic-fg: #f0c063;
+
+    --problem-color: #7fa8ff;
+    --solution-color: #8fe3bb;
   }
 }
 
@@ -63,6 +75,29 @@ a { color: var(--link); }
 a:visited { color: var(--link-visited); }
 h1, h2, h3, h4 { line-height: 1.25; }
 
+/* Content present for screen readers only -- e.g. a table's row/column
+   header when the visual heading is redundant with adjacent text. */
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+.skip-link {
+  position: absolute; left: 8px; top: -60px; z-index: 100;
+  background: var(--accent); color: #fff; padding: 10px 16px; border-radius: 6px;
+  text-decoration: none; font-weight: 600; transition: top 0.15s ease-in;
+}
+.skip-link:focus { top: 8px; }
+
+/* Visible keyboard-focus indicator on every interactive element -- relying
+   on the browser default is fragile (varies by element/OS and is easy to
+   accidentally suppress later), so make it explicit and consistent
+   (WCAG 2.2 SC 2.4.7 Focus Visible / 2.4.11 Focus Not Obscured). */
+a:focus-visible, button:focus-visible, select:focus-visible,
+input:focus-visible, summary:focus-visible {
+  outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 2px;
+}
+
 .site-header {
   border-bottom: 1px solid var(--border);
   background: var(--bg-alt);
@@ -84,45 +119,63 @@ main.wrap { padding-top: 28px; padding-bottom: 60px; min-height: 60vh; }
 
 .intro p { color: var(--fg-muted); max-width: 70ch; }
 
+/* Scrolls with the page (not sticky/floating) so it doesn't eat viewport
+   height that should go to the RQ/tool list below it. */
 .filter-bar {
-  display: flex; flex-wrap: wrap; gap: 14px 18px; align-items: end;
+  display: flex; flex-direction: column; gap: 16px;
   background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px;
-  padding: 16px; margin: 20px 0 12px; position: sticky; top: 0; z-index: 5;
+  padding: 16px; margin: 20px 0 12px;
 }
 .filter-bar label { display: flex; flex-direction: column; font-size: 0.8rem; color: var(--fg-muted); gap: 4px; }
 .filter-bar select, .filter-bar input[type=search] {
   font: inherit; padding: 6px 8px; border-radius: 6px; border: 1px solid var(--border);
   background: var(--bg); color: var(--fg);
 }
-#filter-search { min-width: 220px; }
+.filter-search-row input[type=search] { width: 100%; max-width: 420px; }
 .filter-checkbox { flex-direction: row !important; align-items: center; gap: 6px !important; }
+
+/* One row per concern: the two filter-groups side by side (top-aligned, so
+   one group wrapping to a second line doesn't drag the other group's border
+   down with it), then a separate footer row for the checkbox/reset/count --
+   previously all of this sat in one flat wrapping flexbox, which is what
+   made the layout flow unpredictably as dropdowns wrapped. */
+.filter-groups-row { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 18px 32px; }
+.filter-footer-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; }
 #filter-reset {
   font: inherit; padding: 7px 12px; border-radius: 6px; border: 1px solid var(--border);
   background: var(--bg); color: var(--fg); cursor: pointer;
 }
 #filter-reset:hover { border-color: var(--accent); }
-.filter-count { font-size: 0.85rem; color: var(--fg-muted); margin-left: auto; align-self: center; }
+.filter-count { font-size: 0.85rem; color: var(--fg-muted); margin-left: auto; }
 
 /* Groups related dropdowns (e.g. the three native-TAIG facets vs. our
    framework mappings) so the filter bar reads as sections, not one flat
    row of unrelated controls. */
 .filter-group {
-  display: flex; flex-direction: column; gap: 6px;
-  padding-right: 18px; border-right: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 8px;
+  padding-right: 24px; border-right: 1px solid var(--border);
 }
-.filter-group:last-of-type { border-right: none; padding-right: 0; }
+.filter-group:last-child { border-right: none; padding-right: 0; }
 .filter-group-label {
   font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;
   color: var(--fg-muted);
 }
-.filter-group-fields { display: flex; flex-wrap: wrap; gap: 14px 18px; align-items: end; }
+/* Grid, not wrapping flex: fixed-ish column widths keep dropdowns aligned
+   into a clean block instead of a ragged wrap driven by each select's own
+   (very different) label length. */
+.filter-group-fields {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 12px 18px; align-items: end;
+}
 
 .chip-visibility-bar {
   display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px;
   background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px;
   padding: 10px 16px; margin: 0 0 30px; font-size: 0.85rem;
 }
-.chip-visibility-bar .filter-group-fields { gap: 6px 14px; align-items: center; }
+.chip-visibility-bar .filter-group-fields {
+  display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center;
+}
 .chip-toggle { display: flex; align-items: center; gap: 5px; color: var(--fg-muted); cursor: pointer; }
 .chip-toggle input { cursor: pointer; }
 
@@ -142,6 +195,50 @@ main.wrap { padding-top: 28px; padding-bottom: 60px; min-height: 60vh; }
 .problem-question { margin: 0 0 4px; font-size: 1.02rem; }
 .problem-question a { text-decoration: none; }
 .problem-question a:hover { text-decoration: underline; }
+
+/* Eyebrow labels marking the two halves of the RQ/tool pairing. Color is a
+   secondary cue only -- the words "Problem"/"Solution" are always present as
+   text, so this reads fine with color vision deficiency or in forced-colors
+   mode (WCAG 2.2 SC 1.4.1). */
+.pair-label {
+  font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+  margin: 0 0 2px;
+}
+.pair-label-problem { color: var(--problem-color); }
+.pair-label-solution { color: var(--solution-color); margin-top: 12px; }
+h2.pair-label-solution { font-size: 0.78rem; letter-spacing: 0.06em; border: 0; padding: 0; }
+
+.tool-type-tag {
+  display: inline-block; font-size: 0.68rem; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.03em; color: var(--fg-muted); background: var(--bg-alt);
+  border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; vertical-align: middle;
+}
+
+/* The Implement/Evaluate x Spec/Software matrix on each problem card.
+   Proper <th scope="row"|"col"> headers (not just a styled dt/dd list) so a
+   screen reader announces each cell with both its role and type, e.g.
+   "Implement, Spec, column 2: ScanCode Toolkit" -- not just a flat name.
+   Always rendered as the full 2x2 (see _problem_card.html), full card
+   width, with a fixed table-layout so the row/column proportions stay
+   identical card to card regardless of content -- a stable visual
+   reference point across the whole list, not sized to whichever card has
+   the longest tool names. */
+.solution-table {
+  border-collapse: collapse; margin: 4px 0 0; font-size: 0.88rem;
+  width: 100%; table-layout: fixed;
+}
+.solution-table th, .solution-table td {
+  border: 1px solid var(--border); padding: 5px 10px; text-align: left; vertical-align: top;
+  overflow-wrap: break-word;
+}
+.solution-table th:first-child { width: 25%; }
+.solution-table thead th {
+  color: var(--fg-muted); font-weight: 600; font-size: 0.72rem; text-transform: uppercase;
+  letter-spacing: 0.03em; background: var(--bg-alt);
+}
+.solution-table tbody th {
+  color: var(--fg-muted); font-weight: 600; background: var(--bg-alt);
+}
 
 .chip-row, .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0; }
 /* Chips are supplemental context, not the primary Q/A pairing -- kept

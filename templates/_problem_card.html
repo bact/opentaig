@@ -8,29 +8,49 @@
   {% endfor %}
   data-fw-{{ expertise.key }}="|{{ p.mappings.get(expertise.key, []) | join('|') }}|"
 >
+  {% set impl_spec = p.tools_implement | selectattr('tool.tool_type', 'equalto', 'specification') | sort(attribute='tool.name') | list %}
+  {% set impl_soft = p.tools_implement | selectattr('tool.tool_type', 'equalto', 'software') | sort(attribute='tool.name') | list %}
+  {% set eval_spec = p.tools_eval | selectattr('tool.tool_type', 'equalto', 'specification') | sort(attribute='tool.name') | list %}
+  {% set eval_soft = p.tools_eval | selectattr('tool.tool_type', 'equalto', 'software') | sort(attribute='tool.name') | list %}
+  <p class="pair-label pair-label-problem">Problem{% if p.rq_no %} <span class="rq-no">#{{ p.rq_no }}</span>{% endif %}</p>
   <h5 class="problem-question">
-    {% if p.rq_no %}<span class="rq-no">#{{ p.rq_no }}</span> {% endif %}
     <a href="{{ root }}problems/{{ p.slug }}.html">{{ p.question }}</a>
   </h5>
-  {% if p.tools_implement %}
-  <div class="tool-row">
-    <span class="tool-row-label">Implement:</span>
-    {% for pairing in p.tools_implement %}
-    <a class="tool-link" href="{{ root }}tools/{{ pairing.tool.slug }}.html" title="{{ pairing.tool.tool_type }}">{{ pairing.tool.name }}</a>{{ ", " if not loop.last }}
-    {% endfor %}
-  </div>
-  {% endif %}
-  {% if p.tools_eval %}
-  <div class="tool-row">
-    <span class="tool-row-label">Evaluate:</span>
-    {% for pairing in p.tools_eval %}
-    <a class="tool-link" href="{{ root }}tools/{{ pairing.tool.slug }}.html" title="{{ pairing.tool.tool_type }}">{{ pairing.tool.name }}</a>{{ ", " if not loop.last }}
-    {% endfor %}
-  </div>
-  {% endif %}
-  {% if not p.tools_implement and not p.tools_eval %}
-  <p class="tool-row tool-row-empty">No open-source tool linked yet.</p>
-  {% endif %}
+
+  {% macro solution_cell(pairings) %}
+    {%- if pairings -%}
+      {%- for pairing in pairings -%}<a class="tool-link" href="{{ root }}tools/{{ pairing.tool.slug }}.html">{{ pairing.tool.name }}</a>{{ ", " if not loop.last }}{%- endfor -%}
+    {%- else -%}
+      <span aria-hidden="true">&mdash;</span><span class="visually-hidden">None</span>
+    {%- endif -%}
+  {% endmacro %}
+  <p class="pair-label pair-label-solution" id="{{ p.slug }}-solution">Solution</p>
+  <!-- Always the full 2x2 (Implement/Evaluate x Spec/Software), even when
+       entirely empty: a fixed-shape matrix is a stable visual reference
+       point across ~100 cards, and empty cells are themselves the signal
+       that coverage is missing for that role/type -- collapsing them away
+       would hide that signal instead of showing it. -->
+  <table class="solution-table" aria-labelledby="{{ p.slug }}-solution">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden">Role</span></th>
+        <th scope="col">Spec</th>
+        <th scope="col">Software</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Implement</th>
+        <td>{{ solution_cell(impl_spec) }}</td>
+        <td>{{ solution_cell(impl_soft) }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Evaluate</th>
+        <td>{{ solution_cell(eval_spec) }}</td>
+        <td>{{ solution_cell(eval_soft) }}</td>
+      </tr>
+    </tbody>
+  </table>
   <div class="chip-row chip-row-supplemental">
     {% for fw in frameworks %}
       {% for term in p.mappings.get(fw.key, []) %}

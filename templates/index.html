@@ -6,63 +6,69 @@
 </section>
 
 <section class="filter-bar" id="filter-bar">
-  <input type="search" id="filter-search" placeholder="Search questions and mappings&hellip;" aria-label="Search open problems">
+  <div class="filter-search-row">
+    <input type="search" id="filter-search" placeholder="Search questions and mappings&hellip;" aria-label="Search open problems">
+  </div>
 
-  <div class="filter-group" aria-label="TAIG taxonomy filters">
-    <span class="filter-group-label">TAIG taxonomy</span>
-    <div class="filter-group-fields">
-      <label>Capacity
-        <select id="filter-capacity">
-          <option value="">Any</option>
-          {% for c in capacities_list %}
-          <option value="{{ c }}">{{ c }}</option>
-          {% endfor %}
-        </select>
-      </label>
+  <div class="filter-groups-row">
+    <div class="filter-group" aria-label="TAIG taxonomy filters">
+      <span class="filter-group-label">TAIG taxonomy</span>
+      <div class="filter-group-fields">
+        <label>Capacity
+          <select id="filter-capacity">
+            <option value="">Any</option>
+            {% for c in capacities_list %}
+            <option value="{{ c }}">{{ c }}</option>
+            {% endfor %}
+          </select>
+        </label>
 
-      <label>Target
-        <select id="filter-target">
-          <option value="">Any</option>
-          {% for t in targets_list %}
-          <option value="{{ t }}">{{ t }}</option>
-          {% endfor %}
-        </select>
-      </label>
+        <label>Target
+          <select id="filter-target">
+            <option value="">Any</option>
+            {% for t in targets_list %}
+            <option value="{{ t }}">{{ t }}</option>
+            {% endfor %}
+          </select>
+        </label>
 
-      <label>{{ expertise.label }}
-        <select class="filter-framework" data-framework="{{ expertise.key }}">
-          <option value="">Any</option>
-          {% for term in facet_terms.get(expertise.key, []) %}
-          <option value="{{ term }}">{{ term }}</option>
-          {% endfor %}
-        </select>
-      </label>
+        <label>{{ expertise.label }}
+          <select class="filter-framework" data-framework="{{ expertise.key }}">
+            <option value="">Any</option>
+            {% for term in facet_terms.get(expertise.key, []) %}
+            <option value="{{ term }}">{{ term }}</option>
+            {% endfor %}
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="filter-group" aria-label="Framework filters">
+      <span class="filter-group-label">Frameworks</span>
+      <div class="filter-group-fields">
+        {% for fw in frameworks %}
+        <label>{{ fw.label }}
+          <select class="filter-framework" data-framework="{{ fw.key }}">
+            <option value="">Any</option>
+            {% for term in facet_terms.get(fw.key, []) %}
+            <option value="{{ term }}">{{ term }}</option>
+            {% endfor %}
+          </select>
+        </label>
+        {% endfor %}
+      </div>
     </div>
   </div>
 
-  <div class="filter-group" aria-label="Framework filters">
-    <span class="filter-group-label">Frameworks</span>
-    <div class="filter-group-fields">
-      {% for fw in frameworks %}
-      <label>{{ fw.label }}
-        <select class="filter-framework" data-framework="{{ fw.key }}">
-          <option value="">Any</option>
-          {% for term in facet_terms.get(fw.key, []) %}
-          <option value="{{ term }}">{{ term }}</option>
-          {% endfor %}
-        </select>
-      </label>
-      {% endfor %}
-    </div>
+  <div class="filter-footer-row">
+    <label class="filter-checkbox">
+      <input type="checkbox" id="filter-has-tool">
+      Has open-source tool
+    </label>
+
+    <button type="button" id="filter-reset">Reset filters</button>
+    <span id="filter-count" class="filter-count" aria-live="polite"></span>
   </div>
-
-  <label class="filter-checkbox">
-    <input type="checkbox" id="filter-has-tool">
-    Has open-source tool
-  </label>
-
-  <button type="button" id="filter-reset">Reset filters</button>
-  <span id="filter-count" class="filter-count" aria-live="polite"></span>
 </section>
 
 <section class="chip-visibility-bar" id="chip-visibility-bar" aria-label="Chip display preferences">
