@@ -1,0 +1,87 @@
+{
+  "keyword": "topic:data-provenance",
+  "query": "topic:data-provenance stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 8,
+  "repos": [
+    {
+      "full_name": "MarquezProject/marquez",
+      "html_url": "https://github.com/MarquezProject/marquez",
+      "description": "Collect, aggregate, and visualize a data ecosystem's metadata",
+      "stars": 2249,
+      "pushed_at": "2026-07-23T15:12:13Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://marquezproject.ai"
+    },
+    {
+      "full_name": "OpenDataBox/awesome-data-llm",
+      "html_url": "https://github.com/OpenDataBox/awesome-data-llm",
+      "description": "Official Repository of \"LLM \u00d7 DATA\" Survey Paper",
+      "stars": 808,
+      "pushed_at": "2026-06-15T06:25:37Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": "https://arxiv.org/pdf/2505.18458"
+    },
+    {
+      "full_name": "aiidateam/aiida-core",
+      "html_url": "https://github.com/aiidateam/aiida-core",
+      "description": "The official repository for the AiiDA code",
+      "stars": 575,
+      "pushed_at": "2026-07-28T07:12:49Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://aiida-core.readthedocs.io"
+    },
+    {
+      "full_name": "datajoint/datajoint-python",
+      "html_url": "https://github.com/datajoint/datajoint-python",
+      "description": "Relational Workflows: where database schemas define executable data pipelines.",
+      "stars": 194,
+      "pushed_at": "2026-07-23T16:22:26Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.datajoint.com"
+    },
+    {
+      "full_name": "wowtrust/trustdb",
+      "html_url": "https://github.com/wowtrust/trustdb",
+      "description": "Self-hosted tamper-evident evidence database for files, audit events, and data handoffs with portable offline verification",
+      "stars": 89,
+      "pushed_at": "2026-07-27T03:18:02Z",
+      "language": "Go",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://www.trustdb.ryan-wong.cn/"
+    },
+    {
+      "full_name": "rastagan-git/AromaNexus",
+      "html_url": "https://github.com/rastagan-git/AromaNexus",
+      "description": "Provenance-aware integration for odorant, flavor-molecule, and olfactory-receptor data.",
+      "stars": 54,
+      "pushed_at": "2026-07-23T03:58:04Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "NCEAS/metacatui",
+      "html_url": "https://github.com/NCEAS/metacatui",
+      "description": "MetacatUI: A client-side web interface for DataONE data repositories",
+      "stars": 46,
+      "pushed_at": "2026-07-28T17:46:39Z",
+      "language": "JavaScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://nceas.github.io/metacatui"
+    },
+    {
+      "full_name": "Materials-Data-Science-and-Informatics/awesome-fair",
+      "html_url": "https://github.com/Materials-Data-Science-and-Informatics/awesome-fair",
+      "description": "A curated list of awesome stuff around the FAIR principles for (scientific) data, i.e that data is findable, accessable, interoperable and re-usable.",
+      "stars": 39,
+      "pushed_at": "2026-04-01T13:57:34Z",
+      "language": "",
+      "license_spdx_id": "CC0-1.0",
+      "homepage": ""
+    }
+  ]
+}

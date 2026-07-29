@@ -1,0 +1,67 @@
+{
+  "keyword": "topic:machine-learning-security",
+  "query": "topic:machine-learning-security stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 6,
+  "repos": [
+    {
+      "full_name": "RiccardoBiosas/awesome-MLSecOps",
+      "html_url": "https://github.com/RiccardoBiosas/awesome-MLSecOps",
+      "description": "A curated list of MLSecOps tools and resources for securing machine learning and AI systems - adversarial ML defense, LLM security, AI red teaming, model scanning, supply-chain protection, and MLOps pipeline security.",
+      "stars": 443,
+      "pushed_at": "2026-07-28T16:59:19Z",
+      "language": "Astro",
+      "license_spdx_id": "MIT",
+      "homepage": "https://awesomemlsecops.com/"
+    },
+    {
+      "full_name": "alexdevassy/Machine_Learning_CTF_Challenges",
+      "html_url": "https://github.com/alexdevassy/Machine_Learning_CTF_Challenges",
+      "description": "Hack AI/ML applications \u2014 CTF challenges for model attacks, LLMs and AI Agent exploitation.",
+      "stars": 251,
+      "pushed_at": "2026-05-13T16:06:16Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "EzgiKorkmaz/adversarial-reinforcement-learning",
+      "html_url": "https://github.com/EzgiKorkmaz/adversarial-reinforcement-learning",
+      "description": "Reading list for adversarial perspective and robustness in deep reinforcement learning.",
+      "stars": 129,
+      "pushed_at": "2026-03-02T15:48:10Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "arsbr/Veritensor",
+      "html_url": "https://github.com/arsbr/Veritensor",
+      "description": "The Anti-Virus for AI Artifacts & RAG Firewall. A static analysis tool scanning Models and Notebooks for RCE, Datasets and RAG docs for Data Poisoning, PII, and Prompt Injections. Secure your AI Supply Chain.",
+      "stars": 82,
+      "pushed_at": "2026-07-18T20:29:53Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.veritensor.com"
+    },
+    {
+      "full_name": "Lab700xOrg/aisbom",
+      "html_url": "https://github.com/Lab700xOrg/aisbom",
+      "description": "AI SBOM: AI Software Bill of Materials - The Supply Chain for Artificial Intelligence",
+      "stars": 75,
+      "pushed_at": "2026-07-26T02:37:41Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.aisbom.io/"
+    },
+    {
+      "full_name": "CollieAi/llm-firewall",
+      "html_url": "https://github.com/CollieAi/llm-firewall",
+      "description": "AI Firewall & LLM security toolkit - protect your AI applications from prompt injection, jailbreaks, PII leakage, and adversarial attacks",
+      "stars": 43,
+      "pushed_at": "2026-07-27T09:47:50Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": "https://collieai.io"
+    }
+  ]
+}

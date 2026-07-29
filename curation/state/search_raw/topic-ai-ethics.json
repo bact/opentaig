@@ -1,0 +1,117 @@
+{
+  "keyword": "topic:ai-ethics",
+  "query": "topic:ai-ethics stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 11,
+  "repos": [
+    {
+      "full_name": "mlco2/codecarbon",
+      "html_url": "https://github.com/mlco2/codecarbon",
+      "description": "Track emissions from Compute and recommend ways to reduce their impact on the environment.",
+      "stars": 1887,
+      "pushed_at": "2026-07-28T08:43:36Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://docs.codecarbon.io/"
+    },
+    {
+      "full_name": "EthicalML/awesome-artificial-intelligence-regulation",
+      "html_url": "https://github.com/EthicalML/awesome-artificial-intelligence-regulation",
+      "description": "This repository aims to map the ecosystem of artificial intelligence guidelines, principles, codes of ethics, standards, regulation and beyond.",
+      "stars": 1456,
+      "pushed_at": "2026-07-20T03:57:08Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "CelaDaniel/free-ai-resources-x",
+      "html_url": "https://github.com/CelaDaniel/free-ai-resources-x",
+      "description": "\ud83c\udf1f A curated collection of free, high quality AI tools \ud83e\udd16, APIs \ud83d\udd17, datasets \ud83d\udcca, and learning resources \ud83d\udcda covering machine learning \ud83e\udde0, deep learning \ud83e\udde9, generative AI \ud83c\udfa8, NLP \ud83d\udcac, and data science \ud83d\udcc8. Designed to help developers \ud83d\udc69\u200d\ud83d\udcbb, researchers \ud83d\udd2c, and creators \u2728 explore and build with AI faster \u26a1.",
+      "stars": 698,
+      "pushed_at": "2026-05-21T19:29:45Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": "https://github.com/CelaDaniel/free-ai-resources-x/"
+    },
+    {
+      "full_name": "tournesol-app/tournesol",
+      "html_url": "https://github.com/tournesol-app/tournesol",
+      "description": "Free and open source code of the https://tournesol.app platform. Meet the community on Discord https://discord.gg/WvcSG55Bf3",
+      "stars": 378,
+      "pushed_at": "2026-07-27T06:20:53Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://tournesol.app"
+    },
+    {
+      "full_name": "BharathxD/ClaimeAI",
+      "html_url": "https://github.com/BharathxD/ClaimeAI",
+      "description": "This AI fact-checking system, built with LangGraph, dissects text into verifiable claims, cross-referencing them with real-world evidence via web searches. It then generates detailed accuracy reports, ideal for combating misinformation in LLM outputs, news, or any text.",
+      "stars": 105,
+      "pushed_at": "2025-10-02T14:16:21Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.claime.tech"
+    },
+    {
+      "full_name": "TetiAI/lucid",
+      "html_url": "https://github.com/TetiAI/lucid",
+      "description": "AI makes users productive \u2014 but also cognitively lazy. Lucid detects cognitive dependency in real-time and adapts AI responses to keep users thinking. Drop-in SDK: zero latency, any LLM provider, research-backed.",
+      "stars": 32,
+      "pushed_at": "2026-07-06T17:20:36Z",
+      "language": "TypeScript",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": "https://teti.ai/hub/lucid"
+    },
+    {
+      "full_name": "AmirhosseinHonardoust/Quiet-Machines-Minimalist-AI",
+      "html_url": "https://github.com/AmirhosseinHonardoust/Quiet-Machines-Minimalist-AI",
+      "description": "A long-form essay exploring the philosophy of minimalist AI, how future intelligent systems can be calm, ethical, and invisible. Inspired by calm technology, design minimalism, and cognitive science, Quiet Machines envisions a world where the best technology listens more than it speaks.",
+      "stars": 22,
+      "pushed_at": "2025-11-02T22:07:38Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "AmirhosseinHonardoust/The-Future-of-Interactive-ML",
+      "html_url": "https://github.com/AmirhosseinHonardoust/The-Future-of-Interactive-ML",
+      "description": "An in-depth exploration of the rise of human-centered, interactive machine learning. This article examines how Streamlit enables collaborative AI design by merging UX, visualization, and automation. Includes theory, architecture, and design insights from the ML Playground project.",
+      "stars": 22,
+      "pushed_at": "2025-11-03T21:44:43Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "aisingapore/bmad-aisg-aiml",
+      "html_url": "https://github.com/aisingapore/bmad-aisg-aiml",
+      "description": "BMAD AI/ML Engineering Expansion Pack - Streamlined framework for AI Singapore programs (MVP, POC, SIP, LADP) with specialized agents, workflows, and templates for ML/LLM development",
+      "stars": 22,
+      "pushed_at": "2025-08-21T02:11:32Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "AmirhosseinHonardoust/Measuring-The-Soul-of-Data",
+      "html_url": "https://github.com/AmirhosseinHonardoust/Measuring-The-Soul-of-Data",
+      "description": "A narrative and technical exploration of data authenticity through the four pillars of synthetic data realism, Fidelity, Coverage, Privacy, and Utility. This thought-leadership piece combines storytelling, mathematics, and code to explain how these metrics define the ethical and functional \u201csoul\u201d of data in AI systems.",
+      "stars": 20,
+      "pushed_at": "2025-11-14T08:05:10Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "agentrust-io/awesome-ai-governance",
+      "html_url": "https://github.com/agentrust-io/awesome-ai-governance",
+      "description": "\ud83d\udee1\ufe0f A curated list of tools, frameworks, standards, and resources for AI agent governance, safety, and compliance",
+      "stars": 20,
+      "pushed_at": "2026-07-29T00:19:23Z",
+      "language": "Shell",
+      "license_spdx_id": "CC0-1.0",
+      "homepage": ""
+    }
+  ]
+}

@@ -1,0 +1,217 @@
+{
+  "keyword": "topic:model-evaluation",
+  "query": "topic:model-evaluation stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 21,
+  "repos": [
+    {
+      "full_name": "tidymodels/lime",
+      "html_url": "https://github.com/tidymodels/lime",
+      "description": "Local Interpretable Model-Agnostic Explanations (R port of original Python package)",
+      "stars": 493,
+      "pushed_at": "2025-12-11T17:22:19Z",
+      "language": "R",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://lime.data-imaginist.com/"
+    },
+    {
+      "full_name": "saccofrancesco/deepshot",
+      "html_url": "https://github.com/saccofrancesco/deepshot",
+      "description": "AI-powered NBA game outcome predictor that uses advanced team stats and trend-based features to forecast winners and track model performance",
+      "stars": 169,
+      "pushed_at": "2026-07-28T13:04:12Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Cloud-CV/GSoC-Ideas",
+      "html_url": "https://github.com/Cloud-CV/GSoC-Ideas",
+      "description": "CloudCV GSoC Ideas",
+      "stars": 131,
+      "pushed_at": "2026-02-23T01:01:33Z",
+      "language": "HTML",
+      "license_spdx_id": "",
+      "homepage": "https://gsoc.cloudcv.org"
+    },
+    {
+      "full_name": "ModelOriented/fairmodels",
+      "html_url": "https://github.com/ModelOriented/fairmodels",
+      "description": "Flexible tool for bias detection, visualization, and mitigation",
+      "stars": 85,
+      "pushed_at": "2025-10-31T18:23:14Z",
+      "language": "R",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://fairmodels.drwhy.ai/"
+    },
+    {
+      "full_name": "PacktWorkshops/The-Deep-Learning-with-Keras-Workshop",
+      "html_url": "https://github.com/PacktWorkshops/The-Deep-Learning-with-Keras-Workshop",
+      "description": "An Interactive Approach to Understanding Deep Learning with Keras",
+      "stars": 51,
+      "pushed_at": "2026-03-02T12:34:42Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "ulyssestenn/omt",
+      "html_url": "https://github.com/ulyssestenn/omt",
+      "description": "Ollama Model Test - Figure out the best model for the task",
+      "stars": 49,
+      "pushed_at": "2026-06-04T03:38:29Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "prajeesh-chavan/OpenLLM-Monitor",
+      "html_url": "https://github.com/prajeesh-chavan/OpenLLM-Monitor",
+      "description": "OpenLLM Monitor is a plug-and-play, real-time observability dashboard for monitoring and debugging LLM API calls across OpenAI, Ollama, OpenRouter, and more. Tracks tokens, latency, cost, retries, and lets you replay prompts \u2014 fully open-source and self-hostable.",
+      "stars": 43,
+      "pushed_at": "2026-07-07T13:02:09Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Striveworks/valor",
+      "html_url": "https://github.com/Striveworks/valor",
+      "description": "Valor is a lightweight, numpy-based library designed for fast and seamless evaluation of machine learning models.",
+      "stars": 41,
+      "pushed_at": "2026-02-09T15:52:00Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://striveworks.github.io/valor/"
+    },
+    {
+      "full_name": "TrentPierce/PolyCouncil",
+      "html_url": "https://github.com/TrentPierce/PolyCouncil",
+      "description": "PolyCouncil is an open-source multi-model deliberation engine for LM Studio. It runs multiple LLMs in parallel, gathers their answers, scores each response using a shared rubric, and produces a final, consensus-driven result. Designed for testing, comparing, and orchestrating local models with ease.",
+      "stars": 39,
+      "pushed_at": "2026-03-24T19:36:53Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "npstorey/civic-ai-tools",
+      "html_url": "https://github.com/npstorey/civic-ai-tools",
+      "description": "Open-source platform connecting AI assistants to government open data \u2014 MCP server, curated civic MCP directory, and anti-hallucination framework for all 559 Socrata portals",
+      "stars": 39,
+      "pushed_at": "2026-07-12T19:35:13Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://civicaitools.org"
+    },
+    {
+      "full_name": "Poyu123/CNN-application-on-CRFAR10-picture-distinguish",
+      "html_url": "https://github.com/Poyu123/CNN-application-on-CRFAR10-picture-distinguish",
+      "description": "A hands-on TensorFlow image recognition project teaching a computer to identify 10 everyday objects, originally for a linear algebra class, with tools to train a CNN, auto-tune settings, and test accuracy on random internet images.",
+      "stars": 36,
+      "pushed_at": "2026-03-20T15:48:29Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "metno/pyaerocom",
+      "html_url": "https://github.com/metno/pyaerocom",
+      "description": "Python tools for climate and air quality model evaluation",
+      "stars": 33,
+      "pushed_at": "2026-07-24T07:56:28Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://pyaerocom.readthedocs.io/"
+    },
+    {
+      "full_name": "dependentsign/Awesome-LLM-based-Evaluators",
+      "html_url": "https://github.com/dependentsign/Awesome-LLM-based-Evaluators",
+      "description": "\u2728\u2728Latest Papers about LLM-based Evaluators",
+      "stars": 32,
+      "pushed_at": "2026-02-26T00:10:17Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "AmirhosseinHonardoust/Fraud-Detection-SQL-Supervised",
+      "html_url": "https://github.com/AmirhosseinHonardoust/Fraud-Detection-SQL-Supervised",
+      "description": "Detect and classify fraudulent transactions using SQL and Python. Generate behavioral features with SQLite, train a Logistic Regression model, and evaluate performance with AUC, precision, recall, and ROC analysis. A complete supervised fraud detection workflow.",
+      "stars": 31,
+      "pushed_at": "2025-10-21T13:05:00Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "debiai/DebiAI",
+      "html_url": "https://github.com/debiai/DebiAI",
+      "description": "Bias detection and contextual evaluation tool for your AI projects",
+      "stars": 30,
+      "pushed_at": "2026-04-27T13:51:14Z",
+      "language": "Vue",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://debiai.irt-systemx.fr"
+    },
+    {
+      "full_name": "ml4t/diagnostic",
+      "html_url": "https://github.com/ml4t/diagnostic",
+      "description": "Signal diagnostics, statistical validation, and backtest evaluation for quantitative trading workflows.",
+      "stars": 25,
+      "pushed_at": "2026-07-27T10:07:55Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.ml4trading.io/docs/diagnostic/"
+    },
+    {
+      "full_name": "VoxDroid/Construction-Site-Safety-PPE-Detection",
+      "html_url": "https://github.com/VoxDroid/Construction-Site-Safety-PPE-Detection",
+      "description": "End-to-end YOLOv8 PPE detection for construction-site safety. Includes Jupyter training notebooks, pretrained weights, dataset (Roboflow), inference/testing scripts, and a Flask web dashboard for real-time monitoring and compliance reporting.",
+      "stars": 25,
+      "pushed_at": "2025-12-16T10:48:13Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://github.com/VoxDroid/Construction-Site-Safety-PPE-Detection"
+    },
+    {
+      "full_name": "Climate-REF/climate-ref",
+      "html_url": "https://github.com/Climate-REF/climate-ref",
+      "description": "Rapid Evaluation Framework for climate data",
+      "stars": 25,
+      "pushed_at": "2026-07-28T10:24:17Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://climate-ref.readthedocs.io/en/latest/"
+    },
+    {
+      "full_name": "greynewell/matchspec",
+      "html_url": "https://github.com/greynewell/matchspec",
+      "description": "Eval framework. Define correct, test against it, get results.",
+      "stars": 23,
+      "pushed_at": "2026-02-17T16:26:37Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": "https://matchspec.dev"
+    },
+    {
+      "full_name": "AmirhosseinHonardoust/Financial-Fraud-Risk-Engine",
+      "html_url": "https://github.com/AmirhosseinHonardoust/Financial-Fraud-Risk-Engine",
+      "description": "A complete end-to-end fraud detection system for financial transactions, featuring data pipelines, cost-sensitive ML modeling, explainability with SHAP, threshold optimization, batch scoring, and an interactive Streamlit dashboard. Designed to simulate real-world fintech fraud-risk workflows.",
+      "stars": 21,
+      "pushed_at": "2026-06-19T22:50:42Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "AmirhosseinHonardoust/Cognitivelens-AI-Human-Comparison",
+      "html_url": "https://github.com/AmirhosseinHonardoust/Cognitivelens-AI-Human-Comparison",
+      "description": "CognitiveLens is a Streamlit-powered analytics tool for exploring alignment between human and AI decisions. It visualizes fairness, calibration, and interpretability through metrics like Cohen\u2019s \u03ba, AUC, and Brier score. Designed for ethical AI, bias auditing, and decision transparency in machine learning systems.",
+      "stars": 20,
+      "pushed_at": "2025-11-05T06:21:44Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+{
+  "keyword": "topic:watermarking",
+  "query": "topic:watermarking stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 19,
+  "repos": [
+    {
+      "full_name": "facebookresearch/videoseal",
+      "html_url": "https://github.com/facebookresearch/videoseal",
+      "description": "Open and efficient video and image watermarking",
+      "stars": 715,
+      "pushed_at": "2026-07-02T10:11:33Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "facebookresearch/stable_signature",
+      "html_url": "https://github.com/facebookresearch/stable_signature",
+      "description": "Official implementation of the paper \"The Stable Signature Rooting Watermarks in Latent Diffusion Models\"",
+      "stars": 523,
+      "pushed_at": "2026-07-13T20:50:33Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "watermarkktp/watermarkktp",
+      "html_url": "https://github.com/watermarkktp/watermarkktp",
+      "description": "Watermark KTP is a free and secure web-based tool that allows you to add a watermark to your scanned KTP (Indonesian ID card).",
+      "stars": 402,
+      "pushed_at": "2025-12-23T17:29:19Z",
+      "language": "JavaScript",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://watermarkktp.com"
+    },
+    {
+      "full_name": "Shilin-LU/VINE",
+      "html_url": "https://github.com/Shilin-LU/VINE",
+      "description": "[ICLR 2025] \"Robust Watermarking Using Generative Priors Against Image Editing: From Benchmarking to Advances\" (Official Implementation)",
+      "stars": 389,
+      "pushed_at": "2026-03-27T03:21:41Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "MinghuiChen43/awesome-trustworthy-deep-learning",
+      "html_url": "https://github.com/MinghuiChen43/awesome-trustworthy-deep-learning",
+      "description": "A curated list of trustworthy deep learning papers. Continually updating...",
+      "stars": 388,
+      "pushed_at": "2026-07-20T20:17:16Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "facebookresearch/content-seal",
+      "html_url": "https://github.com/facebookresearch/content-seal",
+      "description": "Content Seal is a state-of-the-art framework for invisible, robust watermarking across all modalities audio, image, video, and text. This suite spans the entire generative lifecycle, from training data and inference to generated media.",
+      "stars": 235,
+      "pushed_at": "2026-07-08T10:31:22Z",
+      "language": "HTML",
+      "license_spdx_id": "MIT",
+      "homepage": "https://facebookresearch.github.io/content-seal"
+    },
+    {
+      "full_name": "and-mill/Awesome-GenAI-Watermarking",
+      "html_url": "https://github.com/and-mill/Awesome-GenAI-Watermarking",
+      "description": "A curated list of watermarking schemes for generative AI models",
+      "stars": 144,
+      "pushed_at": "2026-05-11T13:33:14Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "adobe/trustmark",
+      "html_url": "https://github.com/adobe/trustmark",
+      "description": "TrustMark - Universal Watermarking for Arbitrary Resolution Images",
+      "stars": 130,
+      "pushed_at": "2026-04-30T11:57:37Z",
+      "language": "JavaScript",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://arxiv.org/abs/2311.18297"
+    },
+    {
+      "full_name": "bastienlc/pdf-watermark",
+      "html_url": "https://github.com/bastienlc/pdf-watermark",
+      "description": "A python CLI tool to add watermarks to a PDF",
+      "stars": 81,
+      "pushed_at": "2026-07-27T19:41:23Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Aeonss/StitchTool",
+      "html_url": "https://github.com/Aeonss/StitchTool",
+      "description": "Essential program for Webtoon creators and translation groups. Image stitcher, splitter, denoiser, upscaler, and watermarking tool.",
+      "stars": 70,
+      "pushed_at": "2026-04-08T23:42:25Z",
+      "language": "Java",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.jdeploy.com/~stitchtool"
+    },
+    {
+      "full_name": "facebookresearch/wmar",
+      "html_url": "https://github.com/facebookresearch/wmar",
+      "description": "Official implementation of the paper \"Watermarking Autoregressive Image Generation\" (NeurIPS'25)",
+      "stars": 68,
+      "pushed_at": "2026-07-21T11:16:35Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "NarcissusEx/GuardSplat",
+      "html_url": "https://github.com/NarcissusEx/GuardSplat",
+      "description": "[CVPR 2025] GuardSplat: Efficient and Robust Watermarking for 3D Gaussian Splatting",
+      "stars": 52,
+      "pushed_at": "2025-08-01T05:20:13Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://narcissusex.github.io/GuardSplat/"
+    },
+    {
+      "full_name": "Xuzhenhua55/awesome-llm-copyright-protection",
+      "html_url": "https://github.com/Xuzhenhua55/awesome-llm-copyright-protection",
+      "description": "A curated collection of research and techniques for protecting intellectual property of large language models, including watermarking, fingerprinting, and more.",
+      "stars": 52,
+      "pushed_at": "2026-06-10T01:31:11Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://xuzhenhua55.github.io/awesome-llm-copyright-protection/"
+    },
+    {
+      "full_name": "issue9/watermark",
+      "html_url": "https://github.com/issue9/watermark",
+      "description": "\u7b80\u5355\u7684\u56fe\u7247\u6c34\u5370\u529f\u80fd\uff0c\u652f\u6301 GIF",
+      "stars": 49,
+      "pushed_at": "2025-09-09T14:20:13Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": "https://pkg.go.dev/github.com/issue9/watermark"
+    },
+    {
+      "full_name": "resemble-ai/detect-skill",
+      "html_url": "https://github.com/resemble-ai/detect-skill",
+      "description": "Agent skill for deepfake detection & media safety \u2014 detect AI-generated audio, images, and video with Resemble AI",
+      "stars": 33,
+      "pushed_at": "2026-06-10T16:56:14Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://resemble.ai"
+    },
+    {
+      "full_name": "ispras/wibe",
+      "html_url": "https://github.com/ispras/wibe",
+      "description": "[ASE 2025 Tool Demo] WIBE: An Extensible Open Source Framework for Evaluating Imperceptibility and Robustness of Invisible Image Watermarks (WARP Benchmark paper coming soon)",
+      "stars": 30,
+      "pushed_at": "2026-04-21T15:37:24Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "OlegCheban/WaterMarkIt",
+      "html_url": "https://github.com/OlegCheban/WaterMarkIt",
+      "description": "A lightweight, framework-agnostic Java library for adding watermarks to various file types, including PDFs and videos",
+      "stars": 24,
+      "pushed_at": "2026-07-20T20:41:18Z",
+      "language": "Java",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "FraunhoferISST/Innamark",
+      "html_url": "https://github.com/FraunhoferISST/Innamark",
+      "description": "A watermarking/steganography library that can hide a byte sequence (like a text/string) inside a cover text",
+      "stars": 22,
+      "pushed_at": "2026-07-22T06:53:45Z",
+      "language": "Kotlin",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://fraunhoferisst.github.io/Innamark/"
+    },
+    {
+      "full_name": "Szczecin/Image-watermarking-algorithm",
+      "html_url": "https://github.com/Szczecin/Image-watermarking-algorithm",
+      "description": "\u57fa\u4e8e\u5085\u91cc\u53f6\u53d8\u6362\u7684\u56fe\u50cf\u81ea\u9002\u5e94\u6c34\u5370\u7b97\u6cd5\u3002\uff08Image watermarking algorithm with Fourier transform.\uff09",
+      "stars": 21,
+      "pushed_at": "2025-12-26T08:49:47Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "",
+      "homepage": ""
+    }
+  ]
+}

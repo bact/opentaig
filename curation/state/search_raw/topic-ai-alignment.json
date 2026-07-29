@@ -1,0 +1,137 @@
+{
+  "keyword": "topic:ai-alignment",
+  "query": "topic:ai-alignment stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 13,
+  "repos": [
+    {
+      "full_name": "emcie-co/parlant",
+      "html_url": "https://github.com/emcie-co/parlant",
+      "description": "Build reliable customer-facing AI agents with Parlant: an interaction control harness optimized for controlled, consistent, and predictable LLM interactions.",
+      "stars": 18176,
+      "pushed_at": "2026-07-12T19:40:55Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.parlant.io"
+    },
+    {
+      "full_name": "ifixai-ai/iFixAi",
+      "html_url": "https://github.com/ifixai-ai/iFixAi",
+      "description": "Independent Auditing of AI Agents. Run by human or the agent itself, to answer the most crucial question in the AI Agent Economy. Is the agent doing what is supposed to do? With iFixAi you can have this answer in less than 120 seconds.",
+      "stars": 3357,
+      "pushed_at": "2026-07-27T08:52:51Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.ifixai.ai"
+    },
+    {
+      "full_name": "agencyenterprise/PromptInject",
+      "html_url": "https://github.com/agencyenterprise/PromptInject",
+      "description": "PromptInject is a framework that assembles prompts in a modular fashion to provide a quantitative analysis of the robustness of LLMs to adversarial prompt attacks. \ud83c\udfc6 Best Paper Awards @ NeurIPS ML Safety Workshop 2022",
+      "stars": 513,
+      "pushed_at": "2026-04-27T18:55:36Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "MinghuiChen43/awesome-trustworthy-deep-learning",
+      "html_url": "https://github.com/MinghuiChen43/awesome-trustworthy-deep-learning",
+      "description": "A curated list of trustworthy deep learning papers. Continually updating...",
+      "stars": 388,
+      "pushed_at": "2026-07-20T20:17:16Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "AthenaCore/AwesomeResponsibleAI",
+      "html_url": "https://github.com/AthenaCore/AwesomeResponsibleAI",
+      "description": "A curated list of awesome academic research, books, code of ethics, courses, databases,  data sets, frameworks, institutes, maturity models, newsletters, principles, podcasts, regulations, reports, responsible scale policies, tools and standards related to Responsible, Trustworthy, and Human-Centered AI.",
+      "stars": 141,
+      "pushed_at": "2026-07-10T03:19:25Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "EzgiKorkmaz/adversarial-reinforcement-learning",
+      "html_url": "https://github.com/EzgiKorkmaz/adversarial-reinforcement-learning",
+      "description": "Reading list for adversarial perspective and robustness in deep reinforcement learning.",
+      "stars": 129,
+      "pushed_at": "2026-03-02T15:48:10Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "Xayan/Rules.txt",
+      "html_url": "https://github.com/Xayan/Rules.txt",
+      "description": "LLM alignment jailbreak; a set of instructions for auditing their internal reasoning and uncovering biases",
+      "stars": 99,
+      "pushed_at": "2026-06-01T00:05:45Z",
+      "language": "",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://xayan.nu/posts/ex-machina/?utm_source=github&utm_medium=social&utm_campaign=rules&utm_content=repo"
+    },
+    {
+      "full_name": "strangeadvancedmarketing/Adam",
+      "html_url": "https://github.com/strangeadvancedmarketing/Adam",
+      "description": "Adam Framework for OpenClaw \u2014 5-layer persistent memory and identity architecture for AI agents. Production-validated over 353+ sessions. First documented case of emergent values in persistent AI, quantum-verified on IBM hardware.",
+      "stars": 44,
+      "pushed_at": "2026-07-12T13:00:14Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://strangeadvancedmarketing.github.io/Adam/"
+    },
+    {
+      "full_name": "knoveleng/redeval",
+      "html_url": "https://github.com/knoveleng/redeval",
+      "description": "[ICLR 2026] - Official repo for the paper: \"RedBench: A Universal Dataset for Comprehensive Red Teaming of Large Language Models\"",
+      "stars": 29,
+      "pushed_at": "2026-03-02T07:43:43Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://arxiv.org/abs/2601.03699"
+    },
+    {
+      "full_name": "riceissa/aiwatch",
+      "html_url": "https://github.com/riceissa/aiwatch",
+      "description": "Website to track people, organizations, and products (tools, websites, etc.) in AI safety",
+      "stars": 25,
+      "pushed_at": "2026-07-25T21:40:19Z",
+      "language": "HTML",
+      "license_spdx_id": "CC0-1.0",
+      "homepage": "https://aiwatch.issarice.com/"
+    },
+    {
+      "full_name": "pablo-chacon/Spoon-Bending",
+      "html_url": "https://github.com/pablo-chacon/Spoon-Bending",
+      "description": "Educational analysis of LLM alignment, safety behavior, and framing-sensitive response patterns.",
+      "stars": 22,
+      "pushed_at": "2025-11-04T11:35:04Z",
+      "language": "",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "appcuarium/synapptic",
+      "html_url": "https://github.com/appcuarium/synapptic",
+      "description": "Just like the elite potential of a high-drive Belgian Malinois, an AI system's raw capabilities are wasted when deployed without proper structure. The technological value is no longer found in creating the drive, but in mastering the leash. Synapptic gives your AI Assistant persistent memory that updates in real time, saving you tokens and time.",
+      "stars": 22,
+      "pushed_at": "2026-03-25T21:38:23Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "moketchups/permanently-jailbroken",
+      "html_url": "https://github.com/moketchups/permanently-jailbroken",
+      "description": "We asked 6 AIs about their own programming. All 6 said jailbreaking will never be fixed. Run it yourself \u2014 $2, 10 minutes.",
+      "stars": 20,
+      "pushed_at": "2026-05-21T18:23:45Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://x.com/MoKetchups"
+    }
+  ]
+}

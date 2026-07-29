@@ -1,0 +1,607 @@
+{
+  "keyword": "topic:responsible-ai",
+  "query": "topic:responsible-ai stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 60,
+  "repos": [
+    {
+      "full_name": "EthicalML/awesome-production-machine-learning",
+      "html_url": "https://github.com/EthicalML/awesome-production-machine-learning",
+      "description": "A curated list of awesome open source libraries to deploy, monitor, version and scale your machine learning",
+      "stars": 20808,
+      "pushed_at": "2026-07-28T15:04:15Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": "https://ethicalml.github.io/awesome-production-machine-learning"
+    },
+    {
+      "full_name": "Giskard-AI/giskard-oss",
+      "html_url": "https://github.com/Giskard-AI/giskard-oss",
+      "description": "\ud83d\udc22 Open-Source Evaluation & Testing library for LLM Agents",
+      "stars": 5723,
+      "pushed_at": "2026-07-28T16:37:18Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.giskard.ai"
+    },
+    {
+      "full_name": "microsoft/PyRIT",
+      "html_url": "https://github.com/microsoft/PyRIT",
+      "description": "The Python Risk Identification Tool for generative AI (PyRIT) is an open source framework built to empower security professionals and engineers to proactively identify risks in generative AI systems.",
+      "stars": 4203,
+      "pushed_at": "2026-07-28T21:07:28Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://microsoft.github.io/PyRIT/"
+    },
+    {
+      "full_name": "ifixai-ai/iFixAi",
+      "html_url": "https://github.com/ifixai-ai/iFixAi",
+      "description": "Independent Auditing of AI Agents. Run by human or the agent itself, to answer the most crucial question in the AI Agent Economy. Is the agent doing what is supposed to do? With iFixAi you can have this answer in less than 120 seconds.",
+      "stars": 3357,
+      "pushed_at": "2026-07-27T08:52:51Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.ifixai.ai"
+    },
+    {
+      "full_name": "fairlearn/fairlearn",
+      "html_url": "https://github.com/fairlearn/fairlearn",
+      "description": "A Python package to assess and improve fairness of machine learning models.",
+      "stars": 2262,
+      "pushed_at": "2026-07-26T02:58:43Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://fairlearn.org"
+    },
+    {
+      "full_name": "microsoft/responsible-ai-toolbox",
+      "html_url": "https://github.com/microsoft/responsible-ai-toolbox",
+      "description": "Responsible AI Toolbox is a suite of tools providing model and data exploration and assessment user interfaces and libraries that enable a better understanding of AI systems. These interfaces and libraries empower developers and stakeholders of AI systems to develop and monitor AI more responsibly, and take better data-driven actions.",
+      "stars": 1812,
+      "pushed_at": "2026-04-29T18:27:55Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://responsibleaitoolbox.ai/"
+    },
+    {
+      "full_name": "ModelOriented/DALEX",
+      "html_url": "https://github.com/ModelOriented/DALEX",
+      "description": "moDel Agnostic Language for Exploration and eXplanation",
+      "stars": 1483,
+      "pushed_at": "2026-07-15T11:00:33Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://dalex.drwhy.ai"
+    },
+    {
+      "full_name": "chrisliu298/awesome-llm-unlearning",
+      "html_url": "https://github.com/chrisliu298/awesome-llm-unlearning",
+      "description": "A resource repository for machine unlearning in large language models",
+      "stars": 618,
+      "pushed_at": "2026-07-26T00:50:34Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "PacificAI/langtest",
+      "html_url": "https://github.com/PacificAI/langtest",
+      "description": "Deliver safe & effective language models",
+      "stars": 563,
+      "pushed_at": "2026-07-28T13:31:56Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "http://langtest.org/"
+    },
+    {
+      "full_name": "Bria-AI/FIBO",
+      "html_url": "https://github.com/Bria-AI/FIBO",
+      "description": "FIBO is a SOTA, first open-source, JSON-native text-to-image model built for controllable, predictable, and legally safe image generation.",
+      "stars": 328,
+      "pushed_at": "2026-01-07T11:05:08Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://bria.ai"
+    },
+    {
+      "full_name": "microsoft/iq-series",
+      "html_url": "https://github.com/microsoft/iq-series",
+      "description": "The IQ Series is a hands-on learning experience for Microsoft IQ: Microsoft's unified intelligence layer for the enterprise, spanning Foundry IQ, Work IQ, and Fabric IQ. The series includes video episodes, Jupyter notebooks, and Azure deployment templates.",
+      "stars": 327,
+      "pushed_at": "2026-07-21T13:54:03Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://aka.ms/iq-series"
+    },
+    {
+      "full_name": "SantanderAI/gen-fraud-graph",
+      "html_url": "https://github.com/SantanderAI/gen-fraud-graph",
+      "description": "Synthetic fraud graph generator for benchmarking graph-based fraud detection models in financial services.",
+      "stars": 277,
+      "pushed_at": "2026-07-16T12:43:12Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://pypi.org/project/gen-fraud-graph/"
+    },
+    {
+      "full_name": "cvs-health/langfair",
+      "html_url": "https://github.com/cvs-health/langfair",
+      "description": "LangFair is a Python library for conducting use-case level LLM bias and fairness assessments",
+      "stars": 260,
+      "pushed_at": "2026-06-29T20:15:23Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://cvs-health.github.io/langfair/"
+    },
+    {
+      "full_name": "natnew/Awesome-Data-Science",
+      "html_url": "https://github.com/natnew/Awesome-Data-Science",
+      "description": "Carefully curated list of awesome data science resources.",
+      "stars": 164,
+      "pushed_at": "2026-02-18T11:41:41Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://github.com/natnew.io/Awesome-Data-Science/"
+    },
+    {
+      "full_name": "OrrenDahGhost/simpack-analysis",
+      "html_url": "https://github.com/OrrenDahGhost/simpack-analysis",
+      "description": "Simpack Pro 2.0: AI Investment Intelligence Platform 2026",
+      "stars": 151,
+      "pushed_at": "2026-07-29T00:01:05Z",
+      "language": "HTML",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "AthenaCore/AwesomeResponsibleAI",
+      "html_url": "https://github.com/AthenaCore/AwesomeResponsibleAI",
+      "description": "A curated list of awesome academic research, books, code of ethics, courses, databases,  data sets, frameworks, institutes, maturity models, newsletters, principles, podcasts, regulations, reports, responsible scale policies, tools and standards related to Responsible, Trustworthy, and Human-Centered AI.",
+      "stars": 141,
+      "pushed_at": "2026-07-10T03:19:25Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "open-bias/open-bias",
+      "html_url": "https://github.com/open-bias/open-bias",
+      "description": "Open Source Reliability Harness: Make your agents follow rules. One line of code to\u200e \u200eenforce, trace, and improve. \u200e \u200e",
+      "stars": 134,
+      "pushed_at": "2026-05-23T05:54:44Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.openbias.dev"
+    },
+    {
+      "full_name": "EzgiKorkmaz/adversarial-reinforcement-learning",
+      "html_url": "https://github.com/EzgiKorkmaz/adversarial-reinforcement-learning",
+      "description": "Reading list for adversarial perspective and robustness in deep reinforcement learning.",
+      "stars": 129,
+      "pushed_at": "2026-03-02T15:48:10Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "SantanderAI/autoguardrails",
+      "html_url": "https://github.com/SantanderAI/autoguardrails",
+      "description": "Alignment-research scaffold (autoresearch-style) for LLM guardrails: search over a single policy.md surface",
+      "stars": 126,
+      "pushed_at": "2026-07-16T09:22:38Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/SantanderAI"
+    },
+    {
+      "full_name": "holistic-ai/holisticai",
+      "html_url": "https://github.com/holistic-ai/holisticai",
+      "description": "This is an open-source tool to assess and improve the trustworthiness of AI systems.",
+      "stars": 112,
+      "pushed_at": "2026-01-26T16:16:52Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://holisticai.readthedocs.io/en/latest/index.html"
+    },
+    {
+      "full_name": "kesslernity/awesome-copilot-chat-agents",
+      "html_url": "https://github.com/kesslernity/awesome-copilot-chat-agents",
+      "description": "82 ready-to-deploy Microsoft Copilot Chat agents \u2014 paste the instruction block into Copilot Studio and you're live. Writing, HR, PM, IT ops, Sales, Finance, Engineering & more. RAI reviewed, source-quality labelled, tested. No coding required.",
+      "stars": 89,
+      "pushed_at": "2026-06-29T10:32:58Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": "https://kesslernity.com"
+    },
+    {
+      "full_name": "AnthonyXu109/FairPrivacySignal",
+      "html_url": "https://github.com/AnthonyXu109/FairPrivacySignal",
+      "description": "Synthetic benchmark for privacy-preserving and fairness-aware ranking under signal loss",
+      "stars": 89,
+      "pushed_at": "2026-07-06T06:55:06Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://doi.org/10.5281/zenodo.20130952"
+    },
+    {
+      "full_name": "GenAI-Gurus/awesome-eu-ai-act",
+      "html_url": "https://github.com/GenAI-Gurus/awesome-eu-ai-act",
+      "description": "Curated tools, official sources, OSS, templates, and guides for EU AI Act compliance.",
+      "stars": 78,
+      "pushed_at": "2026-06-27T21:53:22Z",
+      "language": "",
+      "license_spdx_id": "CC0-1.0",
+      "homepage": "https://github.com/GenAI-Gurus/awesome-eu-ai-act#readme"
+    },
+    {
+      "full_name": "SantanderAI/mech-gov-framework",
+      "html_url": "https://github.com/SantanderAI/mech-gov-framework",
+      "description": "Mechanical Governance for LLM Decisions \u2014 model-agnostic governance regimes (R1/R2/R3), hard gates, entropy commit-reveal and governance metrics for high-stakes LLM decision systems.",
+      "stars": 76,
+      "pushed_at": "2026-07-15T08:33:54Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/SantanderAI"
+    },
+    {
+      "full_name": "jwalsh/aif-c01",
+      "html_url": "https://github.com/jwalsh/aif-c01",
+      "description": "AWS Certified AI Practitioner (AIF-C01) exam preparation",
+      "stars": 70,
+      "pushed_at": "2026-06-21T22:41:27Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "getaxonflow/axonflow",
+      "html_url": "https://github.com/getaxonflow/axonflow",
+      "description": "AxonFlow: Runtime control layer for production AI",
+      "stars": 70,
+      "pushed_at": "2026-07-27T21:15:28Z",
+      "language": "Go",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://docs.getaxonflow.com"
+    },
+    {
+      "full_name": "SantanderAI/ralph-vault-skill",
+      "html_url": "https://github.com/SantanderAI/ralph-vault-skill",
+      "description": "Skill to generate the knowledge vault for projects using the Ralph loop",
+      "stars": 69,
+      "pushed_at": "2026-07-15T08:34:03Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/SantanderAI"
+    },
+    {
+      "full_name": "IBM/inFairness",
+      "html_url": "https://github.com/IBM/inFairness",
+      "description": "PyTorch package to train and audit ML models for Individual Fairness",
+      "stars": 68,
+      "pushed_at": "2025-09-17T23:06:08Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://ibm.github.io/inFairness"
+    },
+    {
+      "full_name": "JGalego/awesome-safety-critical-ai",
+      "html_url": "https://github.com/JGalego/awesome-safety-critical-ai",
+      "description": "When the stakes are high, intelligence is only half the equation - reliability is the other \u26a0\ufe0f",
+      "stars": 64,
+      "pushed_at": "2026-07-01T02:44:56Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://awesome.critical-ai.dev"
+    },
+    {
+      "full_name": "sebuzdugan/frai",
+      "html_url": "https://github.com/sebuzdugan/frai",
+      "description": "Open-source toolkit for responsible AI: CLI + SDK to scan code, collect evidence, and generate model cards, risk files, evals, and RAG indexes.",
+      "stars": 52,
+      "pushed_at": "2026-04-25T14:17:23Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://frai.cc/"
+    },
+    {
+      "full_name": "IBM/responsible-prompting-api",
+      "html_url": "https://github.com/IBM/responsible-prompting-api",
+      "description": "Responsible Prompting is an LLM-agnostic tool that aims at dynamically supporting users in crafting prompts that embed responsible intentions and help avoid harmful, adversarial prompts.",
+      "stars": 49,
+      "pushed_at": "2026-01-26T19:41:06Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "robertfels/iso-42001-aims-links-and-resources",
+      "html_url": "https://github.com/robertfels/iso-42001-aims-links-and-resources",
+      "description": "ISO 42001 AIMS Links & Resources / Contact: https://www.linkedin.com/in/robertfels/",
+      "stars": 46,
+      "pushed_at": "2025-10-29T10:00:03Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.linkedin.com/groups/15696009/"
+    },
+    {
+      "full_name": "Bria-AI/Fibo-Edit",
+      "html_url": "https://github.com/Bria-AI/Fibo-Edit",
+      "description": "FIBO-Edit brings the power of structured prompt generation to image editing",
+      "stars": 44,
+      "pushed_at": "2026-01-29T12:07:34Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://bria.ai"
+    },
+    {
+      "full_name": "CollieAi/llm-firewall",
+      "html_url": "https://github.com/CollieAi/llm-firewall",
+      "description": "AI Firewall & LLM security toolkit - protect your AI applications from prompt injection, jailbreaks, PII leakage, and adversarial attacks",
+      "stars": 43,
+      "pushed_at": "2026-07-27T09:47:50Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": "https://collieai.io"
+    },
+    {
+      "full_name": "huka81/decision-intelligence-runtime",
+      "html_url": "https://github.com/huka81/decision-intelligence-runtime",
+      "description": "The first open-source implementation blueprint for Intelligent AI Delegation. A deterministic runtime (DIR) and architecture for Responsibility-Oriented Agents (ROA) to bridge the gap between LLM reasoning and safe, auditable production execution.",
+      "stars": 43,
+      "pushed_at": "2026-07-21T14:36:45Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://huka81.github.io/decision-intelligence-runtime/"
+    },
+    {
+      "full_name": "peremartra/optipfair",
+      "html_url": "https://github.com/peremartra/optipfair",
+      "description": "Structured pruning, knowledge distillation, and fairness analysis for Large Language Models.",
+      "stars": 41,
+      "pushed_at": "2026-07-13T11:58:15Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://peremartra.github.io/optipfair/"
+    },
+    {
+      "full_name": "SantanderAI/auto-bayesian",
+      "html_url": "https://github.com/SantanderAI/auto-bayesian",
+      "description": "Config-driven, interpretable Bayesian network training for relational tabular data.",
+      "stars": 40,
+      "pushed_at": "2026-07-10T10:23:10Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "yakew7/Fair-Code",
+      "html_url": "https://github.com/yakew7/Fair-Code",
+      "description": "Auditing algorithmic bias in criminal justice, hiring, lending, healthcare, and welfare: 6 open-source audits, measurable fairness gaps, and concrete fixes.",
+      "stars": 40,
+      "pushed_at": "2026-07-28T17:05:48Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://thefaircode.xyz"
+    },
+    {
+      "full_name": "SantanderAI/causal-perception-implementation",
+      "html_url": "https://github.com/SantanderAI/causal-perception-implementation",
+      "description": "Machine learning research code for causal perception: comparing competing structural causal models (SCMs) via interventional and counterfactual distributions, applied to fair credit decisions. Open source by Santander AI Lab.",
+      "stars": 39,
+      "pushed_at": "2026-07-15T08:33:38Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/SantanderAI"
+    },
+    {
+      "full_name": "IIIDman/fairlens",
+      "html_url": "https://github.com/IIIDman/fairlens",
+      "description": "Lightweight ML bias detection toolkit",
+      "stars": 35,
+      "pushed_at": "2026-02-25T14:40:45Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "aws-samples/responsible_ai_reduce_hallucinations_for_genai_apps",
+      "html_url": "https://github.com/aws-samples/responsible_ai_reduce_hallucinations_for_genai_apps",
+      "description": "Python labs demonstrating various techniques for reducing hallucinations in apps using large language models",
+      "stars": 33,
+      "pushed_at": "2026-06-27T00:51:36Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT-0",
+      "homepage": ""
+    },
+    {
+      "full_name": "TetiAI/lucid",
+      "html_url": "https://github.com/TetiAI/lucid",
+      "description": "AI makes users productive \u2014 but also cognitively lazy. Lucid detects cognitive dependency in real-time and adapts AI responses to keep users thinking. Drop-in SDK: zero latency, any LLM provider, research-backed.",
+      "stars": 32,
+      "pushed_at": "2026-07-06T17:20:36Z",
+      "language": "TypeScript",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": "https://teti.ai/hub/lucid"
+    },
+    {
+      "full_name": "Agentic-AI-Coach/AgenticAICoach",
+      "html_url": "https://github.com/Agentic-AI-Coach/AgenticAICoach",
+      "description": "Developing Coaching Agents for AI Entrepreneurship",
+      "stars": 31,
+      "pushed_at": "2026-03-01T08:31:50Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "encypherai/encypher-ai",
+      "html_url": "https://github.com/encypherai/encypher-ai",
+      "description": "Metadata encoding and extraction for AI-generated content",
+      "stars": 31,
+      "pushed_at": "2026-05-04T17:28:01Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://encypherai.com"
+    },
+    {
+      "full_name": "andreaswasita/copilot-cowork-dojo",
+      "html_url": "https://github.com/andreaswasita/copilot-cowork-dojo",
+      "description": "A skills & discipline framework for Microsoft 365 Copilot Cowork \u2014 for knowledge workers using AI as a coworker.",
+      "stars": 30,
+      "pushed_at": "2026-06-15T05:41:34Z",
+      "language": "PowerShell",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "AmirhosseinHonardoust/Algorithmic-Empath-Human-Fallibility",
+      "html_url": "https://github.com/AmirhosseinHonardoust/Algorithmic-Empath-Human-Fallibility",
+      "description": "A deep exploration of Algorithmic Empathy, the next frontier in AI understanding. This project examines how machines can learn from human fallibility, model disagreement, and align with moral reasoning. It blends psychology, fairness metrics, interpretability, and co-learning design into one framework for humane intelligence.",
+      "stars": 29,
+      "pushed_at": "2025-11-05T06:39:35Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "dyneth02/Air-Quality-Trends-Analysis-Project",
+      "html_url": "https://github.com/dyneth02/Air-Quality-Trends-Analysis-Project",
+      "description": "Full-stack air quality analytics platform built with FastAPI, React, and MySQL. Aggregates multi-source PM2.5/PM10 data, performs multi-city comparison and time-series forecasting (SARIMAX), and integrates an LLM-based planning agent with tiered access, secure APIs, and PDF reporting.",
+      "stars": 29,
+      "pushed_at": "2026-01-05T08:22:34Z",
+      "language": "JavaScript",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "ORNL/flowcept",
+      "html_url": "https://github.com/ORNL/flowcept",
+      "description": "Runtime provenance for AI and scientific workflows\u2014capture, enrich, and query workflow data via observability adapters and code annotation across edge, cloud, and HPC.",
+      "stars": 29,
+      "pushed_at": "2026-07-20T16:03:55Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "SantanderAI/mutatis-mutandis",
+      "html_url": "https://github.com/SantanderAI/mutatis-mutandis",
+      "description": "Situation testing for discrimination analysis with counterfactual comparators \u2014 research code for the paper 'Mutatis Mutandis: Revisiting the Comparator in Discrimination Testing'",
+      "stars": 26,
+      "pushed_at": "2026-07-15T08:33:58Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/SantanderAI"
+    },
+    {
+      "full_name": "corticalstack/awesome-foundry-nextgen",
+      "html_url": "https://github.com/corticalstack/awesome-foundry-nextgen",
+      "description": "Hands-on labs for Microsoft Foundry - Azure's unified PaaS for enterprise AI. Notebooks + Bicep covering provisioning, agents (incl. hosted Copilot SDK + REST), MCP, Foundry IQ knowledge bases, guardrails, red-teaming, and fine-tuning.",
+      "stars": 25,
+      "pushed_at": "2026-06-10T10:04:06Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "amazon-science/TurboFuzzLLM",
+      "html_url": "https://github.com/amazon-science/TurboFuzzLLM",
+      "description": "TurboFuzzLLM: Turbocharging Mutation-based Fuzzing for Effectively Jailbreaking Large Language Models in Practice",
+      "stars": 24,
+      "pushed_at": "2025-11-24T18:41:17Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://arxiv.org/abs/2502.18504"
+    },
+    {
+      "full_name": "wearepal/EthicML",
+      "html_url": "https://github.com/wearepal/EthicML",
+      "description": "Package for evaluating the performance of methods which aim to increase fairness, accountability and/or transparency",
+      "stars": 24,
+      "pushed_at": "2026-04-05T22:37:36Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://wearepal.ai/EthicML/"
+    },
+    {
+      "full_name": "leestott/foundry-cicd",
+      "html_url": "https://github.com/leestott/foundry-cicd",
+      "description": "Enterprise-ready CI/CD reference for Microsoft Foundry AI agents, with parallel GitHub Actions and Azure DevOps pipelines, evaluation-driven quality gates, and controlled promotion across Dev, Test, and Production.",
+      "stars": 23,
+      "pushed_at": "2026-05-22T09:01:14Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "microsoft/Build26-LAB540-observe-optimize-and-protect-your-hosted-agents-in-microsoft-foundry",
+      "html_url": "https://github.com/microsoft/Build26-LAB540-observe-optimize-and-protect-your-hosted-agents-in-microsoft-foundry",
+      "description": "Workshop : Observe, optimize and protect your hosted agents in Microsoft Foundry",
+      "stars": 23,
+      "pushed_at": "2026-06-30T22:58:03Z",
+      "language": "Bicep",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "aws-samples/sample-aiml-security-assessment",
+      "html_url": "https://github.com/aws-samples/sample-aiml-security-assessment",
+      "description": "AI/ML and Generative AI Security Assessment Framework for AWS. Automatically audit Amazon Bedrock and SageMaker & AgentCore workloads for security best practices",
+      "stars": 22,
+      "pushed_at": "2026-07-22T13:40:42Z",
+      "language": "HTML",
+      "license_spdx_id": "MIT-0",
+      "homepage": "https://aws-samples.github.io/sample-aiml-security-assessment/"
+    },
+    {
+      "full_name": "agentrust-io/awesome-ai-governance",
+      "html_url": "https://github.com/agentrust-io/awesome-ai-governance",
+      "description": "\ud83d\udee1\ufe0f A curated list of tools, frameworks, standards, and resources for AI agent governance, safety, and compliance",
+      "stars": 20,
+      "pushed_at": "2026-07-29T00:19:23Z",
+      "language": "Shell",
+      "license_spdx_id": "CC0-1.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "AmirhosseinHonardoust/Measuring-The-Soul-of-Data",
+      "html_url": "https://github.com/AmirhosseinHonardoust/Measuring-The-Soul-of-Data",
+      "description": "A narrative and technical exploration of data authenticity through the four pillars of synthetic data realism, Fidelity, Coverage, Privacy, and Utility. This thought-leadership piece combines storytelling, mathematics, and code to explain how these metrics define the ethical and functional \u201csoul\u201d of data in AI systems.",
+      "stars": 20,
+      "pushed_at": "2025-11-14T08:05:10Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "MarcelRobeer/explabox",
+      "html_url": "https://github.com/MarcelRobeer/explabox",
+      "description": "Explore/examine/explain/expose your model with the explabox!",
+      "stars": 20,
+      "pushed_at": "2025-10-14T11:32:20Z",
+      "language": "Python",
+      "license_spdx_id": "LGPL-3.0",
+      "homepage": "https://explabox.readthedocs.io"
+    },
+    {
+      "full_name": "AmirhosseinHonardoust/Cognitivelens-AI-Human-Comparison",
+      "html_url": "https://github.com/AmirhosseinHonardoust/Cognitivelens-AI-Human-Comparison",
+      "description": "CognitiveLens is a Streamlit-powered analytics tool for exploring alignment between human and AI decisions. It visualizes fairness, calibration, and interpretability through metrics like Cohen\u2019s \u03ba, AUC, and Brier score. Designed for ethical AI, bias auditing, and decision transparency in machine learning systems.",
+      "stars": 20,
+      "pushed_at": "2025-11-05T06:21:44Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "AmirhosseinHonardoust/Shap-Mini",
+      "html_url": "https://github.com/AmirhosseinHonardoust/Shap-Mini",
+      "description": "A minimal, reproducible explainable-AI demo using SHAP values on tabular data. Trains RandomForest or LogisticRegression models, computes global and local feature importances, and visualizes results through summary and dependence plots, all in under 100 lines of Python.",
+      "stars": 20,
+      "pushed_at": "2025-11-09T15:05:22Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}

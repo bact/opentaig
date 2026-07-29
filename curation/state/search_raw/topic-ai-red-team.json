@@ -1,0 +1,157 @@
+{
+  "keyword": "topic:ai-red-team",
+  "query": "topic:ai-red-team stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 15,
+  "repos": [
+    {
+      "full_name": "Giskard-AI/giskard-oss",
+      "html_url": "https://github.com/Giskard-AI/giskard-oss",
+      "description": "\ud83d\udc22 Open-Source Evaluation & Testing library for LLM Agents",
+      "stars": 5723,
+      "pushed_at": "2026-07-28T16:37:18Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.giskard.ai"
+    },
+    {
+      "full_name": "microsoft/PyRIT",
+      "html_url": "https://github.com/microsoft/PyRIT",
+      "description": "The Python Risk Identification Tool for generative AI (PyRIT) is an open source framework built to empower security professionals and engineers to proactively identify risks in generative AI systems.",
+      "stars": 4203,
+      "pushed_at": "2026-07-28T21:07:28Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://microsoft.github.io/PyRIT/"
+    },
+    {
+      "full_name": "microsoft/AI-Red-Teaming-Playground-Labs",
+      "html_url": "https://github.com/microsoft/AI-Red-Teaming-Playground-Labs",
+      "description": "AI Red Teaming playground labs to run AI Red Teaming trainings including infrastructure.",
+      "stars": 2024,
+      "pushed_at": "2026-02-13T14:19:16Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "msoedov/agentic_security",
+      "html_url": "https://github.com/msoedov/agentic_security",
+      "description": "Agentic LLM Vulnerability Scanner / AI red teaming kit \ud83e\uddea",
+      "stars": 1944,
+      "pushed_at": "2026-06-23T07:20:13Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://agentic-security.vercel.app"
+    },
+    {
+      "full_name": "cyberark/FuzzyAI",
+      "html_url": "https://github.com/cyberark/FuzzyAI",
+      "description": "A powerful tool for automated LLM fuzzing. It is designed to help developers and security researchers identify and mitigate potential jailbreaks in their LLM APIs.",
+      "stars": 1544,
+      "pushed_at": "2026-02-06T21:59:21Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "mbrg/power-pwn",
+      "html_url": "https://github.com/mbrg/power-pwn",
+      "description": "An offensive/defense security toolset for discovery, recon and ethical assessment of AI Agents",
+      "stars": 1171,
+      "pushed_at": "2025-12-21T15:33:00Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://zenity.io/zenity-security-assessment-hub"
+    },
+    {
+      "full_name": "ASCIT31/Dark-Moon",
+      "html_url": "https://github.com/ASCIT31/Dark-Moon",
+      "description": "Autonomous AI pentesting engine, continuous offensive security across web, cloud, AD & Kubernetes. Agentic reasoning + real exploit execution deliver proof-based vulnerabilities. Privacy gateway: the LLM never sees your real IPs, hosts, creds or paths (deterministic placeholders rehydrated locally), nothing leaves your perimeter.",
+      "stars": 788,
+      "pushed_at": "2026-07-27T07:50:35Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://dark-moon.org/"
+    },
+    {
+      "full_name": "requie/AI-Red-Teaming-Guide",
+      "html_url": "https://github.com/requie/AI-Red-Teaming-Guide",
+      "description": "A comprehensive guide to adversarial testing and security evaluation of AI systems, helping organizations identify vulnerabilities before attackers exploit them.",
+      "stars": 742,
+      "pushed_at": "2026-07-27T04:46:50Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "wearetyomsmnv/Awesome-LLMSecOps",
+      "html_url": "https://github.com/wearetyomsmnv/Awesome-LLMSecOps",
+      "description": "LLM | Agentic | Security | Operations in one github repo with good links and pictures.",
+      "stars": 146,
+      "pushed_at": "2026-07-23T21:50:59Z",
+      "language": "HTML",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "ErdemOzgen/RedAiRange",
+      "html_url": "https://github.com/ErdemOzgen/RedAiRange",
+      "description": "A professional AI security range for red teaming, vulnerability research, defensive validation, and hands-on AI/ML security training.",
+      "stars": 130,
+      "pushed_at": "2026-07-01T22:02:40Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "DmitrL-dev/AISecurity",
+      "html_url": "https://github.com/DmitrL-dev/AISecurity",
+      "description": "AI Security Platform: Defense (61 Rust engines + Micro-Model Swarm) + Offense (39K+ payloads)",
+      "stars": 107,
+      "pushed_at": "2026-07-28T02:43:52Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "Soham7-dev/AspGoat",
+      "html_url": "https://github.com/Soham7-dev/AspGoat",
+      "description": "AspGoat is an intentionally vulnerable ASP.NET Core application for learning and practicing web application security.",
+      "stars": 106,
+      "pushed_at": "2025-10-29T04:29:20Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://owasp.org/www-project-aspgoat/"
+    },
+    {
+      "full_name": "Stickman230/claude-pentest",
+      "html_url": "https://github.com/Stickman230/claude-pentest",
+      "description": "An open source plugin for enabeling claude to gain offensive pentesting capabilities",
+      "stars": 80,
+      "pushed_at": "2026-06-08T22:16:37Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Cogensec/Gideon",
+      "html_url": "https://github.com/Cogensec/Gideon",
+      "description": "Open-Source autonomous security operations and red teaming agent built to help defenders investigate threats, analyze vulnerabilities, assess indicators of compromise, generate hardening guidance, and execute security research through an auditable agent workflow.",
+      "stars": 30,
+      "pushed_at": "2026-06-25T16:55:10Z",
+      "language": "TypeScript",
+      "license_spdx_id": "",
+      "homepage": "http://gideon.cogensec.com"
+    },
+    {
+      "full_name": "Brad-Edwards/aptl",
+      "html_url": "https://github.com/Brad-Edwards/aptl",
+      "description": "SOC-in-a-Box for AI purple teaming",
+      "stars": 20,
+      "pushed_at": "2026-07-29T00:46:03Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}

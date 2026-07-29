@@ -1,0 +1,157 @@
+{
+  "keyword": "topic:fairness-ml",
+  "query": "topic:fairness-ml stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 15,
+  "repos": [
+    {
+      "full_name": "fairlearn/fairlearn",
+      "html_url": "https://github.com/fairlearn/fairlearn",
+      "description": "A Python package to assess and improve fairness of machine learning models.",
+      "stars": 2262,
+      "pushed_at": "2026-07-26T02:58:43Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://fairlearn.org"
+    },
+    {
+      "full_name": "microsoft/responsible-ai-toolbox",
+      "html_url": "https://github.com/microsoft/responsible-ai-toolbox",
+      "description": "Responsible AI Toolbox is a suite of tools providing model and data exploration and assessment user interfaces and libraries that enable a better understanding of AI systems. These interfaces and libraries empower developers and stakeholders of AI systems to develop and monitor AI more responsibly, and take better data-driven actions.",
+      "stars": 1812,
+      "pushed_at": "2026-04-29T18:27:55Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://responsibleaitoolbox.ai/"
+    },
+    {
+      "full_name": "ZhiningLiu1998/awesome-imbalanced-learning",
+      "html_url": "https://github.com/ZhiningLiu1998/awesome-imbalanced-learning",
+      "description": "\ud83d\ude0e Everything about class-imbalanced/long-tail learning: papers, codes, frameworks, and libraries | \u6709\u5173\u7c7b\u522b\u4e0d\u5e73\u8861/\u957f\u5c3e\u5b66\u4e60\u7684\u4e00\u5207\uff1a\u8bba\u6587\u3001\u4ee3\u7801\u3001\u6846\u67b6\u4e0e\u5e93",
+      "stars": 1522,
+      "pushed_at": "2026-06-09T23:44:43Z",
+      "language": "",
+      "license_spdx_id": "CC0-1.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "vanderschaarlab/synthcity",
+      "html_url": "https://github.com/vanderschaarlab/synthcity",
+      "description": "A library for generating and evaluating synthetic tabular data for privacy, fairness and data augmentation.",
+      "stars": 672,
+      "pushed_at": "2026-04-21T17:24:15Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.vanderschaar-lab.com/"
+    },
+    {
+      "full_name": "tensorflow/fairness-indicators",
+      "html_url": "https://github.com/tensorflow/fairness-indicators",
+      "description": "Tensorflow's Fairness Evaluation and Visualization Toolkit",
+      "stars": 358,
+      "pushed_at": "2026-07-10T18:37:26Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "cvs-health/langfair",
+      "html_url": "https://github.com/cvs-health/langfair",
+      "description": "LangFair is a Python library for conducting use-case level LLM bias and fairness assessments",
+      "stars": 260,
+      "pushed_at": "2026-06-29T20:15:23Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://cvs-health.github.io/langfair/"
+    },
+    {
+      "full_name": "dccuchile/wefe",
+      "html_url": "https://github.com/dccuchile/wefe",
+      "description": "WEFE: The Word Embeddings Fairness Evaluation Framework. WEFE is a framework that standardizes the bias measurement and mitigation in Word Embeddings models. Please feel welcome to open an issue in case you have any questions or a pull request if you want to contribute to the project!",
+      "stars": 181,
+      "pushed_at": "2025-11-24T17:09:03Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://wefe.readthedocs.io/"
+    },
+    {
+      "full_name": "linkedin/LiFT",
+      "html_url": "https://github.com/linkedin/LiFT",
+      "description": "The LinkedIn Fairness Toolkit (LiFT) is a Scala/Spark library that enables the measurement of fairness in large scale machine learning workflows.",
+      "stars": 173,
+      "pushed_at": "2025-12-19T11:35:55Z",
+      "language": "Scala",
+      "license_spdx_id": "BSD-2-Clause",
+      "homepage": ""
+    },
+    {
+      "full_name": "feedzai/fairgbm",
+      "html_url": "https://github.com/feedzai/fairgbm",
+      "description": "Train Gradient Boosting models that are both high-performance *and* Fair!",
+      "stars": 109,
+      "pushed_at": "2026-07-15T16:27:42Z",
+      "language": "C++",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://arxiv.org/abs/2209.07850"
+    },
+    {
+      "full_name": "ModelOriented/fairmodels",
+      "html_url": "https://github.com/ModelOriented/fairmodels",
+      "description": "Flexible tool for bias detection, visualization, and mitigation",
+      "stars": 85,
+      "pushed_at": "2025-10-31T18:23:14Z",
+      "language": "R",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://fairmodels.drwhy.ai/"
+    },
+    {
+      "full_name": "apple/dnikit",
+      "html_url": "https://github.com/apple/dnikit",
+      "description": "A Python toolkit for analyzing machine learning models and datasets.",
+      "stars": 79,
+      "pushed_at": "2026-07-09T18:21:09Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://apple.github.io/dnikit/"
+    },
+    {
+      "full_name": "kozodoi/fairness",
+      "html_url": "https://github.com/kozodoi/fairness",
+      "description": "\ud83d\udcca R package for computing and visualizing fair ML metrics",
+      "stars": 33,
+      "pushed_at": "2025-12-13T17:58:15Z",
+      "language": "R",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://cran.r-project.org/package=fairness"
+    },
+    {
+      "full_name": "ajsanjoaquin/Shapley_Valuation",
+      "html_url": "https://github.com/ajsanjoaquin/Shapley_Valuation",
+      "description": "PyTorch reimplementation of computing Shapley values via Truncated Monte Carlo sampling from \"What is your data worth? Equitable Valuation of Data\" by Amirata Ghorbani and James Zou [ICML 2019]",
+      "stars": 28,
+      "pushed_at": "2026-06-01T12:27:50Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "wearepal/EthicML",
+      "html_url": "https://github.com/wearepal/EthicML",
+      "description": "Package for evaluating the performance of methods which aim to increase fairness, accountability and/or transparency",
+      "stars": 24,
+      "pushed_at": "2026-04-05T22:37:36Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://wearepal.ai/EthicML/"
+    },
+    {
+      "full_name": "bhavyaghai/WordBias",
+      "html_url": "https://github.com/bhavyaghai/WordBias",
+      "description": "WordBias: Visualizing Intersectional Social biases encoded in Word Embeddings",
+      "stars": 23,
+      "pushed_at": "2025-08-18T09:47:21Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "",
+      "homepage": ""
+    }
+  ]
+}

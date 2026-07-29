@@ -81,21 +81,56 @@ def build_query(keyword: str, min_stars: int, pushed_after: str) -> str:
     return f"{keyword} stars:>{min_stars} pushed:>{pushed_after} archived:false fork:false"
 
 
-def search_repositories(session: requests.Session, query: str, warnings: list) -> list:
-    """One page (up to 100) of GitHub's repository search, sorted by stars.
-    The search endpoint is rate-limited to 30 req/min authenticated -- fine
-    for the handful of keyword queries a single curation run makes."""
-    resp = session.get(
-        f"{GITHUB_API}/search/repositories",
-        params={"q": query, "sort": "stars", "order": "desc", "per_page": 100},
-        timeout=30,
-    )
-    if resp.status_code == 403 and "rate limit" in resp.text.lower():
-        reset = resp.headers.get("X-RateLimit-Reset")
-        warnings.append(f"rate limited on query {query!r}; resets at {reset}")
-        return []
-    resp.raise_for_status()
-    return resp.json().get("items", [])
+def search_repositories(session: requests.Session, query: str, warnings: list,
+                        max_pages: int = 1) -> list:
+    """GitHub repository search, sorted by stars, following pagination up to
+    `max_pages` pages of 100.
+
+    Defaults to a single page to preserve the original behaviour for ordinary
+    free-text keywords, where 100 star-sorted hits is already well past the
+    point of diminishing returns. Raise it (`--max-pages`) for `topic:` tag
+    sweeps, which routinely match several hundred repos -- silently keeping
+    only the top 100 there would make a "total" sweep quietly partial, and
+    the truncation is invisible in the output because `total_count` isn't
+    what gets written out.
+
+    GitHub caps *any* search at 1000 results (10 pages) regardless of
+    `total_count`, so max_pages above 10 buys nothing; a query reporting more
+    than 1000 needs narrowing (extra term, or a higher --min-stars) to be
+    mined exhaustively. That case is recorded as a warning rather than
+    passing silently.
+
+    The search endpoint is rate-limited to 30 req/min authenticated, so
+    paginated sweeps sleep briefly between pages."""
+    items = []
+    for page in range(1, max_pages + 1):
+        resp = session.get(
+            f"{GITHUB_API}/search/repositories",
+            params={"q": query, "sort": "stars", "order": "desc",
+                    "per_page": 100, "page": page},
+            timeout=30,
+        )
+        if resp.status_code == 403 and "rate limit" in resp.text.lower():
+            reset = resp.headers.get("X-RateLimit-Reset")
+            warnings.append(f"rate limited on query {query!r} (page {page}); resets at {reset}")
+            break
+        if resp.status_code == 422:
+            # Past the 1000-result ceiling: GitHub rejects the page rather
+            # than returning an empty list. Not an error, just the end.
+            break
+        resp.raise_for_status()
+        payload = resp.json()
+        batch = payload.get("items", [])
+        items.extend(batch)
+        total = payload.get("total_count", 0)
+        if page == 1 and total > 1000:
+            warnings.append(
+                f"query {query!r} reports {total} results but GitHub caps search at 1000; "
+                f"narrow it (extra term or higher --min-stars) to mine it exhaustively")
+        if len(batch) < 100 or len(items) >= min(total, 1000):
+            break
+        time.sleep(2)  # stay well inside the 30 req/min search limit
+    return items
 
 
 def fetch_readme_text(session: requests.Session, full_name: str, warnings: list) -> str:
@@ -174,6 +209,10 @@ def main() -> None:
     parser.add_argument("--min-stars", type=int, default=DEFAULT_MIN_STARS)
     parser.add_argument("--pushed-after-months", type=int, default=DEFAULT_PUSHED_AFTER_MONTHS)
     parser.add_argument("--min-readme-chars", type=int, default=DEFAULT_MIN_README_CHARS)
+    parser.add_argument("--max-pages", type=int, default=1,
+                        help="pages of 100 results to follow per keyword (default 1). "
+                             "Raise for `topic:` sweeps, which routinely match several "
+                             "hundred repos; GitHub caps any search at 1000 (10 pages).")
     parser.add_argument("--raw-dir", default="curation/state/search_raw")
     parser.add_argument("--out-candidates", default="curation/state/search_candidates.csv")
     parser.add_argument("--log-path", default="curation/state/search_log.csv",
@@ -209,7 +248,7 @@ def main() -> None:
     for keyword in args.keywords:
         query = build_query(keyword, args.min_stars, pushed_after)
         print(f"[search] {query!r}")
-        items = search_repositories(session, query, warnings)
+        items = search_repositories(session, query, warnings, max_pages=args.max_pages)
         rows = [to_row(item) for item in items]
 
         raw_path = raw_dir / f"{slugify(keyword)}.json"

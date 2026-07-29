@@ -1,0 +1,187 @@
+{
+  "keyword": "topic:machine-unlearning",
+  "query": "topic:machine-unlearning stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 18,
+  "repos": [
+    {
+      "full_name": "jjbrophy47/machine_unlearning",
+      "html_url": "https://github.com/jjbrophy47/machine_unlearning",
+      "description": "Existing Literature about Machine Unlearning",
+      "stars": 967,
+      "pushed_at": "2025-08-29T19:19:25Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "tamlhp/awesome-machine-unlearning",
+      "html_url": "https://github.com/tamlhp/awesome-machine-unlearning",
+      "description": "Awesome Machine Unlearning (A Survey of Machine Unlearning)",
+      "stars": 965,
+      "pushed_at": "2026-07-06T01:05:57Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://awesome-machine-unlearning.github.io/"
+    },
+    {
+      "full_name": "chrisliu298/awesome-llm-unlearning",
+      "html_url": "https://github.com/chrisliu298/awesome-llm-unlearning",
+      "description": "A resource repository for machine unlearning in large language models",
+      "stars": 618,
+      "pushed_at": "2026-07-26T00:50:34Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "MinghuiChen43/awesome-trustworthy-deep-learning",
+      "html_url": "https://github.com/MinghuiChen43/awesome-trustworthy-deep-learning",
+      "description": "A curated list of trustworthy deep learning papers. Continually updating...",
+      "stars": 388,
+      "pushed_at": "2026-07-20T20:17:16Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "EnnengYang/Awesome-Forgetting-in-Deep-Learning",
+      "html_url": "https://github.com/EnnengYang/Awesome-Forgetting-in-Deep-Learning",
+      "description": "A Comprehensive Survey of Forgetting in Deep Learning Beyond Continual Learning. TPAMI, 2024.",
+      "stars": 365,
+      "pushed_at": "2026-01-27T02:38:26Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": "https://arxiv.org/abs/2307.09218"
+    },
+    {
+      "full_name": "OPTML-Group/Unlearn-Saliency",
+      "html_url": "https://github.com/OPTML-Group/Unlearn-Saliency",
+      "description": "[ICLR24 (Spotlight)] \"SalUn: Empowering Machine Unlearning via Gradient-based Weight Saliency in Both Image Classification and Generation\" by Chongyu Fan*, Jiancheng Liu*, Yihua Zhang, Eric Wong, Dennis Wei, Sijia Liu",
+      "stars": 150,
+      "pushed_at": "2026-02-28T22:35:34Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.optml-group.com/posts/salun_iclr24"
+    },
+    {
+      "full_name": "gnueaj/Machine-Unlearning-Comparator",
+      "html_url": "https://github.com/gnueaj/Machine-Unlearning-Comparator",
+      "description": "A Visual Analytics System for Comparative Evaluation of Machine Unlearning Methods (TVCG 2026)",
+      "stars": 100,
+      "pushed_at": "2026-07-17T11:39:30Z",
+      "language": "TypeScript",
+      "license_spdx_id": "",
+      "homepage": "https://gnueaj.github.io/Machine-Unlearning-Comparator/"
+    },
+    {
+      "full_name": "OPTML-Group/Unlearn-Sparse",
+      "html_url": "https://github.com/OPTML-Group/Unlearn-Sparse",
+      "description": "[NeurIPS23 (Spotlight)] \"Model Sparsity Can Simplify Machine Unlearning\" by Jinghan Jia*, Jiancheng Liu*, Parikshit Ram, Yuguang Yao, Gaowen Liu, Yang Liu, Pranay Sharma, Sijia Liu",
+      "stars": 89,
+      "pushed_at": "2026-06-28T07:23:15Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "bjzhb666/GS-LoRA",
+      "html_url": "https://github.com/bjzhb666/GS-LoRA",
+      "description": "Practical Continual Forgetting for Pre-trained Vision Models (CVPR 2024; T-PAMI 2026)",
+      "stars": 75,
+      "pushed_at": "2026-01-15T12:39:13Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://arxiv.org/abs/2403.11530"
+    },
+    {
+      "full_name": "hxxdtd/Awesome-Diffusion-Model-Unlearning",
+      "html_url": "https://github.com/hxxdtd/Awesome-Diffusion-Model-Unlearning",
+      "description": "A repository of resources on machine unlearning for diffusion models",
+      "stars": 66,
+      "pushed_at": "2025-10-09T08:26:21Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "TIML-Group/Conformal-Prediction-Unlearning",
+      "html_url": "https://github.com/TIML-Group/Conformal-Prediction-Unlearning",
+      "description": "",
+      "stars": 61,
+      "pushed_at": "2026-05-01T04:13:28Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "TIML-Group/Mode-Connectivity-Unlearning",
+      "html_url": "https://github.com/TIML-Group/Mode-Connectivity-Unlearning",
+      "description": "",
+      "stars": 53,
+      "pushed_at": "2026-05-01T04:09:19Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "zjunlp/unlearn",
+      "html_url": "https://github.com/zjunlp/unlearn",
+      "description": "[ACL 2025] Knowledge Unlearning for Large Language Models",
+      "stars": 49,
+      "pushed_at": "2025-09-18T09:49:17Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "OPTML-Group/Unlearn-Simple",
+      "html_url": "https://github.com/OPTML-Group/Unlearn-Simple",
+      "description": "[NeurIPS25] Official repo for \"Simplicity Prevails: Rethinking Negative Preference Optimization for LLM Unlearning\"",
+      "stars": 45,
+      "pushed_at": "2025-10-03T17:39:54Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "KID-22/LLM-Unlearning-Paper-List",
+      "html_url": "https://github.com/KID-22/LLM-Unlearning-Paper-List",
+      "description": "",
+      "stars": 28,
+      "pushed_at": "2025-12-18T06:01:11Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "OPTML-Group/Unlearn-Trace",
+      "html_url": "https://github.com/OPTML-Group/Unlearn-Trace",
+      "description": "[ICLR26] Unlearning Isn't Invisible: Detecting Unlearning Traces  in LLMs from Model Outputs",
+      "stars": 24,
+      "pushed_at": "2026-04-08T03:24:39Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "aiim-research/ERASURE",
+      "html_url": "https://github.com/aiim-research/ERASURE",
+      "description": "ERASURE: Redefining Privacy Through Selective Machine Unlearning",
+      "stars": 22,
+      "pushed_at": "2026-01-14T07:55:08Z",
+      "language": "Python",
+      "license_spdx_id": "CC0-1.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "OPTML-Group/VLM-Safety-Unlearn",
+      "html_url": "https://github.com/OPTML-Group/VLM-Safety-Unlearn",
+      "description": "[ICLR26] Safety Mirage: How Spurious Correlations Undermine VLM Safety Fine-Tuning and Can Be Mitigated by Machine Unlearning",
+      "stars": 21,
+      "pushed_at": "2026-04-16T21:47:23Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}

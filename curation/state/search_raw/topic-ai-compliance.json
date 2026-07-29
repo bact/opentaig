@@ -1,0 +1,87 @@
+{
+  "keyword": "topic:ai-compliance",
+  "query": "topic:ai-compliance stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 8,
+  "repos": [
+    {
+      "full_name": "verifywise-ai/verifywise",
+      "html_url": "https://github.com/verifywise-ai/verifywise",
+      "description": "Complete AI governance and LLM Evals platform with support for EU AI Act, ISO 42001, NIST AI RMF and 20+ more AI frameworks and regulations. Join our Discord channel: https://discord.com/invite/d3k3E4uEpR",
+      "stars": 322,
+      "pushed_at": "2026-07-28T20:14:45Z",
+      "language": "TypeScript",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://verifywise.ai"
+    },
+    {
+      "full_name": "jagmarques/asqav-sdk",
+      "html_url": "https://github.com/jagmarques/asqav-sdk",
+      "description": "Python and TypeScript SDKs for verifiable evidence of AI agent actions. Signed receipts, policy enforcement, audit trails. Works with LangChain, CrewAI, MCP.",
+      "stars": 249,
+      "pushed_at": "2026-07-28T20:18:03Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://asqav.com"
+    },
+    {
+      "full_name": "mukul975/Privacy-Data-Protection-Skills",
+      "html_url": "https://github.com/mukul975/Privacy-Data-Protection-Skills",
+      "description": "282+ structured privacy & data protection skills for AI agents. GDPR, CCPA, EU AI Act, HIPAA, LGPD, PIPL, DPDP Act.",
+      "stars": 204,
+      "pushed_at": "2026-03-16T20:06:52Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "stephnangue/warden",
+      "html_url": "https://github.com/stephnangue/warden",
+      "description": "The secure gateway connecting AI agents to enterprise systems.",
+      "stars": 139,
+      "pushed_at": "2026-07-28T02:36:36Z",
+      "language": "Go",
+      "license_spdx_id": "MPL-2.0",
+      "homepage": "https://wardengateway.com"
+    },
+    {
+      "full_name": "open-bias/open-bias",
+      "html_url": "https://github.com/open-bias/open-bias",
+      "description": "Open Source Reliability Harness: Make your agents follow rules. One line of code to\u200e \u200eenforce, trace, and improve. \u200e \u200e",
+      "stars": 134,
+      "pushed_at": "2026-05-23T05:54:44Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.openbias.dev"
+    },
+    {
+      "full_name": "GenAI-Gurus/awesome-eu-ai-act",
+      "html_url": "https://github.com/GenAI-Gurus/awesome-eu-ai-act",
+      "description": "Curated tools, official sources, OSS, templates, and guides for EU AI Act compliance.",
+      "stars": 78,
+      "pushed_at": "2026-06-27T21:53:22Z",
+      "language": "",
+      "license_spdx_id": "CC0-1.0",
+      "homepage": "https://github.com/GenAI-Gurus/awesome-eu-ai-act#readme"
+    },
+    {
+      "full_name": "sebuzdugan/frai",
+      "html_url": "https://github.com/sebuzdugan/frai",
+      "description": "Open-source toolkit for responsible AI: CLI + SDK to scan code, collect evidence, and generate model cards, risk files, evals, and RAG indexes.",
+      "stars": 52,
+      "pushed_at": "2026-04-25T14:17:23Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://frai.cc/"
+    },
+    {
+      "full_name": "CorvinLabs/CorvinOS",
+      "html_url": "https://github.com/CorvinLabs/CorvinOS",
+      "description": "Self-hosted agentic OS \u2014 connects Claude Code, Codex or Hermes Agent to Discord, Telegram, WhatsApp, Slack & Email. EU AI Act 2026 & GDPR compliance by architecture.",
+      "stars": 22,
+      "pushed_at": "2026-07-28T23:07:16Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://corvin-labs.com"
+    }
+  ]
+}

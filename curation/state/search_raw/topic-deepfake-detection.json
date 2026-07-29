@@ -1,0 +1,367 @@
+{
+  "keyword": "topic:deepfake-detection",
+  "query": "topic:deepfake-detection stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 36,
+  "repos": [
+    {
+      "full_name": "Daisy-Zhang/Awesome-Deepfakes-Detection",
+      "html_url": "https://github.com/Daisy-Zhang/Awesome-Deepfakes-Detection",
+      "description": "A list of tools, papers and code related to Deepfake Detection.",
+      "stars": 1807,
+      "pushed_at": "2025-09-02T01:56:45Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "flyingby/Awesome-Deepfake-Generation-and-Detection",
+      "html_url": "https://github.com/flyingby/Awesome-Deepfake-Generation-and-Detection",
+      "description": "[CSUR 2026] A Survey on Deepfake Generation and Detection",
+      "stars": 643,
+      "pushed_at": "2026-05-14T12:59:04Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "tomas-gajarsky/facetorch",
+      "html_url": "https://github.com/tomas-gajarsky/facetorch",
+      "description": "Python library for analysing faces using PyTorch",
+      "stars": 611,
+      "pushed_at": "2026-05-01T13:08:24Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "mapooon/SelfBlendedImages",
+      "html_url": "https://github.com/mapooon/SelfBlendedImages",
+      "description": "[CVPR 2022 Oral] Detecting Deepfakes with Self-Blended Images https://arxiv.org/abs/2204.08376",
+      "stars": 271,
+      "pushed_at": "2026-03-13T03:19:59Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "aaronchong888/DeepFake-Detect",
+      "html_url": "https://github.com/aaronchong888/DeepFake-Detect",
+      "description": "Open-source deepfake detection: train your own model with TensorFlow, Keras & EfficientNet",
+      "stars": 160,
+      "pushed_at": "2026-03-19T08:15:25Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://deepfake-detect.com/"
+    },
+    {
+      "full_name": "wolo-wolo/FSFM-CVPR25",
+      "html_url": "https://github.com/wolo-wolo/FSFM-CVPR25",
+      "description": "[--branch main] Face Security Foundation Model via Self-Supervised Facial Representation Learning (CVPR 2025). [--branch FSVFM-extension-R1] FS-VFM extension with scalable face-security visual backbones, Linear Probing, FS-Adapter, and DF40 evaluation support.",
+      "stars": 131,
+      "pushed_at": "2026-06-06T17:41:41Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://fsfm-3c.github.io/"
+    },
+    {
+      "full_name": "sfimediafutures/CLIPping-the-Deception",
+      "html_url": "https://github.com/sfimediafutures/CLIPping-the-Deception",
+      "description": "Code and pre-trained models for our paper \"CLIPping the Deception: Adapting Vision-Language Models for Universal Deepfake Detection\".",
+      "stars": 89,
+      "pushed_at": "2025-12-06T12:32:09Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "lintsinghua/VerifyVision-Pro",
+      "html_url": "https://github.com/lintsinghua/VerifyVision-Pro",
+      "description": "VerifyVision-Pro\u662f\u4e00\u4e2a\u5168\u9762\u7684\u56fe\u50cf\u4f2a\u9020\u7be1\u6539\u68c0\u6d4b\u89e3\u51b3\u65b9\u6848\uff0c\u5229\u7528\u6df1\u5ea6\u5b66\u4e60\uff08deep learning\uff09\u548c\u8ba1\u7b97\u673a\u89c6\u89c9\u6280\u672f\uff08cv\uff09\u7cbe\u786e\u8bc6\u522b\u5404\u7c7b\u56fe\u50cf\u7be1\u6539\uff0c\u5305\u62ecdeepfake\u3001AI\u751f\u6210\u5185\u5bb9\u3001\u62fc\u63a5\u64cd\u4f5c\u548c\u590d\u5236-\u79fb\u52a8\u7be1\u6539\u3002\u57fa\u4e8ePyTorch\u5b9e\u73b0\uff0c\u96c6\u6210\u4e86\u4ece\u6570\u636e\u5904\u7406\u3001\u6a21\u578b\u8bad\u7ec3\u5230\u90e8\u7f72\u7684\u5b8c\u6574\u5de5\u4f5c\u6d41\u7a0b\u3002",
+      "stars": 88,
+      "pushed_at": "2025-09-21T10:41:58Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Faceplugin-ltd/FaceLivenessDetection-Linux",
+      "html_url": "https://github.com/Faceplugin-ltd/FaceLivenessDetection-Linux",
+      "description": "Liveness detection SDK Linux - iBeta level 2 compliant 3D passive liveness detection (face anti spoofing) engine which can detect printed photos, video replay, 3D masks, and deepfake threats",
+      "stars": 86,
+      "pushed_at": "2026-07-24T15:58:44Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://faceplugin.com/face-liveness-detection/"
+    },
+    {
+      "full_name": "rustyneuron01/AI-Generated-Content-Detection",
+      "html_url": "https://github.com/rustyneuron01/AI-Generated-Content-Detection",
+      "description": "Multi-modal AI-generated content detection: image, video, and audio. Benchmarks, training code (DINOv2, DINOv3, ReStraV, BreathNet), and evaluation pipeline for real vs. synthetic classification with calibration-aware metrics.",
+      "stars": 86,
+      "pushed_at": "2026-03-13T07:06:56Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "captainzero93/Protect-Images-from-AI-PixelGuard",
+      "html_url": "https://github.com/captainzero93/Protect-Images-from-AI-PixelGuard",
+      "description": "PixelGuard protects images from AI scraping and unauthorized use in AI training, such as facial recognition models or style transfer algorithms. It employs multiple invisible protection techniques that mostly imperceptible to the eye but can interfere with AI processing.",
+      "stars": 75,
+      "pushed_at": "2025-12-04T14:51:47Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "VeridisQuo-orga/VeridisQuo",
+      "html_url": "https://github.com/VeridisQuo-orga/VeridisQuo",
+      "description": "Model and application for deepfake detection using a hybrid approach (spatial + frequency-based)",
+      "stars": 61,
+      "pushed_at": "2026-01-08T20:00:31Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://huggingface.co/spaces/Gazeux33/veridisquo-deepfake-detection"
+    },
+    {
+      "full_name": "enguard-ai/awesome-ai-guardrails",
+      "html_url": "https://github.com/enguard-ai/awesome-ai-guardrails",
+      "description": "A curated list of materials on AI guardrails",
+      "stars": 61,
+      "pushed_at": "2026-06-22T07:39:25Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://huggingface.co/collections/enguard/"
+    },
+    {
+      "full_name": "OpenRL-Lab/DeepFakeFace",
+      "html_url": "https://github.com/OpenRL-Lab/DeepFakeFace",
+      "description": "DeepFake Face Datasets. Code accompanying the paper \"Robustness and Generalizability of Deepfake Detection: A Study with Diffusion Models\".",
+      "stars": 58,
+      "pushed_at": "2026-06-22T03:50:08Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://huggingface.co/datasets/OpenRL/DeepFakeFace"
+    },
+    {
+      "full_name": "ilyasakkus/deepfake-live-for-macos",
+      "html_url": "https://github.com/ilyasakkus/deepfake-live-for-macos",
+      "description": "If you wanna swap any face on your webcam live face withOBS studio, you can use this repo on MacOS. Easy setup with Python3",
+      "stars": 58,
+      "pushed_at": "2026-06-27T12:21:41Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "ChristianInterno/ReStraV",
+      "html_url": "https://github.com/ChristianInterno/ReStraV",
+      "description": "AI-Generated Video Detection via Perceptual Straightening (NeurIPS2025)",
+      "stars": 53,
+      "pushed_at": "2026-04-23T10:31:33Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://neurips.cc/virtual/2025/loc/san-diego/poster/118520"
+    },
+    {
+      "full_name": "Faceplugin-ltd/Face-Liveness-Detection-SDK",
+      "html_url": "https://github.com/Faceplugin-ltd/Face-Liveness-Detection-SDK",
+      "description": "Face Liveness Detection SDK - iBeta level 2 compliant passive face liveness detection SDK which can detect printed photos, video replay, 3D masks, and deepfake threats",
+      "stars": 52,
+      "pushed_at": "2026-07-24T15:52:57Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": "https://faceplugin.com/face-liveness-detection/"
+    },
+    {
+      "full_name": "Megum1/CO-SPY",
+      "html_url": "https://github.com/Megum1/CO-SPY",
+      "description": "[CVPR'25] CO-SPY: Combining Semantic and Pixel Features to Detect Synthetic Images by AI",
+      "stars": 51,
+      "pushed_at": "2026-05-04T01:29:32Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.cs.purdue.edu/homes/cheng535/"
+    },
+    {
+      "full_name": "l8cv/BusterX",
+      "html_url": "https://github.com/l8cv/BusterX",
+      "description": "BusterX and BusterX++",
+      "stars": 45,
+      "pushed_at": "2026-06-16T04:45:25Z",
+      "language": "Python",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": ""
+    },
+    {
+      "full_name": "Faceplugin-ltd/FaceLivenessDetection-Android",
+      "html_url": "https://github.com/Faceplugin-ltd/FaceLivenessDetection-Android",
+      "description": "Liveness detection SDK  Android - iBeta level 2 compliant 3D passive liveness detection engine which can detect printed photos, video replay, 3D masks, and deepfake threats",
+      "stars": 44,
+      "pushed_at": "2026-07-24T15:52:20Z",
+      "language": "Java",
+      "license_spdx_id": "",
+      "homepage": "https://faceplugin.com/face-liveness-detection/"
+    },
+    {
+      "full_name": "BioID-GmbH/FaceLivenessDetection",
+      "html_url": "https://github.com/BioID-GmbH/FaceLivenessDetection",
+      "description": "Classic BWS: Liveness Detection, Deepfake Detection and PhotoVerify Face Match for KYC",
+      "stars": 43,
+      "pushed_at": "2025-09-10T13:01:58Z",
+      "language": "SCSS",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "mytechnotalent/deepfake-detector",
+      "html_url": "https://github.com/mytechnotalent/deepfake-detector",
+      "description": "Deepfake Detector is an AI/ML model designed to detect AI-generated or manipulated images.",
+      "stars": 36,
+      "pushed_at": "2025-11-26T22:38:47Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "MI-BioLab/AI-GenBench",
+      "html_url": "https://github.com/MI-BioLab/AI-GenBench",
+      "description": "AI-GenBench: A New Ongoing Benchmark for AI-Generated Image Detection",
+      "stars": 36,
+      "pushed_at": "2026-02-02T16:58:56Z",
+      "language": "Python",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": "https://mi-biolab.github.io/aigenbench-website/"
+    },
+    {
+      "full_name": "Mamadou-Keita/VLM-DETECT",
+      "html_url": "https://github.com/Mamadou-Keita/VLM-DETECT",
+      "description": "[ICASSP 2024] The official repo for Harnessing the Power of Large Vision Language Models for Synthetic Image Detection",
+      "stars": 34,
+      "pushed_at": "2025-08-13T13:27:12Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "resemble-ai/detect-skill",
+      "html_url": "https://github.com/resemble-ai/detect-skill",
+      "description": "Agent skill for deepfake detection & media safety \u2014 detect AI-generated audio, images, and video with Resemble AI",
+      "stars": 33,
+      "pushed_at": "2026-06-10T16:56:14Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://resemble.ai"
+    },
+    {
+      "full_name": "zlin0/wedefense",
+      "html_url": "https://github.com/zlin0/wedefense",
+      "description": "WeDefense: A Toolkit to Defend Against Fake Audio",
+      "stars": 33,
+      "pushed_at": "2026-02-20T04:13:09Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://zlin0.github.io/wedefense/"
+    },
+    {
+      "full_name": "TRahulsingh/DeepfakeDetector",
+      "html_url": "https://github.com/TRahulsingh/DeepfakeDetector",
+      "description": "A state-of-the-art, open-source deepfake detection system built with PyTorch and EfficientNet-B0, featuring a user-friendly web interface for real-time image and video analysis.",
+      "stars": 33,
+      "pushed_at": "2026-04-21T17:51:53Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "beenuar/shieldapp-android",
+      "html_url": "https://github.com/beenuar/shieldapp-android",
+      "description": "All-in-one Android security suite \u2014 deepfake detection, antivirus, Tor VPN, breach monitoring, phishing scanner, and 50+ security tools. On-device, no API keys, open source.",
+      "stars": 32,
+      "pushed_at": "2026-03-28T07:27:01Z",
+      "language": "Kotlin",
+      "license_spdx_id": "MIT",
+      "homepage": "https://github.com/beenuar/shieldapp-android/releases/latest"
+    },
+    {
+      "full_name": "bit-ml/dolos",
+      "html_url": "https://github.com/bit-ml/dolos",
+      "description": "Weakly supervised deepfake localization",
+      "stars": 31,
+      "pushed_at": "2025-08-04T07:04:28Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "wuwu-new/Dual-Res-Forensics",
+      "html_url": "https://github.com/wuwu-new/Dual-Res-Forensics",
+      "description": "",
+      "stars": 30,
+      "pushed_at": "2026-05-28T06:31:37Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Yaselley/deepfense-framework",
+      "html_url": "https://github.com/Yaselley/deepfense-framework",
+      "description": "DeepFense: A Unified, Modular, and Extensible Framework for Robust Deepfake Audio Detection",
+      "stars": 27,
+      "pushed_at": "2026-07-11T15:51:25Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://deepfense.github.io/"
+    },
+    {
+      "full_name": "beautyremain/SUR-LID",
+      "html_url": "https://github.com/beautyremain/SUR-LID",
+      "description": "The official code for paper \"Stacking Brick by Brick: Aligned Feature Isolation for Incremental Face Forgery Detection\" (CVPR 2025)",
+      "stars": 27,
+      "pushed_at": "2025-08-15T07:07:29Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "hi-paris/FakeParts",
+      "html_url": "https://github.com/hi-paris/FakeParts",
+      "description": "FakePartsBench: 25K+ AI-generated videos with pixel- and frame-level annotations of full and partial deepfakes.",
+      "stars": 26,
+      "pushed_at": "2026-05-29T08:44:18Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "tamlhp/deepfake-benchmark",
+      "html_url": "https://github.com/tamlhp/deepfake-benchmark",
+      "description": "A War Beyond Deepfake: Benchmarking Facial Counterfeits and Countermeasures",
+      "stars": 22,
+      "pushed_at": "2026-03-02T13:56:36Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "rama0126/PwTF-DVD",
+      "html_url": "https://github.com/rama0126/PwTF-DVD",
+      "description": "Official repository of \"Beyond Spatial Frequency: Pixel-wise Temporal Frequency-based Deepfake Video Detection\" [ICCV 2025]",
+      "stars": 21,
+      "pushed_at": "2026-01-17T11:39:42Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Kartik-3004/facexbench",
+      "html_url": "https://github.com/Kartik-3004/facexbench",
+      "description": "[IEEE T-BIOM] FaceXBench: Evaluating Multimodal LLMs on Face Understanding",
+      "stars": 20,
+      "pushed_at": "2026-01-15T23:52:29Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://kartik-3004.github.io/facexbench/"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "keyword": "topic:privacy-preserving-ml",
+  "query": "topic:privacy-preserving-ml stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 4,
+  "repos": [
+    {
+      "full_name": "EthicalML/awesome-production-machine-learning",
+      "html_url": "https://github.com/EthicalML/awesome-production-machine-learning",
+      "description": "A curated list of awesome open source libraries to deploy, monitor, version and scale your machine learning",
+      "stars": 20808,
+      "pushed_at": "2026-07-28T15:04:15Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": "https://ethicalml.github.io/awesome-production-machine-learning"
+    },
+    {
+      "full_name": "securefederatedai/openfederatedlearning",
+      "html_url": "https://github.com/securefederatedai/openfederatedlearning",
+      "description": "An Open Framework for Federated Learning.",
+      "stars": 842,
+      "pushed_at": "2026-02-21T16:41:42Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://openfl.readthedocs.io"
+    },
+    {
+      "full_name": "AnthonyXu109/FairPrivacySignal",
+      "html_url": "https://github.com/AnthonyXu109/FairPrivacySignal",
+      "description": "Synthetic benchmark for privacy-preserving and fairness-aware ranking under signal loss",
+      "stars": 89,
+      "pushed_at": "2026-07-06T06:55:06Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://doi.org/10.5281/zenodo.20130952"
+    },
+    {
+      "full_name": "UnlikedOne/diffuse",
+      "html_url": "https://github.com/UnlikedOne/diffuse",
+      "description": "Distributed peer-to-peer LLM inference. Your prompt never leaves your device in clear text.",
+      "stars": 26,
+      "pushed_at": "2026-07-22T06:42:42Z",
+      "language": "Rust",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://unlikedone.github.io/diffuse/"
+    }
+  ]
+}

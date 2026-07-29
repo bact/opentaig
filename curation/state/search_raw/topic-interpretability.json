@@ -1,0 +1,1157 @@
+{
+  "keyword": "topic:interpretability",
+  "query": "topic:interpretability stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 115,
+  "repos": [
+    {
+      "full_name": "shap/shap",
+      "html_url": "https://github.com/shap/shap",
+      "description": "A game theoretic approach to explain the output of any machine learning model.",
+      "stars": 25653,
+      "pushed_at": "2026-07-28T16:21:32Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://shap.readthedocs.io"
+    },
+    {
+      "full_name": "EthicalML/awesome-production-machine-learning",
+      "html_url": "https://github.com/EthicalML/awesome-production-machine-learning",
+      "description": "A curated list of awesome open source libraries to deploy, monitor, version and scale your machine learning",
+      "stars": 20808,
+      "pushed_at": "2026-07-28T15:04:15Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": "https://ethicalml.github.io/awesome-production-machine-learning"
+    },
+    {
+      "full_name": "jacobgil/pytorch-grad-cam",
+      "html_url": "https://github.com/jacobgil/pytorch-grad-cam",
+      "description": "Advanced AI Explainability for computer vision.  Support for CNNs, Vision Transformers, Classification, Object detection, Segmentation, Image similarity and more.",
+      "stars": 12936,
+      "pushed_at": "2026-07-10T13:19:18Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://jacobgil.github.io/pytorch-gradcam-book"
+    },
+    {
+      "full_name": "interpretml/interpret",
+      "html_url": "https://github.com/interpretml/interpret",
+      "description": "Fit interpretable models. Explain blackbox machine learning.",
+      "stars": 6905,
+      "pushed_at": "2026-07-27T16:47:16Z",
+      "language": "C++",
+      "license_spdx_id": "MIT",
+      "homepage": "https://interpret.ml/docs"
+    },
+    {
+      "full_name": "meta-pytorch/captum",
+      "html_url": "https://github.com/meta-pytorch/captum",
+      "description": "Model interpretability and understanding for PyTorch",
+      "stars": 5676,
+      "pushed_at": "2026-07-26T13:59:34Z",
+      "language": "Python",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": "https://captum.ai"
+    },
+    {
+      "full_name": "jphall663/awesome-machine-learning-interpretability",
+      "html_url": "https://github.com/jphall663/awesome-machine-learning-interpretability",
+      "description": "A curated list of awesome responsible machine learning resources.",
+      "stars": 4049,
+      "pushed_at": "2026-06-03T15:17:31Z",
+      "language": "",
+      "license_spdx_id": "CC0-1.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "MAIF/shapash",
+      "html_url": "https://github.com/MAIF/shapash",
+      "description": "\ud83d\udd05 Shapash: User-friendly Explainability and Interpretability to Develop Reliable and Transparent Machine Learning Models",
+      "stars": 3252,
+      "pushed_at": "2026-07-28T07:42:31Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://maif.github.io/shapash/"
+    },
+    {
+      "full_name": "SeldonIO/alibi",
+      "html_url": "https://github.com/SeldonIO/alibi",
+      "description": "Algorithms for explaining machine learning models",
+      "stars": 2640,
+      "pushed_at": "2025-10-17T13:23:21Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://docs.seldon.io/projects/alibi/en/stable/"
+    },
+    {
+      "full_name": "frgfm/torch-cam",
+      "html_url": "https://github.com/frgfm/torch-cam",
+      "description": "Class activation maps for your PyTorch models (CAM, Grad-CAM, Grad-CAM++, Smooth Grad-CAM++, Score-CAM, SS-CAM, IS-CAM, XGrad-CAM, Layer-CAM)",
+      "stars": 2305,
+      "pushed_at": "2026-07-21T12:58:48Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://frgfm.github.io/torch-cam/"
+    },
+    {
+      "full_name": "microsoft/responsible-ai-toolbox",
+      "html_url": "https://github.com/microsoft/responsible-ai-toolbox",
+      "description": "Responsible AI Toolbox is a suite of tools providing model and data exploration and assessment user interfaces and libraries that enable a better understanding of AI systems. These interfaces and libraries empower developers and stakeholders of AI systems to develop and monitor AI more responsibly, and take better data-driven actions.",
+      "stars": 1812,
+      "pushed_at": "2026-04-29T18:27:55Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://responsibleaitoolbox.ai/"
+    },
+    {
+      "full_name": "wangyongjie-ntu/Awesome-explainable-AI",
+      "html_url": "https://github.com/wangyongjie-ntu/Awesome-explainable-AI",
+      "description": "A  collection of research materials on explainable AI/ML",
+      "stars": 1650,
+      "pushed_at": "2026-03-07T11:27:21Z",
+      "language": "Markdown",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "csinva/imodels",
+      "html_url": "https://github.com/csinva/imodels",
+      "description": "Interpretable ML package \ud83d\udd0d for concise, transparent, and accurate predictive modeling (sklearn-compatible).",
+      "stars": 1601,
+      "pushed_at": "2026-07-25T19:15:05Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://csinva.io/imodels"
+    },
+    {
+      "full_name": "stanfordnlp/pyreft",
+      "html_url": "https://github.com/stanfordnlp/pyreft",
+      "description": "Stanford NLP Python library for Representation Finetuning (ReFT)",
+      "stars": 1574,
+      "pushed_at": "2026-03-05T11:16:52Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://arxiv.org/abs/2404.03592"
+    },
+    {
+      "full_name": "ModelOriented/DALEX",
+      "html_url": "https://github.com/ModelOriented/DALEX",
+      "description": "moDel Agnostic Language for Exploration and eXplanation",
+      "stars": 1483,
+      "pushed_at": "2026-07-15T11:00:33Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://dalex.drwhy.ai"
+    },
+    {
+      "full_name": "EthicalML/xai",
+      "html_url": "https://github.com/EthicalML/xai",
+      "description": "XAI - An eXplainability toolbox for machine learning",
+      "stars": 1255,
+      "pushed_at": "2025-11-29T12:57:47Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://ethical.institute/principles.html#commitment-3"
+    },
+    {
+      "full_name": "hijohnnylin/neuronpedia",
+      "html_url": "https://github.com/hijohnnylin/neuronpedia",
+      "description": "open source interpretability platform \ud83e\udde0",
+      "stars": 1089,
+      "pushed_at": "2026-07-17T17:51:01Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://neuronpedia.org"
+    },
+    {
+      "full_name": "ndif-team/nnsight",
+      "html_url": "https://github.com/ndif-team/nnsight",
+      "description": "The nnsight package enables interpreting and manipulating the internals of deep learned models.",
+      "stars": 1005,
+      "pushed_at": "2026-07-28T03:01:59Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://nnsight.net/"
+    },
+    {
+      "full_name": "stanfordnlp/pyvene",
+      "html_url": "https://github.com/stanfordnlp/pyvene",
+      "description": "Stanford NLP Python library for understanding and improving PyTorch models via interventions",
+      "stars": 893,
+      "pushed_at": "2026-03-06T05:39:27Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "http://pyvene.ai"
+    },
+    {
+      "full_name": "mmschlk/shapiq",
+      "html_url": "https://github.com/mmschlk/shapiq",
+      "description": "Shapley Interactions and Shapley Values for Machine Learning",
+      "stars": 762,
+      "pushed_at": "2026-07-28T13:49:32Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://shapiq.readthedocs.io"
+    },
+    {
+      "full_name": "deel-ai/xplique",
+      "html_url": "https://github.com/deel-ai/xplique",
+      "description": "\ud83d\udc4b Xplique is a Neural Networks Explainability Toolbox",
+      "stars": 748,
+      "pushed_at": "2026-07-27T16:42:47Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://deel-ai.github.io/xplique"
+    },
+    {
+      "full_name": "tensorflow/decision-forests",
+      "html_url": "https://github.com/tensorflow/decision-forests",
+      "description": "A collection of state-of-the-art algorithms for the training, serving and interpretation of Decision Forest models in Keras.",
+      "stars": 693,
+      "pushed_at": "2026-05-19T18:11:55Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "understandable-machine-intelligence-lab/Quantus",
+      "html_url": "https://github.com/understandable-machine-intelligence-lab/Quantus",
+      "description": "[JMLR 2023] Quantus is an eXplainable AI toolkit for responsible evaluation of neural network explanations",
+      "stars": 672,
+      "pushed_at": "2026-05-04T10:20:57Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://quantus.readthedocs.io/"
+    },
+    {
+      "full_name": "google/yggdrasil-decision-forests",
+      "html_url": "https://github.com/google/yggdrasil-decision-forests",
+      "description": "A library to train, evaluate, interpret, and productionize decision forest models such as Random Forest and Gradient Boosted Decision Trees.",
+      "stars": 663,
+      "pushed_at": "2026-07-28T14:11:13Z",
+      "language": "C++",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://ydf.readthedocs.io/"
+    },
+    {
+      "full_name": "tensorflow/tcav",
+      "html_url": "https://github.com/tensorflow/tcav",
+      "description": "Code for the TCAV ML interpretability project",
+      "stars": 653,
+      "pushed_at": "2026-07-22T05:37:20Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "ScalaConsultants/Aspect-Based-Sentiment-Analysis",
+      "html_url": "https://github.com/ScalaConsultants/Aspect-Based-Sentiment-Analysis",
+      "description": "\ud83d\udcad Aspect-Based-Sentiment-Analysis: Transformer & Explainable ML (TensorFlow)",
+      "stars": 585,
+      "pushed_at": "2026-05-24T07:58:25Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "BCG-X-Official/facet",
+      "html_url": "https://github.com/BCG-X-Official/facet",
+      "description": "Human-explainable AI.",
+      "stars": 533,
+      "pushed_at": "2026-02-10T14:09:14Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://bcg-x-official.github.io/facet"
+    },
+    {
+      "full_name": "inseq-team/inseq",
+      "html_url": "https://github.com/inseq-team/inseq",
+      "description": "Interpretability for sequence generation models \ud83d\udc1b \ud83d\udd0d",
+      "stars": 472,
+      "pushed_at": "2026-04-25T15:29:40Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://inseq.org"
+    },
+    {
+      "full_name": "explainX/explainx",
+      "html_url": "https://github.com/explainX/explainx",
+      "description": "Explain & debug any blackbox machine learning model with a single line of code.",
+      "stars": 452,
+      "pushed_at": "2026-07-13T17:57:20Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "TuGraph-family/chat2graph",
+      "html_url": "https://github.com/TuGraph-family/chat2graph",
+      "description": "Chat2Graph: Graph Native Agentic System.",
+      "stars": 426,
+      "pushed_at": "2026-03-04T02:27:05Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://chat2graph.vercel.app"
+    },
+    {
+      "full_name": "sergioburdisso/pyss3",
+      "html_url": "https://github.com/sergioburdisso/pyss3",
+      "description": "A Python library for Interpretable Machine Learning in Text Classification using the SS3 model, with easy-to-use visualization tools for Explainable AI :octocat:",
+      "stars": 348,
+      "pushed_at": "2025-10-16T12:51:07Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://pyss3.readthedocs.io"
+    },
+    {
+      "full_name": "rigvedrs/YOLO-26-CAM",
+      "html_url": "https://github.com/rigvedrs/YOLO-26-CAM",
+      "description": "Wanna know what your model sees? Here's a package for applying EigenCAM (like GradCAM) and generating heatmap from the new YOLO models",
+      "stars": 311,
+      "pushed_at": "2026-02-14T22:49:55Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "iancovert/sage",
+      "html_url": "https://github.com/iancovert/sage",
+      "description": "For calculating global feature importance using Shapley values.",
+      "stars": 293,
+      "pushed_at": "2026-07-27T20:28:46Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "chr5tphr/zennit",
+      "html_url": "https://github.com/chr5tphr/zennit",
+      "description": "Zennit is a high-level framework in Python using PyTorch for explaining/exploring neural networks using attribution methods like LRP.",
+      "stars": 247,
+      "pushed_at": "2026-05-13T09:07:15Z",
+      "language": "Python",
+      "license_spdx_id": "LGPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "guidelabs/steerling",
+      "html_url": "https://github.com/guidelabs/steerling",
+      "description": "Interpretable Causal Diffusion Language Models",
+      "stars": 237,
+      "pushed_at": "2026-07-18T05:04:36Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.guidelabs.ai"
+    },
+    {
+      "full_name": "OpenMOSS/Llamascopium",
+      "html_url": "https://github.com/OpenMOSS/Llamascopium",
+      "description": "Performant framework for training, analyzing and visualizing Sparse Autoencoders (SAEs) and their frontier variants.",
+      "stars": 225,
+      "pushed_at": "2026-07-28T12:14:04Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://openmoss.github.io/Llamascopium/"
+    },
+    {
+      "full_name": "ShengcaiLiao/QAConv",
+      "html_url": "https://github.com/ShengcaiLiao/QAConv",
+      "description": "[ECCV 2020] QAConv: Interpretable and Generalizable Person Re-Identification with Query-Adaptive Convolution and Temporal Lifting, and [CVPR 2022] GS: Graph Sampling Based Deep Metric Learning",
+      "stars": 219,
+      "pushed_at": "2026-07-09T09:56:01Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://arxiv.org/abs/1904.10424"
+    },
+    {
+      "full_name": "ninjahawk/Subtext",
+      "html_url": "https://github.com/ninjahawk/Subtext",
+      "description": "To know what models don't say out loud.",
+      "stars": 218,
+      "pushed_at": "2026-07-23T08:43:23Z",
+      "language": "HTML",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "stanfordnlp/axbench",
+      "html_url": "https://github.com/stanfordnlp/axbench",
+      "description": "Stanford NLP Python library for benchmarking the utility of LLM interpretability methods",
+      "stars": 210,
+      "pushed_at": "2026-03-12T19:33:01Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://stanfordnlp.github.io/axbench/"
+    },
+    {
+      "full_name": "Extraltodeus/J-Wash",
+      "html_url": "https://github.com/Extraltodeus/J-Wash",
+      "description": "Jacobian-Brainwash : A manual alignment tool for large language models built on Anthropic's Jacobian Lens. Results are exportable.",
+      "stars": 203,
+      "pushed_at": "2026-07-20T01:42:41Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "jasonjmcghee/livelove",
+      "html_url": "https://github.com/jasonjmcghee/livelove",
+      "description": "Love2D LSP (VS Code / Neovim / Zed / etc.) extension for live coding and live variable tracking",
+      "stars": 199,
+      "pushed_at": "2025-08-12T15:01:39Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "FOR-sight-ai/interpreto",
+      "html_url": "https://github.com/FOR-sight-ai/interpreto",
+      "description": "\ud83e\ude84 Interpreto is an interpretability toolbox for LLMs",
+      "stars": 193,
+      "pushed_at": "2026-07-22T13:55:32Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://for-sight-ai.github.io/interpreto/"
+    },
+    {
+      "full_name": "1ssb/torchkan",
+      "html_url": "https://github.com/1ssb/torchkan",
+      "description": "PyTorch Kolmogorov-Arnold Networks (spline, Legendre, Chebyshev, convolutional) with quantisation, CUDA, and Integrated-Gradients interpretability.",
+      "stars": 190,
+      "pushed_at": "2026-07-13T09:46:19Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://1ssb.github.io/torchkan/"
+    },
+    {
+      "full_name": "JHoelli/Awesome-Time-Series-Explainability",
+      "html_url": "https://github.com/JHoelli/Awesome-Time-Series-Explainability",
+      "description": "A list of (post-hoc) XAI for time series",
+      "stars": 188,
+      "pushed_at": "2026-04-03T18:32:08Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "csinva/imodelsX",
+      "html_url": "https://github.com/csinva/imodelsX",
+      "description": "Interpret text data with LLMs (sklearn compatible).",
+      "stars": 176,
+      "pushed_at": "2026-04-22T13:57:25Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://csinva.io/imodelsX/"
+    },
+    {
+      "full_name": "zjunlp/KnowledgeCircuits",
+      "html_url": "https://github.com/zjunlp/KnowledgeCircuits",
+      "description": "[NeurIPS 2024] Knowledge Circuits  in Pretrained Transformers",
+      "stars": 172,
+      "pushed_at": "2025-11-14T08:58:57Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://zjunlp.github.io/project/knowledgecircuits"
+    },
+    {
+      "full_name": "KempnerInstitute/overcomplete",
+      "html_url": "https://github.com/KempnerInstitute/overcomplete",
+      "description": "\ud83d\udc4b Overcomplete is a Vision-based SAE Toolbox",
+      "stars": 148,
+      "pushed_at": "2025-12-04T14:29:26Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://kempnerinstitute.github.io/overcomplete"
+    },
+    {
+      "full_name": "ajobi-uhc/seer",
+      "html_url": "https://github.com/ajobi-uhc/seer",
+      "description": "This was designed for interp  researchers who want to do research on or with interp agents to give quality of life  improvements and fix some of the annoying things you get from only using Claude code out of the box",
+      "stars": 146,
+      "pushed_at": "2026-02-08T07:50:45Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Trustworthy-ML-Lab/Label-free-CBM",
+      "html_url": "https://github.com/Trustworthy-ML-Lab/Label-free-CBM",
+      "description": "[ICLR 23] A new framework to transform any neural networks into an interpretable concept-bottleneck-model (CBM) without needing labeled concept data",
+      "stars": 146,
+      "pushed_at": "2026-04-07T00:24:28Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "fzi-forschungszentrum-informatik/TSInterpret",
+      "html_url": "https://github.com/fzi-forschungszentrum-informatik/TSInterpret",
+      "description": "An Open-Source Library for the interpretability of time series classifiers",
+      "stars": 142,
+      "pushed_at": "2025-11-19T09:23:59Z",
+      "language": "Python",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": ""
+    },
+    {
+      "full_name": "ZFancy/awesome-activation-engineering",
+      "html_url": "https://github.com/ZFancy/awesome-activation-engineering",
+      "description": "A curated list of resources for activation engineering",
+      "stars": 139,
+      "pushed_at": "2025-10-02T13:54:26Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "ThyrixYang/awesome-artificial-intelligence-research",
+      "html_url": "https://github.com/ThyrixYang/awesome-artificial-intelligence-research",
+      "description": "A curated list of Artificial Intelligence (AI) Research, tracks the cutting edge trending of AI research, including recommender systems, computer vision, machine learning, etc.",
+      "stars": 130,
+      "pushed_at": "2026-07-27T01:33:15Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "ChicagoHAI/hypothesis-generation",
+      "html_url": "https://github.com/ChicagoHAI/hypothesis-generation",
+      "description": "This is the official repository for HypoGeniC (Hypothesis Generation in Context) and HypoRefine, which are automated, data-driven tools that leverage large language models to generate hypothesis for open-domain research. For more details, please see the original paper using the link below.",
+      "stars": 127,
+      "pushed_at": "2025-11-12T04:09:47Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://arxiv.org/abs/2410.17309"
+    },
+    {
+      "full_name": "Julia-XAI/ExplainableAI.jl",
+      "html_url": "https://github.com/Julia-XAI/ExplainableAI.jl",
+      "description": "Explainable AI in Julia.",
+      "stars": 118,
+      "pushed_at": "2026-07-13T20:46:34Z",
+      "language": "Julia",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "KennethEnevoldsen/asent",
+      "html_url": "https://github.com/KennethEnevoldsen/asent",
+      "description": "Asent is a python library for performing efficient and transparent sentiment analysis using spaCy.",
+      "stars": 116,
+      "pushed_at": "2025-10-20T08:16:50Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://kennethenevoldsen.github.io/asent/"
+    },
+    {
+      "full_name": "dreadnode/agent-lens",
+      "html_url": "https://github.com/dreadnode/agent-lens",
+      "description": "Agent observability and replay tooling for AI safety & interpretability research.",
+      "stars": 109,
+      "pushed_at": "2026-06-19T01:05:54Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://dreadnode.github.io/agent-lens/"
+    },
+    {
+      "full_name": "taco-group/DecAlign",
+      "html_url": "https://github.com/taco-group/DecAlign",
+      "description": "[ICLR 2026] DecAlign: Aligning Cross-Modal Semantics for Multimodal Foundation Models",
+      "stars": 108,
+      "pushed_at": "2026-07-02T03:15:05Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://taco-group.github.io/DecAlign/"
+    },
+    {
+      "full_name": "ModelOriented/treeshap",
+      "html_url": "https://github.com/ModelOriented/treeshap",
+      "description": "Compute SHAP values for your tree-based models using the TreeSHAP algorithm",
+      "stars": 101,
+      "pushed_at": "2026-05-13T17:16:17Z",
+      "language": "R",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://modeloriented.github.io/treeshap/"
+    },
+    {
+      "full_name": "rmovva/HypotheSAEs",
+      "html_url": "https://github.com/rmovva/HypotheSAEs",
+      "description": "HypotheSAEs: hypothesizing interpretable relationships in text datasets using sparse autoencoders. https://arxiv.org/abs/2502.04382",
+      "stars": 92,
+      "pushed_at": "2026-07-24T00:08:27Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://hypothesaes.org"
+    },
+    {
+      "full_name": "mateoespinosa/cem",
+      "html_url": "https://github.com/mateoespinosa/cem",
+      "description": "Repository for our NeurIPS 2022 paper \"Concept Embedding Models\", our NeurIPS 2023 paper \"Learning to Receive Help\", and our ICML 2025 paper \"Avoiding Leakage Poisoning\"",
+      "stars": 82,
+      "pushed_at": "2026-04-05T13:03:09Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://arxiv.org/abs/2209.09056"
+    },
+    {
+      "full_name": "fat-forensics/fat-forensics",
+      "html_url": "https://github.com/fat-forensics/fat-forensics",
+      "description": "Modular Python Toolbox for Fairness, Accountability and Transparency Forensics",
+      "stars": 79,
+      "pushed_at": "2026-04-13T16:56:27Z",
+      "language": "Python",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": "https://fat-forensics.org"
+    },
+    {
+      "full_name": "phi-monster/Galahad",
+      "html_url": "https://github.com/phi-monster/Galahad",
+      "description": "Instruction blindness in vision-language-action policies: diagnosis and a low-rank data cure. Paper, model, deconfounded datasets, generator, and the measurement battery.",
+      "stars": 79,
+      "pushed_at": "2026-07-25T14:45:50Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://xn--7xa.monster/Galahad/"
+    },
+    {
+      "full_name": "EleutherAI/bergson",
+      "html_url": "https://github.com/EleutherAI/bergson",
+      "description": "Mapping out the \"memory\" of neural nets with data attribution",
+      "stars": 73,
+      "pushed_at": "2026-07-28T16:04:27Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://bergson.readthedocs.io"
+    },
+    {
+      "full_name": "microsoft/automated-brain-explanations",
+      "html_url": "https://github.com/microsoft/automated-brain-explanations",
+      "description": "Generating and validating natural-language explanations for the brain.",
+      "stars": 67,
+      "pushed_at": "2026-06-01T19:17:53Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://microsoft.github.io/automated-brain-explanations/"
+    },
+    {
+      "full_name": "Imageomics/saev",
+      "html_url": "https://github.com/Imageomics/saev",
+      "description": "Sparse autoencoders for vision",
+      "stars": 64,
+      "pushed_at": "2026-07-28T19:12:11Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://imageomics.github.io/saev/"
+    },
+    {
+      "full_name": "yanzheb/explainable-reinforcement-learning",
+      "html_url": "https://github.com/yanzheb/explainable-reinforcement-learning",
+      "description": "The most comprehensive XRL paper list: 277 papers (2016\u20132026) on interpretable and explainable RL. Surveys, saliency, counterfactuals, policy summarization and more.",
+      "stars": 64,
+      "pushed_at": "2026-04-04T17:52:49Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "trustyai-explainability/trustyai-explainability",
+      "html_url": "https://github.com/trustyai-explainability/trustyai-explainability",
+      "description": "TrustyAI Explainability Toolkit",
+      "stars": 63,
+      "pushed_at": "2026-06-19T19:01:46Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "ModelOriented/kernelshap",
+      "html_url": "https://github.com/ModelOriented/kernelshap",
+      "description": "Different SHAP algorithms",
+      "stars": 62,
+      "pushed_at": "2025-09-20T15:50:08Z",
+      "language": "R",
+      "license_spdx_id": "GPL-2.0",
+      "homepage": "https://modeloriented.github.io/kernelshap/"
+    },
+    {
+      "full_name": "Trae1ounG/BuPO",
+      "html_url": "https://github.com/Trae1ounG/BuPO",
+      "description": "[arxiv: 2512.19673] Bottom-up Policy Optimization: Your Language Model Policy Secretly Contains Internal Policies",
+      "stars": 60,
+      "pushed_at": "2026-02-06T06:01:36Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "dilyabareeva/quanda",
+      "html_url": "https://github.com/dilyabareeva/quanda",
+      "description": "A toolkit for quantitative evaluation of data attribution methods.",
+      "stars": 60,
+      "pushed_at": "2026-07-27T13:16:42Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://quanda.readthedocs.io"
+    },
+    {
+      "full_name": "explanare/ravel",
+      "html_url": "https://github.com/explanare/ravel",
+      "description": "Evaluate interpretability methods on localizing and disentangling concepts in LLMs.",
+      "stars": 59,
+      "pushed_at": "2025-10-30T22:18:24Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://arxiv.org/abs/2402.17700"
+    },
+    {
+      "full_name": "johnzfitch/claude-warden",
+      "html_url": "https://github.com/johnzfitch/claude-warden",
+      "description": "Security hooks and monitoring for Claude Code \u2014 quiet overrides, SSRF protection, MCP compression, OTEL tracing",
+      "stars": 59,
+      "pushed_at": "2026-04-08T09:53:19Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": "https://github.com/johnzfitch/claude-warden/releases"
+    },
+    {
+      "full_name": "jim-berend/semanticlens",
+      "html_url": "https://github.com/jim-berend/semanticlens",
+      "description": "Mechanistic understanding and validation of large AI models with SemanticLens",
+      "stars": 54,
+      "pushed_at": "2025-12-04T19:15:38Z",
+      "language": "Python",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": "https://jim-berend.github.io/semanticlens/"
+    },
+    {
+      "full_name": "KempnerInstitute/raptor",
+      "html_url": "https://github.com/KempnerInstitute/raptor",
+      "description": "Block-Recurrent Dynamics in ViTs \ud83e\udd96",
+      "stars": 53,
+      "pushed_at": "2026-05-21T13:47:13Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://kempnerinstitute.github.io/raptor/"
+    },
+    {
+      "full_name": "ndif-team/ndif",
+      "html_url": "https://github.com/ndif-team/ndif",
+      "description": "The NDIF server, which performs deep inference and serves nnsight requests remotely",
+      "stars": 50,
+      "pushed_at": "2026-07-24T15:16:50Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "pyc-team/pytorch_concepts",
+      "html_url": "https://github.com/pyc-team/pytorch_concepts",
+      "description": "PyC (Pytorch Concepts) is a PyTorch-based library for training concept-based interpretable deep learning models.",
+      "stars": 43,
+      "pushed_at": "2026-07-28T12:54:04Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://pytorch-concepts.readthedocs.io/en/latest/"
+    },
+    {
+      "full_name": "microsoft/augmented-interpretable-models",
+      "html_url": "https://github.com/microsoft/augmented-interpretable-models",
+      "description": "Interpretable and efficient predictors using pre-trained language models. Scikit-learn compatible.",
+      "stars": 43,
+      "pushed_at": "2025-11-10T20:09:01Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.nature.com/articles/s41467-023-43713-1"
+    },
+    {
+      "full_name": "taylorsatula/TeaLeaves",
+      "html_url": "https://github.com/taylorsatula/TeaLeaves",
+      "description": "End-to-end pipeline for seeing how LLMs actually process your prompts. Capture attention across every layer, render heatmaps and cooking curves, compare variants with evidence \u2014 not vibes.",
+      "stars": 42,
+      "pushed_at": "2026-07-16T05:15:52Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "moudrkat/brainscope",
+      "html_url": "https://github.com/moudrkat/brainscope",
+      "description": "OpenAI-compatible server with a live view into any HF model's residual stream. pip install brainscope",
+      "stars": 42,
+      "pushed_at": "2026-07-28T10:42:48Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "sametcopur/treemind",
+      "html_url": "https://github.com/sametcopur/treemind",
+      "description": "treemind interprets tree models",
+      "stars": 41,
+      "pushed_at": "2026-04-09T10:54:05Z",
+      "language": "Cython",
+      "license_spdx_id": "MIT",
+      "homepage": "https://treemind.readthedocs.io/en/latest/"
+    },
+    {
+      "full_name": "yihuaihong/ConceptVectors",
+      "html_url": "https://github.com/yihuaihong/ConceptVectors",
+      "description": "[EMNLP 2025 Main] ConceptVectors Benchmark and Code for the paper \"Intrinsic Evaluation of Unlearning Using Parametric Knowledge Traces\"",
+      "stars": 40,
+      "pushed_at": "2025-08-20T17:37:20Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "CC-BY-4.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "yc015/TalkTuner-chatbot-llm-dashboard",
+      "html_url": "https://github.com/yc015/TalkTuner-chatbot-llm-dashboard",
+      "description": "Designing a Dashboard for Transparency and Control of Conversational AI, https://arxiv.org/abs/2406.07882",
+      "stars": 39,
+      "pushed_at": "2025-10-07T17:18:43Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://yc015.github.io/TalkTuner-a-dashboard-ui-for-chatbot-llm/"
+    },
+    {
+      "full_name": "liusida/ica-lens-paper",
+      "html_url": "https://github.com/liusida/ica-lens-paper",
+      "description": "ICA Lens: compact ICA-based interpretability tools for exploring LLM activations. Code release for the paper.",
+      "stars": 38,
+      "pushed_at": "2026-07-05T12:41:20Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://liusida.github.io/ica-lens-paper/"
+    },
+    {
+      "full_name": "mayer79/LightSHAP",
+      "html_url": "https://github.com/mayer79/LightSHAP",
+      "description": "Lightweight Python implementation of SHAP",
+      "stars": 36,
+      "pushed_at": "2026-07-25T10:58:44Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://mayer79.github.io/LightSHAP/"
+    },
+    {
+      "full_name": "bbj-lab/protoecgnet",
+      "html_url": "https://github.com/bbj-lab/protoecgnet",
+      "description": "Case-based interpretable deep learning for ECG classification. This code implements ProtoECGNet from the following paper:  \"ProtoECGNet: Case-Based Interpretable Deep Learning for Multi-Label ECG Classification.\" Sethi et al., MLHC 2025",
+      "stars": 34,
+      "pushed_at": "2025-10-08T18:55:45Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://proceedings.mlr.press/v298/sethi25a.html"
+    },
+    {
+      "full_name": "ModelOriented/hstats",
+      "html_url": "https://github.com/ModelOriented/hstats",
+      "description": "Friedman's H-statistics",
+      "stars": 34,
+      "pushed_at": "2026-01-01T17:21:28Z",
+      "language": "R",
+      "license_spdx_id": "GPL-2.0",
+      "homepage": "https://modeloriented.github.io/hstats/"
+    },
+    {
+      "full_name": "bnnr-team/bnnr",
+      "html_url": "https://github.com/bnnr-team/bnnr",
+      "description": "XAI-driven augmentation & diagnostics for PyTorch vision - find model failures, fix with saliency-guided augmentation (ICD/AICD), prove with auditable reports.",
+      "stars": 34,
+      "pushed_at": "2026-07-25T09:22:48Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.bnnr.dev/"
+    },
+    {
+      "full_name": "wbopan/flashtrace",
+      "html_url": "https://github.com/wbopan/flashtrace",
+      "description": "Efficient multi-token attribution for reasoning language models \u2014 Python package, CLI, and HTML token traces",
+      "stars": 33,
+      "pushed_at": "2026-07-24T01:11:37Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://pypi.org/project/flashtrace/"
+    },
+    {
+      "full_name": "virelay/corelay",
+      "html_url": "https://github.com/virelay/corelay",
+      "description": "CoRelAy is a tool to compose small-scale (single-machine) analysis pipelines.",
+      "stars": 32,
+      "pushed_at": "2026-04-30T09:50:06Z",
+      "language": "Python",
+      "license_spdx_id": "LGPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "Mattral/KANX",
+      "html_url": "https://github.com/Mattral/KANX",
+      "description": "One library, four surfaces. Production-grade Kolmogorov-Arnold Networks || TensorFlow + PyTorch + ONNX. || A small KAN beats a 10\u00d7 larger MLP on smooth, separable target. One library. Two backends. Real ONNX export. Docker + Kubernetes ready.",
+      "stars": 32,
+      "pushed_at": "2026-07-09T07:55:51Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "SiyuanYan1/DermFM-Zero",
+      "html_url": "https://github.com/SiyuanYan1/DermFM-Zero",
+      "description": "Vision-language foundation model for zero-shot dermatology",
+      "stars": 31,
+      "pushed_at": "2026-07-02T09:57:05Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "virelay/virelay",
+      "html_url": "https://github.com/virelay/virelay",
+      "description": "ViRelAy is a visualization tool for the analysis of data as generated by CoRelAy.",
+      "stars": 31,
+      "pushed_at": "2026-04-30T09:49:06Z",
+      "language": "Python",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "yash-srivastava19/arrakis",
+      "html_url": "https://github.com/yash-srivastava19/arrakis",
+      "description": "Arrakis is a library to conduct, track and visualize mechanistic interpretability experiments.",
+      "stars": 31,
+      "pushed_at": "2026-07-08T18:48:44Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "",
+      "homepage": "https://arrakis-mi.readthedocs.io/en/latest/README.html"
+    },
+    {
+      "full_name": "Sorades/CLAT",
+      "html_url": "https://github.com/Sorades/CLAT",
+      "description": "[TMI 2024] Code for \"Concept-based Lesion Aware Transformer for Interpretable Retinal Disease Diagnosis\"",
+      "stars": 31,
+      "pushed_at": "2025-10-30T02:31:48Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "FarnoushRJ/RelP",
+      "html_url": "https://github.com/FarnoushRJ/RelP",
+      "description": "[NeurIPS 2025 MechInterp Workshop - Spotlight] Official implementation of the paper \"RelP: Faithful and Efficient Circuit Discovery in Language Models via Relevance Patching\"",
+      "stars": 29,
+      "pushed_at": "2025-11-03T18:51:44Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://arxiv.org/abs/2508.21258"
+    },
+    {
+      "full_name": "corl-team/flexsae",
+      "html_url": "https://github.com/corl-team/flexsae",
+      "description": "Official Triton kernels for TopK and HierarchicalTopK Sparse Autoencoder decoders.",
+      "stars": 29,
+      "pushed_at": "2025-09-29T14:20:38Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "AmirhosseinHonardoust/Algorithmic-Empath-Human-Fallibility",
+      "html_url": "https://github.com/AmirhosseinHonardoust/Algorithmic-Empath-Human-Fallibility",
+      "description": "A deep exploration of Algorithmic Empathy, the next frontier in AI understanding. This project examines how machines can learn from human fallibility, model disagreement, and align with moral reasoning. It blends psychology, fairness metrics, interpretability, and co-learning design into one framework for humane intelligence.",
+      "stars": 29,
+      "pushed_at": "2025-11-05T06:39:35Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "gentlyzhao/Hijacking",
+      "html_url": "https://github.com/gentlyzhao/Hijacking",
+      "description": "Code for Chain-of-Thought Hijacking",
+      "stars": 28,
+      "pushed_at": "2025-11-10T12:51:30Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://gentlyzhao.github.io/Hijacking/"
+    },
+    {
+      "full_name": "WolodjaZ/MSAE",
+      "html_url": "https://github.com/WolodjaZ/MSAE",
+      "description": "Interpreting CLIP with Hierarchical Sparse Autoencoders (ICML 2025)",
+      "stars": 28,
+      "pushed_at": "2026-01-17T14:21:55Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://arxiv.org/abs/2502.20578"
+    },
+    {
+      "full_name": "jorge-martinez-gil/graphcodebert-interpretability",
+      "html_url": "https://github.com/jorge-martinez-gil/graphcodebert-interpretability",
+      "description": "Augmenting the Interpretability of GraphCodeBERT for Code Similarity Tasks",
+      "stars": 26,
+      "pushed_at": "2026-06-26T05:11:28Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://doi.org/10.1142/S0218194025500160"
+    },
+    {
+      "full_name": "ottenbreit-data-science/aplr",
+      "html_url": "https://github.com/ottenbreit-data-science/aplr",
+      "description": "APLR builds predictive, interpretable regression and classification models using Automatic Piecewise Linear Regression. It often rivals tree-based methods in predictive accuracy while offering smoother and interpretable predictions.",
+      "stars": 25,
+      "pushed_at": "2026-05-16T13:26:52Z",
+      "language": "C++",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "batmanlab/ICML-2023-Route-interpret-repeat",
+      "html_url": "https://github.com/batmanlab/ICML-2023-Route-interpret-repeat",
+      "description": "[ICML 2023] Official repository of paper: Dividing and Conquering a BlackBox to a Mixture of Interpretable Models: Route, Interpret, Repeat",
+      "stars": 25,
+      "pushed_at": "2025-08-02T13:19:16Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://shantanu-ai.github.io/projects/ICML-2023-MoIE/"
+    },
+    {
+      "full_name": "mayer79/flashlight",
+      "html_url": "https://github.com/mayer79/flashlight",
+      "description": "Machine learning explanations",
+      "stars": 25,
+      "pushed_at": "2025-10-13T15:48:22Z",
+      "language": "R",
+      "license_spdx_id": "GPL-2.0",
+      "homepage": "https://mayer79.github.io/flashlight/"
+    },
+    {
+      "full_name": "Mattbusel/Every-Other-Token",
+      "html_url": "https://github.com/Mattbusel/Every-Other-Token",
+      "description": "A real-time LLM stream interceptor for token-level interaction research",
+      "stars": 25,
+      "pushed_at": "2026-03-23T11:00:05Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": "System.Collections.Hashtable[Every-Other-Token]"
+    },
+    {
+      "full_name": "SINr-Embeddings/sinr",
+      "html_url": "https://github.com/SINr-Embeddings/sinr",
+      "description": "The SINr approach to train interpretable word and graph embeddings",
+      "stars": 23,
+      "pushed_at": "2026-06-11T09:23:25Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "Xiaohao-Xu/Ambiguity-in-Space",
+      "html_url": "https://github.com/Xiaohao-Xu/Ambiguity-in-Space",
+      "description": "[ECCV 2026 Oral] One Scene, Two Depths: Probing Geometric Ambiguity in Monocular Foundation Models (Layered 3D Spatial Understanding)",
+      "stars": 23,
+      "pushed_at": "2026-07-10T10:38:04Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://arxiv.org/abs/2606.29600"
+    },
+    {
+      "full_name": "pablo-chacon/Spoon-Bending",
+      "html_url": "https://github.com/pablo-chacon/Spoon-Bending",
+      "description": "Educational analysis of LLM alignment, safety behavior, and framing-sensitive response patterns.",
+      "stars": 22,
+      "pushed_at": "2025-11-04T11:35:04Z",
+      "language": "",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "msakarvadia/memorization",
+      "html_url": "https://github.com/msakarvadia/memorization",
+      "description": "Localizing Memorized Sequences in Language Models",
+      "stars": 22,
+      "pushed_at": "2025-10-15T15:21:36Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://mansisak.com/memorization/"
+    },
+    {
+      "full_name": "PERSIMUNE/explainer",
+      "html_url": "https://github.com/PERSIMUNE/explainer",
+      "description": "ExplaineR is an R package built for enhanced interpretation of classification and regression models based on SHAP method and interactive visualizations with unique functionalities so please feel free to check it out, See ExplaineR paper at doi:10.1093/bioadv/vbae049",
+      "stars": 21,
+      "pushed_at": "2025-08-17T18:23:10Z",
+      "language": "R",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://persimune.github.io/explainer/"
+    },
+    {
+      "full_name": "navdeep-G/interpretable-ml",
+      "html_url": "https://github.com/navdeep-G/interpretable-ml",
+      "description": "Techniques & resources for training interpretable ML models, explaining ML models, and debugging ML models.",
+      "stars": 21,
+      "pushed_at": "2026-02-02T23:53:46Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "moudrkat/steeropathy",
+      "html_url": "https://github.com/moudrkat/steeropathy",
+      "description": "Agents that talk through model internals \u2014 activations & J-space \u2014 instead of text. No words pass between them. The lab on top of brainscope + hidden-directions.",
+      "stars": 21,
+      "pushed_at": "2026-07-27T08:21:50Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Jeba-Jebarsan/insideai",
+      "html_url": "https://github.com/Jeba-Jebarsan/insideai",
+      "description": "Watch a real AI model think - live 3D visualization of a transformer's actual forward pass: tokens, embeddings, attention, neurons, sampling",
+      "stars": 21,
+      "pushed_at": "2026-07-18T13:30:02Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "arthurpanhku/j7scope",
+      "html_url": "https://github.com/arthurpanhku/j7scope",
+      "description": "Is there one workspace, or twin workspaces? Testing cross-lingual generalization of the J-space / global workspace in language models.",
+      "stars": 21,
+      "pushed_at": "2026-07-27T03:23:16Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "Humor-Research/KoWit-24",
+      "html_url": "https://github.com/Humor-Research/KoWit-24",
+      "description": "KoWit-24: A Dataset with Fine-Grained Annotations of Wordplay",
+      "stars": 21,
+      "pushed_at": "2026-05-02T15:16:25Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "AmirhosseinHonardoust/Cognitivelens-AI-Human-Comparison",
+      "html_url": "https://github.com/AmirhosseinHonardoust/Cognitivelens-AI-Human-Comparison",
+      "description": "CognitiveLens is a Streamlit-powered analytics tool for exploring alignment between human and AI decisions. It visualizes fairness, calibration, and interpretability through metrics like Cohen\u2019s \u03ba, AUC, and Brier score. Designed for ethical AI, bias auditing, and decision transparency in machine learning systems.",
+      "stars": 20,
+      "pushed_at": "2025-11-05T06:21:44Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "ntakafumi/aime",
+      "html_url": "https://github.com/ntakafumi/aime",
+      "description": "Approximate Inverse Model Explanations (AIME): model-agnostic XAI through an approximate inverse operator.",
+      "stars": 20,
+      "pushed_at": "2026-07-20T07:13:19Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    }
+  ]
+}

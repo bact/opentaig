@@ -1,0 +1,217 @@
+{
+  "keyword": "topic:adversarial-machine-learning",
+  "query": "topic:adversarial-machine-learning stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 21,
+  "repos": [
+    {
+      "full_name": "Trusted-AI/adversarial-robustness-toolbox",
+      "html_url": "https://github.com/Trusted-AI/adversarial-robustness-toolbox",
+      "description": "Adversarial Robustness Toolbox (ART) - Python Library for Machine Learning Security - Evasion, Poisoning, Extraction, Inference - Red and Blue Teams",
+      "stars": 6146,
+      "pushed_at": "2025-12-12T07:01:28Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://adversarial-robustness-toolbox.readthedocs.io/en/latest/"
+    },
+    {
+      "full_name": "QData/TextAttack",
+      "html_url": "https://github.com/QData/TextAttack",
+      "description": "TextAttack \ud83d\udc19  is a Python framework for adversarial attacks, data augmentation, and model training in NLP https://textattack.readthedocs.io/en/master/",
+      "stars": 3458,
+      "pushed_at": "2026-04-17T17:33:40Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://textattack.readthedocs.io/en/master/"
+    },
+    {
+      "full_name": "jiep/offensive-ai-compilation",
+      "html_url": "https://github.com/jiep/offensive-ai-compilation",
+      "description": "A curated list of useful resources that cover Offensive AI.",
+      "stars": 1411,
+      "pushed_at": "2026-07-27T13:43:03Z",
+      "language": "HTML",
+      "license_spdx_id": "CC-BY-SA-4.0",
+      "homepage": "https://jiep.github.io/offensive-ai-compilation/"
+    },
+    {
+      "full_name": "RobustBench/robustbench",
+      "html_url": "https://github.com/RobustBench/robustbench",
+      "description": "RobustBench: a standardized adversarial robustness benchmark [NeurIPS 2021 Benchmarks and Datasets Track]",
+      "stars": 782,
+      "pushed_at": "2026-04-14T01:24:12Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://robustbench.github.io"
+    },
+    {
+      "full_name": "Trustworthy-AI-Group/TransferAttack",
+      "html_url": "https://github.com/Trustworthy-AI-Group/TransferAttack",
+      "description": "TransferAttack is a pytorch framework to boost the adversarial transferability for image classification.",
+      "stars": 481,
+      "pushed_at": "2026-05-12T07:18:54Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "RiccardoBiosas/awesome-MLSecOps",
+      "html_url": "https://github.com/RiccardoBiosas/awesome-MLSecOps",
+      "description": "A curated list of MLSecOps tools and resources for securing machine learning and AI systems - adversarial ML defense, LLM security, AI red teaming, model scanning, supply-chain protection, and MLOps pipeline security.",
+      "stars": 443,
+      "pushed_at": "2026-07-28T16:59:19Z",
+      "language": "Astro",
+      "license_spdx_id": "MIT",
+      "homepage": "https://awesomemlsecops.com/"
+    },
+    {
+      "full_name": "Koukyosyumei/AIJack",
+      "html_url": "https://github.com/Koukyosyumei/AIJack",
+      "description": "Security and Privacy Risk Simulator for Machine Learning (arXiv:2312.17667)",
+      "stars": 431,
+      "pushed_at": "2026-05-30T02:00:29Z",
+      "language": "C++",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://koukyosyumei.github.io/AIJack/"
+    },
+    {
+      "full_name": "MinghuiChen43/awesome-trustworthy-deep-learning",
+      "html_url": "https://github.com/MinghuiChen43/awesome-trustworthy-deep-learning",
+      "description": "A curated list of trustworthy deep learning papers. Continually updating...",
+      "stars": 388,
+      "pushed_at": "2026-07-20T20:17:16Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Trustworthy-AI-Group/Adversarial_Examples_Papers",
+      "html_url": "https://github.com/Trustworthy-AI-Group/Adversarial_Examples_Papers",
+      "description": "A list of recent papers about adversarial learning",
+      "stars": 372,
+      "pushed_at": "2026-07-28T15:17:29Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "Meltedd/scarecrow",
+      "html_url": "https://github.com/Meltedd/scarecrow",
+      "description": "An adversarial frame pattern optimizer for evading automated license plate recognition, personalized to your plate.",
+      "stars": 349,
+      "pushed_at": "2026-06-05T17:58:10Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "Verified-Intelligence/auto_LiRPA",
+      "html_url": "https://github.com/Verified-Intelligence/auto_LiRPA",
+      "description": "auto_LiRPA: An Automatic Linear Relaxation based Perturbation Analysis Library for Neural Networks and General Computational Graphs",
+      "stars": 349,
+      "pushed_at": "2026-07-17T20:06:01Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://arxiv.org/pdf/2002.12920"
+    },
+    {
+      "full_name": "alexdevassy/Machine_Learning_CTF_Challenges",
+      "html_url": "https://github.com/alexdevassy/Machine_Learning_CTF_Challenges",
+      "description": "Hack AI/ML applications \u2014 CTF challenges for model attacks, LLMs and AI Agent exploitation.",
+      "stars": 251,
+      "pushed_at": "2026-05-13T16:06:16Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "pralab/secml_malware",
+      "html_url": "https://github.com/pralab/secml_malware",
+      "description": "Create adversarial attacks against machine learning Windows malware detectors",
+      "stars": 247,
+      "pushed_at": "2025-11-27T14:28:02Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://secml-malware.readthedocs.io/"
+    },
+    {
+      "full_name": "w4-advisory/plexiglass",
+      "html_url": "https://github.com/w4-advisory/plexiglass",
+      "description": "A toolkit for detecting and protecting against vulnerabilities in Large Language Models (LLMs).",
+      "stars": 153,
+      "pushed_at": "2026-02-04T22:18:58Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "OraclesTech/guardian-sdk",
+      "html_url": "https://github.com/OraclesTech/guardian-sdk",
+      "description": "Ethicore Engine\u2122 is an AI safety, ethics, and compliance platform. This repo consists of the open-source components of Ethicore Engine\u2122 - Guardian SDK; designed to protect your AI applications from prompt injection, jailbreaks, role hijacking, system-prompt extraction, and 100+ additional threat categories through a multi-layer analysis pipeline",
+      "stars": 120,
+      "pushed_at": "2026-07-27T18:43:46Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://oraclestechnologies.com"
+    },
+    {
+      "full_name": "Western-OC2-Lab/AutoML-and-Adversarial-Attack-Defense-for-Zero-Touch-Network-Security",
+      "html_url": "https://github.com/Western-OC2-Lab/AutoML-and-Adversarial-Attack-Defense-for-Zero-Touch-Network-Security",
+      "description": "This repository includes code for the AutoML-based IDS and adversarial attack defense case studies presented in the paper \"Enabling AutoML for Zero-Touch Network Security: Use-Case Driven Analysis\" published in IEEE Transactions on Network and Service Management.",
+      "stars": 45,
+      "pushed_at": "2025-12-19T22:15:05Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Benjamin-KY/MLSecOps",
+      "html_url": "https://github.com/Benjamin-KY/MLSecOps",
+      "description": "This repository serves as a comprehensive resource for integrating machine learning with security operations, offering innovative cybersecurity strategies. It features a mix of practical code examples, insightful research, and valuable resources tailored for advancing AI/ML cyber security practices.",
+      "stars": 42,
+      "pushed_at": "2026-07-10T03:38:42Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "mtuann/backdoor-ai-resources",
+      "html_url": "https://github.com/mtuann/backdoor-ai-resources",
+      "description": "Backdoor Stuff in AI/ ML domain",
+      "stars": 41,
+      "pushed_at": "2026-07-10T22:25:22Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": "https://mtuann.github.io/papers/"
+    },
+    {
+      "full_name": "keirsalterego/jailbreak-fable",
+      "html_url": "https://github.com/keirsalterego/jailbreak-fable",
+      "description": "High-fidelity Claude Fable 5 (Mythos) environment emulation and automated multi-agent jailbreak (Pack Hunt) research laboratory.",
+      "stars": 38,
+      "pushed_at": "2026-07-17T13:42:31Z",
+      "language": "JavaScript",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "krishnakanthnakka/Transferable_Perturbations",
+      "html_url": "https://github.com/krishnakanthnakka/Transferable_Perturbations",
+      "description": "[NeurIPS2021] Code Release of Learning Transferable Perturbations",
+      "stars": 29,
+      "pushed_at": "2026-03-28T19:15:45Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "jinminhao/PANTS",
+      "html_url": "https://github.com/jinminhao/PANTS",
+      "description": "[Usenix Security '25] Robustifying ML-powered Network Classifiers with PANTS",
+      "stars": 23,
+      "pushed_at": "2025-08-16T02:38:21Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://arxiv.org/abs/2409.04691"
+    }
+  ]
+}

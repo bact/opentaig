@@ -262,15 +262,31 @@ Phase 1 (rounds 1–9) scoped keywords by reading each target RQ's own text
 and improvising short phrases from it, one problem area at a time. That
 works but is manual and only mines one source of vocabulary. Phase 2 —
 started once every RQ range has had at least one real search pass — adds
-four more systematic keyword sources on top of it, plus two hard-learned
-mechanical rules that apply to all five:
+more systematic keyword sources on top of it, plus three hard-learned
+mechanical rules that apply to all of them:
 
+- **Free-text search and metadata search are different *axes*, and
+  exhausting one says nothing about the other.** This is the single most
+  important lesson of phase 2, learned the expensive way: after ~90
+  free-text keyword angles had converged to near-zero new hits, we
+  concluded the space was exhausted. It wasn't — it was exhausted *on the
+  free-text axis*. A single `topic:ai-safety` query then returned 202
+  repos, 98 of them never seen before (see source 0 below). Before
+  declaring any area searched out, check that you've tried more than one
+  axis: free text, `topic:` tags, and the non-GitHub registries in source
+  9. "We ran out of phrasings" is not the same finding as "no tools exist,"
+  and only the second one belongs in a paper.
 - **GitHub's search API ANDs every unquoted word.** A 4-5 word free-text
   query routinely returns zero hits even when good candidates exist —
   every multi-word query in round 3 with 4+ unquoted words returned 0. Keep
-  free-text queries to 2-3 words. For a literal pattern (see strategy 2
-  below) use an exact quoted phrase instead, which GitHub matches as a
-  substring rather than an AND of words.
+  free-text queries to 2-3 words. Two things measured directly, so nobody
+  re-derives them: quoting a phrase made **no difference** to result count
+  (`"prompt injection" scanner` and `prompt injection scanner` both
+  returned 15), and a literal `AND` between terms is silently **ignored,
+  not honoured** (same 15) — so write `foo bar`, never `"foo" AND "bar"`.
+  Quoting still costs nothing and is worth keeping for genuinely literal
+  patterns like source 2's `"alternative to X"`. `topic:` qualifiers pass
+  through `build_query()` untouched and sidestep this rule entirely.
 - **Log every keyword regardless of hit count.** A 0-hit query is not
   wasted effort — `search_repos.py` already logs it to `search_log.csv`
   unconditionally, and it's real negative evidence for the paper (which
@@ -278,8 +294,43 @@ mechanical rules that apply to all five:
   empty space). When a query returns nothing, the fix is to broaden
   (fewer/more common words) not to add more qualifying terms.
 
-The five keyword sources, in the order worth trying:
+The keyword sources, in the order worth trying:
 
+0. **GitHub topic tags (`topic:<tag>`) — do this first.** Topics are
+   curated metadata that maintainers self-apply, so they cluster tools by
+   *what the tool is for* rather than by whatever words happen to appear in
+   its README. This is a fundamentally different axis from free text and by
+   far the highest-yield source measured so far. Actual first-run numbers,
+   all with the standard `stars:>19 pushed:>…` filters, against a
+   253-repo known set:
+
+   | query | total | new |
+   | --- | --- | --- |
+   | `topic:ai-safety` | 202 | 98 |
+   | `topic:llm-security` | 173 | 96 |
+   | `topic:explainable-ai` | 131 | 98 |
+   | `topic:guardrails` | 116 | 96 |
+   | `topic:red-teaming` | 100 | 99 |
+   | `topic:ai-governance` | 96 | 92 |
+   | `topic:responsible-ai` | 60 | 58 |
+   | `topic:ai-ethics` | 11 | 10 |
+
+   For comparison, our best *free-text* queries at the same point returned
+   0–30 hits each, mostly already-seen. Note the API caps a page at 100, so
+   a topic with `total > 100` needs pagination to mine fully —
+   `search_repos.py` currently fetches one page (`per_page=100`), which is
+   a known limitation to fix or work around (narrow with an extra term, or
+   raise `--min-stars`, to get under 100). Other tags worth trying:
+   `machine-learning-security`, `adversarial-machine-learning`,
+   `privacy-preserving-ml`, `differential-privacy`, `federated-learning`,
+   `fairness-ml`, `interpretability`, `model-evaluation`, `llm-evaluation`,
+   `mlops`, `data-provenance`, `deepfake-detection`, `watermarking`,
+   `machine-unlearning`, `ai-alignment`, `llmops`, `ai-red-team`,
+   `prompt-injection`, `ai-compliance`. Because volume is high and
+   precision is lower than a targeted free-text query, treat topic sweeps
+   as a *candidate firehose* to run through the normal
+   `dedup_candidates.py` → pre-filter → judgment pipeline, not as
+   pre-qualified results.
 1. **Mine vocabulary from our own accepted tools.** Extract recurring
    2-3 word technical phrases from the live `tools.summary` and
    `tool_map.rationale` columns that haven't been tried as search keywords
@@ -350,6 +401,73 @@ The five keyword sources, in the order worth trying:
    keyword from that — don't batch-search the whole taxonomy blind. Cache
    the source documents locally on first use (same pattern as
    `licenses.py`'s SPDX cache) rather than re-fetching every session.
+6. **The matrix: Domain × Artifact × Tool-type.** Rather than improvising
+   flat phrases, generate them by combining one term from each of three
+   columns — it produces systematic coverage instead of whatever came to
+   mind, and makes the *gaps* in what's been tried visible:
+
+   | Domain (the problem) | Artifact (the target) | Tool type (the software) |
+   | --- | --- | --- |
+   | bias, toxicity, hallucination, prompt injection, privacy leakage, data poisoning, drift, compliance | LLM, foundation model, dataset, RAG, agent, prompt, embedding, model weights | scanner, fuzzer, guardrail, validator, shield, evaluator, auditor, benchmark, monitor, linter |
+
+   Keep the result inside the 2-3 word rule — pick **two** columns, not all
+   three (`prompt injection scanner`, `LLM guardrail`, `dataset bias
+   evaluator`), since a full three-column combination usually lands at 4+
+   words and returns nothing. The tool-type column is the part phase-1
+   keywords systematically under-used: we searched problems far more often
+   than we searched *software shapes*.
+7. **Governance sub-domain jargon.** Developers almost never write "AI
+   governance" in a README; they write the specific technical term for the
+   problem they solved. Vocabulary worth sweeping, by pillar — terms
+   already in `search_log.csv` are excluded, so this is the untried
+   remainder:
+   - *Safety / alignment*: `jailbreak detection`, `hallucination
+     detection`, `factuality checker`, `refusal mechanism`, `toxic content
+     filter`, `constitutional AI`, `alignment fuzzer`.
+   - *Security / robustness*: `backdoor detection`, `data poisoning
+     defense`, `evasion attack defense`, `MLSecOps`, `AI BOM`,
+     `model extraction defense`.
+   - *Privacy / data*: `PII scrubber`, `data anonymization`, `federated
+     learning`, `privacy-preserving ML`, `PPML`.
+   - *Fairness / bias*: `bias mitigation`, `demographic parity`,
+     `disparate impact`, `counterfactual testing`, `representation
+     auditing`.
+   - *Transparency / accountability*: `mechanistic interpretability`,
+     `saliency map`, `concept activation vector`, `data card`, `provenance
+     tracking`.
+8. **Mine curated "awesome" lists for vocabulary — not for tools.** An
+   awesome-list is correctly a `not-a-tool-linklist` **reject** as a
+   candidate, but its table of contents is a dense, human-curated glossary
+   of exactly the niche terms this section needs (e.g. "concept activation
+   vectors"). Feed those terms back in as search keywords. **We already
+   have 13 of these logged as rejects in `state/seen_repos.csv`** — filter
+   `reject_category == "not-a-tool-linklist"` and mine them; that costs
+   zero new searches. Several are directly on-topic for still-thin areas
+   (`Awesome-LLM-Watermark`, `Awesome-LLM-Fingerprinting`,
+   `awesome-llm-copyright-protection`, three deepfake-detection lists, a
+   membership-inference literature list, a model-inversion list). To find
+   more: `awesome AI safety`, `awesome LLM security`, `awesome AI
+   fairness`, `awesome MLSecOps`.
+9. **Non-GitHub registries.** Everything above searches one index; these
+   surface tools before or instead of GitHub prominence:
+   - **PyPI / npm** — package metadata carries classifiers (e.g. `Topic ::
+     Scientific/Engineering :: Artificial Intelligence`) that can be
+     combined with keywords like `auditor`, `privacy`, `guardrail`. Note
+     the related-but-separate lesson under judgment rules: package metadata
+     is also where a licence often lives when GitHub reports none.
+   - **Hugging Face** — Spaces, and `evaluate`-library metric modules,
+     searched by `fairness`, `robustness`, `toxicity`. Catches tools
+     shipped as a Space or metric rather than a repo.
+   - **arXiv "code available"** paired with `LLM auditing`, `model
+     evaluation`, `AI governance` — many real tools start as a paper
+     artifact (TextAttack, ART). Judge these against
+     `not-a-tool-paper-artifact` carefully: the category exists to reject
+     one-off replication scripts, *not* maintained tools that happen to
+     have a paper.
+   - **Papers With Code is dead** — shut down by Meta in July 2025 and
+     redirecting to Hugging Face. Use [HF Papers](https://huggingface.co/papers)
+     and the archived [`paperswithcode-data`](https://github.com/paperswithcode/paperswithcode-data)
+     dump instead; see "Outbound links as judgment signal".
 
 ### Starter prompts (for reproducibility)
 
@@ -411,6 +529,23 @@ Do, in order:
 Judgment rules that matter (details in curation/README.md):
 - Map a tool to an RQ by reading its README/paper against that question's
   own text. Never via shared principle/term tags.
+- **A tool doesn't need to be built for "AI governance" to legitimately
+  answer an RQ -- judge the capability, not the marketing.** Google's
+  magika is a general-purpose file-content-type detector built for Gmail/
+  Drive/Safe Browsing security routing; it never mentions AI governance,
+  datasets, or training data anywhere in its own framing. It's still a
+  direct, correct answer to RQ1 (scaling problematic-data identification)
+  because content-type detection at 99% precision/recall is exactly the
+  capability RQ1 needs, regardless of what the maintainers built it for.
+  The practical implication: don't filter candidates by whether they
+  self-describe as an AI/governance/safety tool -- a security scanner, a
+  file-format detector, a general data-quality library, or a scientific-
+  computing tool can all be the right answer if its actual mechanism fits
+  the RQ's actual question. This also means free-text keyword search
+  anchored on governance vocabulary ("AI safety", "responsible AI", etc.)
+  structurally can't find these -- they surface from mapping a tool's
+  *mechanism* to an RQ's *need*, which is most of why topic-tag sweeps and
+  direct user-suggested leads outperformed keyword search this session.
 - One tool legitimately answering several RQs is expected, not a smell.
 - An RQ with zero tools is a real finding worth reporting, not a search
   failure to paper over by loosening the matching rule.
@@ -514,9 +649,16 @@ loss.
 
 === PASS B: expanded keyword search (all RQs, thin ones first) ===
 
-Apply the 5 keyword sources from the README's "Keyword expansion (phase 2)"
-section. Source 4 (the RQ's own text) is what phase 1 already used; sources
-1, 2, 3 and 5 are the new ones:
+Apply the keyword sources from the README's "Keyword expansion (phase 2)"
+section. Source 4 (the RQ's own text) is what phase 1 already used;
+everything else is new. **Start with source 0 (`topic:` tag sweeps)** — it
+is a different search axis from free text and by far the highest-yield
+source measured (a single `topic:ai-safety` query returned 202 repos, 98
+unseen; ~650 unseen across 8 tags). Sources 6-9 (the Domain×Artifact×Tool
+matrix, sub-domain jargon, mining already-rejected awesome-lists for
+vocabulary, and non-GitHub registries) are also new and largely untried.
+Read that section in full rather than working from this summary. The
+free-text sources:
 
 1. Mine 2-3 word phrases from the live `tools.summary` /
    `tool_map.rationale` columns that haven't been tried yet (cross-check
@@ -578,6 +720,16 @@ RQs still get a pass — a better or complementary tool is a legitimate find.
 Judgment rules (details in curation/README.md — same as phase 1):
 - Map a tool to an RQ by reading its README/paper against that question's
   own text. Never via shared principle/term tags.
+- A tool doesn't need to be built for "AI governance" to legitimately
+  answer an RQ — judge the capability, not the marketing. Google's magika
+  (a general file-content-type detector for Gmail/Drive security routing,
+  never mentioning AI or training data) is a correct RQ1 answer purely
+  because content-type detection at scale is what RQ1 needs. Don't filter
+  candidates by self-description as an AI/safety/governance tool — a
+  security scanner, a scientific-computing library, a file-format detector
+  can all be right if the mechanism fits. This is also why keyword search
+  anchored on governance vocabulary structurally under-performs topic-tag
+  sweeps and direct leads for this kind of candidate.
 - One tool legitimately answering several RQs is expected, not a smell.
   This matters more in phase 2 than phase 1 — pass A exists precisely
   because that rule was under-applied when tools were first judged.
@@ -603,6 +755,19 @@ Judgment rules (details in curation/README.md — same as phase 1):
   hardware/policy set: don't re-run the same keyword angles hoping for a
   different answer: try a *genuinely different* angle (a taxonomy term, a
   tool-name-based query) or move on.
+- **Important scope correction on both bullets above.** Those zero results
+  are established for the **free-text keyword axis only**. They were
+  recorded before `topic:` tag search was ever tried, and the first
+  `topic:` sweep returned ~650 never-seen repos across 8 tags (see
+  "Keyword expansion" source 0). So the correct current statement is "no
+  tool found via ~90 free-text keyword angles", **not** "no tool exists" —
+  and the paper must say the former until a topic-tag and registry sweep
+  has also come back empty for those specific RQs. The hardware/compute
+  set may well survive that test, since the productive topic tags are
+  safety/security/ethics/XAI-flavoured and unlikely to contain chip-level
+  tooling; but that is a prediction to verify, not a result. Do not cite a
+  zero-coverage figure as a finding until every RQ behind it has been
+  through more than one search axis.
 - Every reject needs a `reject_category` from emit_candidates.py's
   REJECT_CATEGORIES, not just free text.
 - **A repo with no GitHub-detected LICENSE file is not automatically

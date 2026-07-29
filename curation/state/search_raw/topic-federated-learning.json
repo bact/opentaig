@@ -1,0 +1,917 @@
+{
+  "keyword": "topic:federated-learning",
+  "query": "topic:federated-learning stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 91,
+  "repos": [
+    {
+      "full_name": "OpenMined/PySyft",
+      "html_url": "https://github.com/OpenMined/PySyft",
+      "description": "Perform data science on data that remains in someone else's server",
+      "stars": 9931,
+      "pushed_at": "2026-07-28T20:46:19Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.openmined.org/"
+    },
+    {
+      "full_name": "flwrlabs/flower",
+      "html_url": "https://github.com/flwrlabs/flower",
+      "description": "Flower: A Friendly Federated AI Framework",
+      "stars": 7059,
+      "pushed_at": "2026-07-28T20:50:57Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://flower.ai"
+    },
+    {
+      "full_name": "FedML-AI/FedML",
+      "html_url": "https://github.com/FedML-AI/FedML",
+      "description": "FEDML - The unified and scalable ML library for large-scale distributed training, model serving, and federated learning. FEDML Launch, a cross-cloud scheduler, further enables running any AI jobs on any GPU cloud or on-premise cluster. Built on this library, TensorOpera AI (https://TensorOpera.ai) is your generative AI platform at scale.",
+      "stars": 4056,
+      "pushed_at": "2025-10-28T12:44:12Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://TensorOpera.ai"
+    },
+    {
+      "full_name": "secretflow/secretflow",
+      "html_url": "https://github.com/secretflow/secretflow",
+      "description": "A unified framework for privacy-preserving data analysis and machine learning",
+      "stars": 2689,
+      "pushed_at": "2026-04-24T07:57:55Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.secretflow.org.cn/docs/secretflow/en/"
+    },
+    {
+      "full_name": "TsingZ0/PFLlib",
+      "html_url": "https://github.com/TsingZ0/PFLlib",
+      "description": "Master Federated Learning in 2 Hours\u2014Run It on Your PC!",
+      "stars": 2147,
+      "pushed_at": "2026-01-25T02:31:48Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "http://www.pfllib.com/"
+    },
+    {
+      "full_name": "youngfish42/Awesome-FL",
+      "html_url": "https://github.com/youngfish42/Awesome-FL",
+      "description": "Comprehensive and timely academic information on federated learning (papers, frameworks, datasets, tutorials, workshops)",
+      "stars": 2004,
+      "pushed_at": "2026-05-20T12:48:40Z",
+      "language": "Python",
+      "license_spdx_id": "CC-BY-SA-4.0",
+      "homepage": "https://youngfish42.github.io/Awesome-FL"
+    },
+    {
+      "full_name": "primihub/primihub",
+      "html_url": "https://github.com/primihub/primihub",
+      "description": "Privacy-Preserving Computing Platform \u7531\u5bc6\u7801\u5b66\u4e13\u5bb6\u56e2\u961f\u6253\u9020\u7684\u5f00\u6e90\u9690\u79c1\u8ba1\u7b97\u5e73\u53f0\uff0c\u652f\u6301\u591a\u65b9\u5b89\u5168\u8ba1\u7b97\u3001\u8054\u90a6\u5b66\u4e60\u3001\u9690\u79c1\u6c42\u4ea4\u3001\u533f\u8e2a\u67e5\u8be2\u7b49\u3002",
+      "stars": 1406,
+      "pushed_at": "2025-10-22T02:42:46Z",
+      "language": "C++",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.primihub.com/"
+    },
+    {
+      "full_name": "NVIDIA/NVFlare",
+      "html_url": "https://github.com/NVIDIA/NVFlare",
+      "description": "NVIDIA Federated Learning Application Runtime Environment",
+      "stars": 951,
+      "pushed_at": "2026-07-29T00:42:09Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://nvidia.github.io/NVFlare/"
+    },
+    {
+      "full_name": "securefederatedai/openfederatedlearning",
+      "html_url": "https://github.com/securefederatedai/openfederatedlearning",
+      "description": "An Open Framework for Federated Learning.",
+      "stars": 842,
+      "pushed_at": "2026-02-21T16:41:42Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://openfl.readthedocs.io"
+    },
+    {
+      "full_name": "SMILELab-FL/FedLab",
+      "html_url": "https://github.com/SMILELab-FL/FedLab",
+      "description": "A flexible Federated Learning Framework based on PyTorch, simplifying your Federated Learning research.",
+      "stars": 829,
+      "pushed_at": "2025-10-20T15:41:06Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://fedlab.readthedocs.io"
+    },
+    {
+      "full_name": "EnnengYang/Awesome-Model-Merging-Methods-Theories-Applications",
+      "html_url": "https://github.com/EnnengYang/Awesome-Model-Merging-Methods-Theories-Applications",
+      "description": "Model Merging in LLMs, MLLMs, and Beyond: Methods, Theories, Applications and Opportunities. ACM Computing Surveys, 2026.",
+      "stars": 769,
+      "pushed_at": "2026-07-26T07:22:40Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": "https://arxiv.org/pdf/2408.07666"
+    },
+    {
+      "full_name": "weimingwill/awesome-federated-learning",
+      "html_url": "https://github.com/weimingwill/awesome-federated-learning",
+      "description": "All materials you need for Federated Learning:  blogs, videos, papers, and softwares, etc.",
+      "stars": 737,
+      "pushed_at": "2025-11-16T16:14:13Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": "https://github.com/EasyFL-AI/EasyFL"
+    },
+    {
+      "full_name": "BUAA-BDA/OpenHuFu",
+      "html_url": "https://github.com/BUAA-BDA/OpenHuFu",
+      "description": "OpenHuFu is an open-sourced data federation system to support collaborative queries over multi databases with security guarantee.",
+      "stars": 734,
+      "pushed_at": "2026-07-23T09:07:39Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "KarhouTam/FL-bench",
+      "html_url": "https://github.com/KarhouTam/FL-bench",
+      "description": "Benchmark of federated learning. Dedicated to the community. \ud83e\udd17",
+      "stars": 688,
+      "pushed_at": "2026-01-25T00:38:30Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "Koukyosyumei/AIJack",
+      "html_url": "https://github.com/Koukyosyumei/AIJack",
+      "description": "Security and Privacy Risk Simulator for Machine Learning (arXiv:2312.17667)",
+      "stars": 431,
+      "pushed_at": "2026-05-30T02:00:29Z",
+      "language": "C++",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://koukyosyumei.github.io/AIJack/"
+    },
+    {
+      "full_name": "JeffffffFu/Awesome-Differential-Privacy-and-Meachine-Learning",
+      "html_url": "https://github.com/JeffffffFu/Awesome-Differential-Privacy-and-Meachine-Learning",
+      "description": "Differentially private federated learning: A systematic review (ACM Survey); Adap dp-fl: Differentially private federated learning with adaptive noise (TrustCom'2022)",
+      "stars": 389,
+      "pushed_at": "2025-09-02T17:23:17Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "EnnengYang/Awesome-Forgetting-in-Deep-Learning",
+      "html_url": "https://github.com/EnnengYang/Awesome-Forgetting-in-Deep-Learning",
+      "description": "A Comprehensive Survey of Forgetting in Deep Learning Beyond Continual Learning. TPAMI, 2024.",
+      "stars": 365,
+      "pushed_at": "2026-01-27T02:38:26Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": "https://arxiv.org/abs/2307.09218"
+    },
+    {
+      "full_name": "apple/pfl-research",
+      "html_url": "https://github.com/apple/pfl-research",
+      "description": "Simulation framework for accelerating research in Private Federated Learning",
+      "stars": 357,
+      "pushed_at": "2026-07-02T22:13:57Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "http://apple.github.io/pfl-research/"
+    },
+    {
+      "full_name": "JonasGeiping/breaching",
+      "html_url": "https://github.com/JonasGeiping/breaching",
+      "description": "Breaching privacy in federated learning scenarios for vision and text",
+      "stars": 323,
+      "pushed_at": "2026-01-24T17:46:49Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "google/fedjax",
+      "html_url": "https://github.com/google/fedjax",
+      "description": "FedJAX is a JAX-based open source library for Federated Learning simulations that emphasizes ease-of-use in research.",
+      "stars": 271,
+      "pushed_at": "2026-07-08T00:44:05Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "Tisha-runwal/Personalized-Federated-Learning-for-Privacy--Preserving-and-Scalable-IoT-Driven-Smart-Healthcare",
+      "html_url": "https://github.com/Tisha-runwal/Personalized-Federated-Learning-for-Privacy--Preserving-and-Scalable-IoT-Driven-Smart-Healthcare",
+      "description": "A Personalized Federated Learning (PFL-HCare) framework for IoT healthcare. Features MAML meta-learning, Differential Privacy (RDP), and gradient quantization for efficiency. Includes a React/FastAPI dashboard for real-time monitoring.",
+      "stars": 266,
+      "pushed_at": "2026-04-20T06:07:08Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://doi.org/10.1109/ICICI65870.2025.11069877"
+    },
+    {
+      "full_name": "TsingZ0/HtFLlib",
+      "html_url": "https://github.com/TsingZ0/HtFLlib",
+      "description": "You only need to configure one file to support model heterogeneity. Consistent GPU memory usage for single or multiple clients.",
+      "stars": 243,
+      "pushed_at": "2026-04-23T04:56:47Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "owkin/FLamby",
+      "html_url": "https://github.com/owkin/FLamby",
+      "description": "Cross-silo Federated Learning playground in Python. Discover 7 real-world federated datasets to test your new FL strategies and try to beat the leaderboard.",
+      "stars": 241,
+      "pushed_at": "2026-07-07T09:58:03Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://owkin.github.io/FLamby/"
+    },
+    {
+      "full_name": "The-AI-Alliance/tapestry",
+      "html_url": "https://github.com/The-AI-Alliance/tapestry",
+      "description": "Project Tapestry aims to give every nation and participant frontier AI they can call their own \u2014 uniting a global consortium to train a shared frontier model from which partners build and own sovereign models aligned to their national, socio-cultural, and industrial needs.",
+      "stars": 227,
+      "pushed_at": "2026-07-28T10:34:33Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "alexjungaalto/FederatedLearning",
+      "html_url": "https://github.com/alexjungaalto/FederatedLearning",
+      "description": "Material workbench for the master-level course CS-E4740 \"Federated Learning\"",
+      "stars": 203,
+      "pushed_at": "2026-04-26T07:31:17Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "",
+      "homepage": "https://github.com/alexjungaalto/FederatedLearning"
+    },
+    {
+      "full_name": "epfml/disco",
+      "html_url": "https://github.com/epfml/disco",
+      "description": "DISCO is a code-free and installation-free browser platform that allows any non-technical user to collaboratively train machine learning models without sharing any private data.",
+      "stars": 186,
+      "pushed_at": "2026-07-27T08:31:53Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://discolab.ai"
+    },
+    {
+      "full_name": "yyyanbj/arxiv-daily",
+      "html_url": "https://github.com/yyyanbj/arxiv-daily",
+      "description": "\ud83c\udf93 Automatically Update Some Fields Papers Daily using Github Actions (Update Every 12th hours)",
+      "stars": 178,
+      "pushed_at": "2026-07-28T14:07:57Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.bj-yan.top/arxiv-daily"
+    },
+    {
+      "full_name": "scaleoutsystems/scaleout-client",
+      "html_url": "https://github.com/scaleoutsystems/scaleout-client",
+      "description": "Scaleout Edge: Sovereign Edge AI orchestration and Federated Learning",
+      "stars": 169,
+      "pushed_at": "2026-07-10T13:35:54Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.scaleoutsystems.com"
+    },
+    {
+      "full_name": "lishenghui/awesome-fm-fl",
+      "html_url": "https://github.com/lishenghui/awesome-fm-fl",
+      "description": "\u2728\u2728A curated list of latest advances on Large Foundation Models with Federated Learning",
+      "stars": 159,
+      "pushed_at": "2026-01-21T14:10:16Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://arxiv.org/abs/2406.12844"
+    },
+    {
+      "full_name": "p2pfl/p2pfl",
+      "html_url": "https://github.com/p2pfl/p2pfl",
+      "description": "P2PFL is a decentralized federated learning library that enables federated learning on peer-to-peer networks using gossip protocols, making collaborative AI model training possible without reliance on central servers.",
+      "stars": 155,
+      "pushed_at": "2026-05-09T10:24:24Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://p2pfl.com"
+    },
+    {
+      "full_name": "iblameandrew/open-deepthink",
+      "html_url": "https://github.com/iblameandrew/open-deepthink",
+      "description": "Qualitative Neural Networks as a deep-think paradigm",
+      "stars": 151,
+      "pushed_at": "2026-07-27T19:21:39Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "VectorInstitute/fed-rag",
+      "html_url": "https://github.com/VectorInstitute/fed-rag",
+      "description": "A framework for fine-tuning retrieval-augmented generation (RAG) systems.",
+      "stars": 150,
+      "pushed_at": "2026-06-22T09:05:48Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://vectorinstitute.github.io/fed-rag/"
+    },
+    {
+      "full_name": "secretflow/kuscia",
+      "html_url": "https://github.com/secretflow/kuscia",
+      "description": "Kuscia(Kubernetes-based Secure Collaborative InfrA) is a K8s-based privacy-preserving computing task orchestration framework.",
+      "stars": 146,
+      "pushed_at": "2026-07-27T11:14:13Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.secretflow.org.cn/docs/kuscia/latest/zh-Hans"
+    },
+    {
+      "full_name": "primihub/primihub-platform",
+      "html_url": "https://github.com/primihub/primihub-platform",
+      "description": "PrimiHub platform is a Muti-Party Computation and Muti-Party federated task security scheduling platform for MPC and FL point to point service.",
+      "stars": 144,
+      "pushed_at": "2026-05-15T04:10:12Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.primihub.com/"
+    },
+    {
+      "full_name": "anupamkliv/FedERA",
+      "html_url": "https://github.com/anupamkliv/FedERA",
+      "description": "FedERA is a modular and fully customizable open-source FL framework, aiming to address these issues by offering comprehensive support for heterogeneous edge devices and incorporating both standalone and distributed computing. It includes new software modules to enhance usability and promote environ- mental sustainability.",
+      "stars": 139,
+      "pushed_at": "2026-02-02T10:37:14Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://federa.readthedocs.io"
+    },
+    {
+      "full_name": "dixiyao/FoT",
+      "html_url": "https://github.com/dixiyao/FoT",
+      "description": "Federation over Text (FoT) is a federated-learning-like paradigm for multi-agent reasoning.",
+      "stars": 110,
+      "pushed_at": "2026-05-21T22:24:37Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://dixiyao.github.io/fot"
+    },
+    {
+      "full_name": "tuhinsharma121/ai-playground",
+      "html_url": "https://github.com/tuhinsharma121/ai-playground",
+      "description": "I put all my exploration around AI in reproducible notebooks in this repository",
+      "stars": 108,
+      "pushed_at": "2026-02-11T15:00:50Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "monk1337/Aweome-Heathcare-Federated-Learning",
+      "html_url": "https://github.com/monk1337/Aweome-Heathcare-Federated-Learning",
+      "description": "A curated list of Federated Learning papers/articles and recent advancements.",
+      "stars": 106,
+      "pushed_at": "2026-02-09T08:31:51Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "mtuann/federated-learning-updated-papers",
+      "html_url": "https://github.com/mtuann/federated-learning-updated-papers",
+      "description": "Papers related to Federated Learning in all top venues",
+      "stars": 83,
+      "pushed_at": "2026-07-10T22:25:24Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": "https://mtuann.github.io/papers/"
+    },
+    {
+      "full_name": "CyberDataLab/nebula",
+      "html_url": "https://github.com/CyberDataLab/nebula",
+      "description": "NEBULA: A Platform for Decentralized Federated Learning",
+      "stars": 81,
+      "pushed_at": "2026-06-29T09:36:55Z",
+      "language": "Python",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://nebula-dfl.com"
+    },
+    {
+      "full_name": "kt4ngw/CBCSBA",
+      "html_url": "https://github.com/kt4ngw/CBCSBA",
+      "description": "Source code for the paper \"Joint Class-Balanced Client Selection and Bandwidth Allocation for Cost-Efficient Federated Learning in Mobile Edge Computing Networks\". This paper is pulished in IEEE TMC.",
+      "stars": 81,
+      "pushed_at": "2025-12-15T16:05:37Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://ieeexplore.ieee.org/document/10876775"
+    },
+    {
+      "full_name": "FedGraph/fedgraph",
+      "html_url": "https://github.com/FedGraph/fedgraph",
+      "description": "FedGraph (Federated Graph) is a library built upon PyTorch to easily train Graph Neural Networks under federated setting.",
+      "stars": 73,
+      "pushed_at": "2026-07-26T18:54:37Z",
+      "language": "Python",
+      "license_spdx_id": "BSD-2-Clause",
+      "homepage": "https://docs.fedgraph.org/en/latest/"
+    },
+    {
+      "full_name": "mtuann/fedlearn-backdoor-attacks",
+      "html_url": "https://github.com/mtuann/fedlearn-backdoor-attacks",
+      "description": "Fast integration of backdoor attacks in federated learning with updated attacks and defenses.",
+      "stars": 67,
+      "pushed_at": "2026-01-19T07:19:22Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://mtuann.github.io/papers/"
+    },
+    {
+      "full_name": "fangvv/LassoADMM",
+      "html_url": "https://github.com/fangvv/LassoADMM",
+      "description": "Code for paper \"A Distributed ADMM Approach for Collaborative Regression Learning in Edge Computing\"",
+      "stars": 65,
+      "pushed_at": "2026-07-22T05:46:48Z",
+      "language": "MATLAB",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://fangvv.github.io/LassoADMM/"
+    },
+    {
+      "full_name": "vio1etus/FLPoison",
+      "html_url": "https://github.com/vio1etus/FLPoison",
+      "description": "FLPoison: Benchmarking Poisoning Attacks and Defenses in Federated Learning",
+      "stars": 64,
+      "pushed_at": "2026-04-15T09:55:35Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "youngfish42/FL-paper-update-tracker",
+      "html_url": "https://github.com/youngfish42/FL-paper-update-tracker",
+      "description": "Track Federated Learning Papers",
+      "stars": 60,
+      "pushed_at": "2026-07-24T02:56:56Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "FeTS-AI/Challenge",
+      "html_url": "https://github.com/FeTS-AI/Challenge",
+      "description": "The repo for the FeTS Challenge",
+      "stars": 57,
+      "pushed_at": "2025-09-09T17:02:14Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://www.synapse.org/#!Synapse:syn28546456"
+    },
+    {
+      "full_name": "VectorInstitute/FL4Health",
+      "html_url": "https://github.com/VectorInstitute/FL4Health",
+      "description": "A flexible, modular, and easy to use library to facilitate federated learning research and development in healthcare settings",
+      "stars": 55,
+      "pushed_at": "2026-07-28T07:56:51Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://vectorinstitute.github.io/FL4Health/"
+    },
+    {
+      "full_name": "makgyver/fluke",
+      "html_url": "https://github.com/makgyver/fluke",
+      "description": "Federated learning framework made by researchers for researchers :)",
+      "stars": 55,
+      "pushed_at": "2026-07-25T16:00:44Z",
+      "language": "Python",
+      "license_spdx_id": "LGPL-2.1",
+      "homepage": "https://makgyver.github.io/fluke/"
+    },
+    {
+      "full_name": "thinh-dao/BackFed",
+      "html_url": "https://github.com/thinh-dao/BackFed",
+      "description": "An Efficient & Standardized Benchmark Suite for Backdoor Attacks in Federated Learning",
+      "stars": 54,
+      "pushed_at": "2026-03-29T06:50:48Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "leondavi/NErlNet",
+      "html_url": "https://github.com/leondavi/NErlNet",
+      "description": "Nerlnet is a framework for research and development of distributed machine learning models on IoT",
+      "stars": 53,
+      "pushed_at": "2026-03-08T17:01:47Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "junkangLiu0/FedBCGD",
+      "html_url": "https://github.com/junkangLiu0/FedBCGD",
+      "description": "FedBCGD",
+      "stars": 53,
+      "pushed_at": "2026-05-12T15:15:38Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "hertz-ai/HARTOS",
+      "html_url": "https://github.com/hertz-ai/HARTOS",
+      "description": "An AI-native OS. Models run on your own hardware, nodes federate peer-to-peer with no broker, and the API is OpenAI-compatible. Boots, has its own Wayland compositor, and runs on 8GB. Apache 2.0.",
+      "stars": 48,
+      "pushed_at": "2026-07-29T01:53:59Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.hevolve.ai/"
+    },
+    {
+      "full_name": "Fractal-Compute-Orchestrations/FractalWorkspace",
+      "html_url": "https://github.com/Fractal-Compute-Orchestrations/FractalWorkspace",
+      "description": "A unified ecosystem and workspace for large-scale federated learning, bridging the gap between centralized model evolution and decentralized edge intelligence.",
+      "stars": 46,
+      "pushed_at": "2026-07-05T15:36:46Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://play.google.com/store/apps/details?id=org.fractal.app&hl=en"
+    },
+    {
+      "full_name": "londonaicentre/FLIP",
+      "html_url": "https://github.com/londonaicentre/FLIP",
+      "description": "Federated Learning Interoperability Platform",
+      "stars": 45,
+      "pushed_at": "2026-07-28T17:04:23Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://londonaicentreflip.readthedocs.io/"
+    },
+    {
+      "full_name": "lunan0320/FedPHE",
+      "html_url": "https://github.com/lunan0320/FedPHE",
+      "description": "[INFOCOM24' & TDSC25']FedPHE & Efficient and Straggler-Resistant Homomorphic Encryption for Heterogeneous Federated Learning",
+      "stars": 44,
+      "pushed_at": "2025-08-31T03:37:49Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "paritybit-ai/XFL",
+      "html_url": "https://github.com/paritybit-ai/XFL",
+      "description": "An Efficient and Easy-to-use Federated Learning Framework.",
+      "stars": 44,
+      "pushed_at": "2026-03-17T07:14:11Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "geehokim/FedACG",
+      "html_url": "https://github.com/geehokim/FedACG",
+      "description": "(CVPR 2024) Communication-Efficient Federated Learning with Accelerated Client Gradient",
+      "stars": 44,
+      "pushed_at": "2025-08-15T14:04:10Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://arxiv.org/abs/2201.03172"
+    },
+    {
+      "full_name": "makgyver/gossipy",
+      "html_url": "https://github.com/makgyver/gossipy",
+      "description": "Python module for simulating gossip learning.",
+      "stars": 41,
+      "pushed_at": "2026-03-24T14:29:25Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "mtuann/backdoor-ai-resources",
+      "html_url": "https://github.com/mtuann/backdoor-ai-resources",
+      "description": "Backdoor Stuff in AI/ ML domain",
+      "stars": 41,
+      "pushed_at": "2026-07-10T22:25:22Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": "https://mtuann.github.io/papers/"
+    },
+    {
+      "full_name": "ngc436/awesome-vertical-federated-learning",
+      "html_url": "https://github.com/ngc436/awesome-vertical-federated-learning",
+      "description": "A curated list of advancements in Vertical Federated Learning, frameworks and libraries.",
+      "stars": 40,
+      "pushed_at": "2025-07-29T16:54:15Z",
+      "language": "",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "PratikGarai/MNIST-Federated",
+      "html_url": "https://github.com/PratikGarai/MNIST-Federated",
+      "description": "Experiments on MNIST dataset and federated training using Flower framework",
+      "stars": 39,
+      "pushed_at": "2026-02-20T21:19:11Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "aioz-ai/FADNet",
+      "html_url": "https://github.com/aioz-ai/FADNet",
+      "description": "Deep Federated Learning for Autonomous Driving (IV'22)",
+      "stars": 39,
+      "pushed_at": "2026-04-21T07:13:39Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://ai.aioz.io/research/FADNet1/"
+    },
+    {
+      "full_name": "boyi-liu/FedLLM-Factory",
+      "html_url": "https://github.com/boyi-liu/FedLLM-Factory",
+      "description": "\ud83d\udd25 Tuning LLMs with 15+ Federated Fine-tuning Methods",
+      "stars": 38,
+      "pushed_at": "2026-04-21T07:37:38Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "kt4ngw/GFLCSM",
+      "html_url": "https://github.com/kt4ngw/GFLCSM",
+      "description": "Source code for the paper \"Group-based Federated Learning with Cost-efficient Sampling Mechanism in Mobile Edge Computing Networks\".",
+      "stars": 38,
+      "pushed_at": "2026-01-11T04:19:29Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://ieeexplore.ieee.org/document/11153864"
+    },
+    {
+      "full_name": "pps-lab/rofl-project-code",
+      "html_url": "https://github.com/pps-lab/rofl-project-code",
+      "description": "",
+      "stars": 36,
+      "pushed_at": "2025-12-23T11:36:24Z",
+      "language": "Rust",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "Pengxin-Guo/Awesome-Gradient-Inversion-Attacks",
+      "html_url": "https://github.com/Pengxin-Guo/Awesome-Gradient-Inversion-Attacks",
+      "description": "Paper List for Gradient Inversion Attacks in Federated Learning [IEEE TPAMI 2026]",
+      "stars": 36,
+      "pushed_at": "2026-04-20T02:39:50Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": "https://pengxin-guo.github.io/FLPrivacy/"
+    },
+    {
+      "full_name": "LPD-EPFL/byzfl",
+      "html_url": "https://github.com/LPD-EPFL/byzfl",
+      "description": "ByzFL: A Python library for robust federated learning, offering Byzantine-resilient aggregators, attack simulations, and ML pipelines for distributed systems. Compatible with PyTorch and NumPy.",
+      "stars": 36,
+      "pushed_at": "2025-07-31T10:15:53Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://byzfl.epfl.ch/"
+    },
+    {
+      "full_name": "sb-ai-lab/Stalactite",
+      "html_url": "https://github.com/sb-ai-lab/Stalactite",
+      "description": "Stalactite is the framework implementing the vertical federated learning paradigm.",
+      "stars": 36,
+      "pushed_at": "2025-08-21T18:53:21Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "youpengl/FedCHAR",
+      "html_url": "https://github.com/youpengl/FedCHAR",
+      "description": "[UbiComp/IMWUT '23] Hierarchical Clustering-based Personalized Federated Learning for Robust and Fair Human Activity Recognition",
+      "stars": 33,
+      "pushed_at": "2025-10-20T16:06:23Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Ryanditko/federated-learning-at-cybersecurity",
+      "html_url": "https://github.com/Ryanditko/federated-learning-at-cybersecurity",
+      "description": "Este projeto de inicia\u00e7\u00e3o cient\u00edfica tem como objetivo investigar e desenvolver solu\u00e7\u00f5es baseadas em Aprendizado Federado, um paradigma de intelig\u00eancia artificial descentralizada que permite o treinamento colaborativo de modelos de machine learning sem a necessidade de centralizar dados sens\u00edveis.",
+      "stars": 31,
+      "pushed_at": "2026-05-04T20:11:20Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "ZFancy/SFAT",
+      "html_url": "https://github.com/ZFancy/SFAT",
+      "description": "[ICLR 2023] \"Combating Exacerbated Heterogeneity for Robust Models in Federated Learning\"",
+      "stars": 31,
+      "pushed_at": "2025-12-28T16:21:25Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://openreview.net/forum?id=eKllxpLOOm"
+    },
+    {
+      "full_name": "KCL-BMEIS/UltraFlwr",
+      "html_url": "https://github.com/KCL-BMEIS/UltraFlwr",
+      "description": "[MICCAI-AMAI'25] Federated YOLO with Flower and Ultralytics.",
+      "stars": 30,
+      "pushed_at": "2025-11-25T14:37:54Z",
+      "language": "Python",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "kavishka-dot/filum",
+      "html_url": "https://github.com/kavishka-dot/filum",
+      "description": "Pure-C federated learning library for MCU-class edge devices over LoRa. STM32 + SX1276.",
+      "stars": 29,
+      "pushed_at": "2026-05-10T08:26:34Z",
+      "language": "C",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "OngWinKent/Federated-Feature-Unlearning",
+      "html_url": "https://github.com/OngWinKent/Federated-Feature-Unlearning",
+      "description": "[NeurIPS 2024] Official implementation of the paper \u201cFerrari: Federated Feature Unlearning via Optimizing Feature\u00a0Sensitivity\"",
+      "stars": 28,
+      "pushed_at": "2026-02-13T06:40:39Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "ranjithrajv/awesome-volunteer-computing",
+      "html_url": "https://github.com/ranjithrajv/awesome-volunteer-computing",
+      "description": "A curated list of awesome projects, platforms, and resources related to volunteer computing \u2014 donating idle computing power to solve real-world scientific and humanitarian problems.",
+      "stars": 27,
+      "pushed_at": "2026-07-28T08:01:36Z",
+      "language": "",
+      "license_spdx_id": "CC0-1.0",
+      "homepage": "https://github.com/ranjithrajv/awesome-volunteer-computing"
+    },
+    {
+      "full_name": "mxliu/ACTION-Software",
+      "html_url": "https://github.com/mxliu/ACTION-Software",
+      "description": "Open-Source Python Software for Functional MRI Analysis",
+      "stars": 27,
+      "pushed_at": "2025-11-03T23:59:15Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://mingxia.web.unc.edu/action/"
+    },
+    {
+      "full_name": "fangvv/RTFD-Dataset",
+      "html_url": "https://github.com/fangvv/RTFD-Dataset",
+      "description": "Images to Classify Defective and Non-Defective Railway Track",
+      "stars": 26,
+      "pushed_at": "2026-07-22T05:45:17Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://fangvv.github.io/Homepage/Edgecomp/"
+    },
+    {
+      "full_name": "scimorph/secureml",
+      "html_url": "https://github.com/scimorph/secureml",
+      "description": "Easy-to-use utilities to build privacy-preserving AI.",
+      "stars": 26,
+      "pushed_at": "2026-04-11T21:02:03Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://secureml.readthedocs.io"
+    },
+    {
+      "full_name": "google-parfait/dataset_grouper",
+      "html_url": "https://github.com/google-parfait/dataset_grouper",
+      "description": "Libraries for efficient and scalable group-structured dataset pipelines.",
+      "stars": 25,
+      "pushed_at": "2026-07-08T08:41:04Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "open-risk/openLGD",
+      "html_url": "https://github.com/open-risk/openLGD",
+      "description": "openLGD is a Python powered library for the statistical estimation of Credit Risk Loss Given Default models.  It can be used both as standalone library and in a federated learning context where data remain in distinct (separate) servers",
+      "stars": 25,
+      "pushed_at": "2026-05-23T16:16:45Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.openriskmanual.org/wiki/Loss_Given_Default_Models"
+    },
+    {
+      "full_name": "dos-group/fedzero",
+      "html_url": "https://github.com/dos-group/fedzero",
+      "description": "[ACM e-Energy'24] Code and data for \"FedZero: Leveraging Renewable Excess Energy in Federated Learning\"",
+      "stars": 24,
+      "pushed_at": "2026-05-13T20:49:37Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "shengchaochen82/FFTS",
+      "html_url": "https://github.com/shengchaochen82/FFTS",
+      "description": "[AAAI'25] The implementation of paper \"Federated Foundation Models on Heterogeneous Time Series\" | The first work to explore time series foundation models on federated setting.",
+      "stars": 24,
+      "pushed_at": "2026-05-10T01:39:19Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "wnma3mz/flearn",
+      "html_url": "https://github.com/wnma3mz/flearn",
+      "description": "Federated Learning Framework",
+      "stars": 24,
+      "pushed_at": "2026-03-29T14:50:24Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "jtirana98/SFL-workflow-optimization",
+      "html_url": "https://github.com/jtirana98/SFL-workflow-optimization",
+      "description": "Numerical Evaluation and Implementation of paper: Workflow Optimization for paper Parallel Split Learning (IEEE INFOCOM 2024).",
+      "stars": 24,
+      "pushed_at": "2026-07-15T09:19:16Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "6lyc/FedCEO_Collaborate-with-Each-Other",
+      "html_url": "https://github.com/6lyc/FedCEO_Collaborate-with-Each-Other",
+      "description": "[ICML 2025] The Official implementation of our paper \"Clients Collaborate: Flexible Differentially Private Federated Learning with Guaranteed Improvement of Utility-Privacy Trade-off\"",
+      "stars": 23,
+      "pushed_at": "2025-12-21T10:31:25Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://proceedings.mlr.press/v267/li25n.html"
+    },
+    {
+      "full_name": "kunzhan/BrainGuard",
+      "html_url": "https://github.com/kunzhan/BrainGuard",
+      "description": "AAAI 2025 (Oral), BrainGuard: Privacy-Preserving Multisubject Image Reconstructions from Brain Activities",
+      "stars": 23,
+      "pushed_at": "2025-12-01T12:11:27Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "http://arxiv.org/abs/2501.14309"
+    },
+    {
+      "full_name": "eclypse-org/federact",
+      "html_url": "https://github.com/eclypse-org/federact",
+      "description": "FedRay: a Research Framework for Federated Learning based on Ray",
+      "stars": 23,
+      "pushed_at": "2026-07-11T23:26:13Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://fedray.readthedocs.io"
+    },
+    {
+      "full_name": "FLEXible-FL/FLEXible",
+      "html_url": "https://github.com/FLEXible-FL/FLEXible",
+      "description": "Federated Learning (FL) experiment simulation in Python.",
+      "stars": 23,
+      "pushed_at": "2026-03-19T10:16:13Z",
+      "language": "Python",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "tnurbek/shapfed",
+      "html_url": "https://github.com/tnurbek/shapfed",
+      "description": "[IJCAI 2024] Redefining Contributions: Shapley-Driven Federated Learning",
+      "stars": 21,
+      "pushed_at": "2025-12-04T07:35:40Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://tnurbek.github.io/shapfed/"
+    },
+    {
+      "full_name": "Harvard-AI-and-Robotics-Lab/FairFedMed",
+      "html_url": "https://github.com/Harvard-AI-and-Robotics-Lab/FairFedMed",
+      "description": "[IEEE Transactions on Medcial Imaging 2025] FairFedMed: Benchmarking Group Fairness in Federated Medical Imaging with FairLoRA",
+      "stars": 20,
+      "pushed_at": "2026-04-15T18:13:31Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://ieeexplore.ieee.org/document/11205878"
+    }
+  ]
+}

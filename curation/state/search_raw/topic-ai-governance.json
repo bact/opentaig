@@ -1,0 +1,967 @@
+{
+  "keyword": "topic:ai-governance",
+  "query": "topic:ai-governance stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 96,
+  "repos": [
+    {
+      "full_name": "mlflow/mlflow",
+      "html_url": "https://github.com/mlflow/mlflow",
+      "description": "The open source AI engineering platform for agents, LLMs, and ML models. MLflow enables teams of all sizes to debug, evaluate, monitor, and optimize production-quality AI applications while controlling costs and managing access to models and data.",
+      "stars": 27252,
+      "pushed_at": "2026-07-29T01:20:25Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://mlflow.org"
+    },
+    {
+      "full_name": "iflytek/skillhub",
+      "html_url": "https://github.com/iflytek/skillhub",
+      "description": "Self-hosted, open-source agent skill registry for enterprises. Publish & version skill packages, govern with RBAC and audit logs, deploy   on-premise with Docker or Kubernetes.",
+      "stars": 4928,
+      "pushed_at": "2026-07-29T01:00:19Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://skill.xfyun.cn"
+    },
+    {
+      "full_name": "ifixai-ai/iFixAi",
+      "html_url": "https://github.com/ifixai-ai/iFixAi",
+      "description": "Independent Auditing of AI Agents. Run by human or the agent itself, to answer the most crucial question in the AI Agent Economy. Is the agent doing what is supposed to do? With iFixAi you can have this answer in less than 120 seconds.",
+      "stars": 3357,
+      "pushed_at": "2026-07-27T08:52:51Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.ifixai.ai"
+    },
+    {
+      "full_name": "tractorjuice/arc-kit",
+      "html_url": "https://github.com/tractorjuice/arc-kit",
+      "description": "The Enterprise Architecture Governance Harness \u2014 strategy, architecture, delivery, and assurance using AI coding assistants",
+      "stars": 2108,
+      "pushed_at": "2026-07-28T10:01:27Z",
+      "language": "JavaScript",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://arckit.org/"
+    },
+    {
+      "full_name": "semantica-agi/semantica",
+      "html_url": "https://github.com/semantica-agi/semantica",
+      "description": "Graph-Native Infrastructure for Context and Accountable AI Systems",
+      "stars": 1441,
+      "pushed_at": "2026-07-28T15:33:31Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://getsemantica.ai"
+    },
+    {
+      "full_name": "cordum-io/cordum",
+      "html_url": "https://github.com/cordum-io/cordum",
+      "description": "The action firewall for AI agents. Enforce policy and human approval before risky tool calls, shell commands, workflows, and production changes, with auditable evidence.",
+      "stars": 495,
+      "pushed_at": "2026-07-28T16:30:08Z",
+      "language": "Go",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "secureagentics/Adrian",
+      "html_url": "https://github.com/secureagentics/Adrian",
+      "description": "Open-source runtime AI agent security tool - monitors and controls AI agents, catching malicious tool use, prompt injection, and policy drift in real time, before the agent acts.",
+      "stars": 464,
+      "pushed_at": "2026-07-24T14:09:23Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://secureagentics.ai"
+    },
+    {
+      "full_name": "RiccardoBiosas/awesome-MLSecOps",
+      "html_url": "https://github.com/RiccardoBiosas/awesome-MLSecOps",
+      "description": "A curated list of MLSecOps tools and resources for securing machine learning and AI systems - adversarial ML defense, LLM security, AI red teaming, model scanning, supply-chain protection, and MLOps pipeline security.",
+      "stars": 443,
+      "pushed_at": "2026-07-28T16:59:19Z",
+      "language": "Astro",
+      "license_spdx_id": "MIT",
+      "homepage": "https://awesomemlsecops.com/"
+    },
+    {
+      "full_name": "Varietyz/Disciplined-AI-Software-Development",
+      "html_url": "https://github.com/Varietyz/Disciplined-AI-Software-Development",
+      "description": "A disciplined methodology for AI-assisted software development. Covers architectural constraints, validation hooks, session governance, and PAG (Pattern Abstract Grammar) for structured AI collaboration. Copy claude-setup/ into your project to start.",
+      "stars": 404,
+      "pushed_at": "2026-04-02T14:58:53Z",
+      "language": "Python",
+      "license_spdx_id": "CC-BY-SA-4.0",
+      "homepage": "https://banes-lab.com"
+    },
+    {
+      "full_name": "verifywise-ai/verifywise",
+      "html_url": "https://github.com/verifywise-ai/verifywise",
+      "description": "Complete AI governance and LLM Evals platform with support for EU AI Act, ISO 42001, NIST AI RMF and 20+ more AI frameworks and regulations. Join our Discord channel: https://discord.com/invite/d3k3E4uEpR",
+      "stars": 322,
+      "pushed_at": "2026-07-28T20:14:45Z",
+      "language": "TypeScript",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://verifywise.ai"
+    },
+    {
+      "full_name": "ucsandman/DashClaw",
+      "html_url": "https://github.com/ucsandman/DashClaw",
+      "description": "\ud83d\udee1\ufe0fThe governance runtime for AI agents. Intercept actions, enforce guard policies, require approvals, and produce audit-ready decision trails.",
+      "stars": 287,
+      "pushed_at": "2026-07-29T01:15:05Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.dashclaw.io/"
+    },
+    {
+      "full_name": "jagmarques/asqav-sdk",
+      "html_url": "https://github.com/jagmarques/asqav-sdk",
+      "description": "Python and TypeScript SDKs for verifiable evidence of AI agent actions. Signed receipts, policy enforcement, audit trails. Works with LangChain, CrewAI, MCP.",
+      "stars": 249,
+      "pushed_at": "2026-07-28T20:18:03Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://asqav.com"
+    },
+    {
+      "full_name": "GaaraZhu/gate",
+      "html_url": "https://github.com/GaaraZhu/gate",
+      "description": "A deterministic privacy boundary between your data and AI.",
+      "stars": 208,
+      "pushed_at": "2026-06-19T05:16:01Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "eli-labz/Agent-Execution-Partnership",
+      "html_url": "https://github.com/eli-labz/Agent-Execution-Partnership",
+      "description": "Agent Execution Partnership AEE is an open-source control plane that ensures every AI agent action is authorized before it runs, observable while it runs, and verifiable after it completes.",
+      "stars": 203,
+      "pushed_at": "2026-07-22T03:24:16Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://aee.eli-labz.com/"
+    },
+    {
+      "full_name": "permit0-ai/permit0",
+      "html_url": "https://github.com/permit0-ai/permit0",
+      "description": "Stop AI agents from doing things they shouldn't. The action authorization layer \u2014 pre-execution, deterministic, policies included. Drop in. Day one.",
+      "stars": 201,
+      "pushed_at": "2026-06-22T11:05:23Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://permit0.com"
+    },
+    {
+      "full_name": "madguyevans-creator/Fintech-CUI-Trust-Framework",
+      "html_url": "https://github.com/madguyevans-creator/Fintech-CUI-Trust-Framework",
+      "description": "An open-source engineering governance standard defining trust boundaries for conversational AI agents in high-stakes domains. MIT Licensed.",
+      "stars": 200,
+      "pushed_at": "2026-07-07T08:39:59Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Fr-e-d/GAAI-framework",
+      "html_url": "https://github.com/Fr-e-d/GAAI-framework",
+      "description": "Turns AI coding tools into reliable software delivery systems. Drop a .gaai/ folder into any project \u2014 Discovery defines what to build, Delivery executes autonomously until criteria pass. Works with Claude Code, Codex CLI, Gemini CLI, Cursor, and more. No SDK. No package. Markdown + YAML + bash.",
+      "stars": 155,
+      "pushed_at": "2026-07-28T21:48:27Z",
+      "language": "Shell",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "transilienceai/shasta",
+      "html_url": "https://github.com/transilienceai/shasta",
+      "description": "Transilience \u2014 Shasta is the open-source pre-GA AI and Cloud Security platform. Supports GCP, AWS, and Azure and 14 security & compliance frameworks",
+      "stars": 144,
+      "pushed_at": "2026-07-24T12:34:22Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://shasta.transilience.cloud"
+    },
+    {
+      "full_name": "AthenaCore/AwesomeResponsibleAI",
+      "html_url": "https://github.com/AthenaCore/AwesomeResponsibleAI",
+      "description": "A curated list of awesome academic research, books, code of ethics, courses, databases,  data sets, frameworks, institutes, maturity models, newsletters, principles, podcasts, regulations, reports, responsible scale policies, tools and standards related to Responsible, Trustworthy, and Human-Centered AI.",
+      "stars": 141,
+      "pushed_at": "2026-07-10T03:19:25Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "stephnangue/warden",
+      "html_url": "https://github.com/stephnangue/warden",
+      "description": "The secure gateway connecting AI agents to enterprise systems.",
+      "stars": 139,
+      "pushed_at": "2026-07-28T02:36:36Z",
+      "language": "Go",
+      "license_spdx_id": "MPL-2.0",
+      "homepage": "https://wardengateway.com"
+    },
+    {
+      "full_name": "arbiterForge/codeArbiter",
+      "html_url": "https://github.com/arbiterForge/codeArbiter",
+      "description": "When you can't trust yourself with your code base, trust Arbiter.",
+      "stars": 137,
+      "pushed_at": "2026-07-29T01:48:57Z",
+      "language": "Python",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://arbiterforge.github.io/codeArbiter/"
+    },
+    {
+      "full_name": "CyberStrategyInstitute/ai-safe2-framework",
+      "html_url": "https://github.com/CyberStrategyInstitute/ai-safe2-framework",
+      "description": "The Universal Governance, Risk, Compliance (GRC) Operating System with Integrated Security for Agentic AI, Non-Human Identities, and Swarm Governance. AI SAFE\u00b2 + AI Sovereignty Maturity Model (AISM) [Dual License: MIT + CC-BY-SA]",
+      "stars": 137,
+      "pushed_at": "2026-07-24T14:23:31Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://cyberstrategyinstitute.com/AI-Safe2/"
+    },
+    {
+      "full_name": "Goldziher/ai-rulez",
+      "html_url": "https://github.com/Goldziher/ai-rulez",
+      "description": "Complete AI development workflow for 19+ tools. Builtin rules, agents, and conventions out of the box. Generate native configs for Claude, Cursor, Copilot, Windsurf, Gemini, Codex and more.",
+      "stars": 135,
+      "pushed_at": "2026-07-28T07:35:47Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "open-bias/open-bias",
+      "html_url": "https://github.com/open-bias/open-bias",
+      "description": "Open Source Reliability Harness: Make your agents follow rules. One line of code to\u200e \u200eenforce, trace, and improve. \u200e \u200e",
+      "stars": 134,
+      "pushed_at": "2026-05-23T05:54:44Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.openbias.dev"
+    },
+    {
+      "full_name": "AndrewAltimit/template-repo",
+      "html_url": "https://github.com/AndrewAltimit/template-repo",
+      "description": "Agent orchestration & security template featuring MCP tool building, agent2agent workflows, mechanistic interpretability on sleeper agents, and agent integration via CLI wrappers",
+      "stars": 131,
+      "pushed_at": "2026-07-05T21:02:53Z",
+      "language": "Rust",
+      "license_spdx_id": "Unlicense",
+      "homepage": "https://andrewaltimit.github.io/template-repo/"
+    },
+    {
+      "full_name": "nxtg-ai/forge-orchestrator",
+      "html_url": "https://github.com/nxtg-ai/forge-orchestrator",
+      "description": "Forge Orchestrator: Multi-AI task orchestration. File locking, knowledge capture, drift detection. Rust.",
+      "stars": 131,
+      "pushed_at": "2026-07-28T01:21:53Z",
+      "language": "Rust",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://forge.nxtg.ai"
+    },
+    {
+      "full_name": "Hiepler/EuConform",
+      "html_url": "https://github.com/Hiepler/EuConform",
+      "description": "EU AI Act Compliance Tool - Risk classification and bias testing",
+      "stars": 123,
+      "pushed_at": "2026-07-01T08:49:36Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://euconform.eu"
+    },
+    {
+      "full_name": "el1ght/aulite",
+      "html_url": "https://github.com/el1ght/aulite",
+      "description": "EU AI Act compliance proxy for AI systems. Drop-in HTTP proxy that monitors every AI interaction for regulatory risks, logs to a tamper-proof audit trail, and generates legal-grade PDF reports. 143 rules across 8 Annex III domains. Self-hosted, open-core",
+      "stars": 121,
+      "pushed_at": "2026-06-14T21:47:10Z",
+      "language": "TypeScript",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "OrlojHQ/orloj",
+      "html_url": "https://github.com/OrlojHQ/orloj",
+      "description": "An orchestration runtime for multi-agent AI systems. Declare agents, tools, and policies as YAML; Orloj schedules, executes, routes, and governs them for production-grade operation.",
+      "stars": 111,
+      "pushed_at": "2026-07-24T11:21:11Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://orloj.dev"
+    },
+    {
+      "full_name": "KbWen/agentic-os",
+      "html_url": "https://github.com/KbWen/agentic-os",
+      "description": "Governance framework for AI coding agents. It runs them through a five-step workflow (plan, build, review, test, ship) where no step counts as done without evidence. Drop-in rules and guardrails for Claude Code, Codex, Cursor, Copilot, and Antigravity, via AGENTS.md.",
+      "stars": 106,
+      "pushed_at": "2026-07-28T11:13:41Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Firma-AI/openfirma",
+      "html_url": "https://github.com/Firma-AI/openfirma",
+      "description": "Runtime enforcement boundary for AI agents: a local sidecar that gates every outbound call against Cedar policies you own. Deterministic, call-level, no model on the hot path",
+      "stars": 103,
+      "pushed_at": "2026-07-28T23:54:31Z",
+      "language": "Rust",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://firma-ai.github.io/openfirma/"
+    },
+    {
+      "full_name": "arthurpanhku/dvalincode",
+      "html_url": "https://github.com/arthurpanhku/dvalincode",
+      "description": "Approvable, local-first AI coding agent for regulated teams: policy controls, governed MCP, evidence packs, audit trails, secure remediation, and any OpenAI-compatible model.",
+      "stars": 97,
+      "pushed_at": "2026-07-28T04:18:28Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://dvalincode.dev"
+    },
+    {
+      "full_name": "LiteLLM-Labs/litellm-relay",
+      "html_url": "https://github.com/LiteLLM-Labs/litellm-relay",
+      "description": "Onboard AI tools in one step, and catch the rest. Relay sets up Claude Desktop, Claude Code, and Codex to run through your LiteLLM AI Gateway with zero dev setup and routes shadow AI (Notion AI, Perplexity, \u2026) there too.",
+      "stars": 89,
+      "pushed_at": "2026-07-23T20:14:38Z",
+      "language": "Rust",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "elliot35/deterministic-agent-control-protocol",
+      "html_url": "https://github.com/elliot35/deterministic-agent-control-protocol",
+      "description": "Governance gateway for AI agents \u2014 bounded, auditable, session-aware control with MCP proxy, shell proxy & HTTP API. Works with Cursor, Claude Code, Codex, and any MCP-compatible agent.",
+      "stars": 89,
+      "pushed_at": "2026-02-12T06:31:56Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.npmjs.com/package/@det-acp/core"
+    },
+    {
+      "full_name": "kesslernity/awesome-copilot-chat-agents",
+      "html_url": "https://github.com/kesslernity/awesome-copilot-chat-agents",
+      "description": "82 ready-to-deploy Microsoft Copilot Chat agents \u2014 paste the instruction block into Copilot Studio and you're live. Writing, HR, PM, IT ops, Sales, Finance, Engineering & more. RAI reviewed, source-quality labelled, tested. No coding required.",
+      "stars": 89,
+      "pushed_at": "2026-06-29T10:32:58Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": "https://kesslernity.com"
+    },
+    {
+      "full_name": "finewood2008/centaurloop",
+      "html_url": "https://github.com/finewood2008/centaurloop",
+      "description": "\u534a\u4eba\u9a6c\u73af Centaur Loop\uff1aAI \u5458\u5de5\u7684\u6700\u5c0f\u5de5\u4f5c\u5355\u5143\u6846\u67b6\u3002\u628a\u590d\u6742\u5c97\u4f4d\u62c6\u89e3\u4e3a\u53ef\u7531 AI \u63a5\u7ba1\u3001\u7531\u4eba\u7c7b\u6cbb\u7406\u3001\u7531\u53cd\u9988\u548c\u8bb0\u5fc6\u6301\u7eed\u8fdb\u5316\u7684\u5faa\u73af\u5de5\u4f5c\u6d41 / The smallest work unit for building AI employees.",
+      "stars": 89,
+      "pushed_at": "2026-06-02T13:14:21Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.centaurloop.com/"
+    },
+    {
+      "full_name": "GenAI-Gurus/awesome-eu-ai-act",
+      "html_url": "https://github.com/GenAI-Gurus/awesome-eu-ai-act",
+      "description": "Curated tools, official sources, OSS, templates, and guides for EU AI Act compliance.",
+      "stars": 78,
+      "pushed_at": "2026-06-27T21:53:22Z",
+      "language": "",
+      "license_spdx_id": "CC0-1.0",
+      "homepage": "https://github.com/GenAI-Gurus/awesome-eu-ai-act#readme"
+    },
+    {
+      "full_name": "SantanderAI/mech-gov-framework",
+      "html_url": "https://github.com/SantanderAI/mech-gov-framework",
+      "description": "Mechanical Governance for LLM Decisions \u2014 model-agnostic governance regimes (R1/R2/R3), hard gates, entropy commit-reveal and governance metrics for high-stakes LLM decision systems.",
+      "stars": 76,
+      "pushed_at": "2026-07-15T08:33:54Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/SantanderAI"
+    },
+    {
+      "full_name": "runxhq/runx",
+      "html_url": "https://github.com/runxhq/runx",
+      "description": "the governed runtime for agent skill workflows, off the leash but on the record",
+      "stars": 75,
+      "pushed_at": "2026-07-28T21:46:06Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": "https://runx.ai"
+    },
+    {
+      "full_name": "vaultys/VaultysClaw",
+      "html_url": "https://github.com/vaultys/VaultysClaw",
+      "description": "Zero-trust orchestration for millions of AI agents",
+      "stars": 75,
+      "pushed_at": "2026-07-28T06:44:48Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://docs.vaultys.ai"
+    },
+    {
+      "full_name": "getaxonflow/axonflow",
+      "html_url": "https://github.com/getaxonflow/axonflow",
+      "description": "AxonFlow: Runtime control layer for production AI",
+      "stars": 70,
+      "pushed_at": "2026-07-27T21:15:28Z",
+      "language": "Go",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://docs.getaxonflow.com"
+    },
+    {
+      "full_name": "apisec-inc/AI-Surface",
+      "html_url": "https://github.com/apisec-inc/AI-Surface",
+      "description": "Find and govern AI attack surfaces in application code at PR time. Free, OSS, runs offline.",
+      "stars": 67,
+      "pushed_at": "2026-07-27T01:14:30Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://apisec.ai"
+    },
+    {
+      "full_name": "christag/agency",
+      "html_url": "https://github.com/christag/agency",
+      "description": "One dashboard for all your AI agents \u2014 manage teams across Claude Code, Codex, Gemini, Aider, and more. No database required.",
+      "stars": 67,
+      "pushed_at": "2026-03-30T01:13:20Z",
+      "language": "Python",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "ai-sdlc-framework/ai-sdlc",
+      "html_url": "https://github.com/ai-sdlc-framework/ai-sdlc",
+      "description": "Declarative governance framework for AI-augmented software development lifecycles",
+      "stars": 66,
+      "pushed_at": "2026-07-27T07:44:50Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://ai-sdlc.io"
+    },
+    {
+      "full_name": "bkuan001/halo-record",
+      "html_url": "https://github.com/bkuan001/halo-record",
+      "description": "Tamper-evident runtime records for AI agents. Hash-chained, dependency-free, verifiable by anyone.",
+      "stars": 60,
+      "pushed_at": "2026-07-26T00:02:44Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://pypi.org/project/halo-record/"
+    },
+    {
+      "full_name": "Lair-ai/lair",
+      "html_url": "https://github.com/Lair-ai/lair",
+      "description": "Private AI framework",
+      "stars": 60,
+      "pushed_at": "2026-07-21T14:12:26Z",
+      "language": "Shell",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://dev.lair-ai.it"
+    },
+    {
+      "full_name": "Chimera-Protocol/Project-Chimera",
+      "html_url": "https://github.com/Chimera-Protocol/Project-Chimera",
+      "description": "Neuro-Symbolic-Causal AI - Project Chimera | \ud83c\udf0c An open research project exploring formal verification of AI agent decisions, combining symbolic reasoning, causal inference, and runtime policy enforcement.",
+      "stars": 54,
+      "pushed_at": "2026-02-20T09:24:18Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://chimera-protocol.com/"
+    },
+    {
+      "full_name": "getclyro/clyro",
+      "html_url": "https://github.com/getclyro/clyro",
+      "description": "Clyro is a governance platform for AI agents. While most tools let you watch agents fail, Clyro stops failures before they happen, catching infinite loops, runaway costs, and policy violations in real time.",
+      "stars": 53,
+      "pushed_at": "2026-07-22T07:26:34Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://clyro.dev/"
+    },
+    {
+      "full_name": "sebuzdugan/frai",
+      "html_url": "https://github.com/sebuzdugan/frai",
+      "description": "Open-source toolkit for responsible AI: CLI + SDK to scan code, collect evidence, and generate model cards, risk files, evals, and RAG indexes.",
+      "stars": 52,
+      "pushed_at": "2026-04-25T14:17:23Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://frai.cc/"
+    },
+    {
+      "full_name": "war851/AI-Governance-Architecture",
+      "html_url": "https://github.com/war851/AI-Governance-Architecture",
+      "description": "Claude Code best practices applied to application design. Interactive HLD/LLD visualizations, a DB-governed implementation example, and the same primitives as a runnable agent: the Governed Agent. LLM-agnostic, DB-governed, GDPR-ready.",
+      "stars": 52,
+      "pushed_at": "2026-07-22T12:24:38Z",
+      "language": "",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://toldi.io"
+    },
+    {
+      "full_name": "Vinix24/vnx-orchestration",
+      "html_url": "https://github.com/Vinix24/vnx-orchestration",
+      "description": "Governance-first orchestration for Claude Code, Codex, and Gemini CLI \u2014 parallel workers, receipts, quality gates, and full provenance.",
+      "stars": 50,
+      "pushed_at": "2026-07-28T20:43:41Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://vincentvandeth.nl/blog/glass-box-governance-multi-agent-ai"
+    },
+    {
+      "full_name": "jnamaya/SAFi",
+      "html_url": "https://github.com/jnamaya/SAFi",
+      "description": "SAFi is runtime governance for agentic AI. Policy-enforced gates, per-turn audit trails, and longitudinal consistency memory.",
+      "stars": 50,
+      "pushed_at": "2026-07-29T01:53:26Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://selfalignmentframework.com/"
+    },
+    {
+      "full_name": "soapbucket/sbproxy",
+      "html_url": "https://github.com/soapbucket/sbproxy",
+      "description": "Self-hosted AI gateway and LLM proxy. OpenAI-compatible API for OpenAI, Anthropic, Gemini, Bedrock and 60+ providers, or serve vLLM/llama.cpp on your GPUs. Keys, budgets, guardrails, semantic cache, MCP",
+      "stars": 49,
+      "pushed_at": "2026-07-28T23:45:03Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://sbproxy.dev"
+    },
+    {
+      "full_name": "ariffazil/arifOS",
+      "html_url": "https://github.com/ariffazil/arifOS",
+      "description": "[L0 CONSTITUTION] arifOS \u2014 constitutional MCP kernel. Law, identity, F1\u2013F13, VAULT999. Judges but never executes. DITEMPA BUKAN DIBERI.",
+      "stars": 49,
+      "pushed_at": "2026-07-28T19:54:31Z",
+      "language": "Python",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://arif-fazil.com/"
+    },
+    {
+      "full_name": "robertfels/iso-42001-aims-links-and-resources",
+      "html_url": "https://github.com/robertfels/iso-42001-aims-links-and-resources",
+      "description": "ISO 42001 AIMS Links & Resources / Contact: https://www.linkedin.com/in/robertfels/",
+      "stars": 46,
+      "pushed_at": "2025-10-29T10:00:03Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.linkedin.com/groups/15696009/"
+    },
+    {
+      "full_name": "CES-Ltd/TitanX",
+      "html_url": "https://github.com/CES-Ltd/TitanX",
+      "description": "Enterprise AI Agent Orchestration Platform \u2014 Secure, Observable, Configurable. Multi-agent teams with IAM policies, n8n workflows, LangChain memory, LangSmith traces, NemoClaw security, OpenTelemetry, and 20+ LLM providers.",
+      "stars": 45,
+      "pushed_at": "2026-04-21T00:16:57Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/CES-Ltd/TitanX"
+    },
+    {
+      "full_name": "mastepanoski/claude-skills",
+      "html_url": "https://github.com/mastepanoski/claude-skills",
+      "description": "UX/UI evaluation, AI governance, and AI security skills for AI coding assistants. Audit interfaces with Nielsen heuristics, WCAG, Don Norman principles. Assess AI risk with NIST AI RMF, ISO 42001, OWASP LLM Top 10, and OWASP AI Testing Guide.",
+      "stars": 44,
+      "pushed_at": "2026-06-05T20:38:56Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "LivingFramework/LivingFramework.github.io",
+      "html_url": "https://github.com/LivingFramework/LivingFramework.github.io",
+      "description": "CLAUDE COWORK Governance templates for Claude Cowork \u2014 built from empirical research into long-horizon human-AI collaboration.",
+      "stars": 44,
+      "pushed_at": "2026-07-13T14:30:12Z",
+      "language": "JavaScript",
+      "license_spdx_id": "",
+      "homepage": "https://livingframework.github.io/"
+    },
+    {
+      "full_name": "Keesan12/martin-loop",
+      "html_url": "https://github.com/Keesan12/martin-loop",
+      "description": "Make AI coding agents safe to scale autonomously: assign work, cap spend, enforce policy, verify output, roll back failures, learn from loops, and prove ROI across every repo.",
+      "stars": 41,
+      "pushed_at": "2026-07-29T00:55:44Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://martinloop.com"
+    },
+    {
+      "full_name": "open-ace/open-ace",
+      "html_url": "https://github.com/open-ace/open-ace",
+      "description": "Self-hosted enterprise AI workspace and governance platform",
+      "stars": 41,
+      "pushed_at": "2026-07-28T23:24:41Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.open-ace.com"
+    },
+    {
+      "full_name": "Stunspot/stunspots-guide-to-ai-systems",
+      "html_url": "https://github.com/Stunspot/stunspots-guide-to-ai-systems",
+      "description": "Operational doctrine for practical AI systems design.",
+      "stars": 40,
+      "pushed_at": "2026-07-18T20:28:00Z",
+      "language": "",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://stunspot.github.io/stunspots-guide-to-ai-systems/"
+    },
+    {
+      "full_name": "alan-turing-institute/AssurancePlatform",
+      "html_url": "https://github.com/alan-turing-institute/AssurancePlatform",
+      "description": "Project to facilitate creation of Assurance Cases",
+      "stars": 40,
+      "pushed_at": "2026-07-22T12:19:52Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "DimwitLabs/AI-DECLARATION.md",
+      "html_url": "https://github.com/DimwitLabs/AI-DECLARATION.md",
+      "description": "An open standard for declaring AI usage in software projects.",
+      "stars": 39,
+      "pushed_at": "2026-07-28T02:33:52Z",
+      "language": "HTML",
+      "license_spdx_id": "MIT",
+      "homepage": "https://ai-declaration.md"
+    },
+    {
+      "full_name": "DariuszNewecki/CORE",
+      "html_url": "https://github.com/DariuszNewecki/CORE",
+      "description": "CORE is a governance runtime for autonomous AI systems. It enforces constitutional rules during execution, prevents governance bypass, and creates auditable authority chains for agent actions across operational domains.",
+      "stars": 38,
+      "pushed_at": "2026-07-27T09:16:26Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://dariusznewecki.github.io/CORE/"
+    },
+    {
+      "full_name": "The-AgenticFlow/openflows",
+      "html_url": "https://github.com/The-AgenticFlow/openflows",
+      "description": "Autonomous AI Dev Team On Coder",
+      "stars": 37,
+      "pushed_at": "2026-07-28T17:20:44Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": "https://openflows.dev"
+    },
+    {
+      "full_name": "codeprakhar25/agentdiff",
+      "html_url": "https://github.com/codeprakhar25/agentdiff",
+      "description": "Git-native AI code provenance: records which AI agent wrote which line, signs each attribution with ed25519, stores it in your git history. Cross-agent (Claude Code, Cursor, Copilot, Codex, Windsurf, OpenCode, Gemini).",
+      "stars": 37,
+      "pushed_at": "2026-06-08T05:48:05Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://getagentdiff.com"
+    },
+    {
+      "full_name": "MiguelAxcar/ai-rpi-protocol",
+      "html_url": "https://github.com/MiguelAxcar/ai-rpi-protocol",
+      "description": "Repo-native protocol for AI-assisted coding that enforces a simple discipline: research first, plan second, code last. Drop it into any repository to reduce wrong implementations, cut rewrite cycles, and improve decisions earlier in the workflow. Works with Cursor, VS Code, Claude Code, and Windsurf across Claude, GPT, Gemini, Grok, and DeepSeek.",
+      "stars": 36,
+      "pushed_at": "2026-05-16T14:05:29Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "MicSm/boffin",
+      "html_url": "https://github.com/MicSm/boffin",
+      "description": "Staff-engineer layer for AI coding agents: routes per-edit architectural constraints and requires verification. Not another AGENTS.md.",
+      "stars": 34,
+      "pushed_at": "2026-07-27T19:01:29Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "veritasfuji-japan/veritas_os",
+      "html_url": "https://github.com/veritasfuji-japan/veritas_os",
+      "description": "VERITAS OS is an AI agent governance runtime for decision control, policy enforcement, approval workflows, audit trails, and replayable evidence before real-world actions.",
+      "stars": 34,
+      "pushed_at": "2026-07-26T00:41:16Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://doi.org/10.5281/zenodo.17688094"
+    },
+    {
+      "full_name": "datacline/secure-mcp-gateway",
+      "html_url": "https://github.com/datacline/secure-mcp-gateway",
+      "description": "Secure mcp infrastructure to audit and control every data access by AI agents with minimal efforts",
+      "stars": 33,
+      "pushed_at": "2026-05-13T12:20:10Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://datacline.ai"
+    },
+    {
+      "full_name": "spiffy-oss/artguard",
+      "html_url": "https://github.com/spiffy-oss/artguard",
+      "description": "Open-source AI artifact scanner. Detect malicious agent skills, MCP servers, and IDE rule files before they run.",
+      "stars": 31,
+      "pushed_at": "2026-03-05T17:29:29Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "pohi-protocol/pohi",
+      "html_url": "https://github.com/pohi-protocol/pohi",
+      "description": "Proof of Human Intent (PoHI) - Cryptographically verifiable human approval for AI-driven development",
+      "stars": 31,
+      "pushed_at": "2026-07-27T03:20:26Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://pohi-demo.vercel.app/"
+    },
+    {
+      "full_name": "radotsvetkov/akmon",
+      "html_url": "https://github.com/radotsvetkov/akmon",
+      "description": "Tamper-evident evidence and verification layer for AI agents. Verify any agent's session offline with just openssl. No cloud, no lock-in.",
+      "stars": 30,
+      "pushed_at": "2026-07-10T13:28:56Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://radotsvetkov.github.io/akmon/"
+    },
+    {
+      "full_name": "MonetiseBG/circuit-breaker",
+      "html_url": "https://github.com/MonetiseBG/circuit-breaker",
+      "description": "Runtime economic governance for AI agents. Circuit Breaker adds risk-managed execution, cost ceilings, and kill switches to autonomous AI workflows.",
+      "stars": 30,
+      "pushed_at": "2026-06-23T08:31:41Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://circuitbreaker.dev"
+    },
+    {
+      "full_name": "mohdibrahimaiml/epi-recorder",
+      "html_url": "https://github.com/mohdibrahimaiml/epi-recorder",
+      "description": "Tamper-evident evidence infrastructure for AI agents. Capture, seal, verify, and audit AI decisions in a single portable .epi file.",
+      "stars": 28,
+      "pushed_at": "2026-07-27T09:20:05Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.epilabs.org/"
+    },
+    {
+      "full_name": "pingchesu/hermes-curator-evolver",
+      "html_url": "https://github.com/pingchesu/hermes-curator-evolver",
+      "description": "Evidence-driven skill evolution for Hermes Agent \u2014 reports, dry-run proposals, candidate search, and guarded apply",
+      "stars": 28,
+      "pushed_at": "2026-07-21T10:11:59Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "JehanneDussert/govllm",
+      "html_url": "https://github.com/JehanneDussert/govllm",
+      "description": "Continuous LLM governance monitoring for regulated environments - EU AI Act, GDPR, ANSSI. Self-hosted, profile-driven, no data leaves your infrastructure.",
+      "stars": 27,
+      "pushed_at": "2026-07-03T12:09:11Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://arxiv.org/abs/2605.24737"
+    },
+    {
+      "full_name": "Shubchynskyi/garda-agent-orchestrator",
+      "html_url": "https://github.com/Shubchynskyi/garda-agent-orchestrator",
+      "description": "Governed local runtime for AI coding agents: task lifecycle, mandatory gates, reviews, doc-impact checks, and auditable completion.",
+      "stars": 25,
+      "pushed_at": "2026-07-08T08:08:36Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://garda-workflow.netlify.app"
+    },
+    {
+      "full_name": "lua-ai-global/governance",
+      "html_url": "https://github.com/lua-ai-global/governance",
+      "description": "Zero-dependency TypeScript SDK for AI agent governance: policy enforcement, injection detection, tamper-evident audit, and standards mapping (EU AI Act, OWASP, NIST, ISO 42001)",
+      "stars": 25,
+      "pushed_at": "2026-07-26T11:30:56Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://heygovernance.ai"
+    },
+    {
+      "full_name": "gumieri/nenya",
+      "html_url": "https://github.com/gumieri/nenya",
+      "description": "A lightweight, highly secure AI API Gateway/Proxy written in Go. Acts as transparent middleware between local AI coding clients (OpenCode/Pi/Cursor) and upstream LLM providers (Gemini, DeepSeek, Zhipu z.ai).",
+      "stars": 25,
+      "pushed_at": "2026-07-21T17:24:16Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "Fioooooooo/FylloCode",
+      "html_url": "https://github.com/Fioooooooo/FylloCode",
+      "description": "Coding Agent \u7684\u6cbb\u7406\u5c42\uff0c\u8ba9 Agent \u9075\u5b88\u540c\u4e00\u5957\u53ef\u6267\u884c\u4e14\u6301\u7eed\u6f14\u8fdb\u7684\u5de5\u7a0b\u89c4\u8303\uff0c\u5168\u7a0b\u53ef\u8ffd\u6eaf",
+      "stars": 25,
+      "pushed_at": "2026-07-28T10:38:42Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://fyllocode.cc"
+    },
+    {
+      "full_name": "southleft/ds-contracts-poc",
+      "html_url": "https://github.com/southleft/ds-contracts-poc",
+      "description": "Component contracts: one machine-readable source of truth that generates both a React library and a Figma library, proves they match with a three-way differ, extracts contracts back out of existing code or designs, and runs the whole loop in a browser playground. Candidate spec for design-system contracts.",
+      "stars": 24,
+      "pushed_at": "2026-07-28T06:31:54Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://ds-contracts-playground.pages.dev"
+    },
+    {
+      "full_name": "kakunin-ai/kakunin-core",
+      "html_url": "https://github.com/kakunin-ai/kakunin-core",
+      "description": "Open-source AI agent identity & compliance platform \u2014 X.509 certificates via AWS KMS, behavioral risk scoring, auto-revocation, and MiCA / EU AI Act audit trails.",
+      "stars": 23,
+      "pushed_at": "2026-07-09T04:20:58Z",
+      "language": "TypeScript",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://www.kakunin.ai/open-source"
+    },
+    {
+      "full_name": "capiscio/a2a-demos",
+      "html_url": "https://github.com/capiscio/a2a-demos",
+      "description": "Demo agents showcasing CapiscIO Agent Guard and MCP Guard \u2014 trust badges, identity verification, and tool-level authorization for A2A and MCP protocols",
+      "stars": 23,
+      "pushed_at": "2026-05-22T03:07:50Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://capisc.io"
+    },
+    {
+      "full_name": "dp-web4/SAGE",
+      "html_url": "https://github.com/dp-web4/SAGE",
+      "description": "A cognition kernel that wraps a frozen LLM in a persistent identity + trust + governance loop \u2014 testing whether capability comes from structure, not weights. Research-stage; honest about what's real vs mocked.",
+      "stars": 23,
+      "pushed_at": "2026-07-29T01:34:35Z",
+      "language": "Python",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "CorvinLabs/CorvinOS",
+      "html_url": "https://github.com/CorvinLabs/CorvinOS",
+      "description": "Self-hosted agentic OS \u2014 connects Claude Code, Codex or Hermes Agent to Discord, Telegram, WhatsApp, Slack & Email. EU AI Act 2026 & GDPR compliance by architecture.",
+      "stars": 22,
+      "pushed_at": "2026-07-28T23:07:16Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://corvin-labs.com"
+    },
+    {
+      "full_name": "stacklok/toolhive-registry-server",
+      "html_url": "https://github.com/stacklok/toolhive-registry-server",
+      "description": "Discover, govern and control access to MCP servers and agent skills across your organization",
+      "stars": 22,
+      "pushed_at": "2026-07-28T15:34:17Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.stacklok.com/toolhive/guides-registry/"
+    },
+    {
+      "full_name": "SpaceArmour/qxli-sovereign-ai-engine",
+      "html_url": "https://github.com/SpaceArmour/qxli-sovereign-ai-engine",
+      "description": "Enterprise-grade sovereign AI for organizations where SaaS AI isn\u2019t an option.",
+      "stars": 22,
+      "pushed_at": "2026-06-17T06:29:47Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://qxli.com"
+    },
+    {
+      "full_name": "airblackbox/airblackbox",
+      "html_url": "https://github.com/airblackbox/airblackbox",
+      "description": "Open-source EU AI Act compliance scanner. 51 checks across Articles 9-15. Drop-in trust layers for LangChain, CrewAI, AutoGen, OpenAI. Local-first, no data leaves your machine.",
+      "stars": 21,
+      "pushed_at": "2026-07-27T03:44:57Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://airblackbox.ai"
+    },
+    {
+      "full_name": "ethanolivertroy/awesome-grc-ai",
+      "html_url": "https://github.com/ethanolivertroy/awesome-grc-ai",
+      "description": "Curated list of AI + GRC resources: AI governance frameworks and AI-powered compliance tools",
+      "stars": 21,
+      "pushed_at": "2026-02-16T15:59:19Z",
+      "language": "Python",
+      "license_spdx_id": "CC0-1.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "delimit-ai/delimit-mcp-server",
+      "html_url": "https://github.com/delimit-ai/delimit-mcp-server",
+      "description": "The merge gate for AI-written code, with signed, replayable attestation. Works across Claude Code, Codex, Cursor, and Gemini CLI.",
+      "stars": 21,
+      "pushed_at": "2026-07-28T03:12:38Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://delimit.ai"
+    },
+    {
+      "full_name": "systempromptio/systemprompt-template",
+      "html_url": "https://github.com/systempromptio/systemprompt-template",
+      "description": "AI Governance Infrastructure \u2014 local evaluation. The governance layer for AI agents: a single compiled Rust binary that authenticates, authorises, rate-limits, logs, and costs every AI interaction. Self-hosted, air-gap capable, provider-agnostic.",
+      "stars": 21,
+      "pushed_at": "2026-07-28T22:17:00Z",
+      "language": "Rust",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://systemprompt.io"
+    },
+    {
+      "full_name": "jamjet-labs/jamjet",
+      "html_url": "https://github.com/jamjet-labs/jamjet",
+      "description": "The open-source safety layer for AI agents \u2014 block unsafe tool calls, require approval, enforce budgets, audit, replay.",
+      "stars": 20,
+      "pushed_at": "2026-07-20T12:44:59Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://jamjet.dev"
+    },
+    {
+      "full_name": "lfedgeai/AegisSovereignAI",
+      "html_url": "https://github.com/lfedgeai/AegisSovereignAI",
+      "description": "AegisSovereignAI: The Cross-Ecosystem Trust Layer for the Distributed Enterprise. Verifiable Identity, Hardware-Rooted Integrity, and Sovereign AI Governance - from Silicon to Prompt. Unifying AI, Cloud-Native, and Decentralized architectures.",
+      "stars": 20,
+      "pushed_at": "2026-05-02T14:48:53Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/lfedgeai/AegisSovereignAI"
+    },
+    {
+      "full_name": "algorismo-au/lanekeep",
+      "html_url": "https://github.com/algorismo-au/lanekeep",
+      "description": "Governance guardrails and insights for AI coding agents",
+      "stars": 20,
+      "pushed_at": "2026-07-25T21:42:23Z",
+      "language": "Shell",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "agentrust-io/awesome-ai-governance",
+      "html_url": "https://github.com/agentrust-io/awesome-ai-governance",
+      "description": "\ud83d\udee1\ufe0f A curated list of tools, frameworks, standards, and resources for AI agent governance, safety, and compliance",
+      "stars": 20,
+      "pushed_at": "2026-07-29T00:19:23Z",
+      "language": "Shell",
+      "license_spdx_id": "CC0-1.0",
+      "homepage": ""
+    }
+  ]
+}

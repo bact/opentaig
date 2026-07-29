@@ -1,0 +1,1317 @@
+{
+  "keyword": "topic:explainable-ai",
+  "query": "topic:explainable-ai stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 131,
+  "repos": [
+    {
+      "full_name": "jacobgil/pytorch-grad-cam",
+      "html_url": "https://github.com/jacobgil/pytorch-grad-cam",
+      "description": "Advanced AI Explainability for computer vision.  Support for CNNs, Vision Transformers, Classification, Object detection, Segmentation, Image similarity and more.",
+      "stars": 12936,
+      "pushed_at": "2026-07-10T13:19:18Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://jacobgil.github.io/pytorch-gradcam-book"
+    },
+    {
+      "full_name": "interpretml/interpret",
+      "html_url": "https://github.com/interpretml/interpret",
+      "description": "Fit interpretable models. Explain blackbox machine learning.",
+      "stars": 6905,
+      "pushed_at": "2026-07-27T16:47:16Z",
+      "language": "C++",
+      "license_spdx_id": "MIT",
+      "homepage": "https://interpret.ml/docs"
+    },
+    {
+      "full_name": "obss/sahi",
+      "html_url": "https://github.com/obss/sahi",
+      "description": "Framework agnostic sliced/tiled inference + interactive ui + error analysis plots",
+      "stars": 5430,
+      "pushed_at": "2026-07-26T22:14:37Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://obss.github.io/sahi/"
+    },
+    {
+      "full_name": "astroautomata/PySR",
+      "html_url": "https://github.com/astroautomata/PySR",
+      "description": "High-Performance Symbolic Regression in Python and Julia",
+      "stars": 3655,
+      "pushed_at": "2026-07-24T11:49:05Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://ai.damtp.cam.ac.uk/pysr"
+    },
+    {
+      "full_name": "microsoft/tensorwatch",
+      "html_url": "https://github.com/microsoft/tensorwatch",
+      "description": "Debugging, monitoring and visualization for Python Machine Learning and Data Science",
+      "stars": 3470,
+      "pushed_at": "2026-03-30T21:27:28Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "alan-ai/alan-sdk-web",
+      "html_url": "https://github.com/alan-ai/alan-sdk-web",
+      "description": "The Self-Coding System for Your App \u2014 Alan AI SDK for Web",
+      "stars": 2432,
+      "pushed_at": "2026-07-08T17:56:55Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": "https://alan.app/"
+    },
+    {
+      "full_name": "trustgraph-ai/trustgraph",
+      "html_url": "https://github.com/trustgraph-ai/trustgraph",
+      "description": "The deterministic context engineering platform for open source AI. Connect open models and ontologies with context graph harnesses to build explainable, reliable agents.",
+      "stars": 2395,
+      "pushed_at": "2026-07-28T20:34:09Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://TrustGraph.ai"
+    },
+    {
+      "full_name": "rentruewang/aioway",
+      "html_url": "https://github.com/rentruewang/aioway",
+      "description": "AI on the way. An auto deep learning pipe dream. An RDBMS approach to deep learning. Declarative, explainable, scalable, optimizable, easy to deploy, all that good stuff.",
+      "stars": 1825,
+      "pushed_at": "2026-07-29T01:50:03Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://aioway.rentruewang.com/"
+    },
+    {
+      "full_name": "microsoft/responsible-ai-toolbox",
+      "html_url": "https://github.com/microsoft/responsible-ai-toolbox",
+      "description": "Responsible AI Toolbox is a suite of tools providing model and data exploration and assessment user interfaces and libraries that enable a better understanding of AI systems. These interfaces and libraries empower developers and stakeholders of AI systems to develop and monitor AI more responsibly, and take better data-driven actions.",
+      "stars": 1812,
+      "pushed_at": "2026-04-29T18:27:55Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://responsibleaitoolbox.ai/"
+    },
+    {
+      "full_name": "Trusted-AI/AIX360",
+      "html_url": "https://github.com/Trusted-AI/AIX360",
+      "description": "Interpretability and explainability of data and machine learning models",
+      "stars": 1791,
+      "pushed_at": "2026-07-23T16:28:31Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://aix360.res.ibm.com/"
+    },
+    {
+      "full_name": "wangyongjie-ntu/Awesome-explainable-AI",
+      "html_url": "https://github.com/wangyongjie-ntu/Awesome-explainable-AI",
+      "description": "A  collection of research materials on explainable AI/ML",
+      "stars": 1650,
+      "pushed_at": "2026-03-07T11:27:21Z",
+      "language": "Markdown",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "csinva/imodels",
+      "html_url": "https://github.com/csinva/imodels",
+      "description": "Interpretable ML package \ud83d\udd0d for concise, transparent, and accurate predictive modeling (sklearn-compatible).",
+      "stars": 1601,
+      "pushed_at": "2026-07-25T19:15:05Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://csinva.io/imodels"
+    },
+    {
+      "full_name": "ModelOriented/DALEX",
+      "html_url": "https://github.com/ModelOriented/DALEX",
+      "description": "moDel Agnostic Language for Exploration and eXplanation",
+      "stars": 1483,
+      "pushed_at": "2026-07-15T11:00:33Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://dalex.drwhy.ai"
+    },
+    {
+      "full_name": "semantica-agi/semantica",
+      "html_url": "https://github.com/semantica-agi/semantica",
+      "description": "Graph-Native Infrastructure for Context and Accountable AI Systems",
+      "stars": 1441,
+      "pushed_at": "2026-07-28T15:33:31Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://getsemantica.ai"
+    },
+    {
+      "full_name": "valeman/awesome-conformal-prediction",
+      "html_url": "https://github.com/valeman/awesome-conformal-prediction",
+      "description": "A professionally curated list of awesome Conformal Prediction videos, tutorials, books, papers, PhD and MSc theses, articles and open-source libraries.",
+      "stars": 1272,
+      "pushed_at": "2026-07-09T11:49:02Z",
+      "language": "",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "EthicalML/xai",
+      "html_url": "https://github.com/EthicalML/xai",
+      "description": "XAI - An eXplainability toolbox for machine learning",
+      "stars": 1255,
+      "pushed_at": "2025-11-29T12:57:47Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://ethical.institute/principles.html#commitment-3"
+    },
+    {
+      "full_name": "dswah/pyGAM",
+      "html_url": "https://github.com/dswah/pyGAM",
+      "description": "[CONTRIBUTORS WELCOME] Generalized Additive Models in Python",
+      "stars": 1011,
+      "pushed_at": "2026-04-21T15:12:58Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://pygam.readthedocs.io"
+    },
+    {
+      "full_name": "salesforce/OmniXAI",
+      "html_url": "https://github.com/salesforce/OmniXAI",
+      "description": "OmniXAI: A Library for eXplainable AI",
+      "stars": 970,
+      "pushed_at": "2026-06-02T18:13:12Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": ""
+    },
+    {
+      "full_name": "DmitryRyumin/ICCV-2023-25-Papers",
+      "html_url": "https://github.com/DmitryRyumin/ICCV-2023-25-Papers",
+      "description": "ICCV 2023-2025 Papers: Discover cutting-edge research from ICCV 2023-25, the leading computer vision conference. Stay updated on the latest in computer vision and deep learning, with code included. \u2b50 support visual intelligence development!",
+      "stars": 968,
+      "pushed_at": "2025-11-07T15:03:40Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://huggingface.co/spaces/DmitryRyumin/NewEraAI-Papers"
+    },
+    {
+      "full_name": "flyingdoog/awesome-graph-explainability-papers",
+      "html_url": "https://github.com/flyingdoog/awesome-graph-explainability-papers",
+      "description": "Papers about explainability of GNNs",
+      "stars": 814,
+      "pushed_at": "2026-06-03T17:34:33Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "astroautomata/SymbolicRegression.jl",
+      "html_url": "https://github.com/astroautomata/SymbolicRegression.jl",
+      "description": "Distributed High-Performance Symbolic Regression in Julia",
+      "stars": 801,
+      "pushed_at": "2026-07-27T19:51:30Z",
+      "language": "Julia",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://ai.damtp.cam.ac.uk/symbolicregression/dev"
+    },
+    {
+      "full_name": "mmschlk/shapiq",
+      "html_url": "https://github.com/mmschlk/shapiq",
+      "description": "Shapley Interactions and Shapley Values for Machine Learning",
+      "stars": 762,
+      "pushed_at": "2026-07-28T13:49:32Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://shapiq.readthedocs.io"
+    },
+    {
+      "full_name": "deel-ai/xplique",
+      "html_url": "https://github.com/deel-ai/xplique",
+      "description": "\ud83d\udc4b Xplique is a Neural Networks Explainability Toolbox",
+      "stars": 748,
+      "pushed_at": "2026-07-27T16:42:47Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://deel-ai.github.io/xplique"
+    },
+    {
+      "full_name": "understandable-machine-intelligence-lab/Quantus",
+      "html_url": "https://github.com/understandable-machine-intelligence-lab/Quantus",
+      "description": "[JMLR 2023] Quantus is an eXplainable AI toolkit for responsible evaluation of neural network explanations",
+      "stars": 672,
+      "pushed_at": "2026-05-04T10:20:57Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://quantus.readthedocs.io/"
+    },
+    {
+      "full_name": "ScalaConsultants/Aspect-Based-Sentiment-Analysis",
+      "html_url": "https://github.com/ScalaConsultants/Aspect-Based-Sentiment-Analysis",
+      "description": "\ud83d\udcad Aspect-Based-Sentiment-Analysis: Transformer & Explainable ML (TensorFlow)",
+      "stars": 585,
+      "pushed_at": "2026-05-24T07:58:25Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "polyaxon/traceml",
+      "html_url": "https://github.com/polyaxon/traceml",
+      "description": "Engine for AI/ML/Data tracking, visualization, explainability, drift detection, and dashboards for Polyaxon.",
+      "stars": 534,
+      "pushed_at": "2026-06-17T19:06:53Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "BCG-X-Official/facet",
+      "html_url": "https://github.com/BCG-X-Official/facet",
+      "description": "Human-explainable AI.",
+      "stars": 533,
+      "pushed_at": "2026-02-10T14:09:14Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://bcg-x-official.github.io/facet"
+    },
+    {
+      "full_name": "inseq-team/inseq",
+      "html_url": "https://github.com/inseq-team/inseq",
+      "description": "Interpretability for sequence generation models \ud83d\udc1b \ud83d\udd0d",
+      "stars": 472,
+      "pushed_at": "2026-04-25T15:29:40Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://inseq.org"
+    },
+    {
+      "full_name": "explainX/explainx",
+      "html_url": "https://github.com/explainX/explainx",
+      "description": "Explain & debug any blackbox machine learning model with a single line of code.",
+      "stars": 452,
+      "pushed_at": "2026-07-13T17:57:20Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "fcakyon/content-moderation-deep-learning",
+      "html_url": "https://github.com/fcakyon/content-moderation-deep-learning",
+      "description": "Deep learning based content moderation from text, audio, video & image input modalities.",
+      "stars": 405,
+      "pushed_at": "2026-07-13T18:19:52Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": "https://arxiv.org/abs/2212.04533"
+    },
+    {
+      "full_name": "SHI-Yu-Zhe/awesome-agi-cocosci",
+      "html_url": "https://github.com/SHI-Yu-Zhe/awesome-agi-cocosci",
+      "description": "An awesome & curated list for Artificial General Intelligence, an emerging inter-discipline field that combines artificial intelligence and computational cognitive sciences.",
+      "stars": 389,
+      "pushed_at": "2026-04-04T00:47:09Z",
+      "language": "TeX",
+      "license_spdx_id": "CC0-1.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "IntelLabs/causality-lab",
+      "html_url": "https://github.com/IntelLabs/causality-lab",
+      "description": "Causal discovery algorithms and tools for implementing new ones",
+      "stars": 253,
+      "pushed_at": "2026-07-22T08:42:02Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "chr5tphr/zennit",
+      "html_url": "https://github.com/chr5tphr/zennit",
+      "description": "Zennit is a high-level framework in Python using PyTorch for explaining/exploring neural networks using attribution methods like LRP.",
+      "stars": 247,
+      "pushed_at": "2026-05-13T09:07:15Z",
+      "language": "Python",
+      "license_spdx_id": "LGPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "benedekrozemberczki/shapley",
+      "html_url": "https://github.com/benedekrozemberczki/shapley",
+      "description": "The official implementation of \"The Shapley Value of Classifiers in Ensemble Games\" (CIKM 2021).",
+      "stars": 227,
+      "pushed_at": "2026-01-01T14:34:38Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "FOR-sight-ai/interpreto",
+      "html_url": "https://github.com/FOR-sight-ai/interpreto",
+      "description": "\ud83e\ude84 Interpreto is an interpretability toolbox for LLMs",
+      "stars": 193,
+      "pushed_at": "2026-07-22T13:55:32Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://for-sight-ai.github.io/interpreto/"
+    },
+    {
+      "full_name": "xmed-lab/TAM",
+      "html_url": "https://github.com/xmed-lab/TAM",
+      "description": "[ICCV25 Oral] Token Activation Map to Visually Explain Multimodal LLMs",
+      "stars": 190,
+      "pushed_at": "2025-12-14T09:58:51Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "habedi/cogitator",
+      "html_url": "https://github.com/habedi/cogitator",
+      "description": "A Python toolkit for chain-of-thought prompting \ud83d\udc0d",
+      "stars": 188,
+      "pushed_at": "2026-07-05T20:04:35Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "JHoelli/Awesome-Time-Series-Explainability",
+      "html_url": "https://github.com/JHoelli/Awesome-Time-Series-Explainability",
+      "description": "A list of (post-hoc) XAI for time series",
+      "stars": 188,
+      "pushed_at": "2026-04-03T18:32:08Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "NorskRegnesentral/shapr",
+      "html_url": "https://github.com/NorskRegnesentral/shapr",
+      "description": "Explaining the output of machine learning models with more accurately estimated Shapley values",
+      "stars": 178,
+      "pushed_at": "2026-07-26T17:44:55Z",
+      "language": "HTML",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://norskregnesentral.github.io/shapr/"
+    },
+    {
+      "full_name": "natnew/Awesome-Data-Science",
+      "html_url": "https://github.com/natnew/Awesome-Data-Science",
+      "description": "Carefully curated list of awesome data science resources.",
+      "stars": 164,
+      "pushed_at": "2026-02-18T11:41:41Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://github.com/natnew.io/Awesome-Data-Science/"
+    },
+    {
+      "full_name": "rachtibat/zennit-crp",
+      "html_url": "https://github.com/rachtibat/zennit-crp",
+      "description": "An eXplainable AI toolkit with Concept Relevance Propagation and Relevance Maximization",
+      "stars": 144,
+      "pushed_at": "2026-01-14T14:25:17Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://www.nature.com/articles/s42256-023-00711-8"
+    },
+    {
+      "full_name": "fzi-forschungszentrum-informatik/TSInterpret",
+      "html_url": "https://github.com/fzi-forschungszentrum-informatik/TSInterpret",
+      "description": "An Open-Source Library for the interpretability of time series classifiers",
+      "stars": 142,
+      "pushed_at": "2025-11-19T09:23:59Z",
+      "language": "Python",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": ""
+    },
+    {
+      "full_name": "AthenaCore/AwesomeResponsibleAI",
+      "html_url": "https://github.com/AthenaCore/AwesomeResponsibleAI",
+      "description": "A curated list of awesome academic research, books, code of ethics, courses, databases,  data sets, frameworks, institutes, maturity models, newsletters, principles, podcasts, regulations, reports, responsible scale policies, tools and standards related to Responsible, Trustworthy, and Human-Centered AI.",
+      "stars": 141,
+      "pushed_at": "2026-07-10T03:19:25Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "bgreenwell/fastshap",
+      "html_url": "https://github.com/bgreenwell/fastshap",
+      "description": "Fast approximate Shapley values in R",
+      "stars": 137,
+      "pushed_at": "2026-07-06T03:38:38Z",
+      "language": "R",
+      "license_spdx_id": "",
+      "homepage": "https://bgreenwell.github.io/fastshap/"
+    },
+    {
+      "full_name": "JuliaTrustworthyAI/CounterfactualExplanations.jl",
+      "html_url": "https://github.com/JuliaTrustworthyAI/CounterfactualExplanations.jl",
+      "description": "A package for Counterfactual Explanations and Algorithmic Recourse in Julia.",
+      "stars": 129,
+      "pushed_at": "2026-03-15T16:28:52Z",
+      "language": "Julia",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.taija.org/CounterfactualExplanations.jl/"
+    },
+    {
+      "full_name": "ModelOriented/shapviz",
+      "html_url": "https://github.com/ModelOriented/shapviz",
+      "description": "SHAP Plots in R",
+      "stars": 123,
+      "pushed_at": "2025-10-13T07:01:30Z",
+      "language": "R",
+      "license_spdx_id": "GPL-2.0",
+      "homepage": "https://modeloriented.github.io/shapviz/"
+    },
+    {
+      "full_name": "Julia-XAI/ExplainableAI.jl",
+      "html_url": "https://github.com/Julia-XAI/ExplainableAI.jl",
+      "description": "Explainable AI in Julia.",
+      "stars": 118,
+      "pushed_at": "2026-07-13T20:46:34Z",
+      "language": "Julia",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "intell-sci-comput/PSE",
+      "html_url": "https://github.com/intell-sci-comput/PSE",
+      "description": "Official PyTorch implementation of PSE/PSRN: Fast and efficient symbolic expression discovery through parallelized symbolic enumeration. Evaluates millions of expressions simultaneously on GPU with automated subtree reuse.",
+      "stars": 116,
+      "pushed_at": "2026-05-17T12:13:15Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "kserve/website",
+      "html_url": "https://github.com/kserve/website",
+      "description": "User documentation for KServe.",
+      "stars": 113,
+      "pushed_at": "2026-07-22T16:14:57Z",
+      "language": "MDX",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://kserve.github.io/website/"
+    },
+    {
+      "full_name": "holistic-ai/holisticai",
+      "html_url": "https://github.com/holistic-ai/holisticai",
+      "description": "This is an open-source tool to assess and improve the trustworthiness of AI systems.",
+      "stars": 112,
+      "pushed_at": "2026-01-26T16:16:52Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://holisticai.readthedocs.io/en/latest/index.html"
+    },
+    {
+      "full_name": "XAITK/xaitk-saliency",
+      "html_url": "https://github.com/XAITK/xaitk-saliency",
+      "description": "As part of the Explainable AI Toolkit (XAITK), XAITK-Saliency is an open source, explainable AI framework for visual saliency algorithm interfaces and implementations, built for analytics and autonomy applications.",
+      "stars": 103,
+      "pushed_at": "2026-06-19T20:42:25Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://xaitk.org"
+    },
+    {
+      "full_name": "ModelOriented/treeshap",
+      "html_url": "https://github.com/ModelOriented/treeshap",
+      "description": "Compute SHAP values for your tree-based models using the TreeSHAP algorithm",
+      "stars": 101,
+      "pushed_at": "2026-05-13T17:16:17Z",
+      "language": "R",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://modeloriented.github.io/treeshap/"
+    },
+    {
+      "full_name": "UMCUtrecht-ECGxAI/ecgxai",
+      "html_url": "https://github.com/UMCUtrecht-ECGxAI/ecgxai",
+      "description": "Neatly packaged AI methods for explainable ECG analysis",
+      "stars": 101,
+      "pushed_at": "2026-07-02T08:49:20Z",
+      "language": "Python",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "braviaprime/braviaprime",
+      "html_url": "https://github.com/braviaprime/braviaprime",
+      "description": "...short biography",
+      "stars": 95,
+      "pushed_at": "2026-07-27T01:27:36Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": "https://github.com/braviadev/braviadev"
+    },
+    {
+      "full_name": "RuoyuChen10/SMDL-Attribution",
+      "html_url": "https://github.com/RuoyuChen10/SMDL-Attribution",
+      "description": "[ICLR 2024 Oral] Less is More: Fewer Interpretable Region via Submodular Subset Selection",
+      "stars": 90,
+      "pushed_at": "2025-10-27T15:01:35Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "",
+      "homepage": "https://arxiv.org/abs/2402.09164"
+    },
+    {
+      "full_name": "braviaprime/proctorai",
+      "html_url": "https://github.com/braviaprime/proctorai",
+      "description": "AI\u2011powered web exam system with face recognition, webcam, browser, and audio checks ensures integrity in remote assessments.   Flask prototype reached ~72% functional accuracy and 90%+ detection rates, reducing cheating in online education.",
+      "stars": 90,
+      "pushed_at": "2026-04-26T00:06:57Z",
+      "language": "HTML",
+      "license_spdx_id": "",
+      "homepage": "https://proctorai.brav\u00eda.com"
+    },
+    {
+      "full_name": "mateoespinosa/cem",
+      "html_url": "https://github.com/mateoespinosa/cem",
+      "description": "Repository for our NeurIPS 2022 paper \"Concept Embedding Models\", our NeurIPS 2023 paper \"Learning to Receive Help\", and our ICML 2025 paper \"Avoiding Leakage Poisoning\"",
+      "stars": 82,
+      "pushed_at": "2026-04-05T13:03:09Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://arxiv.org/abs/2209.09056"
+    },
+    {
+      "full_name": "fat-forensics/fat-forensics",
+      "html_url": "https://github.com/fat-forensics/fat-forensics",
+      "description": "Modular Python Toolbox for Fairness, Accountability and Transparency Forensics",
+      "stars": 79,
+      "pushed_at": "2026-04-13T16:56:27Z",
+      "language": "Python",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": "https://fat-forensics.org"
+    },
+    {
+      "full_name": "textgain/grasp",
+      "html_url": "https://github.com/textgain/grasp",
+      "description": "Essential NLP & ML, short & fast pure Python code",
+      "stars": 79,
+      "pushed_at": "2026-07-18T22:31:45Z",
+      "language": "Python",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": ""
+    },
+    {
+      "full_name": "Imageomics/Prompt_CAM",
+      "html_url": "https://github.com/Imageomics/Prompt_CAM",
+      "description": "This is an official implementation for PROMPT-CAM: A Simpler Interpretable Transformer for Fine-Grained Analysis (CVPR'25). Explore fine-grained trait distinctions between different specified species.",
+      "stars": 76,
+      "pushed_at": "2026-06-30T13:08:53Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "flipz357/S3BERT",
+      "html_url": "https://github.com/flipz357/S3BERT",
+      "description": "Learning Semantically Structured Text and Sentence Embeddings",
+      "stars": 71,
+      "pushed_at": "2026-03-09T14:25:07Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "deel-ai/influenciae",
+      "html_url": "https://github.com/deel-ai/influenciae",
+      "description": "\ud83d\udc4b Influenciae is a Tensorflow Toolbox for Influence Functions",
+      "stars": 67,
+      "pushed_at": "2026-05-20T15:06:11Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://deel-ai.github.io/influenciae"
+    },
+    {
+      "full_name": "xplainable/xplainable",
+      "html_url": "https://github.com/xplainable/xplainable",
+      "description": "Real-time explainable machine learning for business optimisation",
+      "stars": 66,
+      "pushed_at": "2026-07-23T02:43:38Z",
+      "language": "Python",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://www.xplainable.io"
+    },
+    {
+      "full_name": "Bioinformatics-UM6P/MLOSSRF",
+      "html_url": "https://github.com/Bioinformatics-UM6P/MLOSSRF",
+      "description": "Companion codebase for the paper \"Machine Learning-Based Optimization of Site-Specific NPK Fertilizer Recommendation\".",
+      "stars": 65,
+      "pushed_at": "2026-03-17T07:11:32Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "",
+      "homepage": "https://doi.org/10.1016/j.atech.2026.101823"
+    },
+    {
+      "full_name": "ModelOriented/kernelshap",
+      "html_url": "https://github.com/ModelOriented/kernelshap",
+      "description": "Different SHAP algorithms",
+      "stars": 62,
+      "pushed_at": "2025-09-20T15:50:08Z",
+      "language": "R",
+      "license_spdx_id": "GPL-2.0",
+      "homepage": "https://modeloriented.github.io/kernelshap/"
+    },
+    {
+      "full_name": "dilyabareeva/quanda",
+      "html_url": "https://github.com/dilyabareeva/quanda",
+      "description": "A toolkit for quantitative evaluation of data attribution methods.",
+      "stars": 60,
+      "pushed_at": "2026-07-27T13:16:42Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://quanda.readthedocs.io"
+    },
+    {
+      "full_name": "RuoyuChen10/VPS",
+      "html_url": "https://github.com/RuoyuChen10/VPS",
+      "description": "[CVPR 2025 Highlight] Interpreting Object-level Foundation Models via Visual Precision Search",
+      "stars": 58,
+      "pushed_at": "2025-11-24T08:42:39Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "Fuminides/ex-fuzzy",
+      "html_url": "https://github.com/Fuminides/ex-fuzzy",
+      "description": "A Python library for explainable AI using approximate reasoning",
+      "stars": 58,
+      "pushed_at": "2026-07-22T11:20:31Z",
+      "language": "HTML",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://fuminides.github.io/ex-fuzzy/"
+    },
+    {
+      "full_name": "wilsonjr/ClusterShapley",
+      "html_url": "https://github.com/wilsonjr/ClusterShapley",
+      "description": "Explaining dimensionality results using SHAP values",
+      "stars": 57,
+      "pushed_at": "2026-01-05T19:19:18Z",
+      "language": "C++",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": ""
+    },
+    {
+      "full_name": "agrumery/aGrUM",
+      "html_url": "https://github.com/agrumery/aGrUM",
+      "description": "This repository is a mirror. If you want to raise an issue or contact us, we encourage you to do it on Gitlab (https://gitlab.com/agrumery/aGrUM).",
+      "stars": 54,
+      "pushed_at": "2026-07-21T15:25:39Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://agrum.org"
+    },
+    {
+      "full_name": "Imageomics/Finer-CAM",
+      "html_url": "https://github.com/Imageomics/Finer-CAM",
+      "description": "This is an official implementation for Finer-CAM: Spotting the Difference Reveals Finer Details for Visual Explanation. [CVPR'25] Better understand discriminative traits between similar species.",
+      "stars": 51,
+      "pushed_at": "2026-05-20T22:24:01Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://huggingface.co/spaces/ZihengZ/FinerCAM"
+    },
+    {
+      "full_name": "sametcopur/ruleopt",
+      "html_url": "https://github.com/sametcopur/ruleopt",
+      "description": "Optimization-Based Rule Learning for Classification",
+      "stars": 49,
+      "pushed_at": "2026-03-26T10:57:26Z",
+      "language": "Python",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": "https://ruleopt.readthedocs.io"
+    },
+    {
+      "full_name": "ismailuddin/gradcam-tensorflow-2",
+      "html_url": "https://github.com/ismailuddin/gradcam-tensorflow-2",
+      "description": "\ud83e\uddf0 Grad-CAM implementation using TensorFlow 2.X code. Including guided Grad-CAM and counterfactuals.",
+      "stars": 48,
+      "pushed_at": "2026-02-21T23:45:53Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://ismailuddin.github.io/gradcam-tensorflow-2/"
+    },
+    {
+      "full_name": "frankkramer-lab/aucmedi",
+      "html_url": "https://github.com/frankkramer-lab/aucmedi",
+      "description": "a framework for Automated Classification of Medical Images",
+      "stars": 43,
+      "pushed_at": "2025-10-01T11:10:41Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://frankkramer-lab.github.io/aucmedi/"
+    },
+    {
+      "full_name": "pyc-team/pytorch_concepts",
+      "html_url": "https://github.com/pyc-team/pytorch_concepts",
+      "description": "PyC (Pytorch Concepts) is a PyTorch-based library for training concept-based interpretable deep learning models.",
+      "stars": 43,
+      "pushed_at": "2026-07-28T12:54:04Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://pytorch-concepts.readthedocs.io/en/latest/"
+    },
+    {
+      "full_name": "taylorsatula/TeaLeaves",
+      "html_url": "https://github.com/taylorsatula/TeaLeaves",
+      "description": "End-to-end pipeline for seeing how LLMs actually process your prompts. Capture attention across every layer, render heatmaps and cooking curves, compare variants with evidence \u2014 not vibes.",
+      "stars": 42,
+      "pushed_at": "2026-07-16T05:15:52Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "sametcopur/treemind",
+      "html_url": "https://github.com/sametcopur/treemind",
+      "description": "treemind interprets tree models",
+      "stars": 41,
+      "pushed_at": "2026-04-09T10:54:05Z",
+      "language": "Cython",
+      "license_spdx_id": "MIT",
+      "homepage": "https://treemind.readthedocs.io/en/latest/"
+    },
+    {
+      "full_name": "jenkinsci/explain-error-plugin",
+      "html_url": "https://github.com/jenkinsci/explain-error-plugin",
+      "description": "Explain Jenkins job failures with AI",
+      "stars": 41,
+      "pushed_at": "2026-07-19T15:17:20Z",
+      "language": "Java",
+      "license_spdx_id": "MIT",
+      "homepage": "https://plugins.jenkins.io/explain-error/"
+    },
+    {
+      "full_name": "SantanderAI/auto-bayesian",
+      "html_url": "https://github.com/SantanderAI/auto-bayesian",
+      "description": "Config-driven, interpretable Bayesian network training for relational tabular data.",
+      "stars": 40,
+      "pushed_at": "2026-07-10T10:23:10Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "rikhuijzer/SIRUS.jl",
+      "html_url": "https://github.com/rikhuijzer/SIRUS.jl",
+      "description": "Interpretable Machine Learning via Rule Extraction",
+      "stars": 40,
+      "pushed_at": "2026-06-06T00:33:18Z",
+      "language": "Julia",
+      "license_spdx_id": "MIT",
+      "homepage": "https://sirus.jl.huijzer.xyz/"
+    },
+    {
+      "full_name": "bifold-pathomics/xMIL",
+      "html_url": "https://github.com/bifold-pathomics/xMIL",
+      "description": "xMIL: Insightful Explanations for Multiple Instance Learning in Histopathology",
+      "stars": 38,
+      "pushed_at": "2026-04-27T16:31:17Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "capitalone/global-attribution-mapping",
+      "html_url": "https://github.com/capitalone/global-attribution-mapping",
+      "description": "GAM (Global Attribution Mapping) explains the landscape of neural network predictions across subpopulations",
+      "stars": 37,
+      "pushed_at": "2026-01-23T02:31:58Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "clipdrawx/clipdrawx.github.io",
+      "html_url": "https://github.com/clipdrawx/clipdrawx.github.io",
+      "description": "Official project page of CLIPDrawX",
+      "stars": 36,
+      "pushed_at": "2025-11-12T09:29:57Z",
+      "language": "JavaScript",
+      "license_spdx_id": "",
+      "homepage": "https://clipdrawx.github.io/"
+    },
+    {
+      "full_name": "ypeiyu/attribution_recalibration",
+      "html_url": "https://github.com/ypeiyu/attribution_recalibration",
+      "description": "[ICLR 2023 Spotlight] Re-calibrating Feature Attributions for Model Interpretation",
+      "stars": 36,
+      "pushed_at": "2026-01-21T01:27:15Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://openreview.net/forum?id=WUWJIV2Yxtp"
+    },
+    {
+      "full_name": "tamlhp/awesome-privex",
+      "html_url": "https://github.com/tamlhp/awesome-privex",
+      "description": "Awesome PrivEx: Privacy-Preserving Explainable AI (PPXAI)",
+      "stars": 34,
+      "pushed_at": "2025-10-08T05:59:00Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": "https://awesome-privex.github.io/"
+    },
+    {
+      "full_name": "bnnr-team/bnnr",
+      "html_url": "https://github.com/bnnr-team/bnnr",
+      "description": "XAI-driven augmentation & diagnostics for PyTorch vision - find model failures, fix with saliency-guided augmentation (ICD/AICD), prove with auditable reports.",
+      "stars": 34,
+      "pushed_at": "2026-07-25T09:22:48Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.bnnr.dev/"
+    },
+    {
+      "full_name": "HelmholtzAI-Consultants-Munich/fg-clustering",
+      "html_url": "https://github.com/HelmholtzAI-Consultants-Munich/fg-clustering",
+      "description": "Explainability for Random Forest Models.",
+      "stars": 34,
+      "pushed_at": "2026-05-17T19:09:30Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://forest-guided-clustering.readthedocs.io/"
+    },
+    {
+      "full_name": "dynamical-inference/patchsae",
+      "html_url": "https://github.com/dynamical-inference/patchsae",
+      "description": "Implementation of PatchSAE as presented in \"Sparse autoencoders reveal selective remapping of visual concepts during adaptation\"",
+      "stars": 33,
+      "pushed_at": "2026-04-22T19:30:30Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://dynamical-inference.ai/patchsae"
+    },
+    {
+      "full_name": "Trustworthy-ML-Lab/CB-LLMs",
+      "html_url": "https://github.com/Trustworthy-ML-Lab/CB-LLMs",
+      "description": "[ICLR 25] A novel framework for building intrinsically interpretable LLMs with human-understandable concepts to ensure safety, reliability, transparency, and trustworthiness.",
+      "stars": 33,
+      "pushed_at": "2026-02-05T04:56:20Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://lilywenglab.github.io/CB-LLMs/"
+    },
+    {
+      "full_name": "AndMastro/EdgeSHAPer",
+      "html_url": "https://github.com/AndMastro/EdgeSHAPer",
+      "description": "EdgeSHAPer: Bond-Centric Shapley Value-Based Explanation Method for Graph Neural Networks",
+      "stars": 31,
+      "pushed_at": "2026-03-30T14:39:17Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "yash-srivastava19/arrakis",
+      "html_url": "https://github.com/yash-srivastava19/arrakis",
+      "description": "Arrakis is a library to conduct, track and visualize mechanistic interpretability experiments.",
+      "stars": 31,
+      "pushed_at": "2026-07-08T18:48:44Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "",
+      "homepage": "https://arrakis-mi.readthedocs.io/en/latest/README.html"
+    },
+    {
+      "full_name": "flipz357/XPLAINSIM",
+      "html_url": "https://github.com/flipz357/XPLAINSIM",
+      "description": "A research toolkit for decomposing and explaining text similarity across neural, structured, and symbolic levels.",
+      "stars": 30,
+      "pushed_at": "2026-04-11T16:21:47Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "oncoray/familiar",
+      "html_url": "https://github.com/oncoray/familiar",
+      "description": "Repository for the familiar R-package. Familiar implements an end-to-end pipeline for interpretable machine learning of tabular data.",
+      "stars": 30,
+      "pushed_at": "2026-07-09T14:57:54Z",
+      "language": "R",
+      "license_spdx_id": "EUPL-1.2",
+      "homepage": ""
+    },
+    {
+      "full_name": "FarnoushRJ/RelP",
+      "html_url": "https://github.com/FarnoushRJ/RelP",
+      "description": "[NeurIPS 2025 MechInterp Workshop - Spotlight] Official implementation of the paper \"RelP: Faithful and Efficient Circuit Discovery in Language Models via Relevance Patching\"",
+      "stars": 29,
+      "pushed_at": "2025-11-03T18:51:44Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://arxiv.org/abs/2508.21258"
+    },
+    {
+      "full_name": "PathologyDataScience/MuTILs_Panoptic",
+      "html_url": "https://github.com/PathologyDataScience/MuTILs_Panoptic",
+      "description": "Amgad M, Salgado R, Cooper LA. A panoptic segmentation approach for tumor-infiltrating lymphocyte assessment: development of the MuTILs model and PanopTILs dataset. medRxiv 2022.01.08.22268814.",
+      "stars": 28,
+      "pushed_at": "2026-02-06T17:46:52Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.medrxiv.org/content/10.1101/2022.01.08.22268814v3"
+    },
+    {
+      "full_name": "KaryFramling/py-ciu",
+      "html_url": "https://github.com/KaryFramling/py-ciu",
+      "description": "Explainable Artificial Intelligence through Contextual Importance and Utility",
+      "stars": 28,
+      "pushed_at": "2025-10-01T08:19:14Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "ajsanjoaquin/Shapley_Valuation",
+      "html_url": "https://github.com/ajsanjoaquin/Shapley_Valuation",
+      "description": "PyTorch reimplementation of computing Shapley values via Truncated Monte Carlo sampling from \"What is your data worth? Equitable Valuation of Data\" by Amirata Ghorbani and James Zou [ICML 2019]",
+      "stars": 28,
+      "pushed_at": "2026-06-01T12:27:50Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "TathagataChakraborti/survey-visualizer",
+      "html_url": "https://github.com/TathagataChakraborti/survey-visualizer",
+      "description": "Visualization of survey data.",
+      "stars": 27,
+      "pushed_at": "2025-12-23T20:12:44Z",
+      "language": "JavaScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "lapalap/dora",
+      "html_url": "https://github.com/lapalap/dora",
+      "description": "GitHub repository for DORA: Data-agnOstic Representation Analysis paper. DORA allows to find outlier representations in Deep Neural Networks.",
+      "stars": 27,
+      "pushed_at": "2026-04-23T05:24:18Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "guidogagl/physioex",
+      "html_url": "https://github.com/guidogagl/physioex",
+      "description": "PhysioEx, a PyTorch based library for Interpretable physiological signal classifiers",
+      "stars": 27,
+      "pushed_at": "2026-07-15T04:19:25Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://guidogagl.github.io/physioex/"
+    },
+    {
+      "full_name": "OBA-Research/VAAS",
+      "html_url": "https://github.com/OBA-Research/VAAS",
+      "description": "VAAS is an inference-first, research-driven library for image integrity analysis. It integrates Vision Transformer Attention Mechanisms with patch-level self-consistency analysis to enable fine-grained localization and detection of visual inconsistencies across diverse image analysis tasks.",
+      "stars": 26,
+      "pushed_at": "2026-03-30T17:40:45Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://github.com/OBA-Research/VAAS"
+    },
+    {
+      "full_name": "ottenbreit-data-science/aplr",
+      "html_url": "https://github.com/ottenbreit-data-science/aplr",
+      "description": "APLR builds predictive, interpretable regression and classification models using Automatic Piecewise Linear Regression. It often rivals tree-based methods in predictive accuracy while offering smoother and interpretable predictions.",
+      "stars": 25,
+      "pushed_at": "2026-05-16T13:26:52Z",
+      "language": "C++",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "sametcopur/obliquetree",
+      "html_url": "https://github.com/sametcopur/obliquetree",
+      "description": "obliquetree is an advanced decision tree implementation featuring oblique and axis-aligned splits, optimized performance.",
+      "stars": 25,
+      "pushed_at": "2026-05-05T12:58:26Z",
+      "language": "Cython",
+      "license_spdx_id": "MIT",
+      "homepage": "https://obliquetree.readthedocs.io/en/latest/"
+    },
+    {
+      "full_name": "AmirhosseinHonardoust/Graph-RAG-Engine",
+      "html_url": "https://github.com/AmirhosseinHonardoust/Graph-RAG-Engine",
+      "description": "An explainable AI system that combines Graph Intelligence, Vector Search, and Retrieval-Augmented Generation (RAG) to deliver grounded answers and transparent reasoning paths. Includes a FastAPI backend, Streamlit UI, FAISS vector index, and an in-memory knowledge graph for hybrid retrieval and recommendations.",
+      "stars": 25,
+      "pushed_at": "2026-06-18T15:51:24Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "batmanlab/ICML-2023-Route-interpret-repeat",
+      "html_url": "https://github.com/batmanlab/ICML-2023-Route-interpret-repeat",
+      "description": "[ICML 2023] Official repository of paper: Dividing and Conquering a BlackBox to a Mixture of Interpretable Models: Route, Interpret, Repeat",
+      "stars": 25,
+      "pushed_at": "2025-08-02T13:19:16Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://shantanu-ai.github.io/projects/ICML-2023-MoIE/"
+    },
+    {
+      "full_name": "CAMP-eXplain-AI/Style-CheXplain",
+      "html_url": "https://github.com/CAMP-eXplain-AI/Style-CheXplain",
+      "description": "GAN-based method to create counterfactual explanations for chest X-rays",
+      "stars": 25,
+      "pushed_at": "2025-10-27T07:53:42Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "evanseitz/squid-nn",
+      "html_url": "https://github.com/evanseitz/squid-nn",
+      "description": "surrogate quantitative interpretability for deepnets",
+      "stars": 25,
+      "pushed_at": "2025-08-11T15:10:51Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "guglielmosanchini/ClustViz",
+      "html_url": "https://github.com/guglielmosanchini/ClustViz",
+      "description": "Visualization of many Clustering Algorithms, via Notebook or GUI",
+      "stars": 24,
+      "pushed_at": "2026-04-13T17:34:27Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "kbhujbal/NASA_exoplanet_detection_using_CNN_transfromer",
+      "html_url": "https://github.com/kbhujbal/NASA_exoplanet_detection_using_CNN_transfromer",
+      "description": "Hybrid CNN-Transformer model for automated exoplanet transit detection on NASA Kepler light curves. Features dual scale CNN branches, Transformer based sequence modelling, Grad CAM + SHAP + attention  explainability, and Monte Carlo Dropout uncertainty quantification.  5 fold cross validated with baseline comparisons.",
+      "stars": 23,
+      "pushed_at": "2026-04-26T06:41:43Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "aiim-research/GRETEL",
+      "html_url": "https://github.com/aiim-research/GRETEL",
+      "description": "GRETEL is a framework for the development and evaluation of Counterfactual Explanation methods for Graph Classifiers",
+      "stars": 23,
+      "pushed_at": "2026-05-23T20:34:26Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "x66ccff/PSRN",
+      "html_url": "https://github.com/x66ccff/PSRN",
+      "description": "[\ud835\udc0d\ud835\udc1a\ud835\udc2d\ud835\udc2e\ud835\udc2b\ud835\udc1e \ud835\udc02\ud835\udc28\ud835\udc26\ud835\udc29\ud835\udc2e\ud835\udc2d\ud835\udc1a\ud835\udc2d\ud835\udc22\ud835\udc28\ud835\udc27\ud835\udc1a\ud835\udc25 \ud835\udc12\ud835\udc1c\ud835\udc22\ud835\udc1e\ud835\udc27\ud835\udc1c\ud835\udc1e] \u26a1\ufe0f PSE/PSRN: Fast and efficient symbolic expression discovery through parallelized symbolic enumeration. Evaluates millions of expressions simultaneously on GPU with automated subtree reuse.",
+      "stars": 23,
+      "pushed_at": "2026-05-17T12:13:37Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "AmirhosseinHonardoust/Forecasting-The-Future-of-Forecasting",
+      "html_url": "https://github.com/AmirhosseinHonardoust/Forecasting-The-Future-of-Forecasting",
+      "description": "A deep exploration of AI-driven foresight, how predictive models evolve into strategic collaborators. This repository presents Forecasting the Future of Forecasting, a professional essay on reflexive intelligence, human\u2013AI collaboration, and the design of adaptive, explainable forecasting systems.",
+      "stars": 23,
+      "pushed_at": "2025-11-08T17:54:02Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "msakarvadia/memorization",
+      "html_url": "https://github.com/msakarvadia/memorization",
+      "description": "Localizing Memorized Sequences in Language Models",
+      "stars": 22,
+      "pushed_at": "2025-10-15T15:21:36Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://mansisak.com/memorization/"
+    },
+    {
+      "full_name": "ZipengWu365/EchoTime",
+      "html_url": "https://github.com/ZipengWu365/EchoTime",
+      "description": "EchoTime: explainable structural similarity for time series and time-series datasets, with shareable HTML reports and agent-ready JSON.",
+      "stars": 22,
+      "pushed_at": "2026-07-04T01:40:09Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://zipengwu365.github.io/EchoTime/"
+    },
+    {
+      "full_name": "AmirhosseinHonardoust/The-Future-of-Interactive-ML",
+      "html_url": "https://github.com/AmirhosseinHonardoust/The-Future-of-Interactive-ML",
+      "description": "An in-depth exploration of the rise of human-centered, interactive machine learning. This article examines how Streamlit enables collaborative AI design by merging UX, visualization, and automation. Includes theory, architecture, and design insights from the ML Playground project.",
+      "stars": 22,
+      "pushed_at": "2025-11-03T21:44:43Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "AmirhosseinHonardoust/Designing-Hybrid-AI-Systems",
+      "html_url": "https://github.com/AmirhosseinHonardoust/Designing-Hybrid-AI-Systems",
+      "description": "Hybrid AI is the future of explainable intelligence. This article explores how combining vector search, knowledge graphs, and retrieval-augmented generation (RAG) creates AI systems that can reason, cite, and explain their answers with insights learned from building a real Graph-Powered RAG Engine.",
+      "stars": 22,
+      "pushed_at": "2026-07-03T19:18:23Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "AmirhosseinHonardoust/Teaching-Neural-Networks-to-Imagine-Tables",
+      "html_url": "https://github.com/AmirhosseinHonardoust/Teaching-Neural-Networks-to-Imagine-Tables",
+      "description": "A comprehensive deep dive into how Variational Autoencoders (VAEs) learn to generate realistic synthetic tabular data. This project explores latent space learning, probabilistic modeling, and neural creativity, combining data privacy, interpretability, and generative AI techniques in a structured format.",
+      "stars": 21,
+      "pushed_at": "2025-11-10T15:56:07Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "AmirhosseinHonardoust/Financial-Fraud-Risk-Engine",
+      "html_url": "https://github.com/AmirhosseinHonardoust/Financial-Fraud-Risk-Engine",
+      "description": "A complete end-to-end fraud detection system for financial transactions, featuring data pipelines, cost-sensitive ML modeling, explainability with SHAP, threshold optimization, batch scoring, and an interactive Streamlit dashboard. Designed to simulate real-world fintech fraud-risk workflows.",
+      "stars": 21,
+      "pushed_at": "2026-06-19T22:50:42Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "PERSIMUNE/explainer",
+      "html_url": "https://github.com/PERSIMUNE/explainer",
+      "description": "ExplaineR is an R package built for enhanced interpretation of classification and regression models based on SHAP method and interactive visualizations with unique functionalities so please feel free to check it out, See ExplaineR paper at doi:10.1093/bioadv/vbae049",
+      "stars": 21,
+      "pushed_at": "2025-08-17T18:23:10Z",
+      "language": "R",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://persimune.github.io/explainer/"
+    },
+    {
+      "full_name": "AmirhosseinHonardoust/The-Illusion-of-Sudden-Failure",
+      "html_url": "https://github.com/AmirhosseinHonardoust/The-Illusion-of-Sudden-Failure",
+      "description": "A systems-thinking essay that explains why failure rarely happens suddenly. It shows how slow drift, accumulating pressure, and weakening buffers push systems toward collapse long before outcomes change, and why prediction-focused analytics miss the most important phase of failure.",
+      "stars": 20,
+      "pushed_at": "2025-12-16T20:13:25Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "fiddler-labs/fiddler-examples",
+      "html_url": "https://github.com/fiddler-labs/fiddler-examples",
+      "description": "",
+      "stars": 20,
+      "pushed_at": "2026-07-17T19:14:25Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://docs.fiddler.ai/"
+    },
+    {
+      "full_name": "MarcelRobeer/explabox",
+      "html_url": "https://github.com/MarcelRobeer/explabox",
+      "description": "Explore/examine/explain/expose your model with the explabox!",
+      "stars": 20,
+      "pushed_at": "2025-10-14T11:32:20Z",
+      "language": "Python",
+      "license_spdx_id": "LGPL-3.0",
+      "homepage": "https://explabox.readthedocs.io"
+    },
+    {
+      "full_name": "deep-real/DEAL",
+      "html_url": "https://github.com/deep-real/DEAL",
+      "description": "The PyTorch implementation for \"DEAL: Disentangle and Localize Concept-level Explanations for VLMs\" (ECCV 2024 Strong Double Blind)",
+      "stars": 20,
+      "pushed_at": "2026-03-09T15:06:30Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://tangli0305.github.io/"
+    },
+    {
+      "full_name": "trustyai-explainability/trustyai-explainability-python",
+      "html_url": "https://github.com/trustyai-explainability/trustyai-explainability-python",
+      "description": "Python bindings for TrustyAI's explainability library",
+      "stars": 20,
+      "pushed_at": "2026-03-23T00:35:08Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://trustyai-explainability-python.readthedocs.io/en/latest/"
+    },
+    {
+      "full_name": "janoPig/HROCH",
+      "html_url": "https://github.com/janoPig/HROCH",
+      "description": "Extremly fast c++/python symbolic regression library based on parallel local search.",
+      "stars": 20,
+      "pushed_at": "2025-08-21T18:54:26Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://janopig.github.io/HROCH/"
+    },
+    {
+      "full_name": "AmirhosseinHonardoust/Cognitivelens-AI-Human-Comparison",
+      "html_url": "https://github.com/AmirhosseinHonardoust/Cognitivelens-AI-Human-Comparison",
+      "description": "CognitiveLens is a Streamlit-powered analytics tool for exploring alignment between human and AI decisions. It visualizes fairness, calibration, and interpretability through metrics like Cohen\u2019s \u03ba, AUC, and Brier score. Designed for ethical AI, bias auditing, and decision transparency in machine learning systems.",
+      "stars": 20,
+      "pushed_at": "2025-11-05T06:21:44Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "XAI-Demonstrator/xai-demonstrator",
+      "html_url": "https://github.com/XAI-Demonstrator/xai-demonstrator",
+      "description": "The XAI Demonstrator is a modular platform that lets users interact with production-grade Explainable AI (XAI) systems.",
+      "stars": 20,
+      "pushed_at": "2026-07-16T06:36:19Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.erklaerbare-ki.de/xai-demonstrator/"
+    },
+    {
+      "full_name": "LAVA-LAB/COOL-MC",
+      "html_url": "https://github.com/LAVA-LAB/COOL-MC",
+      "description": "The interface between probabilistic model checking and data-driven policy learning.",
+      "stars": 20,
+      "pushed_at": "2026-05-14T12:00:37Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "AmirhosseinHonardoust/Measuring-The-Soul-of-Data",
+      "html_url": "https://github.com/AmirhosseinHonardoust/Measuring-The-Soul-of-Data",
+      "description": "A narrative and technical exploration of data authenticity through the four pillars of synthetic data realism, Fidelity, Coverage, Privacy, and Utility. This thought-leadership piece combines storytelling, mathematics, and code to explain how these metrics define the ethical and functional \u201csoul\u201d of data in AI systems.",
+      "stars": 20,
+      "pushed_at": "2025-11-14T08:05:10Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "AmirhosseinHonardoust/Shap-Mini",
+      "html_url": "https://github.com/AmirhosseinHonardoust/Shap-Mini",
+      "description": "A minimal, reproducible explainable-AI demo using SHAP values on tabular data. Trains RandomForest or LogisticRegression models, computes global and local feature importances, and visualizes results through summary and dependence plots, all in under 100 lines of Python.",
+      "stars": 20,
+      "pushed_at": "2025-11-09T15:05:22Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "ntakafumi/aime",
+      "html_url": "https://github.com/ntakafumi/aime",
+      "description": "Approximate Inverse Model Explanations (AIME): model-agnostic XAI through an approximate inverse operator.",
+      "stars": 20,
+      "pushed_at": "2026-07-20T07:13:19Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    }
+  ]
+}
