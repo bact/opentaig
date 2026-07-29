@@ -385,9 +385,9 @@ The keyword sources, in the order worth trying:
      Repository's, so worth checking both when a target RQ doesn't map
      cleanly onto the Repository's domain taxonomy. This paper has a
      *second*, separate use on this project beyond keyword mining: it's also
-     the source taxonomy for the `harms` framework on the live site itself
+     the source taxonomy for the `aiaaic` framework on the live site itself
      (a coverage-completeness check on the RQ catalog, not a search input —
-     see `harm_taxonomy_mapping.py` under "Files" below).
+     see `aiaaic_taxonomy_mapping.py` under "Files" below).
    - The named Mitigation/Control categories in
      ["Mapping AI Risk Mitigations"](https://cdn.prod.website-files.com/669550d38372f33552d2516e/6887e58496902e3bcad04a5a_1b0850b4406f7dc6a79365c4b56f0f51_Mapping%20AI%20Risk%20Mitigations.pdf)
      — a separate, complementary document once a risk domain is
@@ -842,10 +842,10 @@ lowercase with underscores. Five tabs are owned by this pipeline, each
 carrying the three freshness columns above:
 
 - **`map`** — `rq_no` + one column per framework (`rgaf`, `euaiact`,
-  `unescoai`, `aseanai`, `coeai`, `harms`) + freshness columns. `harms` is our
-  own coverage-completeness mapping against the Collaborative Harms
+  `unescoai`, `aseanai`, `coeai`, `aiaaic`) + freshness columns. `aiaaic` is our
+  own coverage-completeness mapping against the AIAAIC Harms
   Taxonomy, not a crosswalk to an external authority's text like the other
-  five — see `emit_harm_framework.py` below and
+  five — see `emit_aiaaic_framework.py` below and
   [`docs/methodology-and-findings.md`](../docs/methodology-and-findings.md)
   § Findings, F6.
 - **`tool_map`** — `rq_no, tool_id, role, rationale` + freshness columns.
@@ -904,8 +904,8 @@ been triaged (accepted into `tools`/`tool_map`, or rejected) — see
   model, no network.
 - **`backfill_triage_columns.py`** — one-time migration, already run; kept
   for auditability. See "Rejection tracking & licence classification" above.
-- **`harm_taxonomy_mapping.py`** — the question→harm mapping for the
-  Collaborative Harms Taxonomy coverage-completeness check, as reviewable
+- **`aiaaic_taxonomy_mapping.py`** — the question→harm mapping for the
+  AIAAIC Harms Taxonomy coverage-completeness check, as reviewable
   Python data (a `MAPPING` dict, one entry per RQ, each with the harm
   type(s), whether the RQ *directly* addresses them or only *enables*
   addressing them, and a free-text note for the judgment-call rows). Running
@@ -914,19 +914,19 @@ been triaged (accepted into `tools`/`tool_map`, or rejected) — see
   network — but the `MAPPING` data itself is agent-produced editorial
   judgment, not derived from anything; see limitations in
   [`docs/methodology-and-findings.md`](../docs/methodology-and-findings.md).
-  Writes `harm_taxonomy_mapping.csv` (**committed** — the citable, one-row-
+  Writes `aiaaic_taxonomy_mapping.csv` (**committed** — the citable, one-row-
   per-RQ artifact referenced by the methodology doc, unlike the
-  `candidate_*_harms.csv` files below).
-- **`emit_harm_framework.py`** — one-time, already run (results merged into
+  `candidate_*_aiaaic.csv` files below).
+- **`emit_aiaaic_framework.py`** — one-time, already run (results merged into
   the live sheet 2026-07-29); kept in case the mapping or RQ catalog changes
-  and the harms framework's live-sheet rows need re-pasting. Reads
-  `harm_taxonomy_mapping.py`'s `MAPPING` and config.yaml's column headers to
-  emit `candidate_framework_harms.csv` / `candidate_terms_harms.csv` /
-  `candidate_map_harms.csv` — pasteable rows for the `framework`/`terms`/`map`
+  and the `aiaaic` framework's live-sheet rows need re-pasting. Reads
+  `aiaaic_taxonomy_mapping.py`'s `MAPPING` and config.yaml's column headers to
+  emit `candidate_framework_aiaaic.csv` / `candidate_terms_aiaaic.csv` /
+  `candidate_map_aiaaic.csv` — pasteable rows for the `framework`/`terms`/`map`
   tabs, in the same shape as `emit_candidates.py`'s output but for a
   framework, not a tool. These three are **git-ignored**, not committed:
   unlike `candidate_tools.csv`, they carry no judgment of their own, only a
-  deterministic projection of `harm_taxonomy_mapping.py`'s data — delete and
+  deterministic projection of `aiaaic_taxonomy_mapping.py`'s data — delete and
   re-run any time. `--granularity specific` emits all 69 specific harms
   instead of the 9 top-level types (not recommended for publishing without
   re-reviewing each row — see the script's own docstring).

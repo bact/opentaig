@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Emit the three pasteable CSVs that add the Collaborative Harms Taxonomy to
+"""Emit the three pasteable CSVs that add the AIAAIC Harms Taxonomy to
 the site as a sixth framework.
 
 The site already has the machinery for this: `frameworks:` in config.yaml is a
@@ -11,22 +11,22 @@ out of config.yaml so the output pastes in without reformatting.
 
 Outputs (all in curation/, gitignored -- unlike candidate_tools.csv /
 candidate_map_updates.csv, these carry no agent judgment of their own, only a
-deterministic projection of harm_taxonomy_mapping.py's MAPPING data through
+deterministic projection of aiaaic_taxonomy_mapping.py's MAPPING data through
 config.yaml's column headers. Delete freely; re-run this script to regenerate
 byte-for-byte, modulo the timestamp columns):
-  - candidate_framework_harms.csv  -> 1 row for the `framework` tab
-  - candidate_terms_harms.csv      -> N rows for the `terms` tab
-  - candidate_map_harms.csv        -> 97 rows: rq_no + the new `harms` column
+  - candidate_framework_aiaaic.csv  -> 1 row for the `framework` tab
+  - candidate_terms_aiaaic.csv      -> N rows for the `terms` tab
+  - candidate_map_aiaaic.csv        -> 97 rows: rq_no + the new `aiaaic` column
 
 This is a one-time addition (the taxonomy has 9 harm types, not an ongoing
 curation feed), already merged into the live sheet as of 2026-07-29. Re-run
-only if the harms mapping in harm_taxonomy_mapping.py changes, the RQ catalog
+only if the mapping in aiaaic_taxonomy_mapping.py changes, the RQ catalog
 changes, or you switch `--granularity`/`--include`.
 
 Then in config.yaml, under `frameworks:`, add:
 
-    - key: harms
-      column: "harms"
+    - key: aiaaic
+      column: "aiaaic"
 
 Granularity (`--granularity`):
   type      (default) the 9 top-level harm types. Recommended: this is the
@@ -44,10 +44,10 @@ Scope (`--include`):
             reasons at once: 11 RQs are genuinely method-level, while 34 have
             harms mapped but only as enabling infrastructure. So:
               - direct RQs      -> harm type chips alone
-              - enabling RQs    -> harm type chips + `harms-indirect`
-              - cross-cutting   -> `harms-crosscutting` alone
-  direct    only direct harm chips; enabling RQs collapse to `harms-indirect`
-            and cross-cutting ones to `harms-crosscutting`.
+              - enabling RQs    -> harm type chips + `aiaaic-indirect`
+              - cross-cutting   -> `aiaaic-crosscutting` alone
+  direct    only direct harm chips; enabling RQs collapse to `aiaaic-indirect`
+            and cross-cutting ones to `aiaaic-crosscutting`.
   all       direct and enabling harms chipped identically, no qualifier. Loses
             the distinction -- implies an RQ targets a harm it only supports.
 """
@@ -85,7 +85,7 @@ TYPE_SLUG = {
 # Sentinel terms -- not harm types, but needed so a blank map cell never has
 # to be read as "no harm identified" when the real state is "not judged" or
 # "supports addressing a harm without targeting it". Rendered as chips with
-# their own distinct styling (see .chip-harms-indirect etc. in style.css) so
+# their own distinct styling (see .chip-aiaaic-indirect etc. in style.css) so
 # they read visually as different in kind from a harm-type chip, not just a
 # 10th harm type.
 SENTINEL_DEFS = {
@@ -119,14 +119,14 @@ def main() -> None:
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--granularity", choices=["type", "specific"], default="type")
     ap.add_argument("--include", choices=["qualified", "direct", "all"], default="qualified")
-    ap.add_argument("--framework-key", default="harms")
+    ap.add_argument("--framework-key", default="aiaaic")
     args = ap.parse_args()
 
     cfg = yaml.safe_load(open("config.yaml"))
     tcol = cfg["columns"]["terms"]
     fcol = cfg["columns"]["framework"]
 
-    spec = importlib.util.spec_from_file_location("hm", "curation/harm_taxonomy_mapping.py")
+    spec = importlib.util.spec_from_file_location("hm", "curation/aiaaic_taxonomy_mapping.py")
     hm = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(hm)
 
@@ -145,7 +145,7 @@ def main() -> None:
     # ---- framework tab row ------------------------------------------------
     fw_row = {
         fcol["id"]: key,
-        fcol["name"]: "Harms Taxonomy",
+        fcol["name"]: "AIAAIC Harms Taxonomy",
         fcol["fullname"]: ("A Collaborative, Human-Centred Taxonomy of AI, "
                            "Algorithmic, and Automation Harms"),
         fcol["summary"]: (
@@ -153,7 +153,7 @@ def main() -> None:
             "group via expert consultation and crowdsourced annotation testing over the "
             "AIAAIC Repository. Used here as a coverage-completeness check: unlike the "
             "other frameworks on this site, which map a question to an external "
-            "authority's own text, this mapping is OUR editorial judgment about which "
+            "authority's own text, this mapping is our editorial judgment about which "
             "harms a question's research would help prevent, detect, measure or "
             "remediate. It is not an official crosswalk."),
         fcol["homepage"]: PAPER_URL,
@@ -164,8 +164,8 @@ def main() -> None:
         if c in fcol:
             fw_row[fcol[c]] = now
 
-    Path("curation/candidate_framework_harms.csv").write_text("")
-    with open("curation/candidate_framework_harms.csv", "w", newline="", encoding="utf-8") as f:
+    Path("curation/candidate_framework_aiaaic.csv").write_text("")
+    with open("curation/candidate_framework_aiaaic.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=list(fw_row))
         w.writeheader()
         w.writerow(fw_row)
@@ -210,7 +210,7 @@ def main() -> None:
                     tcol["url"]: "",
                 }))
 
-    with open("curation/candidate_terms_harms.csv", "w", newline="", encoding="utf-8") as f:
+    with open("curation/candidate_terms_aiaaic.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=list(term_rows[0]))
         w.writeheader()
         w.writerows(term_rows)
@@ -219,8 +219,8 @@ def main() -> None:
     # Three states per RQ, matching hm.MAPPING's own kind field:
     #   "direct"    -> harm chips alone (the RQ's text targets this harm)
     #   "enabling"  -> harm chips (--include all|qualified only), qualified
-    #                  by harms-indirect so it isn't read as a direct claim
-    #   no harms    -> harms-crosscutting (--include qualified only)
+    #                  by `aiaaic-indirect` so it isn't read as a direct claim
+    #   no harms    -> `aiaaic-crosscutting` (--include qualified only)
     map_rows = []
     n_direct = n_indirect = n_crosscutting = n_blank = 0
     for rq_no in rq_order:
@@ -248,15 +248,15 @@ def main() -> None:
             n_direct += 1
         map_rows.append({"rq_no": rq_no, key: ";".join(ids)})
 
-    with open("curation/candidate_map_harms.csv", "w", newline="", encoding="utf-8") as f:
+    with open("curation/candidate_map_aiaaic.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=["rq_no", key])
         w.writeheader()
         w.writerows(map_rows)
 
     print(f"granularity={args.granularity}  include={args.include}")
-    print(f"  framework rows : 1   -> curation/candidate_framework_harms.csv")
-    print(f"  term rows      : {len(term_rows):<3} -> curation/candidate_terms_harms.csv")
-    print(f"  map rows       : {len(map_rows):<3} -> curation/candidate_map_harms.csv")
+    print(f"  framework rows : 1   -> curation/candidate_framework_aiaaic.csv")
+    print(f"  term rows      : {len(term_rows):<3} -> curation/candidate_terms_aiaaic.csv")
+    print(f"  map rows       : {len(map_rows):<3} -> curation/candidate_map_aiaaic.csv")
     print(f"    direct harm chip(s)      : {n_direct}")
     print(f"    indirect (enabling)      : {n_indirect}")
     print(f"    crosscutting sentinel    : {n_crosscutting}")

@@ -7,7 +7,7 @@
 <meta name="description" content="{{ site.description }}">
 <link rel="stylesheet" href="{{ root }}assets/style.css">
 </head>
-<body>
+<body data-fw-keys="{{ frameworks | map(attribute='key') | join(',') }}">
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="{{ root }}index.html">
@@ -35,8 +35,8 @@
     </p>
     <p>
       Inspired by
-      <a href="{{ site.taig_database_url }}">Stanford TAIG</a> and
-      <a href="{{ site.source_paper_url }}">Reuel, Bucknall, et al. (2025), &ldquo;Open Problems in Technical AI Governance&rdquo;</a>.
+      <a href="{{ site.taig_database_url }}">TAIG Database</a> and
+      <a href="https://lfaidata.foundation/communityblog/2026/04/22/putting-rgaf-to-work-build-and-audit-responsible-ai-with-open-source/">Putting RGAF to Work</a>.
       Source and data-update instructions on <a href="{{ site.repo_url }}">GitHub</a>.
     </p>
   </div>

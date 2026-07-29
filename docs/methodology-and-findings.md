@@ -260,7 +260,7 @@ outperformed keyword search for this class of candidate.
 ### F6. The research agenda is skewed away from human-experienced harms
 
 Each question was mapped to the harm type(s) its research would help prevent,
-detect, measure, or remediate, using the Collaborative Harms Taxonomy
+detect, measure, or remediate, using the AIAAIC Harms Taxonomy
 (Abercrombie, Benbouzid, Giudici, Golpayegani, Hernandez, Noro, Pandit,
 Paraschou, Pownall, Prajapati, Sayre, Sengupta, Suriyawongkul, Thelot, Vei,
 Waltersdorfer — [arXiv:2407.01294](https://arxiv.org/abs/2407.01294)): 9 harm
@@ -455,8 +455,8 @@ specific finding or limitation above, not a general call for "more research."
 - Every repository judged, with verdict, rejection category, licence and licence
   class, problem area, and originating keyword: `curation/state/seen_repos.csv`
 - Question→harm mapping with per-row rationale:
-  `curation/harm_taxonomy_mapping.py` (mapping as reviewable data) and
-  `curation/harm_taxonomy_mapping.csv` (generated)
+  `curation/aiaaic_taxonomy_mapping.py` (mapping as reviewable data) and
+  `curation/aiaaic_taxonomy_mapping.csv` (generated)
 
 Results will not reproduce exactly — the corpus changes continuously — but the
 logged keywords and judgment rules should reproduce them in spirit.

@@ -101,3 +101,60 @@
 
   applyFilters();
 })();
+
+// Chip visibility preferences: which frameworks' term chips show on problem
+// cards and the problem-detail "Mapped principles & regulations" section.
+// Scoped to elements marked [data-fw-chip]/[data-fw-block] only -- tool and
+// framework pages always show their own chips, since there they ARE the
+// primary content, not supplemental. Default: only "aiaaic" on, everything
+// else off, so cards lead with the RQ/tool pairing. Persisted in
+// localStorage and applied on every page (not just the index, where the
+// toggle controls live) so the preference is consistent while browsing.
+(function () {
+  "use strict";
+
+  var STORAGE_KEY = "opentaig-chip-prefs";
+  var fwKeys = (document.body.dataset.fwKeys || "").split(",").filter(Boolean);
+  if (!fwKeys.length) return;
+
+  function loadPrefs() {
+    var defaults = {};
+    fwKeys.forEach(function (k) { defaults[k] = (k === "aiaaic"); });
+    var stored = {};
+    try {
+      stored = JSON.parse(window.localStorage.getItem(STORAGE_KEY) || "{}");
+    } catch (e) { stored = {}; }
+    fwKeys.forEach(function (k) {
+      if (typeof stored[k] === "boolean") defaults[k] = stored[k];
+    });
+    return defaults;
+  }
+
+  function savePrefs(prefs) {
+    try {
+      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs));
+    } catch (e) { /* storage unavailable -- preference just won't persist */ }
+  }
+
+  function applyPrefs(prefs) {
+    Array.prototype.forEach.call(document.querySelectorAll("[data-fw-chip]"), function (el) {
+      el.style.display = prefs[el.dataset.fwChip] ? "" : "none";
+    });
+    Array.prototype.forEach.call(document.querySelectorAll("[data-fw-block]"), function (el) {
+      el.style.display = prefs[el.dataset.fwBlock] ? "" : "none";
+    });
+  }
+
+  var prefs = loadPrefs();
+  applyPrefs(prefs);
+
+  var toggles = Array.prototype.slice.call(document.querySelectorAll(".chip-toggle-input"));
+  toggles.forEach(function (el) {
+    el.checked = !!prefs[el.dataset.fwKey];
+    el.addEventListener("change", function () {
+      prefs[el.dataset.fwKey] = el.checked;
+      savePrefs(prefs);
+      applyPrefs(prefs);
+    });
+  });
+})();

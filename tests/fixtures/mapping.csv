@@ -1,10 +1,10 @@
-rq_no,research_question,rgaf,euaiact,unescoai,aseanai,coeai,datetime_added,datetime_checked,datetime_updated,harms
-1,IGNORE ME -- this text must never be used; question text comes from the TAIG sheet,rgaf-safe; rgaf-transparent,euaiact-a10,unescoai-transparency; unescoai-proportionality,aseanai-privacy,coeai-a11; coeai-a13,,,,harms-humanrights
-3,IGNORE ME -- this text must never be used; question text comes from the TAIG sheet,rgaf-accountable; rgaf-compliant,euaiact-a15; euaiact-a10,unescoai-accountability; unescoai-multistakeholder; unescoai-privacy,aseanai-accountability; aseanai-privacy,coeai-a11; coeai-a12; coeai-a9,2026-07-24T17:43:42+00:00,2026-07-24T17:43:42+00:00,2026-07-24T17:43:42+00:00,harms-autonomy; harms-humanrights
+rq_no,research_question,rgaf,euaiact,unescoai,aseanai,coeai,datetime_added,datetime_checked,datetime_updated,aiaaic
+1,IGNORE ME -- this text must never be used; question text comes from the TAIG sheet,rgaf-safe; rgaf-transparent,euaiact-a10,unescoai-transparency; unescoai-proportionality,aseanai-privacy,coeai-a11; coeai-a13,,,,aiaaic-humanrights
+3,IGNORE ME -- this text must never be used; question text comes from the TAIG sheet,rgaf-accountable; rgaf-compliant,euaiact-a15; euaiact-a10,unescoai-accountability; unescoai-multistakeholder; unescoai-privacy,aseanai-accountability; aseanai-privacy,coeai-a11; coeai-a12; coeai-a9,2026-07-24T17:43:42+00:00,2026-07-24T17:43:42+00:00,2026-07-24T17:43:42+00:00,aiaaic-autonomy; aiaaic-humanrights
 4,IGNORE ME -- this text must never be used; question text comes from the TAIG sheet,rgaf-accountable; rgaf-compliant,euaiact-a11; euaiact-a10; euaiact-a8,unescoai-accountability; unescoai-transparency; unescoai-privacy,aseanai-transparency; aseanai-accountability; aseanai-privacy,coeai-a11; coeai-a8; coeai-a9,,,,
 13,IGNORE ME -- this text must never be used; question text comes from the TAIG sheet,rgaf-compliant,euaiact-a13; euaiact-a10,,aseanai-privacy; coeai-a8,,,,,
 14,IGNORE ME -- this text must never be used; question text comes from the TAIG sheet,rgaf-accountable; rgaf-sustainability,,unescoai-accountability; unescoai-multistakeholder,aseanai-stewardship,,,,,
-19,IGNORE ME -- this text must never be used; question text comes from the TAIG sheet,rgaf-transparent,euaiact-a13,unescoai-transparency,aseanai-transparency,coeai-a8; coeai-a13,,,,harms-crosscutting
+19,IGNORE ME -- this text must never be used; question text comes from the TAIG sheet,rgaf-transparent,euaiact-a13,unescoai-transparency,aseanai-transparency,coeai-a8; coeai-a13,,,,aiaaic-crosscutting
 25,IGNORE ME -- this text must never be used; question text comes from the TAIG sheet,,,,aseanai-human-centricity,,,,,
 44,IGNORE ME -- this text must never be used; question text comes from the TAIG sheet,rgaf-secure,euaiact-a10,unescoai-privacy,aseanai-privacy,coeai-a11,,,,
 48,IGNORE ME -- this text must never be used; question text comes from the TAIG sheet,,,,,,,,,

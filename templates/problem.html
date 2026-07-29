@@ -11,39 +11,6 @@
     {% if problem.section_number %}<span class="tag">Section {{ problem.section_number }}</span>{% endif %}
   </p>
 
-  {% if problem.mappings.get(expertise.key, []) %}
-  <h2>{{ expertise.label }}</h2>
-  <div class="chip-row">
-    {% for term in problem.mappings.get(expertise.key, []) %}
-    <span class="chip chip-expertise">{{ term }}</span>
-    {% endfor %}
-  </div>
-  {% endif %}
-
-  <h2>Mapped principles &amp; regulations</h2>
-  {% set ns = namespace(any=false) %}
-  <dl class="mapping-list">
-    {% for fw in frameworks %}
-      {% set terms = problem.mappings.get(fw.key, []) %}
-      {% if terms %}
-      {% set ns.any = true %}
-      <dt>
-        {{ fw.label }}
-        {% if fw.doc_url %}<a class="doc-link" href="{{ fw.doc_url }}">(source)</a>{% endif %}
-      </dt>
-      <dd>
-        {% if fw.summary %}<p class="framework-note">{{ fw.summary }}</p>{% endif %}
-        {% for term in terms %}
-        <a class="chip chip-{{ fw.key }} chip-{{ term.id }}" href="{{ root }}frameworks/{{ fw.key }}/{{ term.id }}.html">{{ term.name }}</a>
-        {% endfor %}
-      </dd>
-      {% endif %}
-    {% endfor %}
-  </dl>
-  {% if not ns.any %}
-  <p class="empty-note">No framework mappings recorded yet for this question.</p>
-  {% endif %}
-
   <h2>Tools to help implement a solution</h2>
   {% if problem.tools_implement %}
   <ul class="tool-detail-list">
@@ -76,6 +43,40 @@
   </ul>
   {% else %}
   <p class="empty-note">No open-source tool linked yet. Know one? Add it to the mapping sheet.</p>
+  {% endif %}
+
+  {% if problem.mappings.get(expertise.key, []) %}
+  <h2>{{ expertise.label }}</h2>
+  <div class="chip-row">
+    {% for term in problem.mappings.get(expertise.key, []) %}
+    <span class="chip chip-expertise">{{ term }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <h2>Mapped principles &amp; regulations</h2>
+  <p class="framework-note">Supplemental crosswalk to external principles/regulations and our harms analysis. Use the chip-visibility toggles on the <a href="{{ root }}index.html">open problems page</a> to show/hide these by framework.</p>
+  {% set ns = namespace(any=false) %}
+  <dl class="mapping-list">
+    {% for fw in frameworks %}
+      {% set terms = problem.mappings.get(fw.key, []) %}
+      {% if terms %}
+      {% set ns.any = true %}
+      <dt data-fw-block="{{ fw.key }}">
+        {{ fw.label }}
+        {% if fw.doc_url %}<a class="doc-link" href="{{ fw.doc_url }}">(source)</a>{% endif %}
+      </dt>
+      <dd data-fw-block="{{ fw.key }}">
+        {% if fw.summary %}<p class="framework-note">{{ fw.summary }}</p>{% endif %}
+        {% for term in terms %}
+        <a class="chip chip-{{ fw.key }} chip-{{ term.id }}" href="{{ root }}frameworks/{{ fw.key }}/{{ term.id }}.html"><span class="chip-ns">{{ fw.key }}</span>{{ term.name }}</a>
+        {% endfor %}
+      </dd>
+      {% endif %}
+    {% endfor %}
+  </dl>
+  {% if not ns.any %}
+  <p class="empty-note">No framework mappings recorded yet for this question.</p>
   {% endif %}
 
   {% if problem.existing_work %}

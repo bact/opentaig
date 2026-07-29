@@ -12,16 +12,6 @@
     {% if p.rq_no %}<span class="rq-no">#{{ p.rq_no }}</span> {% endif %}
     <a href="{{ root }}problems/{{ p.slug }}.html">{{ p.question }}</a>
   </h5>
-  <div class="chip-row">
-    {% for fw in frameworks %}
-      {% for term in p.mappings.get(fw.key, []) %}
-      <a class="chip chip-{{ fw.key }} chip-{{ term.id }}" href="{{ root }}frameworks/{{ fw.key }}/{{ term.id }}.html" title="{{ fw.label }}">{{ term.name }}</a>
-      {% endfor %}
-    {% endfor %}
-    {% for term in p.mappings.get(expertise.key, []) %}
-    <span class="chip chip-expertise" title="{{ expertise.label }}">{{ term }}</span>
-    {% endfor %}
-  </div>
   {% if p.tools_implement %}
   <div class="tool-row">
     <span class="tool-row-label">Implement:</span>
@@ -38,4 +28,17 @@
     {% endfor %}
   </div>
   {% endif %}
+  {% if not p.tools_implement and not p.tools_eval %}
+  <p class="tool-row tool-row-empty">No open-source tool linked yet.</p>
+  {% endif %}
+  <div class="chip-row chip-row-supplemental">
+    {% for fw in frameworks %}
+      {% for term in p.mappings.get(fw.key, []) %}
+      <a class="chip chip-{{ fw.key }} chip-{{ term.id }}" data-fw-chip="{{ fw.key }}" href="{{ root }}frameworks/{{ fw.key }}/{{ term.id }}.html" title="{{ fw.label }}"><span class="chip-ns">{{ fw.key }}</span>{{ term.name }}</a>
+      {% endfor %}
+    {% endfor %}
+    {% for term in p.mappings.get(expertise.key, []) %}
+    <span class="chip chip-expertise" title="{{ expertise.label }}">{{ term }}</span>
+    {% endfor %}
+  </div>
 </article>

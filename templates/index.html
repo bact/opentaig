@@ -1,41 +1,60 @@
 {% extends "base.html" %}
 {% block content %}
 <section class="intro">
-  <h1>Open source tools for problems in technical AI governance</h1>
+  <h1>Open source tools for technical AI governance</h1>
   <p>{{ site.description }}</p>
 </section>
 
 <section class="filter-bar" id="filter-bar">
   <input type="search" id="filter-search" placeholder="Search questions and mappings&hellip;" aria-label="Search open problems">
 
-  <label>Capacity
-    <select id="filter-capacity">
-      <option value="">All</option>
-      {% for c in capacities_list %}
-      <option value="{{ c }}">{{ c }}</option>
-      {% endfor %}
-    </select>
-  </label>
+  <div class="filter-group" aria-label="TAIG taxonomy filters">
+    <span class="filter-group-label">TAIG taxonomy</span>
+    <div class="filter-group-fields">
+      <label>Capacity
+        <select id="filter-capacity">
+          <option value="">Any</option>
+          {% for c in capacities_list %}
+          <option value="{{ c }}">{{ c }}</option>
+          {% endfor %}
+        </select>
+      </label>
 
-  <label>Target
-    <select id="filter-target">
-      <option value="">All</option>
-      {% for t in targets_list %}
-      <option value="{{ t }}">{{ t }}</option>
-      {% endfor %}
-    </select>
-  </label>
+      <label>Target
+        <select id="filter-target">
+          <option value="">Any</option>
+          {% for t in targets_list %}
+          <option value="{{ t }}">{{ t }}</option>
+          {% endfor %}
+        </select>
+      </label>
 
-  {% for facet in facets %}
-  <label>{{ facet.label }}
-    <select class="filter-framework" data-framework="{{ facet.key }}">
-      <option value="">All</option>
-      {% for term in facet_terms.get(facet.key, []) %}
-      <option value="{{ term }}">{{ term }}</option>
+      <label>{{ expertise.label }}
+        <select class="filter-framework" data-framework="{{ expertise.key }}">
+          <option value="">Any</option>
+          {% for term in facet_terms.get(expertise.key, []) %}
+          <option value="{{ term }}">{{ term }}</option>
+          {% endfor %}
+        </select>
+      </label>
+    </div>
+  </div>
+
+  <div class="filter-group" aria-label="Framework filters">
+    <span class="filter-group-label">Frameworks</span>
+    <div class="filter-group-fields">
+      {% for fw in frameworks %}
+      <label>{{ fw.label }}
+        <select class="filter-framework" data-framework="{{ fw.key }}">
+          <option value="">Any</option>
+          {% for term in facet_terms.get(fw.key, []) %}
+          <option value="{{ term }}">{{ term }}</option>
+          {% endfor %}
+        </select>
+      </label>
       {% endfor %}
-    </select>
-  </label>
-  {% endfor %}
+    </div>
+  </div>
 
   <label class="filter-checkbox">
     <input type="checkbox" id="filter-has-tool">
@@ -44,6 +63,18 @@
 
   <button type="button" id="filter-reset">Reset filters</button>
   <span id="filter-count" class="filter-count" aria-live="polite"></span>
+</section>
+
+<section class="chip-visibility-bar" id="chip-visibility-bar" aria-label="Chip display preferences">
+  <span class="filter-group-label">Show chips on cards</span>
+  <div class="filter-group-fields">
+    {% for fw in frameworks %}
+    <label class="chip-toggle">
+      <input type="checkbox" class="chip-toggle-input" data-fw-key="{{ fw.key }}" {{ "checked" if fw.key == "aiaaic" }}>
+      {{ fw.label }}
+    </label>
+    {% endfor %}
+  </div>
 </section>
 
 {% for group in groups %}

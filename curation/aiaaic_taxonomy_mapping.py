@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Map each research question to the harm type(s) it helps address, using the
-Collaborative Harms Taxonomy (Abercrombie, Benbouzid, Giudici, Golpayegani,
+AIAAIC Harms Taxonomy (Abercrombie, Benbouzid, Giudici, Golpayegani,
 Hernandez, Noro, Pandit, Paraschou, Pownall, Prajapati, Sayre, Sengupta,
 Suriyawongkul, Thelot, Vei, Waltersdorfer -- arXiv:2407.01294), which has 9
 top-level harm types and 69 specific harms.
@@ -270,7 +270,7 @@ def main() -> None:
     if missing or extra:
         print(f"WARNING unmapped RQs: {sorted(missing)}; unknown RQs in mapping: {sorted(extra)}")
 
-    out = Path("curation/harm_taxonomy_mapping.csv")
+    out = Path("curation/aiaaic_taxonomy_mapping.csv")
     rows = []
     for rq_no, r in sorted(rqs.items(), key=lambda kv: int(kv[0])):
         kind, harms, note = MAPPING.get(rq_no, ("unmapped", [], ""))

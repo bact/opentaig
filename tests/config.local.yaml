@@ -6,7 +6,7 @@
 #
 site:
   title: "OpenTAIG"
-  tagline: "Open source tools for problems in technical AI governance"
+  tagline: "Open source tools for technical AI governance"
   description: >
     A catalog of open-source tools mapped to open problems in technical AI
     governance (Reuel, Bucknall, et al., 2025) and linked to relevant
@@ -115,8 +115,8 @@ frameworks:
     column: "aseanai"
   - key: coeai
     column: "coeai"
-  - key: harms
-    column: "harms"
+  - key: aiaaic
+    column: "aiaaic"
 
 expertise:
   key: expertise

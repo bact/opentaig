@@ -12,10 +12,10 @@ curation/rq_context.json
 # search_candidates.csv + seen_repos.csv + site/data.json) -- not source.
 curation/state/candidates_to_review.csv
 
-# Regenerated on demand by emit_harm_framework.py (fully derivable from
-# harm_taxonomy_mapping.py's MAPPING data + rq_context.json) -- pasteable
-# output, not source. Re-run the script if the harms framework's live-sheet
+# Regenerated on demand by emit_aiaaic_framework.py (fully derivable from
+# aiaaic_taxonomy_mapping.py's MAPPING data + rq_context.json) -- pasteable
+# output, not source. Re-run the script if the aiaaic framework's live-sheet
 # rows ever need re-pasting.
-curation/candidate_framework_harms.csv
-curation/candidate_terms_harms.csv
-curation/candidate_map_harms.csv
+curation/candidate_framework_aiaaic.csv
+curation/candidate_terms_aiaaic.csv
+curation/candidate_map_aiaaic.csv
