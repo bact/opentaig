@@ -1617,3 +1617,6 @@ w3c-cg/dpv,accept,,,W3C-Software-2023,unknown,Infrastructure and Metadata to Ana
 OpenEthicsAI/OEDP,accept,,,MIT,osi-approved,Infrastructure and Metadata to Analyze Large Datasets,,,2026-07-29T03:00:59+00:00
 cisco-ai-defense/model-provenance-kit,accept,,,Apache-2.0,osi-approved,Facilitation of Third-Party Access to Models,,,2026-07-29T03:02:43+00:00
 google/magika,accept,,,Apache-2.0,osi-approved,Identification of Problematic Data,,,2026-07-29T03:02:43+00:00
+Dstack-TEE/dstack,accept,,,Apache-2.0,osi-approved,Prevention of Model Theft,topic:confidential-computing,518,2026-07-29T15:13:45+00:00
+intel/confidential-computing-zoo,accept,,,Apache-2.0,osi-approved,Prevention of Model Theft,topic:confidential-computing,359,2026-07-29T15:13:45+00:00
+criticalml-uw/TamperBench,accept,,,MIT,osi-approved,Modification-Resistant Models,tamper resistance LLM,28,2026-07-29T15:13:45+00:00

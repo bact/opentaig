@@ -1,0 +1,17 @@
+{
+  "keyword": "harmful fine-tuning defense",
+  "query": "harmful fine-tuning defense stars:>19 pushed:>2025-07-29 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "git-disl/awesome_LLM-harmful-fine-tuning-papers",
+      "html_url": "https://github.com/git-disl/awesome_LLM-harmful-fine-tuning-papers",
+      "description": "A survey on harmful fine-tuning attack for large language model (ACM CSUR)",
+      "stars": 248,
+      "pushed_at": "2026-06-22T04:30:48Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": "https://arxiv.org/abs/2409.18169"
+    }
+  ]
+}

@@ -420,6 +420,44 @@ The keyword sources, in the order worth trying:
    words and returns nothing. The tool-type column is the part phase-1
    keywords systematically under-used: we searched problems far more often
    than we searched *software shapes*.
+
+   `keyword_matrix.py` (built) runs this mechanically — a PICOC-style
+   generalization to four dimensions (`target`/`action`/`objective`/
+   `context`, roughly Population/Intervention/Outcome/Context) instead of
+   one fixed three-column table, and it already knows what's been tried:
+
+   ```bash
+   python curation/keyword_matrix.py --list-dims
+   python curation/keyword_matrix.py --dims target,action --limit 30
+   ```
+
+   It cross-checks every generated phrase against `search_log.csv` and by
+   default only prints the ones not yet tried (`--show-tried` prints
+   everything, commenting out the already-tried ones, to see the *shape* of
+   what's been covered). Still combines exactly **two** dimensions per run —
+   the script enforces this rather than trusting the caller. Deterministic;
+   no model, no network.
+
+   Before spending a real search-and-triage pass on a batch of generated
+   phrases, sanity-check their *recall* with a **Quasi-Gold-Standard (QGS)**:
+   5-10 repos already known to be relevant (ideally spanning several problem
+   areas — ready-made ones are any tool already in the live catalog).
+   `validate_qgs.py` (built) runs each candidate keyword and reports which
+   QGS repos it actually finds, without touching `search_candidates.csv`:
+
+   ```bash
+   python curation/validate_qgs.py \
+       --qgs google/magika --qgs IBM/ICX360 --qgs leondz/garak \
+       --keyword "LLM guardrail" --keyword "prompt injection scanner"
+   ```
+
+   A QGS repo that no keyword in the batch finds is a concrete signal to go
+   read *that repo's own README* for the vocabulary it actually uses (source
+   1 above), rather than guessing more phrasings blind. Logged to
+   `search_log.csv` with a `qgs-validation` note so these calibration probes
+   are never mistaken for real discovery runs when computing paper
+   statistics (same pattern as the raw-curl calibration probes already in
+   the log from round 1). Deterministic; no model; needs `GITHUB_TOKEN`.
 7. **Governance sub-domain jargon.** Developers almost never write "AI
    governance" in a README; they write the specific technical term for the
    problem they solved. Vocabulary worth sweeping, by pillar — terms
@@ -452,22 +490,95 @@ The keyword sources, in the order worth trying:
    membership-inference literature list, a model-inversion list). To find
    more: `awesome AI safety`, `awesome LLM security`, `awesome AI
    fairness`, `awesome MLSecOps`.
-9. **Non-GitHub registries.** Everything above searches one index; these
-   surface tools before or instead of GitHub prominence:
-   - **PyPI / npm** — package metadata carries classifiers (e.g. `Topic ::
-     Scientific/Engineering :: Artificial Intelligence`) that can be
-     combined with keywords like `auditor`, `privacy`, `guardrail`. Note
-     the related-but-separate lesson under judgment rules: package metadata
-     is also where a licence often lives when GitHub reports none.
-   - **Hugging Face** — Spaces, and `evaluate`-library metric modules,
-     searched by `fairness`, `robustness`, `toxicity`. Catches tools
-     shipped as a Space or metric rather than a repo.
-   - **arXiv "code available"** paired with `LLM auditing`, `model
-     evaluation`, `AI governance` — many real tools start as a paper
-     artifact (TextAttack, ART). Judge these against
-     `not-a-tool-paper-artifact` carefully: the category exists to reject
-     one-off replication scripts, *not* maintained tools that happen to
-     have a paper.
+9. **Backward snowballing (`snowball.py`, built).** A tool's own README
+   usually names its closest neighbours in plain prose (forks-from, "similar
+   projects", dependency lists, comparison tables) even when its vocabulary
+   doesn't overlap with any keyword we'd think to try. `snowball.py` fetches
+   a seed repo's README, extracts every `github.com/<owner>/<repo>` link,
+   and runs each linked repo through the *same* filters as a real keyword
+   search (stars/pushed/archived/fork + README-length) — so a snowballed
+   repo has to clear the identical bar, it's just a different source of
+   candidates, not a looser one. Seed it from repos already in
+   `search_candidates.csv` (`--from-candidates`) or from specific repos
+   (`--repo owner/repo`, repeatable). Logs one row per seed to
+   `search_log.csv` (`keyword` = `snowball:<seed>`) — a seed whose README
+   links to nothing new is real negative evidence, same as a 0-hit keyword.
+   Deterministic; no model; needs `GITHUB_TOKEN`.
+10. **Non-GitHub registries (`search_registries.py`, built).** Everything
+   above searches one index; these surface tools before or instead of GitHub
+   prominence. Both registries below have a real public JSON search API (no
+   auth, no scraping):
+   - **npm** — `registry.npmjs.org`'s official search API. Each hit's
+     `repository` field is resolved back to `github.com/owner/repo` and run
+     through the exact same filters as `search_repos.py`/`snowball.py`
+     (stars/pushed/archived/fork + README length), so an npm-sourced
+     candidate clears the identical bar — it's a different index, not a
+     looser one. Note the related-but-separate lesson under judgment rules:
+     package metadata is also where a licence often lives when GitHub
+     reports none.
+
+     ```bash
+     python curation/search_registries.py --registry npm --keyword "LLM guardrail"
+     ```
+   - **Hugging Face** — Spaces and Models, via `huggingface.co/api/{spaces,models}`.
+     Most hits aren't mirrored to a top-level GitHub repo, so these are kept
+     as their own candidate rows (`full_name` = `hf:<id>`; `stars` = likes,
+     a rough popularity proxy; no README-length filter — read the model/space
+     card directly at the judgment step instead, the format differs from a
+     GitHub README).
+
+     ```bash
+     python curation/search_registries.py --registry huggingface-spaces --keyword "fairness"
+     python curation/search_registries.py --registry huggingface-models --keyword "toxicity classifier"
+     ```
+   - **PyPI has no working public search API**, confirmed live: the old
+     XML-RPC `search()` method was retired in 2018, and the search *page*
+     (`pypi.org/search/?q=...`) returns a bot-detection "Client Challenge"
+     page (Fastly), not results, so it can't be scraped either. Use GitHub's
+     own search instead (`search_repos.py`, optionally add `language:python`)
+     — nearly every PyPI-published tool worth including also has a GitHub
+     repo, and classifiers like `Topic :: Scientific/Engineering ::
+     Artificial Intelligence` live in that repo's `pyproject.toml`/`setup.py`
+     rather than anywhere independently searchable.
+   - **arXiv "code available" (`search_arxiv.py`, built)** paired with `LLM
+     auditing`, `model evaluation`, `AI governance` — many real tools start
+     as a paper artifact (TextAttack, ART). The script queries arXiv's
+     public Atom API, pulls every `github.com/owner/repo` link out of each
+     hit's abstract/comment field, and runs it through the same filters as
+     the other scripts. Judge these against `not-a-tool-paper-artifact`
+     extra carefully: the category exists to reject one-off replication
+     scripts, *not* maintained tools that happen to have a paper — a repo
+     still actively pushed/starred well after the paper's date is
+     reasonable evidence it's the latter.
+
+     ```bash
+     python curation/search_arxiv.py --keyword "LLM auditing"
+     ```
+
+     Couldn't be exercised against a live response from the sandbox this
+     was written in (`export.arxiv.org/api/query` timed out every attempt,
+     while the bare host and other registries' APIs answered fine) — run it
+     once for real and sanity-check the output before relying on it.
+   - **General web search (Google/Bing) as an agent-driven step, logged with
+     `log_websearch.py` (built).** There's no free, keyless search API to
+     script this the way the registries above can be scripted — it has to
+     stay an agent using its own WebSearch tool, the way step 3 of the
+     pipeline already allows ("can supplement this for blog/paper-surfaced
+     tools GitHub search misses"). What was missing was provenance: a web
+     search wasn't landing in `search_log.csv` at all, unlike every other
+     source here. `log_websearch.py` closes that gap — call it right after
+     a WebSearch tool call to log what was searched and how many leads it
+     produced (`keyword` prefixed `websearch:` so it's never confused with a
+     scripted API hit when computing paper statistics from the log). It does
+     **not** touch `search_candidates.csv` — a web search surfaces leads
+     (a blog post, a homepage, a link buried in prose), not structured rows
+     safe to auto-parse; those still go through the normal pipeline by hand.
+
+     ```bash
+     python curation/log_websearch.py --keyword "open source AI incident database" \
+         --hit-count 8 --new-leads 2 \
+         --note "found aiaaic.org and oecd.ai/en/incidents in top 5 results"
+     ```
    - **Papers With Code is dead** — shut down by Meta in July 2025 and
      redirecting to Hugging Face. Use [HF Papers](https://huggingface.co/papers)
      and the archived [`paperswithcode-data`](https://github.com/paperswithcode/paperswithcode-data)
@@ -658,9 +769,9 @@ section. Source 4 (the RQ's own text) is what phase 1 already used;
 everything else is new. **Start with source 0 (`topic:` tag sweeps)** — it
 is a different search axis from free text and by far the highest-yield
 source measured (a single `topic:ai-safety` query returned 202 repos, 98
-unseen; ~650 unseen across 8 tags). Sources 6-9 (the Domain×Artifact×Tool
+unseen; ~650 unseen across 8 tags). Sources 6-10 (the Domain×Artifact×Tool
 matrix, sub-domain jargon, mining already-rejected awesome-lists for
-vocabulary, and non-GitHub registries) are also new and largely untried.
+vocabulary, backward snowballing, and non-GitHub registries) are also new and largely untried.
 Read that section in full rather than working from this summary. The
 free-text sources:
 
@@ -898,6 +1009,38 @@ been triaged (accepted into `tools`/`tool_map`, or rejected) — see
   predicates in [bact/licenseid](https://github.com/bact/licenseid) — see
   that project instead if the input is unstructured license *text* rather
   than an already-resolved SPDX id.
+- **`keyword_matrix.py`** — built. PICOC-style keyword generator over four
+  dimensions (target/action/objective/context); prints two-dimension combos
+  not already in `state/search_log.csv`. See "Keyword expansion" source 6.
+  Deterministic; no model, no network.
+- **`snowball.py`** — built. Backward snowballing: extracts `github.com/...`
+  links from a seed repo's README and runs each through the same
+  stars/pushed/archived/fork + README-length filters as `search_repos.py`,
+  reusing its functions directly. See "Keyword expansion" source 9.
+  Deterministic; no model; needs `GITHUB_TOKEN`.
+- **`validate_qgs.py`** — built. Quasi-Gold-Standard recall check: runs a
+  batch of candidate keywords and reports which of a known-relevant repo set
+  each one actually finds, before spending a real triage pass on them. Never
+  writes to `search_candidates.csv`. See "Keyword expansion" source 6.
+  Deterministic; no model; needs `GITHUB_TOKEN`.
+- **`search_registries.py`** — built. Non-GitHub registry search: npm (via
+  the official search API, resolved back to a GitHub repo and filtered
+  identically to `search_repos.py`) and Hugging Face Spaces/Models (kept as
+  their own candidate rows, `full_name` = `hf:<id>`). See "Keyword
+  expansion" source 10. Deterministic; no model; needs `GITHUB_TOKEN` for
+  the npm path only.
+- **`search_arxiv.py`** — built. arXiv Atom API search, extracting
+  `github.com/...` links from each hit's abstract/comment and resolving
+  them through the same filters as `search_repos.py`. See "Keyword
+  expansion" source 10. Deterministic; no model; needs `GITHUB_TOKEN`.
+  Not yet exercised against a live arXiv response — see the script's own
+  docstring.
+- **`log_websearch.py`** — built. Appends one provenance row to
+  `state/search_log.csv` for an agent-driven WebSearch-tool query
+  (`keyword` prefixed `websearch:`); doesn't touch
+  `state/search_candidates.csv` since web-search leads need manual
+  judgment, not auto-parsing. See "Keyword expansion" source 10.
+  Deterministic; no model, no network.
 - **`report_triage.py`** — built. Reads `state/seen_repos.csv` and prints
   found/accepted/open-source/rejected counts by problem area (or keyword),
   plus breakdowns by reject category and licence class. Deterministic; no

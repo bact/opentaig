@@ -1,0 +1,227 @@
+{
+  "keyword": "topic:trusted-execution-environment",
+  "query": "topic:trusted-execution-environment stars:>19 pushed:>2025-07-29 archived:false fork:false",
+  "count": 22,
+  "repos": [
+    {
+      "full_name": "wolfSSL/wolfssl",
+      "html_url": "https://github.com/wolfSSL/wolfssl",
+      "description": "The wolfSSL library is a small, fast, portable implementation of TLS/SSL for embedded devices to the cloud.  wolfSSL supports up to TLS 1.3 and DTLS 1.3! Update to wolfSSL 5.9.1 for the latest CVE fixes.",
+      "stars": 2888,
+      "pushed_at": "2026-07-29T15:05:59Z",
+      "language": "C",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://www.wolfssl.com"
+    },
+    {
+      "full_name": "secretflow/secretflow",
+      "html_url": "https://github.com/secretflow/secretflow",
+      "description": "A unified framework for privacy-preserving data analysis and machine learning",
+      "stars": 2689,
+      "pushed_at": "2026-04-24T07:57:55Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.secretflow.org.cn/docs/secretflow/en/"
+    },
+    {
+      "full_name": "apache/teaclave-sgx-sdk",
+      "html_url": "https://github.com/apache/teaclave-sgx-sdk",
+      "description": "Apache Teaclave\u2122 SGX SDK helps developers to write Intel SGX applications in the Rust programming language, and also known as Rust SGX SDK.",
+      "stars": 1228,
+      "pushed_at": "2026-06-10T01:21:13Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://teaclave.apache.org"
+    },
+    {
+      "full_name": "enovella/TEE-reversing",
+      "html_url": "https://github.com/enovella/TEE-reversing",
+      "description": "A curated list of public TEE resources for learning how to reverse-engineer and achieve trusted code execution on ARM devices",
+      "stars": 1032,
+      "pushed_at": "2026-01-07T15:23:21Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "securefederatedai/openfederatedlearning",
+      "html_url": "https://github.com/securefederatedai/openfederatedlearning",
+      "description": "An Open Framework for Federated Learning.",
+      "stars": 842,
+      "pushed_at": "2026-02-21T16:41:42Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://openfl.readthedocs.io"
+    },
+    {
+      "full_name": "apache/teaclave",
+      "html_url": "https://github.com/apache/teaclave",
+      "description": "Apache Teaclave\u2122 is an open source universal secure computing platform, making computation on privacy-sensitive data safe and simple.",
+      "stars": 805,
+      "pushed_at": "2026-06-10T01:27:17Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://teaclave.apache.org"
+    },
+    {
+      "full_name": "Dstack-TEE/dstack",
+      "html_url": "https://github.com/Dstack-TEE/dstack",
+      "description": "Open framework for confidential AI",
+      "stars": 518,
+      "pushed_at": "2026-07-29T13:28:24Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://dstack.org"
+    },
+    {
+      "full_name": "Maxul/Awesome-SGX-Open-Source",
+      "html_url": "https://github.com/Maxul/Awesome-SGX-Open-Source",
+      "description": "A curated list of open-source projects that help exploit Intel SGX technology",
+      "stars": 422,
+      "pushed_at": "2026-02-09T06:43:24Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "apache/teaclave-trustzone-sdk",
+      "html_url": "https://github.com/apache/teaclave-trustzone-sdk",
+      "description": "Teaclave TrustZone SDK enables safe, functional, and ergonomic development of trustlets.",
+      "stars": 284,
+      "pushed_at": "2026-07-16T10:32:25Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://teaclave.apache.org"
+    },
+    {
+      "full_name": "IBM/ACE-RISCV",
+      "html_url": "https://github.com/IBM/ACE-RISCV",
+      "description": "Assured confidential execution (ACE) implements VM-based trusted execution environment (TEE) for embedded RISC-V systems with focus on a formally verified and auditable firmware.",
+      "stars": 211,
+      "pushed_at": "2026-07-29T02:33:21Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "evoker0/AlwaysStrong",
+      "html_url": "https://github.com/evoker0/AlwaysStrong",
+      "description": "Always Strong: Strong Play Integrity in one drop in module TEESimulator-RS + PlayIntegrityFork bundled.",
+      "stars": 204,
+      "pushed_at": "2026-07-14T23:02:10Z",
+      "language": "Shell",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://t.me/keyboxstrong"
+    },
+    {
+      "full_name": "secretflow/kuscia",
+      "html_url": "https://github.com/secretflow/kuscia",
+      "description": "Kuscia(Kubernetes-based Secure Collaborative InfrA) is a K8s-based privacy-preserving computing task orchestration framework.",
+      "stars": 146,
+      "pushed_at": "2026-07-27T11:14:13Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.secretflow.org.cn/docs/kuscia/latest/zh-Hans"
+    },
+    {
+      "full_name": "edgelesssys/edgelessrt",
+      "html_url": "https://github.com/edgelesssys/edgelessrt",
+      "description": "Edgeless RT is an SDK and a runtime for Intel SGX. It combines top-notch Go support with simplicity, robustness and a small TCB. Developing confidential microservices has never been easier! C++17 and Rust (experimental) are also supported.",
+      "stars": 143,
+      "pushed_at": "2026-07-15T17:26:41Z",
+      "language": "C++",
+      "license_spdx_id": "MIT",
+      "homepage": "https://edgeless.systems"
+    },
+    {
+      "full_name": "sentient-agi/Sentient-Enclaves-Framework",
+      "html_url": "https://github.com/sentient-agi/Sentient-Enclaves-Framework",
+      "description": "Sentient Enclaves Framework for Confidential AI & Crypto Apps",
+      "stars": 96,
+      "pushed_at": "2026-03-24T01:33:58Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://sentient-agi.github.io/Sentient-Enclaves-Framework/"
+    },
+    {
+      "full_name": "trusted-remote-execution/trusted-remote-execution",
+      "html_url": "https://github.com/trusted-remote-execution/trusted-remote-execution",
+      "description": "Sandboxed Rhai script execution engine with Cedar policy authorization for every system operation.",
+      "stars": 83,
+      "pushed_at": "2026-07-28T16:53:38Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://trusted-remote-execution.com/docs.html"
+    },
+    {
+      "full_name": "Samsung/mTower",
+      "html_url": "https://github.com/Samsung/mTower",
+      "description": "mTower is Trusted Execution Environment specially designed to be used on MicroController Units (MCUs) supporting ARM TrustZone technology (e.g., Cortex-M23/33/35p). mTower operates well under restrictions typical for such environment \u2013 small RAM and ROM sizes, relatively low performance, absence of rich OSes providing variety of services available on PCs or in enterprise environments. mTower is intended for usage in IoT, embedded devices, Smart Home applications, distributed heterogeneous networks and other environments where secure processing of sensitive data is necessary.",
+      "stars": 78,
+      "pushed_at": "2026-07-28T04:24:42Z",
+      "language": "C",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "riscv/riscv-smmtt",
+      "html_url": "https://github.com/riscv/riscv-smmtt",
+      "description": "This specification will define the RISC-V privilege ISA extensions required to support Supervisor Domain isolation for multi-tenant security use cases e.g. confidential-computing, trusted platform services, fault isolation and so on.",
+      "stars": 72,
+      "pushed_at": "2026-07-29T09:46:07Z",
+      "language": "Makefile",
+      "license_spdx_id": "CC-BY-4.0",
+      "homepage": "https://riscv.atlassian.net/browse/RVG-65"
+    },
+    {
+      "full_name": "skalenetwork/sgxwallet",
+      "html_url": "https://github.com/skalenetwork/sgxwallet",
+      "description": "sgxwallet is the first-ever opensource high-performance hardware secure crypto wallet that is based on Intel SGX technology.  First opensource product on Intel SGX whitelist. Scales to 100,000+ transactions per second. Currently supports ETH and SKALE, and will support BTC in the future.  Sgxwallet is under heavy development and use by SKALE network.",
+      "stars": 68,
+      "pushed_at": "2026-07-29T11:40:17Z",
+      "language": "Shell",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://skale.network"
+    },
+    {
+      "full_name": "apache/teaclave-java-tee-sdk",
+      "html_url": "https://github.com/apache/teaclave-java-tee-sdk",
+      "description": "Apache Teaclave (incubating) Java TEE SDK is an open source universal confidential computing framework, making java computation on privacy-sensitive data safe and simple.",
+      "stars": 66,
+      "pushed_at": "2026-07-01T11:40:45Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://teaclave.apache.org"
+    },
+    {
+      "full_name": "evervault/enclaves",
+      "html_url": "https://github.com/evervault/enclaves",
+      "description": "Evervault Enclaves let you deploy your services to Trusted Execution Environments without the engineering overhead",
+      "stars": 49,
+      "pushed_at": "2026-07-24T08:21:23Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://evervault.com/products/enclaves"
+    },
+    {
+      "full_name": "dineshpinto/awesome-tee-blockchain",
+      "html_url": "https://github.com/dineshpinto/awesome-tee-blockchain",
+      "description": "A curated list of resources for learning about Trusted Execution Environments (TEEs) in the context of blockchains.",
+      "stars": 43,
+      "pushed_at": "2025-10-02T05:50:44Z",
+      "language": "",
+      "license_spdx_id": "CC0-1.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "secretflow/trustflow",
+      "html_url": "https://github.com/secretflow/trustflow",
+      "description": "A privacy-preserving computing  system based on TEE.",
+      "stars": 37,
+      "pushed_at": "2026-03-12T06:53:20Z",
+      "language": "C++",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.secretflow.org.cn/docs/trustedflow"
+    }
+  ]
+}

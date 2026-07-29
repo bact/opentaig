@@ -254,7 +254,7 @@ def main() -> None:
         w.writerows(map_rows)
 
     print(f"granularity={args.granularity}  include={args.include}")
-    print(f"  framework rows : 1   -> curation/candidate_framework_aiaaic.csv")
+    print("  framework rows : 1   -> curation/candidate_framework_aiaaic.csv")
     print(f"  term rows      : {len(term_rows):<3} -> curation/candidate_terms_aiaaic.csv")
     print(f"  map rows       : {len(map_rows):<3} -> curation/candidate_map_aiaaic.csv")
     print(f"    direct harm chip(s)      : {n_direct}")
