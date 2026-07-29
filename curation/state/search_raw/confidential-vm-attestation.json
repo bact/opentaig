@@ -1,0 +1,17 @@
+{
+  "keyword": "confidential VM attestation",
+  "query": "confidential VM attestation stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "Azure/confidential-computing-cvm-guest-attestation",
+      "html_url": "https://github.com/Azure/confidential-computing-cvm-guest-attestation",
+      "description": "Confidential VM Platform Guest attestation sample apps",
+      "stars": 82,
+      "pushed_at": "2026-07-22T11:15:08Z",
+      "language": "C++",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}

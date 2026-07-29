@@ -58,7 +58,12 @@ copied out first):
     match every existing datetime_* cell in the live sheet exactly, so
     pasting a batch in doesn't require reformatting. Deduplicated on `id`
     across runs -- re-running the same judgments file twice doesn't
-    duplicate a row.
+    duplicate a row. Also skipped entirely (no row emitted at all) if `id`
+    is already present in the live `tools` tab, per `--data-json`
+    (site/data.json, i.e. `python build.py` output) -- this is what makes
+    pass-A re-mapping safe: judging an *already-accepted* tool against a
+    *new* RQ must emit only the new `tool_map` row below, never a second
+    `tools` row for a tool that's already live.
   - `curation/candidate_map_updates.csv` -- `rq_no, tool_id, role,
     rationale, datetime_added, datetime_checked, datetime_updated`, one row
     per (tool, RQ) pair. Same column order as the live `tool_map` tab, so a
@@ -155,6 +160,18 @@ def append_rows(path: Path, fieldnames: list, rows: list, key_fields: list) -> t
     return len(new_rows), skipped
 
 
+def load_live_tool_ids(data_json: Path) -> set:
+    """Returns the `id` of every tool already in the live `tools` tab (via
+    site/data.json, which build.py generates from it). Pass A re-judges
+    already-accepted tools against RQs they aren't yet mapped to -- their
+    `tools` row must not be re-emitted, only the new `tool_map` row(s)."""
+    if not data_json.exists():
+        return set()
+    with open(data_json, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    return {tool["id"] for tool in data.get("tools", [])}
+
+
 def load_search_metadata(path: Path) -> dict:
     """Returns {full_name: row} from search_candidates.csv, used to enrich the
     triage log with licence/stars/keyword without the judging agent having to
@@ -175,6 +192,11 @@ def main() -> None:
     parser.add_argument("--search-candidates", default="curation/state/search_candidates.csv",
                         help="used to look up licence/stars/keyword per repo; a repo absent "
                              "from it is recorded with whatever the judgment supplied")
+    parser.add_argument("--data-json", default="site/data.json",
+                        help="used to detect tool ids already live in the `tools` tab, so "
+                             "pass-A re-mappings of an existing tool don't re-emit its `tools` "
+                             "row -- only its new `tool_map` row(s). Run `python build.py` "
+                             "first so this reflects the current live sheet.")
     parser.add_argument("--problem-area", default="",
                         help="problem area this batch was searched for; recorded on every "
                              "triage row so per-area counts are computable later. A judgment "
@@ -185,10 +207,12 @@ def main() -> None:
         judgments = json.load(f)
 
     search_meta = load_search_metadata(Path(args.search_candidates))
+    live_tool_ids = load_live_tool_ids(Path(args.data_json))
     spdx = load_spdx_index()
 
     tool_rows, map_rows, seen_rows = [], [], []
     seen_ids = set()
+    live_tools_skipped = 0
     seen_repos_in_batch = set()
     now = datetime.datetime.now(datetime.timezone.utc)
     # seen_repos.csv is our own audit log, never pasted into the sheet, so it
@@ -261,22 +285,28 @@ def main() -> None:
             continue
         seen_ids.add(tool_id)
 
-        tool_rows.append({
-            "id": tool_id,
-            "tool_type": j.get("tool_type", "software"),
-            "name": j.get("name", tool_id),
-            "summary": j.get("summary", ""),
-            "license": j.get("license", ""),
-            "homepage": j.get("homepage", ""),
-            "source": j.get("source", ""),
-            "documentation": j.get("documentation", ""),
-            "funding": j.get("funding", ""),
-            "implement": j.get("implement", ""),
-            "eval": j.get("eval", ""),
-            "datetime_added": sheet_timestamp,
-            "datetime_checked": sheet_timestamp,
-            "datetime_updated": sheet_timestamp,
-        })
+        if tool_id in live_tool_ids:
+            # Pass A: re-mapping a tool that's already in the live `tools`
+            # tab. Only its new tool_map row(s) belong in the output --
+            # re-emitting the tools row would duplicate it once pasted in.
+            live_tools_skipped += 1
+        else:
+            tool_rows.append({
+                "id": tool_id,
+                "tool_type": j.get("tool_type", "software"),
+                "name": j.get("name", tool_id),
+                "summary": j.get("summary", ""),
+                "license": j.get("license", ""),
+                "homepage": j.get("homepage", ""),
+                "source": j.get("source", ""),
+                "documentation": j.get("documentation", ""),
+                "funding": j.get("funding", ""),
+                "implement": j.get("implement", ""),
+                "eval": j.get("eval", ""),
+                "datetime_added": sheet_timestamp,
+                "datetime_checked": sheet_timestamp,
+                "datetime_updated": sheet_timestamp,
+            })
 
         mappings = j.get("mappings", [])
         if not mappings:
@@ -314,7 +344,8 @@ def main() -> None:
     seen_written, seen_skipped = append_rows(seen_path, SEEN_FIELDNAMES, seen_rows, ["full_name"])
 
     print(f"{tools_written} accepted tool(s) -> {tools_out}"
-          + (f" ({tools_skipped} already present, skipped)" if tools_skipped else ""))
+          + (f" ({tools_skipped} already present, skipped)" if tools_skipped else "")
+          + (f" ({live_tools_skipped} already live in tools tab, tools-row skipped)" if live_tools_skipped else ""))
     print(f"{map_written} RQ mapping(s) -> {map_out}"
           + (f" ({map_skipped} already present, skipped)" if map_skipped else ""))
     print(f"{seen_written} repo(s) newly logged -> {seen_path}"

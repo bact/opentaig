@@ -1,0 +1,47 @@
+{
+  "keyword": "AI governance framework open source",
+  "query": "AI governance framework open source stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 4,
+  "repos": [
+    {
+      "full_name": "madguyevans-creator/Fintech-CUI-Trust-Framework",
+      "html_url": "https://github.com/madguyevans-creator/Fintech-CUI-Trust-Framework",
+      "description": "An open-source engineering governance standard defining trust boundaries for conversational AI agents in high-stakes domains. MIT Licensed.",
+      "stars": 200,
+      "pushed_at": "2026-07-07T08:39:59Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "mss-boot-io/mss-boot",
+      "html_url": "https://github.com/mss-boot-io/mss-boot",
+      "description": "Governance-first Go microservice framework for RBAC, configuration, service operations, and AI-assisted open-source workflows.",
+      "stars": 37,
+      "pushed_at": "2026-07-26T00:12:37Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": "https://docs.mss-boot-io.top"
+    },
+    {
+      "full_name": "hatch3r/hatch3r",
+      "html_url": "https://github.com/hatch3r/hatch3r",
+      "description": "Open-source CLI + editor plugin (Claude Code, Cursor, GitHub Copilot): one command installs 29 agents, 53 skills, 67 rules, 30 commands, 7 hooks & MCP integrations into any repo. Audited each release across 24 governance domains.",
+      "stars": 26,
+      "pushed_at": "2026-07-28T19:29:34Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://docs.hatch3r.com"
+    },
+    {
+      "full_name": "MShneur/CTRL-AI",
+      "html_url": "https://github.com/MShneur/CTRL-AI",
+      "description": "An open-source, prompt-based governance framework that upgrades standard LLMs into autonomous, self-correcting strategic engines.",
+      "stars": 22,
+      "pushed_at": "2026-07-24T21:37:32Z",
+      "language": "HTML",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": ""
+    }
+  ]
+}

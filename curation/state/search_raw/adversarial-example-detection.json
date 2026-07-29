@@ -1,0 +1,27 @@
+{
+  "keyword": "adversarial example detection",
+  "query": "adversarial example detection stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 2,
+  "repos": [
+    {
+      "full_name": "Adversarial-Detection-Engineering/Adversarial-Detection-Engineering-Framework",
+      "html_url": "https://github.com/Adversarial-Detection-Engineering/Adversarial-Detection-Engineering-Framework",
+      "description": "A framework and taxonomy for identifying, classifying, and reasoning about detection logic bugs in SIEM, EDR, and XDR rules, with concrete examples and real-world bypasses.",
+      "stars": 57,
+      "pushed_at": "2026-03-05T09:15:38Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "ryuryukke/OUTFOX",
+      "html_url": "https://github.com/ryuryukke/OUTFOX",
+      "description": "[AAAI 2024] The official repository for our paper, \"OUTFOX: LLM-Generated Essay Detection Through In-Context Learning with Adversarially Generated Examples\"",
+      "stars": 53,
+      "pushed_at": "2025-11-05T08:09:35Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://arxiv.org/abs/2307.11729"
+    }
+  ]
+}

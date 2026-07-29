@@ -1,0 +1,27 @@
+{
+  "keyword": "open source NIST AI RMF",
+  "query": "open source NIST AI RMF stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 2,
+  "repos": [
+    {
+      "full_name": "gy15901580825/Argus",
+      "html_url": "https://github.com/gy15901580825/Argus",
+      "description": "Black-box, open-source red-team testing for AI agents. Point Argus at any HTTP, gRPC, or browser-using agent endpoint, run 500+ adversarial probes (OWASP LLM Top 10, MITRE ATLAS, NIST AI RMF, TAP/PAIR/GCG), get LLM-judged findings as SARIF, gate CI via GitHub Code Scanning. Ships with CLI + GH Action.",
+      "stars": 204,
+      "pushed_at": "2026-05-28T17:16:30Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "sherifconteh-collab/ai-grc-platform",
+      "html_url": "https://github.com/sherifconteh-collab/ai-grc-platform",
+      "description": "Open-source AI-powered GRC platform with multi-framework compliance management, crosswalk intelligence, and BYOK AI analysis. Supports NIST 800-53, ISO 27001, SOC 2, NIST AI RMF, and 12+ frameworks with 500+ controls.",
+      "stars": 26,
+      "pushed_at": "2026-07-28T12:11:58Z",
+      "language": "JavaScript",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    }
+  ]
+}

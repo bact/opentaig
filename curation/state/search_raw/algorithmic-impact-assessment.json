@@ -1,0 +1,17 @@
+{
+  "keyword": "algorithmic impact assessment",
+  "query": "algorithmic impact assessment stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "canada-ca/aia-eia-js",
+      "html_url": "https://github.com/canada-ca/aia-eia-js",
+      "description": "Algorithmic Impact Assessment - \u00c9valuation de l'incidence algorithmique (TS/JS)",
+      "stars": 73,
+      "pushed_at": "2025-10-03T15:31:04Z",
+      "language": "Vue",
+      "license_spdx_id": "MIT",
+      "homepage": "https://canada-ca.github.io/aia-eia-js/"
+    }
+  ]
+}

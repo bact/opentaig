@@ -1,0 +1,17 @@
+{
+  "keyword": "MLOps model registry open source",
+  "query": "MLOps model registry open source stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "eraneos/snowflake-mlops",
+      "html_url": "https://github.com/eraneos/snowflake-mlops",
+      "description": "Open-source reference monorepo for end-to-end MLOps on Snowflake, centered around Snowflake-native MLOps tooling (Feature Store, Model Registry, Tasks) in a hub-spoke layout. Questions, issues, or ideas about Snowflake ML in general are warmly welcomed.",
+      "stars": 34,
+      "pushed_at": "2026-05-20T12:08:48Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://eraneos.github.io/snowflake-mlops/"
+    }
+  ]
+}

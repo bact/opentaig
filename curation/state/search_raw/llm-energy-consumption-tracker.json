@@ -1,0 +1,17 @@
+{
+  "keyword": "LLM energy consumption tracker",
+  "query": "LLM energy consumption tracker stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "mlco2/ecologits",
+      "html_url": "https://github.com/mlco2/ecologits",
+      "description": "\ud83c\udf31 EcoLogits tracks the energy consumption and environmental footprint of using generative AI models through APIs.",
+      "stars": 307,
+      "pushed_at": "2026-07-09T12:13:22Z",
+      "language": "Python",
+      "license_spdx_id": "MPL-2.0",
+      "homepage": "https://ecologits.ai/"
+    }
+  ]
+}

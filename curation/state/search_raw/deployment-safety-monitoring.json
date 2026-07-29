@@ -1,0 +1,47 @@
+{
+  "keyword": "deployment safety monitoring",
+  "query": "deployment safety monitoring stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 4,
+  "repos": [
+    {
+      "full_name": "fu351/Doberman-Core",
+      "html_url": "https://github.com/fu351/Doberman-Core",
+      "description": "Doberman is an AI agent security framework for guardrails, prompt injection defense, runtime policy enforcement, tool-use permissions, agent monitoring, audit logs, LLM safety, autonomous workflow protection and secure AI deployment.",
+      "stars": 113,
+      "pushed_at": "2026-07-27T06:01:30Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://pypi.org/project/doberman-core/"
+    },
+    {
+      "full_name": "frckeepit/llm-production-toolkit",
+      "html_url": "https://github.com/frckeepit/llm-production-toolkit",
+      "description": "Production-ready toolkit for evaluating, monitoring, and ensuring safety of LLM deployments. Hallucination detection, bias evaluation, feedback loops, and production readiness assessment.",
+      "stars": 95,
+      "pushed_at": "2026-04-09T05:06:19Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "VoxDroid/Construction-Site-Safety-PPE-Detection",
+      "html_url": "https://github.com/VoxDroid/Construction-Site-Safety-PPE-Detection",
+      "description": "End-to-end YOLOv8 PPE detection for construction-site safety. Includes Jupyter training notebooks, pretrained weights, dataset (Roboflow), inference/testing scripts, and a Flask web dashboard for real-time monitoring and compliance reporting.",
+      "stars": 25,
+      "pushed_at": "2025-12-16T10:48:13Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://github.com/VoxDroid/Construction-Site-Safety-PPE-Detection"
+    },
+    {
+      "full_name": "jkmaina/openai-agents-blueprint",
+      "html_url": "https://github.com/jkmaina/openai-agents-blueprint",
+      "description": "Complete educational guide with 100+ working code examples for building production-ready AI agents using   the OpenAI Agents SDK. Learn to build and deploy scalable multi-agent systems in under 2 hours, going   straight from 'Hello World' to enterprise deployment with Docker, Kubernetes, safety guardrails, and   monitoring.",
+      "stars": 22,
+      "pushed_at": "2026-01-10T10:08:32Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://www.amazon.com/dp/B0FHFQ63DJ"
+    }
+  ]
+}

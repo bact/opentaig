@@ -1,0 +1,17 @@
+{
+  "keyword": "ISO 42001 implementation",
+  "query": "ISO 42001 implementation stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "icdfa/iso-42001-lead-implementer-toolkit",
+      "html_url": "https://github.com/icdfa/iso-42001-lead-implementer-toolkit",
+      "description": "ISO 42001 Lead Implementer Toolkit - Complete guide with case studies, templates, and implementation resources for AI Security Management Systems",
+      "stars": 24,
+      "pushed_at": "2025-11-30T18:25:07Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    }
+  ]
+}

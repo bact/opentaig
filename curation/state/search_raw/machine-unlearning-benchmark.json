@@ -1,0 +1,27 @@
+{
+  "keyword": "machine unlearning benchmark",
+  "query": "machine unlearning benchmark stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 2,
+  "repos": [
+    {
+      "full_name": "gnueaj/Machine-Unlearning-Comparator",
+      "html_url": "https://github.com/gnueaj/Machine-Unlearning-Comparator",
+      "description": "A Visual Analytics System for Comparative Evaluation of Machine Unlearning Methods (TVCG 2026)",
+      "stars": 100,
+      "pushed_at": "2026-07-17T11:39:30Z",
+      "language": "TypeScript",
+      "license_spdx_id": "",
+      "homepage": "https://gnueaj.github.io/Machine-Unlearning-Comparator/"
+    },
+    {
+      "full_name": "aiim-research/ERASURE",
+      "html_url": "https://github.com/aiim-research/ERASURE",
+      "description": "ERASURE: Redefining Privacy Through Selective Machine Unlearning",
+      "stars": 22,
+      "pushed_at": "2026-01-14T07:55:08Z",
+      "language": "Python",
+      "license_spdx_id": "CC0-1.0",
+      "homepage": ""
+    }
+  ]
+}

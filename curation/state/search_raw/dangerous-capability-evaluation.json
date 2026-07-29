@@ -1,0 +1,17 @@
+{
+  "keyword": "dangerous capability evaluation",
+  "query": "dangerous capability evaluation stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "google-deepmind/dangerous-capability-evaluations",
+      "html_url": "https://github.com/google-deepmind/dangerous-capability-evaluations",
+      "description": "",
+      "stars": 75,
+      "pushed_at": "2026-06-16T22:19:13Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    }
+  ]
+}

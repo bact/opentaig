@@ -1,0 +1,17 @@
+{
+  "keyword": "GPU attestation",
+  "query": "GPU attestation stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "NVIDIA/fleet-intelligence-agent",
+      "html_url": "https://github.com/NVIDIA/fleet-intelligence-agent",
+      "description": "NVIDIA Fleet Intelligence Agent - Host agent for GPU telemetry collection and attestation",
+      "stars": 44,
+      "pushed_at": "2026-07-28T22:26:07Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    }
+  ]
+}

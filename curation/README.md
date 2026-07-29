@@ -229,6 +229,19 @@ manual look rather than silently guessed). Going forward every new run
 populates these columns itself — the migration script never needs to run
 again.
 
+The regex-based backfill isn't perfectly reliable, even where it didn't
+print a low-confidence warning: a later spot-check found two of its rows
+tagged `reject_category: not-open-source` whose free-text note was actually
+about relevance, with a correctly-open licence already sitting right next
+to it in the same row (`microsoft/responsible-ai-toolbox-privacy`,
+`SecObserve/SecObserve` — both corrected in place). Live `emit_candidates.py`
+runs can't produce this particular mismatch (it cross-checks
+`reject_category` against `license_class` at write time and errors on the
+conflict), so it's specific to the 144 backfilled rows. If you're relying
+on `not-open-source` counts for a paper claim, it's worth spot-checking a
+sample of the backfilled rows against their own `note` text before citing
+the number.
+
 ### Model tiering (cost control)
 
 - **No model** for anything in `search_repos.py` / `export_rq_context.py` —
@@ -403,6 +416,13 @@ Judgment rules that matter (details in curation/README.md):
   failure to paper over by loosening the matching rule.
 - Every reject needs a `reject_category` from emit_candidates.py's
   REJECT_CATEGORIES, not just free text.
+- A repo with no GitHub-detected LICENSE file is not automatically
+  `not-open-source` -- GitHub's license API only checks conventional file
+  names/locations, not package-manager metadata. Before rejecting for lack
+  of a license, check `pyproject.toml`/`setup.py` (Python), `package.json`
+  (npm), `Cargo.toml` (Rust), `*.gemspec` (Ruby), `pom.xml`/`build.gradle`
+  (Java/Kotlin) for a license field -- a real license declared only there
+  is a common miss.
 - A licence GitHub reports as NOASSERTION may just be a detector miss on a
   custom-preamble LICENSE file (check the raw file before assuming it's
   non-standard) -- and a non-OSI licence (e.g. a Creative Commons one) is
@@ -476,12 +496,17 @@ one mapping, and RQs with zero coverage. Use the same judgment rules and
 the same model tiering as any other batch — read the tool's README/docs
 against the candidate RQ's own text, no forced matches.
 
-Feed accepted new pairings through `emit_candidates.py` as normal. A
-judgment whose repo is already in `seen_repos.csv` will be skipped for the
-seen-log (correct — it's already logged) but its `mappings` still emit to
-`candidate_map_updates.csv`, which is what pass A produces. Do NOT re-emit
-a `tools` row for a tool already live; only new (rq_no, tool_id, role)
-pairings.
+Feed accepted new pairings through `emit_candidates.py` as normal, with a
+`repo`/`id` for the *existing* tool and a `mappings` entry for the new RQ —
+same judgment-file shape as any other batch. A judgment whose repo is
+already in `seen_repos.csv` will be skipped for the seen-log (correct —
+it's already logged) but its `mappings` still emit to
+`candidate_map_updates.csv`, which is what pass A produces.
+`emit_candidates.py` checks `--data-json` (`site/data.json`, default) for
+tool ids already live and automatically skips writing a `tools` row for
+them — it emits only the new `(rq_no, tool_id, role)` pairing. Run `python
+build.py` first each session so that check reflects the current live
+sheet, not a stale one.
 
 Also check for tools present in the `tools` tab with no `tool_map` row at
 all — those are unreachable from the site's problem pages and are pure
@@ -564,8 +589,40 @@ Judgment rules (details in curation/README.md — same as phase 1):
   stayed at zero across many keyword angles. Treat that as a prior to
   verify, not an assumption — but don't force a weak taxonomy-derived
   match just to move the number.
+- A subsequent phase-2 run confirmed the hardware/policy prior *and*
+  extended it: RQ36/37 (access-continuum research methodology), RQ41 (data-
+  access-responsibility allocation), RQ57/58 (proof-of-learning), RQ69
+  (data-extraction-attack identification), RQ80 (model-weight infrastructure
+  protection), RQ88 (fine-tuning-resistant models) and RQ90 (identity-gated
+  dual-use capability) stayed at zero across a dozen+ 2-3 word keyword
+  angles each (`proof of learning`, `model weight protection`, `third-party
+  model audit`, `memorization detection LLM`, `jailbreak resistant
+  fine-tuning`, etc. — see search_log.csv for the full list already tried).
+  RQ36 itself is since resolved (`api-police`, mapped `implement`) but the
+  rest of that set is still zero. Treat these RQs the same as the
+  hardware/policy set: don't re-run the same keyword angles hoping for a
+  different answer: try a *genuinely different* angle (a taxonomy term, a
+  tool-name-based query) or move on.
 - Every reject needs a `reject_category` from emit_candidates.py's
   REJECT_CATEGORIES, not just free text.
+- **A repo with no GitHub-detected LICENSE file is not automatically
+  `not-open-source`.** GitHub's repo-level license API only looks at a
+  handful of conventional file names/locations (`LICENSE`, `LICENSE.md`,
+  etc.) — it does not read package-manager metadata, and a real license is
+  routinely declared *only* there. Confirmed twice in one session:
+  `Jorwnpay/API-Police` (GitHub: no license; `pyproject.toml`:
+  `license = { text = "MIT" }` + an OSI-Approved classifier) and
+  `gizatechxyz/LuminAIR` (GitHub: no license; `Cargo.toml`'s
+  `[workspace.package]`: `license = "MIT"`). Before rejecting anything as
+  `not-open-source` for lacking a detected license, check the
+  ecosystem-appropriate metadata file for a license field:
+  `pyproject.toml`/`setup.py`/`setup.cfg` (Python), `package.json`
+  (npm/Node), `Cargo.toml` — check `[package]` *and* `[workspace.package]`,
+  a workspace member can inherit the latter (Rust), `go.mod`'s
+  neighbouring `LICENSE*`/module docs (Go modules don't carry license
+  metadata inline, but check anyway), `*.gemspec` (Ruby),
+  `pom.xml`/`build.gradle` (Java/Kotlin). Only reject as `not-open-source`
+  once none of these — nor the raw repo — declares a license.
 - A licence GitHub reports as NOASSERTION may just be a detector miss on a
   custom-preamble LICENSE file (check the raw file before assuming it's
   non-standard) — and a non-OSI licence (e.g. a Creative Commons one) is
@@ -647,8 +704,13 @@ been triaged (accepted into `tools`/`tool_map`, or rejected) — see
   and appends to `candidate_tools.csv` + `candidate_map_updates.csv` (each
   row stamped with `datetime_added`/`datetime_checked`/`datetime_updated`
   set to the run time; deduplicated across runs so re-running or running
-  several batches in a session accumulates rather than clobbers), and
-  appends every judged repo (accept or reject) to `state/seen_repos.csv`,
+  several batches in a session accumulates rather than clobbers). A `tools`
+  row is skipped automatically (via `--data-json`, default `site/data.json`)
+  when the tool's `id` is already live — this is what makes pass-A safe:
+  re-mapping an already-accepted tool onto a new RQ emits only the new
+  `tool_map` row, never a duplicate `tools` row. Run `python build.py`
+  before emitting so that check is current. It also appends every judged
+  repo (accept or reject) to `state/seen_repos.csv`,
   with a validated `reject_category` and licence classification — see
   "Rejection tracking & licence classification" above. Deterministic; no
   model, no network.

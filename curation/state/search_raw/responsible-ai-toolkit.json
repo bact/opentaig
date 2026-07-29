@@ -1,0 +1,37 @@
+{
+  "keyword": "responsible AI toolkit",
+  "query": "responsible AI toolkit stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 3,
+  "repos": [
+    {
+      "full_name": "understandable-machine-intelligence-lab/Quantus",
+      "html_url": "https://github.com/understandable-machine-intelligence-lab/Quantus",
+      "description": "[JMLR 2023] Quantus is an eXplainable AI toolkit for responsible evaluation of neural network explanations",
+      "stars": 672,
+      "pushed_at": "2026-05-04T10:20:57Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://quantus.readthedocs.io/"
+    },
+    {
+      "full_name": "Infosys/Infosys-Responsible-AI-Toolkit",
+      "html_url": "https://github.com/Infosys/Infosys-Responsible-AI-Toolkit",
+      "description": "The Infosys Responsible AI toolkit incorporates various features including safety, security, explainability, fairness, bias and hallucination detection to ensure AI solutions are trustworthy and transparent.",
+      "stars": 302,
+      "pushed_at": "2026-07-28T12:39:59Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "sebuzdugan/frai",
+      "html_url": "https://github.com/sebuzdugan/frai",
+      "description": "Open-source toolkit for responsible AI: CLI + SDK to scan code, collect evidence, and generate model cards, risk files, evals, and RAG indexes.",
+      "stars": 52,
+      "pushed_at": "2026-04-25T14:17:23Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://frai.cc/"
+    }
+  ]
+}

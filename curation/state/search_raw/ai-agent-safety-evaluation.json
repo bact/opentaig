@@ -1,0 +1,77 @@
+{
+  "keyword": "AI agent safety evaluation",
+  "query": "AI agent safety evaluation stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 7,
+  "repos": [
+    {
+      "full_name": "microsoft/ai-agent-evals",
+      "html_url": "https://github.com/microsoft/ai-agent-evals",
+      "description": "Github action to evaluate AI agent applications using model as the judge, content safety and mathematical metrics.",
+      "stars": 95,
+      "pushed_at": "2026-05-20T19:06:53Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "gtzheng/Awesome-Agentic-System-Design",
+      "html_url": "https://github.com/gtzheng/Awesome-Agentic-System-Design",
+      "description": "A curated collection of resources, frameworks, papers, and best practices for designing, evaluating, and deploying agentic AI systems\u2014from architecture patterns and safety considerations to real-world applications.",
+      "stars": 85,
+      "pushed_at": "2026-06-25T22:13:07Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Mengmeara/agent-safe-probe-x",
+      "html_url": "https://github.com/Mengmeara/agent-safe-probe-x",
+      "description": "ASP-X (Agent Safe Probe X) \u2014 An open-source framework for automated safety evaluation of intelligent agents, providing systematic, extensible tools for probing and assessing AI safety across diverse environments.",
+      "stars": 82,
+      "pushed_at": "2026-05-29T07:08:40Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "sani903/OpenAgentSafety",
+      "html_url": "https://github.com/sani903/OpenAgentSafety",
+      "description": "A Framework for Evaluating AI Agent Safety in Realistic Environments",
+      "stars": 38,
+      "pushed_at": "2025-10-02T00:38:42Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "jylee425/mobilesafetybench",
+      "html_url": "https://github.com/jylee425/mobilesafetybench",
+      "description": "Evaluating Safety of Autonomous Agents in Mobile Device Control (AAAI 2026 AI Alignment Track)",
+      "stars": 34,
+      "pushed_at": "2026-01-28T04:47:03Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "antgroup/Agent3Sigma",
+      "html_url": "https://github.com/antgroup/Agent3Sigma",
+      "description": "The first multi-level safety evaluation platform for OpenClaw-style AI agents.",
+      "stars": 29,
+      "pushed_at": "2026-05-27T06:34:24Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "chenglin1112/AgentTrust",
+      "html_url": "https://github.com/chenglin1112/AgentTrust",
+      "description": "Real-time trustworthiness evaluation and safety interception for AI agents. Semantic analysis, safe alternative suggestions, multi-step attack chain detection, and LLM-as-Judge.",
+      "stars": 28,
+      "pushed_at": "2026-06-11T19:48:21Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    }
+  ]
+}

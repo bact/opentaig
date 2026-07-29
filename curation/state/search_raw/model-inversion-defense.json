@@ -1,0 +1,27 @@
+{
+  "keyword": "model inversion defense",
+  "query": "model inversion defense stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 2,
+  "repos": [
+    {
+      "full_name": "ffhibnese/Model-Inversion-Attack-ToolBox",
+      "html_url": "https://github.com/ffhibnese/Model-Inversion-Attack-ToolBox",
+      "description": "A comprehensive toolbox for model inversion attacks and defenses, which is easy to get started.",
+      "stars": 197,
+      "pushed_at": "2026-06-18T02:57:36Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "overgter/Deep-Learning-Model-Inversion-Attacks-and-Defenses",
+      "html_url": "https://github.com/overgter/Deep-Learning-Model-Inversion-Attacks-and-Defenses",
+      "description": "This is a comprehensive resource repository for deep learning model inversion attacks and defenses research.",
+      "stars": 29,
+      "pushed_at": "2025-11-13T11:20:53Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    }
+  ]
+}

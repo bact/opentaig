@@ -1,0 +1,17 @@
+{
+  "keyword": "third-party model audit",
+  "query": "third-party model audit stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "Jorwnpay/API-Police",
+      "html_url": "https://github.com/Jorwnpay/API-Police",
+      "description": "API Police is a multi-dimensional model authenticity auditing tool for verifying whether a third-party API provider is truly serving the model it claims.",
+      "stars": 20,
+      "pushed_at": "2026-03-24T03:20:58Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    }
+  ]
+}

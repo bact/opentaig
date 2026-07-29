@@ -1,0 +1,17 @@
+{
+  "keyword": "watermark robustness evaluation",
+  "query": "watermark robustness evaluation stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "ispras/wibe",
+      "html_url": "https://github.com/ispras/wibe",
+      "description": "[ASE 2025 Tool Demo] WIBE: An Extensible Open Source Framework for Evaluating Imperceptibility and Robustness of Invisible Image Watermarks (WARP Benchmark paper coming soon)",
+      "stars": 30,
+      "pushed_at": "2026-04-21T15:37:24Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "keyword": "model weight protection",
+  "query": "model weight protection stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "lusionltd/ORYZO-1",
+      "html_url": "https://github.com/lusionltd/ORYZO-1",
+      "description": "Open weight coaster model family for passive table protection, beverage support, and local deployment.",
+      "stars": 71,
+      "pushed_at": "2026-03-18T19:56:31Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}

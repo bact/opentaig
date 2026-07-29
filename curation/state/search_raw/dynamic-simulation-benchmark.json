@@ -1,0 +1,17 @@
+{
+  "keyword": "dynamic simulation benchmark",
+  "query": "dynamic simulation benchmark stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "facebookresearch/meta-agents-research-environments",
+      "html_url": "https://github.com/facebookresearch/meta-agents-research-environments",
+      "description": "Meta Agents Research Environments is a comprehensive platform designed to evaluate AI agents in dynamic, realistic scenarios. Unlike static benchmarks, this platform introduces evolving environments where agents must adapt their strategies as new information becomes available, mirroring real-world challenges.",
+      "stars": 532,
+      "pushed_at": "2026-07-26T22:46:01Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://facebookresearch.github.io/meta-agents-research-environments/"
+    }
+  ]
+}

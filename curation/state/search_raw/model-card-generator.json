@@ -1,0 +1,17 @@
+{
+  "keyword": "model card generator",
+  "query": "model card generator stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "wingedsheep/mtg-card-generator",
+      "html_url": "https://github.com/wingedsheep/mtg-card-generator",
+      "description": "Generates new Magic The Gathering cards using language models and image generation.",
+      "stars": 22,
+      "pushed_at": "2026-02-28T12:52:22Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    }
+  ]
+}

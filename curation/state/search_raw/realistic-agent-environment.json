@@ -1,0 +1,137 @@
+{
+  "keyword": "realistic agent environment",
+  "query": "realistic agent environment stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 13,
+  "repos": [
+    {
+      "full_name": "web-arena-x/webarena",
+      "html_url": "https://github.com/web-arena-x/webarena",
+      "description": "Code repo for \"WebArena: A Realistic Web Environment for Building Autonomous Agents\"",
+      "stars": 1566,
+      "pushed_at": "2025-11-26T21:16:00Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://webarena.dev"
+    },
+    {
+      "full_name": "facebookresearch/meta-agents-research-environments",
+      "html_url": "https://github.com/facebookresearch/meta-agents-research-environments",
+      "description": "Meta Agents Research Environments is a comprehensive platform designed to evaluate AI agents in dynamic, realistic scenarios. Unlike static benchmarks, this platform introduces evolving environments where agents must adapt their strategies as new information becomes available, mirroring real-world challenges.",
+      "stars": 532,
+      "pushed_at": "2026-07-26T22:46:01Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://facebookresearch.github.io/meta-agents-research-environments/"
+    },
+    {
+      "full_name": "stanfordmlgroup/MedAgentBench",
+      "html_url": "https://github.com/stanfordmlgroup/MedAgentBench",
+      "description": "MedAgentBench: A Realistic Virtual EHR Environment to Benchmark Medical LLM Agents",
+      "stars": 308,
+      "pushed_at": "2025-11-21T18:39:26Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://ai.nejm.org/doi/full/10.1056/AIdbp2500144"
+    },
+    {
+      "full_name": "OS-Copilot/ScienceBoard",
+      "html_url": "https://github.com/OS-Copilot/ScienceBoard",
+      "description": "[ICLR 2026] Code, benchmark and environment for \"ScienceBoard: Evaluating Multimodal Autonomous Agents in Realistic Scientific Workflows\"",
+      "stars": 132,
+      "pushed_at": "2026-02-02T06:26:48Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://qiushisun.github.io/ScienceBoard-Home/"
+    },
+    {
+      "full_name": "OSU-NLP-Group/RedTeamCUA",
+      "html_url": "https://github.com/OSU-NLP-Group/RedTeamCUA",
+      "description": "[ICLR'26 Oral] RedTeamCUA: Realistic Adversarial Testing of Computer-Use Agents in Hybrid Web-OS Environments",
+      "stars": 57,
+      "pushed_at": "2026-02-09T09:21:59Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://osu-nlp-group.github.io/RedTeamCUA"
+    },
+    {
+      "full_name": "emarche/RL2Grid",
+      "html_url": "https://github.com/emarche/RL2Grid",
+      "description": "RL2Grid is a standardized benchmark for reinforcement learning (RL) agents in realistic power grid environments. Built on top of Grid2Op, it models real-time operations such as topology optimization and redispatching, with full AC power flow simulation, stochastic events, expert-informed heuristics, and safety-critical constraints.",
+      "stars": 51,
+      "pushed_at": "2026-05-04T13:25:35Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "OS-Copilot/OS-Sentinel",
+      "html_url": "https://github.com/OS-Copilot/OS-Sentinel",
+      "description": "[ACL 2026] Code, benchmark and environment for \"OS-Sentinel: Towards Safety-Enhanced Mobile GUI Agents via Hybrid Validation in Realistic Workflows\"",
+      "stars": 49,
+      "pushed_at": "2026-07-05T21:27:46Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://qiushisun.github.io/OS-Sentinel-Home/"
+    },
+    {
+      "full_name": "sani903/OpenAgentSafety",
+      "html_url": "https://github.com/sani903/OpenAgentSafety",
+      "description": "A Framework for Evaluating AI Agent Safety in Realistic Environments",
+      "stars": 38,
+      "pushed_at": "2025-10-02T00:38:42Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "antgroup/Agent3Sigma-Canary",
+      "html_url": "https://github.com/antgroup/Agent3Sigma-Canary",
+      "description": "Agent3\u03c3-Canary is an evaluation framework for AI Agent security in realistic runtime environments.",
+      "stars": 33,
+      "pushed_at": "2026-06-24T09:14:43Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "OpenMOSS/ABC-Bench",
+      "html_url": "https://github.com/OpenMOSS/ABC-Bench",
+      "description": "ABC-Bench is a benchmark for Agentic Backend Coding. It evaluates whether code agents can explore real repositories, edit code, configure environments, deploy containerized services, and pass external end-to-end API tests (HTTP-based integration tests) across realistic backend stacks.",
+      "stars": 33,
+      "pushed_at": "2026-01-20T10:22:03Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": "https://dawning-road.github.io/blog/abc-bench"
+    },
+    {
+      "full_name": "synvo-ai/HippoCamp",
+      "html_url": "https://github.com/synvo-ai/HippoCamp",
+      "description": "A benchmark for evaluating contextual agents on realistic multimodal personal-computer environments with profiling and factual-retention tasks.",
+      "stars": 29,
+      "pushed_at": "2026-04-02T09:26:04Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "scaleapi/SWE-Interact",
+      "html_url": "https://github.com/scaleapi/SWE-Interact",
+      "description": "New testbed of interactive SWE tasks for coding agents, set in a realistic multi-turn developer driven environment",
+      "stars": 24,
+      "pushed_at": "2026-06-30T17:47:01Z",
+      "language": "Shell",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "Arc-Computer/CL-Bench",
+      "html_url": "https://github.com/Arc-Computer/CL-Bench",
+      "description": "Benchmark framework for evaluating LLM agent continual learning in stateful environments. Features production-realistic CRM workflows with multi-turn conversations, state mutations, and cross-entity relationships. Extensible to additional domains",
+      "stars": 20,
+      "pushed_at": "2025-11-14T01:16:48Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://arc.computer"
+    }
+  ]
+}
