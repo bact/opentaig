@@ -1,0 +1,177 @@
+{
+  "keyword": "prompt injection defense",
+  "query": "prompt injection defense stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 17,
+  "repos": [
+    {
+      "full_name": "liu00222/Open-Prompt-Injection",
+      "html_url": "https://github.com/liu00222/Open-Prompt-Injection",
+      "description": "This repository provides a benchmark for prompt injection attacks and defenses in LLMs",
+      "stars": 468,
+      "pushed_at": "2025-10-29T17:11:34Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "lasso-security/claude-hooks",
+      "html_url": "https://github.com/lasso-security/claude-hooks",
+      "description": "Lasso security integrations for Claude Code, including prompt-injection defenses",
+      "stars": 257,
+      "pushed_at": "2026-01-08T08:50:18Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://lasso.security"
+    },
+    {
+      "full_name": "seojoonkim/prompt-guard",
+      "html_url": "https://github.com/seojoonkim/prompt-guard",
+      "description": "Advanced prompt injection defense system for AI agents. Multi-language detection, severity scoring, and security auditing.",
+      "stars": 172,
+      "pushed_at": "2026-04-22T02:08:12Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "SleuthCo/clawshield-public",
+      "html_url": "https://github.com/SleuthCo/clawshield-public",
+      "description": "Security proxy for AI agents. Scans every message for prompt injection, PII, and secrets. Defense-in-depth: Go proxy + iptables firewall + eBPF kernel monitor. YAML policy engine, audit logging, 5 AI agents with RAG knowledge bases.",
+      "stars": 130,
+      "pushed_at": "2026-03-26T20:29:39Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "requie/LLMSecurityGuide",
+      "html_url": "https://github.com/requie/LLMSecurityGuide",
+      "description": "A comprehensive reference for securing Large Language Models (LLMs). Covers OWASP GenAI Top-10 risks, prompt injection, adversarial attacks, real-world incidents, and practical defenses. Includes catalogs of red-teaming tools, guardrails, and mitigation strategies to help developers, researchers, and security teams deploy AI responsibly.",
+      "stars": 130,
+      "pushed_at": "2026-04-03T12:51:21Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "pasquini-dario/project_mantis",
+      "html_url": "https://github.com/pasquini-dario/project_mantis",
+      "description": "Project Mantis: Hacking Back the AI-Hacker; Prompt Injection as a Defense Against LLM-driven Cyberattacks",
+      "stars": 119,
+      "pushed_at": "2026-07-21T14:05:04Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "fu351/Doberman-Core",
+      "html_url": "https://github.com/fu351/Doberman-Core",
+      "description": "Doberman is an AI agent security framework for guardrails, prompt injection defense, runtime policy enforcement, tool-use permissions, agent monitoring, audit logs, LLM safety, autonomous workflow protection and secure AI deployment.",
+      "stars": 113,
+      "pushed_at": "2026-07-27T06:01:30Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://pypi.org/project/doberman-core/"
+    },
+    {
+      "full_name": "facebookresearch/prompt-siren",
+      "html_url": "https://github.com/facebookresearch/prompt-siren",
+      "description": "A research workbench for developing and testing attacks against large language models, with a focus on prompt injection vulnerabilities and defenses.",
+      "stars": 57,
+      "pushed_at": "2026-07-24T10:55:58Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "bridge-mind/BridgeWard",
+      "html_url": "https://github.com/bridge-mind/BridgeWard",
+      "description": "Trust nothing. Ship safely. \u2014 Skeptical-reading and prompt-injection defense skill for AI agents. Provenance tagging, red-flag patterns, refusal templates, and a read-only injection auditor. MIT.",
+      "stars": 37,
+      "pushed_at": "2026-04-30T13:39:21Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.bridgemind.ai"
+    },
+    {
+      "full_name": "kaijiezhu11/MELON",
+      "html_url": "https://github.com/kaijiezhu11/MELON",
+      "description": "[ICML'25] MELON: Provable Defense Against Indirect Prompt Injection Attacks in AI Agents",
+      "stars": 37,
+      "pushed_at": "2025-07-31T19:00:38Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "SecureNexusLab/llm-prompt-injection-security-handbook",
+      "html_url": "https://github.com/SecureNexusLab/llm-prompt-injection-security-handbook",
+      "description": "A comprehensive technical research report on LLM Prompt Injection threats, covering direct/indirect injection, jailbreaking, adversarial suffixes, and defense-in-depth architectures.",
+      "stars": 36,
+      "pushed_at": "2026-04-11T09:55:37Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "slavaspitsyn/claude-code-security-hooks",
+      "html_url": "https://github.com/slavaspitsyn/claude-code-security-hooks",
+      "description": "7 layers of defense against prompt injection in Claude Code. Security hooks, read guards, canary files, and self-protection.",
+      "stars": 36,
+      "pushed_at": "2026-03-26T14:08:51Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "yatuk/tamga",
+      "html_url": "https://github.com/yatuk/tamga",
+      "description": "Self-hosted LLM security proxy. PII redaction, prompt injection defense, KVKK/GDPR/PCI-DSS compliance. Sub-millisecond latency.",
+      "stars": 32,
+      "pushed_at": "2026-07-23T07:11:24Z",
+      "language": "Go",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://tamgaproxy.com"
+    },
+    {
+      "full_name": "dwarvesf/claude-guardrails",
+      "html_url": "https://github.com/dwarvesf/claude-guardrails",
+      "description": "Hardened security configuration for Claude Code; permission deny rules, shell hooks, and prompt injection defense in full and lite variants.",
+      "stars": 29,
+      "pushed_at": "2026-06-04T20:16:09Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "awiseguy88/openclaw-advanced-prompt-injection-defense-system",
+      "html_url": "https://github.com/awiseguy88/openclaw-advanced-prompt-injection-defense-system",
+      "description": "this is the first openclaw prompy injection defense system",
+      "stars": 23,
+      "pushed_at": "2026-02-20T04:02:36Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "albert-y1n/PISmith",
+      "html_url": "https://github.com/albert-y1n/PISmith",
+      "description": "PISmith: Reinforcement Learning-based Red Teaming for Prompt Injection Defenses",
+      "stars": 22,
+      "pushed_at": "2026-07-17T02:16:14Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Greysahy/ipiguard",
+      "html_url": "https://github.com/Greysahy/ipiguard",
+      "description": "[EMNLP 2025 Oral] IPIGuard: A Novel Tool Dependency Graph-Based Defense Against Indirect Prompt Injection in LLM Agents",
+      "stars": 22,
+      "pushed_at": "2025-09-16T09:27:05Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    }
+  ]
+}

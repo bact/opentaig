@@ -243,3 +243,14 @@ icdfa/iso-42001-lead-implementer-toolkit,reject,not-a-tool-linklist,"A documenta
 microsoft/SEAL,accept,,,MIT,osi-approved,Privacy-Preserving Third-Party Access to Datasets,homomorphic encryption library,3994,2026-07-29T00:13:44+00:00
 NVIDIA/fleet-intelligence-agent,reject,not-relevant,"'Attestation' here means fleet node-identity enrollment for telemetry/monitoring (power, temperature, utilization), not cryptographic hardware/chip identity attestation -- no TEE/TPM involvement, no anti-spoofing claims. Does not answer RQ48-53's hardware/compute verification questions despite the keyword match; confirms this area's search gap is real, not a missed tool.",Apache-2.0,osi-approved,Verification of Chip Location,GPU attestation,44,2026-07-29T00:13:44+00:00
 Azure/confidential-computing-cvm-guest-attestation,reject,low-substance,"README is the unedited Microsoft repo-template boilerplate ('This repo has been populated by an initial template... please update this content') -- no actual description of functionality despite 82 stars; too high-risk to accept blind for a hardware-verification RQ that needs a real fit, not a forced one.",MIT,osi-approved,Verification of Compute Workloads,confidential VM attestation,82,2026-07-29T00:13:44+00:00
+liu00222/Open-Prompt-Injection,accept,,,MIT,osi-approved,Detection and Handling of Adversarial Attacks,prompt injection defense,468,2026-07-29T00:27:55+00:00
+hitsz-ids/synthetic-data-generator,accept,,,Apache-2.0,osi-approved,Privacy-Preserving Third-Party Access to Datasets,synthetic data privacy generator,2432,2026-07-29T00:27:55+00:00
+(aequitas repo),accept,,,,none-declared,Attribution of Model Behavior to Data,,,2026-07-29T00:30:09+00:00
+(aia-eia-js repo),accept,,,,none-declared,Translation of Governance Goals into Policies and Requirements,,,2026-07-29T00:30:09+00:00
+(api-police repo),accept,,,,none-declared,Verifiable Audits,,,2026-07-29T00:30:09+00:00
+(decodingtrust repo),accept,,,,none-declared,Translation of Governance Goals into Policies and Requirements,,,2026-07-29T00:30:09+00:00
+(frai repo),accept,,,,none-declared,Infrastructure and Metadata to Analyze Large Datasets,,,2026-07-29T00:30:09+00:00
+(inspect repo),accept,,,,none-declared,Reliable Evaluations,,,2026-07-29T00:30:09+00:00
+(mot repo),accept,,,,none-declared,Verifiable Audits,,,2026-07-29T00:30:09+00:00
+(samsung-lpvs repo),accept,,,,none-declared,Identification of Problematic Data,,,2026-07-29T00:30:09+00:00
+(trustllm repo),accept,,,,none-declared,Translation of Governance Goals into Policies and Requirements,,,2026-07-29T00:30:09+00:00

@@ -1,0 +1,17 @@
+{
+  "keyword": "content authenticity verification",
+  "query": "content authenticity verification stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "IntelLabs/atlas-cli",
+      "html_url": "https://github.com/IntelLabs/atlas-cli",
+      "description": "A command-line interface tool for creating, managing, and verifying Content Provenance and Authenticity (C2PA) manifests for machine learning models, datasets, and related artifacts.",
+      "stars": 23,
+      "pushed_at": "2026-07-27T06:53:57Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    }
+  ]
+}

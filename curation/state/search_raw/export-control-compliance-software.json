@@ -1,0 +1,17 @@
+{
+  "keyword": "export control compliance software",
+  "query": "export control compliance software stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "fossology/fossology",
+      "html_url": "https://github.com/fossology/fossology",
+      "description": "FOSSology is an open source license compliance software system and toolkit.  As a toolkit you can run license, copyright and export control scans from the command line.  As a system, a database and web ui are provided to give you a compliance workflow. License, copyright and export scanners are tools used in the workflow.",
+      "stars": 1010,
+      "pushed_at": "2026-07-28T07:53:01Z",
+      "language": "HTML",
+      "license_spdx_id": "GPL-2.0",
+      "homepage": "https://fossology.github.io/"
+    }
+  ]
+}

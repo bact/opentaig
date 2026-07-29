@@ -1,0 +1,17 @@
+{
+  "keyword": "AI incident response playbook",
+  "query": "AI incident response playbook stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "BagelHole/DevOps-Security-Agent-Skills",
+      "html_url": "https://github.com/BagelHole/DevOps-Security-Agent-Skills",
+      "description": "Agent-ready DevOps, security, infrastructure, and compliance knowledge base with 80+ skills across Kubernetes, Terraform, AWS/Azure/GCP, AI platform operations, container hardening, SOC2/ISO27001, and incident response\u2014plus ready-to-run scripts, templates, and playbooks for SRE, platform, and security teams.",
+      "stars": 44,
+      "pushed_at": "2026-05-22T13:07:20Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "keyword": "synthetic data privacy generator",
+  "query": "synthetic data privacy generator stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "hitsz-ids/synthetic-data-generator",
+      "html_url": "https://github.com/hitsz-ids/synthetic-data-generator",
+      "description": "SDG is a specialized framework designed to generate high-quality structured tabular data.",
+      "stars": 2432,
+      "pushed_at": "2026-07-13T18:51:56Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    }
+  ]
+}

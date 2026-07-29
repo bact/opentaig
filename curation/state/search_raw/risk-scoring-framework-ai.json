@@ -1,0 +1,27 @@
+{
+  "keyword": "risk scoring framework AI",
+  "query": "risk scoring framework AI stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 2,
+  "repos": [
+    {
+      "full_name": "ritesh-gupta-git/AI-Powered-Vulnerability-Management",
+      "html_url": "https://github.com/ritesh-gupta-git/AI-Powered-Vulnerability-Management",
+      "description": "AI-VMF: AI-Powered Vulnerability Management Framework demo (ensemble exploit prediction + risk scoring)",
+      "stars": 33,
+      "pushed_at": "2025-10-27T02:19:50Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.isaca.org/resources/isaca-journal/issues/2025/volume-4/the-case-for-ai-powered-vulnerability-management"
+    },
+    {
+      "full_name": "m-khan-97/CRIS-SME",
+      "html_url": "https://github.com/m-khan-97/CRIS-SME",
+      "description": "An AI-assisted Cloud Risk Intelligence Framework that enables UK SMEs to automatically assess, score, and manage governance and compliance risks in Azure cloud environments.",
+      "stars": 22,
+      "pushed_at": "2026-06-01T14:03:50Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}

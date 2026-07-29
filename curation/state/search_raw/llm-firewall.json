@@ -1,0 +1,207 @@
+{
+  "keyword": "LLM firewall",
+  "query": "LLM firewall stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 20,
+  "repos": [
+    {
+      "full_name": "apache/casbin-gateway",
+      "html_url": "https://github.com/apache/casbin-gateway",
+      "description": "Casbin AI & MCP security gateway for HTTP, online demo: https://door.caswaf.com",
+      "stars": 561,
+      "pushed_at": "2026-06-09T14:30:58Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://caswaf.org"
+    },
+    {
+      "full_name": "cordum-io/cordum",
+      "html_url": "https://github.com/cordum-io/cordum",
+      "description": "The action firewall for AI agents. Enforce policy and human approval before risky tool calls, shell commands, workflows, and production changes, with auditable evidence.",
+      "stars": 495,
+      "pushed_at": "2026-07-28T16:30:08Z",
+      "language": "Go",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "funstory-ai/aifw",
+      "html_url": "https://github.com/funstory-ai/aifw",
+      "description": "Lightweight LLM firewall: masks PII, routes calls, leaves zero trace.",
+      "stars": 377,
+      "pushed_at": "2025-12-17T03:19:56Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://oneaifw.com/"
+    },
+    {
+      "full_name": "LucidAkshay/kavach",
+      "html_url": "https://github.com/LucidAkshay/kavach",
+      "description": "Tactical AI Workspace Monitor & EDR",
+      "stars": 253,
+      "pushed_at": "2026-03-19T11:53:07Z",
+      "language": "TypeScript",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "privacyshield-ai/privacy-firewall",
+      "html_url": "https://github.com/privacyshield-ai/privacy-firewall",
+      "description": "A local AI-powered DLP solution",
+      "stars": 238,
+      "pushed_at": "2026-01-16T06:54:23Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "samber/the-great-gpt-firewall",
+      "html_url": "https://github.com/samber/the-great-gpt-firewall",
+      "description": "\ud83e\udd16 A curated list of websites that restrict access to AI Agents, AI crawlers and GPTs",
+      "stars": 98,
+      "pushed_at": "2026-07-01T18:02:32Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Defend-AI-Tech-Inc/wozway",
+      "html_url": "https://github.com/Defend-AI-Tech-Inc/wozway",
+      "description": "AI Firewall for LLM Apps",
+      "stars": 87,
+      "pushed_at": "2026-05-27T00:12:40Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "peg/rampart",
+      "html_url": "https://github.com/peg/rampart",
+      "description": "Open-source firewall for AI agents. Policy engine that audits and controls what OpenClaw, Claude Code, Cursor, Codex, and any AI tool can do on your machine.",
+      "stars": 78,
+      "pushed_at": "2026-07-29T00:19:46Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://rampart.sh"
+    },
+    {
+      "full_name": "postralai/masquerade",
+      "html_url": "https://github.com/postralai/masquerade",
+      "description": "The Privacy Firewall for LLMs",
+      "stars": 77,
+      "pushed_at": "2025-08-11T00:47:22Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "DataFog/datafog-python",
+      "html_url": "https://github.com/DataFog/datafog-python",
+      "description": "Offline PII firewall for AI agents and LLM apps: fast local detection and redaction, Claude Code hook, LiteLLM guardrail. Zero network calls, one dependency.",
+      "stars": 66,
+      "pushed_at": "2026-07-28T05:21:44Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://datafog.ai"
+    },
+    {
+      "full_name": "killertcell428/aigis",
+      "html_url": "https://github.com/killertcell428/aigis",
+      "description": "Deterministic, zero-dependency Python firewall for AI agents \u2014 MCP rug-pull, memory poisoning, indirect injection, exfil channels. 44 compliance templates (US/CN/JP/EU).",
+      "stars": 52,
+      "pushed_at": "2026-07-27T10:54:11Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://pypi.org/project/pyaigis/"
+    },
+    {
+      "full_name": "humanbound/humanbound-firewall",
+      "html_url": "https://github.com/humanbound/humanbound-firewall",
+      "description": "Multi-tier firewall for AI agents \u2014 blocks prompt injections, jailbreaks, and scope violations. Local tiers first; LLM judge only when uncertain.",
+      "stars": 48,
+      "pushed_at": "2026-07-22T04:11:42Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://docs.humanbound.ai/defense/firewall/"
+    },
+    {
+      "full_name": "CollieAi/llm-firewall",
+      "html_url": "https://github.com/CollieAi/llm-firewall",
+      "description": "AI Firewall & LLM security toolkit - protect your AI applications from prompt injection, jailbreaks, PII leakage, and adversarial attacks",
+      "stars": 43,
+      "pushed_at": "2026-07-27T09:47:50Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": "https://collieai.io"
+    },
+    {
+      "full_name": "preloop/preloop",
+      "html_url": "https://github.com/preloop/preloop",
+      "description": "The open-source AI agent control plane: MCP firewall, model gateway with budgets, human approvals, runtime observability, and audit trails",
+      "stars": 43,
+      "pushed_at": "2026-07-28T13:25:00Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://preloop.ai"
+    },
+    {
+      "full_name": "jaredfolkins/llmon",
+      "html_url": "https://github.com/jaredfolkins/llmon",
+      "description": "LLMON \ud83c\udf4b - The World's First Web Adversarial AI Firewall",
+      "stars": 40,
+      "pushed_at": "2026-01-03T19:00:44Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://llmon.dev"
+    },
+    {
+      "full_name": "pic-standard/pic-standard",
+      "html_url": "https://github.com/pic-standard/pic-standard",
+      "description": "Open standard for Provenance & Intent Contracts (PIC) in AI agents. Verify intent, provenance, and evidence before high-impact tool calls.",
+      "stars": 31,
+      "pushed_at": "2026-07-13T09:36:51Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://madeinpluto.com/pic"
+    },
+    {
+      "full_name": "olegnazarov/llm-fortress",
+      "html_url": "https://github.com/olegnazarov/llm-fortress",
+      "description": "Enterprise AI Security Platform - Real-time firewall protection for LLM applications against prompt injection, data leakage, and function abuse attacks",
+      "stars": 25,
+      "pushed_at": "2025-09-14T06:40:10Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "taladari/rag-firewall",
+      "html_url": "https://github.com/taladari/rag-firewall",
+      "description": "Client-side retrieval firewall for RAG systems \u2014 blocks prompt injection and secret leaks, re-ranks stale or untrusted content, and keeps all data inside your environment.",
+      "stars": 23,
+      "pushed_at": "2025-09-04T17:16:37Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "isartor-ai/Isartor",
+      "html_url": "https://github.com/isartor-ai/Isartor",
+      "description": "Open-source Prompt Firewall \u2014 deflect up to 95% of redundant LLM traffic before it leaves your infrastructure. Documents: https://isartor-ai.github.io/Isartor/index.html",
+      "stars": 21,
+      "pushed_at": "2026-06-03T09:17:02Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/isartor-ai/Isartor"
+    },
+    {
+      "full_name": "c2siorg/acf-sdk",
+      "html_url": "https://github.com/c2siorg/acf-sdk",
+      "description": "The Cognitive Firewall is a Zero Trust control layer for agentic systems that protects the reasoning control plane of large language model (LLM) agents. It prevents prompt injection, context manipulation, memory poisoning, and unsafe tool-output re-injection by enforcing policy-driven validation before any input enters model context.",
+      "stars": 20,
+      "pushed_at": "2026-07-17T14:51:56Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    }
+  ]
+}
