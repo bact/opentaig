@@ -27,3 +27,6 @@ coeai-a9,coeai,Article 9 (Accountability and responsibility),,,,,
 coeai-a11,coeai,Article 11 (Privacy and personal data protection),,,,,
 coeai-a12,coeai,Article 12 (Reliability),,,,,
 coeai-a13,coeai,Article 13 (Safe innovation),,,,,
+harms-humanrights,harms,Human Rights and Civil Liberties,Use or misuse of a technology system in a manner that compromises fundamental human rights and freedoms.,https://arxiv.org/abs/2407.01294,2026-07-29T03:42:00+00:00,2026-07-29T03:42:00+00:00,2026-07-29T03:42:00+00:00
+harms-autonomy,harms,Autonomy,Loss of or restrictions to the ability or rights of an individual group or entity to make decisions and control their identity and/or output.,https://arxiv.org/abs/2407.01294,2026-07-29T03:42:00+00:00,2026-07-29T03:42:00+00:00,2026-07-29T03:42:00+00:00
+harms-crosscutting,harms,Cross-cutting (method-level),This question is about a research method or evaluation property that applies regardless of which harm is being investigated -- not mapped to a specific harm type.,,2026-07-29T03:42:00+00:00,2026-07-29T03:42:00+00:00,2026-07-29T03:42:00+00:00

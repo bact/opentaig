@@ -32,8 +32,9 @@
         {% if fw.doc_url %}<a class="doc-link" href="{{ fw.doc_url }}">(source)</a>{% endif %}
       </dt>
       <dd>
+        {% if fw.summary %}<p class="framework-note">{{ fw.summary }}</p>{% endif %}
         {% for term in terms %}
-        <a class="chip chip-{{ fw.key }}" href="{{ root }}frameworks/{{ fw.key }}/{{ term.id }}.html">{{ term.name }}</a>
+        <a class="chip chip-{{ fw.key }} chip-{{ term.id }}" href="{{ root }}frameworks/{{ fw.key }}/{{ term.id }}.html">{{ term.name }}</a>
         {% endfor %}
       </dd>
       {% endif %}

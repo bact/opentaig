@@ -15,7 +15,7 @@
   <div class="chip-row">
     {% for fw in frameworks %}
       {% for term in p.mappings.get(fw.key, []) %}
-      <a class="chip chip-{{ fw.key }}" href="{{ root }}frameworks/{{ fw.key }}/{{ term.id }}.html" title="{{ fw.label }}">{{ term.name }}</a>
+      <a class="chip chip-{{ fw.key }} chip-{{ term.id }}" href="{{ root }}frameworks/{{ fw.key }}/{{ term.id }}.html" title="{{ fw.label }}">{{ term.name }}</a>
       {% endfor %}
     {% endfor %}
     {% for term in p.mappings.get(expertise.key, []) %}

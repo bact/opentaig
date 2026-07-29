@@ -195,9 +195,6 @@ seekingdream/DyCodeEval,accept,,,,none-declared,Preservation of Evaluation Data 
 microsoft/presidio,accept,,,,none-declared,Verification of Training Data,,,2026-07-28T23:12:21+00:00
 nexB/scancode-toolkit,accept,,,,none-declared,Identification of Problematic Data,,,2026-07-28T23:12:21+00:00
 IntelLabs/ATLAS-CLI,accept,,,,none-declared,Verifiable Audits,,,2026-07-28T23:18:30+00:00
-(embedding-fingerprints repo),accept,,,,none-declared,Facilitation of Third-Party Access to Models,,,2026-07-28T23:18:30+00:00
-(llm-attributor repo),accept,,,,none-declared,Verification of Training Data,,,2026-07-28T23:18:30+00:00
-(ai-explainability-360 repo),accept,,,,none-declared,Verification of Model Properties,,,2026-07-28T23:19:05+00:00
 SCLBD/IMDL-BenCo,accept,,,,none-declared,Verification of AI-generated Content,,,2026-07-28T23:19:05+00:00
 zjunlp/EasyEdit,accept,,,MIT,osi-approved,Model Disgorgement and Machine Unlearning,LLM unlearning,2886,2026-07-28T23:22:00+00:00
 HongshengHu/membership-inference-machine-learning-literature,reject,not-a-tool-linklist,"Bare literature/paper list on membership inference, no description or runnable code; found via 'membership inference' keyword.",,none-declared,Verification of Training Data,membership inference,373,2026-07-28T23:22:00+00:00
@@ -212,16 +209,8 @@ uncomputable/zkp-workshop,reject,not-a-tool-linklist,"ZKP learning workshop/tuto
 TheMalwareGuardian/Bootkits-Development-Starter-Pack,reject,not-relevant,"Bootkit development starter pack, unrelated security research.",GPL-3.0,osi-approved,Proof of Learning,proof of learning,24,2026-07-28T23:23:19+00:00
 wkta/ReadableCryptoMiner,reject,not-relevant,"Monero proof-of-work crypto miner, unrelated to model proof-of-learning.",NOASSERTION,source-available,Proof of Learning,proof of learning,23,2026-07-28T23:23:19+00:00
 TheMalwareGuardian/Rootkits-Development-Starter-Pack,reject,not-relevant,"Rootkit development starter pack, unrelated security research.",GPL-3.0,osi-approved,Proof of Learning,proof of learning,22,2026-07-28T23:23:19+00:00
-(aif360 repo),accept,,,,none-declared,Attribution of Model Behavior to Data,,,2026-07-28T23:32:42+00:00
-(seekingdream-dycodeeval repo),accept,,,,none-declared,Preservation of Evaluation Data Integrity,,,2026-07-28T23:32:42+00:00
-(osworld repo),accept,,,,none-declared,Downstream Impact Evaluations,,,2026-07-28T23:32:42+00:00
-(opsml repo),accept,,,,none-declared,Verification of Dynamic Systems,,,2026-07-28T23:32:42+00:00
-(garak repo),accept,,,,none-declared,Detection and Authorisation of Dual-Use Capability at Inference Time,,,2026-07-28T23:32:42+00:00
-(masarena repo),accept,,,,none-declared,(Multi-)Agent Evaluations,,,2026-07-28T23:38:34+00:00
-(ai-incident-database repo),accept,,,,none-declared,Downstream Impact Evaluations,,,2026-07-28T23:38:34+00:00
-(easyedit repo),accept,,,,none-declared,Model Disgorgement and Machine Unlearning,,,2026-07-28T23:38:34+00:00
 lusionltd/ORYZO-1,reject,not-relevant,"Physical table-coaster product family, false positive on 'weight protection'/'table protection' wording.",MIT,osi-approved,Prevention of Model Theft,model weight protection,71,2026-07-28T23:40:21+00:00
-Jorwnpay/API-Police,accept,,"Initially rejected as not-open-source (GitHub API reported no LICENSE file), but pyproject.toml declares `license = { text = \"MIT\" }` plus an OSI-Approved MIT classifier -- GitHub's repo-level license detection missed a license declared only in package metadata. Corrected to accept; mapped to RQ36.",MIT,osi-approved,Facilitation of Third-Party Access to Models,third-party model audit,20,2026-07-28T23:40:21+00:00
+Jorwnpay/API-Police,accept,,"Initially rejected as not-open-source (GitHub API reported no LICENSE file), but pyproject.toml declares `license = { text = \MIT\"" }` plus an OSI-Approved MIT classifier -- GitHub's repo-level license detection missed a license declared only in package metadata. Corrected to accept; mapped to RQ36.""",MIT,osi-approved,Facilitation of Third-Party Access to Models,third-party model audit,20,2026-07-28T23:40:21+00:00
 sani903/OpenAgentSafety,accept,,,MIT,osi-approved,(Multi-)Agent Evaluations,AI agent safety evaluation,38,2026-07-29T00:03:30+00:00
 Mengmeara/agent-safe-probe-x,accept,,,MIT,osi-approved,(Multi-)Agent Evaluations,AI agent safety evaluation,82,2026-07-29T00:03:30+00:00
 jylee425/mobilesafetybench,reject,out-of-scope-narrow,"Agent safety benchmark scoped specifically to mobile device control, narrower than RQ23's general agent-capability/risk question; OpenAgentSafety and ASP-X already cover the general case.",Apache-2.0,osi-approved,(Multi-)Agent Evaluations,AI agent safety evaluation,34,2026-07-29T00:03:30+00:00
@@ -245,15 +234,6 @@ NVIDIA/fleet-intelligence-agent,reject,not-relevant,"'Attestation' here means fl
 Azure/confidential-computing-cvm-guest-attestation,reject,low-substance,"README is the unedited Microsoft repo-template boilerplate ('This repo has been populated by an initial template... please update this content') -- no actual description of functionality despite 82 stars; too high-risk to accept blind for a hardware-verification RQ that needs a real fit, not a forced one.",MIT,osi-approved,Verification of Compute Workloads,confidential VM attestation,82,2026-07-29T00:13:44+00:00
 liu00222/Open-Prompt-Injection,accept,,,MIT,osi-approved,Detection and Handling of Adversarial Attacks,prompt injection defense,468,2026-07-29T00:27:55+00:00
 hitsz-ids/synthetic-data-generator,accept,,,Apache-2.0,osi-approved,Privacy-Preserving Third-Party Access to Datasets,synthetic data privacy generator,2432,2026-07-29T00:27:55+00:00
-(aequitas repo),accept,,,,none-declared,Attribution of Model Behavior to Data,,,2026-07-29T00:30:09+00:00
-(aia-eia-js repo),accept,,,,none-declared,Translation of Governance Goals into Policies and Requirements,,,2026-07-29T00:30:09+00:00
-(api-police repo),accept,,,,none-declared,Verifiable Audits,,,2026-07-29T00:30:09+00:00
-(decodingtrust repo),accept,,,,none-declared,Translation of Governance Goals into Policies and Requirements,,,2026-07-29T00:30:09+00:00
-(frai repo),accept,,,,none-declared,Infrastructure and Metadata to Analyze Large Datasets,,,2026-07-29T00:30:09+00:00
-(inspect repo),accept,,,,none-declared,Reliable Evaluations,,,2026-07-29T00:30:09+00:00
-(mot repo),accept,,,,none-declared,Verifiable Audits,,,2026-07-29T00:30:09+00:00
-(samsung-lpvs repo),accept,,,,none-declared,Identification of Problematic Data,,,2026-07-29T00:30:09+00:00
-(trustllm repo),accept,,,,none-declared,Translation of Governance Goals into Policies and Requirements,,,2026-07-29T00:30:09+00:00
 shap/shap,accept,,,MIT,osi-approved,Reliable Evaluations,topic:interpretability,25653,2026-07-29T02:08:58+00:00
 ndif-team/nnsight,accept,,,MIT,osi-approved,Reliable Evaluations,topic:interpretability,1005,2026-07-29T02:08:58+00:00
 meta-pytorch/captum,accept,,,BSD-3-Clause,osi-approved,Reliable Evaluations,topic:interpretability,5676,2026-07-29T02:08:58+00:00

@@ -1,0 +1,37 @@
+{
+  "keyword": "tiered model access",
+  "query": "tiered model access stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 3,
+  "repos": [
+    {
+      "full_name": "mfoud444/ollamafreeapi",
+      "html_url": "https://github.com/mfoud444/ollamafreeapi",
+      "description": "OllamaFreeAPI: Free Distributed API for Ollama LLMs  Public gateway to our managed Ollama servers with: - Zero-configuration access to 50+ models - Auto load-balanced across global nodes - Free tier with no API keys required - Built on ollama-python",
+      "stars": 277,
+      "pushed_at": "2026-04-15T12:42:44Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "cporter202/generative-ai-arbitrage",
+      "html_url": "https://github.com/cporter202/generative-ai-arbitrage",
+      "description": "A curated list showing how to access the exact same top-tier generative AI models (video, image, and music) for significantly less money.  This repo focuses on alternative API access paths to popular models like Veo, Sora, Runway-class video, Midjourney-level images, and Suno-quality music \u2014 often at 70\u201390% lower cost. \ud83e\udd2f",
+      "stars": 89,
+      "pushed_at": "2026-01-08T22:25:57Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "JungHoonGhae/opencode-kilo-auth",
+      "html_url": "https://github.com/JungHoonGhae/opencode-kilo-auth",
+      "description": "OpenCode plugin for Kilo Gateway \u2014 access 342+ AI models including 29 free tier models like GLM 5.",
+      "stars": 42,
+      "pushed_at": "2026-07-29T02:46:53Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}

@@ -115,6 +115,8 @@ frameworks:
     column: "aseanai"
   - key: coeai
     column: "coeai"
+  - key: harms
+    column: "harms"
 
 expertise:
   key: expertise

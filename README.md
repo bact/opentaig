@@ -33,6 +33,9 @@ development against local fixtures, and repo/deployment setup.
 
 ## Documentation
 
+- [`docs/methodology-and-findings.md`](docs/methodology-and-findings.md) — how
+  the catalog was built, what it found, and what it didn't: coverage results,
+  the harm-taxonomy completeness check, and stated limitations.
 - [`docs/data-schema.md`](docs/data-schema.md) — the full Google Sheets
   schema: every tab, every column, how they join.
 - [`curation/README.md`](curation/README.md) — the tool-discovery pipeline:

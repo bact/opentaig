@@ -46,11 +46,11 @@ output_dir: "site"
 #   4. "tools"    -- OUR open-source tool catalog (a tab in the OpenTAIG
 #                   sheet), referenced by id from the tool_map tab's
 #                   tool_id column.
-#   5. "terms"    -- OUR RGAF/EUAIAct/UNESCOAI/ASEANAI/CoEAI term catalog (a
-#                   tab in the OpenTAIG sheet), one shared tab across all
-#                   five frameworks, referenced by id from the mapping
-#                   tab's five framework columns (and from tools.implement/
-#                   tools.eval).
+#   5. "terms"    -- OUR RGAF/EUAIAct/UNESCOAI/ASEANAI/CoEAI/Harms term catalog
+#                   (a tab in the OpenTAIG sheet), one shared tab across all
+#                   frameworks listed in `frameworks:` below, referenced by id
+#                   from the mapping tab's framework columns (and from
+#                   tools.implement/tools.eval).
 #   6. "framework" -- OUR descriptive metadata about each framework/
 #                   regulation/recommendation itself (name, homepage, source
 #                   document, publishing body), one row per framework key.
@@ -110,10 +110,10 @@ columns:
     new_work: "New work (since publication)"
   # Our mapping tab. `rq_no` joins to taig.question_number. The mapping tab's
   # own "Research_Question" column is a human data-entry aid and is IGNORED by
-  # the build -- question text always comes from the TAIG sheet. The five
-  # framework columns (RGAF/EUAIAct/UNESCOAI/ASEANAI/CoEAI, listed below under
-  # `frameworks:`) hold semicolon-separated term ids. Tool mappings live in
-  # the separate `tool_map` tab, not here.
+  # the build -- question text always comes from the TAIG sheet. The
+  # framework columns (RGAF/EUAIAct/UNESCOAI/ASEANAI/CoEAI/Harms, listed below
+  # under `frameworks:`) hold semicolon-separated term ids. Tool mappings
+  # live in the separate `tool_map` tab, not here.
   #
   # `datetime_added`/`datetime_checked`/`datetime_updated` (present on every
   # OUR tab below -- mapping, tool_map, tools, terms, framework) are
@@ -160,11 +160,11 @@ columns:
     datetime_added: "datetime_added"
     datetime_checked: "datetime_checked"
     datetime_updated: "datetime_updated"
-  # Shared term catalog across all five frameworks. `id` is a globally
-  # unique, namespaced identifier (e.g. `euaiact-a8`, `coeai-a8`, `rgaf-safe`)
-  # -- see README for the namespacing convention. `framework_id` must be one
-  # of the `key` values in the `frameworks:` list below (and match a row in
-  # the `framework` tab).
+  # Shared term catalog across all frameworks listed in `frameworks:` below.
+  # `id` is a globally unique, namespaced identifier (e.g. `euaiact-a8`,
+  # `coeai-a8`, `rgaf-safe`, `harms-humanrights`) -- see README for the
+  # namespacing convention. `framework_id` must be one of the `key` values in
+  # the `frameworks:` list below (and match a row in the `framework` tab).
   terms:
     id: "id"
     framework: "framework_id"
@@ -212,6 +212,8 @@ frameworks:
     column: "aseanai"
   - key: coeai
     column: "coeai"
+  - key: harms
+    column: "harms"
 
 # --- Relevant expertise (a filter facet, sourced from the TAIG sheet) -------
 # Rendered as chips and offered as a filter, reusing the framework machinery,

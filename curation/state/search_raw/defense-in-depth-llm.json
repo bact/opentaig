@@ -1,0 +1,27 @@
+{
+  "keyword": "defense in depth LLM",
+  "query": "defense in depth LLM stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 2,
+  "repos": [
+    {
+      "full_name": "claudlos/hermes-katana",
+      "html_url": "https://github.com/claudlos/hermes-katana",
+      "description": "Defense-in-depth security toolkit for LLM agents \u2014 taint tracking, proxy secret guard, policy engine, and red-team benchmarking",
+      "stars": 45,
+      "pushed_at": "2026-07-27T13:10:40Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://claudlos.github.io/hermes-katana/"
+    },
+    {
+      "full_name": "SecureNexusLab/llm-prompt-injection-security-handbook",
+      "html_url": "https://github.com/SecureNexusLab/llm-prompt-injection-security-handbook",
+      "description": "A comprehensive technical research report on LLM Prompt Injection threats, covering direct/indirect injection, jailbreaking, adversarial suffixes, and defense-in-depth architectures.",
+      "stars": 36,
+      "pushed_at": "2026-04-11T09:55:37Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    }
+  ]
+}

@@ -17,7 +17,7 @@
   <p>
     <span class="tool-row-label">Helps implement:</span>
     {% for term in tool.implement %}
-    <a class="chip chip-{{ term.framework }}" href="{{ root }}frameworks/{{ term.framework }}/{{ term.id }}.html">{{ term.name }}</a>
+    <a class="chip chip-{{ term.framework }} chip-{{ term.id }}" href="{{ root }}frameworks/{{ term.framework }}/{{ term.id }}.html">{{ term.name }}</a>
     {% endfor %}
   </p>
   {% endif %}
@@ -25,7 +25,7 @@
   <p>
     <span class="tool-row-label">Helps evaluate/audit:</span>
     {% for term in tool.eval %}
-    <a class="chip chip-{{ term.framework }}" href="{{ root }}frameworks/{{ term.framework }}/{{ term.id }}.html">{{ term.name }}</a>
+    <a class="chip chip-{{ term.framework }} chip-{{ term.id }}" href="{{ root }}frameworks/{{ term.framework }}/{{ term.id }}.html">{{ term.name }}</a>
     {% endfor %}
   </p>
   {% endif %}

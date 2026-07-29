@@ -16,6 +16,7 @@
   --chip-license-bg: #eef0f3;   --chip-license-fg: #3a4149;
   --chip-expertise-bg: #eef0f3; --chip-expertise-fg: #3a4149;
   --chip-tool-type-bg: #eef0f3; --chip-tool-type-fg: #3a4149;
+  --chip-harms-bg: #fff3e0;     --chip-harms-fg: #8a5300;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,6 +38,7 @@
     --chip-license-bg: #262b31;   --chip-license-fg: #c3cad2;
     --chip-expertise-bg: #262b31; --chip-expertise-fg: #c3cad2;
     --chip-tool-type-bg: #262b31; --chip-tool-type-fg: #c3cad2;
+    --chip-harms-bg: #3d2c10;     --chip-harms-fg: #f0c063;
   }
 }
 
@@ -131,6 +133,15 @@ main.wrap { padding-top: 28px; padding-bottom: 60px; min-height: 60vh; }
 .chip-license { background: var(--chip-license-bg); color: var(--chip-license-fg); }
 .chip-expertise { background: var(--chip-expertise-bg); color: var(--chip-expertise-fg); font-style: italic; }
 .chip-tool-type { background: var(--chip-tool-type-bg); color: var(--chip-tool-type-fg); }
+.chip-harms { background: var(--chip-harms-bg); color: var(--chip-harms-fg); }
+/* Sentinel harms terms ("supports indirectly" / "cross-cutting") are not
+   harm-type claims -- they read as a qualifier, not a 10th harm, via a
+   dashed border and reduced opacity rather than the solid fill every real
+   harm-type chip gets. */
+.chip-harms-indirect, .chip-harms-crosscutting {
+  background: transparent; border: 1px dashed var(--chip-harms-fg);
+  color: var(--chip-harms-fg); opacity: 0.8; font-style: italic;
+}
 
 .tool-row { margin-top: 8px; font-size: 0.9rem; }
 .tool-row-label { color: var(--fg-muted); margin-right: 4px; }
@@ -169,6 +180,14 @@ main.wrap { padding-top: 28px; padding-bottom: 60px; min-height: 60vh; }
 
 .framework-group { margin-top: 30px; }
 .framework-subtitle { color: var(--fg-muted); font-size: 0.9rem; margin: 2px 0 10px; }
+/* Provenance note for a framework as a whole. Used to disclose where a
+   mapping is our own editorial judgment rather than a crosswalk to an
+   external authority's own text -- see the harms taxonomy. */
+.framework-note {
+  color: var(--fg-muted); font-size: 0.88rem; line-height: 1.5;
+  margin: 2px 0 12px; padding: 8px 12px;
+  border-left: 3px solid var(--border); background: var(--bg-alt);
+}
 .term-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
 .term-list li { display: flex; align-items: center; gap: 6px; }
 

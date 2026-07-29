@@ -85,8 +85,9 @@ columns — see "Freshness columns" below.
 | `unescoai` | UNESCO Ethics of AI principle **ids**, referencing the `terms` tab. |
 | `aseanai` | ASEAN AI Governance & Ethics guide principle **ids**, referencing the `terms` tab. |
 | `coeai` | CoE Framework Convention on AI article **ids**, referencing the `terms` tab. |
+| `harms` | Collaborative Harms Taxonomy harm-type **ids**, referencing the `terms` tab. Unlike the other five columns, this is **our own editorial judgment** about which harm(s) a question's research would help address, not a crosswalk to an external authority's own text — see [`docs/methodology-and-findings.md`](methodology-and-findings.md) § Findings, F6. |
 
-These 5 framework columns are deliberately kept separate rather than merged
+These 6 framework columns are deliberately kept separate rather than merged
 into one (even though term ids are already globally unique) — each column
 acts as a per-row checklist while filling in a new question, and it powers
 the "pasted into the wrong column" sanity-check warning described below.
@@ -124,14 +125,14 @@ README/paper against that question's own text — never via shared
 principle/term tags. See [`curation/README.md`](../curation/README.md) for
 the full discovery/mapping methodology.
 
-**`terms` tab** — the shared catalog of RGAF/EU AI Act/UNESCO/ASEAN/CoE
-terms, **one tab across all five frameworks**, defined once and referenced
+**`terms` tab** — the shared catalog of RGAF/EU AI Act/UNESCO/ASEAN/CoE/Harms
+terms, **one tab across all six frameworks**, defined once and referenced
 by id from as many `map` rows as apply:
 
 | Column | Meaning |
 | --- | --- |
-| `id` | A **globally unique, namespaced** id: `<namespace>-<local-part>`, dash-separated (e.g. `euaiact-a8`, `coeai-a8`, `rgaf-safe`). See "Term id namespaces" below. |
-| `framework_id` | One of `rgaf`, `euaiact`, `unescoai`, `aseanai`, `coeai` — must match a `key` in `config.yaml`'s `frameworks:` list and an `id` in the `framework` tab below. |
+| `id` | A **globally unique, namespaced** id: `<namespace>-<local-part>`, dash-separated (e.g. `euaiact-a8`, `coeai-a8`, `rgaf-safe`, `harms-humanrights`). See "Term id namespaces" below. |
+| `framework_id` | One of `rgaf`, `euaiact`, `unescoai`, `aseanai`, `coeai`, `harms` — must match a `key` in `config.yaml`'s `frameworks:` list and an `id` in the `framework` tab below. |
 | `name` | Full display text (the chip label), e.g. `Article 15 (Accuracy, robustness and cybersecurity)`. |
 | `summary` | Optional one-paragraph plain-language description. Blank is fine. |
 | `url` | Optional direct link to this specific term's source text (e.g. straight to Article 15, not just the EU AI Act's homepage). When blank, the site falls back to that framework's `doc_url` in `config.yaml`. |
@@ -140,10 +141,19 @@ by id from as many `map` rows as apply:
 
 Ids are dash-separated: `<namespace>-<local-part>`. The **namespace** token
 must never itself contain a dash, so it's always unambiguous where it ends
-— use `rgaf`, `euaiact`, `unescoai`, `aseanai`, or `coeai`. The **local
-part** is free-form (a short mnemonic like `a8` or `safe`, or a longer
-slug) — the only hard requirement is that the full id is unique across the
-*entire* tab, which the build enforces with a warning on any duplicate.
+— use `rgaf`, `euaiact`, `unescoai`, `aseanai`, `coeai`, or `harms`. The
+**local part** is free-form (a short mnemonic like `a8` or `safe`, or a
+longer slug) — the only hard requirement is that the full id is unique
+across the *entire* tab, which the build enforces with a warning on any
+duplicate.
+
+Two `harms` terms are not harm types at all, but sentinel qualifiers used so
+a blank `map` cell can never be misread as "no harm identified": `harms-
+indirect` (the question supports addressing a harm without itself targeting
+it) and `harms-crosscutting` (a research-method question, not mapped to any
+specific harm). Every RQ carries exactly one of: a direct harm-type chip,
+a harm-type chip plus `harms-indirect`, or `harms-crosscutting` alone. See
+`curation/emit_harm_framework.py`'s docstring for the full rationale.
 
 This exists because two different legal instruments can use identical
 wording: both the EU AI Act and the CoE Framework Convention on AI have an

@@ -1,0 +1,37 @@
+{
+  "keyword": "KYC verification API",
+  "query": "KYC verification API stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "count": 3,
+  "repos": [
+    {
+      "full_name": "riteshbonthalakoti/AI-Powered-Ticket-Creation-and-Categorization-from-User-Input",
+      "html_url": "https://github.com/riteshbonthalakoti/AI-Powered-Ticket-Creation-and-Categorization-from-User-Input",
+      "description": "An AI-driven system that automates Aadhaar-based KYC by extracting card details using OCR, cleaning and structuring the text, generating test data, storing records in a database, and exposing API routes for uploads and verification. It streamlines identity validation workflows while reducing manual effort and processing errors.",
+      "stars": 26,
+      "pushed_at": "2026-02-20T10:25:18Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "buabaj/open-ghana-id",
+      "html_url": "https://github.com/buabaj/open-ghana-id",
+      "description": "An API Gateway for performing preliminary KYC Identification checks before proceeding to use 3rd party ID verification services like Smile Identity.",
+      "stars": 23,
+      "pushed_at": "2026-03-21T08:17:30Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "didit-protocol/skills",
+      "html_url": "https://github.com/didit-protocol/skills",
+      "description": "Official Didit Agent Skills \u2014 12 production-ready skills for identity verification, KYC, AML screening, biometric APIs, and session management. Compatible with Cursor, OpenClaw/ClawHub, and any SKILL.md-compatible agent.",
+      "stars": 21,
+      "pushed_at": "2026-07-09T19:44:45Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}
