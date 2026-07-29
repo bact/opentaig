@@ -56,6 +56,19 @@ worth keeping in mind so they don't get "corrected" away in a future run:
   the `license` column (don't normalize it to something it isn't), and note
   the licensing anomaly in the mapping `rationale` so a reader doesn't have
   to go re-derive it.
+- **This does NOT extend to source-available/non-compete licenses like the
+  Business Source License (BUSL).** A CC license is non-OSI but still
+  *free* (`licenses.py` classifies it `free-not-osi`) — it just wasn't
+  written with software in mind. BUSL is different in kind, not just
+  in degree: it's a genuinely proprietary license during its embargo
+  period (`licenses.py` classifies it `non-free`), converting to open
+  source only years later. `edgelesssys/marblerun` (BUSL-1.1) was
+  initially accepted by conflating these two cases — caught on user
+  review and reversed (see its `state/seen_repos.csv` row, verdict
+  `reject`/`not-open-source`). The rule of thumb: `license_class ==
+  "free-not-osi"` → accept and record honestly; `license_class ==
+  "non-free"` → reject as `not-open-source`, full stop, regardless of how
+  good the tool otherwise is.
 - **Judge the thing that was actually found, not the platform it lives
   inside.** A candidate that's a feature/module bundled inside a much
   larger general-purpose platform (e.g. a governance feature inside an
@@ -769,11 +782,21 @@ section. Source 4 (the RQ's own text) is what phase 1 already used;
 everything else is new. **Start with source 0 (`topic:` tag sweeps)** — it
 is a different search axis from free text and by far the highest-yield
 source measured (a single `topic:ai-safety` query returned 202 repos, 98
-unseen; ~650 unseen across 8 tags). Sources 6-10 (the Domain×Artifact×Tool
-matrix, sub-domain jargon, mining already-rejected awesome-lists for
-vocabulary, backward snowballing, and non-GitHub registries) are also new and largely untried.
-Read that section in full rather than working from this summary. The
-free-text sources:
+unseen; ~650 unseen across 8 tags). Sources 6, 9, and 10 now have scripts,
+not just descriptions — use them, don't reinvent the query by hand:
+`keyword_matrix.py` (source 6, PICOC-style two-dimension combos, already
+cross-checks against `search_log.csv`), `snowball.py` (source 9, backward
+snowball from a seed repo's README links), `search_registries.py` (source
+10, npm + Hugging Face Spaces/Models), `search_arxiv.py` (source 10, arXiv
+abstract/comment link extraction — not yet exercised against a live
+response, sanity-check its first real run), `log_websearch.py` (source 10,
+provenance logging for an agent-driven WebSearch-tool query, since that
+axis has no scriptable API), and `validate_qgs.py` (a pre-flight recall
+check against 5-10 known-relevant repos, worth running on a keyword batch
+before spending a real search-and-triage pass on it). Sub-domain jargon and
+mining already-rejected awesome-lists for vocabulary (the rest of sources 7
+and 8) are still manual. Read the "Keyword expansion" section in full
+rather than working from this summary. The free-text sources:
 
 1. Mine 2-3 word phrases from the live `tools.summary` /
    `tool_map.rationale` columns that haven't been tried yet (cross-check
@@ -805,6 +828,22 @@ Cover every RQ eventually, ordering thin/zero-coverage ones first because
 their success is measurable (0→1 coverage is unambiguous). Already-covered
 RQs still get a pass — a better or complementary tool is a legitimate find.
 
+=== PASS C: isolated judgment (mandatory, not optional) ===
+
+Don't emit a mapping straight from whatever you concluded inline in this
+session. Once you have a shortlist of {candidate, RQ(s)} pairs from pass A
+or B, spawn a strongest-model subagent per batch and give it *only*:
+the RQ's own text, the candidate's name/summary/README excerpt, and the
+shortlist of RQs to judge it against — nothing else about this project or
+session. Ask it for an independent MAP yes/no + role + rationale per pair,
+and explicitly ask it to disagree with your shortlist if it thinks a
+candidate doesn't fit. This isn't belt-and-suspenders: in the run that
+established this rule, the isolated pass overturned two inline calls that
+looked reasonable in the moment (`ccfingerprint`/`machine-genome` on
+RQ57/58/82 — see "Judgment rules" below for the specific mechanism
+mismatch). Only feed the isolated pass's verdicts into
+`emit_candidates.py`.
+
 === Steps ===
 
 1. `pip install -r requirements.txt`, then confirm GITHUB_TOKEN is set
@@ -815,20 +854,30 @@ RQs still get a pass — a better or complementary tool is a legitimate find.
    against the live sheets. Confirm zero build warnings before anything
    else.
 3. Record the baseline: per-problem-area coverage counts from
-   rq_context.json, plus `python curation/report_triage.py`. Re-run both at
-   the end of the session and show me the before/after — measuring whether
-   the expanded strategy actually moved coverage is the point of phase 2,
-   and the delta is paper-relevant.
+   rq_context.json, plus `python curation/report_triage.py` and
+   `python curation/report_triage.py --by keyword` — the second gives the
+   per-keyword found/accepted/open-source/rejected table that's the
+   paper-relevant write-up data for "which expansion source actually
+   worked." Both already read the full accumulated `search_log.csv` /
+   `state/seen_repos.csv`, so there's nothing else to hand-maintain for
+   this — don't build a separate results log. Re-run both at the end of the
+   session and show me the before/after.
 4. Run pass A on a bounded batch. Show me the proposed new mappings for
    review before moving on.
 5. Run pass B on a bounded batch: propose 2-4 new keywords per area not
    already in curation/state/search_log.csv, run them via
-   curation/search_repos.py, then show me the real candidate quality before
-   judging anything — same review gate as phase 1.
-6. Continue the pipeline (dedup_candidates.py → judgment →
-   emit_candidates.py, passing `--problem-area "..."`). Stop after emit and
-   show me candidate_tools.csv + candidate_map_updates.csv for review — I
-   paste into the live sheet myself, you never write to it. Those two files
+   curation/search_repos.py (or the source-6/9/10 scripts above where they
+   fit better than a plain keyword), then show me the real candidate
+   quality before judging anything — same review gate as phase 1.
+6. Run pass C (isolated judgment) on whatever pass A/B surfaced — see
+   "PASS C" above. Don't skip this even for calls that feel obvious inline.
+7. Continue the pipeline (dedup_candidates.py → pass C's verdicts →
+   emit_candidates.py, passing `--problem-area "..."`). Log rejects too,
+   not just accepts — a repo you looked at and dismissed is exactly what
+   the "found N, M open source" write-up statistic needs, and skipping it
+   silently undercounts `found`. Stop after emit and show me
+   candidate_tools.csv + candidate_map_updates.csv for review — I paste
+   into the live sheet myself, you never write to it. Those two files
    accumulate across runs; clear them back to just their header row once I
    confirm a batch is merged.
 
@@ -883,6 +932,58 @@ Judgment rules (details in curation/README.md — same as phase 1):
   tooling; but that is a prediction to verify, not a result. Do not cite a
   zero-coverage figure as a finding until every RQ behind it has been
   through more than one search axis.
+- **A third phase-2 run tested that prediction directly and it held, with
+  six exceptions.** Ran Pass A (re-judging the existing catalog) first,
+  then topic-tag sweeps (`topic:confidential-computing`,
+  `topic:trusted-execution-environment`, `topic:trusted-computing`,
+  `topic:sgx`, `topic:hardware-security`, `topic:tpm`), then targeted
+  free-text and a registry search (`search_registries.py`), against every
+  RQ that was still zero at that point. **Resolved from zero:** RQ35 (an
+  HPC-allocation-accounting tool, `xdmod`), RQ50 (three independent
+  TEE-attestation implementations), RQ57 (`model-provenance-kit`, already
+  in the catalog, re-mapped via Pass A), RQ80 (two infra-level
+  confidential-computing tools — a third, `marblerun`, was initially
+  accepted here too but reversed on user review for its BUSL-1.1 license;
+  see "The one rule that shapes everything" above), RQ88 (`TamperBench`, a purpose-built
+  tamper-resistance benchmark), RQ93 (four already-catalogued
+  unlearning/model-editing tools, re-mapped via Pass A). **Confirmed still
+  zero** after this real multi-axis attempt (not just untested): RQ13–18,
+  34, 37, 41, 48/49, 51/52/53, 58, 69, 71–79, 82, 96 — i.e. essentially all
+  of chip/firmware/anti-tamper hardware, compute-workload classification,
+  export-control enforcement, and the pure-forecasting questions, plus a
+  few closely-related software-plausible ones (RQ37/41 access-risk
+  allocation, RQ58 spoofing-robust proof-of-learning, RQ69 live
+  extraction-attack detection, RQ82 shared model governance) that got a
+  real candidate looked at and rejected on mechanism grounds rather than
+  never searched. See `state/seen_repos.csv` rows with `problem_area` in
+  those areas for the specific rejects and why (e.g. `AIJack` simulates/
+  defends against extraction attacks rather than detecting one in
+  progress — RQ69's actual ask). **One concrete methodology finding worth
+  citing on its own:** `topic:tpm` is polluted by an acronym collision —
+  most of its results are `tmux` "Tmux Plugin Manager" configs, not
+  Trusted Platform Module tooling, since both communities use the same
+  three-letter tag. A topic tag's precision isn't guaranteed by its name
+  alone; skim the actual hits before trusting a sweep's `new_candidates`
+  count as a quality signal.
+- **Delegate the final RQ mapping judgment to an isolated subagent, per
+  "Model tiering" above — don't just reason it inline.** In the same
+  session as the finding above, judgment calls made inline (in the main
+  agent's full-context turn) were then re-checked by a strongest-model
+  subagent given *only* {candidate summary + README excerpt + the specific
+  RQ text(s)}, no other session context. The isolated pass **overturned two
+  of the inline calls**: `ccfingerprint` and `machine-genome` had been
+  provisionally mapped to RQ57/58/82 on "model identity/provenance" keyword
+  overlap, but under isolated review neither actually produces the
+  evidence those RQs ask for (vendor-substitution detection for an API
+  consumer ≠ an owner proving they trained a set of weights; a
+  self-asserted signed provenance claim ≠ verified ownership; a lineage
+  registry ≠ distributed governance control). This is exactly the
+  category-error failure mode this README already warns about elsewhere
+  (the garak/RQ89 mistake, ml-privacy-meter/RQ69) — the isolation
+  structurally helps catch it, because the subagent has no session-long
+  momentum toward "yes" and is handed nothing but the RQ's own text to
+  judge against. Treat a same-context inline judgment as a draft, not a
+  final verdict; always run the isolated-subagent pass before emitting.
 - Every reject needs a `reject_category` from emit_candidates.py's
   REJECT_CATEGORIES, not just free text.
 - **A repo with no GitHub-detected LICENSE file is not automatically

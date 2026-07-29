@@ -1,0 +1,577 @@
+{
+  "keyword": "topic:tpm",
+  "query": "topic:tpm stars:>19 pushed:>2025-07-29 archived:false fork:false",
+  "count": 57,
+  "repos": [
+    {
+      "full_name": "gpakosz/.tmux",
+      "html_url": "https://github.com/gpakosz/.tmux",
+      "description": "Oh my tmux! My self-contained, pretty & versatile tmux configuration made with \ud83d\udc9b\ud83e\ude77\ud83d\udc99\ud83d\udda4\u2764\ufe0f\ud83e\udd0d",
+      "stars": 25248,
+      "pushed_at": "2026-07-25T16:07:48Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "quickemu-project/quickemu",
+      "html_url": "https://github.com/quickemu-project/quickemu",
+      "description": "Quickly create and run optimised Windows, macOS and Linux virtual machines",
+      "stars": 15323,
+      "pushed_at": "2026-07-28T14:25:33Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "TechUnRestricted/WinDiskWriter",
+      "html_url": "https://github.com/TechUnRestricted/WinDiskWriter",
+      "description": "\ud83d\udda5 Windows Bootable USB creator for macOS. \ud83d\udee0 Patches Windows 11 to bypass TPM and Secure Boot requirements. \ud83d\udc7e UEFI & Legacy Support",
+      "stars": 4565,
+      "pushed_at": "2026-01-24T16:48:15Z",
+      "language": "C",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "erikw/tmux-powerline",
+      "html_url": "https://github.com/erikw/tmux-powerline",
+      "description": "\u26a1\ufe0f A tmux plugin giving you a hackable status bar consisting of dynamic & beautiful looking powerline segments, written purely in bash.",
+      "stars": 3825,
+      "pushed_at": "2026-07-27T15:05:12Z",
+      "language": "Shell",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": ""
+    },
+    {
+      "full_name": "linuxboot/heads",
+      "html_url": "https://github.com/linuxboot/heads",
+      "description": "A minimal Linux that runs as a coreboot or LinuxBoot ROM payload to provide a secure, flexible boot environment for laptops, workstations and servers.",
+      "stars": 1580,
+      "pushed_at": "2026-07-29T15:23:30Z",
+      "language": "Makefile",
+      "license_spdx_id": "GPL-2.0",
+      "homepage": "https://osresearch.net/"
+    },
+    {
+      "full_name": "quickemu-project/quickgui",
+      "html_url": "https://github.com/quickemu-project/quickgui",
+      "description": "An elegant virtual machine manager for the desktop",
+      "stars": 1302,
+      "pushed_at": "2026-07-28T14:27:29Z",
+      "language": "Dart",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "tpm2-software/tpm2-tss",
+      "html_url": "https://github.com/tpm2-software/tpm2-tss",
+      "description": "OSS implementation of the TCG TPM2 Software Stack (TSS2)",
+      "stars": 890,
+      "pushed_at": "2026-07-15T15:09:44Z",
+      "language": "C",
+      "license_spdx_id": "BSD-2-Clause",
+      "homepage": "https://tpm2-software.github.io"
+    },
+    {
+      "full_name": "tpm2-software/tpm2-tools",
+      "html_url": "https://github.com/tpm2-software/tpm2-tools",
+      "description": "The source repository for the Trusted Platform Module (TPM2.0) tools",
+      "stars": 873,
+      "pushed_at": "2026-07-27T07:46:27Z",
+      "language": "C",
+      "license_spdx_id": "",
+      "homepage": "https://tpm2-software.github.io"
+    },
+    {
+      "full_name": "stefanberger/swtpm",
+      "html_url": "https://github.com/stefanberger/swtpm",
+      "description": "Libtpms-based TPM emulator with socket, character device, and Linux CUSE interface.",
+      "stars": 805,
+      "pushed_at": "2026-07-15T12:48:14Z",
+      "language": "C",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "Foxboron/ssh-tpm-agent",
+      "html_url": "https://github.com/Foxboron/ssh-tpm-agent",
+      "description": ":computer: :key: ssh-agent for TPMs",
+      "stars": 724,
+      "pushed_at": "2026-07-10T21:44:58Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "keylime/keylime",
+      "html_url": "https://github.com/keylime/keylime",
+      "description": "A CNCF Project to Bootstrap & Maintain Trust on the Edge / Cloud and IoT",
+      "stars": 551,
+      "pushed_at": "2026-07-21T14:26:58Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://keylime.dev"
+    },
+    {
+      "full_name": "schasse/tmux-jump",
+      "html_url": "https://github.com/schasse/tmux-jump",
+      "description": "Vimium/Easymotion like navigation for tmux.",
+      "stars": 481,
+      "pushed_at": "2026-07-23T14:29:42Z",
+      "language": "Ruby",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "2KAbhishek/tmux2k",
+      "html_url": "https://github.com/2KAbhishek/tmux2k",
+      "description": "Make tmux powerful and pretty \ud83e\udd4a\ud83d\udc85",
+      "stars": 447,
+      "pushed_at": "2026-07-19T16:24:54Z",
+      "language": "Shell",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "google/go-attestation",
+      "html_url": "https://github.com/google/go-attestation",
+      "description": "Libraries to abstract aspects of working with TPMs for the purposes of attestation",
+      "stars": 438,
+      "pushed_at": "2026-07-22T07:38:04Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "tpm2-software/tpm2-pkcs11",
+      "html_url": "https://github.com/tpm2-software/tpm2-pkcs11",
+      "description": "A PKCS#11 interface for TPM2 hardware",
+      "stars": 354,
+      "pushed_at": "2026-05-19T21:12:06Z",
+      "language": "C",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://tpm2-software.github.io"
+    },
+    {
+      "full_name": "wolfSSL/wolfTPM",
+      "html_url": "https://github.com/wolfSSL/wolfTPM",
+      "description": "wolfTPM is a highly portable TPM 2.0 library, designed for embedded use.",
+      "stars": 336,
+      "pushed_at": "2026-07-22T22:41:09Z",
+      "language": "C",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://www.wolfssl.com"
+    },
+    {
+      "full_name": "google/go-tpm-tools",
+      "html_url": "https://github.com/google/go-tpm-tools",
+      "description": "Go packages built on go-tpm providing a high-level API for using TPMs",
+      "stars": 306,
+      "pushed_at": "2026-07-29T01:50:25Z",
+      "language": "C",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "alexwforsythe/tmux-which-key",
+      "html_url": "https://github.com/alexwforsythe/tmux-which-key",
+      "description": "A tmux plugin that allows users to select actions from a customizable popup menu \ud83e\uddf0",
+      "stars": 302,
+      "pushed_at": "2026-05-18T20:11:57Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "noahbliss/mortar",
+      "html_url": "https://github.com/noahbliss/mortar",
+      "description": "Framework to join Linux's physical security bricks.",
+      "stars": 278,
+      "pushed_at": "2026-02-28T15:21:25Z",
+      "language": "Shell",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "saysjonathan/dwm.tmux",
+      "html_url": "https://github.com/saysjonathan/dwm.tmux",
+      "description": "dwm-inspired tiling pane management for tmux",
+      "stars": 190,
+      "pushed_at": "2026-04-30T14:48:41Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "tpm2-software/tpm2-tss-engine",
+      "html_url": "https://github.com/tpm2-software/tpm2-tss-engine",
+      "description": "OpenSSL Engine for TPM2 devices",
+      "stars": 174,
+      "pushed_at": "2026-07-14T01:16:47Z",
+      "language": "C",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": "https://tpm2-software.github.io"
+    },
+    {
+      "full_name": "Foxboron/age-plugin-tpm",
+      "html_url": "https://github.com/Foxboron/age-plugin-tpm",
+      "description": ":key: TPM 2.0 plugin for age",
+      "stars": 155,
+      "pushed_at": "2026-01-24T20:36:26Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "joelmathewthomas/archinstall-luks2-lvm2-secureboot-tpm2",
+      "html_url": "https://github.com/joelmathewthomas/archinstall-luks2-lvm2-secureboot-tpm2",
+      "description": "A complete Arch Linux installation guide with luks2 full disk encryption, and logical volumes with lvm2, and added security using secure boot and tpm2 luks key enrollment for auto unlocking encrypted root.",
+      "stars": 155,
+      "pushed_at": "2026-03-23T04:10:06Z",
+      "language": "",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "NLM-DIR/TPMCalculator",
+      "html_url": "https://github.com/NLM-DIR/TPMCalculator",
+      "description": "TPMCalculator quantifies mRNA abundance directly from the alignments by parsing BAM files",
+      "stars": 138,
+      "pushed_at": "2026-01-28T15:13:24Z",
+      "language": "C++",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "tpm2-software/tpm2-abrmd",
+      "html_url": "https://github.com/tpm2-software/tpm2-abrmd",
+      "description": "TPM2 Access Broker & Resource Management Daemon implementing the TCG spec.",
+      "stars": 127,
+      "pushed_at": "2025-10-29T20:07:28Z",
+      "language": "C",
+      "license_spdx_id": "BSD-2-Clause",
+      "homepage": "https://github.com/tpm2-software/tpm2-abrmd"
+    },
+    {
+      "full_name": "tpm2-software/tpm2-openssl",
+      "html_url": "https://github.com/tpm2-software/tpm2-openssl",
+      "description": "OpenSSL Provider for TPM2 integration",
+      "stars": 126,
+      "pushed_at": "2026-04-26T22:23:33Z",
+      "language": "C",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": ""
+    },
+    {
+      "full_name": "AdmiralTolwyn/Files",
+      "html_url": "https://github.com/AdmiralTolwyn/Files",
+      "description": "Scripts, samples and much more...",
+      "stars": 106,
+      "pushed_at": "2026-01-21T08:40:53Z",
+      "language": "PowerShell",
+      "license_spdx_id": "",
+      "homepage": "https://www.vacuumbreather.com/"
+    },
+    {
+      "full_name": "c2FmZQ/tlsproxy",
+      "html_url": "https://github.com/c2FmZQ/tlsproxy",
+      "description": "TLSPROXY is a TLS termination proxy that provides automatic TLS encryption for various network services. It supports SSO, client authentication, and can act as a web server or reverse proxy.",
+      "stars": 105,
+      "pushed_at": "2026-07-08T14:04:47Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "erikw/tmux-dark-notify",
+      "html_url": "https://github.com/erikw/tmux-dark-notify",
+      "description": "A plugin that make tmux's theme follow macOS dark/light mode.",
+      "stars": 97,
+      "pushed_at": "2026-02-08T18:31:19Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Infineon/eltt2",
+      "html_url": "https://github.com/Infineon/eltt2",
+      "description": "Infineon Embedded Linux TPM Toolbox 2 (ELTT2) for TPM 2.0",
+      "stars": 96,
+      "pushed_at": "2026-07-09T09:21:27Z",
+      "language": "C",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": ""
+    },
+    {
+      "full_name": "9elements/converged-security-suite",
+      "html_url": "https://github.com/9elements/converged-security-suite",
+      "description": "Converged Security Suite for Intel & AMD platform security features",
+      "stars": 74,
+      "pushed_at": "2026-06-21T17:48:44Z",
+      "language": "Go",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": "https://www.9esec.io"
+    },
+    {
+      "full_name": "matejsmycka/linux-id",
+      "html_url": "https://github.com/matejsmycka/linux-id",
+      "description": "linux-id is FIDO token implementation for Linux that protects the token keys using your system's TPM.",
+      "stars": 69,
+      "pushed_at": "2026-07-17T13:16:20Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "globalsign/est",
+      "html_url": "https://github.com/globalsign/est",
+      "description": "An implementation of the Enrollment over Secure Transport (EST) certificate enrollment protocol",
+      "stars": 68,
+      "pushed_at": "2026-07-10T12:19:20Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "bjn7/passkeyd",
+      "html_url": "https://github.com/bjn7/passkeyd",
+      "description": "An Opinionated WebAuthn Authenticator",
+      "stars": 58,
+      "pushed_at": "2026-06-01T14:14:55Z",
+      "language": "Rust",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "mr-manuel/proxmox",
+      "html_url": "https://github.com/mr-manuel/proxmox",
+      "description": "This repository provide various manuals for managing Proxmox VE",
+      "stars": 57,
+      "pushed_at": "2026-03-03T11:07:12Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "ddzero2c/tmux-easymotion",
+      "html_url": "https://github.com/ddzero2c/tmux-easymotion",
+      "description": "Easymotion like vim in tmux",
+      "stars": 49,
+      "pushed_at": "2026-07-19T08:24:47Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "Foxboron/attezt",
+      "html_url": "https://github.com/Foxboron/attezt",
+      "description": "An open-source TPM device-attest-01 CA server",
+      "stars": 47,
+      "pushed_at": "2026-03-21T14:32:03Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "folbricht/tpmk",
+      "html_url": "https://github.com/folbricht/tpmk",
+      "description": "Toolkit to manage keys and certificates in TPM2 chips",
+      "stars": 47,
+      "pushed_at": "2026-07-10T19:32:12Z",
+      "language": "Go",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": ""
+    },
+    {
+      "full_name": "eclipse-keysealer/k8s-kms-plugin",
+      "html_url": "https://github.com/eclipse-keysealer/k8s-kms-plugin",
+      "description": "gRPC service that leverages a remote or local HSM/TPM to encrypt Kubernetes data at-rest with KMS v2.",
+      "stars": 46,
+      "pushed_at": "2026-07-29T09:22:03Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": "https://github.com/eclipse-keysealer/k8s-kms-plugin"
+    },
+    {
+      "full_name": "j4hangir/tmux-jump",
+      "html_url": "https://github.com/j4hangir/tmux-jump",
+      "description": "Incremental-narrowing jump for tmux \u2014 type what you see, land on it. Like flash.nvim / leap.nvim, for your tmux pane.",
+      "stars": 43,
+      "pushed_at": "2026-05-06T19:23:57Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": "https://git.j4hangir.com/tmux/tmux-jump/"
+    },
+    {
+      "full_name": "osservatorionessuno/patela",
+      "html_url": "https://github.com/osservatorionessuno/patela",
+      "description": "client and server for disk-less tor configuration",
+      "stars": 41,
+      "pushed_at": "2026-02-19T10:00:33Z",
+      "language": "Rust",
+      "license_spdx_id": "WTFPL",
+      "homepage": "https://osservatorionessuno.org"
+    },
+    {
+      "full_name": "lost-melody/tmux-command-palette",
+      "html_url": "https://github.com/lost-melody/tmux-command-palette",
+      "description": "A tmux plugin that popups a palette for key bindings to choose from",
+      "stars": 40,
+      "pushed_at": "2026-03-09T02:09:31Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "pkic/remote-key-attestation",
+      "html_url": "https://github.com/pkic/remote-key-attestation",
+      "description": "Remote Key Attestation",
+      "stars": 39,
+      "pushed_at": "2026-03-06T10:46:32Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "kgoldman/ibmtss",
+      "html_url": "https://github.com/kgoldman/ibmtss",
+      "description": "This is a user space TSS for TPM 2.0.  It implements the functionality equivalent to (but not API compatible with) the TCG TSS working group's ESAPI, SAPI, and TCTI API's (and perhaps more) but with a hopefully simpler interface.",
+      "stars": 34,
+      "pushed_at": "2026-05-19T17:52:21Z",
+      "language": "C",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "hectorm/cardea",
+      "html_url": "https://github.com/hectorm/cardea",
+      "description": "Cardea is an SSH bastion server with access control, session recording, and optional TPM-backed key protection.",
+      "stars": 32,
+      "pushed_at": "2026-07-14T11:43:15Z",
+      "language": "Go",
+      "license_spdx_id": "EUPL-1.2",
+      "homepage": ""
+    },
+    {
+      "full_name": "nokia/AttestationEngine",
+      "html_url": "https://github.com/nokia/AttestationEngine",
+      "description": "An experimental (but fully functional) Remote Attestation Engine and Applications for TPM2.0 based systems (cloud, edge, IoT etc)",
+      "stars": 30,
+      "pushed_at": "2025-12-02T17:39:35Z",
+      "language": "Go",
+      "license_spdx_id": "BSD-3-Clause-Clear",
+      "homepage": ""
+    },
+    {
+      "full_name": "posquit0/tmux-conf",
+      "html_url": "https://github.com/posquit0/tmux-conf",
+      "description": ":memo: TMUX Configuration for nerds with tpm",
+      "stars": 29,
+      "pushed_at": "2026-07-11T13:05:35Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Hidetoxin/dotfiles",
+      "html_url": "https://github.com/Hidetoxin/dotfiles",
+      "description": "My personal dotfiles managed by chezmoi",
+      "stars": 27,
+      "pushed_at": "2026-02-09T12:18:59Z",
+      "language": "Lua",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "MeinardEdrei/tmux-spotlight",
+      "html_url": "https://github.com/MeinardEdrei/tmux-spotlight",
+      "description": "A minimalist tmux session manager & fuzzy switcher powered by fzf. Launch named zoxide/fd sessions from a cold shell, jump to panes, search scrollback live \u2014 zero clutter, zero persistence layer.",
+      "stars": 27,
+      "pushed_at": "2026-07-12T14:03:12Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "FrancescoDiSalesGithub/TPM-windows11-hack",
+      "html_url": "https://github.com/FrancescoDiSalesGithub/TPM-windows11-hack",
+      "description": "TPM hack for windows 11 virtualbox images",
+      "stars": 25,
+      "pushed_at": "2025-11-23T14:00:36Z",
+      "language": "Batchfile",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "OttoMeister/Win-KVM-Qemu-Linux",
+      "html_url": "https://github.com/OttoMeister/Win-KVM-Qemu-Linux",
+      "description": "Windows 10 and 11 on Linux using KVM and Qemu",
+      "stars": 25,
+      "pushed_at": "2025-12-09T06:48:43Z",
+      "language": "Shell",
+      "license_spdx_id": "WTFPL",
+      "homepage": ""
+    },
+    {
+      "full_name": "jaclu/tmux-mouse-swipe",
+      "html_url": "https://github.com/jaclu/tmux-mouse-swipe",
+      "description": "Tmux plugin, uses mouse horizontal swipe to switch window and vertical to switch session",
+      "stars": 25,
+      "pushed_at": "2026-07-21T23:35:07Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "TheSast/tmux-transient-status",
+      "html_url": "https://github.com/TheSast/tmux-transient-status",
+      "description": "Automatically make your tmux status bar vanish when unneded.",
+      "stars": 24,
+      "pushed_at": "2026-07-25T08:22:52Z",
+      "language": "Shell",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "Foxboron/go-tpm-keyfiles",
+      "html_url": "https://github.com/Foxboron/go-tpm-keyfiles",
+      "description": "TPM 2.0 TSS keyfile library",
+      "stars": 22,
+      "pushed_at": "2026-05-28T18:23:23Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.hansenpartnership.com/draft-bottomley-tpm2-keys.html"
+    },
+    {
+      "full_name": "wolfSSL/wolfPKCS11",
+      "html_url": "https://github.com/wolfSSL/wolfPKCS11",
+      "description": "wolfSSL PKCS#11",
+      "stars": 22,
+      "pushed_at": "2026-07-24T12:53:48Z",
+      "language": "C",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "kxtzownsu/KVS",
+      "html_url": "https://github.com/kxtzownsu/KVS",
+      "description": "shitty C project that switches your kernver (ChromeOS, RMA Shim only)",
+      "stars": 21,
+      "pushed_at": "2026-05-26T14:47:51Z",
+      "language": "C",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://kvs.kxtz.dev"
+    },
+    {
+      "full_name": "lfedgeai/AegisSovereignAI",
+      "html_url": "https://github.com/lfedgeai/AegisSovereignAI",
+      "description": "AegisSovereignAI: The Cross-Ecosystem Trust Layer for the Distributed Enterprise. Verifiable Identity, Hardware-Rooted Integrity, and Sovereign AI Governance - from Silicon to Prompt. Unifying AI, Cloud-Native, and Decentralized architectures.",
+      "stars": 20,
+      "pushed_at": "2026-05-02T14:48:53Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/lfedgeai/AegisSovereignAI"
+    }
+  ]
+}

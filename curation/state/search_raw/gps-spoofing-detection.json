@@ -1,0 +1,37 @@
+{
+  "keyword": "GPS spoofing detection",
+  "query": "GPS spoofing detection stars:>19 pushed:>2025-07-29 archived:false fork:false",
+  "count": 3,
+  "repos": [
+    {
+      "full_name": "narimangharib/starlink-iran-gps-spoofing",
+      "html_url": "https://github.com/narimangharib/starlink-iran-gps-spoofing",
+      "description": "Technical analysis of Starlink terminal telemetry showing GPS spoofing detection during Iran's January 2026 internet shutdown",
+      "stars": 70,
+      "pushed_at": "2026-01-14T12:49:39Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "alicmu2024/GNSS-Jamming-Detection-and-Classification-using-Machine-Learning-Deep-Learning-and-Computer-Vision",
+      "html_url": "https://github.com/alicmu2024/GNSS-Jamming-Detection-and-Classification-using-Machine-Learning-Deep-Learning-and-Computer-Vision",
+      "description": "GNSS/GPS Spoofing and Jamming Detection and Classification Using Machine Learning, Deep Learning, and Computer Vision",
+      "stars": 61,
+      "pushed_at": "2025-11-17T14:13:24Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "zencefilefendi/satguard",
+      "html_url": "https://github.com/zencefilefendi/satguard",
+      "description": "\ud83d\udee1\ufe0f Satellite Telemetry Security Analyzer - GPS Spoofing Detection & Analysis Toolkit for Starlink terminals",
+      "stars": 22,
+      "pushed_at": "2026-01-27T01:07:00Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}

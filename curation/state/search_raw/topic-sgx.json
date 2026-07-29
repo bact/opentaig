@@ -1,0 +1,157 @@
+{
+  "keyword": "topic:sgx",
+  "query": "topic:sgx stars:>19 pushed:>2025-07-29 archived:false fork:false",
+  "count": 15,
+  "repos": [
+    {
+      "full_name": "bytecodealliance/wasm-micro-runtime",
+      "html_url": "https://github.com/bytecodealliance/wasm-micro-runtime",
+      "description": "WebAssembly Micro Runtime (WAMR)",
+      "stars": 6036,
+      "pushed_at": "2026-07-27T11:42:20Z",
+      "language": "C",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "apache/teaclave-sgx-sdk",
+      "html_url": "https://github.com/apache/teaclave-sgx-sdk",
+      "description": "Apache Teaclave\u2122 SGX SDK helps developers to write Intel SGX applications in the Rust programming language, and also known as Rust SGX SDK.",
+      "stars": 1228,
+      "pushed_at": "2026-06-10T01:21:13Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://teaclave.apache.org"
+    },
+    {
+      "full_name": "YeeZTech/YeeZ-Privacy-Computing",
+      "html_url": "https://github.com/YeeZTech/YeeZ-Privacy-Computing",
+      "description": "Fidelius - YeeZ Privacy Computing \u57fa\u4e8e\u53ef\u4fe1\u6267\u884c\u73af\u5883\u7684\u71a0\u667a\u9690\u79c1\u8ba1\u7b97\u4e2d\u95f4\u4ef6",
+      "stars": 1057,
+      "pushed_at": "2026-05-16T14:53:26Z",
+      "language": "C",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "http://yeez.tech"
+    },
+    {
+      "full_name": "apache/teaclave",
+      "html_url": "https://github.com/apache/teaclave",
+      "description": "Apache Teaclave\u2122 is an open source universal secure computing platform, making computation on privacy-sensitive data safe and simple.",
+      "stars": 805,
+      "pushed_at": "2026-06-10T01:27:17Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://teaclave.apache.org"
+    },
+    {
+      "full_name": "edgelesssys/ego",
+      "html_url": "https://github.com/edgelesssys/ego",
+      "description": "EGo is an open-source SDK that enables you to develop your own confidential apps in the Go programming language.",
+      "stars": 591,
+      "pushed_at": "2026-03-17T20:48:44Z",
+      "language": "Go",
+      "license_spdx_id": "MPL-2.0",
+      "homepage": "https://www.edgeless.systems/products/ego/"
+    },
+    {
+      "full_name": "scrtlabs/SecretNetwork",
+      "html_url": "https://github.com/scrtlabs/SecretNetwork",
+      "description": "\ud835\udd4a The Secret Network",
+      "stars": 582,
+      "pushed_at": "2026-07-02T13:04:44Z",
+      "language": "Rust",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://scrt.network"
+    },
+    {
+      "full_name": "jovanbulck/sgx-step",
+      "html_url": "https://github.com/jovanbulck/sgx-step",
+      "description": "A practical attack framework for precise enclave execution control",
+      "stars": 476,
+      "pushed_at": "2026-06-02T12:34:31Z",
+      "language": "C",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "intel/confidential-computing-zoo",
+      "html_url": "https://github.com/intel/confidential-computing-zoo",
+      "description": "Confidential Computing Zoo provides confidential computing solutions based on Intel SGX, TDX, HEXL, etc. technologies.",
+      "stars": 359,
+      "pushed_at": "2026-07-29T07:35:28Z",
+      "language": "C++",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cczoo.readthedocs.io/en/latest/index.html"
+    },
+    {
+      "full_name": "edgelesssys/marblerun",
+      "html_url": "https://github.com/edgelesssys/marblerun",
+      "description": "MarbleRun is the control plane for confidential computing. Deploy, scale, and verify your confidential microservices on vanilla Kubernetes. 100% Go, 100% cloud native, 100% confidential.",
+      "stars": 275,
+      "pushed_at": "2026-07-29T12:21:19Z",
+      "language": "Go",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://marblerun.sh"
+    },
+    {
+      "full_name": "ethernity-cloud/mvp-pox-node",
+      "html_url": "https://github.com/ethernity-cloud/mvp-pox-node",
+      "description": "Ethernity Cloud Node",
+      "stars": 246,
+      "pushed_at": "2026-06-28T19:06:23Z",
+      "language": "Python",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "edgelesssys/edgelessrt",
+      "html_url": "https://github.com/edgelesssys/edgelessrt",
+      "description": "Edgeless RT is an SDK and a runtime for Intel SGX. It combines top-notch Go support with simplicity, robustness and a small TCB. Developing confidential microservices has never been easier! C++17 and Rust (experimental) are also supported.",
+      "stars": 143,
+      "pushed_at": "2026-07-15T17:26:41Z",
+      "language": "C++",
+      "license_spdx_id": "MIT",
+      "homepage": "https://edgeless.systems"
+    },
+    {
+      "full_name": "oasisprotocol/sapphire-paratime",
+      "html_url": "https://github.com/oasisprotocol/sapphire-paratime",
+      "description": "Oasis Sapphire - the confidential EVM-compatible ParaTime for the Oasis Network",
+      "stars": 72,
+      "pushed_at": "2026-07-22T12:54:11Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://oasis.net/sapphire"
+    },
+    {
+      "full_name": "skalenetwork/sgxwallet",
+      "html_url": "https://github.com/skalenetwork/sgxwallet",
+      "description": "sgxwallet is the first-ever opensource high-performance hardware secure crypto wallet that is based on Intel SGX technology.  First opensource product on Intel SGX whitelist. Scales to 100,000+ transactions per second. Currently supports ETH and SKALE, and will support BTC in the future.  Sgxwallet is under heavy development and use by SKALE network.",
+      "stars": 68,
+      "pushed_at": "2026-07-29T15:12:38Z",
+      "language": "Shell",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://skale.network"
+    },
+    {
+      "full_name": "apache/teaclave-java-tee-sdk",
+      "html_url": "https://github.com/apache/teaclave-java-tee-sdk",
+      "description": "Apache Teaclave (incubating) Java TEE SDK is an open source universal confidential computing framework, making java computation on privacy-sensitive data safe and simple.",
+      "stars": 66,
+      "pushed_at": "2026-07-01T11:40:45Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://teaclave.apache.org"
+    },
+    {
+      "full_name": "intel/intel-technology-enabling-for-openshift",
+      "html_url": "https://github.com/intel/intel-technology-enabling-for-openshift",
+      "description": "The project delivers a comprehensive full-stack solution for the Intel\u00ae Enterprise AI Foundation on the OpenShift platform to provision Intel AI and Xeon accelerators, integrate AI software, and enable key AI workloads, such as LLM inferencing, training and fine-tuning for enterprise AI. RoCE Network provisioning is also inlcuded.",
+      "stars": 22,
+      "pushed_at": "2026-01-29T07:19:06Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://intel.github.io/intel-technology-enabling-for-openshift/"
+    }
+  ]
+}

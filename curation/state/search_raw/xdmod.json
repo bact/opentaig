@@ -1,0 +1,17 @@
+{
+  "keyword": "XDMoD",
+  "query": "XDMoD stars:>19 pushed:>2025-07-29 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "ubccr/xdmod",
+      "html_url": "https://github.com/ubccr/xdmod",
+      "description": "An open framework for collecting and analyzing HPC metrics.",
+      "stars": 102,
+      "pushed_at": "2026-07-27T05:35:03Z",
+      "language": "PHP",
+      "license_spdx_id": "LGPL-3.0",
+      "homepage": "https://open.xdmod.org"
+    }
+  ]
+}

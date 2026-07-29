@@ -1,0 +1,27 @@
+{
+  "keyword": "model access control API",
+  "query": "model access control API stars:>19 pushed:>2025-07-29 archived:false fork:false",
+  "count": 2,
+  "repos": [
+    {
+      "full_name": "doublewordai/control-layer",
+      "html_url": "https://github.com/doublewordai/control-layer",
+      "description": "The world\u2019s fastest AI model gateway (450x less overhead than LiteLLM). Unified access to LLMs across endpoints (openAI, self-hosted, etc.) behind a single authentication layer - with API key generation, user management, request logging, and more",
+      "stars": 87,
+      "pushed_at": "2026-07-29T15:25:16Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://doublewordai.github.io/control-layer/"
+    },
+    {
+      "full_name": "zzispp/Hook",
+      "html_url": "https://github.com/zzispp/Hook",
+      "description": "AI API gateway and operations platform for unified model routing, token/RBAC access control, billing, provider management, and monitoring.",
+      "stars": 20,
+      "pushed_at": "2026-07-24T07:27:01Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": "https://zzispp.github.io/Hook"
+    }
+  ]
+}

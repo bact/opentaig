@@ -1,0 +1,87 @@
+{
+  "keyword": "topic:trusted-computing",
+  "query": "topic:trusted-computing stars:>19 pushed:>2025-07-29 archived:false fork:false",
+  "count": 8,
+  "repos": [
+    {
+      "full_name": "nsacyber/HIRS",
+      "html_url": "https://github.com/nsacyber/HIRS",
+      "description": "Trusted Computing based services supporting TPM provisioning and supply chain validation concepts. #nsacyber",
+      "stars": 212,
+      "pushed_at": "2026-07-29T13:19:48Z",
+      "language": "JavaScript",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "IBM/ACE-RISCV",
+      "html_url": "https://github.com/IBM/ACE-RISCV",
+      "description": "Assured confidential execution (ACE) implements VM-based trusted execution environment (TEE) for embedded RISC-V systems with focus on a formally verified and auditable firmware.",
+      "stars": 211,
+      "pushed_at": "2026-07-29T02:33:21Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "salrashid123/tpm2",
+      "html_url": "https://github.com/salrashid123/tpm2",
+      "description": "TPM2 samples with go-tpm and tpm2_tools",
+      "stars": 85,
+      "pushed_at": "2026-06-15T15:09:57Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "nsacyber/paccor",
+      "html_url": "https://github.com/nsacyber/paccor",
+      "description": "The Platform Attribute Certificate Creator can gather component details, create, sign, and validate the TCG-defined Platform Certificate. #nsacyber",
+      "stars": 78,
+      "pushed_at": "2026-07-21T12:28:10Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/nsacyber/HIRS"
+    },
+    {
+      "full_name": "9elements/converged-security-suite",
+      "html_url": "https://github.com/9elements/converged-security-suite",
+      "description": "Converged Security Suite for Intel & AMD platform security features",
+      "stars": 74,
+      "pushed_at": "2026-06-21T17:48:44Z",
+      "language": "Go",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": "https://www.9esec.io"
+    },
+    {
+      "full_name": "riscv/riscv-smmtt",
+      "html_url": "https://github.com/riscv/riscv-smmtt",
+      "description": "This specification will define the RISC-V privilege ISA extensions required to support Supervisor Domain isolation for multi-tenant security use cases e.g. confidential-computing, trusted platform services, fault isolation and so on.",
+      "stars": 72,
+      "pushed_at": "2026-07-29T09:46:07Z",
+      "language": "Makefile",
+      "license_spdx_id": "CC-BY-4.0",
+      "homepage": "https://riscv.atlassian.net/browse/RVG-65"
+    },
+    {
+      "full_name": "skalenetwork/sgxwallet",
+      "html_url": "https://github.com/skalenetwork/sgxwallet",
+      "description": "sgxwallet is the first-ever opensource high-performance hardware secure crypto wallet that is based on Intel SGX technology.  First opensource product on Intel SGX whitelist. Scales to 100,000+ transactions per second. Currently supports ETH and SKALE, and will support BTC in the future.  Sgxwallet is under heavy development and use by SKALE network.",
+      "stars": 68,
+      "pushed_at": "2026-07-29T15:12:38Z",
+      "language": "Shell",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://skale.network"
+    },
+    {
+      "full_name": "salrashid123/go_tpm_https_embed",
+      "html_url": "https://github.com/salrashid123/go_tpm_https_embed",
+      "description": "TPM based mTLS",
+      "stars": 21,
+      "pushed_at": "2025-09-19T13:46:53Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    }
+  ]
+}
