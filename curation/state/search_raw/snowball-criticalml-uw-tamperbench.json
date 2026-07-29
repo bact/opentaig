@@ -1,0 +1,31 @@
+{
+  "seed": "criticalml-uw/TamperBench",
+  "links_found": [
+    "huggingface/transformers",
+    "astral-sh/uv"
+  ],
+  "kept": [
+    {
+      "full_name": "huggingface/transformers",
+      "html_url": "https://github.com/huggingface/transformers",
+      "description": "\ud83e\udd17 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.",
+      "stars": 163114,
+      "pushed_at": "2026-07-29T15:29:37Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://huggingface.co/transformers",
+      "found_via_keyword": "snowball:criticalml-uw/TamperBench"
+    },
+    {
+      "full_name": "astral-sh/uv",
+      "html_url": "https://github.com/astral-sh/uv",
+      "description": "An extremely fast Python package and project manager, written in Rust.",
+      "stars": 88072,
+      "pushed_at": "2026-07-29T14:45:20Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.astral.sh/uv",
+      "found_via_keyword": "snowball:criticalml-uw/TamperBench"
+    }
+  ]
+}

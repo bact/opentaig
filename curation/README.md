@@ -958,7 +958,24 @@ Judgment rules (details in curation/README.md — same as phase 1):
   never searched. See `state/seen_repos.csv` rows with `problem_area` in
   those areas for the specific rejects and why (e.g. `AIJack` simulates/
   defends against extraction attacks rather than detecting one in
-  progress — RQ69's actual ask). **One concrete methodology finding worth
+  progress — RQ69's actual ask). **A fourth pass tried the two remaining
+  untested axes on this same 27-RQ set and both came back empty too:**
+  `snowball.py` off 5 already-accepted hardware/security tools (trustee,
+  cmc, dstack, TamperBench, model-provenance-kit) surfaced only generic
+  shared dependencies (`huggingface/transformers`, `astral-sh/uv`) or
+  sibling infra already in the same genre as an already-covered RQ —
+  nothing addressing a new one; and `search_arxiv.py`, exercised live for
+  the first time, extracted only ~1 GitHub link per query across 4 queries
+  (proof-of-learning, adversarial-spoofing, shared-governance,
+  extraction-attack-detection phrasings), none passing the quality filters
+  — arXiv abstracts/comments mostly don't carry a paper-specific code link
+  at all, which is itself a real, citable low-yield finding about that axis,
+  not a search failure. With five independent axes (free-text, topic-tags,
+  registries, snowball, arXiv) all empty, RQ13–18, 34, 37, 41, 48/49,
+  51/52/53, 58, 69, 71–79, 82, 96 (27 RQs) are as close to a settled
+  zero-coverage finding as this pipeline can currently produce — cite it as
+  "no open-source tool found across 5 independent discovery axes," not "no
+  tool exists." **One concrete methodology finding worth
   citing on its own:** `topic:tpm` is polluted by an acronym collision —
   most of its results are `tmux` "Tmux Plugin Manager" configs, not
   Trusted Platform Module tooling, since both communities use the same

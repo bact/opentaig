@@ -1,0 +1,31 @@
+{
+  "seed": "Dstack-TEE/dstack",
+  "links_found": [
+    "Dstack-TEE/dstack-examples",
+    "Phala-Network/dcap-qvl"
+  ],
+  "kept": [
+    {
+      "full_name": "Dstack-TEE/dstack-examples",
+      "html_url": "https://github.com/Dstack-TEE/dstack-examples",
+      "description": "examples and utilities of dstack applications",
+      "stars": 27,
+      "pushed_at": "2026-07-29T05:56:33Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "",
+      "found_via_keyword": "snowball:Dstack-TEE/dstack"
+    },
+    {
+      "full_name": "Phala-Network/dcap-qvl",
+      "html_url": "https://github.com/Phala-Network/dcap-qvl",
+      "description": "",
+      "stars": 41,
+      "pushed_at": "2026-07-27T18:55:03Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": "",
+      "found_via_keyword": "snowball:Dstack-TEE/dstack"
+    }
+  ]
+}

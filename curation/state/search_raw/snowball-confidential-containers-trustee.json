@@ -1,0 +1,20 @@
+{
+  "seed": "confidential-containers/trustee",
+  "links_found": [
+    "confidential-containers/guest-components",
+    "confidential-containers/kbs-operator"
+  ],
+  "kept": [
+    {
+      "full_name": "confidential-containers/guest-components",
+      "html_url": "https://github.com/confidential-containers/guest-components",
+      "description": "Confidential Containers Guest Tools and Components",
+      "stars": 129,
+      "pushed_at": "2026-07-29T12:58:22Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "",
+      "found_via_keyword": "snowball:confidential-containers/trustee"
+    }
+  ]
+}
