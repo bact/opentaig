@@ -53,18 +53,18 @@
   {% endif %}
 
   <h2>Mapped principles &amp; regulations</h2>
-  <p class="framework-note">Supplemental crosswalk to external principles/regulations and our harms analysis. Use the chip-visibility toggles on the <a href="{{ root }}index.html">open problems page</a> to show/hide these by framework.</p>
+  <p class="framework-note">Supplemental crosswalk to external principles/regulations and our harms analysis.</p>
   {% set ns = namespace(any=false) %}
   <dl class="mapping-list">
     {% for fw in frameworks %}
       {% set terms = problem.mappings.get(fw.key, []) %}
       {% if terms %}
       {% set ns.any = true %}
-      <dt data-fw-block="{{ fw.key }}">
+      <dt>
         {{ fw.label }}
-        {% if fw.doc_url %}<a class="doc-link" href="{{ fw.doc_url }}">(source)</a>{% endif %}
+        {% if fw.homepage %}<a class="doc-link" href="{{ fw.homepage }}">(link)</a>{% endif %}
       </dt>
-      <dd data-fw-block="{{ fw.key }}">
+      <dd>
         {% if fw.summary %}<p class="framework-note">{{ fw.summary }}</p>{% endif %}
         {% for term in terms %}
         <a class="chip chip-{{ fw.key }} chip-{{ term.id }}" href="{{ root }}frameworks/{{ fw.key }}/{{ term.id }}.html"><span class="chip-ns">{{ fw.key }}</span>{{ term.name }}</a>
@@ -77,6 +77,9 @@
   <p class="empty-note">No framework mappings recorded yet for this question.</p>
   {% endif %}
 
+  {# Existing work & resources / New work (since publication) -- hidden
+     pending curation of the taig-sheet source columns; data still flows
+     through unchanged, just not rendered. Re-enable by uncommenting.
   {% if problem.existing_work %}
   <h2>Existing work &amp; resources</h2>
   <ul class="citation-list">
@@ -94,5 +97,6 @@
     {% endfor %}
   </ul>
   {% endif %}
+  #}
 </article>
 {% endblock %}

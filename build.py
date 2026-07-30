@@ -411,6 +411,7 @@ def merge_framework_defs(frameworks_config: list, framework_catalog: dict, warni
                 "summary": info["summary"],
                 "group": info["group"],
                 "doc_url": info["source"] or info["homepage"],
+                "homepage": info["homepage"],
                 "freshness": info["freshness"],
             }
         )
