@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% block title %}Principles &amp; Regulations — {{ site.title }}{% endblock %}
 {% block content %}
-<h1>Principles &amp; Regulations</h1>
+<h1 id="top">Principles &amp; Regulations</h1>
 <p>Browse open problems by the principle, obligation, or regulation article they map to.</p>
 
 {% for fw in frameworks %}
 <section class="framework-group">
-  <h2>{{ fw.label }} {% if fw.doc_url %}<a class="doc-link" href="{{ fw.doc_url }}">(source)</a>{% endif %}</h2>
+  <h2 id="{{ fw.key }}">{{ fw.label }} {% if fw.doc_url %}<a class="doc-link" href="{{ fw.doc_url }}">(source)</a>{% endif %}</h2>
   {% if fw.fullname and fw.fullname != fw.label or fw.group %}
   <p class="framework-subtitle">
     {% if fw.fullname and fw.fullname != fw.label %}{{ fw.fullname }}{% endif %}

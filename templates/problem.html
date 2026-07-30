@@ -62,10 +62,9 @@
       {% set ns.any = true %}
       <dt>
         {{ fw.label }}
-        {% if fw.homepage %}<a class="doc-link" href="{{ fw.homepage }}">(link)</a>{% endif %}
+        <a class="doc-link" href="{{ root }}frameworks/index.html#{{ fw.key }}">(info)</a>
       </dt>
       <dd>
-        {% if fw.summary %}<p class="framework-note">{{ fw.summary }}</p>{% endif %}
         {% for term in terms %}
         <a class="chip chip-{{ fw.key }} chip-{{ term.id }}" href="{{ root }}frameworks/{{ fw.key }}/{{ term.id }}.html"><span class="chip-ns">{{ fw.key }}</span>{{ term.name }}</a>
         {% endfor %}
