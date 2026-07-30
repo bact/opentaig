@@ -259,12 +259,18 @@ outperformed keyword search for this class of candidate.
 
 ### F6. The research agenda is skewed away from human-experienced harms
 
-Each question was mapped to the harm type(s) its research would help prevent,
+Each question was mapped to the harm(s) its research would help prevent,
 detect, measure, or remediate, using the AIAAIC Harms Taxonomy
 (Abercrombie, Benbouzid, Giudici, Golpayegani, Hernandez, Noro, Pandit,
 Paraschou, Pownall, Prajapati, Sayre, Sengupta, Suriyawongkul, Thelot, Vei,
 Waltersdorfer — [arXiv:2407.01294](https://arxiv.org/abs/2407.01294)): 9 harm
-types, 69 specific harms.
+types, 69 specific harms. The mapping is a genuine text-to-text crosswalk —
+each question's own text is read against each specific harm's own
+one-sentence definition (not a bare category label) — produced by an
+isolated strongest-model judgment pass given only the 97 question texts and
+69 harm definitions, no other session context. See
+[`curation/aiaaic_taxonomy_mapping.py`](../curation/aiaaic_taxonomy_mapping.py)
+for the full mapping and every per-question rationale.
 
 This is a completeness check the RQ catalog cannot perform on itself, because
 the catalog defines its own scope. Reading it against an independently-derived
@@ -273,47 +279,82 @@ but untooled; **harm not addressed at all**.
 
 | Harm type | RQs | direct | enabling | tooled | zero-tool |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Human Rights & Civil Liberties | 28 | 24 | 4 | 24 | 4 |
-| Societal & Cultural | 26 | 20 | 6 | 18 | 8 |
-| Autonomy | 24 | 22 | 2 | 18 | 6 |
-| Political & Economic | 21 | 8 | 13 | **6** | **15** |
-| Financial & Business | 21 | 12 | 9 | 9 | **12** |
-| Reputational | 11 | 1 | 10 | 10 | 1 |
-| Psychological | 8 | 5 | 3 | 6 | 2 |
-| Physical | 4 | 2 | 2 | 4 | 0 |
+| Societal & Cultural | 55 | 26 | 29 | 35 | **20** |
+| Autonomy | 30 | 23 | 7 | 23 | 7 |
+| Human Rights & Civil Liberties | 25 | 21 | 4 | 22 | 3 |
+| Political & Economic | 19 | 9 | 10 | 10 | **9** |
+| Financial & Business | 19 | 15 | 4 | 12 | **7** |
+| Psychological | 9 | 3 | 6 | 9 | 0 |
+| Reputational | 4 | 2 | 2 | 4 | 0 |
 | Environmental | 2 | 2 | 0 | 2 | 0 |
+| Physical | 0 | 0 | 0 | 0 | 0 |
 
-**38 of 69 specific harms (55%) have no research question addressing them.**
+**36 of 69 specific harms (52%) have no research question addressing them.**
 
-Three observations:
+Four observations:
 
-- **Psychological harm is the largest blind spot**: 8 of 11 specific harms
-  uncovered — nothing on addiction, coercion/manipulation, dehumanisation,
-  radicalisation, anxiety/depression, alienation, sexualisation, or trauma. The
-  three that are covered arrive incidentally via content-filtering and
-  benchmark-validity questions, not as objects of study.
-- **Environmental coverage is a false positive.** Both environmental questions
-  are tooled (`codecarbon`, `ecologits`), so the category looks healthy. But
-  both questions say "environmental impact" generically and both tools measure
-  only energy and carbon. Water consumption, e-waste, biodiversity, landfill,
-  resource depletion and pollution — 6 of 8 — have neither question specificity
-  nor tooling. Data-centre water use is an active policy dispute the agenda has
-  no purchase on.
-- **"Autonomy/agency loss" — the defining harm of its own category — has no
-  question.** The catalog engages Autonomy only in its property-like forms (IP,
-  impersonation, personality rights), never the decision-making-autonomy sense.
+- **Compute-governance research turns out to be weapons-proliferation
+  research, once read against the taxonomy's own wording.** Societal &
+  Cultural more than doubled (26→55 RQs) because the taxonomy's
+  `Violence/armed conflict` definition explicitly names "lethal, biological
+  and chemical weapons development" — which is the literature's own stated
+  rationale for the entire hardware/chip/export-control cluster (RQ13–18,
+  35, 48–53, 72–82). A cruder, label-only mapping missed this connection
+  entirely. `Physical` correspondingly dropped to zero: RQ86/87/89/90 no
+  longer get a second, looser `Bodily injury`/`Loss of life` tag alongside
+  the same underlying CBRN/cyber-misuse harm — one harm per RQ, not two, on
+  a re-read of what each question's text actually targets.
+- **Psychological harm coverage improved but stayed thin.** Now 4 of 11
+  specific harms covered (`Harassment/abuse/intimidation`, `Over-reliance`,
+  `Self-harm`, and `Sexualisation` — the last newly covered by RQ6, once
+  `Sexualisation`'s own definition was corrected; see the versioning note in
+  `aiaaic_taxonomy_mapping.py`). Still nothing on addiction,
+  coercion/manipulation, dehumanisation, radicalisation, anxiety/depression,
+  or alienation/isolation. Every one of the 9 psychological-harm RQs is now
+  tooled (up from 6/8) — the questions that exist are well-served; the gap
+  is in what questions exist at all.
+- **Environmental coverage is a narrower false positive than previously
+  measured, not a resolved one.** RQ97/98's generic "environmental impact"
+  phrasing was re-read as plausibly covering 4 of 8 specific harms (adding
+  `Excessive water consumption` and `Electronic waste` to the previously
+  counted `Carbon emissions`/`Excessive energy consumption`) — but the
+  *tools* mapped to those questions (`codecarbon`, `ecologits`) still only
+  measure carbon and energy. So two harms are now research-covered but
+  tool-uncovered, a more precise and actionable gap than "not asked about at
+  all." `Biodiversity loss`, `Excessive landfill`, `Natural resource
+  depletion`, and `Pollution` remain uncovered by the research agenda
+  itself. Data-centre water use stays an active policy dispute the agenda
+  has essentially no purchase on.
+- **"Autonomy/agency loss" is no longer an uncovered harm** — the
+  definition-grounded re-read attaches it to RQ23 (agent capability/risk
+  evaluation), on the reading that evaluating whether autonomous agents
+  retain meaningful human oversight is itself a decision-making-autonomy
+  question, not just an IP/impersonation one. RQ23 carries real tool
+  coverage (`AgentBench`, `argus-redteam`, and others), so this is a
+  genuine improvement, not a definitional loophole — though it's an
+  `enabling`, not `direct`, tag, and worth a second look if a reader
+  disagrees with that reading.
 
-Concentration: Human Rights + Societal & Cultural + Autonomy account for 54% of
-all question→harm incidences; Psychological + Physical + Environmental together
-account for 9.7%. **Technical AI governance research is oriented toward harms
-measurable at the data, model, and compute layer, and away from harms that
-manifest in human experience and social structure.**
+Concentration: Human Rights + Societal & Cultural + Autonomy now account for
+**67.5%** of all question→harm incidences (up from 54% under the earlier,
+label-only mapping); Psychological + Physical + Environmental together
+account for **6.7%** (down from 9.7%). Part of this is a real finding
+(technical AI governance research is oriented toward harms measurable at the
+data, model, and compute layer) and part of it is the CBRN/weapons-uplift
+reading above pulling a large, previously-diffuse hardware cluster into one
+type — the magnitude moved more than the underlying shape of the agenda did.
+Treat the direction of the finding as robust and the exact percentage as a
+function of this mapping pass's specific judgment calls, documented per-row
+in `aiaaic_taxonomy_mapping.py`.
 
-Note also that Political & Economic and Financial & Business show the opposite
-pattern — high question coverage, low tool coverage (15 and 12 zero-tool
-questions). These are the hardware/compute cluster of F2, restated in harm
-terms: the agenda *does* ask how to prevent power concentration and model-weight
-theft; nobody has shipped open-source tools.
+Note also that Political & Economic remains the weakest-tooled type by
+proportion (10/19 tooled, 53%) despite substantial question coverage — down
+from 15 zero-tool questions under the earlier mapping to 9, as tool coverage
+grew elsewhere in the catalog this session, but still trailing every other
+type except the now-empty Physical. This is the hardware/compute cluster of
+F2, restated in harm terms: the agenda *does* ask how to prevent power
+concentration and model-weight theft; open-source tooling has only partly
+caught up.
 
 ---
 
@@ -338,13 +379,24 @@ support.
    agent under a human review gate on acceptances. There is no second annotator
    and no inter-rater reliability figure. Rejections received lighter human
    scrutiny than acceptances.
-4. **The harm-taxonomy mapping is unvalidated.** It is agent-produced from
-   question text against the taxonomy's definitions — a starting point for
-   expert review, not a validated instrument. The `direct`/`enabling`
-   distinction is our own, not the taxonomy's. 11 questions were classified as
-   purely cross-cutting and left unmapped; mapping them (RQ94/95 are literally
-   "enumerate the risks") would soften every gap reported in F6. This is a
-   defensible but consequential modelling choice.
+4. **The harm-taxonomy mapping is a single, unreplicated judgment pass, not
+   an expert-validated instrument.** It is now a genuine crosswalk — each
+   question's own text read against each specific harm's own one-sentence
+   definition, not a bare category label (see F6) — produced by an isolated
+   strongest-model pass with no access to any prior mapping or other session
+   context, which is stronger provenance than a same-context judgment call
+   but still a single pass with no second annotator and no inter-rater
+   reliability figure. The `direct`/`enabling` distinction is our own, not
+   the taxonomy's. 9 questions were classified as purely cross-cutting and
+   left with no harm attached (RQ19, 28, 54, 91–96); mapping them (RQ94/95
+   are literally "enumerate the risks") would soften every gap reported in
+   F6 and was deliberately avoided as circular. This is a defensible but
+   consequential modelling choice. One definitional error was caught and
+   fixed during this pass (`Sexualisation`'s definition had drifted between
+   the published paper and the taxonomy authors' own later working
+   document; the RQ6 mapping changed as a result) — a reminder that a
+   single pass, however well-grounded, can still carry an unnoticed error
+   until someone checks the source text directly.
 5. **Search is GitHub-centric.** Filters were `stars:>19`, pushed within 12
    months, non-archived, non-fork, plus a README-length check. This biases
    against new, niche, and non-English projects. PyPI, npm, Hugging Face, and
@@ -366,15 +418,21 @@ specific finding or limitation above, not a general call for "more research."
 
 ### 6.1 New search axes suggested by this session's own results
 
-- **Use the 38 uncovered specific harms (F6) as a keyword source in their own
+- **Use the 36 uncovered specific harms (F6) as a keyword source in their own
   right.** This session searched *toward* the RQ catalog; it never searched
   toward the harm gaps the RQ catalog doesn't know it has. Concrete queries the
   taxonomy suggests directly: `addiction detection app` / `dark pattern
-  detector` / `manipulation detection UI` (Psychological); `data center water
-  usage` / `e-waste tracking hardware` / `AI biodiversity impact` (the 6
-  uncovered Environmental harms, distinct from the carbon/energy tools already
-  found). A hit here would be a genuinely new finding: a tool the RQ catalog's
-  own vocabulary was structurally incapable of surfacing.
+  detector` / `manipulation detection UI` (Psychological — still 7 of 11
+  uncovered); `biodiversity impact tracker` / `landfill e-waste tracking` /
+  `critical mineral supply chain audit` (the 4 uncovered Environmental harms
+  — narrower than before, since `Excessive water consumption` and
+  `Electronic waste` are now research-covered by RQ97/98, just not yet
+  tool-covered). A hit on any of these would be a genuinely new finding: a
+  tool the RQ catalog's own vocabulary was structurally incapable of
+  surfacing. Separately, `codecarbon`/`ecologits`-adjacent water- and
+  e-waste-measurement tools are worth a direct search even though their harm
+  is technically "covered" by RQ97/98's generic phrasing — the research
+  question exists, the tool doesn't.
 - **Open silicon / hardware-security repositories, not just software topic
   tags.** The 20 hardware RQs were called a structural dead end based on
   searching GitHub's *software* ecosystem — but open silicon root-of-trust
@@ -412,13 +470,18 @@ specific finding or limitation above, not a general call for "more research."
   of accepts and rejects) would let coverage numbers carry an agreement figure
   instead of resting on single-annotator judgment.
 - **Expert review of the harm-taxonomy mapping**, ideally from the taxonomy's
-  own authors. Two modelling choices are load-bearing enough to move the
-  headline 38/69 number: whether the 11 purely-cross-cutting RQs (RQ94/95 in
+  own authors. The mapping now runs at the full 69-specific-harm granularity
+  against each harm's own definition text (previously only the 9 top-level
+  types were used, against bare category labels with no definition text at
+  all — see F6). Two modelling choices remain load-bearing enough to move the
+  headline 36/69 number: whether the 9 purely-cross-cutting RQs (RQ94/95 in
   particular — "enumerate the risks" arguably touches all 9 types) should stay
   unmapped, and whether the `direct`/`enabling` distinction is the right cut.
-  Re-running the mapping at the 69-specific-harm granularity, not just the 9
-  types, would also sharpen F6 considerably, but needs individual review per
-  row rather than the type-level pass done here.
+  A second, independent judgment pass — ideally human, or at minimum a
+  different model given the same {question texts, harm definitions} and
+  nothing else — would let the mapping carry an agreement figure instead of
+  resting on one isolated pass's judgment, the same limitation noted in the
+  bullet above for tool acceptance/rejection.
 
 ### 6.3 Process improvements for whoever continues this
 

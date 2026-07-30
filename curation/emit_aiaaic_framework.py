@@ -151,11 +151,12 @@ def main() -> None:
         fcol["summary"]: (
             "Nine harm types and 69 specific harms, developed by an independent working "
             "group via expert consultation and crowdsourced annotation testing over the "
-            "AIAAIC Repository. Used here as a coverage-completeness check: unlike the "
-            "other frameworks on this site, which map a question to an external "
-            "authority's own text, this mapping is our editorial judgment about which "
-            "harms a question's research would help prevent, detect, measure or "
-            "remediate. It is not an official crosswalk."),
+            "AIAAIC Repository. Used here as a coverage-completeness check: each "
+            "question's own text is read against each harm's own definition, the same "
+            "way the site's other frameworks are crosswalked against an external "
+            "authority's own text -- but AIAAIC itself never mapped these specific "
+            "research questions, so it's our own crosswalk against their taxonomy, not "
+            "an AIAAIC-authored one."),
         fcol["homepage"]: PAPER_URL,
     }
     if "source" in fcol:
@@ -197,7 +198,7 @@ def main() -> None:
                     tcol["id"]: f"{key}-{TYPE_SLUG[htype]}-{slugify(s)}",
                     tcol["framework"]: key,
                     tcol["name"]: s,
-                    tcol["summary"]: f"{htype}: {s}. See the taxonomy's Appendix A for the full definition.",
+                    tcol["summary"]: f"{htype}: {hm.HARM_DEFINITIONS[s]}",
                     tcol["url"]: PAPER_URL,
                 }))
         if args.include == "qualified":
