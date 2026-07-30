@@ -1,0 +1,24 @@
+[
+  {
+    "id": "reuel2025taig",
+    "type": "webpage",
+    "title": "Open Problems in Technical AI Governance",
+    "author": [
+      { "family": "Reuel" },
+      { "family": "Bucknall" },
+      { "literal": "et al." }
+    ],
+    "issued": { "date-parts": [[2025]] },
+    "URL": "https://taig.stanford.edu/"
+  },
+  {
+    "id": "lfaidata2026rgaf",
+    "type": "webpage",
+    "title": "Putting RGAF to Work: Build and audit responsible AI with open source",
+    "author": [
+      { "literal": "LF AI & Data" }
+    ],
+    "issued": { "date-parts": [[2026, 4, 22]] },
+    "URL": "https://lfaidata.foundation/communityblog/2026/04/22/putting-rgaf-to-work-build-and-audit-responsible-ai-with-open-source/"
+  }
+]

@@ -685,6 +685,38 @@ def build_tools_index(problems: list, tool_catalog: dict) -> list:
     return entries
 
 
+def format_csl_author(author: dict) -> str:
+    """CSL-JSON author -> one display name. `literal` covers organizations
+    and phrases like "et al." that aren't a real person's name."""
+    if "literal" in author:
+        return author["literal"]
+    return author.get("family", "").strip()
+
+
+def format_csl_date(issued: dict) -> str:
+    parts = (issued or {}).get("date-parts") or [[]]
+    year = parts[0][0] if parts[0] else ""
+    return str(year)
+
+
+def load_references(path: Path) -> list:
+    """Load a CSL-JSON array (see
+    https://github.com/citation-style-language/schema) and render each item
+    to a simple {citation, url} pair for the References page. Not a full
+    CSL formatter -- just enough to produce "Authors, Year. Title." """
+    items = json.loads(path.read_text(encoding="utf-8"))
+    references = []
+    for item in items:
+        authors = [format_csl_author(a) for a in item.get("author", [])]
+        authors = [a for a in authors if a]
+        year = format_csl_date(item.get("issued"))
+        title = (item.get("title") or "").strip()
+        lead = ", ".join(authors + ([year] if year else []))
+        citation = f"{lead}. {title}." if lead else f"{title}."
+        references.append({"citation": citation, "url": item.get("URL", "")})
+    return references
+
+
 def build_frameworks_index(problems: list, framework_defs: list, terms_catalog: dict) -> dict:
     """fw_key -> {term_id: {"term": Term, "problems": [...]}}, in the terms
     tab's own row order (sheet order). Only the regulatory frameworks get
@@ -791,6 +823,7 @@ def render_site(
         "targets_list": targets_list,
         "problem_count": len(problems),
         "tool_count": len(tool_catalog),
+        "references": load_references(Path(__file__).parent / "data" / "references.json"),
     }
 
     if out_dir.exists():
@@ -801,6 +834,7 @@ def render_site(
     (out_dir / "frameworks").mkdir()
     for fw in framework_defs:
         (out_dir / "frameworks" / fw["key"]).mkdir()
+    (out_dir / "references").mkdir()
 
     def write(path: Path, template_name: str, **ctx):
         tmpl = env.get_template(template_name)
@@ -846,6 +880,8 @@ def render_site(
                 problems=data["problems"],
                 active="frameworks",
             )
+
+    write(out_dir / "references" / "index.html", "references.html", root="../", active="references")
 
     data_json = {
         "generated_at": generated_at,

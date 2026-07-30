@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}References — {{ site.title }}{% endblock %}
+{% block content %}
+<h1>References</h1>
+<ul class="citation-list">
+  {% for ref in references %}
+  <li><a href="{{ ref.url }}">{{ ref.citation }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}
