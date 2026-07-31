@@ -35,7 +35,6 @@ import argparse
 import csv
 import dataclasses
 import datetime
-import hashlib
 import io
 import json
 import re
@@ -273,11 +272,11 @@ def slugify(text: str, max_len: int = 60) -> str:
     return base or "item"
 
 
-def stable_slug(text: str) -> str:
-    """Slug + short stable hash suffix, so two problems that reduce to the
-    same slug prefix never collide, and the URL stays stable across builds."""
-    h = hashlib.sha1(text.encode("utf-8")).hexdigest()[:8]
-    return f"{slugify(text)}-{h}"
+def stable_slug(rq_no: str, text: str) -> str:
+    """RQ number prefix + slug. The RQ number is the sheet's own stable
+    identifier -- readable, sorts naturally, and never changes if the
+    question wording is edited (unlike a text-derived hash)."""
+    return f"{safe_id_for_path(rq_no)}-{slugify(text)}"
 
 
 def safe_id_for_path(tool_id: str) -> str:
@@ -577,7 +576,7 @@ def build_problems(
         tools_implement = resolve_tools("implement")
         tools_eval = resolve_tools("eval")
 
-        slug = stable_slug(question)
+        slug = stable_slug(rq_no, question)
         if slug in seen_slugs:
             warnings.append(f"TAIG row {i + 2}: slug collision with row {seen_slugs[slug]} (duplicate question?)")
         seen_slugs[slug] = i + 2
