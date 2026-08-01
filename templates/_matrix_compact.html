@@ -11,7 +11,7 @@
     <div class="mini-heatmap-cap">{{ row.capacity }}</div>
     <div class="mini-heatmap-blocks">
       {% for block in row.blocks %}
-      <div class="mini-heatmap-block">
+      <div class="mini-heatmap-block" style="grid-column: span {{ block.span }}">
         <div class="mini-heatmap-target">{{ block.target }}</div>
         <div class="mini-heatmap-cells">
           {% for rc in block.rq_cells %}

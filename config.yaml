@@ -219,7 +219,7 @@ frameworks:
 # but styled distinctly since it is not a principle/regulation.
 expertise:
   key: expertise
-  label: "Relevant Expertise"
+  label: "Relevant expertise"
 
 # --- Taxonomy (used for grouping on the main page) --------------------------
 # Values must match those used in the TAIG sheet's Capacity / Target(s)

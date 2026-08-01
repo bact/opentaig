@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 <section class="page-hero landscape-hero">
-  <div class="eyebrow">Open source tools for open problems in technical AI governance</div>
-  <h1>{{ site.title }}</h1>
-  <p class="lede">A map of where open-source tools already exist for the open problems in technical AI governance &mdash; and where the landscape is still empty.</p>
-  <a class="button-primary" href="{{ root }}problems/">Explore by tool type &amp; role &rarr;</a>
+  <h1 class="visually-hidden">Landscape overview</h1>
+  <div class="landscape-hero-row">
+    <p class="lede">A map of where open-source tools already exist for the open problems in technical AI governance &mdash; and where the landscape is still empty.</p>
+    <a class="button-primary" href="{{ root }}problems/">Explore by tool type &amp; role &rarr;</a>
+  </div>
 </section>
 
 {% set matrix_problems_href = root ~ "problems/" %}

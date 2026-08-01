@@ -4,7 +4,10 @@
 <article class="problem-detail">
   <p class="breadcrumb"><a href="{{ root }}problems/">&larr; All open problems</a></p>
 
-  <p class="pair-label pair-label-problem">Problem{% if problem.rq_no %} <span class="rq-no">#{{ problem.rq_no }}</span>{% endif %}</p>
+  <div class="problem-detail-head">
+    <p class="pair-label pair-label-problem">Problem</p>
+    {% if problem.rq_no %}<span class="problem-number problem-number-lg">#{{ problem.rq_no }}</span>{% endif %}
+  </div>
   <h1>{{ problem.question }}</h1>
   <p class="tags">
     <span class="tag">Capacity: {{ problem.capacity }}</span>
@@ -13,15 +16,41 @@
     {% if problem.section_number %}<span class="tag">Section {{ problem.section_number }}</span>{% endif %}
   </p>
 
+  <h2>Mapped frameworks</h2>
+  <p class="framework-note">Supplemental crosswalk to external principles/regulations and our harms analysis.</p>
+  {% set ns = namespace(any=false) %}
+  <dl class="mapping-list">
+    {% for fw in frameworks %}
+      {% set terms = problem.mappings.get(fw.key, []) %}
+      {% if terms %}
+      {% set ns.any = true %}
+      <dt>
+        {{ fw.label }}
+        <a class="doc-link" href="{{ root }}frameworks/index.html#{{ fw.key }}">(info)</a>
+      </dt>
+      <dd>
+        {% for term in terms %}
+        <a class="chip chip-{{ fw.key }} chip-{{ term.id }}" href="{{ root }}frameworks/{{ fw.key }}/{{ term.id }}.html"><span class="chip-ns">{{ fw.key }}</span>{{ term.name }}</a>
+        {% endfor %}
+      </dd>
+      {% endif %}
+    {% endfor %}
+  </dl>
+  {% if not ns.any %}
+  <p class="empty-note">No framework mappings recorded yet for this question.</p>
+  {% endif %}
+
   {% set impl_spec = problem.tools_implement | selectattr('tool.tool_type', 'equalto', 'specification') | sort(attribute='tool.name') | list %}
   {% set impl_soft = problem.tools_implement | selectattr('tool.tool_type', 'equalto', 'software') | sort(attribute='tool.name') | list %}
   {% set eval_spec = problem.tools_eval | selectattr('tool.tool_type', 'equalto', 'specification') | sort(attribute='tool.name') | list %}
   {% set eval_soft = problem.tools_eval | selectattr('tool.tool_type', 'equalto', 'software') | sort(attribute='tool.name') | list %}
 
-  <h2 class="pair-label pair-label-solution">Solution</h2>
+  <h2 id="{{ problem.slug }}-solution">Tools</h2>
+  {% set p = problem %}
+  {% include "_solution_table.html" %}
 
-  {% macro tool_group(label, type_label, pairings) %}
-  <h3>{{ label }} <span class="tool-type-tag">{{ type_label }}</span></h3>
+  {% macro tool_group(heading, pairings) %}
+  <h3>{{ heading }}</h3>
   <ul class="tool-detail-list">
     {% for pairing in pairings %}
     <li>
@@ -35,10 +64,10 @@
   {% endmacro %}
 
   {% if impl_spec or impl_soft or eval_spec or eval_soft %}
-    {% if impl_soft %}{{ tool_group("Implement", "software", impl_soft) }}{% endif %}
-    {% if impl_spec %}{{ tool_group("Implement", "spec", impl_spec) }}{% endif %}
-    {% if eval_soft %}{{ tool_group("Evaluate", "software", eval_soft) }}{% endif %}
-    {% if eval_spec %}{{ tool_group("Evaluate", "spec", eval_spec) }}{% endif %}
+    {% if impl_soft %}{{ tool_group("Software supporting implementation", impl_soft) }}{% endif %}
+    {% if impl_spec %}{{ tool_group("Specification supporting implementation", impl_spec) }}{% endif %}
+    {% if eval_soft %}{{ tool_group("Software supporting evaluation", eval_soft) }}{% endif %}
+    {% if eval_spec %}{{ tool_group("Specification supporting evaluation", eval_spec) }}{% endif %}
   {% else %}
   <p class="empty-note">No open-source tool linked yet. Know one? Add it to the mapping sheet.</p>
   {% endif %}
@@ -50,30 +79,6 @@
     <span class="chip chip-expertise">{{ term }}</span>
     {% endfor %}
   </div>
-  {% endif %}
-
-  <h2>Mapped frameworks</h2>
-  <p class="framework-note">Supplemental crosswalk to external principles/regulations and our harms analysis.</p>
-  {% set ns = namespace(any=false) %}
-  <dl class="mapping-list">
-    {% for fw in frameworks %}
-      {% set terms = problem.mappings.get(fw.key, []) %}
-      {% if terms %}
-      {% set ns.any = true %}
-      <dt data-fw-block="{{ fw.key }}">
-        {{ fw.label }}
-        <a class="doc-link" href="{{ root }}frameworks/index.html#{{ fw.key }}">(info)</a>
-      </dt>
-      <dd data-fw-block="{{ fw.key }}">
-        {% for term in terms %}
-        <a class="chip chip-{{ fw.key }} chip-{{ term.id }}" href="{{ root }}frameworks/{{ fw.key }}/{{ term.id }}.html"><span class="chip-ns">{{ fw.key }}</span>{{ term.name }}</a>
-        {% endfor %}
-      </dd>
-      {% endif %}
-    {% endfor %}
-  </dl>
-  {% if not ns.any %}
-  <p class="empty-note">No framework mappings recorded yet for this question.</p>
   {% endif %}
 
   {# Existing work & resources / New work (since publication) -- hidden

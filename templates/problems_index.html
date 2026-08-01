@@ -2,7 +2,7 @@
 {% block title %}Open Problems — {{ site.title }}{% endblock %}
 {% block content %}
 <section class="page-hero">
-  <div class="eyebrow">Tool landscape &mdash; detail view</div>
+  <div class="eyebrow">Problems &mdash; mapped to tools</div>
   <h1>Explore the open problems</h1>
   <p class="lede">{{ site.description }} The filter bar below narrows the list to a taxonomy slice, framework obligation, or expertise; each question shows its solutions as spec and software by role.</p>
 </section>
@@ -110,15 +110,15 @@
 {% endfor %}
 
 {% if orphan_tools %}
-<section class="capacity-group orphan-tools-group" data-group-name="Open for Questions">
-  <h2>Open for Questions <span class="count">({{ orphan_tools | length }})</span></h2>
+<section class="capacity-group orphan-tools-group" data-group-name="Open for questions">
+  <h2>Open for questions <span class="count">({{ orphan_tools | length }})</span></h2>
   <div class="problem-list">
     <article class="problem-card orphan-tools-card"
       data-has-tool="1"
       data-search="{{ (['open for questions'] + (orphan_tools | map(attribute='name') | list)) | join(' ') | lower }}"
     >
       <p class="pair-label pair-label-problem">Problem <span class="rq-no">#0</span></p>
-      <h5 class="problem-question">Open for Questions</h5>
+      <h5 class="problem-question">Open for questions</h5>
       <p class="empty-note">No relevant question is currently being asked for these solutions &mdash; or they haven&rsquo;t been mapped yet.</p>
 
       {% set orphan_spec = orphan_tools | selectattr('tool_type', 'equalto', 'specification') | list %}

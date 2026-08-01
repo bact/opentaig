@@ -227,13 +227,18 @@ main.wrap { padding-top: var(--s-12); padding-bottom: var(--s-16); min-height: 6
 .page-hero h1 { font-size: var(--text-3xl); margin-bottom: var(--s-4); }
 .lede { font-size: var(--text-md); line-height: var(--leading-body); color: var(--ink-3); margin: 0; max-width: 68ch; }
 
-.landscape-hero { max-width: 720px; }
-.landscape-hero .lede { margin-bottom: var(--s-5); }
-.button-primary {
-  display: inline-block; background: var(--shu); color: var(--white); text-decoration: none;
+.landscape-hero { max-width: none; margin-bottom: var(--s-6); }
+.landscape-hero-row { display: flex; align-items: center; justify-content: space-between; gap: var(--s-6); flex-wrap: wrap; }
+.landscape-hero-row .lede { flex: 1 1 480px; }
+/* Explicit link/visited/hover/active/focus states: a solid-color button is
+   its own contrast surface, so the global a:visited color (a duller shu
+   shade) must not leak in here -- orange text on an orange button is
+   unreadable after the first click. */
+.button-primary, .button-primary:visited {
+  display: inline-block; flex-shrink: 0; background: var(--shu); color: var(--white); text-decoration: none;
   padding: 11px 20px; border-radius: var(--r-1); font-size: var(--text-sm); font-weight: 500;
 }
-.button-primary:hover { background: var(--shu-deep); }
+.button-primary:hover, .button-primary:active { background: var(--shu-deep); color: var(--white); }
 .landscape-note {
   margin-top: var(--s-12); padding-top: var(--s-6); border-top: 1px solid var(--border-soft);
   font-size: var(--text-sm); color: var(--ink-3); line-height: var(--leading-body); max-width: 68ch;
@@ -267,7 +272,12 @@ main.wrap { padding-top: var(--s-12); padding-bottom: var(--s-16); min-height: 6
 .matrix-cell-some  { background: var(--moss-soft); color: var(--moss-ink); }
 .matrix-cell-good  { background: var(--moss); color: var(--white); }
 .matrix-cell-full  { background: var(--moss-ink); color: var(--white); }
-.matrix-cell:hover { outline: 2px solid var(--shu); outline-offset: -2px; }
+/* currentColor, not the shu accent: each cell already sets its own text
+   color for contrast against its own bucket background (dark ink on the
+   pale empty/some buckets, white on the darker good/full buckets), so the
+   hover ring inherits whichever of those already reads clearly there --
+   an orange ring was nearly invisible against the green "good"/"full" cells. */
+.matrix-cell:hover { outline: 2px solid currentColor; outline-offset: -2px; }
 .matrix-legend { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2) var(--s-5); margin-top: var(--s-3); }
 .matrix-legend-item { display: flex; align-items: center; gap: 8px; font-size: var(--text-xs); color: var(--ink-3); }
 .matrix-legend-swatch { width: 14px; height: 14px; border-radius: var(--r-1); display: inline-block; border: 1px solid var(--border); }
@@ -282,21 +292,29 @@ main.wrap { padding-top: var(--s-12); padding-bottom: var(--s-16); min-height: 6
 }
 .matrix-cell-block.is-filled { background: currentColor; opacity: 1; }
 
-/* ---- compact per-RQ mini-heatmap (Explorer/Tools listing pages) ---- */
+/* ---- compact per-RQ mini-heatmap (Explorer/Tools listing pages) ----
+   A real grid (like the big matrix), not a flex-wrap: each target is a
+   fixed column, so e.g. the Compute column lines up row to row across
+   Assessment/Verification/Security regardless of how many RQs wrap inside
+   any one cell. .mini-heatmap-blocks is display:contents purely so the
+   template can keep a wrapper element without it becoming a grid track. */
 .mini-heatmap { padding: var(--s-4) 0 var(--s-5); border-bottom: 1px solid var(--border-soft); margin-bottom: var(--s-5); }
-.mini-heatmap-row { display: flex; gap: var(--s-5); align-items: flex-start; margin-bottom: var(--s-5); }
+.mini-heatmap-row {
+  display: grid; grid-template-columns: 110px repeat(4, minmax(0, 1fr));
+  column-gap: var(--s-5); row-gap: 6px; align-items: start; margin-bottom: var(--s-5);
+}
 .mini-heatmap-row:last-of-type { margin-bottom: var(--s-2); }
-.mini-heatmap-cap { width: 110px; flex-shrink: 0; font-size: var(--text-sm); font-weight: 500; padding-top: 2px; color: var(--ink); }
-.mini-heatmap-blocks { display: flex; flex-wrap: wrap; gap: var(--s-5); flex: 1; min-width: 0; }
+.mini-heatmap-cap { font-size: var(--text-sm); font-weight: 500; padding-top: 2px; color: var(--ink); }
+.mini-heatmap-blocks { display: contents; }
 .mini-heatmap-block { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .mini-heatmap-target { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-3); }
-.mini-heatmap-cells { display: flex; flex-wrap: wrap; gap: 3px; max-width: 168px; }
+.mini-heatmap-cells { display: flex; flex-wrap: wrap; gap: 3px; }
 .mini-heatmap-cell { width: 14px; height: 14px; border-radius: 3px; border: 1px solid var(--border); display: block; }
 .mini-heatmap-cell-n0 { background: var(--paper-3); }
 .mini-heatmap-cell-n1 { background: color-mix(in oklch, var(--moss-soft), var(--moss) 55%); }
 .mini-heatmap-cell-n2 { background: var(--moss); }
 .mini-heatmap-cell-n3plus { background: var(--moss-ink); }
-.mini-heatmap-cell:hover, .mini-heatmap-cell:focus-visible { outline: 2px solid var(--shu); outline-offset: 1px; }
+.mini-heatmap-cell:hover, .mini-heatmap-cell:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; }
 .mini-heatmap-legend { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3); font-size: var(--text-xs); color: var(--ink-3); }
 .mini-heatmap-legend-swatch { width: 12px; height: 12px; border-radius: 3px; border: 1px solid var(--border); display: inline-block; }
 
@@ -369,7 +387,16 @@ main.wrap { padding-top: var(--s-12); padding-bottom: var(--s-16); min-height: 6
 .problem-card {
   border: 1px solid var(--border); border-radius: var(--r-2); padding: var(--s-4) var(--s-5); background: var(--white);
 }
-.problem-question { margin: 0 0 var(--s-1); font-size: var(--text-md); }
+.problem-card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--s-3); }
+/* shu-ink (not shu) on shu-soft: the plain accent falls short of 4.5:1 text
+   contrast at this size (WCAG 2.2 SC 1.4.3) -- shu-ink keeps the same
+   accent family at a contrast that actually reads. */
+.problem-number {
+  font-family: var(--font-mono); font-weight: 600; font-size: var(--text-xl);
+  color: var(--shu-ink); background: var(--shu-soft); border-radius: var(--r-1);
+  padding: 2px 10px; line-height: 1.3; flex-shrink: 0;
+}
+.problem-question { margin: 0 0 var(--s-1); font-size: var(--text-lg); }
 .problem-question a { text-decoration: none; color: var(--ink); }
 .problem-question a:hover { text-decoration: underline; text-decoration-color: var(--shu); }
 
@@ -379,16 +406,10 @@ main.wrap { padding-top: var(--s-12); padding-bottom: var(--s-16); min-height: 6
 }
 .pair-label-problem { color: var(--shu); }
 .pair-label-solution { color: var(--ink-3); margin-top: var(--s-3); }
-h2.pair-label-solution { font-size: var(--text-xs); letter-spacing: 0.08em; border: 0; padding: 0; }
 
-.tool-type-tag {
-  display: inline-block; font-size: var(--text-2xs); font-weight: 500; text-transform: uppercase;
-  letter-spacing: 0.04em; color: var(--ink-3); background: var(--bg-alt);
-  border: 1px solid var(--border); border-radius: var(--r-1); padding: 1px 6px; vertical-align: middle;
-}
-
-/* Implement/Evaluate x Spec/Software matrix -- left accent border per role,
-   echoing the design mockups' indigo (implement) / moss (evaluate) rows. */
+/* Implement/Evaluate x Software/Spec matrix -- the whole row (not just the
+   role cell) is tinted, so the indigo (implement) / moss (evaluate) coding
+   reads at a glance across the full row, not just its label. */
 .solution-table {
   border-collapse: collapse; margin: var(--s-1) 0 0; font-size: var(--text-sm);
   width: 100%; table-layout: fixed; border: 1px solid var(--border-soft); border-radius: var(--r-1); overflow: hidden;
@@ -402,12 +423,12 @@ h2.pair-label-solution { font-size: var(--text-xs); letter-spacing: 0.08em; bord
   color: var(--ink-3); font-weight: 500; font-size: var(--text-2xs); text-transform: uppercase;
   letter-spacing: 0.06em; background: var(--bg-alt); border-bottom: 1px solid var(--border-soft);
 }
-.solution-table tbody th {
-  color: var(--indigo-ink); font-weight: 500; background: var(--indigo-soft);
+.solution-table tbody tr {
+  background: var(--indigo-soft); border-left: 3px solid var(--indigo);
 }
-.solution-table tbody tr:nth-child(2) th { color: var(--moss-ink); background: var(--moss-soft); }
-.solution-table tbody tr { border-left: 3px solid var(--indigo); }
-.solution-table tbody tr:nth-child(2) { border-left-color: var(--moss); }
+.solution-table tbody tr:nth-child(2) { background: var(--moss-soft); border-left-color: var(--moss); }
+.solution-table tbody th { color: var(--indigo-ink); font-weight: 500; background: transparent; }
+.solution-table tbody tr:nth-child(2) th { color: var(--moss-ink); }
 
 .chip-row, .tags { display: flex; flex-wrap: wrap; gap: var(--s-2); margin: var(--s-2) 0; }
 .chip-row-supplemental { margin-top: var(--s-3); opacity: 0.92; }
@@ -451,6 +472,9 @@ h2.pair-label-solution { font-size: var(--text-xs); letter-spacing: 0.08em; bord
 .breadcrumb { margin-bottom: var(--s-3); font-size: var(--text-sm); }
 .breadcrumb a { color: var(--shu); text-decoration: none; }
 .breadcrumb a:hover { text-decoration: underline; }
+
+.problem-detail-head { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--s-4); }
+.problem-number-lg { font-size: var(--text-3xl); padding: 4px 16px; }
 .doc-link { font-size: 0.85em; color: var(--ink-3); text-decoration: underline; text-decoration-color: var(--ink-4); }
 .mapping-list dt { font-weight: 500; margin-top: var(--s-4); color: var(--ink-2); font-size: var(--text-sm); }
 .mapping-list dd { margin: var(--s-2) 0 0; display: flex; flex-wrap: wrap; gap: var(--s-2); }
