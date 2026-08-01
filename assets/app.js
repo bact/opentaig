@@ -16,7 +16,9 @@
   var countEl = document.getElementById("filter-count");
   var noResultsEl = document.getElementById("no-results");
 
-  var cards = Array.prototype.slice.call(document.querySelectorAll(".problem-card"));
+  // Excludes .orphan-tools-card ("#0", our own tool-listing convention, not
+  // an actual TAIG research question) from filtering and the shown-count.
+  var cards = Array.prototype.slice.call(document.querySelectorAll(".problem-card:not(.orphan-tools-card)"));
   var capacityGroups = Array.prototype.slice.call(document.querySelectorAll(".capacity-group"));
   var targetGroups = Array.prototype.slice.call(document.querySelectorAll(".target-group"));
   var areaGroups = Array.prototype.slice.call(document.querySelectorAll(".area-group"));
@@ -111,7 +113,8 @@
   if (!filterBar) return; // not on the tools index page
 
   var searchInput = document.getElementById("tools-filter-search");
-  var typeSelect = document.getElementById("tools-filter-type");
+  var softwareCheckbox = document.getElementById("tools-filter-software");
+  var specCheckbox = document.getElementById("tools-filter-spec");
   var resetButton = document.getElementById("tools-filter-reset");
   var countEl = document.getElementById("tools-filter-count");
   var noResultsEl = document.getElementById("tools-no-results");
@@ -120,8 +123,10 @@
   function matches(item) {
     var q = searchInput.value.trim().toLowerCase();
     if (q && (item.dataset.search || "").indexOf(q) === -1) return false;
-    var type = typeSelect.value;
-    if (type && item.dataset.type !== type) return false;
+    var checkedTypes = [];
+    if (softwareCheckbox.checked) checkedTypes.push("software");
+    if (specCheckbox.checked) checkedTypes.push("specification");
+    if (checkedTypes.length && checkedTypes.indexOf(item.dataset.type) === -1) return false;
     return true;
   }
 
@@ -136,14 +141,15 @@
     noResultsEl.hidden = visibleCount !== 0;
   }
 
-  [searchInput, typeSelect].forEach(function (el) {
+  [searchInput, softwareCheckbox, specCheckbox].forEach(function (el) {
     el.addEventListener("input", applyFilters);
     el.addEventListener("change", applyFilters);
   });
 
   resetButton.addEventListener("click", function () {
     searchInput.value = "";
-    typeSelect.value = "";
+    softwareCheckbox.checked = false;
+    specCheckbox.checked = false;
     applyFilters();
   });
 

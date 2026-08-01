@@ -16,30 +16,6 @@
     {% if problem.section_number %}<span class="tag">Section {{ problem.section_number }}</span>{% endif %}
   </p>
 
-  <h2>Mapped frameworks</h2>
-  <p class="framework-note">Supplemental crosswalk to external principles/regulations and our harms analysis.</p>
-  {% set ns = namespace(any=false) %}
-  <dl class="mapping-list">
-    {% for fw in frameworks %}
-      {% set terms = problem.mappings.get(fw.key, []) %}
-      {% if terms %}
-      {% set ns.any = true %}
-      <dt>
-        {{ fw.label }}
-        <a class="doc-link" href="{{ root }}frameworks/index.html#{{ fw.key }}">(info)</a>
-      </dt>
-      <dd>
-        {% for term in terms %}
-        <a class="chip chip-{{ fw.key }} chip-{{ term.id }}" href="{{ root }}frameworks/{{ fw.key }}/{{ term.id }}.html"><span class="chip-ns">{{ fw.key }}</span>{{ term.name }}</a>
-        {% endfor %}
-      </dd>
-      {% endif %}
-    {% endfor %}
-  </dl>
-  {% if not ns.any %}
-  <p class="empty-note">No framework mappings recorded yet for this question.</p>
-  {% endif %}
-
   {% set impl_spec = problem.tools_implement | selectattr('tool.tool_type', 'equalto', 'specification') | sort(attribute='tool.name') | list %}
   {% set impl_soft = problem.tools_implement | selectattr('tool.tool_type', 'equalto', 'software') | sort(attribute='tool.name') | list %}
   {% set eval_spec = problem.tools_eval | selectattr('tool.tool_type', 'equalto', 'specification') | sort(attribute='tool.name') | list %}
@@ -79,6 +55,30 @@
     <span class="chip chip-expertise">{{ term }}</span>
     {% endfor %}
   </div>
+  {% endif %}
+
+  <h2>Mapped frameworks</h2>
+  <p class="framework-note">Supplemental crosswalk to external principles/regulations and our harms analysis.</p>
+  {% set ns = namespace(any=false) %}
+  <dl class="mapping-list">
+    {% for fw in frameworks %}
+      {% set terms = problem.mappings.get(fw.key, []) %}
+      {% if terms %}
+      {% set ns.any = true %}
+      <dt>
+        {{ fw.label }}
+        <a class="doc-link" href="{{ root }}frameworks/index.html#{{ fw.key }}">(info)</a>
+      </dt>
+      <dd>
+        {% for term in terms %}
+        <a class="chip chip-{{ fw.key }} chip-{{ term.id }}" href="{{ root }}frameworks/{{ fw.key }}/{{ term.id }}.html"><span class="chip-ns">{{ fw.key }}</span>{{ term.name }}</a>
+        {% endfor %}
+      </dd>
+      {% endif %}
+    {% endfor %}
+  </dl>
+  {% if not ns.any %}
+  <p class="empty-note">No framework mappings recorded yet for this question.</p>
   {% endif %}
 
   {# Existing work & resources / New work (since publication) -- hidden

@@ -63,21 +63,26 @@
         {% endfor %}
       </div>
     </div>
+
+    <div class="filter-group filter-group-actions" aria-label="Other filters" style="border-right:none">
+      <span class="filter-group-label">Other</span>
+      <div class="filter-group-fields">
+        <label class="filter-checkbox">
+          <input type="checkbox" id="filter-has-tool">
+          Has open-source tool
+        </label>
+        <button type="button" id="filter-reset">Reset filters</button>
+      </div>
+    </div>
   </div>
 
   <div class="filter-footer-row">
-    <label class="filter-checkbox">
-      <input type="checkbox" id="filter-has-tool">
-      Has open-source tool
-    </label>
-
-    <button type="button" id="filter-reset">Reset filters</button>
     <span id="filter-count" class="filter-count" aria-live="polite"></span>
   </div>
 </section>
 
 <section class="chip-visibility-bar" id="chip-visibility-bar" aria-label="Chip display preferences">
-  <span class="filter-group-label">Show chips on cards</span>
+  <span class="filter-group-label">Show mapped frameworks</span>
   <div class="filter-group-fields">
     {% for fw in frameworks %}
     <label class="chip-toggle">
