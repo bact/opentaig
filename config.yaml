@@ -10,8 +10,7 @@ site:
   tagline: "Open source tools for the open problems in technical AI governance"
   description: >
     A catalog of open-source tools mapped to open problems in technical AI
-    governance (Reuel, Bucknall, et al., 2025) and linked to relevant
-    principles and regulations.
+    governance and linked to relevant principles and regulations.
   # If served from a GitHub Pages project site (https://<user>.github.io/<repo>/),
   # set this to "/<repo>" so internal links resolve correctly. Leave "" for a
   # user/org root site (https://<user>.github.io/) or a custom domain.
