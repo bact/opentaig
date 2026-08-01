@@ -1,29 +1,59 @@
 {% extends "base.html" %}
 {% block title %}Open Source Tools — {{ site.title }}{% endblock %}
 {% block content %}
-<h1>Open Source Tools</h1>
-<p>Open-source tools referenced across the open-problems catalog, and which open problems they help address.</p>
+<section class="page-hero">
+  <div class="eyebrow">Tool catalog</div>
+  <h1>Open Source Tools</h1>
+  <p class="lede">Open-source tools referenced across the open-problems catalog, and which open problems they help address. The overview below shows tool coverage by capacity and target; it isn't affected by the filters, which only narrow the tool list further down.</p>
+</section>
 
-<table class="tools-table">
-  <thead>
-    <tr>
-      <th>Tool</th>
-      <th>Type</th>
-      <th>License</th>
-      <th>Summary</th>
-      <th>Open problems addressed</th>
-    </tr>
-  </thead>
-  <tbody>
-  {% for entry in entries %}
-    <tr>
-      <td><a href="{{ root }}tools/{{ entry.tool.slug }}.html">{{ entry.tool.name }}</a></td>
-      <td>{% if entry.tool.tool_type %}<span class="chip chip-tool-type">{{ entry.tool.tool_type }}</span>{% endif %}</td>
-      <td>{% if entry.tool.license %}<span class="chip chip-license">{{ entry.tool.license }}</span>{% endif %}</td>
-      <td>{{ entry.tool.summary }}</td>
-      <td>{{ entry.problems | length }}</td>
-    </tr>
-  {% endfor %}
-  </tbody>
-</table>
+{% set matrix_problems_href = root ~ "problems/" %}
+{% include "_matrix_compact.html" %}
+
+<section class="filter-bar" id="tools-filter-bar">
+  <div class="filter-groups-row">
+    <div class="filter-group" aria-label="Tool type">
+      <span class="filter-group-label">Tool type</span>
+      <div class="filter-group-fields">
+        <label>Type
+          <select id="tools-filter-type">
+            <option value="">Any</option>
+            <option value="software">Software</option>
+            <option value="specification">Specification</option>
+          </select>
+        </label>
+      </div>
+    </div>
+    <div class="filter-group" aria-label="Search" style="border-right:none">
+      <span class="filter-group-label">Search</span>
+      <div class="filter-group-fields">
+        <label>Name or keyword
+          <input type="search" id="tools-filter-search" placeholder="Tool name or keyword" aria-label="Search tools">
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="filter-footer-row">
+    <button type="button" id="tools-filter-reset">Reset filters</button>
+    <span id="tools-filter-count" class="filter-count" aria-live="polite"></span>
+  </div>
+</section>
+
+<div class="tool-list" id="tool-list">
+{% for entry in entries %}
+  <article class="tool-list-item"
+    data-type="{{ entry.tool.tool_type }}"
+    data-search="{{ (entry.tool.name ~ ' ' ~ (entry.tool.summary or '')) | lower }}"
+  >
+    <div class="tool-list-head">
+      <a href="{{ root }}tools/{{ entry.tool.slug }}/">{{ entry.tool.name }}</a>
+      {% if entry.tool.tool_type %}<span class="chip chip-tool-type">{{ entry.tool.tool_type }}</span>{% endif %}
+      {% if entry.tool.license %}<span class="chip chip-license">{{ entry.tool.license }}</span>{% endif %}
+      <span class="tool-problem-count">{{ entry.problems | length }} problem{{ "" if entry.problems | length == 1 else "s" }}</span>
+    </div>
+    {% if entry.tool.summary %}<p class="tool-list-summary">{{ entry.tool.summary }}</p>{% endif %}
+  </article>
+{% endfor %}
+</div>
+<p id="tools-no-results" class="no-results" hidden>No tools match these filters.</p>
 {% endblock %}

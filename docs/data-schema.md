@@ -194,7 +194,7 @@ purely informational content editable in the sheet, while the build-wiring
 | --- | --- |
 | `id` | Must match a `key` in `config.yaml`'s `frameworks:` list (e.g. `euaiact`). |
 | `name` | Short display name (the label shown throughout the site, e.g. `EU AI Act`). |
-| `fullname` | Full official title (e.g. `Artificial Intelligence Act`). Shown as a subtitle on the Principles & Regulations page when it differs from `name`. |
+| `fullname` | Full official title (e.g. `Artificial Intelligence Act`). Shown as a subtitle on the Frameworks page when it differs from `name`. |
 | `summary` | Optional one-paragraph description. Blank is fine. |
 | `homepage` | General info page for the framework/regulation. |
 | `source` | Direct link to the actual source document/legal text. This is what the site links to as "(source)" — `homepage` is used only as a fallback when `source` is blank. |

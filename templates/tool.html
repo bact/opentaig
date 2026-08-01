@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %}{{ tool.name }} — {{ site.title }}{% endblock %}
 {% block content %}
-<p class="breadcrumb"><a href="{{ root }}tools/index.html">&larr; All tools</a></p>
+<p class="breadcrumb"><a href="{{ root }}tools/">&larr; All tools</a></p>
 <article class="tool-detail">
   <h1>{{ tool.name }}</h1>
   {% if tool.tool_type or tool.license %}
@@ -41,7 +41,12 @@
   {% if problems %}
   <ul class="problem-links">
     {% for p in problems %}
-    <li><a href="{{ root }}problems/{{ p.slug }}.html">{{ p.question }}</a></li>
+    {% set is_impl = p.tools_implement | selectattr('tool.id', 'equalto', tool.id) | list | length > 0 %}
+    {% set is_eval = p.tools_eval | selectattr('tool.id', 'equalto', tool.id) | list | length > 0 %}
+    <li>
+      <a href="{{ root }}problems/{{ p.slug }}/">{{ p.question }}</a>
+      <span class="tool-problem-context">{{ p.capacity }} &rsaquo; {{ p.target }}{% if is_impl %} &middot; Implement{% endif %}{% if is_eval %} &middot; Evaluate{% endif %}</span>
+    </li>
     {% endfor %}
   </ul>
   {% else %}

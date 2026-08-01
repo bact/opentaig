@@ -1,0 +1,46 @@
+{# Capacity x Target coverage matrix -- the Landscape page's full, page-level
+   overview grid (the compact per-RQ mini-heatmap atop the Explorer/Tools
+   listing pages is a separate, smaller component: _matrix_compact.html).
+   Expects `matrix`, `capacity_blurbs`, `targets_core` from site_ctx, and a
+   `matrix_problems_href` string -- the href prefix a cell link should use
+   to reach the problems listing: "" (bare "#slug" anchor) when this include
+   is rendered ON that page, or "{{ root }}problems/" everywhere else. #}
+<div class="matrix">
+  <div class="matrix-row matrix-row-header">
+    <div class="matrix-label-col"></div>
+    {% for tgt in targets_core %}
+    <div class="matrix-col-label">{{ tgt }}</div>
+    {% endfor %}
+  </div>
+  {% for row in matrix %}
+  <div class="matrix-row">
+    <div class="matrix-cap-label">
+      <div class="matrix-cap-name">{{ row.capacity }}</div>
+      {% if capacity_blurbs.get(row.capacity) %}<div class="matrix-cap-blurb">{{ capacity_blurbs[row.capacity] }}</div>{% endif %}
+    </div>
+    {% for block in row.blocks %}
+    {% set ratio = (block.covered / block.total) if block.total else 0 %}
+    {% set bucket = "empty" if block.total == 0 else ("full" if ratio >= 1 else ("good" if ratio >= 0.66 else "some")) %}
+    {% set cell_desc = row.capacity ~ " · " ~ block.target ~ ": " ~ block.covered ~ " of " ~ block.total ~ " question" ~ ("" if block.total == 1 else "s") ~ " have a tool" %}
+    <a class="matrix-cell matrix-cell-{{ bucket }}" style="grid-column: span {{ block.span }}"
+       href="{{ matrix_problems_href }}#{{ row.capacity_slug }}-{{ block.target_slug }}"
+       aria-label="{{ cell_desc }}" title="{{ cell_desc }}">
+      <span class="matrix-cell-count" aria-hidden="true">{{ block.covered }}/{{ block.total }}</span>
+      <span class="matrix-cell-caption" aria-hidden="true">have a tool</span>
+      {% if block.rq_cells %}
+      <span class="matrix-cell-blocks" aria-hidden="true">
+        {% for rc in block.rq_cells %}<span class="matrix-cell-block{{ ' is-filled' if rc.has_tool else '' }}"></span>{% endfor %}
+      </span>
+      {% endif %}
+      {% if block.areas %}<span class="matrix-cell-areas" aria-hidden="true">{{ block.areas | join(' &middot; ') }}</span>{% endif %}
+    </a>
+    {% endfor %}
+  </div>
+  {% endfor %}
+</div>
+<div class="matrix-legend">
+  <span class="matrix-legend-item"><span class="matrix-legend-swatch matrix-cell-empty"></span>No tool yet</span>
+  <span class="matrix-legend-item"><span class="matrix-legend-swatch matrix-cell-some"></span>Some coverage</span>
+  <span class="matrix-legend-item"><span class="matrix-legend-swatch matrix-cell-good"></span>Good coverage</span>
+  <span class="matrix-legend-item"><span class="matrix-legend-swatch matrix-cell-full"></span>Full coverage</span>
+</div>

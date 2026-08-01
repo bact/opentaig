@@ -1,13 +1,22 @@
+---
+SPDX-FileCopyrightText: 2026 OpenTAIG authors
+SPDX-FileType: SOURCE
+SPDX-License-Identifier: CC0-1.0
+---
+
 # OpenTAIG
 
 A catalog of open-source tools mapped to open problems in technical AI
 governance, and linked to the regulations and ethical principles they help
 address.
 
-Inspired by the [TAIG database](https://taig.stanford.edu/taig_database.html)
-and the paper
-[*Open Problems in Technical AI Governance*](https://arxiv.org/abs/2407.14981)
-(Reuel, Bucknall, et al., 2025).
+Inspired by the
+[Open Problems in Technical AI Governance database][taig-db]
+and
+[Putting Responsible Generative AI Framework to Work blog post][putting-rgaf].
+
+[taig-db]: https://taig.stanford.edu/taig_database.html
+[putting-rgaf]: https://lfaidata.foundation/communityblog/2026/04/22/putting-rgaf-to-work-build-and-audit-responsible-ai-with-open-source/
 
 ## How it works
 

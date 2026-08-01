@@ -16,11 +16,12 @@
       <span class="brand-tagline">{{ site.tagline }}</span>
     </a>
     <nav class="site-nav" aria-label="Primary">
-      <a href="{{ root }}index.html" class="{{ 'active' if active == 'home' or active == 'problem' else '' }}">Open Problems</a>
-      <a href="{{ root }}tools/index.html" class="{{ 'active' if active == 'tools' else '' }}">Open Source Tools</a>
+      <a href="{{ root }}index.html" class="{{ 'active' if active == 'landscape' else '' }}">Landscape</a>
+      <a href="{{ root }}problems/" class="{{ 'active' if active == 'problems' or active == 'problem' else '' }}">Problems</a>
+      <a href="{{ root }}tools/" class="{{ 'active' if active == 'tools' else '' }}">Tools</a>
       <a href="{{ root }}frameworks/index.html" class="{{ 'active' if active == 'frameworks' else '' }}">Frameworks</a>
       <a href="{{ root }}references/index.html" class="{{ 'active' if active == 'references' else '' }}">References</a>
-      <a href="{{ site.repo_url }}">GitHub</a>
+      <a href="{{ site.repo_url }}">GitHub ↗</a>
     </nav>
   </div>
 </header>

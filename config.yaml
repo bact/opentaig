@@ -233,6 +233,16 @@ taxonomy:
     - "Security"
     - "Operationalisation"
     - "Ecosystem Monitoring"
+  # One-line descriptions shown under each capacity's label on the Landscape
+  # overview matrix. Purely cosmetic -- a capacity missing here just renders
+  # without a subtitle, no build logic depends on this map being complete.
+  capacity_blurbs:
+    "Assessment": "Evaluating the capabilities and risks of an AI system."
+    "Access": "Enabling researchers and auditors to interact with a system, its data, or its compute."
+    "Verification": "Checking claims about how a system was built and how it behaves."
+    "Security": "Protecting a system's components from unauthorised access or tampering."
+    "Operationalisation": "Turning governance goals into concrete practice."
+    "Ecosystem Monitoring": "Tracking the wider AI landscape and its downstream impacts."
   targets:
     - "Data"
     - "Compute"

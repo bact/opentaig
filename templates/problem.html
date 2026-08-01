@@ -2,7 +2,7 @@
 {% block title %}{{ problem.question }} — {{ site.title }}{% endblock %}
 {% block content %}
 <article class="problem-detail">
-  <p class="breadcrumb"><a href="{{ root }}index.html">&larr; All open problems</a></p>
+  <p class="breadcrumb"><a href="{{ root }}problems/">&larr; All open problems</a></p>
 
   <p class="pair-label pair-label-problem">Problem{% if problem.rq_no %} <span class="rq-no">#{{ problem.rq_no }}</span>{% endif %}</p>
   <h1>{{ problem.question }}</h1>
@@ -25,7 +25,7 @@
   <ul class="tool-detail-list">
     {% for pairing in pairings %}
     <li>
-      <a href="{{ root }}tools/{{ pairing.tool.slug }}.html">{{ pairing.tool.name }}</a>
+      <a href="{{ root }}tools/{{ pairing.tool.slug }}/">{{ pairing.tool.name }}</a>
       {% if pairing.tool.license %}<span class="chip chip-license">{{ pairing.tool.license }}</span>{% endif %}
       {% if pairing.tool.summary %}<p class="tool-summary">{{ pairing.tool.summary }}</p>{% endif %}
       {% if pairing.rationale %}<p class="tool-rationale">{{ pairing.rationale }}</p>{% endif %}
@@ -35,10 +35,10 @@
   {% endmacro %}
 
   {% if impl_spec or impl_soft or eval_spec or eval_soft %}
-    {% if impl_spec %}{{ tool_group("Implement", "spec", impl_spec) }}{% endif %}
     {% if impl_soft %}{{ tool_group("Implement", "software", impl_soft) }}{% endif %}
-    {% if eval_spec %}{{ tool_group("Evaluate", "spec", eval_spec) }}{% endif %}
+    {% if impl_spec %}{{ tool_group("Implement", "spec", impl_spec) }}{% endif %}
     {% if eval_soft %}{{ tool_group("Evaluate", "software", eval_soft) }}{% endif %}
+    {% if eval_spec %}{{ tool_group("Evaluate", "spec", eval_spec) }}{% endif %}
   {% else %}
   <p class="empty-note">No open-source tool linked yet. Know one? Add it to the mapping sheet.</p>
   {% endif %}
@@ -52,7 +52,7 @@
   </div>
   {% endif %}
 
-  <h2>Mapped principles &amp; regulations</h2>
+  <h2>Mapped frameworks</h2>
   <p class="framework-note">Supplemental crosswalk to external principles/regulations and our harms analysis.</p>
   {% set ns = namespace(any=false) %}
   <dl class="mapping-list">
@@ -60,11 +60,11 @@
       {% set terms = problem.mappings.get(fw.key, []) %}
       {% if terms %}
       {% set ns.any = true %}
-      <dt>
+      <dt data-fw-block="{{ fw.key }}">
         {{ fw.label }}
         <a class="doc-link" href="{{ root }}frameworks/index.html#{{ fw.key }}">(info)</a>
       </dt>
-      <dd>
+      <dd data-fw-block="{{ fw.key }}">
         {% for term in terms %}
         <a class="chip chip-{{ fw.key }} chip-{{ term.id }}" href="{{ root }}frameworks/{{ fw.key }}/{{ term.id }}.html"><span class="chip-ns">{{ fw.key }}</span>{{ term.name }}</a>
         {% endfor %}
@@ -97,5 +97,14 @@
   </ul>
   {% endif %}
   #}
+
+  <nav class="problem-pager" aria-label="Adjacent problems">
+    {% if prev %}
+    <a class="problem-pager-prev" href="{{ root }}problems/{{ prev.slug }}/">&larr; Problem #{{ prev.rq_no }}</a>
+    {% endif %}
+    {% if next %}
+    <a class="problem-pager-next" href="{{ root }}problems/{{ next.slug }}/">Problem #{{ next.rq_no }} &rarr;</a>
+    {% endif %}
+  </nav>
 </article>
 {% endblock %}
