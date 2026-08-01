@@ -1,9 +1,14 @@
 {% extends "base.html" %}
+{% block title %}Open Problems — {{ site.title }}{% endblock %}
 {% block content %}
-<section class="intro">
-  <h1>Open source tools for technical AI governance</h1>
-  <p>{{ site.description }}</p>
+<section class="page-hero">
+  <div class="eyebrow">Tool landscape &mdash; detail view</div>
+  <h1>Explore the open problems</h1>
+  <p class="lede">{{ site.description }} The filter bar below narrows the list to a taxonomy slice, framework obligation, or expertise; each question shows its solutions as spec and software by role.</p>
 </section>
+
+{% set matrix_problems_href = "" %}
+{% include "_matrix_compact.html" %}
 
 <section class="filter-bar" id="filter-bar">
   <div class="filter-search-row">
@@ -87,7 +92,7 @@
 <section class="capacity-group" data-group-name="{{ group.name }}">
   <h2>{{ group.name }} <span class="count">({{ group.count }})</span></h2>
   {% for tgt in group.targets %}
-  <div class="target-group" data-subgroup-name="{{ tgt.name }}">
+  <div class="target-group" id="{{ group.slug }}-{{ tgt.slug }}" data-subgroup-name="{{ tgt.name }}">
     <h3>{{ tgt.name }} <span class="count">({{ tgt.count }})</span></h3>
     {% for area in tgt.areas %}
     <div class="area-group" data-area-name="{{ area.name }}">
@@ -120,10 +125,10 @@
       {% set orphan_soft = orphan_tools | selectattr('tool_type', 'equalto', 'software') | list %}
       <p class="pair-label pair-label-solution">Solution</p>
       {% if orphan_spec %}
-      <p class="tool-row"><span class="tool-row-label">Spec:</span> {% for t in orphan_spec %}<a class="tool-link" href="{{ root }}tools/{{ t.slug }}.html">{{ t.name }}</a>{{ ", " if not loop.last }}{% endfor %}</p>
+      <p class="tool-row"><span class="tool-row-label">Spec:</span> {% for t in orphan_spec %}<a class="tool-link" href="{{ root }}tools/{{ t.slug }}/">{{ t.name }}</a>{{ ", " if not loop.last }}{% endfor %}</p>
       {% endif %}
       {% if orphan_soft %}
-      <p class="tool-row"><span class="tool-row-label">Software:</span> {% for t in orphan_soft %}<a class="tool-link" href="{{ root }}tools/{{ t.slug }}.html">{{ t.name }}</a>{{ ", " if not loop.last }}{% endfor %}</p>
+      <p class="tool-row"><span class="tool-row-label">Software:</span> {% for t in orphan_soft %}<a class="tool-link" href="{{ root }}tools/{{ t.slug }}/">{{ t.name }}</a>{{ ", " if not loop.last }}{% endfor %}</p>
       {% endif %}
     </article>
   </div>

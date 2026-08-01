@@ -102,8 +102,56 @@
   applyFilters();
 })();
 
+// Client-side search + type filtering for the tools index -- same
+// read-the-DOM-attributes approach as the problem-list filter above.
+(function () {
+  "use strict";
+
+  var filterBar = document.getElementById("tools-filter-bar");
+  if (!filterBar) return; // not on the tools index page
+
+  var searchInput = document.getElementById("tools-filter-search");
+  var typeSelect = document.getElementById("tools-filter-type");
+  var resetButton = document.getElementById("tools-filter-reset");
+  var countEl = document.getElementById("tools-filter-count");
+  var noResultsEl = document.getElementById("tools-no-results");
+  var items = Array.prototype.slice.call(document.querySelectorAll("#tool-list .tool-list-item"));
+
+  function matches(item) {
+    var q = searchInput.value.trim().toLowerCase();
+    if (q && (item.dataset.search || "").indexOf(q) === -1) return false;
+    var type = typeSelect.value;
+    if (type && item.dataset.type !== type) return false;
+    return true;
+  }
+
+  function applyFilters() {
+    var visibleCount = 0;
+    items.forEach(function (item) {
+      var show = matches(item);
+      item.hidden = !show;
+      if (show) visibleCount++;
+    });
+    countEl.textContent = visibleCount + " of " + items.length + " shown";
+    noResultsEl.hidden = visibleCount !== 0;
+  }
+
+  [searchInput, typeSelect].forEach(function (el) {
+    el.addEventListener("input", applyFilters);
+    el.addEventListener("change", applyFilters);
+  });
+
+  resetButton.addEventListener("click", function () {
+    searchInput.value = "";
+    typeSelect.value = "";
+    applyFilters();
+  });
+
+  applyFilters();
+})();
+
 // Chip visibility preferences: which frameworks' term chips show on problem
-// cards and the problem-detail "Mapped principles & regulations" section.
+// cards and the problem-detail "Mapped frameworks" section.
 // Scoped to elements marked [data-fw-chip]/[data-fw-block] only -- tool and
 // framework pages always show their own chips, since there they ARE the
 // primary content, not supplemental. Default: only "aiaaic" on, everything

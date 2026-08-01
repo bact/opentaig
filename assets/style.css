@@ -1,66 +1,159 @@
+/* =============================================================
+   OpenTAIG — Lumina design system
+   Japanese minimal: sumi ink on washi paper, single shu-red accent,
+   two muted semantic tones (moss/ochre) plus an indigo info tone.
+   Adapted from the "OpenTAIG visualization redesign" Claude Design
+   project (colors-and-type.css) onto the site's existing
+   server-rendered templates + client-side filter JS.
+   ============================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap');
+
 :root {
-  --bg: #ffffff;
-  --bg-alt: #f6f7f9;
-  --fg: #1a1d21;
-  --fg-muted: #5b6470;
-  --border: #e2e5e9;
-  --link: #1a56db;
-  --link-visited: #4338ca;
-  --accent: #1a56db;
+  /* ---- base palette: washi paper -> sumi ink ---- */
+  --paper:        #F6F3EC;
+  --paper-2:      #EFEBE2;
+  --paper-3:      #E6E1D4;
+  --paper-edge:   #D8D2C2;
 
-  --chip-rgaf-bg: #e7f0ff;      --chip-rgaf-fg: #1a4fb4;
-  --chip-euaiact-bg: #fdeee0;   --chip-euaiact-fg: #9a4a08;
-  --chip-unescoai-bg: #e6f6ee;  --chip-unescoai-fg: #0f7a45;
-  --chip-aseanai-bg: #f3e8fd;   --chip-aseanai-fg: #6b21a8;
-  --chip-coeai-bg: #fdeaea;     --chip-coeai-fg: #a3242c;
-  --chip-license-bg: #eef0f3;   --chip-license-fg: #3a4149;
-  --chip-expertise-bg: #eef0f3; --chip-expertise-fg: #3a4149;
-  --chip-tool-type-bg: #eef0f3; --chip-tool-type-fg: #3a4149;
-  --chip-aiaaic-bg: #fff3e0;    --chip-aiaaic-fg: #8a5300;
+  --ink:          #161513;
+  --ink-2:        #3A3833;
+  --ink-3:        #605C53;
+  --ink-4:        #97928A;
+  --ink-5:        #BFB9AD;
 
-  /* Problem/solution pair labels -- deliberately distinct hues (not just a
-     text-weight difference) so the two halves of each RQ/tool pairing read
-     apart at a glance. Both checked against --bg/--bg-alt for >=4.5:1
-     contrast (WCAG 2.2 SC 1.4.3) since color is a secondary cue here, not
-     the only one -- "Problem"/"Solution" are also always spelled out as
-     text, never conveyed by color alone (SC 1.4.1). */
-  --problem-color: #1a56db;
-  --solution-color: #0f7a45;
+  --white:        #FFFFFF;
+  --border-c:     #DAD4C5;
+  --border-soft:  #E8E2D3;
+  /* darker than --border-c: used on interactive-control boundaries (inputs,
+     selects) where WCAG 2.2 SC 1.4.11 requires >=3:1 against the surface. */
+  --border-strong:#8C8679;
+
+  /* ---- accent: the single Lumina shu-red ---- */
+  --shu:          #C8392A;
+  --shu-deep:     #A82A1E;
+  --shu-soft:     #F5DAD4;
+  --shu-ink:      #5A1810;
+
+  /* ---- semantic (muted) ---- */
+  --moss:         #5F7A4F;
+  --moss-soft:    #E1E8D5;
+  --moss-ink:     #2E3D24;
+
+  --ochre:        #B68333;
+  --ochre-soft:   #F1E5C9;
+  --ochre-ink:    #4F3A14;
+
+  --indigo:       #2F4A6B;
+  --indigo-soft:  #DCE3EC;
+  --indigo-ink:   #15263C;
+
+  /* ---- legacy token names kept so templates don't need touching ---- */
+  --bg:           var(--paper);
+  --bg-alt:       var(--paper-2);
+  --fg:           var(--ink);
+  --fg-muted:     var(--ink-3);
+  --border:       var(--border-c);
+  --link:         var(--shu);
+  --link-visited: var(--shu-deep);
+  --accent:       var(--shu);
+  --problem-color:var(--shu);
+  --solution-color: var(--moss);
+
+  --chip-rgaf-bg: var(--indigo-soft);     --chip-rgaf-fg: var(--indigo-ink);
+  --chip-euaiact-bg: var(--ochre-soft);   --chip-euaiact-fg: var(--ochre-ink);
+  --chip-unescoai-bg: var(--moss-soft);   --chip-unescoai-fg: var(--moss-ink);
+  --chip-aseanai-bg: #EDE3F5;             --chip-aseanai-fg: #4B2E68;
+  --chip-coeai-bg: var(--shu-soft);       --chip-coeai-fg: var(--shu-ink);
+  --chip-license-bg: var(--paper-3);      --chip-license-fg: var(--ink-2);
+  --chip-expertise-bg: var(--paper-3);    --chip-expertise-fg: var(--ink-2);
+  --chip-tool-type-bg: var(--paper-3);    --chip-tool-type-fg: var(--ink-2);
+  --chip-aiaaic-bg: var(--ochre-soft);    --chip-aiaaic-fg: var(--ochre-ink);
+
+  /* ---- type ---- */
+  --font-sans: 'Geist', ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, monospace;
+
+  --text-2xs: 10.5px; --text-xs: 11.5px; --text-sm: 13px; --text-base: 14.5px;
+  --text-md: 16px; --text-lg: 18px; --text-xl: 21px; --text-2xl: 26px;
+  --text-3xl: 34px; --text-4xl: 48px;
+
+  --tracking-tight: -0.018em; --tracking-eyebrow: 0.14em;
+  --leading-tight: 1.15; --leading-snug: 1.3; --leading-body: 1.55;
+
+  /* ---- spacing (4px base) ---- */
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 20px; --s-6: 24px;
+  --s-8: 32px; --s-10: 40px; --s-12: 48px; --s-16: 64px;
+
+  /* ---- radii: sharp by default ---- */
+  --r-1: 2px; --r-2: 4px; --r-3: 6px; --r-pill: 999px;
+
+  --shadow-focus: 0 0 0 3px rgba(200, 57, 42, 0.18);
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur-quick: 120ms;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #14171a;
-    --bg-alt: #1c2024;
-    --fg: #e8eaed;
-    --fg-muted: #9aa4af;
-    --border: #2a2f35;
-    --link: #7fa8ff;
-    --link-visited: #b39ddb;
-    --accent: #7fa8ff;
+    --paper: #171613; --paper-2: #1E1C18; --paper-3: #26241F; --paper-edge: #34312A;
+    --ink: #EDE9E0; --ink-2: #C9C4B8; --ink-3: #9C978B; --ink-4: #726D62; --ink-5: #4C483F;
+    --white: #211F1B;
+    --border-c: #34312A; --border-soft: #2A2823; --border-strong: #726E62;
 
-    --chip-rgaf-bg: #1c2c4d;      --chip-rgaf-fg: #a9c4ff;
-    --chip-euaiact-bg: #402c17;   --chip-euaiact-fg: #f0b878;
-    --chip-unescoai-bg: #123524;  --chip-unescoai-fg: #8fe3bb;
-    --chip-aseanai-bg: #2c1f42;   --chip-aseanai-fg: #d3b3f7;
-    --chip-coeai-bg: #3a1a1c;     --chip-coeai-fg: #f3a6ac;
-    --chip-license-bg: #262b31;   --chip-license-fg: #c3cad2;
-    --chip-expertise-bg: #262b31; --chip-expertise-fg: #c3cad2;
-    --chip-tool-type-bg: #262b31; --chip-tool-type-fg: #c3cad2;
-    --chip-aiaaic-bg: #3d2c10;    --chip-aiaaic-fg: #f0c063;
+    --shu: #E0584A; --shu-deep: #F17161; --shu-soft: #3E1F1A; --shu-ink: #F5C4BB;
+    --moss: #8FAE7C; --moss-soft: #26301F; --moss-ink: #C9DCB9;
+    --ochre: #D4A65C; --ochre-soft: #362A16; --ochre-ink: #EDCF97;
+    --indigo: #7C9BC0; --indigo-soft: #202B38; --indigo-ink: #B9CDE3;
 
-    --problem-color: #7fa8ff;
-    --solution-color: #8fe3bb;
+    --bg: var(--paper); --bg-alt: var(--paper-2); --fg: var(--ink); --fg-muted: var(--ink-3);
+    --border: var(--border-c); --link: var(--shu); --link-visited: var(--shu-deep); --accent: var(--shu);
+    --problem-color: var(--shu); --solution-color: var(--moss);
+
+    --chip-rgaf-bg: var(--indigo-soft);     --chip-rgaf-fg: var(--indigo-ink);
+    --chip-euaiact-bg: var(--ochre-soft);   --chip-euaiact-fg: var(--ochre-ink);
+    --chip-unescoai-bg: var(--moss-soft);   --chip-unescoai-fg: var(--moss-ink);
+    --chip-aseanai-bg: #2A2038;             --chip-aseanai-fg: #D2BCE8;
+    --chip-coeai-bg: var(--shu-soft);       --chip-coeai-fg: var(--shu-ink);
+    --chip-license-bg: var(--paper-3);      --chip-license-fg: var(--ink-2);
+    --chip-expertise-bg: var(--paper-3);    --chip-expertise-fg: var(--ink-2);
+    --chip-tool-type-bg: var(--paper-3);    --chip-tool-type-fg: var(--ink-2);
+    --chip-aiaaic-bg: var(--ochre-soft);    --chip-aiaaic-fg: var(--ochre-ink);
   }
 }
 
 :root[data-theme="dark"] {
-  --bg: #14171a; --bg-alt: #1c2024; --fg: #e8eaed; --fg-muted: #9aa4af; --border: #2a2f35;
-  --link: #7fa8ff; --link-visited: #b39ddb; --accent: #7fa8ff;
+  --paper: #171613; --paper-2: #1E1C18; --paper-3: #26241F; --paper-edge: #34312A;
+  --ink: #EDE9E0; --ink-2: #C9C4B8; --ink-3: #9C978B; --ink-4: #726D62; --ink-5: #4C483F;
+  --white: #211F1B;
+  --border-c: #34312A; --border-soft: #2A2823; --border-strong: #726E62;
+  --shu: #E0584A; --shu-deep: #F17161; --shu-soft: #3E1F1A; --shu-ink: #F5C4BB;
+  --moss: #8FAE7C; --moss-soft: #26301F; --moss-ink: #C9DCB9;
+  --ochre: #D4A65C; --ochre-soft: #362A16; --ochre-ink: #EDCF97;
+  --indigo: #7C9BC0; --indigo-soft: #202B38; --indigo-ink: #B9CDE3;
+  --bg: var(--paper); --bg-alt: var(--paper-2); --fg: var(--ink); --fg-muted: var(--ink-3);
+  --border: var(--border-c); --link: var(--shu); --link-visited: var(--shu-deep); --accent: var(--shu);
+  --problem-color: var(--shu); --solution-color: var(--moss);
+  --chip-rgaf-bg: var(--indigo-soft);     --chip-rgaf-fg: var(--indigo-ink);
+  --chip-euaiact-bg: var(--ochre-soft);   --chip-euaiact-fg: var(--ochre-ink);
+  --chip-unescoai-bg: var(--moss-soft);   --chip-unescoai-fg: var(--moss-ink);
+  --chip-aseanai-bg: #2A2038;             --chip-aseanai-fg: #D2BCE8;
+  --chip-coeai-bg: var(--shu-soft);       --chip-coeai-fg: var(--shu-ink);
+  --chip-license-bg: var(--paper-3);      --chip-license-fg: var(--ink-2);
+  --chip-expertise-bg: var(--paper-3);    --chip-expertise-fg: var(--ink-2);
+  --chip-tool-type-bg: var(--paper-3);    --chip-tool-type-fg: var(--ink-2);
+  --chip-aiaaic-bg: var(--ochre-soft);    --chip-aiaaic-fg: var(--ochre-ink);
 }
 :root[data-theme="light"] {
-  --bg: #ffffff; --bg-alt: #f6f7f9; --fg: #1a1d21; --fg-muted: #5b6470; --border: #e2e5e9;
-  --link: #1a56db; --link-visited: #4338ca; --accent: #1a56db;
+  --paper: #F6F3EC; --paper-2: #EFEBE2; --paper-3: #E6E1D4; --paper-edge: #D8D2C2;
+  --ink: #161513; --ink-2: #3A3833; --ink-3: #605C53; --ink-4: #97928A; --ink-5: #BFB9AD;
+  --white: #FFFFFF;
+  --border-c: #DAD4C5; --border-soft: #E8E2D3; --border-strong: #A8A294;
+  --shu: #C8392A; --shu-deep: #A82A1E; --shu-soft: #F5DAD4; --shu-ink: #5A1810;
+  --moss: #5F7A4F; --moss-soft: #E1E8D5; --moss-ink: #2E3D24;
+  --ochre: #B68333; --ochre-soft: #F1E5C9; --ochre-ink: #4F3A14;
+  --indigo: #2F4A6B; --indigo-soft: #DCE3EC; --indigo-ink: #15263C;
+  --bg: var(--paper); --bg-alt: var(--paper-2); --fg: var(--ink); --fg-muted: var(--ink-3);
+  --border: var(--border-c); --link: var(--shu); --link-visited: var(--shu-deep); --accent: var(--shu);
 }
 
 * { box-sizing: border-box; }
@@ -68,15 +161,22 @@ html, body { margin: 0; padding: 0; }
 body {
   background: var(--bg);
   color: var(--fg);
-  font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
 }
-.wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
-a { color: var(--link); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+a { color: var(--link); text-decoration-color: var(--ink-4); text-underline-offset: 3px; transition: text-decoration-color var(--dur-quick) var(--ease-out); }
 a:visited { color: var(--link-visited); }
-h1, h2, h3, h4 { line-height: 1.25; }
+a:hover { text-decoration-color: var(--shu); }
+h1, h2, h3, h4, h5 { font-weight: 500; letter-spacing: var(--tracking-tight); line-height: var(--leading-snug); margin: 0 0 var(--s-3); }
+h1 { font-size: var(--text-3xl); line-height: var(--leading-tight); }
+h2 { font-size: var(--text-xl); }
+h3 { font-size: var(--text-lg); }
 
-/* Content present for screen readers only -- e.g. a table's row/column
-   header when the visual heading is redundant with adjacent text. */
+::selection { background: var(--shu-soft); color: var(--shu-ink); }
+
 .visually-hidden {
   position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
   overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
@@ -84,257 +184,335 @@ h1, h2, h3, h4 { line-height: 1.25; }
 
 .skip-link {
   position: absolute; left: 8px; top: -60px; z-index: 100;
-  background: var(--accent); color: #fff; padding: 10px 16px; border-radius: 6px;
+  background: var(--shu); color: var(--white); padding: 10px 16px; border-radius: var(--r-2);
   text-decoration: none; font-weight: 600; transition: top 0.15s ease-in;
 }
 .skip-link:focus { top: 8px; }
 
-/* Visible keyboard-focus indicator on every interactive element -- relying
-   on the browser default is fragile (varies by element/OS and is easy to
-   accidentally suppress later), so make it explicit and consistent
-   (WCAG 2.2 SC 2.4.7 Focus Visible / 2.4.11 Focus Not Obscured). */
 a:focus-visible, button:focus-visible, select:focus-visible,
 input:focus-visible, summary:focus-visible {
-  outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 2px;
+  outline: 2px solid var(--shu); outline-offset: 2px; border-radius: var(--r-1);
+  box-shadow: var(--shadow-focus);
 }
 
+/* ---- header / nav ---- */
 .site-header {
   border-bottom: 1px solid var(--border);
-  background: var(--bg-alt);
+  background: var(--bg);
 }
 .site-header .wrap {
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
-  padding-top: 14px; padding-bottom: 14px; gap: 12px;
+  padding-top: var(--s-4); padding-bottom: var(--s-4); gap: var(--s-3);
 }
 .brand { text-decoration: none; color: inherit; display: flex; flex-direction: column; }
-.brand-title { font-weight: 700; font-size: 1.25rem; }
-.brand-tagline { font-size: 0.8rem; color: var(--fg-muted); }
+.brand-title { font-weight: 600; font-size: var(--text-lg); letter-spacing: var(--tracking-tight); color: var(--ink); }
+.brand-tagline { font-size: var(--text-xs); color: var(--ink-3); }
+.site-nav { display: flex; align-items: center; gap: var(--s-6); flex-wrap: wrap; }
 .site-nav a {
-  margin-left: 18px; text-decoration: none; color: var(--fg-muted); font-size: 0.95rem;
+  text-decoration: none; color: var(--ink-3); font-size: var(--text-base);
+  padding-bottom: 2px; border-bottom: 2px solid transparent;
 }
-.site-nav a:first-child { margin-left: 0; }
-.site-nav a.active, .site-nav a:hover { color: var(--fg); border-bottom: 2px solid var(--accent); }
+.site-nav a.active { color: var(--ink); font-weight: 500; border-bottom-color: var(--shu); }
+.site-nav a:hover { color: var(--ink); }
+.site-nav a:last-child { margin-left: auto; color: var(--ink-3); }
 
-main.wrap { padding-top: 28px; padding-bottom: 60px; min-height: 60vh; }
+main.wrap { padding-top: var(--s-12); padding-bottom: var(--s-16); min-height: 60vh; }
 
-.intro p { color: var(--fg-muted); max-width: 70ch; }
+/* ---- page hero (eyebrow + h1 + lede), used on every section landing page ---- */
+.eyebrow {
+  font-size: var(--text-2xs); font-weight: 500; letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase; color: var(--shu); margin-bottom: var(--s-3);
+}
+.page-hero { max-width: 68ch; margin-bottom: var(--s-10); }
+.page-hero h1 { font-size: var(--text-3xl); margin-bottom: var(--s-4); }
+.lede { font-size: var(--text-md); line-height: var(--leading-body); color: var(--ink-3); margin: 0; max-width: 68ch; }
 
-/* Scrolls with the page (not sticky/floating) so it doesn't eat viewport
-   height that should go to the RQ/tool list below it. */
+.landscape-hero { max-width: 720px; }
+.landscape-hero .lede { margin-bottom: var(--s-5); }
+.button-primary {
+  display: inline-block; background: var(--shu); color: var(--white); text-decoration: none;
+  padding: 11px 20px; border-radius: var(--r-1); font-size: var(--text-sm); font-weight: 500;
+}
+.button-primary:hover { background: var(--shu-deep); }
+.landscape-note {
+  margin-top: var(--s-12); padding-top: var(--s-6); border-top: 1px solid var(--border-soft);
+  font-size: var(--text-sm); color: var(--ink-3); line-height: var(--leading-body); max-width: 68ch;
+}
+
+/* ---- capacity x target coverage matrix (Landscape page, and reused atop
+   the Explorer/problems and Tools listing pages) ---- */
+.matrix { margin-bottom: var(--s-8); }
+.matrix-row {
+  display: grid; grid-template-columns: 200px repeat(4, 1fr); gap: 1px;
+  background: var(--border-soft); border: 1px solid var(--border-soft);
+}
+.matrix-row + .matrix-row { border-top: none; }
+.matrix-row-header { background: transparent; border: none; }
+.matrix-label-col { background: var(--bg-alt); }
+.matrix-col-label {
+  padding: 10px var(--s-4); background: var(--bg-alt); font-size: var(--text-xs);
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3);
+}
+.matrix-cap-label { padding: var(--s-4); background: var(--bg); display: flex; flex-direction: column; justify-content: center; gap: 4px; }
+.matrix-cap-name { font-size: var(--text-base); font-weight: 500; color: var(--ink); }
+.matrix-cap-blurb { font-size: var(--text-xs); color: var(--ink-3); line-height: var(--leading-snug); }
+.matrix-cell {
+  padding: var(--s-3) var(--s-4); text-decoration: none; display: flex; flex-direction: column;
+  gap: 3px; justify-content: center; min-height: 76px;
+}
+.matrix-cell-count { font-size: var(--text-lg); font-weight: 500; font-family: var(--font-mono); }
+.matrix-cell-caption { font-size: var(--text-2xs); text-transform: uppercase; letter-spacing: 0.04em; opacity: 0.85; }
+.matrix-cell-areas { font-size: var(--text-2xs); line-height: 1.4; opacity: 0.85; }
+.matrix-cell-empty { background: var(--paper-3); color: var(--ink-2); }
+.matrix-cell-some  { background: var(--moss-soft); color: var(--moss-ink); }
+.matrix-cell-good  { background: var(--moss); color: var(--white); }
+.matrix-cell-full  { background: var(--moss-ink); color: var(--white); }
+.matrix-cell:hover { outline: 2px solid var(--shu); outline-offset: -2px; }
+.matrix-legend { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2) var(--s-5); margin-top: var(--s-3); }
+.matrix-legend-item { display: flex; align-items: center; gap: 8px; font-size: var(--text-xs); color: var(--ink-3); }
+.matrix-legend-swatch { width: 14px; height: 14px; border-radius: var(--r-1); display: inline-block; border: 1px solid var(--border); }
+
+/* Per-RQ binary have/not-have indicator inside each big matrix cell --
+   filled squares use currentColor so they stay legible against whichever
+   bucket color (--matrix-cell-empty/some/good/full) that cell landed in. */
+.matrix-cell-blocks { display: flex; flex-wrap: wrap; gap: 2px; margin: 1px 0; max-width: 100%; }
+.matrix-cell-block {
+  width: 7px; height: 7px; border-radius: 1px; border: 1px solid currentColor;
+  display: block; background: transparent; opacity: 0.35; flex-shrink: 0;
+}
+.matrix-cell-block.is-filled { background: currentColor; opacity: 1; }
+
+/* ---- compact per-RQ mini-heatmap (Explorer/Tools listing pages) ---- */
+.mini-heatmap { padding: var(--s-4) 0 var(--s-5); border-bottom: 1px solid var(--border-soft); margin-bottom: var(--s-5); }
+.mini-heatmap-row { display: flex; gap: var(--s-5); align-items: flex-start; margin-bottom: var(--s-5); }
+.mini-heatmap-row:last-of-type { margin-bottom: var(--s-2); }
+.mini-heatmap-cap { width: 110px; flex-shrink: 0; font-size: var(--text-sm); font-weight: 500; padding-top: 2px; color: var(--ink); }
+.mini-heatmap-blocks { display: flex; flex-wrap: wrap; gap: var(--s-5); flex: 1; min-width: 0; }
+.mini-heatmap-block { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.mini-heatmap-target { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-3); }
+.mini-heatmap-cells { display: flex; flex-wrap: wrap; gap: 3px; max-width: 168px; }
+.mini-heatmap-cell { width: 14px; height: 14px; border-radius: 3px; border: 1px solid var(--border); display: block; }
+.mini-heatmap-cell-n0 { background: var(--paper-3); }
+.mini-heatmap-cell-n1 { background: color-mix(in oklch, var(--moss-soft), var(--moss) 55%); }
+.mini-heatmap-cell-n2 { background: var(--moss); }
+.mini-heatmap-cell-n3plus { background: var(--moss-ink); }
+.mini-heatmap-cell:hover, .mini-heatmap-cell:focus-visible { outline: 2px solid var(--shu); outline-offset: 1px; }
+.mini-heatmap-legend { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3); font-size: var(--text-xs); color: var(--ink-3); }
+.mini-heatmap-legend-swatch { width: 12px; height: 12px; border-radius: 3px; border: 1px solid var(--border); display: inline-block; }
+
+/* ---- filter bar ---- */
 .filter-bar {
-  display: flex; flex-direction: column; gap: 16px;
-  background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px;
-  padding: 16px; margin: 20px 0 12px;
+  display: flex; flex-direction: column; gap: var(--s-4);
+  background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--r-2);
+  padding: var(--s-5); margin: var(--s-5) 0 var(--s-3);
 }
-.filter-bar label { display: flex; flex-direction: column; font-size: 0.8rem; color: var(--fg-muted); gap: 4px; }
-.filter-bar select, .filter-bar input[type=search] {
-  font: inherit; padding: 6px 8px; border-radius: 6px; border: 1px solid var(--border);
-  background: var(--bg); color: var(--fg);
+.filter-bar label { display: flex; flex-direction: column; font-size: var(--text-xs); color: var(--ink-3); gap: 6px; }
+.filter-bar select, .filter-bar input[type=search], .filter-bar input[type=text] {
+  font: inherit; font-size: var(--text-sm); padding: 7px 10px; border-radius: var(--r-1);
+  border: 1px solid var(--border-strong); background: var(--white); color: var(--ink);
 }
 .filter-search-row input[type=search] { width: 100%; max-width: 420px; }
-.filter-checkbox { flex-direction: row !important; align-items: center; gap: 6px !important; }
+/* min-height keeps the clickable <label> area (the whole target, not just
+   the 15px checkbox glyph) at or above the 24px WCAG 2.2 SC 2.5.8 minimum. */
+.filter-checkbox { flex-direction: row !important; align-items: center; gap: 7px !important; min-height: 24px; }
+.filter-checkbox input { accent-color: var(--shu); width: 15px; height: 15px; cursor: pointer; }
 
-/* One row per concern: the two filter-groups side by side (top-aligned, so
-   one group wrapping to a second line doesn't drag the other group's border
-   down with it), then a separate footer row for the checkbox/reset/count --
-   previously all of this sat in one flat wrapping flexbox, which is what
-   made the layout flow unpredictably as dropdowns wrapped. */
-.filter-groups-row { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 18px 32px; }
-.filter-footer-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; }
-#filter-reset {
-  font: inherit; padding: 7px 12px; border-radius: 6px; border: 1px solid var(--border);
-  background: var(--bg); color: var(--fg); cursor: pointer;
+.filter-groups-row { display: flex; flex-wrap: wrap; align-items: flex-start; gap: var(--s-5) var(--s-8); }
+.filter-footer-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3) var(--s-5); }
+#filter-reset, #tools-filter-reset {
+  font: inherit; font-size: var(--text-sm); padding: 7px 14px; border-radius: var(--r-1);
+  border: 1px solid var(--border); background: var(--white); color: var(--shu); cursor: pointer;
+  text-decoration: underline;
 }
-#filter-reset:hover { border-color: var(--accent); }
-.filter-count { font-size: 0.85rem; color: var(--fg-muted); margin-left: auto; }
+#filter-reset:hover, #tools-filter-reset:hover { border-color: var(--shu); }
+.filter-count { font-size: var(--text-sm); color: var(--ink-3); font-family: var(--font-mono); margin-left: auto; }
 
-/* Groups related dropdowns (e.g. the three native-TAIG facets vs. our
-   framework mappings) so the filter bar reads as sections, not one flat
-   row of unrelated controls. */
 .filter-group {
-  display: flex; flex-direction: column; gap: 8px;
-  padding-right: 24px; border-right: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: var(--s-2);
+  padding-right: var(--s-6); border-right: 1px solid var(--border-soft);
 }
 .filter-group:last-child { border-right: none; padding-right: 0; }
 .filter-group-label {
-  font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;
-  color: var(--fg-muted);
+  font-size: var(--text-xs); font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--ink-3);
 }
-/* Grid, not wrapping flex: fixed-ish column widths keep dropdowns aligned
-   into a clean block instead of a ragged wrap driven by each select's own
-   (very different) label length. */
 .filter-group-fields {
   display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-  gap: 12px 18px; align-items: end;
+  gap: var(--s-3) var(--s-5); align-items: end;
 }
 
 .chip-visibility-bar {
-  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px;
-  background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px;
-  padding: 10px 16px; margin: 0 0 30px; font-size: 0.85rem;
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2) var(--s-4);
+  background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--r-2);
+  padding: var(--s-3) var(--s-4); margin: 0 0 var(--s-8); font-size: var(--text-sm);
 }
 .chip-visibility-bar .filter-group-fields {
-  display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center;
+  display: flex; flex-wrap: wrap; gap: 6px var(--s-4); align-items: center;
 }
-.chip-toggle { display: flex; align-items: center; gap: 5px; color: var(--fg-muted); cursor: pointer; }
-.chip-toggle input { cursor: pointer; }
+.chip-toggle { display: flex; align-items: center; gap: 6px; color: var(--ink-3); cursor: pointer; min-height: 24px; }
+.chip-toggle input { cursor: pointer; accent-color: var(--shu); }
 
-.capacity-group { margin-top: 34px; }
-.capacity-group > h2 { border-bottom: 2px solid var(--border); padding-bottom: 8px; }
-/* The RQ #0 catch-all at the very bottom of the list: same card mechanics
-   as a real capacity group (so search/filter hide-logic applies for free),
-   styled apart with a dashed rule so it doesn't read as just one more
-   taxonomy bucket. */
-.orphan-tools-group { margin-top: 46px; padding-top: 22px; border-top: 2px dashed var(--border); }
+/* ---- problem groups / cards ---- */
+.capacity-group { margin-top: var(--s-10); }
+.capacity-group > h2 { border-bottom: 1px solid var(--border); padding-bottom: var(--s-2); font-size: var(--text-2xl); }
+.orphan-tools-group { margin-top: var(--s-12); padding-top: var(--s-6); border-top: 1px dashed var(--border-strong); }
 .orphan-tools-group > h2 { border-bottom: none; }
-.orphan-tools-card .problem-question { font-style: italic; color: var(--fg-muted); }
-.target-group { margin-top: 18px; }
-.target-group > h3 { color: var(--fg-muted); font-size: 1rem; text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 6px; }
-.area-group { margin: 14px 0 14px 2px; padding-left: 12px; border-left: 3px solid var(--border); }
-.area-heading { margin: 0 0 10px; font-size: 0.95rem; font-weight: 600; color: var(--fg); }
-.count { color: var(--fg-muted); font-weight: 400; font-size: 0.85em; }
-.rq-no { color: var(--fg-muted); font-weight: 600; font-variant-numeric: tabular-nums; }
+.orphan-tools-card .problem-question { font-style: italic; color: var(--ink-3); }
+.target-group { margin-top: var(--s-5); }
+.target-group > h3 { color: var(--ink-3); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--s-2); font-weight: 500; }
+.area-group { margin: var(--s-4) 0 var(--s-4) 2px; padding-left: var(--s-3); border-left: 3px solid var(--border-soft); }
+.area-heading { margin: 0 0 var(--s-3); font-size: var(--text-sm); font-weight: 500; color: var(--ink-2); font-family: var(--font-mono); }
+.count { color: var(--ink-3); font-weight: 400; font-size: 0.85em; }
+.rq-no { color: var(--ink-3); font-weight: 500; font-variant-numeric: tabular-nums; }
 
-.problem-list { display: grid; gap: 12px; }
+.problem-list { display: grid; gap: var(--s-3); }
 .problem-card {
-  border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; background: var(--bg);
+  border: 1px solid var(--border); border-radius: var(--r-2); padding: var(--s-4) var(--s-5); background: var(--white);
 }
-.problem-question { margin: 0 0 4px; font-size: 1.02rem; }
-.problem-question a { text-decoration: none; }
-.problem-question a:hover { text-decoration: underline; }
+.problem-question { margin: 0 0 var(--s-1); font-size: var(--text-md); }
+.problem-question a { text-decoration: none; color: var(--ink); }
+.problem-question a:hover { text-decoration: underline; text-decoration-color: var(--shu); }
 
-/* Eyebrow labels marking the two halves of the RQ/tool pairing. Color is a
-   secondary cue only -- the words "Problem"/"Solution" are always present as
-   text, so this reads fine with color vision deficiency or in forced-colors
-   mode (WCAG 2.2 SC 1.4.1). */
 .pair-label {
-  font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+  font-size: var(--text-2xs); font-weight: 600; text-transform: uppercase; letter-spacing: var(--tracking-eyebrow);
   margin: 0 0 2px;
 }
-.pair-label-problem { color: var(--problem-color); }
-.pair-label-solution { color: var(--solution-color); margin-top: 12px; }
-h2.pair-label-solution { font-size: 0.78rem; letter-spacing: 0.06em; border: 0; padding: 0; }
+.pair-label-problem { color: var(--shu); }
+.pair-label-solution { color: var(--ink-3); margin-top: var(--s-3); }
+h2.pair-label-solution { font-size: var(--text-xs); letter-spacing: 0.08em; border: 0; padding: 0; }
 
 .tool-type-tag {
-  display: inline-block; font-size: 0.68rem; font-weight: 600; text-transform: uppercase;
-  letter-spacing: 0.03em; color: var(--fg-muted); background: var(--bg-alt);
-  border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; vertical-align: middle;
+  display: inline-block; font-size: var(--text-2xs); font-weight: 500; text-transform: uppercase;
+  letter-spacing: 0.04em; color: var(--ink-3); background: var(--bg-alt);
+  border: 1px solid var(--border); border-radius: var(--r-1); padding: 1px 6px; vertical-align: middle;
 }
 
-/* The Implement/Evaluate x Spec/Software matrix on each problem card.
-   Proper <th scope="row"|"col"> headers (not just a styled dt/dd list) so a
-   screen reader announces each cell with both its role and type, e.g.
-   "Implement, Spec, column 2: ScanCode Toolkit" -- not just a flat name.
-   Always rendered as the full 2x2 (see _problem_card.html), full card
-   width, with a fixed table-layout so the row/column proportions stay
-   identical card to card regardless of content -- a stable visual
-   reference point across the whole list, not sized to whichever card has
-   the longest tool names. */
+/* Implement/Evaluate x Spec/Software matrix -- left accent border per role,
+   echoing the design mockups' indigo (implement) / moss (evaluate) rows. */
 .solution-table {
-  border-collapse: collapse; margin: 4px 0 0; font-size: 0.88rem;
-  width: 100%; table-layout: fixed;
+  border-collapse: collapse; margin: var(--s-1) 0 0; font-size: var(--text-sm);
+  width: 100%; table-layout: fixed; border: 1px solid var(--border-soft); border-radius: var(--r-1); overflow: hidden;
 }
 .solution-table th, .solution-table td {
-  border: 1px solid var(--border); padding: 5px 10px; text-align: left; vertical-align: top;
+  border: 1px solid var(--border-soft); padding: 8px 12px; text-align: left; vertical-align: top;
   overflow-wrap: break-word;
 }
 .solution-table th:first-child { width: 25%; }
 .solution-table thead th {
-  color: var(--fg-muted); font-weight: 600; font-size: 0.72rem; text-transform: uppercase;
-  letter-spacing: 0.03em; background: var(--bg-alt);
+  color: var(--ink-3); font-weight: 500; font-size: var(--text-2xs); text-transform: uppercase;
+  letter-spacing: 0.06em; background: var(--bg-alt); border-bottom: 1px solid var(--border-soft);
 }
 .solution-table tbody th {
-  color: var(--fg-muted); font-weight: 600; background: var(--bg-alt);
+  color: var(--indigo-ink); font-weight: 500; background: var(--indigo-soft);
 }
+.solution-table tbody tr:nth-child(2) th { color: var(--moss-ink); background: var(--moss-soft); }
+.solution-table tbody tr { border-left: 3px solid var(--indigo); }
+.solution-table tbody tr:nth-child(2) { border-left-color: var(--moss); }
 
-.chip-row, .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0; }
-/* Chips are supplemental context, not the primary Q/A pairing -- kept
-   visually quieter than the tool row so the RQ + tool names read first. */
-.chip-row-supplemental { margin-top: 10px; opacity: 0.9; }
+.chip-row, .tags { display: flex; flex-wrap: wrap; gap: var(--s-2); margin: var(--s-2) 0; }
+.chip-row-supplemental { margin-top: var(--s-3); opacity: 0.92; }
 .chip {
-  display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 0.78rem;
-  text-decoration: none; white-space: nowrap;
+  display: inline-block; padding: 3px 10px; border-radius: var(--r-pill); font-size: var(--text-xs);
+  text-decoration: none; white-space: nowrap; border: 1px solid transparent;
 }
-/* Framework namespace prefix inside a term chip, e.g. "RGAF" before "Safe" --
-   lets a reader tell where a term comes from without opening it. */
 .chip-ns {
-  font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em;
-  opacity: 0.7; margin-right: 4px;
+  font-size: var(--text-2xs); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;
+  /* 0.75 opacity dropped the ochre-family chip's namespace prefix just under
+     4.5:1 text contrast (WCAG 2.2 SC 1.4.3) -- 0.85 keeps every chip pair's
+     prefix comfortably above it. */
+  opacity: 0.85; margin-right: 4px;
 }
 .chip-rgaf { background: var(--chip-rgaf-bg); color: var(--chip-rgaf-fg); }
 .chip-euaiact { background: var(--chip-euaiact-bg); color: var(--chip-euaiact-fg); }
 .chip-unescoai { background: var(--chip-unescoai-bg); color: var(--chip-unescoai-fg); }
 .chip-aseanai { background: var(--chip-aseanai-bg); color: var(--chip-aseanai-fg); }
 .chip-coeai { background: var(--chip-coeai-bg); color: var(--chip-coeai-fg); }
-.chip-license { background: var(--chip-license-bg); color: var(--chip-license-fg); }
+.chip-license { background: var(--chip-license-bg); color: var(--chip-license-fg); font-family: var(--font-mono); }
 .chip-expertise { background: var(--chip-expertise-bg); color: var(--chip-expertise-fg); font-style: italic; }
 .chip-tool-type { background: var(--chip-tool-type-bg); color: var(--chip-tool-type-fg); }
 .chip-aiaaic { background: var(--chip-aiaaic-bg); color: var(--chip-aiaaic-fg); }
-/* Sentinel aiaaic terms ("supports indirectly" / "cross-cutting") are not
-   harm-type claims -- they read as a qualifier, not a 10th harm, via a
-   dashed border and reduced opacity rather than the solid fill every real
-   harm-type chip gets. */
 .chip-aiaaic-indirect, .chip-aiaaic-crosscutting {
   background: transparent; border: 1px dashed var(--chip-aiaaic-fg);
-  color: var(--chip-aiaaic-fg); opacity: 0.8; font-style: italic;
+  color: var(--chip-aiaaic-fg); opacity: 0.85; font-style: italic;
 }
 
-.tool-row { margin-top: 2px; font-size: 0.95rem; }
-.tool-row-label { color: var(--fg-muted); margin-right: 4px; }
-.tool-link { font-weight: 600; text-decoration: none; }
-.tool-link:hover { text-decoration: underline; }
-.tool-row-empty { color: var(--fg-muted); font-style: italic; font-size: 0.9rem; }
+.tool-row { margin-top: 2px; font-size: var(--text-base); }
+.tool-row-label { color: var(--ink-3); margin-right: 4px; }
+.tool-link { font-weight: 500; text-decoration: none; color: var(--ink); }
+.tool-link:hover { text-decoration: underline; text-decoration-color: var(--shu); }
 
 .tag {
-  background: var(--bg-alt); border: 1px solid var(--border); border-radius: 999px;
-  padding: 2px 10px; font-size: 0.8rem; color: var(--fg-muted);
+  background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--r-pill);
+  padding: 3px 12px; font-size: var(--text-sm); color: var(--ink-3);
 }
 
-.no-results { text-align: center; color: var(--fg-muted); padding: 40px 0; }
+.no-results { text-align: center; color: var(--ink-3); padding: var(--s-10) 0; }
 
-.breadcrumb { margin-bottom: 10px; }
-.doc-link { font-size: 0.85em; color: var(--fg-muted); }
-.mapping-list dt { font-weight: 600; margin-top: 14px; }
-.mapping-list dd { margin: 6px 0 0; display: flex; flex-wrap: wrap; gap: 6px; }
-.empty-note { color: var(--fg-muted); font-style: italic; }
+.breadcrumb { margin-bottom: var(--s-3); font-size: var(--text-sm); }
+.breadcrumb a { color: var(--shu); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+.doc-link { font-size: 0.85em; color: var(--ink-3); text-decoration: underline; text-decoration-color: var(--ink-4); }
+.mapping-list dt { font-weight: 500; margin-top: var(--s-4); color: var(--ink-2); font-size: var(--text-sm); }
+.mapping-list dd { margin: var(--s-2) 0 0; display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.empty-note { color: var(--ink-3); font-style: italic; }
 
 .tool-detail-list, .problem-links { list-style: none; padding: 0; }
 .tool-detail-list li, .problem-links li {
-  border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; margin-bottom: 8px;
+  border: 1px solid var(--border); border-radius: var(--r-2); padding: var(--s-3) var(--s-4); margin-bottom: var(--s-2);
+  background: var(--white);
 }
-.tool-summary { color: var(--fg-muted); margin: 6px 0 0; }
-.tool-rationale { color: var(--fg-muted); font-style: italic; margin: 6px 0 0; font-size: 0.92rem; }
+.problem-links li a { color: var(--ink); text-decoration: none; }
+.problem-links li a:hover { text-decoration: underline; text-decoration-color: var(--shu); }
+.tool-problem-context { display: block; margin-top: 4px; font-size: var(--text-xs); color: var(--ink-3); }
+.tool-summary { color: var(--ink-3); margin: 6px 0 0; }
+.tool-rationale { color: var(--ink-3); font-style: italic; margin: 6px 0 0; font-size: 0.92rem; }
 .tool-links { padding-left: 20px; }
 
-.citation-list { padding-left: 20px; }
-.citation-list li { margin-bottom: 4px; color: var(--fg-muted); font-size: 0.92rem; }
-
-.tools-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
-.tools-table th, .tools-table td {
-  text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top;
+.problem-pager {
+  display: flex; gap: var(--s-6); margin-top: var(--s-12); padding-top: var(--s-5);
+  border-top: 1px solid var(--border-soft); font-size: var(--text-sm);
 }
-.tools-table th { color: var(--fg-muted); font-weight: 600; font-size: 0.85rem; }
+.problem-pager a { color: var(--shu); text-decoration: none; }
+.problem-pager a:hover { text-decoration: underline; }
+.problem-pager-next { margin-left: auto; }
 
-.framework-group { margin-top: 30px; }
-.framework-subtitle { color: var(--fg-muted); font-size: 0.9rem; margin: 2px 0 10px; }
-/* Provenance note for a framework as a whole. Used to disclose where a
-   mapping is our own editorial judgment rather than a crosswalk to an
-   external authority's own text -- see the aiaaic taxonomy. */
+.citation-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--s-3); max-width: 68ch; }
+.citation-list li { font-size: var(--text-md); line-height: var(--leading-body); }
+.citation-list a { color: var(--shu); text-decoration: underline; }
+
+/* ---- tools index ---- */
+.tool-list { display: flex; flex-direction: column; gap: 1px; background: var(--border-soft); border: 1px solid var(--border-soft); border-radius: var(--r-2); overflow: hidden; margin-top: var(--s-5); }
+.tool-list-item { padding: var(--s-4) var(--s-5); background: var(--white); }
+.tool-list-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 6px; }
+.tool-list-head a { font-size: var(--text-md); font-weight: 500; color: var(--ink); text-decoration: none; }
+.tool-list-head a:hover { text-decoration: underline; text-decoration-color: var(--shu); }
+.tool-problem-count { margin-left: auto; font-size: var(--text-xs); color: var(--ink-3); }
+.tool-list-summary { font-size: var(--text-sm); line-height: var(--leading-body); color: var(--ink-2); margin: 0; }
+
+/* ---- frameworks index ---- */
+.framework-group {
+  margin-top: var(--s-6); border: 1px solid var(--border); border-radius: var(--r-2);
+  background: var(--white); padding: var(--s-6) var(--s-6);
+}
+.framework-group h2 { font-size: var(--text-lg); margin-bottom: 4px; scroll-margin-top: 24px; }
+.framework-subtitle { color: var(--ink-3); font-size: var(--text-xs); margin: 2px 0 var(--s-3); }
 .framework-note {
-  color: var(--fg-muted); font-size: 0.88rem; line-height: 1.5;
-  margin: 2px 0 12px; padding: 8px 12px;
-  border-left: 3px solid var(--border); background: var(--bg-alt);
+  color: var(--ink-2); font-size: var(--text-sm); line-height: var(--leading-body);
+  margin: 2px 0 var(--s-4); max-width: 68ch;
 }
-.term-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.term-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-3); }
 .term-list li { display: flex; align-items: center; gap: 6px; }
+.term-list a.chip { background: var(--indigo-soft); color: var(--indigo-ink); scroll-margin-top: 24px; }
 
 .site-footer {
-  border-top: 1px solid var(--border); background: var(--bg-alt); color: var(--fg-muted);
-  font-size: 0.85rem; padding: 22px 0; margin-top: 40px;
+  border-top: 1px solid var(--border); background: var(--bg-alt); color: var(--ink-3);
+  font-size: var(--text-sm); padding: var(--s-6) 0; margin-top: var(--s-16);
 }
 .site-footer p { margin: 4px 0; }
+.site-footer a { color: var(--ink-2); }
 
 @media (max-width: 640px) {
   .filter-bar { position: static; }
-  .site-nav a { margin-left: 12px; }
+  .site-nav { gap: var(--s-4); }
+  .site-nav a:last-child { margin-left: 0; }
 }

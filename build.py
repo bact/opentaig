@@ -1,16 +1,21 @@
 #!/usr/bin/env python3
+
+# SPDX-FileCopyrightText: 2026 OpenTAIG authors
+# SPDX-FileType: SOURCE
+# SPDX-License-Identifier: Apache-2.0
+
 """Build script for OpenTAIG.
 
 Generates a static site from TWO decoupled Google Sheets, joined by research
-question number (RQ_No):
+question number (rq_no) (the problem number in the TAIG paper).
 
   * "taig"     -- upstream TAIG paper data (question text + taxonomy +
                  citations + expertise). The spine of the site.
-  * "mapping"  -- our framework/regulation mappings, keyed by RQ_No. Cells
+  * "mapping"  -- our framework/regulation mappings, keyed by rq_no. Cells
                  hold semicolon-separated ids referencing the "terms"
                  catalog below, not free text.
   * "tool_map" -- our research-question-to-tool mappings: one row per
-                 (RQ_No, tool_id, role) pairing plus a rationale, rather
+                 (rq_no, tool_id, role) pairing plus a rationale, rather
                  than a semicolon list, so a tool can answer more than one
                  RQ and each pairing can carry its own explanation.
   * "tools"    -- our open-source tool catalog (a tab in the mapping sheet).
@@ -121,7 +126,7 @@ class Problem:
     tools_eval: list  # list[ToolRationale]
     search_text: str  # precomputed lowercased text for the client-side search box
     order: int
-    mapping_freshness: Freshness = dataclasses.field(default_factory=Freshness)  # from the `mapping` tab's row for this RQ_No
+    mapping_freshness: Freshness = dataclasses.field(default_factory=Freshness)  # from the `mapping` tab's row for this rq_no
 
 
 # --------------------------------------------------------------------------
@@ -425,7 +430,7 @@ def merge_framework_defs(frameworks_config: list, framework_catalog: dict, warni
 
 
 # --------------------------------------------------------------------------
-# Build mapping index (RQ_No -> our annotations)
+# Build mapping index (rq_no -> our annotations)
 # --------------------------------------------------------------------------
 
 def build_mapping_index(rows: list, colmap: dict, framework_defs: list, warnings: list) -> dict:
@@ -442,11 +447,11 @@ def build_mapping_index(rows: list, colmap: dict, framework_defs: list, warnings
             # row actually carries mapping content that will be silently lost.
             has_content = any((row.get(fw["column"]) or "").strip() for fw in framework_defs)
             if has_content:
-                warnings.append(f"mapping row {i + 2}: blank RQ_No but has mapping content; row ignored")
+                warnings.append(f"mapping row {i + 2}: blank rq_no but has mapping content; row ignored")
             continue
         if rq_no in index:
-            warnings.append(f"mapping row {i + 2}: duplicate RQ_No {rq_no!r}, keeping last")
-        entry = {"freshness": parse_freshness(row, colmap, warnings, f"mapping row {i + 2} (RQ_No {rq_no!r})")}
+            warnings.append(f"mapping row {i + 2}: duplicate rq_no {rq_no!r}, keeping last")
+        entry = {"freshness": parse_freshness(row, colmap, warnings, f"mapping row {i + 2} (rq_no {rq_no!r})")}
         for fw in framework_defs:
             entry[fw["key"]] = parse_id_list(row.get(fw["column"]))
         index[rq_no] = entry
@@ -454,7 +459,7 @@ def build_mapping_index(rows: list, colmap: dict, framework_defs: list, warnings
 
 
 # --------------------------------------------------------------------------
-# Build tool-role index (RQ_No -> tool pairings, tool_map tab)
+# Build tool-role index (rq_no -> tool pairings, tool_map tab)
 # --------------------------------------------------------------------------
 
 VALID_TOOL_ROLES = {"implement", "eval"}
@@ -462,7 +467,7 @@ VALID_TOOL_ROLES = {"implement", "eval"}
 
 def build_tool_role_index(rows: list, colmap: dict, warnings: list) -> dict:
     """Return {rq_no: {"implement": [(tool_id, rationale, freshness), ...], "eval": [...]}}
-    from the tool_map tab -- one row per (RQ_No, tool_id, role) pairing, long
+    from the tool_map tab -- one row per (rq_no, tool_id, role) pairing, long
     format rather than a semicolon list, so a rationale has somewhere to
     live and adding a pairing never means hand-editing an existing cell.
     Resolution against the tool catalog happens in build_problems, same
@@ -477,7 +482,7 @@ def build_tool_role_index(rows: list, colmap: dict, warnings: list) -> dict:
         if not rq_no and not tool_id and not role:
             continue  # blank trailing row
         if not rq_no or not tool_id:
-            warnings.append(f"tool_map row {i + 2}: missing RQ_No or tool_id; row ignored")
+            warnings.append(f"tool_map row {i + 2}: missing rq_no or tool_id; row ignored")
             continue
         if role not in VALID_TOOL_ROLES:
             warnings.append(
@@ -490,7 +495,7 @@ def build_tool_role_index(rows: list, colmap: dict, warnings: list) -> dict:
             continue
         seen_pairs.add(pair_key)
         entry = index.setdefault(rq_no, {"implement": [], "eval": []})
-        context = f"tool_map row {i + 2} (RQ_No {rq_no!r}, tool_id {tool_id!r})"
+        context = f"tool_map row {i + 2} (rq_no {rq_no!r}, tool_id {tool_id!r})"
         entry[role].append((tool_id, rationale, parse_freshness(row, colmap, warnings, context)))
     return index
 
@@ -609,7 +614,7 @@ def build_problems(
             )
         )
 
-    # Surface orphaned annotations: mapping/tool_map rows whose RQ_No matched no TAIG row.
+    # Surface orphaned annotations: mapping/tool_map rows whose rq_no matched no TAIG row.
     for rq_no in mapping_index:
         if rq_no not in used_rqnos:
             warnings.append(
@@ -648,7 +653,10 @@ def order_by_first_appearance(problems: list) -> list:
 
 
 def group_by_taxonomy(problems: list, capacities_order: list, targets_order: list, uncategorized_label: str) -> list:
-    """Capacity -> Target -> Problem Area -> [problems]."""
+    """Capacity -> Target -> Problem Area -> [problems]. Each capacity/target
+    group carries a `slug` (its name, slugified) so templates can anchor-link
+    into a specific cell -- e.g. from the matrix overview on the Landscape
+    and Tools pages -- without recomputing the slug themselves."""
     capacities_present = {p.capacity for p in problems}
     cap_order = ordered_present(capacities_present, capacities_order, uncategorized_label)
 
@@ -666,9 +674,74 @@ def group_by_taxonomy(problems: list, capacities_order: list, targets_order: lis
                     (p for p in tgt_problems if p.problem_area == area), key=lambda p: p.order
                 )
                 area_groups.append({"name": area, "problems": area_problems, "count": len(area_problems)})
-            target_groups.append({"name": tgt, "areas": area_groups, "count": len(tgt_problems)})
-        groups.append({"name": cap, "targets": target_groups, "count": len(cap_problems)})
+            target_groups.append({"name": tgt, "slug": slugify(tgt), "areas": area_groups, "count": len(tgt_problems)})
+        groups.append({"name": cap, "slug": slugify(cap), "targets": target_groups, "count": len(cap_problems)})
     return groups
+
+
+def flatten_groups(groups: list) -> list:
+    """Problems in the same order they're rendered on the problems-listing
+    page (Capacity -> Target -> Problem Area), for prev/next navigation on
+    the problem-detail page -- distinct from `Problem.order` (raw sheet
+    row order), which doesn't necessarily match the on-page grouping."""
+    flat = []
+    for g in groups:
+        for tgt in g["targets"]:
+            for area in tgt["areas"]:
+                flat.extend(area["problems"])
+    return flat
+
+
+CROSSCUTTING_TARGET = "All"
+
+
+def build_matrix(problems: list, capacities_order: list, targets_order: list) -> list:
+    """Capacity x Target coverage matrix for the Landscape page's overview
+    grid, and the per-RQ data the compact mini-heatmap (atop the Explorer/
+    problems and Tools listing pages) buckets by tool count. Iterates the
+    full configured taxonomy, not just combinations actually present in the
+    data, so the grid shape stays stable regardless of current coverage. A
+    capacity whose only target is "All" (Operationalisation, Ecosystem
+    Monitoring) renders as one wide cross-cutting cell instead of 4 columns.
+
+    Each block also carries `rq_cells`: one entry per problem in that cell,
+    in sheet order, with its own tool_count/has_tool -- the Landscape page's
+    per-cell binary blocks and the mini-heatmap's per-RQ, count-bucketed
+    squares both read from this instead of a separate data pass.
+    """
+    core_targets = [t for t in targets_order if t != CROSSCUTTING_TARGET]
+    cells: dict = {}
+    for p in problems:
+        cell = cells.setdefault((p.capacity, p.target), {"total": 0, "covered": 0, "areas": [], "rq_cells": []})
+        cell["total"] += 1
+        tool_count = len(p.tools_implement) + len(p.tools_eval)
+        if tool_count:
+            cell["covered"] += 1
+        if p.problem_area not in cell["areas"]:
+            cell["areas"].append(p.problem_area)
+        cell["rq_cells"].append({
+            "rq_no": p.rq_no, "slug": p.slug, "question": p.question,
+            "tool_count": tool_count, "has_tool": tool_count > 0,
+        })
+
+    empty_cell = {"total": 0, "covered": 0, "areas": [], "rq_cells": []}
+    rows = []
+    for cap in capacities_order:
+        cap_targets = {tgt for (c, tgt) in cells if c == cap}
+        crosscutting = bool(cap_targets) and cap_targets <= {CROSSCUTTING_TARGET}
+        if crosscutting:
+            cell = cells.get((cap, CROSSCUTTING_TARGET), empty_cell)
+            blocks = [{
+                "target": CROSSCUTTING_TARGET, "target_slug": slugify(CROSSCUTTING_TARGET),
+                "span": len(core_targets), **cell,
+            }]
+        else:
+            blocks = []
+            for tgt in core_targets:
+                cell = cells.get((cap, tgt), empty_cell)
+                blocks.append({"target": tgt, "target_slug": slugify(tgt), "span": 1, **cell})
+        rows.append({"capacity": cap, "capacity_slug": slugify(cap), "blocks": blocks})
+    return rows
 
 
 def build_tools_index(problems: list, tool_catalog: dict) -> list:
@@ -811,6 +884,10 @@ def render_site(
         targets_present, config["taxonomy"]["targets"], config["taxonomy"]["uncategorized_label"]
     )
 
+    matrix = build_matrix(problems, config["taxonomy"]["capacities"], config["taxonomy"]["targets"])
+    capacity_blurbs = config["taxonomy"].get("capacity_blurbs", {})
+    targets_core = [t for t in config["taxonomy"]["targets"] if t != CROSSCUTTING_TARGET]
+
     site_ctx = {
         "site": config["site"],
         "generated_at": generated_at,
@@ -823,6 +900,9 @@ def render_site(
         "problem_count": len(problems),
         "tool_count": len(tool_catalog),
         "references": load_references(Path(__file__).parent / "data" / "references.json"),
+        "matrix": matrix,
+        "capacity_blurbs": capacity_blurbs,
+        "targets_core": targets_core,
     }
 
     if out_dir.exists():
@@ -836,26 +916,46 @@ def render_site(
     (out_dir / "references").mkdir()
 
     def write(path: Path, template_name: str, **ctx):
+        path.parent.mkdir(parents=True, exist_ok=True)
         tmpl = env.get_template(template_name)
         path.write_text(tmpl.render(**site_ctx, **ctx), encoding="utf-8")
 
     # Tools with zero tool_map rows -- not wrong data, just not curated yet
-    # (or genuinely unaddressed by any of the 98 RQs). Surfaced on the index
-    # page as a special "RQ #0" card rather than silently vanishing from the
-    # open-problems view; they still list normally on the tools index.
+    # (or genuinely unaddressed by any of the 98 RQs). Surfaced on the
+    # problems-listing page as a special "RQ #0" card rather than silently
+    # vanishing from the open-problems view; they still list normally on the
+    # tools index.
     orphan_tools = sorted((e["tool"] for e in tools_index if not e["problems"]), key=lambda t: t.name.lower())
-    write(out_dir / "index.html", "index.html", root="", groups=groups, orphan_tools=orphan_tools, active="home")
 
-    for p in problems:
-        write(out_dir / "problems" / f"{p.slug}.html", "problem.html", root="../", problem=p, active="problem")
+    # / is the Landscape overview (capacity x target matrix); the problem
+    # listing itself ("Explorer") lives at /problems/, each problem at
+    # /problems/<rq_no>-<slug>/ -- a directory with its own index.html, for a
+    # clean trailing-slash URL rather than a bare .html file.
+    write(out_dir / "index.html", "landscape.html", root="", active="landscape")
+    write(
+        out_dir / "problems" / "index.html", "problems_index.html", root="../",
+        groups=groups, orphan_tools=orphan_tools, active="problems",
+    )
 
+    flat_problems = flatten_groups(groups)
+    for i, p in enumerate(flat_problems):
+        write(
+            out_dir / "problems" / p.slug / "index.html", "problem.html", root="../../",
+            problem=p,
+            prev=flat_problems[i - 1] if i > 0 else None,
+            next=flat_problems[i + 1] if i + 1 < len(flat_problems) else None,
+            active="problem",
+        )
+
+    # Same directory-per-item pattern for tools: /tools/ listing,
+    # /tools/<tool-id>/ detail.
     write(out_dir / "tools" / "index.html", "tools_index.html", root="../", entries=tools_index, active="tools")
     for entry in tools_index:
         tool = entry["tool"]
         write(
-            out_dir / "tools" / f"{tool.slug}.html",
+            out_dir / "tools" / tool.slug / "index.html",
             "tool.html",
-            root="../",
+            root="../../",
             tool=tool,
             problems=entry["problems"],
             active="tools",

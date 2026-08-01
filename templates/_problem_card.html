@@ -1,4 +1,4 @@
-<article class="problem-card"
+<article class="problem-card" id="rq-{{ p.rq_no }}"
   data-capacity="{{ p.capacity }}"
   data-target="{{ p.target }}"
   data-has-tool="{{ '1' if (p.tools_implement or p.tools_eval) else '0' }}"
@@ -14,12 +14,12 @@
   {% set eval_soft = p.tools_eval | selectattr('tool.tool_type', 'equalto', 'software') | sort(attribute='tool.name') | list %}
   <p class="pair-label pair-label-problem">Problem{% if p.rq_no %} <span class="rq-no">#{{ p.rq_no }}</span>{% endif %}</p>
   <h5 class="problem-question">
-    <a href="{{ root }}problems/{{ p.slug }}.html">{{ p.question }}</a>
+    <a href="{{ root }}problems/{{ p.slug }}/">{{ p.question }}</a>
   </h5>
 
   {% macro solution_cell(pairings) %}
     {%- if pairings -%}
-      {%- for pairing in pairings -%}<a class="tool-link" href="{{ root }}tools/{{ pairing.tool.slug }}.html">{{ pairing.tool.name }}</a>{{ ", " if not loop.last }}{%- endfor -%}
+      {%- for pairing in pairings -%}<a class="tool-link" href="{{ root }}tools/{{ pairing.tool.slug }}/">{{ pairing.tool.name }}</a>{{ ", " if not loop.last }}{%- endfor -%}
     {%- else -%}
       <span aria-hidden="true">&mdash;</span><span class="visually-hidden">None</span>
     {%- endif -%}

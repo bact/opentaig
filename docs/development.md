@@ -42,11 +42,19 @@ tool-discovery pipeline.
 
 ## Notes
 
-- The home page groups problems **Capacity → Target → Problem Area**,
-  mirroring the paper's own section structure. `Relevant expertise` is a
-  filter facet (like the frameworks) but doesn't get its own browse page.
+- `/` is the Landscape page: a Capacity x Target coverage matrix (`_matrix.html`,
+  built by `build_matrix()`), linking into `/problems/`. The problem listing
+  itself ("Explorer") groups problems **Capacity → Target → Problem Area**,
+  mirroring the paper's own section structure, and repeats the same matrix
+  (compact, filters below don't affect it) above its filter bar.
+  `Relevant expertise` is a filter facet (like the frameworks) but doesn't
+  get its own browse page.
 - If a sheet is ever made private, swap the CSV-export fetch in
   `fetch_source()` (`build.py`) for the Google Sheets API with a service
   account key stored as a GitHub Actions secret.
-- Problem detail page URLs are derived from the question text
-  (slug + short stable hash). Editing a question's wording changes its URL.
+- Problem and tool detail pages use directory-style URLs: `/problems/<rq_no>-<slugified
+  question>/` and `/tools/<tool-id>/` (each a directory containing its own
+  `index.html`), so links display without a `.html` suffix. `rq_no` is the
+  stable id (the sheet's own question number), so editing a question's
+  wording doesn't change its URL. The Tools listing itself repeats the same
+  matrix component, and its own listing lives at `/tools/`.

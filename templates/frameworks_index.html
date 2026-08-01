@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 {% block title %}Frameworks — {{ site.title }}{% endblock %}
 {% block content %}
-<h1 id="top">Frameworks</h1>
-<p>Browse open problems by the principle, obligation, or regulation article they map to.</p>
+<section class="page-hero">
+  <div class="eyebrow">Frameworks, principles, regulations</div>
+  <h1 id="top">Frameworks</h1>
+  <p class="lede">Browse open problems by the framework, principle, or regulation article they map to.</p>
+</section>
 
 {% for fw in frameworks %}
 <section class="framework-group">

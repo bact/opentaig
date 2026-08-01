@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %}{{ term.name }} — {{ framework.label }} — {{ site.title }}{% endblock %}
 {% block content %}
-<p class="breadcrumb"><a href="{{ root }}frameworks/index.html">&larr; All principles &amp; regulations</a></p>
+<p class="breadcrumb"><a href="{{ root }}frameworks/index.html">&larr; All frameworks</a></p>
 <h1><span class="chip chip-{{ framework.key }} chip-{{ term.id }}">{{ term.name }}</span></h1>
 <p>
   {{ framework.label }}
@@ -14,7 +14,7 @@
 <h2>Open problems mapped to this ({{ problems | length }})</h2>
 <ul class="problem-links">
   {% for p in problems %}
-  <li><a href="{{ root }}problems/{{ p.slug }}.html">{{ p.question }}</a></li>
+  <li><a href="{{ root }}problems/{{ p.slug }}/">{{ p.question }}</a></li>
   {% endfor %}
 </ul>
 {% endblock %}
