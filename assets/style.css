@@ -272,6 +272,13 @@ main.wrap { padding-top: var(--s-12); padding-bottom: var(--s-16); min-height: 6
 .matrix-cell-some  { background: var(--moss-soft); color: var(--moss-ink); }
 .matrix-cell-good  { background: var(--moss); color: var(--white); }
 .matrix-cell-full  { background: var(--moss-ink); color: var(--white); }
+/* Visited-link color must not change a cell's text color -- the browser
+   default (orange/purple) is unreadable on the green "good"/"full" buckets,
+   so each bucket pins :visited back to its own normal text color. */
+.matrix-cell-empty:visited { color: var(--ink-2); }
+.matrix-cell-some:visited  { color: var(--moss-ink); }
+.matrix-cell-good:visited  { color: var(--white); }
+.matrix-cell-full:visited  { color: var(--white); }
 /* currentColor, not the shu accent: each cell already sets its own text
    color for contrast against its own bucket background (dark ink on the
    pale empty/some buckets, white on the darker good/full buckets), so the
@@ -375,6 +382,10 @@ main.wrap { padding-top: var(--s-12); padding-bottom: var(--s-16); min-height: 6
   display: flex; flex-wrap: wrap; align-items: flex-start; gap: var(--s-5) var(--s-8);
   margin-top: var(--s-4); padding-top: var(--s-4); border-top: 1px solid var(--border-soft);
 }
+/* Author `display: flex` above would otherwise beat the UA stylesheet's
+   `[hidden] { display: none }`, leaving the JS-toggled `hidden` attribute
+   with no visible effect. */
+.chip-visibility-body[hidden] { display: none; }
 .chip-visibility-body .filter-group-fields {
   display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: var(--s-2) var(--s-4); align-items: center;
@@ -400,6 +411,7 @@ main.wrap { padding-top: var(--s-12); padding-bottom: var(--s-16); min-height: 6
   background: var(--white); border: 1px solid var(--border-strong); border-radius: var(--r-1);
   padding: var(--s-3); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
 }
+.multiselect-panel[hidden] { display: none; }
 
 /* ---- problem groups / cards ---- */
 .capacity-group { margin-top: var(--s-10); }

@@ -256,6 +256,13 @@
         msTrigger.setAttribute("aria-expanded", "false");
       }
     });
+    var msContainer = msTrigger.closest(".multiselect");
+    msContainer.addEventListener("focusout", function (e) {
+      if (!msContainer.contains(e.relatedTarget)) {
+        msPanel.hidden = true;
+        msTrigger.setAttribute("aria-expanded", "false");
+      }
+    });
     msPanel.addEventListener("keydown", function (e) {
       if (e.key === "Escape") {
         msPanel.hidden = true;

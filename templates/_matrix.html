@@ -32,7 +32,7 @@
         {% for rc in block.rq_cells %}<span class="matrix-cell-block{{ ' is-filled' if rc.has_tool else '' }}"></span>{% endfor %}
       </span>
       {% endif %}
-      {% if block.areas %}<span class="matrix-cell-areas" aria-hidden="true">{{ block.areas | join(' &middot; ') }}</span>{% endif %}
+      {% if block.areas %}<span class="matrix-cell-areas" aria-hidden="true">{{ block.areas | join(' · ') }}</span>{% endif %}
     </a>
     {% endfor %}
   </div>
