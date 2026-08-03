@@ -477,7 +477,7 @@ main.wrap { padding-top: var(--s-12); padding-bottom: var(--s-16); min-height: 6
 .breadcrumb a { color: var(--shu); text-decoration: none; }
 .breadcrumb a:hover { text-decoration: underline; }
 
-.problem-detail-head { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--s-4); }
+.problem-detail-head { display: flex; align-items: center; gap: var(--s-4); margin-bottom: var(--s-4); }
 .problem-number-lg { font-size: var(--text-3xl); padding: 4px 16px; }
 .doc-link { font-size: 0.85em; color: var(--ink-3); text-decoration: underline; text-decoration-color: var(--ink-4); }
 .mapping-list dt { font-weight: 500; margin-top: var(--s-4); color: var(--ink-2); font-size: var(--text-sm); }
