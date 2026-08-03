@@ -53,12 +53,12 @@ come from here, never from the `OpenTAIG` sheet.
 | `Research Question` | The open problem's text, as published upstream. |
 | `Question number (in paper)` | The paper's own numbering (**`rq_no`** — the join key to the `OpenTAIG` sheet's `map` and `tool_map` tabs). Numbers aren't necessarily contiguous (the paper itself has gaps); that's expected. |
 | `Section Number` | The paper's section reference (e.g. `3.1.1`), shown on the problem detail page. |
-| `Target(s)` | One of: `Data`, `Compute`, `Model & Algorithms`, `Deployment`, `All` (cross-cutting). Second-level grouping on the home page. |
-| `Capacity` | One of: `Assessment`, `Access`, `Verification`, `Security`, `Operationalisation`, `Ecosystem Monitoring`. Top-level grouping on the home page. |
+| `Target(s)` | One of: `Data`, `Compute`, `Model & Algorithms`, `Deployment`, `All` (cross-cutting). Second-level grouping on the problem listing page (`/problems/`). |
+| `Capacity` | One of: `Assessment`, `Access`, `Verification`, `Security`, `Operationalisation`, `Ecosystem Monitoring`. Top-level grouping on the problem listing page (`/problems/`) and the Landscape overview matrix (`/`). |
 | `Problem Area (from Problem Areas)` | A finer sub-category (e.g. "Identification of Problematic Data"). Third-level grouping, under Target. |
-| `Existing work & resources` | Citations relevant at time of publication, semicolon-separated. Shown on the problem detail page. |
-| `Relevant expertise` | Disciplines useful for this problem (e.g. `Cryptography`, `ML Theory`). Shown as chips and offered as a filter facet on the home page. |
-| `New work (since publication)` | Citations for follow-up work since the paper published. |
+| `Existing work & resources` | Citations relevant at time of publication, semicolon-separated. Parsed and carried through the build, but not currently rendered on the problem detail page -- pending curation of this column's data quality (see the commented-out block in `templates/problem.html`). |
+| `Relevant expertise` | Disciplines useful for this problem (e.g. `Cryptography`, `ML Theory`). Shown as chips and offered as a filter facet on the problem listing page (`/problems/`). |
+| `New work (since publication)` | Citations for follow-up work since the paper published. Parsed and carried through the build, but not currently rendered (see above). |
 
 ### 2. `OpenTAIG` sheet — our mappings, tool catalog, terms & framework catalogs
 

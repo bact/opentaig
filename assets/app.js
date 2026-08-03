@@ -156,14 +156,14 @@
   applyFilters();
 })();
 
-// Chip visibility preferences: which frameworks' term chips show on problem
-// cards and the problem-detail "Mapped frameworks" section.
-// Scoped to elements marked [data-fw-chip]/[data-fw-block] only -- tool and
-// framework pages always show their own chips, since there they ARE the
-// primary content, not supplemental. Default: only "aiaaic" on, everything
-// else off, so cards lead with the RQ/tool pairing. Persisted in
-// localStorage and applied on every page (not just the index, where the
-// toggle controls live) so the preference is consistent while browsing.
+// Chip visibility preferences: which frameworks' term chips (and the
+// expertise chips) show on problem cards.
+// Scoped to elements marked [data-fw-chip] only -- tool and framework pages
+// always show their own chips, since there they ARE the primary content,
+// not supplemental. Default: "aiaaic" and "expertise" on, every other
+// framework off. Persisted in localStorage and applied on every page (not
+// just the index, where the toggle controls live) so the preference is
+// consistent while browsing.
 (function () {
   "use strict";
 
@@ -207,9 +207,6 @@
   function applyPrefs(prefs) {
     Array.prototype.forEach.call(document.querySelectorAll("[data-fw-chip]"), function (el) {
       el.style.display = prefs[el.dataset.fwChip] ? "" : "none";
-    });
-    Array.prototype.forEach.call(document.querySelectorAll("[data-fw-block]"), function (el) {
-      el.style.display = prefs[el.dataset.fwBlock] ? "" : "none";
     });
   }
 

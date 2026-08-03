@@ -921,7 +921,7 @@ def render_site(
         path.write_text(tmpl.render(**site_ctx, **ctx), encoding="utf-8")
 
     # Tools with zero tool_map rows -- not wrong data, just not curated yet
-    # (or genuinely unaddressed by any of the 98 RQs). Surfaced on the
+    # (or genuinely unaddressed by any of the 97 RQs). Surfaced on the
     # problems-listing page as a special "RQ #0" card rather than silently
     # vanishing from the open-problems view; they still list normally on the
     # tools index.
