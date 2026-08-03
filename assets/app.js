@@ -167,13 +167,27 @@
 (function () {
   "use strict";
 
+  // Collapse/expand for the "Display additional information" bar (only
+  // present on the problem-list page) -- independent of the fwKeys prefs
+  // logic below, so it still works even if that section is skipped.
+  var visibilityToggle = document.getElementById("chip-visibility-toggle");
+  var visibilityBody = document.getElementById("chip-visibility-body");
+  if (visibilityToggle && visibilityBody) {
+    visibilityToggle.addEventListener("click", function () {
+      var expanded = visibilityToggle.getAttribute("aria-expanded") === "true";
+      visibilityToggle.setAttribute("aria-expanded", String(!expanded));
+      visibilityBody.hidden = expanded;
+      visibilityToggle.textContent = expanded ? "Show" : "Hide";
+    });
+  }
+
   var STORAGE_KEY = "opentaig-chip-prefs";
   var fwKeys = (document.body.dataset.fwKeys || "").split(",").filter(Boolean);
   if (!fwKeys.length) return;
 
   function loadPrefs() {
     var defaults = {};
-    fwKeys.forEach(function (k) { defaults[k] = (k === "aiaaic"); });
+    fwKeys.forEach(function (k) { defaults[k] = (k === "aiaaic" || k === "expertise"); });
     var stored = {};
     try {
       stored = JSON.parse(window.localStorage.getItem(STORAGE_KEY) || "{}");
@@ -211,4 +225,43 @@
       applyPrefs(prefs);
     });
   });
+
+  // "Mapped frameworks" multi-select dropdown: a compact trigger button
+  // that expands into the checkbox list above, rather than showing every
+  // framework checkbox inline.
+  var msTrigger = document.getElementById("fw-multiselect-trigger");
+  var msPanel = document.getElementById("fw-multiselect-panel");
+  if (msTrigger && msPanel) {
+    var msCheckboxes = Array.prototype.slice.call(msPanel.querySelectorAll(".chip-toggle-input"));
+    var msTriggerText = msTrigger.querySelector(".multiselect-trigger-text");
+
+    function updateMsTrigger() {
+      var checked = msCheckboxes.filter(function (c) { return c.checked; });
+      if (checked.length === 0) msTriggerText.textContent = "None selected";
+      else if (checked.length === 1) msTriggerText.textContent = checked[0].closest("label").textContent.trim();
+      else msTriggerText.textContent = checked.length + " selected";
+    }
+    updateMsTrigger();
+    msCheckboxes.forEach(function (c) { c.addEventListener("change", updateMsTrigger); });
+
+    msTrigger.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var open = msTrigger.getAttribute("aria-expanded") === "true";
+      msTrigger.setAttribute("aria-expanded", String(!open));
+      msPanel.hidden = open;
+    });
+    document.addEventListener("click", function (e) {
+      if (!msPanel.hidden && !msPanel.contains(e.target) && e.target !== msTrigger) {
+        msPanel.hidden = true;
+        msTrigger.setAttribute("aria-expanded", "false");
+      }
+    });
+    msPanel.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        msPanel.hidden = true;
+        msTrigger.setAttribute("aria-expanded", "false");
+        msTrigger.focus();
+      }
+    });
+  }
 })();

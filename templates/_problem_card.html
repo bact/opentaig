@@ -25,7 +25,7 @@
       {% endfor %}
     {% endfor %}
     {% for term in p.mappings.get(expertise.key, []) %}
-    <span class="chip chip-expertise" title="{{ expertise.label }}">{{ term }}</span>
+    <span class="chip chip-expertise" data-fw-chip="{{ expertise.key }}" title="{{ expertise.label }}">{{ term }}</span>
     {% endfor %}
   </div>
 </article>

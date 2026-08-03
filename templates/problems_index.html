@@ -81,27 +81,50 @@
   </div>
 </section>
 
-<section class="chip-visibility-bar" id="chip-visibility-bar" aria-label="Chip display preferences">
-  <span class="filter-group-label">Show mapped frameworks</span>
-  <div class="filter-group-fields">
-    {% for fw in frameworks %}
-    <label class="chip-toggle">
-      <input type="checkbox" class="chip-toggle-input" data-fw-key="{{ fw.key }}" {{ "checked" if fw.key == "aiaaic" }}>
-      {{ fw.label }}
-    </label>
-    {% endfor %}
+<section class="chip-visibility-bar" id="chip-visibility-bar" aria-label="Display additional information">
+  <div class="chip-visibility-header">
+    <span class="filter-group-label">Display additional information</span>
+    <button type="button" id="chip-visibility-toggle" aria-expanded="false" aria-controls="chip-visibility-body">Show</button>
+  </div>
+  <div class="chip-visibility-body" id="chip-visibility-body" hidden>
+    <div class="filter-group" aria-label="Mapped frameworks">
+      <span class="filter-group-label">Mapped frameworks</span>
+      <div class="multiselect">
+        <button type="button" class="multiselect-trigger" id="fw-multiselect-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="fw-multiselect-panel">
+          <span class="multiselect-trigger-text">&nbsp;</span>
+          <span class="multiselect-caret" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="multiselect-panel" id="fw-multiselect-panel" role="group" aria-label="Mapped frameworks" hidden>
+          {% for fw in frameworks %}
+          <label class="chip-toggle">
+            <input type="checkbox" class="chip-toggle-input" data-fw-key="{{ fw.key }}" {{ "checked" if fw.key == "aiaaic" }}>
+            {{ fw.label }}
+          </label>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="filter-group" aria-label="Other fields" style="border-right:none">
+      <span class="filter-group-label">Other</span>
+      <div class="filter-group-fields">
+        <label class="chip-toggle">
+          <input type="checkbox" class="chip-toggle-input" data-fw-key="{{ expertise.key }}" checked>
+          {{ expertise.label }}
+        </label>
+      </div>
+    </div>
   </div>
 </section>
 
 {% for group in groups %}
 <section class="capacity-group" data-group-name="{{ group.name }}">
-  <h2>{{ group.name }} <span class="count">({{ group.count }})</span></h2>
+  <h2>Capacity: {{ group.name }} <span class="count">({{ group.count }})</span></h2>
   {% for tgt in group.targets %}
   <div class="target-group" id="{{ group.slug }}-{{ tgt.slug }}" data-subgroup-name="{{ tgt.name }}">
-    <h3>{{ tgt.name }} <span class="count">({{ tgt.count }})</span></h3>
+    <h3>Target: {{ tgt.name }} <span class="count">({{ tgt.count }})</span></h3>
     {% for area in tgt.areas %}
     <div class="area-group" data-area-name="{{ area.name }}">
-      <h4 class="area-heading">{{ area.name }} <span class="count">({{ area.count }})</span></h4>
+      <h4 class="area-heading">Problem area: {{ area.name }} <span class="count">({{ area.count }})</span></h4>
       <div class="problem-list">
         {% for p in area.problems %}
         {% include "_problem_card.html" %}

@@ -361,16 +361,45 @@ main.wrap { padding-top: var(--s-12); padding-bottom: var(--s-16); min-height: 6
 }
 
 .chip-visibility-bar {
-  display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2) var(--s-4);
   background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--r-2);
   padding: var(--s-3) var(--s-4); margin: 0 0 var(--s-8); font-size: var(--text-sm);
 }
-.chip-visibility-bar .filter-group-fields {
+.chip-visibility-header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-3); }
+#chip-visibility-toggle {
+  font: inherit; font-size: var(--text-sm); padding: 5px 12px; border-radius: var(--r-1);
+  border: 1px solid var(--border); background: var(--white); color: var(--shu); cursor: pointer;
+  text-decoration: underline; min-height: 24px;
+}
+#chip-visibility-toggle:hover { border-color: var(--shu); }
+.chip-visibility-body {
+  display: flex; flex-wrap: wrap; align-items: flex-start; gap: var(--s-5) var(--s-8);
+  margin-top: var(--s-4); padding-top: var(--s-4); border-top: 1px solid var(--border-soft);
+}
+.chip-visibility-body .filter-group-fields {
   display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: var(--s-2) var(--s-4); align-items: center;
 }
 .chip-toggle { display: flex; align-items: center; gap: 6px; color: var(--ink-3); cursor: pointer; min-height: 24px; }
 .chip-toggle input { cursor: pointer; accent-color: var(--shu); }
+
+/* Multi-select dropdown: a compact trigger button that expands into a
+   checkbox list, instead of showing every option inline. */
+.multiselect { position: relative; }
+.multiselect-trigger {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--s-3);
+  font: inherit; font-size: var(--text-sm); padding: 7px 10px; border-radius: var(--r-1);
+  border: 1px solid var(--border-strong); background: var(--white); color: var(--ink);
+  cursor: pointer; min-width: 220px; min-height: 24px; text-align: left;
+}
+.multiselect-trigger:hover { border-color: var(--shu); }
+.multiselect-trigger-text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.multiselect-caret { font-size: var(--text-xs); color: var(--ink-3); flex-shrink: 0; }
+.multiselect-panel {
+  position: absolute; top: calc(100% + 4px); left: 0; z-index: 20; min-width: 240px;
+  display: flex; flex-direction: column; gap: var(--s-2);
+  background: var(--white); border: 1px solid var(--border-strong); border-radius: var(--r-1);
+  padding: var(--s-3); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
+}
 
 /* ---- problem groups / cards ---- */
 .capacity-group { margin-top: var(--s-10); }
