@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Problem #{{ rq_no }} — {{ site.title }}</title>
+<meta http-equiv="refresh" content="0; url={{ target }}">
+<link rel="canonical" href="{{ target }}">
+<meta name="robots" content="noindex">
+<style>body{font-family:sans-serif;padding:2rem}</style>
+</head>
+<body>
+<p>Redirecting to <a href="{{ target }}">Problem #{{ rq_no }}</a>&hellip;</p>
+<script>location.replace({{ target | tojson }});</script>
+</body>
+</html>

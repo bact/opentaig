@@ -947,6 +947,18 @@ def render_site(
             active="problem",
         )
 
+    # Short-alias redirect: /problems/<rq_no>/ -> /problems/<rq_no>-<slug>/,
+    # so a problem can be linked by number alone without knowing its current
+    # slug. rq_dir uses the same sanitizing as the slug's own prefix
+    # (safe_id_for_path), so it always matches the directory p.slug already
+    # starts with.
+    for p in flat_problems:
+        rq_dir = safe_id_for_path(p.rq_no)
+        write(
+            out_dir / "problems" / rq_dir / "index.html", "problem_redirect.html",
+            rq_no=p.rq_no, target=f"../{p.slug}/",
+        )
+
     # Same directory-per-item pattern for tools: /tools/ listing,
     # /tools/<tool-id>/ detail.
     write(out_dir / "tools" / "index.html", "tools_index.html", root="../", entries=tools_index, active="tools")
