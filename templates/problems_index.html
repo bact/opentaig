@@ -87,14 +87,23 @@
     <button type="button" id="chip-visibility-toggle" aria-expanded="false" aria-controls="chip-visibility-body">Show</button>
   </div>
   <div class="chip-visibility-body" id="chip-visibility-body" hidden>
-    <div class="filter-group" aria-label="Mapped frameworks">
-      <span class="filter-group-label">Mapped frameworks</span>
+    <div class="filter-group">
+      <span class="filter-group-label" id="fw-multiselect-label">Mapped frameworks</span>
+      {# Multi-select dropdown: a disclosure button over a group of native
+         checkboxes, rather than a <select multiple>. Real checkboxes carry
+         their own checked/unchecked semantics and need no custom keyboard
+         handling, and a <select multiple> would need Ctrl/Cmd-click to pick
+         more than one -- undiscoverable, and easy to wipe with a stray
+         keypress. The button announces as "Mapped frameworks, <selection>"
+         via aria-labelledby. #}
       <div class="multiselect">
-        <button type="button" class="multiselect-trigger" id="fw-multiselect-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="fw-multiselect-panel">
+        <button type="button" class="multiselect-trigger" id="fw-multiselect-trigger"
+                aria-expanded="false" aria-controls="fw-multiselect-panel"
+                aria-labelledby="fw-multiselect-label fw-multiselect-trigger">
           <span class="multiselect-trigger-text">&nbsp;</span>
           <span class="multiselect-caret" aria-hidden="true">&#9662;</span>
         </button>
-        <div class="multiselect-panel" id="fw-multiselect-panel" role="group" aria-label="Mapped frameworks" hidden>
+        <div class="multiselect-panel" id="fw-multiselect-panel" role="group" aria-labelledby="fw-multiselect-label" hidden>
           {% for fw in frameworks %}
           <label class="chip-toggle">
             <input type="checkbox" class="chip-toggle-input" data-fw-key="{{ fw.key }}" {{ "checked" if fw.key == "aiaaic" }}>

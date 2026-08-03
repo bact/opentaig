@@ -223,12 +223,13 @@
     });
   });
 
-  // "Mapped frameworks" multi-select dropdown: a compact trigger button
-  // that expands into the checkbox list above, rather than showing every
-  // framework checkbox inline.
+  // "Mapped frameworks" multi-select dropdown: a disclosure button over the
+  // group of native checkboxes, so the list reads as one compact control
+  // instead of six inline checkboxes.
   var msTrigger = document.getElementById("fw-multiselect-trigger");
   var msPanel = document.getElementById("fw-multiselect-panel");
   if (msTrigger && msPanel) {
+    var msContainer = msTrigger.closest(".multiselect");
     var msCheckboxes = Array.prototype.slice.call(msPanel.querySelectorAll(".chip-toggle-input"));
     var msTriggerText = msTrigger.querySelector(".multiselect-trigger-text");
 
@@ -241,29 +242,41 @@
     updateMsTrigger();
     msCheckboxes.forEach(function (c) { c.addEventListener("change", updateMsTrigger); });
 
+    function closeMs() {
+      msPanel.hidden = true;
+      msTrigger.setAttribute("aria-expanded", "false");
+    }
+
     msTrigger.addEventListener("click", function (e) {
       e.stopPropagation();
       var open = msTrigger.getAttribute("aria-expanded") === "true";
       msTrigger.setAttribute("aria-expanded", String(!open));
       msPanel.hidden = open;
     });
+
     document.addEventListener("click", function (e) {
-      if (!msPanel.hidden && !msPanel.contains(e.target) && e.target !== msTrigger) {
-        msPanel.hidden = true;
-        msTrigger.setAttribute("aria-expanded", "false");
-      }
+      if (!msPanel.hidden && !msContainer.contains(e.target)) closeMs();
     });
-    var msContainer = msTrigger.closest(".multiselect");
-    msContainer.addEventListener("focusout", function (e) {
-      if (!msContainer.contains(e.relatedTarget)) {
-        msPanel.hidden = true;
-        msTrigger.setAttribute("aria-expanded", "false");
-      }
+
+    // Closing on blur has to survive a mouse press: pressing a checkbox's
+    // <label> blurs the trigger on mousedown, but focus only reaches the
+    // checkbox on click -- so for the length of the press (any real click
+    // lasts longer than a frame) focus is on neither, and a bare focusout
+    // check would close the panel out from under the click. Tracking the
+    // press lets the blur check stand down until the pointer is released.
+    var pressingInside = false;
+    msContainer.addEventListener("pointerdown", function () { pressingInside = true; });
+    document.addEventListener("pointerup", function () { pressingInside = false; });
+    msContainer.addEventListener("focusout", function () {
+      requestAnimationFrame(function () {
+        if (pressingInside) return;
+        if (!msContainer.contains(document.activeElement)) closeMs();
+      });
     });
+
     msPanel.addEventListener("keydown", function (e) {
       if (e.key === "Escape") {
-        msPanel.hidden = true;
-        msTrigger.setAttribute("aria-expanded", "false");
+        closeMs();
         msTrigger.focus();
       }
     });
