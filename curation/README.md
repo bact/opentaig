@@ -769,6 +769,22 @@ one mapping, and RQs with zero coverage. Use the same judgment rules and
 the same model tiering as any other batch — read the tool's README/docs
 against the candidate RQ's own text, no forced matches.
 
+**Before picking pairs to check, read `state/pass_a_checked.csv`** and skip
+any (tool_id, rq_no) pair already in it, whether its recorded verdict was
+`match` or `no_match` — a `tool_map` row alone only tells you what's
+*accepted*, not what's already been looked at and ruled out, so without
+this file a fresh Pass A run silently redoes the same negative judgments
+instead of covering new ground (tools added since the last Pass A run, or
+RQs never yet considered for a given tool).
+
+For every RQ actually read against a tool this batch — whether it matched
+or not — record it: matches go in `mappings` as normal, and every
+non-matching RQ you deliberately ruled out goes in that same judgment's
+`checked_no_match` list (plain rq_no, or `{"rq_no": ..., "note": ...}` if
+the reasoning is worth a line). `emit_candidates.py` logs both to
+`state/pass_a_checked.csv` — this is what makes the next Pass A run able to
+skip ground already covered instead of starting from zero every time.
+
 Feed accepted new pairings through `emit_candidates.py` as normal, with a
 `repo`/`id` for the *existing* tool and a `mappings` entry for the new RQ —
 same judgment-file shape as any other batch. A judgment whose repo is
@@ -1144,8 +1160,14 @@ been triaged (accepted into `tools`/`tool_map`, or rejected) — see
   before emitting so that check is current. It also appends every judged
   repo (accept or reject) to `state/seen_repos.csv`,
   with a validated `reject_category` and licence classification — see
-  "Rejection tracking & licence classification" above. Deterministic; no
-  model, no network.
+  "Rejection tracking & licence classification" above. A judgment can also
+  carry a `checked_no_match` list (RQs read against this tool and ruled
+  out, alongside the `mappings` it did match) — both get logged to
+  `state/pass_a_checked.csv` (`tool_id, rq_no, verdict, note,
+  timestamp_utc`), the only record of a *negative* Pass A result, since
+  `tool_map` only ever holds accepted mappings. Deduplicated on
+  `(tool_id, rq_no)`. Never pasted into the sheet — process data, like
+  `seen_repos.csv`. Deterministic; no model, no network.
 - **`licenses.py`** — built. Classifies a GitHub-reported SPDX license id as
   `osi-approved` / `free-not-osi` / `non-free` / `source-available` /
   `none-declared` / `unknown`, from the official SPDX license list's

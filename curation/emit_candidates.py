@@ -30,6 +30,17 @@ Deterministic; no model, no network. Input is a JSON file of judgments (see
         "mappings": [                     // only for verdict=="accept"
           {"rq_no": "1", "role": "implement", "rationale": "..."},
           {"rq_no": "4", "role": "eval", "rationale": "..."}
+        ],
+        "checked_no_match": [             // optional; RQs this tool was also
+                                          // read against and ruled out --
+                                          // NOT the same as not having been
+                                          // considered at all. Only for
+                                          // verdict=="accept" (needs a
+                                          // tool `id` to key against). Plain
+                                          // rq_no strings, or
+                                          // {"rq_no": "34", "note": "..."}
+                                          // if the reasoning is worth a line.
+          "34", {"rq_no": "41", "note": "risk taxonomy fits but no tool-level mechanism match"}
         ]
       },
       ...
@@ -86,6 +97,24 @@ copied out first):
     for rejects too -- which is the whole point, since the rejects are where
     the "found N, only M open source" figure comes from. Deduplicated on
     `full_name` across runs.
+  - `curation/state/pass_a_checked.csv` -- `tool_id, rq_no, verdict, note,
+    timestamp_utc`, one row per (tool, RQ) pairing actually *considered*
+    during a Pass A re-mapping batch (see curation/README.md's "Pass A"
+    starter prompt), regardless of outcome: `verdict` is "match" for every
+    RQ in `mappings` above and "no_match" for every entry in
+    `checked_no_match`. This is the only place a *negative* Pass A result is
+    recorded anywhere -- `tool_map` only ever holds accepted mappings, so
+    without this file there is no way to tell "already checked, no match"
+    apart from "never checked at all", and a fresh Pass A run would silently
+    re-derive the same negative conclusions instead of covering new ground.
+    Never pasted into the live sheet -- like `seen_repos.csv`, this is
+    process/provenance data, not site content. Deduplicated on
+    `(tool_id, rq_no)` across runs, so re-running a judgments file, or a
+    later batch re-considering an already-checked pair, doesn't duplicate a
+    row (first verdict recorded wins; if a pair is later genuinely accepted
+    after an earlier "no_match", the real status still lives in `tool_map`
+    -- this ledger only answers "has this pair been looked at", not "what's
+    the current truth").
 
 **After merging accepted rows into the live sheet, clear (empty, keeping
 just the header row) `candidate_tools.csv` and `candidate_map_updates.csv`**
@@ -117,6 +146,7 @@ MAP_FIELDNAMES = ["rq_no", "tool_id", "role", "rationale",
 SEEN_FIELDNAMES = ["full_name", "verdict", "reject_category", "note",
                     "license_spdx_id", "license_class", "problem_area",
                     "found_via_keyword", "stars", "timestamp_utc"]
+PASS_A_FIELDNAMES = ["tool_id", "rq_no", "verdict", "note", "timestamp_utc"]
 
 VALID_ROLES = {"implement", "eval"}
 
@@ -197,6 +227,8 @@ def main() -> None:
     parser.add_argument("--tools-out", default="curation/candidate_tools.csv")
     parser.add_argument("--map-out", default="curation/candidate_map_updates.csv")
     parser.add_argument("--seen-repos", default="curation/state/seen_repos.csv")
+    parser.add_argument("--pass-a-out", default="curation/state/pass_a_checked.csv",
+                        help="ledger of every (tool_id, rq_no) pairing considered, match or not")
     parser.add_argument("--search-candidates", default="curation/state/search_candidates.csv",
                         help="used to look up licence/stars/keyword per repo; a repo absent "
                              "from it is recorded with whatever the judgment supplied")
@@ -218,7 +250,7 @@ def main() -> None:
     live_tool_ids = load_live_tool_ids(Path(args.data_json))
     spdx = load_spdx_index()
 
-    tool_rows, map_rows, seen_rows = [], [], []
+    tool_rows, map_rows, seen_rows, pass_a_rows = [], [], [], []
     seen_ids = set()
     live_tools_skipped = 0
     seen_repos_in_batch = set()
@@ -336,6 +368,27 @@ def main() -> None:
                 "datetime_checked": sheet_timestamp,
                 "datetime_updated": sheet_timestamp,
             })
+            pass_a_rows.append({
+                "tool_id": tool_id,
+                "rq_no": m.get("rq_no", ""),
+                "verdict": "match",
+                "note": "",
+                "timestamp_utc": timestamp,
+            })
+
+        for entry in j.get("checked_no_match", []):
+            rq_no = entry if isinstance(entry, str) else entry.get("rq_no", "")
+            note = "" if isinstance(entry, str) else entry.get("note", "")
+            if not rq_no:
+                errors.append(f"{repo}: checked_no_match entry missing rq_no")
+                continue
+            pass_a_rows.append({
+                "tool_id": tool_id,
+                "rq_no": rq_no,
+                "verdict": "no_match",
+                "note": note,
+                "timestamp_utc": timestamp,
+            })
 
     if errors:
         print("Errors -- fix the judgments file and re-run (nothing was written):")
@@ -352,6 +405,9 @@ def main() -> None:
     seen_path = Path(args.seen_repos)
     seen_written, seen_skipped = append_rows(seen_path, SEEN_FIELDNAMES, seen_rows, ["full_name"])
 
+    pass_a_path = Path(args.pass_a_out)
+    pass_a_written, pass_a_skipped = append_rows(pass_a_path, PASS_A_FIELDNAMES, pass_a_rows, ["tool_id", "rq_no"])
+
     print(f"{tools_written} accepted tool(s) -> {tools_out}"
           + (f" ({tools_skipped} already present, skipped)" if tools_skipped else "")
           + (f" ({live_tools_skipped} already live in tools tab, tools-row skipped)" if live_tools_skipped else ""))
@@ -359,6 +415,9 @@ def main() -> None:
           + (f" ({map_skipped} already present, skipped)" if map_skipped else ""))
     print(f"{seen_written} repo(s) newly logged -> {seen_path}"
           + (f" ({seen_skipped} already logged, skipped)" if seen_skipped else ""))
+    if pass_a_rows:
+        print(f"{pass_a_written} (tool, RQ) pairing(s) logged -> {pass_a_path}"
+              + (f" ({pass_a_skipped} already present, skipped)" if pass_a_skipped else ""))
 
 
 if __name__ == "__main__":
