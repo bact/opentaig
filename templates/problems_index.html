@@ -10,92 +10,95 @@
 {% set matrix_problems_href = "" %}
 {% include "_matrix_compact.html" %}
 
-<section class="filter-bar" id="filter-bar">
-  <div class="filter-search-row">
-    <input type="search" id="filter-search" placeholder="Search questions and mappings&hellip;" aria-label="Search open problems">
+{# Multi-select dropdown: a disclosure button over a group of native
+   checkboxes, rather than a <select multiple>. Real checkboxes carry their
+   own checked/unchecked semantics and need no custom keyboard handling, and
+   a <select multiple> would need Ctrl/Cmd-click to pick more than one --
+   undiscoverable, and easy to wipe with a stray keypress. Selecting more
+   than one option within a dropdown is an OR (e.g. Capacity: Assessment or
+   Access); different dropdowns still AND together. `facet_type`/`facet_attr`
+   tell app.js how to read a card's data-* attribute for this facet:
+   "single" for a one-value-per-card attribute (capacity, target), "pipe"
+   for a "|term1|term2|"-style attribute (frameworks, expertise). #}
+{% macro multiselect(id, label, options, facet_type="", facet_attr="", selected_default=[]) %}
+<div class="filter-field">
+  <span class="filter-group-label" id="{{ id }}-label">{{ label }}</span>
+  <div class="multiselect"{% if facet_type %} data-facet-type="{{ facet_type }}" data-facet-attr="{{ facet_attr }}"{% endif %}>
+    <button type="button" class="multiselect-trigger" id="{{ id }}-trigger"
+            aria-expanded="false" aria-controls="{{ id }}-panel"
+            aria-labelledby="{{ id }}-label {{ id }}-trigger">
+      <span class="multiselect-trigger-text">&nbsp;</span>
+      <span class="multiselect-caret" aria-hidden="true">&#9662;</span>
+    </button>
+    <div class="multiselect-panel" id="{{ id }}-panel" role="group" aria-labelledby="{{ id }}-label" hidden>
+      {% for opt in options %}
+      <label class="chip-toggle">
+        <input type="checkbox" class="chip-toggle-input" data-value="{{ opt }}" {{ "checked" if opt in selected_default }}>
+        {{ opt }}
+      </label>
+      {% endfor %}
+    </div>
   </div>
+</div>
+{% endmacro %}
 
-  <div class="filter-groups-row">
-    <div class="filter-group" aria-label="TAIG taxonomy filters">
-      <span class="filter-group-label">TAIG taxonomy</span>
-      <div class="filter-group-fields">
-        <label>Capacity
-          <select id="filter-capacity">
-            <option value="">Any</option>
-            {% for c in capacities_list %}
-            <option value="{{ c }}">{{ c }}</option>
-            {% endfor %}
-          </select>
-        </label>
+{# Section header that toggles a Show/Hide body -- the whole row is
+   clickable (title text included), not just the button; see .disclosure-*
+   in style.css. #}
+{% macro disclosure_header(title, body_id) %}
+<div class="disclosure-header" data-disclosure>
+  <span class="disclosure-title">{{ title }}</span>
+  <button type="button" class="disclosure-toggle" aria-expanded="false" aria-controls="{{ body_id }}">Show</button>
+</div>
+{% endmacro %}
 
-        <label>Target
-          <select id="filter-target">
-            <option value="">Any</option>
-            {% for t in targets_list %}
-            <option value="{{ t }}">{{ t }}</option>
-            {% endfor %}
-          </select>
-        </label>
-
-        <label>{{ expertise.label }}
-          <select class="filter-framework" data-framework="{{ expertise.key }}">
-            <option value="">Any</option>
-            {% for term in facet_terms.get(expertise.key, []) %}
-            <option value="{{ term }}">{{ term }}</option>
-            {% endfor %}
-          </select>
-        </label>
-      </div>
-    </div>
-
-    <div class="filter-group" aria-label="Framework filters">
-      <span class="filter-group-label">Frameworks</span>
-      <div class="filter-group-fields">
-        {% for fw in frameworks %}
-        <label>{{ fw.label }}
-          <select class="filter-framework" data-framework="{{ fw.key }}">
-            <option value="">Any</option>
-            {% for term in facet_terms.get(fw.key, []) %}
-            <option value="{{ term }}">{{ term }}</option>
-            {% endfor %}
-          </select>
-        </label>
-        {% endfor %}
-      </div>
-    </div>
-
-    <div class="filter-group filter-group-actions" aria-label="Other filters" style="border-right:none">
-      <span class="filter-group-label">Other</span>
-      <div class="filter-group-fields">
+<section class="filter-bar" id="filter-bar">
+  <div class="filter-section">
+    <div class="filter-section-title">Search</div>
+    <div class="filter-section-body" id="filter-search-body">
+      <div class="filter-search-row">
+        <input type="search" id="filter-search" placeholder="Search questions and mappings&hellip;" aria-label="Search open problems">
+        <button type="button" class="search-button" id="filter-search-button">Search</button>
         <label class="filter-checkbox">
           <input type="checkbox" id="filter-has-tool">
           Has open-source tool
         </label>
-        <button type="button" id="filter-reset">Reset filters</button>
+        <button type="button" class="filter-reset" id="filter-search-reset">Reset</button>
       </div>
+      <span id="filter-count" class="filter-count" aria-live="polite"></span>
     </div>
   </div>
 
-  <div class="filter-footer-row">
-    <span id="filter-count" class="filter-count" aria-live="polite"></span>
+  <div class="filter-section">
+    {{ disclosure_header("Filter by Technical AI governance taxonomy", "filter-taig-body") }}
+    <div class="filter-section-body" id="filter-taig-body" hidden>
+      <div class="filter-fields-row">
+        {{ multiselect("filter-capacity", "Capacity", capacities_list, "single", "capacity") }}
+        {{ multiselect("filter-target", "Target", targets_core, "pipe", "target") }}
+        {{ multiselect("filter-expertise", expertise.label, facet_terms.get(expertise.key, []), "pipe", "fw-" ~ expertise.key) }}
+      </div>
+      <button type="button" class="filter-reset" id="filter-taig-reset">Reset</button>
+    </div>
+  </div>
+
+  <div class="filter-section">
+    {{ disclosure_header("Filter by frameworks & principles", "filter-fw-body") }}
+    <div class="filter-section-body" id="filter-fw-body" hidden>
+      <div class="filter-fields-row">
+        {% for fw in frameworks %}
+        {{ multiselect("filter-fw-" ~ fw.key, fw.label, facet_terms.get(fw.key, []), "pipe", "fw-" ~ fw.key) }}
+        {% endfor %}
+      </div>
+      <button type="button" class="filter-reset" id="filter-fw-reset">Reset</button>
+    </div>
   </div>
 </section>
 
-<section class="chip-visibility-bar" id="chip-visibility-bar" aria-label="Display additional information">
-  <div class="chip-visibility-header">
-    <span class="filter-group-label">Display additional information</span>
-    <button type="button" id="chip-visibility-toggle" aria-expanded="false" aria-controls="chip-visibility-body">Show</button>
-  </div>
+<section class="chip-visibility-bar" id="chip-visibility-bar">
+  {{ disclosure_header("Display additional information", "chip-visibility-body") }}
   <div class="chip-visibility-body" id="chip-visibility-body" hidden>
-    <div class="filter-group">
+    <div class="filter-field">
       <span class="filter-group-label" id="fw-multiselect-label">Mapped frameworks</span>
-      {# Multi-select dropdown: a disclosure button over a group of native
-         checkboxes, rather than a <select multiple>. Real checkboxes carry
-         their own checked/unchecked semantics and need no custom keyboard
-         handling, and a <select multiple> would need Ctrl/Cmd-click to pick
-         more than one -- undiscoverable, and easy to wipe with a stray
-         keypress. The button announces as "Mapped frameworks, <selection>"
-         via aria-labelledby. #}
       <div class="multiselect">
         <button type="button" class="multiselect-trigger" id="fw-multiselect-trigger"
                 aria-expanded="false" aria-controls="fw-multiselect-panel"
@@ -111,15 +114,6 @@
           </label>
           {% endfor %}
         </div>
-      </div>
-    </div>
-    <div class="filter-group" aria-label="Other fields" style="border-right:none">
-      <span class="filter-group-label">Other</span>
-      <div class="filter-group-fields">
-        <label class="chip-toggle">
-          <input type="checkbox" class="chip-toggle-input" data-fw-key="{{ expertise.key }}" checked>
-          {{ expertise.label }}
-        </label>
       </div>
     </div>
   </div>

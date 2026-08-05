@@ -879,10 +879,6 @@ def render_site(
     facet_terms[expertise_key] = expertise_terms
 
     capacities_list = [g["name"] for g in groups]
-    targets_present = {p.target for p in problems}
-    targets_list = ordered_present(
-        targets_present, config["taxonomy"]["targets"], config["taxonomy"]["uncategorized_label"]
-    )
 
     matrix = build_matrix(problems, config["taxonomy"]["capacities"], config["taxonomy"]["targets"])
     capacity_blurbs = config["taxonomy"].get("capacity_blurbs", {})
@@ -896,7 +892,6 @@ def render_site(
         "facets": facet_defs,
         "facet_terms": facet_terms,
         "capacities_list": capacities_list,
-        "targets_list": targets_list,
         "problem_count": len(problems),
         "tool_count": len(tool_catalog),
         "references": load_references(Path(__file__).parent / "data" / "references.json"),

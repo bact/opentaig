@@ -7,7 +7,7 @@
 <meta name="description" content="{{ site.description }}">
 <link rel="stylesheet" href="{{ root }}assets/style.css">
 </head>
-<body data-fw-keys="{{ (frameworks | map(attribute='key') | list + [expertise.key]) | join(',') }}">
+<body data-fw-keys="{{ frameworks | map(attribute='key') | join(',') }}">
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="site-header">
   <div class="wrap">

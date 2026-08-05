@@ -4,11 +4,15 @@
 <article class="problem-detail">
   <p class="breadcrumb"><a href="{{ root }}problems/">&larr; All open problems</a></p>
 
-  <div class="problem-detail-head">
-    <p class="pair-label pair-label-problem">Problem</p>
-    {% if problem.rq_no %}<span class="problem-number problem-number-lg">#{{ problem.rq_no }}</span>{% endif %}
+  <div class="problem-head">
+    {% if problem.rq_no %}
+    <div class="problem-badge problem-badge-lg">
+      <span class="problem-badge-label">Problem</span>
+      <span class="problem-badge-no"><span class="problem-badge-no-prefix">No.</span>{{ problem.rq_no }}</span>
+    </div>
+    {% endif %}
+    <h1>{{ problem.question }}</h1>
   </div>
-  <h1>{{ problem.question }}</h1>
   <p class="tags">
     <span class="tag">Capacity: {{ problem.capacity }}</span>
     <span class="tag">Target: {{ problem.target }}</span>

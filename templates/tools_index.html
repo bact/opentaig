@@ -11,19 +11,23 @@
 {% include "_matrix_compact.html" %}
 
 <section class="filter-bar" id="tools-filter-bar">
-  <div class="filter-search-row">
-    <input type="search" id="tools-filter-search" placeholder="Tool name or keyword&hellip;" aria-label="Search tools">
+  <div class="disclosure-header" data-disclosure>
+    <span class="disclosure-title">Filter tools</span>
+    <button type="button" class="disclosure-toggle" aria-expanded="false" aria-controls="tools-filter-body">Show</button>
   </div>
-  <div class="filter-footer-row">
-    <label class="filter-checkbox">
-      <input type="checkbox" id="tools-filter-software">
-      Software
-    </label>
-    <label class="filter-checkbox">
-      <input type="checkbox" id="tools-filter-spec">
-      Specification
-    </label>
-    <button type="button" id="tools-filter-reset">Reset filters</button>
+  <div class="filter-section-body" id="tools-filter-body" hidden>
+    <div class="filter-search-row">
+      <input type="search" id="tools-filter-search" placeholder="Tool name or keyword&hellip;" aria-label="Search tools">
+      <label class="filter-checkbox">
+        <input type="checkbox" id="tools-filter-software">
+        Software
+      </label>
+      <label class="filter-checkbox">
+        <input type="checkbox" id="tools-filter-spec">
+        Specification
+      </label>
+      <button type="button" class="filter-reset" id="tools-filter-reset">Reset</button>
+    </div>
     <span id="tools-filter-count" class="filter-count" aria-live="polite"></span>
   </div>
 </section>
