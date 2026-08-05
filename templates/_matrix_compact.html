@@ -6,13 +6,40 @@
    and a `matrix_problems_href` string -- "" for a bare "#rq-N" anchor when
    rendered ON the problems page itself, or "{{ root }}problems/" elsewhere. #}
 <div class="mini-heatmap">
+  {# Column labels (Data/Compute/Model & Algorithms/Deployment) live once in
+     this header row rather than repeated inside every block below -- the
+     grid-template-columns on .mini-heatmap-row is identical for the header
+     and every data row, so the columns line up. #}
+  <div class="mini-heatmap-row mini-heatmap-header">
+    <div class="mini-heatmap-cap"></div>
+    <div class="mini-heatmap-blocks">
+      {% for tgt in targets_core %}
+      <div class="mini-heatmap-target">{{ tgt }}</div>
+      {% endfor %}
+    </div>
+  </div>
+  {% set ns = namespace(separator_drawn=false) %}
   {% for row in matrix %}
+  {% set crosscutting = row.blocks[0].span > 1 %}
+  {% if crosscutting and not ns.separator_drawn %}
+  {# Operationalisation / Ecosystem Monitoring don't break down by target
+     (their only value is "All"), so a rule sets them apart from the
+     Data/Compute/Model & Algorithms/Deployment rows above -- otherwise a
+     wide "All" block reads like it's still part of that breakdown. #}
+  <div class="mini-heatmap-separator"></div>
+  <div class="mini-heatmap-row mini-heatmap-header">
+    <div class="mini-heatmap-cap"></div>
+    <div class="mini-heatmap-blocks">
+      <div class="mini-heatmap-target" style="grid-column: span {{ targets_core | length }}">All</div>
+    </div>
+  </div>
+  {% set ns.separator_drawn = true %}
+  {% endif %}
   <div class="mini-heatmap-row">
     <div class="mini-heatmap-cap">{{ row.capacity }}</div>
     <div class="mini-heatmap-blocks">
       {% for block in row.blocks %}
       <div class="mini-heatmap-block" style="grid-column: span {{ block.span }}">
-        <div class="mini-heatmap-target">{{ block.target }}</div>
         <div class="mini-heatmap-cells">
           {% for rc in block.rq_cells %}
           {% set bucket = "n0" if rc.tool_count == 0 else ("n1" if rc.tool_count == 1 else ("n2" if rc.tool_count == 2 else "n3plus")) %}

@@ -219,8 +219,11 @@ main.wrap { padding-top: var(--s-12); padding-bottom: var(--s-16); min-height: 6
 .matrix-cap-name { font-size: var(--text-base); font-weight: 500; color: var(--ink); }
 .matrix-cap-blurb { font-size: var(--text-xs); color: var(--ink-3); line-height: var(--leading-snug); }
 .matrix-cell {
+  /* justify-content: flex-start (not center) -- so the count/caption sit at
+     a fixed position from the top of every cell, regardless of how many
+     lines the areas list below it wraps to. */
   padding: var(--s-3) var(--s-4); text-decoration: none; display: flex; flex-direction: column;
-  gap: 3px; justify-content: center; min-height: 76px;
+  gap: 3px; justify-content: flex-start; min-height: 76px;
 }
 .matrix-cell-count { font-size: var(--text-lg); font-weight: 500; font-family: var(--font-mono); }
 .matrix-cell-caption { font-size: var(--text-2xs); text-transform: uppercase; letter-spacing: 0.04em; opacity: 0.85; }
@@ -271,6 +274,12 @@ main.wrap { padding-top: var(--s-12); padding-bottom: var(--s-16); min-height: 6
 .mini-heatmap-blocks { display: contents; }
 .mini-heatmap-block { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .mini-heatmap-target { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-3); }
+.mini-heatmap-header { margin-bottom: var(--s-2); }
+.mini-heatmap-header .mini-heatmap-target { font-weight: 600; }
+/* Sets the crosscutting rows (Operationalisation, Ecosystem Monitoring --
+   their only target value is "All", so they don't break down by column)
+   apart from the Data/Compute/Model & Algorithms/Deployment rows above. */
+.mini-heatmap-separator { border-top: 1px solid var(--border-soft); margin: 2px 0 var(--s-3); }
 .mini-heatmap-cells { display: flex; flex-wrap: wrap; gap: 3px; }
 .mini-heatmap-cell { width: 14px; height: 14px; border-radius: 3px; border: 1px solid var(--border); display: block; }
 .mini-heatmap-cell-n0 { background: var(--paper-3); }
