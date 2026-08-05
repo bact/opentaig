@@ -49,6 +49,22 @@ tool-discovery pipeline.
   (compact, filters below don't affect it) above its filter bar.
   `Relevant expertise` is a filter facet (like the frameworks) but doesn't
   get its own browse page.
+- The compact mini-heatmap (`_matrix_compact.html`, atop the Explorer and
+  Tools listing pages) prints each target column name once, in a shared
+  header row, rather than repeating it inside every capacity row — a second
+  header row (labelled "All") separates Operationalisation / Ecosystem
+  Monitoring from the four core-target rows above them, since those two
+  capacities don't break down by target. Both mini-heatmap cells and the
+  full Landscape matrix's cells (`.matrix-cell`) top-align their content
+  (`justify-content: flex-start`), so a cell's count/caption sits at a fixed
+  position regardless of how many lines its wrapped text below takes.
+- Each tool card on `/tools/` shows up to 3 of its mapped problems as
+  clickable chips ("Problems addressed:"), chosen to diversify across
+  Capacity/Target and to balance Evaluate/Implement problem types, with
+  "+N more problems" for the remainder. Selection lives in
+  `select_highlighted_problems()` in `build.py`, alongside `first_words()`,
+  which truncates a problem's question to the chip's character budget on a
+  word boundary (never mid-word).
 - If a sheet is ever made private, swap the CSV-export fetch in
   `fetch_source()` (`build.py`) for the Google Sheets API with a service
   account key stored as a GitHub Actions secret.
