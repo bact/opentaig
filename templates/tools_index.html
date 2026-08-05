@@ -41,6 +41,7 @@
     <div class="tool-list-head">
       <a href="{{ root }}tools/{{ entry.tool.slug }}/">{{ entry.tool.name }}</a>
       {% if entry.tool.tool_type %}<span class="chip chip-tool-type">{{ entry.tool.tool_type }}</span>{% endif %}
+      {% for lang in entry.tool.programming_languages %}<span class="chip chip-language">{{ lang }}</span>{% endfor %}
       {% if entry.tool.license %}<span class="chip chip-license">{{ entry.tool.license }}</span>{% endif %}
     </div>
     {% if entry.tool.summary %}<p class="tool-list-summary">{{ entry.tool.summary }}</p>{% endif %}

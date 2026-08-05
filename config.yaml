@@ -146,6 +146,11 @@ columns:
     name: "name"
     summary: "summary"
     license: "license"
+    # Implementation language(s), semicolon-separated if more than one (e.g.
+    # "Python; Rust"). Only meaningful for tool_type "software" -- leave
+    # blank for "specification" rows, which have no source code to have a
+    # language.
+    programming_language: "programming_language"
     homepage: "homepage"
     source: "source"
     documentation: "documentation"

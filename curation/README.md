@@ -674,6 +674,16 @@ Judgment rules that matter (details in curation/README.md):
   structurally can't find these -- they surface from mapping a tool's
   *mechanism* to an RQ's *need*, which is most of why topic-tag sweeps and
   direct user-suggested leads outperformed keyword search this session.
+- Fill `programming_language` (e.g. `Python`, `Rust`, `TypeScript`;
+  semicolon-separated if the tool is genuinely polyglot, e.g. `Python;
+  Rust`) for every accepted `tool_type` "software" row -- GitHub's own
+  repo-level `language` field is a reliable single-language source and
+  search_repos.py already captures it per candidate in
+  `state/search_candidates.csv`, so it doesn't need a fresh lookup. A
+  second language is a judgment call (only add one if it's a real,
+  user-facing second implementation language, not an incidental
+  scripting/config language mixed into the repo). Leave it blank for
+  `tool_type` "specification" rows, which have no source code.
 - One tool legitimately answering several RQs is expected, not a smell.
 - An RQ with zero tools is a real finding worth reporting, not a search
   failure to paper over by loosening the matching rule.
@@ -894,6 +904,19 @@ Judgment rules (details in curation/README.md — same as phase 1):
   can all be right if the mechanism fits. This is also why keyword search
   anchored on governance vocabulary structurally under-performs topic-tag
   sweeps and direct leads for this kind of candidate.
+- Fill `programming_language` (e.g. `Python`, `Rust`, `TypeScript`;
+  semicolon-separated if the tool is genuinely polyglot, e.g. `Python;
+  Rust`) for every accepted `tool_type` "software" row -- GitHub's own
+  repo-level `language` field is a reliable single-language source and
+  search_repos.py (and the other search_*.py scripts) already capture it
+  per candidate in `state/search_candidates.csv`, so it doesn't need a
+  fresh lookup. A second language is a judgment call (only add one if it's
+  a real, user-facing second implementation language, not an incidental
+  scripting/config language mixed into the repo). Leave it blank for
+  `tool_type` "specification" rows, which have no source code.
+  Also worth prioritising a batch of `backfill_programming_language.py`
+  against pre-existing tools missing the field, since pass A already has
+  you re-reading the live catalog.
 - One tool legitimately answering several RQs is expected, not a smell.
   This matters more in phase 2 than phase 1 — pass A exists precisely
   because that rule was under-applied when tools were first judged.
@@ -1079,8 +1102,14 @@ carrying the three freshness columns above:
   § Findings, F6.
 - **`tool_map`** — `rq_no, tool_id, role, rationale` + freshness columns.
   One row per `(rq_no, tool_id, role)` pairing.
-- **`tools`** — `id, tool_type, name, summary, license, homepage, source,
-  documentation, funding, implement, eval` + freshness columns.
+- **`tools`** — `id, tool_type, name, summary, license,
+  programming_language, homepage, source, documentation, funding, implement,
+  eval` + freshness columns. `programming_language` (e.g. `Python`, `Rust`;
+  semicolon-separated if the tool is genuinely polyglot) is only meaningful
+  for `tool_type` `software` — leave blank for `specification` rows.
+  Added after the initial ~130 tools were catalogued;
+  fill it in for every new tool going forward, and see
+  `backfill_programming_language.py` for retrofitting existing rows.
 - **`terms`** — `id, framework_id, name, summary, url` + freshness columns.
 - **`framework`** — `id, name, fullname, summary, homepage, source, group`
   + freshness columns.

@@ -1,0 +1,130 @@
+id,name,source,programming_language
+adversarial-robustness-toolbox,Adversarial Robustness Toolbox (ART),https://github.com/Trusted-AI/adversarial-robustness-toolbox.git,Python
+aequitas,Aequitas,https://github.com/dssg/aequitas.git,Python
+agent-governance-toolkit,AI Agent Governance Toolkit,https://github.com/microsoft/agent-governance-toolkit.git,Python
+agent-safe-probe-x,ASP-X (Agent Safe Probe X),https://github.com/Mengmeara/agent-safe-probe-x.git,TypeScript
+agentbench,AgentBench,https://github.com/THUDM/AgentBench,Python
+ai-atlas-nexus,AI Atlas Nexus,https://github.com/IBM/ai-atlas-nexus.git,Cypher
+ai-explainability-360,AI Explainability 360 (AIX360),https://github.com/Trusted-AI/AIX360.git,Python
+ai-text-detector-skill,AI Text Detector (ai-detector-skill),https://github.com/lynote-ai/ai-text-detector,Python
+aia-eia-js,Algorithmic Impact Assessment (AIA),https://github.com/canada-ca/aia-eia-js,Vue
+aif360,AI Fairness 360 (AIF360),https://github.com/Trusted-AI/AIF360.git,Python
+aisev,AI Safety Evaluation Environment (AISEV),https://github.com/Japan-AISI/aisev.git,Python
+amazon-sagemaker-clarify,SageMaker Clarify,https://github.com/aws/amazon-sagemaker-clarify.git,Python
+americanexpress-earlybird,EarlyBird,https://github.com/americanexpress/earlybird.git,Go
+anchore-grant,Grant,https://github.com/anchore/grant.git,Go
+api-police,API Police,https://github.com/Jorwnpay/API-Police.git,Python
+argus-redteam,Argus,https://github.com/gy15901580825/Argus.git,Python
+assurance-platform,TEA Platform (Trustworthy and Ethical Assurance),https://github.com/alan-turing-institute/AssurancePlatform.git,TypeScript
+awslabs-ferret-scan,ferret-scan,https://github.com/awslabs/ferret-scan.git,Go
+boinc,BOINC,https://github.com/BOINC/boinc.git,C++
+c2pa-rs,C2PA Rust SDK,https://github.com/contentauth/c2pa-rs,Rust
+captum,Captum,https://github.com/meta-pytorch/captum.git,Python
+carbynestack,Carbyne Stack,https://github.com/carbynestack/carbynestack,TypeScript
+ccfingerprint,CCFingerprint,https://github.com/HoneyMeta/ccfingerprint,JavaScript
+circuit-breakers,Circuit Breakers,https://github.com/GraySwanAI/circuit-breakers.git,Jupyter Notebook
+cleanlab,cleanlab,https://github.com/cleanlab/cleanlab.git,Python
+codecarbon,CodeCarbon,https://github.com/mlco2/codecarbon.git,Python
+compl-ai,COMPL-AI,https://github.com/compl-ai/compl-ai.git,Python
+cosai-risk-map,CoSAI Risk Map,https://github.com/cosai-oasis/secure-ai-tooling.git,Python
+dangerous-capability-evaluations,Dangerous Capability Evaluations,https://github.com/google-deepmind/dangerous-capability-evaluations.git,Python
+data-prep-kit,Data Prep Kit,https://github.com/data-prep-kit/data-prep-kit.git,HTML
+datafog-python,DataFog,https://github.com/DataFog/datafog-python.git,Python
+datainfra-redactioneverything,RedactionEverything,https://github.com/TracyWang95/DataInfra-RedactionEverything.git,Python
+decodingtrust,DecodingTrust,https://github.com/AI-secure/DecodingTrust.git,Python
+deepchecks,Deepchecks,https://github.com/deepchecks/deepchecks.git,Python
+deepfakebench,DeepfakeBench,https://github.com/SCLBD/DeepfakeBench,Python
+deepsafe,DeepSafe,https://github.com/siddharthksah/DeepSafe,Python
+diffprivlib,Diffprivlib,https://github.com/IBM/differential-privacy-library,Python
+dsgai-scanner,DSGAI Scanner,https://github.com/GenAI-Security-Project/GenAI-Data-Security-Initiative.git,JavaScript
+duplodocus,Duplodocus,https://github.com/allenai/duplodocus,Rust
+easyedit,EasyEdit,https://github.com/zjunlp/EasyEdit.git,Jupyter Notebook
+ecologits,EcoLogits,https://github.com/mlco2/ecologits.git,Python
+embedding-fingerprints,Embedding Fingerprints,https://github.com/jina-ai/embedding-fingerprints,Python
+erasure,ERASURE,https://github.com/aiim-research/ERASURE.git,Python
+euconform,EuConform,https://github.com/Hiepler/EuConform.git,TypeScript
+evidently,Evidently,https://github.com/evidentlyai/evidently.git,Jupyter Notebook
+ezkl,EZKL,https://github.com/zkonduit/ezkl,Rust
+f-uji,F-UJI,https://github.com/pangaea-data-publisher/fuji.git,Python
+fairlearn,Fairlearn,https://github.com/fairlearn/fairlearn.git,Python
+flowcept,Flowcept,https://github.com/ORNL/flowcept.git,Python
+flower,Flower,https://github.com/flwrlabs/flower.git,Python
+fossology,FOSSology,https://github.com/fossology/fossology.git,HTML
+frai,FRAI,https://github.com/sebuzdugan/frai.git,JavaScript
+garak,garak,https://github.com/NVIDIA/garak.git,Python
+gcp-dlp-pdf-redaction,DLP PDF Redaction,https://github.com/GoogleCloudPlatform/dlp-pdf-redaction.git,HCL
+getprovenant-provenant,Provenant,https://github.com/getprovenant/provenant.git,Rust
+giskard,Giskard,https://github.com/Giskard-AI/giskard-oss.git,Python
+google-differential-privacy,Google Differential Privacy,https://github.com/google/differential-privacy,Go
+guardrailsai,Guardrails AI,https://github.com/guardrails-ai/guardrails.git,Python
+heartbench,HeartBench,https://github.com/inclusionAI/HeartBench.git,Python
+imdl-benco,IMDL-BenCo,https://github.com/scu-zjz/IMDLBenCo,Python
+infosys-responsible-ai-toolkit,Infosys Responsible AI Toolkit,https://github.com/Infosys/Infosys-Responsible-AI-Toolkit.git,Python
+inspect,Inspect AI,https://github.com/UKGovernmentBEIS/inspect_ai.git,Python
+intellabs-atlas-cli,Atlas CLI,https://github.com/IntelLabs/atlas-cli.git,Rust
+itext-pdfsweep-java,iText pdfSweep,https://github.com/itext/itext-pdfsweep-java.git,Java
+jiff,JIFF,https://github.com/multiparty/jiff,JavaScript
+kadir-cloakrs,cloakrs,https://github.com/kadir/cloakrs.git,Rust
+karant-autoredact,AutoRedact,https://github.com/karant-dev/AutoRedact.git,TypeScript
+leey21-data-lineage,Data Lineage (Tracing the Roots),https://github.com/Leey21/data-lineage.git,Python
+llm-attributor,LLM Attributor,https://github.com/poloclub/LLM-Attributor,Jupyter Notebook
+lmms-eval,lmms-eval,https://github.com/EvolvingLMMs-Lab/lmms-eval,Python
+machine-genome,Machine Genome,https://github.com/paxlabs-inc/machine-genome.git,Go
+machine-unlearning-comparator,Machine Unlearning Comparator,https://github.com/gnueaj/Machine-Unlearning-Comparator.git,TypeScript
+magika,Magika,https://github.com/google/magika.git,Python
+markllm,MarkLLM,https://github.com/THU-BPM/MarkLLM,Python
+masarena,MASArena,https://github.com/LINs-lab/MASArena,Python
+meta-agents-research-environments,Meta Agents Research Environments,https://github.com/facebookresearch/meta-agents-research-environments.git,Python
+microsoft-seal,Microsoft SEAL,https://github.com/microsoft/SEAL.git,C++
+ml-privacy-meter,Privacy Meter,https://github.com/privacytrustlab/ml_privacy_meter.git,Jupyter Notebook
+mlflow,MLflow,https://github.com/mlflow/mlflow.git,Python
+model-provenance-kit,Model Provenance Kit,https://github.com/cisco-ai-defense/model-provenance-kit.git,Python
+mot,Model Openness Tool (MOT),https://github.com/lfai/model_openness_tool.git,PHP
+mteb,MTEB,https://github.com/embeddings-benchmark/mteb,Python
+nemo-guardrails,NVIDIA NeMo Guardrails,https://github.com/NVIDIA-NeMo/Guardrails.git,Python
+neuralsat,NeuralSAT,https://github.com/dynaroars/neuralsat.git,Python
+nnsight,NNsight,https://github.com/ndif-team/nnsight.git,Python
+opa,Open Policy Agent,https://github.com/open-policy-agent/opa.git,Go
+open-prompt-injection,Open-Prompt-Injection,https://github.com/liu00222/Open-Prompt-Injection.git,Python
+open-unlearning,OpenUnlearning,https://github.com/locuslab/open-unlearning,Python
+openagentsafety,OpenAgentSafety,https://github.com/sani903/OpenAgentSafety.git,Python
+opsml,OpsML,https://github.com/demml/opsml,Rust
+osworld,OSWorld,https://github.com/xlang-ai/OSWorld,Python
+owasp-aibom-generator,OWASP AIBOM Generator,https://github.com/GenAI-Security-Project/aibom-generator.git,Python
+pair-code-lit,Learning Interpretability Tool (LIT),https://github.com/PAIR-code/lit.git,TypeScript
+pku-beaver,Beaver (Safe-RLHF),https://github.com/PKU-Alignment/safe-rlhf.git,Python
+povertyaction-pii-detection,IPA PII Detection,https://github.com/PovertyAction/PII_detection.git,Python
+presidio,Presidio,https://github.com/data-privacy-stack/presidio.git,Python
+project-codeguard,Project CodeGuard,https://github.com/cosai-oasis/project-codeguard.git,Python
+project-moonshot,Project Moonshot,https://github.com/aiverify-foundation/moonshot.git,Python
+pyrit,PyRIT,https://github.com/microsoft/PyRIT.git,Python
+pysyft,PySyft,https://github.com/OpenMined/PySyft.git,Python
+quanda,Quanda,https://github.com/dilyabareeva/quanda.git,Jupyter Notebook
+quantus,Quantus,https://github.com/understandable-machine-intelligence-lab/Quantus.git,Jupyter Notebook
+repe,Representation Engineering (RepE),https://github.com/andyzoujm/representation-engineering.git,Jupyter Notebook
+robustbench,RobustBench,https://github.com/RobustBench/robustbench.git,Python
+sacro-ml,SACRO-ML,https://github.com/AI-SDC/SACRO-ML.git,Python
+sam247-openredaction,OpenRedaction,https://github.com/sam247/openredaction.git,TypeScript
+samsung-lpvs,LPVS (License Pre-Validation Service),https://github.com/Samsung/LPVS.git,Java
+scancode-toolkit,ScanCode Toolkit,https://github.com/aboutcode-org/scancode-toolkit,Python
+seekingdream-dycodeeval,DyCodeEval,https://github.com/SeekingDream/DyCodeEval.git,Python
+shap,SHAP,https://github.com/shap/shap.git,Jupyter Notebook
+synthetic-data-generator,Synthetic Data Generator (SDG),https://github.com/hitsz-ids/synthetic-data-generator.git,Python
+tensorflow-data-validation,TensorFlow Data Validation (TFDV),https://github.com/tensorflow/data-validation.git,Python
+trustllm,TrustLLM toolkit,https://github.com/HowieHwong/TrustLLM.git,Python
+trustyai,TrustyAI Explainability,https://github.com/trustyai-explainability/trustyai-explainability.git,Java
+vgel-repeng,repeng,https://github.com/vgel/repeng.git,Jupyter Notebook
+videoseal,Video Seal,https://github.com/facebookresearch/videoseal.git,Python
+what-if-tool,What-If Tool,https://github.com/PAIR-code/what-if-tool.git,HTML
+wibe,WIBE,https://github.com/ispras/wibe.git,Python
+neuronpedia,Neuronpedia,https://github.com/hijohnnylin/neuronpedia,TypeScript
+granite-guardian,Granite Guardian,https://github.com/ibm-granite/granite-guardian,Jupyter Notebook
+icx360,ICX360,https://github.com/IBM/ICX360,Python
+contextual-privacy-llm,Contextual Privacy for LLMs,https://github.com/IBM/contextual-privacy-LLM,Python
+dstack,dstack,https://github.com/Dstack-TEE/dstack,Rust
+confidential-computing-zoo,Confidential Computing Zoo (CCZoo),https://github.com/intel/confidential-computing-zoo,C++
+tamperbench,TamperBench,https://github.com/criticalml-uw/TamperBench,Python
+xdmod,Open XDMoD,https://github.com/ubccr/xdmod,PHP
+trustee,Trustee,https://github.com/confidential-containers/trustee,Rust
+cmc,CMC (Fraunhofer AISEC),https://github.com/Fraunhofer-AISEC/cmc,C
+gce-tcb-verifier,GCE TCB Verifier,https://github.com/google/gce-tcb-verifier,Go

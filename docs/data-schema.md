@@ -172,6 +172,7 @@ metadata never drifts out of sync across multiple mentions:
 | `name` | Display name. |
 | `summary` | One or two sentence description. |
 | `license` | **SPDX License ID** (e.g. `Apache-2.0`, `MIT`, `GPL-2.0-or-later`) — see [spdx.org/licenses](https://spdx.org/licenses/). |
+| `programming_language` | Implementation language(s) — semicolon-separated if more than one (e.g. `Python; Rust`). GitHub's own repo-level `language` field is a reliable single-language source; a second language is a manual/curated addition for genuinely polyglot tools, not something the backfill script infers automatically. Only meaningful for `tool_type` `software`; leave blank for `specification` rows, which have no source code. Added after the initial ~130 tools were catalogued, so older rows are blank until backfilled — see `curation/backfill_programming_language.py`. |
 | `homepage` | Project homepage URL. |
 | `source` | Source code repository URL. |
 | `documentation` | Documentation URL. |

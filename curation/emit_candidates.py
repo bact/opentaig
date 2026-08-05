@@ -15,6 +15,9 @@ Deterministic; no model, no network. Input is a JSON file of judgments (see
         "name": "Display Name",
         "summary": "one-line summary, distilled from the README",
         "license": "MIT",                 // leave "" rather than guess
+        "programming_language": "Python", // semicolon-separated if more than
+                                          // one, e.g. "Python; Rust"; leave
+                                          // "" for tool_type "specification"
         "homepage": "https://...",
         "source": "https://github.com/org/name.git",
         "documentation": "",
@@ -47,9 +50,14 @@ batch's output was silently destroyed by the next batch's run unless it was
 copied out first):
 
   - `curation/candidate_tools.csv` -- new `tools` tab rows, exact live
-    column order (id, tool_type, name, summary, license, homepage, source,
-    documentation, funding, implement, eval, datetime_added,
-    datetime_checked, datetime_updated). `implement`/`eval` here are
+    column order (id, tool_type, name, summary, license,
+    programming_language, homepage, source, documentation, funding,
+    implement, eval, datetime_added, datetime_checked, datetime_updated).
+    `programming_language` should be GitHub's own repo-level `language`
+    field where available (search_repos.py / search_registries.py /
+    search_arxiv.py / snowball.py all already capture it per candidate in
+    state/search_candidates.csv) -- left "" for tool_type "specification",
+    which has no source code to have a language. `implement`/`eval` here are
     RGAF-style term tags on the tool itself (per the live schema), left
     blank unless the judgment supplied them -- NOT the RQ mapping, which is
     the other file. All three timestamps are stamped with the run time,
@@ -101,8 +109,8 @@ from pathlib import Path
 
 from licenses import OPEN_CLASSES, classify, load_spdx_index
 
-TOOLS_FIELDNAMES = ["id", "tool_type", "name", "summary", "license", "homepage",
-                     "source", "documentation", "funding", "implement", "eval",
+TOOLS_FIELDNAMES = ["id", "tool_type", "name", "summary", "license", "programming_language",
+                     "homepage", "source", "documentation", "funding", "implement", "eval",
                      "datetime_added", "datetime_checked", "datetime_updated"]
 MAP_FIELDNAMES = ["rq_no", "tool_id", "role", "rationale",
                    "datetime_added", "datetime_checked", "datetime_updated"]  # matches the live tool_map tab's header exactly
@@ -297,6 +305,7 @@ def main() -> None:
                 "name": j.get("name", tool_id),
                 "summary": j.get("summary", ""),
                 "license": j.get("license", ""),
+                "programming_language": j.get("programming_language", ""),
                 "homepage": j.get("homepage", ""),
                 "source": j.get("source", ""),
                 "documentation": j.get("documentation", ""),

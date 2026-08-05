@@ -80,6 +80,7 @@ class Tool:
     tool_type: str = ""
     summary: str = ""
     license: str = ""
+    programming_languages: list = dataclasses.field(default_factory=list)  # list[str]
     homepage: str = ""
     source: str = ""
     documentation: str = ""
@@ -324,6 +325,7 @@ def build_tool_catalog(rows: list, colmap: dict, terms_catalog: dict, warnings: 
             tool_type=(row.get(colmap["tool_type"]) or "").strip(),
             summary=(row.get(colmap["summary"]) or "").strip(),
             license=(row.get(colmap["license"]) or "").strip(),
+            programming_languages=split_simple_list(row.get(colmap["programming_language"])),
             homepage=(row.get(colmap["homepage"]) or "").strip(),
             source=(row.get(colmap["source"]) or "").strip(),
             documentation=(row.get(colmap["documentation"]) or "").strip(),

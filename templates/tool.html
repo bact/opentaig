@@ -4,9 +4,10 @@
 <p class="breadcrumb"><a href="{{ root }}tools/">&larr; All tools</a></p>
 <article class="tool-detail">
   <h1>{{ tool.name }}</h1>
-  {% if tool.tool_type or tool.license %}
+  {% if tool.tool_type or tool.license or tool.programming_languages %}
   <p>
     {% if tool.tool_type %}<span class="chip chip-tool-type">{{ tool.tool_type }}</span>{% endif %}
+    {% for lang in tool.programming_languages %}<span class="chip chip-language">{{ lang }}</span>{% endfor %}
     {% if tool.license %}<span class="chip chip-license">{{ tool.license }}</span>
     <a class="doc-link" href="https://spdx.org/licenses/{{ tool.license }}.html">(license text)</a>{% endif %}
   </p>

@@ -487,6 +487,7 @@ main.wrap { padding-top: var(--s-12); padding-bottom: var(--s-16); min-height: 6
 .chip-license { background: var(--chip-license-bg); color: var(--chip-license-fg); font-family: var(--font-mono); }
 .chip-expertise { background: var(--chip-expertise-bg); color: var(--chip-expertise-fg); font-style: italic; }
 .chip-tool-type { background: var(--chip-tool-type-bg); color: var(--chip-tool-type-fg); }
+.chip-language { background: var(--chip-tool-type-bg); color: var(--chip-tool-type-fg); font-family: var(--font-mono); }
 .chip-aiaaic { background: var(--chip-aiaaic-bg); color: var(--chip-aiaaic-fg); }
 .chip-aiaaic-indirect, .chip-aiaaic-crosscutting {
   background: transparent; border: 1px dashed var(--chip-aiaaic-fg);
