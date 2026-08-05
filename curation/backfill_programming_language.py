@@ -11,11 +11,12 @@ sheet), the same review-before-merge shape as `candidate_tools.csv`.
 
 Uses the real GitHub REST API (`/repos/{owner}/{repo}`), so like
 search_repos.py it needs a `GITHUB_TOKEN` env var and unrestricted network
-access to `api.github.com` -- **this does not run inside a Claude Code
-session whose GitHub access is bound to a single repository** (403
-"sessions are bound to their configured repositories"); run it on a
-machine/CI runner with its own token instead. See curation/README.md's
-"Running locally" section.
+access to `api.github.com`. A Claude Code session whose only GitHub
+credential is an auto-injected, repo-scoped token will get a 403 ("sessions
+are bound to their configured repositories") -- but `export
+GITHUB_TOKEN=$(gh auth token)` works fine when the environment has its own
+independent `gh auth login` session (verify with `gh auth status` first).
+See curation/README.md's "Running locally" section.
 
 Only considers `tool_type` "software" rows with a GitHub `source` URL and a
 currently-blank `programming_language` -- "specification" rows have no

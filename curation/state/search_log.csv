@@ -297,3 +297,4 @@ timestamp_utc,keyword,query,raw_count,new_candidates,min_stars,pushed_after_mont
 2026-07-29T15:53:08+00:00,arxiv:adversarial spoofing model ownership,adversarial spoofing model ownership,10,0,19,12,200,"arXiv abstract/comment link extraction, not a GitHub search"
 2026-07-29T15:53:08+00:00,arxiv:shared model governance,shared model governance,10,0,19,12,200,"arXiv abstract/comment link extraction, not a GitHub search"
 2026-07-29T15:53:08+00:00,arxiv:training data extraction attack detection,training data extraction attack detection,10,0,19,12,200,"arXiv abstract/comment link extraction, not a GitHub search"
+2026-08-05T17:22:43+00:00,biodiversity impact tracker,biodiversity impact tracker stars:>19 pushed:>2025-08-05 archived:false fork:false,0,0,19,12,200,

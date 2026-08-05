@@ -3,11 +3,13 @@
 
 Uses the real GitHub REST Search API (``/search/repositories``), so it needs
 a ``GITHUB_TOKEN`` env var and normal, unrestricted network access to
-``api.github.com``. **This does not run inside a Claude Code session whose
-GitHub access is bound to a single repository** (you'll get a 403 with
-"sessions are bound to their configured repositories") -- run it on a
-machine/CI runner with its own token instead. See curation/README.md's
-"Running locally" section.
+``api.github.com``. A Claude Code session whose only GitHub credential is an
+auto-injected, repo-scoped token will get a 403 ("sessions are bound to
+their configured repositories") -- but ``export GITHUB_TOKEN=$(gh auth
+token)`` works fine when the environment has its own independent ``gh auth
+login`` session (verify with ``gh auth status`` first), since that token
+carries the real user's normal scopes rather than being repo-bound. See
+curation/README.md's "Running locally" section.
 
 Applies the same qualifiers as a manual GitHub search:
 
