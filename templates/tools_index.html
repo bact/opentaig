@@ -45,6 +45,17 @@
       <span class="tool-problem-count">{{ entry.problems | length }} problem{{ "" if entry.problems | length == 1 else "s" }}</span>
     </div>
     {% if entry.tool.summary %}<p class="tool-list-summary">{{ entry.tool.summary }}</p>{% endif %}
+    {% if entry.highlighted_problems %}
+    <div class="tool-problem-highlights">
+      <span class="tool-problem-highlights-label">Problems addressed:</span>
+      {% for hp in entry.highlighted_problems %}
+      <a class="tool-problem-chip" href="{{ root }}problems/{{ hp.slug }}/">#{{ hp.rq_no }} {{ hp.label }}</a>
+      {% endfor %}
+      {% if entry.more_count %}
+      <span class="tool-problem-more">+{{ entry.more_count }} more problem{{ "" if entry.more_count == 1 else "s" }}</span>
+      {% endif %}
+    </div>
+    {% endif %}
   </article>
 {% endfor %}
 </div>

@@ -744,6 +744,83 @@ def build_matrix(problems: list, capacities_order: list, targets_order: list) ->
     return rows
 
 
+def first_words(text: str, max_chars: int = 70) -> str:
+    """As many whole words as fit within `max_chars`, ellipsized -- the short
+    problem-question label on a tool's preview chip, where the full question
+    would overflow it. Breaks on a word boundary, never mid-word, even if
+    that means landing under the limit rather than right at it."""
+    if len(text) <= max_chars:
+        return text
+    words = text.split()
+    kept = []
+    length = 0
+    for word in words:
+        added_length = len(word) + (1 if kept else 0)  # +1 for the joining space
+        if length + added_length > max_chars:
+            break
+        kept.append(word)
+        length += added_length
+    if not kept:
+        kept = [words[0]]  # first word alone exceeds max_chars -- show it whole anyway
+    return " ".join(kept) + "..."
+
+
+def _rq_sort_key(p) -> tuple:
+    """Numeric rq_no sorts before any non-numeric one, and never gets
+    compared to a str directly (mixed int/str comparison raises)."""
+    try:
+        return (0, int(p.rq_no))
+    except ValueError:
+        return (1, p.rq_no)
+
+
+def select_highlighted_problems(tool_id: str, problems_for_tool: list, max_shown: int = 3) -> tuple:
+    """Pick up to `max_shown` problems to preview on a tool's card. Prefers a
+    mix of Implement/Evaluate roles and distinct Capacity x Target
+    combinations over just the first N by number, so the preview doesn't
+    read as one narrow slice of what the tool does. Returns
+    (chosen_in_rq_order, how_many_left_out).
+    """
+    candidates = []
+    for p in problems_for_tool:
+        roles = set()
+        if any(pairing.tool.id == tool_id for pairing in p.tools_implement):
+            roles.add("implement")
+        if any(pairing.tool.id == tool_id for pairing in p.tools_eval):
+            roles.add("eval")
+        if roles:
+            candidates.append((p, roles))
+    candidates.sort(key=lambda c: _rq_sort_key(c[0]))
+
+    if len(candidates) <= max_shown:
+        return [c[0] for c in candidates], 0
+
+    selected = []
+    used_cap_target = set()
+    role_counts = {"implement": 0, "eval": 0}
+    pool = list(candidates)
+    while pool and len(selected) < max_shown:
+        def score(c):
+            p, roles = c
+            dup = 1 if (p.capacity, p.target) in used_cap_target else 0
+            if "implement" in roles and "eval" in roles:
+                role_gap = 0
+            elif "implement" in roles:
+                role_gap = 0 if role_counts["implement"] <= role_counts["eval"] else 1
+            else:
+                role_gap = 0 if role_counts["eval"] <= role_counts["implement"] else 1
+            return (dup, role_gap)
+        pool.sort(key=lambda c: (score(c), _rq_sort_key(c[0])))
+        p, roles = pool.pop(0)
+        selected.append((p, roles))
+        used_cap_target.add((p.capacity, p.target))
+        for r in roles:
+            role_counts[r] += 1
+
+    selected.sort(key=lambda c: _rq_sort_key(c[0]))
+    return [c[0] for c in selected], len(candidates) - len(selected)
+
+
 def build_tools_index(problems: list, tool_catalog: dict) -> list:
     usage = {tid: [] for tid in tool_catalog}
     for p in problems:
@@ -752,7 +829,19 @@ def build_tools_index(problems: list, tool_catalog: dict) -> list:
             usage.setdefault(tid, [])
             if p not in usage[tid]:
                 usage[tid].append(p)
-    entries = [{"tool": tool, "problems": usage.get(tid, [])} for tid, tool in tool_catalog.items()]
+    entries = []
+    for tid, tool in tool_catalog.items():
+        tool_problems = usage.get(tid, [])
+        highlighted, more_count = select_highlighted_problems(tid, tool_problems)
+        entries.append({
+            "tool": tool,
+            "problems": tool_problems,
+            "highlighted_problems": [
+                {"rq_no": p.rq_no, "slug": p.slug, "label": first_words(p.question)}
+                for p in highlighted
+            ],
+            "more_count": more_count,
+        })
     entries.sort(key=lambda e: e["tool"].name.lower())
     return entries
 
