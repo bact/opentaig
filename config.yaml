@@ -317,12 +317,12 @@ columns:
 # FALLBACK source-document link used only when a specific term's own `url`
 # (in the terms tab) is blank.
 frameworks:
+  - key: rgaf
+    column: "rgaf"
   - key: aiaaic
     column: "aiaaic"
   - key: unescoai
     column: "unescoai"
-  - key: rgaf
-    column: "rgaf"
   - key: aseanai
     column: "aseanai"
   - key: coeai
