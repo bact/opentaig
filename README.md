@@ -39,8 +39,15 @@ python build.py
 ```
 
 Writes the site to `site/` (git-ignored) — open `site/index.html` to
-preview. See [`docs/development.md`](docs/development.md) for offline
-development against local fixtures, and repo/deployment setup.
+preview, or serve it so relative links behave like the deployed site:
+
+```bash
+python3 -m http.server 8000 -d site
+```
+
+then open `http://localhost:8000`. See
+[`docs/development.md`](docs/development.md) for offline development
+against local fixtures, and repo/deployment setup.
 
 ## Documentation
 
