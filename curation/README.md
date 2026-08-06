@@ -264,39 +264,82 @@ on `not-open-source` counts for a paper claim, it's worth spot-checking a
 sample of the backfilled rows against their own `note` text before citing
 the number.
 
-### Future: a second chance for GitHub's license misdetections
+### Built: `licenseid` as a second chance for `tool_metadata`'s auto-collection
 
-Not yet implemented. Right now `not-open-source` rejections (and the
-`license`/`license_class` recorded for every judged repo, see above) rest
-entirely on GitHub's own SPDX detector — both in
-`collect_project_metadata.py`'s auto-collection into `tool_metadata` and in
-`search_repos.py`'s `license_spdx_id` used for the accept/reject gate. That
-detector is known to misfire (`NOASSERTION`, or a wrong guess) on real
-repos — see `docs/methodology-and-findings.md`'s F3 and the matching note in
-`collect_project_metadata.py`'s module docstring. The idea, for later:
+`collect_project_metadata.py`'s `license`/`programming_language`
+resolution (see its module docstring) gives GitHub's own detector a
+second chance via [`bact/licenseid`](https://github.com/bact/licenseid),
+but only when GitHub's detection genuinely came up empty or looks
+implausible — the full `license` order is `codemeta.json` →
+`CITATION.cff` → **GitHub's own detection, if it found one** →
+ecosystem package manifests' own clean-SPDX license field → `licenseid`
+text-matching Maven's free-text `pom.xml` license name, then the actual
+LICENSE file, as the true last resort (and the slowest step by far —
+gating it behind every earlier source having already failed matters for
+run time as much as correctness). GitHub's detection is checked ahead of
+ecosystem manifests, not behind them, since it's free either way
+(already fetched for every tool) and reliable when it has an answer —
+confirmed on real repos:
 
-1. GitHub's detector says open source -> accept immediately, license
-   recorded in `tool_metadata` as today (`tools`' `license` cell stays
-   blank, deferring to the auto-collected value per the precedence rule).
-2. GitHub's detector says *not* open source, or can't tell -> don't reject
-   outright. Give the repo a second look with
-   [`bact/licenseid`](https://github.com/bact/licenseid) before writing it
-   off. If *that* says open source, keep the candidate — but record the
-   license in `tools` this time (an explicit override, not
-   `tool_metadata`, since it came from a different, non-GitHub method) and
-   flag it for careful human review rather than auto-accepting silently:
-   license is a hard inclusion criterion, not just a display field, so a
-   detector disagreement is exactly the case that should get a second pair
-   of eyes, not less scrutiny.
+- DPV's `CITATION.cff` declares `license: W3C` directly, a real, valid
+  SPDX id — resolves authoritatively without `licenseid` ever running.
+  (Its `programming_language` gets fixed too now, just differently: `HTML`
+  from GitHub's byte-counter is recognized as implausible, triggers a
+  manifest check, and correctly resolves to blank — DPV genuinely isn't
+  software in any ecosystem this catches. Blank isn't always the most
+  *useful* answer even when it's the *correct* one from this chain's
+  perspective, which is exactly why "flag suspicious auto-collected
+  values for review" in PASS A above still matters.)
+- fossology has no such metadata, but GitHub correctly detects
+  `GPL-2.0-only` there — while `licenseid`'s own best match against that
+  same LICENSE file text is the *wrong* `LGPL-2.1-only` at 0.75
+  similarity (plausible-looking, not an obvious miss the way a near-zero
+  score is). `licenseid` is a genuine second chance for what everything
+  else missed, not a challenger to a source that already answered.
+  (fossology's `programming_language` has the same "correct but not
+  useful" blank as DPV, for a different reason: it's genuinely PHP+C —
+  confirmed via GitHub's own per-language byte breakdown — but predates
+  Composer and has no `composer.json` for the chain to find.)
 
-The `tools`/`tool_metadata` license-conflict warning in `build.py` (fires
-whenever both tabs have a real, differing license value for the same tool)
-already covers the case this workflow would actively create — a `tools`
-override that disagrees with what GitHub's detector put in `tool_metadata`
-— so no further build.py work should be needed once this is picked up, only
-the `licenseid` integration itself (presumably a `search_repos.py` or
+Only trusted at or above an 80% similarity floor — a single trust/no-trust
+line, not a "record but flag" middle tier: below 0.8, a match is noise,
+not signal, and is discarded outright rather than recorded for later
+review — confirmed on real repos, RobustBench and SCLBD/DeepfakeBench
+both top-match at 0.07-0.09 similarity to a license that plainly isn't
+theirs.
+
+`programming_language` follows the same "trust the free answer first"
+principle: GitHub's own guess is used directly whenever it's plausible
+(not blank, and not a markup/prose/data language or another confirmed
+false-positive case — see NON_IMPLEMENTATION_LANGUAGES in the module
+docstring) — zero extra calls for the common case. Only when that trust
+is misplaced does the collector spend the extra calls to check every
+ecosystem manifest's presence, and **every one found contributes**, not
+just the first — genuine polyglot detection (e.g. `Rust; JavaScript` for
+a Tauri app), not just a single corrected guess.
+
+**Not yet implemented — the same idea, one layer earlier**, at the Pass B
+accept/reject *gate* itself (`search_repos.py`'s `license_spdx_id`,
+`licenses.py`'s `classify()`, `emit_candidates.py`'s `not-open-source`
+check — see "Rejection tracking & licence classification" above), which
+still rests entirely on GitHub's own detector and doesn't consult
+`licenseid` at all. A candidate GitHub's detector calls `NOASSERTION` or
+"not open source" is rejected as `not-open-source` today even if its
+actual LICENSE file text would match a real open license via `licenseid`
+— the exact failure mode `collect_project_metadata.py`'s chain now
+catches for *already-accepted* tools has no equivalent for *candidates
+not yet accepted*. Since `licenseid` is now a real, already-integrated
+dependency (not a new one to evaluate), wiring it into this gate is
+mostly a matter of *where*, not *whether*: a `search_repos.py` or
 `emit_candidates.py` step, run only for repos GitHub's own check didn't
-clear).
+clear, recording the licenseid-matched id as a `tools`-tab override (not
+`tool_metadata`, since it came from a different, non-GitHub method) and
+flagging it for careful human review — license is a hard inclusion
+criterion, not just a display field, so a detector disagreement deserves
+a second pair of eyes, not less scrutiny. The `tools`/`tool_metadata`
+license-conflict warning in `build.py` already covers the case this would
+create, so no further `build.py` work should be needed once it's picked
+up.
 
 ### Model tiering (cost control)
 
@@ -842,6 +885,33 @@ specific RQ text — don't skip that step, `site/data.json`'s `summary` was
 itself written against a *different* RQ's need originally, and this is
 exactly the mismatch Pass A exists to catch.
 
+**While you're looking at that merged record anyway, sanity-check
+`license` and `programming_language` for a value that looks wrong, and
+override it in `tools` if so.** Both are auto-collected through a fairly
+deep priority chain now (`codemeta.json` → `CITATION.cff` → GitHub's own
+detection, if plausible → ecosystem package manifests → `licenseid`
+text-matching as the true last resort — see
+`collect_project_metadata.py`'s docstring), and it self-corrects a lot on
+its own: DPV used to resolve `programming_language` as `HTML` (its
+rendered spec pages outweigh the actual `.ttl`/`.owl` files in byte
+count); the chain now recognizes `HTML` as an implausible answer,
+searches for an ecosystem manifest, finds none (correct — DPV isn't
+software in any of the ecosystems this catches), and leaves it genuinely
+blank instead. But blank isn't always the *most useful* answer even when
+it's the *correct* one from this chain's perspective — fossology/fossology
+is confirmed genuinely PHP+C (5.9M PHP bytes, 2.5M C, via GitHub's own
+per-language byte breakdown), byte-counts as `HTML` for the same
+generated-content reason as DPV, and also resolves to blank, because it
+predates Composer and has no `composer.json` for the chain to find. Both
+cases are "no signal available," not "wrong signal" — the chain can't
+tell those apart, and only a human (or AI judge) reading the repo
+actually can. A `license` below `licenseid`'s 80% confidence floor is
+discarded outright by the collector itself now, not flagged — so there's
+nothing to catch in `tools`/`tool_metadata` build warnings for that case;
+the sanity-check that matters is a blank or implausible value sitting in
+the merged record with nothing to explain it, which is exactly this kind
+of read-the-record-anyway judgment call.
+
 **Before picking pairs to check, read `state/pass_a_checked.csv`** and skip
 any (tool_id, rq_no) pair already in it, whether its recorded verdict was
 `match` or `no_match` — a `tool_map` row alone only tells you what's
@@ -1293,6 +1363,24 @@ agent session, so re-export it in each one that runs a curation script.
 `--pushed-after-months`, `--min-readme-chars` are all overridable if the
 defaults need adjusting after seeing real results).
 
+`collect_project_metadata.py` additionally needs a one-time local setup
+step for `license` resolution (see its module docstring's "license /
+programming_language" bullet for the full priority chain this feeds into):
+
+```bash
+licenseid update
+```
+
+Downloads the SPDX license list and builds a local SQLite similarity
+index at `~/.local/share/licenseid/licenses.db` (or wherever
+[`bact/licenseid`](https://github.com/bact/licenseid) puts it on your
+platform) — takes a few seconds, no ongoing maintenance beyond an
+occasional `licenseid update --force` to pick up new SPDX license-list
+releases. Not required to run the script at all — without it, license
+resolution just skips straight to GitHub's own (weaker) detection for any
+repo `codemeta.json`/the ecosystem manifests don't already answer, with a
+single warning printed once per run rather than a hard failure.
+
 ### Live sheet schema (current)
 
 Quick recap for curation work — see [`docs/data-schema.md`](../docs/data-schema.md)
@@ -1344,7 +1432,14 @@ owned by this pipeline, each carrying the three freshness columns above:
   could clobber. `build.py` warns at build time if `tools` and
   `tool_metadata` disagree on `license` — a hard inclusion criterion, not
   just a display field, so a detector disagreement is worth a second look
-  even though the `tools` override still wins.
+  even though the `tools` override still wins. **Has fewer rows than
+  `tools` whenever a tool's `source` isn't a resolvable GitHub URL** — not
+  a bug, and expect the gap to widen for now as discovery expands beyond
+  GitHub (arXiv, other forges, ...). Not necessarily permanent — see
+  "Prior art: CHAOSS" above for ecosyste.ms, an aggregator API that could
+  plausibly fill this back in for non-GitHub sources it indexes, if a
+  future collector gets built against it — see
+  `collect_project_metadata.py`'s docstring.
 - **`terms`** — `id, framework_id, name, summary, url` + freshness columns.
 - **`framework`** — `id, name, fullname, summary, homepage, source, group`
   + freshness columns.

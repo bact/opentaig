@@ -283,7 +283,26 @@ no-policy repo, or GPL-licensed with excellent governance practice).
 Collected via `curation/collect_project_metadata.py`, GitHub-only for now
 (see that script's docstring for the exact API calls and their staleness
 characteristics — several of these, especially the counts, are a snapshot
-at collection time, not a live value). Designed independently, then
+at collection time, not a live value). **`tool_metadata` can legitimately
+have fewer rows than `tools`**: any `tools` row whose `source` isn't a
+resolvable GitHub URL has nothing for this GitHub-only script to collect
+from and simply has no `tool_metadata` row at all (confirmed today:
+`aiaaic-repository`'s `source` is a Google Sheet, not a repo). Expect this
+gap to widen for now as tool discovery expands beyond GitHub (arXiv
+papers, other forges, specs with no code repo at all — see
+`docs/methodology-and-findings.md` § 6 future work) — not a sign of a bug
+or a missed collection run. It isn't necessarily a one-way ratchet,
+though: an aggregator API like [ecosyste.ms](https://ecosyste.ms) (noted
+as prior art in "Prior art: CHAOSS" in `curation/README.md`) indexes many
+non-GitHub package registries and forges, so a future collector built
+against it could shrink the gap back down for sources it covers, even
+without a GitHub URL — not built yet, just a real possibility worth
+keeping in mind rather than assuming the gap is permanent. A build warning
+already fires for the opposite problem (an orphaned `tool_metadata` row
+with no matching `tools` entry), but there is deliberately no warning for
+a `tools` row with no `tool_metadata` counterpart, since that's the
+expected, common state for a non-GitHub-hosted tool, not an error. Designed
+independently, then
 cross-checked against [CHAOSS](https://chaoss.community/)'s own metric
 definitions after the fact — see "Prior art: CHAOSS" in
 `curation/README.md` for which columns already line up with a named CHAOSS
@@ -295,8 +314,8 @@ with a hand-typed override in `tools`:
 | Column | Meaning |
 | --- | --- |
 | `name` | The repo's own name (GitHub's `name` field, not `full_name` — no owner prefix). Often not display-ready: a bare slug, or an unwieldy literal project-repo name (e.g. `www-project-top-10-for-large-language-model-applications` for the OWASP LLM Top 10 repo) — that's what `tools`' own `name` override exists for, not a reason to skip collecting it here. |
-| `license` | **SPDX License ID** (e.g. `Apache-2.0`, `MIT`, `GPL-2.0-or-later`) — see [spdx.org/licenses](https://spdx.org/licenses/). GitHub's own repo-level license detector, same API call as `programming_language`. `NOASSERTION` (GitHub couldn't classify it confidently) is recorded as blank, not as a literal `NOASSERTION` value — same blind spot as `license_url` below. Since license is a hard inclusion criterion, not just a display field, `build.py` warns at build time whenever `tools` and `tool_metadata` both have a real, *differing* value for the same tool — the `tools` override still wins per the usual rule, but a detector disagreement is worth a human's attention. |
-| `programming_language` | Implementation language(s) — GitHub's own repo-level `language` field, a single dominant-by-bytes language. A second, genuinely polyglot language is a manual addition in `tools` (semicolon-separated, e.g. `Python; Rust`), not something this script infers. |
+| `license` | **SPDX License ID** (e.g. `Apache-2.0`, `MIT`, `GPL-2.0-or-later`) — see [spdx.org/licenses](https://spdx.org/licenses/). Resolved through a priority chain: `codemeta.json`'s own `license` field → `CITATION.cff`'s own `license` field → **GitHub's own detector, if it found one** → an ecosystem package manifest whose license field is conventionally already clean SPDX (`Cargo.toml`, `package.json`, `pyproject.toml`) → Maven's `pom.xml` license name, normalized via [`licenseid`](https://github.com/bact/licenseid)'s fuzzy SPDX text-matcher → the repo's actual `LICENSE` file text, matched the same way, as the genuine last resort. GitHub's detection is checked ahead of ecosystem manifests (it's free either way, already fetched for every tool, and reliable when it has an answer — its real failure mode is coming up empty, not being confidently wrong), and both outrank `licenseid`'s fuzzy match, which only runs at all once everything else has failed — confirmed on real repos: DPV's `CITATION.cff` declares `license: W3C` directly, resolving it without `licenseid` ever running; fossology has no such metadata, but GitHub correctly detects `GPL-2.0-only` there, while `licenseid`'s own best match against that same LICENSE file text is the *wrong* `LGPL-2.1-only`. Only trusted at or above an 80% similarity floor — below that, a match is noise, not signal (confirmed on real repos matching at 7-9% similarity to a license that plainly isn't theirs), and is discarded outright rather than recorded. `NOASSERTION` is recorded as blank, not as a literal value — same blind spot as `license_url` below. Full detail in `collect_project_metadata.py`'s docstring. Since license is a hard inclusion criterion, not just a display field, `build.py` warns at build time whenever `tools` and `tool_metadata` both have a real, *differing* value for the same tool — the `tools` override still wins per the usual rule, but a detector disagreement is worth a human's attention. |
+| `programming_language` | Implementation language(s), semicolon-separated for genuinely polyglot tools (e.g. `Rust; JavaScript`). `codemeta.json`'s own `programmingLanguage` field is checked first; otherwise GitHub's own repo-level `language` field is trusted directly **if it's a plausible implementation language** — it's wrong often enough to matter when it isn't: DPV (a semantic-web vocabulary) byte-counts as `HTML` because its rendered spec pages outweigh the actual `.ttl`/`.owl` files, and several ML/research repos in this catalog byte-count as `Jupyter Notebook` because notebook cell *output* blobs outweigh the actual Python. Only when GitHub's answer is blank or one of these implausible cases does the collector spend the extra calls to check every ecosystem package manifest's mere *presence* at the repo root (`Cargo.toml` → Rust, `go.mod` → Go, `package.json` → JavaScript/TypeScript, `pyproject.toml` → Python, `pom.xml`/`build.gradle` → Java, `build.gradle.kts` → Kotlin, `composer.json` → PHP) — *every* manifest found contributes to the result, not just the first, so this is where genuine polyglot detection happens. A repo with none of these manifests (DPV; also fossology, which is genuinely PHP+C but predates Composer and has no `composer.json`) resolves to blank rather than a guess — correctly means "no signal available" here, but isn't always the most *useful* answer, so it's also exactly the case "flag suspicious auto-collected values for review" in `curation/README.md`'s PASS A section exists to catch by hand. No universal manifest exists for C/C++ the way it does for the other ecosystems listed, a known remaining gap. |
 | `stars` | Star count (`stargazers_count`). |
 | `forks` | Fork count (`forks_count`). |
 | `watchers` | **Not** GitHub's `watchers_count` field, which has been a silent alias for `stargazers_count` since GitHub folded "Watch" into "Star" years ago — sourced from `subscribers_count` instead, the field that actually reflects people subscribed to repo activity. |

@@ -12,6 +12,21 @@ GitHub-only for now (GitLab/Codeberg would need their own fetch functions;
 no tool in the catalog is hosted there yet, so they aren't built
 speculatively -- see the module docstring bottom for what that would take).
 
+Because of this, `tool_metadata` can legitimately have **fewer rows than
+`tools`** -- any `tools` row whose `source` isn't a resolvable GitHub URL
+(`extract_repo_path()` returns None for it) has nothing here to collect
+from and simply gets no `tool_metadata` row at all; see `unresolvable_
+source` below. Confirmed today: `aiaaic-repository`'s `source` is a Google
+Sheet, not a repo. Expect this gap to widen for now as tool discovery
+expands beyond GitHub (arXiv papers, other forges, specs with no code
+repo at all -- see docs/methodology-and-findings.md § 6 future work) --
+not a sign of a missed collection run or a bug. Not necessarily permanent,
+though: an aggregator API like ecosyste.ms (see "Prior art: CHAOSS" in
+curation/README.md) indexes many non-GitHub registries and forges, so a
+future collector built against it could shrink this gap back down for
+sources it covers -- not built yet, just worth keeping in mind rather than
+assuming GitHub-only is the permanent ceiling.
+
 Read-only against both live sheets: only ever *reads* `site/data.json` (the
 last local `python build.py` output) and public read APIs, and writes a
 CSV -- it never touches either Google Sheet directly. Because `tool_metadata`
@@ -25,20 +40,26 @@ free from the same repo-core API call already made for stars/forks/etc.,
 so a dedicated script for just that one field was redundant once this one
 existed.
 
-Sources -- one repo costs ~12-18 GitHub API calls (varies with how many
-security/governance path probes short-circuit) + 2 third-party calls, all
-confirmed by hand against real repos before this script was written, not
-assumed from documentation:
+Sources -- one repo costs ~18 GitHub API calls in the common case (GitHub's
+own language/license detection trusted directly, no package-manifest
+probing needed) up to ~28 in the worst case (that detection was blank or
+implausible, see NON_IMPLEMENTATION_LANGUAGES) + 2 third-party calls +
+local (no-network-per-call) license text matching via `licenseid`,
+all confirmed by hand against real repos before this script was written,
+not assumed from documentation:
 
   - `GET /repos/{owner}/{repo}` -> stars (`stargazers_count`), forks
     (`forks_count`), watchers (`subscribers_count` -- NOT `watchers_count`,
     which has been a silent alias for `stargazers_count` since GitHub folded
     "Watch" into "Star"), open_issues_count (`open_issues_count`; GitHub
     conflates open PRs into this count, a known quirk, not a bug in this
-    script), last_commit_date (`pushed_at`, date part only),
-    programming_language (`language`, the same single dominant-by-bytes
-    field `backfill_programming_language.py` used to fetch on its own),
-    and `default_branch` (needed by several probes below).
+    script), last_commit_date (`pushed_at`, date part only), and
+    `default_branch` (needed by several probes below). Also returns
+    `license` (`license.spdx_id`, "" if `NOASSERTION`) and
+    `programming_language` (`language`, GitHub's single dominant-by-bytes
+    guess) -- but for both, this is now the **last-resort fallback**, not
+    the primary source; see the dedicated bullet below for why and what
+    supersedes it.
   - `GET /repos/{owner}/{repo}/contributors?per_page=1&anon=true` ->
     approximate contributor count from the `Link: rel="last"` page number
     (paginating 1-per-page makes the last page number equal the count). A
@@ -101,6 +122,91 @@ assumed from documentation:
     paper describing the tool, when one exists -- checks codemeta's own
     `citation[].url` first, since a repo can carry both files and
     CodeMeta's `citation` block is the more structured of the two.
+  - `license` / `programming_language`: GitHub's own repo-core detection
+    (above) is wrong often enough to matter for this catalog's domain --
+    confirmed on a real catalogued tool, W3C's DPV vocabulary
+    (w3c-cg/dpv), which GitHub reports as "HTML" (its rendered spec pages
+    dominate the byte count; the repo is actually Turtle/RDF) with license
+    "" (GitHub's detector doesn't recognize the W3C Software and Document
+    License 2023 text at all). Both fields now go through a priority chain
+    before ever falling back to GitHub's guess -- structured package
+    metadata first, then GitHub, then `licenseid`'s fuzzy text match as the
+    genuine last resort (not a challenger to a source that already
+    answered, and the slowest step of this whole chain by far, so gating
+    it behind "nothing else found anything" also matters for run time, not
+    just correctness):
+      1. `codemeta.json`'s own `license`/`programmingLanguage` fields, if
+         present (see fetch_codemeta() -- reuses the same fetch already
+         made for `funder`/`development_status` above, no extra call).
+      2. `license` only: `CITATION.cff`'s own top-level `license` field,
+         if present (see fetch_citation_cff() -- reuses the same fetch
+         already made for `paper_url`/`software_heritage_id` above).
+         Confirmed on the DPV case this whole chain is built around: its
+         CITATION.cff declares `license: W3C` directly -- a real, valid
+         SPDX id -- resolving it authoritatively without ever needing
+         `licenseid`'s fuzzy match at all.
+      3. `programming_language` only: an ecosystem package-manifest file's
+         mere *presence* at the repo root -- `Cargo.toml` -> Rust,
+         `go.mod` -> Go, `package.json` -> JavaScript (or TypeScript if
+         `tsconfig.json` is also present), `pyproject.toml` -> Python,
+         `pom.xml` -> Java, `build.gradle.kts` -> Kotlin, `build.gradle`
+         -> Java -- checked in that order, first one found wins (see
+         PACKAGE_MANIFEST_LANGUAGES, detect_language_from_manifests()).
+         A semantic-web repo like DPV has none of these manifests (it
+         isn't a software package in any of these ecosystems), so this
+         step correctly finds nothing there either -- catching the *false
+         positive* GitHub's byte-counter produces for `programming_
+         language` is a job for a human/AI judgment call in `tools`, not
+         something a script can safely automate (see "flag suspicious
+         auto-collected values for review" in curation/README.md's PASS A
+         section; unlike `license`, no CITATION.cff/codemeta.json field
+         happened to cover DPV's language the way it covered its license).
+      4. `license` only: `Cargo.toml`/`package.json`/`pyproject.toml`'s own
+         `license` field, when present -- each ecosystem's convention
+         already expects this to be a clean SPDX expression (crates.io/npm/
+         PEP 639 all require or strongly encourage it), so these are used
+         as-is, no further matching needed (see resolve_license(),
+         parse_cargo_toml_license(), parse_package_json_license(),
+         parse_pyproject_toml_license()).
+      5. `license` only: GitHub's own repo-core detection (`core["license"]`
+         from the first bullet above), *if it found one*. This ranks ABOVE
+         `licenseid`'s fuzzy text match, not below it -- confirmed on a
+         real repo, fossology/fossology: GitHub correctly detects
+         `GPL-2.0-only`, but licenseid's own best match against that same
+         LICENSE file's text is the *wrong* `LGPL-2.1-only` at 0.75
+         similarity (plausible-looking, not obviously wrong the way a
+         near-zero score is). `licenseid` is a genuine second chance for
+         cases GitHub missed entirely (`NOASSERTION` or blank), not a
+         challenger to a case it already got right -- steps 6/7 below only
+         run when GitHub's own detection is empty.
+      6. `license` only: Maven's `pom.xml` <licenses><license><name> --
+         free text (e.g. "The Apache License, Version 2.0"), NOT
+         guaranteed valid SPDX the way step 4's fields are, so it's
+         normalized through [`licenseid`][licenseid] rather than used
+         directly (see parse_pom_xml_license_name(), match_license_text()).
+      7. `license` only: the repo's actual `LICENSE`/`LICENSE.md`/
+         `LICENSE.txt`/etc. file text (see LICENSE_FILE_PATHS), matched
+         against the full SPDX list via `licenseid`'s fuzzy text matcher
+         (SQLite FTS5 + RapidFuzz, not an LLM -- deterministic). Only
+         trusted at or above LICENSEID_CONFIDENCE_FLOOR (0.8) -- confirmed
+         on real repos that below that, a "match" is noise, not signal
+         (RobustBench and SCLBD/DeepfakeBench both top-match at 0.07-0.09
+         similarity to a license that plainly isn't theirs); a below-floor
+         match is discarded outright (logged as a warning), not recorded
+         for later review -- a single trust/no-trust line, not a "record
+         but flag" middle tier.
+      8. `programming_language` only: GitHub's own repo-core `language`
+         (from the first bullet above) -- the true last resort, only
+         reached if every step above came up empty.
+    `licenseid` needs a **one-time local setup step** before first use --
+    `licenseid update`, which downloads the SPDX license list and builds a
+    local SQLite similarity index (see curation/README.md's Setup). If
+    that database isn't present, steps 6/7 above are skipped for the whole
+    run (a single warning printed once, not once per tool) and license
+    resolution falls through to codemeta.json / CITATION.cff / ecosystem
+    manifests / GitHub's own detection only.
+
+[licenseid]: https://github.com/bact/licenseid
 
 Both third-party calls (bestpractices.dev, scorecard.dev) are made with a
 **plain, unauthenticated request** -- never through the GitHub-authed
@@ -148,7 +254,12 @@ Leave that column for manual spot-checks.
 
 Same GITHUB_TOKEN / session requirement as search_repos.py -- see that
 script's docstring, or curation/README.md's "Setup" section, for the
-`gh auth token` vs repo-scoped-token distinction.
+`gh auth token` vs repo-scoped-token distinction. Also needs a one-time
+`licenseid update` before first use (builds a local SQLite license-text
+index) -- see the "license / programming_language" bullet above and
+curation/README.md's "Setup". Runs fine without it, just with license
+resolution skipping straight to GitHub's own (weaker) detection for any
+repo codemeta.json/the ecosystem manifests didn't already answer.
 
 By default, only considers `tool_type` "software" or "specification" rows
 with a GitHub `source` URL and no `stars` value yet (i.e. never collected)
@@ -171,8 +282,10 @@ freshness tracking here, only per-row (see pass_a_checked.csv's docstring
 in emit_candidates.py for the same limitation applied to RQ mappings).
 
 Rate limits and interruption safety: prints the current GitHub core rate
-limit (`/rate_limit`) before starting, with a rough worst-case call estimate
-for the run (~18 GitHub calls/tool), and re-checks every 20 tools --
+limit (`/rate_limit`) before starting, with a rough call estimate for the
+run (~18-28 calls/tool depending on how often GitHub's own language/license
+answers are trusted directly -- see the "license / programming_language"
+bullet above), and re-checks every 20 tools --
 stopping early rather than continuing once remaining quota drops below 100.
 Every row is written to `--out` and flushed immediately after that tool is
 processed, not batched to the end, so an interruption for any reason (rate
@@ -211,11 +324,13 @@ import os
 import re
 import time
 import tomllib
+import xml.etree.ElementTree as ET
 from pathlib import Path
 from urllib.parse import quote
 
 import requests
 import yaml
+from licenseid.matcher import AggregatedLicenseMatcher
 
 GITHUB_API = "https://api.github.com"
 BESTPRACTICES_API = "https://www.bestpractices.dev/projects.json"
@@ -230,6 +345,72 @@ SCORECARD_CHECK_COLUMNS = {
     "Maintained": "openssf_scorecard_maintained",
     "Vulnerabilities": "openssf_scorecard_vulnerabilities",
 }
+# Common LICENSE filenames, checked in this order -- first one found wins
+# (stops there even if licenseid can't match its text, rather than trying
+# every remaining name looking for a luckier match).
+LICENSE_FILE_PATHS = ["LICENSE", "LICENSE.md", "LICENSE.txt", "LICENSE-MIT", "COPYING", "COPYING.md"]
+# Ecosystem package-manifest files that make a repo's implementation
+# language(s) unambiguous even when GitHub's own byte-counter is misled by
+# generated/rendered content -- e.g. a semantic-web vocabulary repo that's
+# almost entirely `.ttl`/`.owl`/`.jsonld` files GitHub can't byte-count as
+# "language" at all, with just enough rendered HTML spec pages for GitHub's
+# detector to call the whole repo "HTML" (the real case this whole
+# resolution chain exists for -- see NON_IMPLEMENTATION_LANGUAGES and
+# detect_languages_from_manifests() below). Only consulted when GitHub's
+# own guess is blank or implausible -- see main()'s `language_needs_
+# manifests`. Every entry present contributes to the result (genuine
+# polyglot support, e.g. a Tauri app -> "Rust; JavaScript"), in this order.
+# No universal C/C++ manifest exists the way the others do (CMakeLists.txt
+# isn't authoritative/ubiquitous enough to trust the same way) -- and even
+# where a manifest convention exists, not every repo in that ecosystem
+# actually uses it: fossology/fossology is genuinely PHP+C (confirmed via
+# GET /repos/{owner}/{repo}/languages: 5.9M PHP bytes, 2.5M C, vs. 6.5M
+# HTML from generated/vendored content, which is what GitHub's `language`
+# reports), but predates widespread Composer adoption and has no
+# composer.json -- resolves to blank here, correctly reflecting "no
+# manifest signal available" rather than a wrong guess, but still a real
+# case for a human to fill in via `tools` (see "flag suspicious
+# auto-collected values for review" in curation/README.md's PASS A
+# section).
+PACKAGE_MANIFEST_LANGUAGES = [
+    ("Cargo.toml", "Rust"),
+    ("go.mod", "Go"),
+    ("package.json", "JavaScript"),  # refined to TypeScript if tsconfig.json is also present
+    ("pyproject.toml", "Python"),
+    ("pom.xml", "Java"),
+    ("build.gradle.kts", "Kotlin"),
+    ("build.gradle", "Java"),
+    ("composer.json", "PHP"),
+]
+# GitHub Linguist languages that are markup/prose/data, or that commonly
+# dominate a repo's byte count without being its real implementation
+# language -- confirmed on real catalogued tools, not assumed: w3c-cg/dpv
+# (a semantic-web vocabulary) byte-counts as `HTML` because of its rendered
+# spec pages; several ML/research repos in this catalog (llm-attributor,
+# granite-guardian, ml-privacy-meter) byte-count as `Jupyter Notebook`
+# because notebook cell *output* blobs (embedded images, base64 data)
+# routinely outweigh the actual Python source. GitHub's `language` field is
+# trusted directly when it's NOT one of these (the common case, zero extra
+# API calls) -- only when it's blank or in this set does main() bother
+# probing PACKAGE_MANIFEST_LANGUAGES at all. Not exhaustive by design --
+# extend if another confirmed false positive shows up; being too aggressive
+# here just means spending calls checking manifests unnecessarily, not a
+# correctness risk either way.
+NON_IMPLEMENTATION_LANGUAGES = {
+    "HTML", "CSS", "SCSS", "Less", "Markdown", "TeX", "Roff", "XSLT",
+    "YAML", "JSON", "XML", "Jupyter Notebook",
+}
+# licenseid's similarity score below which a match is discarded outright --
+# treated as "no match" (resolve_license() falls through to whatever's next
+# in its chain, or "" if there's nothing left) rather than recorded. A
+# single trust/no-trust line, not a "recorded but flagged" middle tier:
+# below this, a match isn't a weak signal, it's noise -- confirmed on real
+# repos, RobustBench's actual LICENSE text top-matches `BSD-4-Clause` at
+# 0.09 similarity, SCLBD/DeepfakeBench at 0.07 -- neither is remotely the
+# repo's real license, and even the moderate end of the discarded range
+# (demml/opsml at 0.79) is close enough to this floor to not be worth
+# trusting either.
+LICENSEID_CONFIDENCE_FLOOR = 0.8
 # FUNDING.yml's own platform keys -> a function building the canonical URL.
 # `github`/`custom` can hold a single string or a list; every other key is a
 # single string. See https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button-in-your-repository
@@ -455,6 +636,230 @@ def fetch_sbom_url(session: requests.Session, repo_path: str) -> str:
     return ""
 
 
+def fetch_package_manifests(session: requests.Session, repo_path: str, include_all: bool) -> dict:
+    """pyproject.toml is always fetched, `include_all` or not -- it's needed
+    for `funding` regardless of whether license/language resolution ever
+    reach it (see collect_funding()), so there's no case where skipping it
+    saves a call. The rest of PACKAGE_MANIFEST_LANGUAGES (plus tsconfig.json,
+    only probed if package.json exists) are only fetched when `include_all`
+    is set by the caller -- GitHub's own language guess was blank/
+    implausible, or license is still unresolved after codemeta.json/
+    CITATION.cff/GitHub (see main()). For the common case where neither
+    trigger fires, this saves 6-7 GitHub calls per tool that would almost
+    always just be 404s anyway (a repo only uses one ecosystem, if any)."""
+    result = {"pyproject.toml": fetch_raw_file(session, repo_path, "pyproject.toml")}
+    if not include_all:
+        return result
+    for filename, _ in PACKAGE_MANIFEST_LANGUAGES:
+        if filename == "pyproject.toml":
+            continue
+        result[filename] = fetch_raw_file(session, repo_path, filename)
+    if result.get("package.json"):
+        result["tsconfig.json"] = fetch_raw_file(session, repo_path, "tsconfig.json")
+    return result
+
+
+def detect_languages_from_manifests(manifests: dict) -> list[str]:
+    """Every ecosystem manifest that exists, not just the first -- genuine
+    polyglot detection (e.g. a Tauri app with a Rust backend and a
+    JavaScript frontend -> ["Rust", "JavaScript"]), unlike GitHub's own
+    single-dominant-language guess. Only called when that guess was blank
+    or implausible (see NON_IMPLEMENTATION_LANGUAGES) -- for the common
+    case where GitHub's answer is trusted directly, this never runs, and
+    `manifests` was never even fetched beyond pyproject.toml."""
+    languages = []
+    for filename, language in PACKAGE_MANIFEST_LANGUAGES:
+        if not manifests.get(filename):
+            continue
+        if filename == "package.json" and manifests.get("tsconfig.json"):
+            language = "TypeScript"
+        if language not in languages:  # pom.xml and build.gradle both map to "Java" -- don't double-add
+            languages.append(language)
+    return languages
+
+
+def parse_cargo_toml_license(text: str, warnings: list, repo_path: str) -> str:
+    """Cargo.toml's `package.license` is conventionally already a clean
+    SPDX expression (crates.io requires it for publishing) -- used as-is,
+    no licenseid pass needed."""
+    try:
+        data = tomllib.loads(text)
+    except (tomllib.TOMLDecodeError, UnicodeDecodeError) as e:
+        warnings.append(f"{repo_path}: Cargo.toml failed to parse ({e})")
+        return ""
+    return (data.get("package") or {}).get("license") or ""
+
+
+def parse_package_json_license(text: str, warnings: list, repo_path: str) -> str:
+    """package.json's `license` is conventionally already a clean SPDX
+    expression per npm's own docs -- used as-is. Handles both the modern
+    string form and the legacy `{"type": "MIT"}` object form npm
+    deprecated years ago but some older repos still carry."""
+    try:
+        data = json.loads(text)
+    except json.JSONDecodeError as e:
+        warnings.append(f"{repo_path}: package.json failed to parse ({e})")
+        return ""
+    license_val = data.get("license")
+    if isinstance(license_val, str):
+        return license_val
+    if isinstance(license_val, dict):
+        return license_val.get("type", "") or ""
+    return ""
+
+
+def parse_pyproject_toml_license(text: str, warnings: list, repo_path: str) -> str:
+    """pyproject.toml's `[project].license` is a clean SPDX expression
+    under PEP 639 (the modern form, a plain string), or `{text = "..."}`
+    under the legacy PEP 621 form -- both used as-is. The other legacy form,
+    `{file = "..."}`, just points at a LICENSE file instead of naming the
+    license, so there's nothing to extract here -- the LICENSE-file +
+    licenseid step in resolve_license() covers that case anyway."""
+    try:
+        data = tomllib.loads(text)
+    except (tomllib.TOMLDecodeError, UnicodeDecodeError) as e:
+        warnings.append(f"{repo_path}: pyproject.toml failed to parse ({e})")
+        return ""
+    license_val = (data.get("project") or {}).get("license")
+    if isinstance(license_val, str):
+        return license_val
+    if isinstance(license_val, dict):
+        return license_val.get("text", "") or ""
+    return ""
+
+
+def parse_pom_xml_license_name(text: str, warnings: list, repo_path: str) -> str:
+    """Maven's pom.xml <licenses><license><name> is free text (e.g. "The
+    Apache License, Version 2.0"), NOT guaranteed to be a valid SPDX id the
+    way Cargo.toml/package.json/pyproject.toml's fields are -- the caller
+    (resolve_license()) routes this through licenseid rather than using it
+    directly."""
+    try:
+        root = ET.fromstring(text)
+    except ET.ParseError as e:
+        warnings.append(f"{repo_path}: pom.xml failed to parse ({e})")
+        return ""
+    # Maven POMs commonly (but not always) declare the default namespace;
+    # try both so a namespace-less pom.xml still matches.
+    for path, namespaces in (("m:licenses/m:license/m:name", {"m": "http://maven.apache.org/POM/4.0.0"}),
+                              ("licenses/license/name", None)):
+        el = root.find(path, namespaces)
+        if el is not None and el.text and el.text.strip():
+            return el.text.strip()
+    return ""
+
+
+def match_license_text(matcher: "AggregatedLicenseMatcher", text: str, warnings: list,
+                       repo_path: str, source_desc: str) -> str:
+    """Runs `text` through licenseid's fuzzy SPDX matcher, returning the top
+    match's license id -- only if its similarity is at or above
+    LICENSEID_CONFIDENCE_FLOOR (0.8). A single trust/no-trust line, not a
+    "record but flag" middle tier: below the floor, the match is discarded
+    outright (treated as "no match", logged as a warning) rather than
+    recorded for a human to maybe catch later -- confirmed on real repos
+    that a below-floor "similarity" is noise, not a weak signal (e.g.
+    RobustBench's actual LICENSE text top-matches `BSD-4-Clause` at 0.09,
+    SCLBD/DeepfakeBench at 0.07 -- neither is remotely the repo's real
+    license)."""
+    try:
+        results = matcher.match(text=text)
+    except Exception as e:  # licenseid's own exception types aren't documented; don't let one repo's malformed input abort the batch
+        warnings.append(f"{repo_path}: licenseid match against {source_desc} failed ({e})")
+        return ""
+    if not results:
+        return ""
+    top = results[0]
+    license_id = top.get("license_id", "")
+    score = top.get("similarity", top.get("score", 0))
+    if not license_id:
+        return ""
+    if score < LICENSEID_CONFIDENCE_FLOOR:
+        warnings.append(f"{repo_path}: licenseid's best match for {source_desc} was {license_id!r} "
+                         f"at similarity {score:.2f} (below the {LICENSEID_CONFIDENCE_FLOOR} "
+                         f"confidence floor) -- discarded, not recorded")
+        return ""
+    return license_id
+
+
+def resolve_license(session: requests.Session, repo_path: str, codemeta_license: str,
+                    citation_license: str, manifests: dict, github_license: str, warnings: list,
+                    matcher: "AggregatedLicenseMatcher | None") -> str:
+    """Priority chain, first non-empty result wins:
+
+    1. codemeta.json's own `license` field (already fetched by the caller)
+       -- a hand-curated declaration, trusted ahead of anything else.
+    2. CITATION.cff's own `license` field (also already fetched by the
+       caller) -- equally authoritative as codemeta.json.
+    3. GitHub's own detected license (`github_license`, from
+       fetch_repo_core), *if it found one*. Checked here, ahead of the
+       ecosystem-manifest step below, because it's free (already fetched
+       for every tool regardless) and reliable when it has an answer at
+       all -- its actual failure mode is coming up empty (`NOASSERTION` or
+       blank), not being confidently wrong, so there's no correctness
+       reason to spend extra calls checking manifests first.
+    4. An ecosystem manifest whose license field is conventionally already
+       clean SPDX (Cargo.toml, package.json, pyproject.toml) -- only
+       reached (and only fetched at all, per main()'s `license_needs_
+       manifests`) if steps 1-3 all came up empty.
+    5. pom.xml's free-text license name, normalized via licenseid.
+    6. The actual LICENSE file's text, matched via licenseid.
+
+    licenseid is a genuine second chance for cases everything else missed,
+    not a challenger to a source that already answered -- confirmed on a
+    real repo, fossology/fossology: GitHub correctly detects
+    `GPL-2.0-only`, but licenseid's own best match against that same
+    LICENSE file text is the *wrong* `LGPL-2.1-only` at 0.75 similarity (a
+    plausible-looking but incorrect guess). It's also the slow step of
+    this whole chain (a local but non-trivial fuzzy-match computation, run
+    twice in the worst case) -- both reasons steps 5/6 only run once every
+    earlier step has failed, never unconditionally.
+
+    Returns "" if none of these find anything. `matcher` is None when
+    licenseid's local database isn't available (see main()) -- steps 5/6
+    are skipped in that case, silently, since main() already warned about
+    it once for the whole run."""
+    if codemeta_license:
+        return codemeta_license
+
+    if citation_license:
+        return citation_license
+
+    if github_license:
+        return github_license
+
+    for filename, parser in (
+        ("Cargo.toml", parse_cargo_toml_license),
+        ("package.json", parse_package_json_license),
+        ("pyproject.toml", parse_pyproject_toml_license),
+    ):
+        text = manifests.get(filename)
+        if text:
+            value = parser(text, warnings, repo_path)
+            if value:
+                return value
+
+    if matcher is None:
+        return ""
+
+    pom_text = manifests.get("pom.xml")
+    if pom_text:
+        pom_license_name = parse_pom_xml_license_name(pom_text, warnings, repo_path)
+        if pom_license_name:
+            matched = match_license_text(matcher, pom_license_name, warnings, repo_path, "pom.xml")
+            if matched:
+                return matched
+
+    for filename in LICENSE_FILE_PATHS:
+        text = fetch_raw_file(session, repo_path, filename)
+        if text:
+            # Found *a* LICENSE file -- stop here even if licenseid
+            # couldn't match its text, rather than trying every remaining
+            # filename hoping for a luckier match against a different file.
+            return match_license_text(matcher, text, warnings, repo_path, filename)
+
+    return ""
+
+
 def funding_yml_urls(text: str, warnings: list, repo_path: str) -> list[str]:
     try:
         data = yaml.safe_load(text) or {}
@@ -530,6 +935,33 @@ def fetch_codemeta(session: requests.Session, repo_path: str, warnings: list) ->
     if isinstance(identifier, str) and identifier.startswith("swh:"):
         result["software_heritage_id"] = identifier
 
+    # CodeMeta's `license` is typically a URL (e.g.
+    # https://spdx.org/licenses/MIT) -- the trailing path segment is the
+    # SPDX id; a bare id with no slashes is used as-is. Checked first in
+    # resolve_license()'s priority chain, ahead of every package-manifest
+    # field and licenseid text-matching -- a tool's own codemeta.json
+    # declaring its license is the most authoritative source available.
+    license_val = data.get("license")
+    if isinstance(license_val, str) and license_val:
+        result["license"] = license_val.rstrip("/").rsplit("/", 1)[-1] if "/" in license_val else license_val
+
+    # `programmingLanguage` can be a bare string, a schema.org
+    # ComputerLanguage object ({"name": "Python"}), or a list of either --
+    # confirmed all three shapes appear in real codemeta.json files across
+    # the R/rOpenSci and semantic-web ecosystems.
+    prog_lang = data.get("programmingLanguage")
+    if isinstance(prog_lang, str) and prog_lang:
+        result["programming_language"] = prog_lang
+    elif isinstance(prog_lang, dict):
+        name = prog_lang.get("name", "")
+        if name:
+            result["programming_language"] = name
+    elif isinstance(prog_lang, list):
+        names = [(pl.get("name") if isinstance(pl, dict) else pl) for pl in prog_lang]
+        names = [n for n in names if n]
+        if names:
+            result["programming_language"] = "; ".join(names)
+
     return result
 
 
@@ -555,6 +987,19 @@ def fetch_citation_cff(session: requests.Session, repo_path: str, warnings: list
         if isinstance(entry, dict) and entry.get("type") == "swh" and entry.get("value"):
             result["software_heritage_id"] = entry["value"]
             break
+
+    # CITATION.cff's top-level `license` is an SPDX expression (a single
+    # string, or a list of strings for a multi-licensed project) --
+    # conventionally already clean SPDX, same as Cargo.toml/package.json/
+    # pyproject.toml's license fields, so used as-is in resolve_license()'s
+    # priority chain, no licenseid pass needed.
+    license_val = data.get("license")
+    if isinstance(license_val, str) and license_val:
+        result["license"] = license_val
+    elif isinstance(license_val, list):
+        names = [v for v in license_val if isinstance(v, str) and v]
+        if names:
+            result["license"] = "; ".join(names)
 
     return result
 
@@ -607,8 +1052,8 @@ def fetch_openssf_scorecard(repo_path: str, warnings: list) -> dict:
         return {}
 
 
-def collect_funding(session: requests.Session, repo_path: str,
-                    codemeta_candidate: str, warnings: list) -> str:
+def collect_funding(session: requests.Session, repo_path: str, codemeta_candidate: str,
+                    pyproject_text: str | None, warnings: list) -> str:
     """Always computes and returns whatever it finds -- this script writes
     unconditionally to `tool_metadata`, which is 100% machine-owned;
     "should this override a curated value" is resolved later, in build.py,
@@ -616,15 +1061,16 @@ def collect_funding(session: requests.Session, repo_path: str,
     FUNDING.yml, then pyproject.toml's `Funding` project URL, then
     codemeta.json's own `funding` field (only if URL-shaped); first hit
     wins, but every candidate found is logged so a human can see what was
-    passed over."""
+    passed over. `pyproject_text` comes from fetch_package_manifests() --
+    already fetched once for license/language resolution, not re-fetched
+    here."""
     candidates = []
     funding_yml = fetch_raw_file(session, repo_path, ".github/FUNDING.yml")
     if funding_yml:
         candidates.extend(funding_yml_urls(funding_yml, warnings, repo_path))
 
-    pyproject = fetch_raw_file(session, repo_path, "pyproject.toml")
-    if pyproject:
-        url = pyproject_funding_url(pyproject, warnings, repo_path)
+    if pyproject_text:
+        url = pyproject_funding_url(pyproject_text, warnings, repo_path)
         if url:
             candidates.append(url)
 
@@ -704,6 +1150,16 @@ def main() -> None:
     warnings: list = []
     unresolvable_source: list = []
 
+    try:
+        matcher = AggregatedLicenseMatcher()
+    except Exception as e:
+        print(f"[collect] WARNING: licenseid matcher unavailable ({e}) -- license resolution "
+              f"will skip LICENSE-file text-matching and pom.xml normalization, falling straight "
+              f"through to GitHub's own detected license wherever codemeta.json and the ecosystem "
+              f"manifests don't already answer it. Run `licenseid update` to build its local "
+              f"database (see curation/README.md's Setup), then re-run.")
+        matcher = None
+
     if args.candidates:
         candidates_path = Path(args.candidates)
         if not candidates_path.exists():
@@ -739,8 +1195,18 @@ def main() -> None:
     # Rough worst case per tool: repo core (1) + contributors (1) + releases
     # (2) + community profile (1) + security probe (up to 3) + governance
     # probe (up to 5) + sbom (1) + codemeta (1) + CITATION.cff (1) +
-    # FUNDING.yml (1) + pyproject.toml (1) = ~18 GitHub calls.
-    estimated_calls = len(tools) * 18
+    # FUNDING.yml (1) + pyproject.toml (1, always) = ~18 GitHub calls in the
+    # common case, where GitHub's own language/license answers are trusted
+    # and the rest of the package manifests are never fetched at all (see
+    # `language_needs_manifests`/`license_needs_manifests` in the main
+    # loop). Worst case (GitHub's language guess is blank/implausible, or
+    # its license is also blank) adds the other 6 manifests (+1 conditional
+    # tsconfig.json) and up to 6 LICENSE-filename probes -- ~28. Estimate
+    # for the *whole run* splits the difference rather than assuming
+    # worst-case for every tool, which historically way overshoots actual
+    # usage. licenseid's own matching is local (its SQLite index, no
+    # network per call), so it doesn't add to either estimate.
+    estimated_calls = len(tools) * 20
     if remaining >= 0:
         print(f"[collect] GitHub rate limit: {remaining}/{rate_limit} remaining "
               f"(this run needs up to ~{estimated_calls})")
@@ -797,11 +1263,59 @@ def main() -> None:
             paper_url = codemeta.get("paper_url") or citation.get("paper_url", "")
             swh_id = codemeta.get("software_heritage_id") or citation.get("software_heritage_id", "")
 
-            funding = collect_funding(session, repo_path,
-                                      codemeta.get("funding_candidate", ""), warnings)
+            # Two independent triggers decide whether the 6-7 ecosystem
+            # package-manifest files (Cargo.toml, go.mod, package.json,
+            # pom.xml, build.gradle*) are worth fetching at all for this
+            # tool -- for the common case where neither fires, this saves
+            # those calls entirely (pyproject.toml is always fetched
+            # regardless, needed for `funding`; see fetch_package_manifests()).
+            #
+            # `language_needs_manifests`: GitHub's own `language` guess is
+            # blank, or implausible as a real implementation language (see
+            # NON_IMPLEMENTATION_LANGUAGES) -- trusting a plausible GitHub
+            # answer directly, with zero extra calls, is correct far more
+            # often than not; manifests are only worth the cost when that
+            # trust is misplaced or there's nothing to trust at all.
+            #
+            # `license_needs_manifests`: codemeta.json, CITATION.cff, and
+            # GitHub's own detection all came up empty -- GitHub's
+            # detection is free either way (already fetched via `core`)
+            # and reliable when it has an answer (see resolve_license()'s
+            # docstring), so there's no reason to check manifests for a
+            # license field ahead of it, only after it's also failed.
+            github_language = core.get("programming_language", "")
+            github_license = core.get("license", "")
+            language_needs_manifests = (not github_language) or (github_language in NON_IMPLEMENTATION_LANGUAGES)
+            license_needs_manifests = not (codemeta.get("license") or citation.get("license") or github_license)
+            manifests = fetch_package_manifests(session, repo_path,
+                                                include_all=language_needs_manifests or license_needs_manifests)
+
+            funding = collect_funding(session, repo_path, codemeta.get("funding_candidate", ""),
+                                      manifests.get("pyproject.toml"), warnings)
+
+            license_value = resolve_license(session, repo_path, codemeta.get("license", ""),
+                                            citation.get("license", ""), manifests,
+                                            github_license, warnings, matcher)
+
+            if codemeta.get("programming_language"):
+                programming_language_value = codemeta["programming_language"]
+            elif not language_needs_manifests:
+                programming_language_value = github_language
+            else:
+                # GitHub's guess was blank/implausible -- every ecosystem
+                # manifest actually found, combined (real polyglot support,
+                # not just a single first-match guess). Genuinely "" if
+                # none exist at all: a repo that's not source code in any
+                # of these ecosystems (a specification/vocabulary, e.g.)
+                # has no programming language, and blank says exactly
+                # that -- never falls back to the just-rejected GitHub
+                # guess, which would defeat the whole point of rejecting it.
+                programming_language_value = "; ".join(detect_languages_from_manifests(manifests))
 
             print(f"  [{i}/{len(tools)}] {tool['id']}: "
                   f"stars={core.get('stars', '?')} "
+                  f"license={license_value or '-'} "
+                  f"lang={programming_language_value or '-'} "
                   f"scorecard={scorecard.get('openssf_scorecard_score', '-')} "
                   f"best_practices={best_practices.get('openssf_best_practices_badge_level', '-')}")
 
@@ -810,6 +1324,8 @@ def main() -> None:
             row["datetime_checked"] = sheet_timestamp
             row["datetime_updated"] = sheet_timestamp
             row.update(core)
+            row["license"] = license_value
+            row["programming_language"] = programming_language_value
             row["contributors"] = contributors
             row.update(releases)
             row.update(profile)
