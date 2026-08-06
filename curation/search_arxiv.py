@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+
+# SPDX-FileCopyrightText: 2026 OpenTAIG authors
+# SPDX-FileType: SOURCE
+# SPDX-License-Identifier: Apache-2.0
+
 """Search arXiv for papers whose abstract/comments advertise a code release,
 and resolve any GitHub link found to a real candidate repo -- the last
 unscripted source in curation/README.md's "Keyword expansion" list (source

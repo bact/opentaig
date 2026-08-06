@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 OpenTAIG authors
+// SPDX-FileType: SOURCE
+// SPDX-License-Identifier: Apache-2.0
+
 // Generic disclosure (Show/Hide) sections: the "Display additional
 // information" bar, the taxonomy/frameworks filter groups, and the tools
 // page's filter bar all use the same [data-disclosure] header pattern --

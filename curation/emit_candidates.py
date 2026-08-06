@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+
+# SPDX-FileCopyrightText: 2026 OpenTAIG authors
+# SPDX-FileType: SOURCE
+# SPDX-License-Identifier: Apache-2.0
+
 """Turn judged candidates (step 4 extract + step 5 map-to-RQ, both done by
 an agent) into the two review CSVs a human pastes into the live sheet, and
 record every judged repo -- accepted or rejected -- so future dedup runs

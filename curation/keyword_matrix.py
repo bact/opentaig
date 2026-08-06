@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+
+# SPDX-FileCopyrightText: 2026 OpenTAIG authors
+# SPDX-FileType: SOURCE
+# SPDX-License-Identifier: Apache-2.0
+
 """Generate candidate search keywords by combining terms across structured
 dimensions (PICOC-style: Target/Action/Objective/Context), instead of
 improvising flat phrases one at a time.

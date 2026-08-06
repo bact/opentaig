@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+
+# SPDX-FileCopyrightText: 2026 OpenTAIG authors
+# SPDX-FileType: SOURCE
+# SPDX-License-Identifier: Apache-2.0
+
 """Map each research question to the harm type(s)/specific harm(s) it helps
 address, using the AIAAIC Harms Taxonomy (Abercrombie, Benbouzid, Giudici,
 Golpayegani, Hernandez, Noro, Pandit, Paraschou, Pownall, Prajapati, Sayre,

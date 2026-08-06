@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+
+# SPDX-FileCopyrightText: 2026 OpenTAIG authors
+# SPDX-FileType: SOURCE
+# SPDX-License-Identifier: Apache-2.0
+
 """Quasi-Gold-Standard (QGS) validation: test whether a candidate keyword
 list actually finds repos you already know are relevant, before spending a
 real search-and-triage pass on it.

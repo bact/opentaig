@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+
+# SPDX-FileCopyrightText: 2026 OpenTAIG authors
+# SPDX-FileType: SOURCE
+# SPDX-License-Identifier: Apache-2.0
+
 """Collect project-quality / community-health metadata for the
 `tool_metadata` tab -- a separate spreadsheet from the main OpenTAIG one,
 100% written by this script, joined onto `tools` by `id` at build time (see

@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+
+# SPDX-FileCopyrightText: 2026 OpenTAIG authors
+# SPDX-FileType: SOURCE
+# SPDX-License-Identifier: Apache-2.0
+
 """Search GitHub for candidate open-source tools, by keyword.
 
 Uses the real GitHub REST Search API (``/search/repositories``), so it needs

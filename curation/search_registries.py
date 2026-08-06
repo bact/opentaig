@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+
+# SPDX-FileCopyrightText: 2026 OpenTAIG authors
+# SPDX-FileType: SOURCE
+# SPDX-License-Identifier: Apache-2.0
+
 """Search non-GitHub registries for candidate tools -- source 10 in
 curation/README.md's "Keyword expansion (phase 2)" list. GitHub's own search
 index is what search_repos.py mines; a tool can rank low there (or never

@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+
+# SPDX-FileCopyrightText: 2026 OpenTAIG authors
+# SPDX-FileType: SOURCE
+# SPDX-License-Identifier: Apache-2.0
+
 """Log a web search (Google/Bing, via the agent's built-in WebSearch tool)
 to the same provenance trail as every other discovery method in this
 pipeline.

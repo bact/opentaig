@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+
+# SPDX-FileCopyrightText: 2026 OpenTAIG authors
+# SPDX-FileType: SOURCE
+# SPDX-License-Identifier: Apache-2.0
+
 """Export research-question context for the tool-discovery pipeline.
 
 Reads a built ``site/data.json`` (produced by ``python build.py``) and emits

@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+
+# SPDX-FileCopyrightText: 2026 OpenTAIG authors
+# SPDX-FileType: SOURCE
+# SPDX-License-Identifier: Apache-2.0
+
 """Classify a GitHub-reported SPDX license id as open source or not, using
 the *official* SPDX license list rather than a hand-maintained allow-list.
 

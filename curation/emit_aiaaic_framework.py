@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+
+# SPDX-FileCopyrightText: 2026 OpenTAIG authors
+# SPDX-FileType: SOURCE
+# SPDX-License-Identifier: Apache-2.0
+
 """Emit the three pasteable CSVs that add the AIAAIC Harms Taxonomy to
 the site as a sixth framework.
 

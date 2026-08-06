@@ -937,7 +937,7 @@ def build_matrix(problems: list, capacities_order: list, targets_order: list) ->
     return rows
 
 
-def first_words(text: str, max_chars: int = 70) -> str:
+def first_words(text: str, max_chars: int = 75) -> str:
     """As many whole words as fit within `max_chars`, ellipsized -- the short
     problem-question label on a tool's preview chip, where the full question
     would overflow it. Breaks on a word boundary, never mid-word, even if

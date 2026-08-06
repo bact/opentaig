@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+
+# SPDX-FileCopyrightText: 2026 OpenTAIG authors
+# SPDX-FileType: SOURCE
+# SPDX-License-Identifier: Apache-2.0
+
 """Backward snowballing: mine already-known repos' READMEs for other repos
 they link to (forks-from, dependencies, "see also", comparison tables), and
 add the ones that pass the normal quality bar directly as candidates --

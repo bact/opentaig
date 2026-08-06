@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+
+# SPDX-FileCopyrightText: 2026 OpenTAIG authors
+# SPDX-FileType: SOURCE
+# SPDX-License-Identifier: Apache-2.0
+
 """One-time migration: populate the reject_category / license_class /
 problem_area / found_via_keyword / stars columns added to
 `state/seen_repos.csv` after the first 144 rows were already written by

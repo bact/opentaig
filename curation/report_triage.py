@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+
+# SPDX-FileCopyrightText: 2026 OpenTAIG authors
+# SPDX-FileType: SOURCE
+# SPDX-License-Identifier: Apache-2.0
+
 """Turn `state/seen_repos.csv` into the two counts a methodology write-up
 actually needs: candidates found per problem area, and how many of those
 were open source. Deterministic; no model, no network (licence classes are
