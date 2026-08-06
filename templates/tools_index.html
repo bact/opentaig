@@ -8,9 +8,10 @@
 </section>
 
 {% set matrix_problems_href = root ~ "problems/" %}
+<a class="skip-link" href="#tools-filter-bar">Skip mini-heatmap</a>
 {% include "_matrix_compact.html" %}
 
-<section class="filter-bar" id="tools-filter-bar">
+<section class="filter-bar" id="tools-filter-bar" tabindex="-1">
   <div class="disclosure-header" data-disclosure>
     <span class="disclosure-title">Filter tools</span>
     <button type="button" class="disclosure-toggle" aria-expanded="false" aria-controls="tools-filter-body">Show</button>

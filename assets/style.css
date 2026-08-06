@@ -190,7 +190,9 @@ main.wrap { padding-top: var(--s-12); padding-bottom: var(--s-16); min-height: 6
 
 .landscape-hero { max-width: none; margin-bottom: var(--s-6); }
 .landscape-hero-row { display: flex; align-items: center; justify-content: space-between; gap: var(--s-6); flex-wrap: wrap; }
-.landscape-hero-row .lede { flex: 1 1 480px; }
+.landscape-hero-text { flex: 1 1 480px; }
+.landscape-title { font-size: var(--text-3xl); font-weight: 700; letter-spacing: var(--tracking-tight); margin: 0 0 var(--s-2); color: var(--ink); }
+.landscape-hero-text .lede { font-size: var(--text-lg); }
 /* Explicit link/visited/hover/active/focus states: a solid-color button is
    its own contrast surface, so the global a:visited color (a duller shu
    shade) must not leak in here -- orange text on an orange button is
@@ -292,6 +294,7 @@ main.wrap { padding-top: var(--s-12); padding-bottom: var(--s-16); min-height: 6
 .mini-heatmap-cell-n3plus { background: var(--moss-ink); }
 .mini-heatmap-cell:hover, .mini-heatmap-cell:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; }
 .mini-heatmap-legend { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3); font-size: var(--text-xs); color: var(--ink-3); }
+.mini-heatmap-legend-item { display: flex; align-items: center; gap: 6px; }
 .mini-heatmap-legend-swatch { width: 12px; height: 12px; border-radius: 3px; border: 1px solid var(--border); display: inline-block; }
 
 /* ---- filter bar ---- */

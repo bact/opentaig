@@ -12,15 +12,15 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="{{ root }}">
-      <span class="brand-title">{{ site.title }}</span>
-      <span class="brand-tagline">{{ site.tagline }}</span>
+      <span class="brand-title{{ ' visually-hidden' if active == 'landscape' else '' }}">{{ site.title }}</span>
+      <span class="brand-tagline{{ ' visually-hidden' if active == 'landscape' else '' }}">{{ site.tagline }}</span>
     </a>
     <nav class="site-nav" aria-label="Primary">
-      <a href="{{ root }}" class="{{ 'active' if active == 'landscape' else '' }}" title="Landscape overview">Landscape</a>
-      <a href="{{ root }}problems/" class="{{ 'active' if active == 'problems' or active == 'problem' else '' }}" title="Problems - mapped to tools">Problems</a>
-      <a href="{{ root }}tools/" class="{{ 'active' if active == 'tools' else '' }}" title="Tools - mapped to problems">Tools</a>
-      <a href="{{ root }}frameworks/" class="{{ 'active' if active == 'frameworks' else '' }}" title="Frameworks and regulations">Frameworks</a>
-      <a href="{{ root }}references/" class="{{ 'active' if active == 'references' else '' }}">References</a>
+      <a href="{{ root }}" class="{{ 'active' if active == 'landscape' else '' }}" title="Landscape overview" {{ 'aria-current="page"' | safe if active == 'landscape' else '' }}>Landscape</a>
+      <a href="{{ root }}problems/" class="{{ 'active' if active == 'problems' or active == 'problem' else '' }}" title="Problems - mapped to tools" {{ 'aria-current="page"' | safe if active == 'problems' or active == 'problem' else '' }}>Problems</a>
+      <a href="{{ root }}tools/" class="{{ 'active' if active == 'tools' else '' }}" title="Tools - mapped to problems" {{ 'aria-current="page"' | safe if active == 'tools' else '' }}>Tools</a>
+      <a href="{{ root }}frameworks/" class="{{ 'active' if active == 'frameworks' else '' }}" title="Frameworks and regulations" {{ 'aria-current="page"' | safe if active == 'frameworks' else '' }}>Frameworks</a>
+      <a href="{{ root }}references/" class="{{ 'active' if active == 'references' else '' }}" {{ 'aria-current="page"' | safe if active == 'references' else '' }}>References</a>
       <a href="{{ site.repo_url }}" title="Source code repository">GitHub ↗</a>
     </nav>
   </div>

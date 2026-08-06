@@ -8,6 +8,7 @@
 </section>
 
 {% set matrix_problems_href = "" %}
+<a class="skip-link" href="#filter-bar">Skip mini-heatmap</a>
 {% include "_matrix_compact.html" %}
 
 {# Multi-select dropdown: a disclosure button over a group of native
@@ -52,7 +53,7 @@
 </div>
 {% endmacro %}
 
-<section class="filter-bar" id="filter-bar">
+<section class="filter-bar" id="filter-bar" tabindex="-1">
   <div class="filter-section">
     <div class="filter-section-title">Search</div>
     <div class="filter-section-body" id="filter-search-body">
