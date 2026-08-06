@@ -7,7 +7,11 @@
 </section>
 <ul class="citation-list">
   {% for ref in references %}
-  <li><a href="{{ ref.url }}">{{ ref.citation }}</a></li>
+  {% if ref.lead %}
+  <li>{{ ref.lead }}. <a href="{{ ref.url }}">{{ ref.title }}.</a></li>
+  {% else %}
+  <li><a href="{{ ref.url }}">{{ ref.title }}.</a></li>
+  {% endif %}
   {% endfor %}
 </ul>
 {% endblock %}

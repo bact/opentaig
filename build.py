@@ -1067,7 +1067,14 @@ def load_references(path: Path) -> list:
         title = (item.get("title") or "").strip()
         lead = ", ".join(authors + ([year] if year else []))
         citation = f"{lead}. {title}." if lead else f"{title}."
-        references.append({"citation": citation, "url": item.get("URL", "")})
+        references.append(
+            {
+                "citation": citation,
+                "lead": lead,
+                "title": title,
+                "url": item.get("URL", "")
+            }
+        )
     return references
 
 
