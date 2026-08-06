@@ -11,17 +11,17 @@
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="{{ root }}index.html">
+    <a class="brand" href="{{ root }}">
       <span class="brand-title">{{ site.title }}</span>
       <span class="brand-tagline">{{ site.tagline }}</span>
     </a>
     <nav class="site-nav" aria-label="Primary">
-      <a href="{{ root }}index.html" class="{{ 'active' if active == 'landscape' else '' }}">Landscape</a>
-      <a href="{{ root }}problems/" class="{{ 'active' if active == 'problems' or active == 'problem' else '' }}">Problems</a>
-      <a href="{{ root }}tools/" class="{{ 'active' if active == 'tools' else '' }}">Tools</a>
-      <a href="{{ root }}frameworks/index.html" class="{{ 'active' if active == 'frameworks' else '' }}">Frameworks</a>
-      <a href="{{ root }}references/index.html" class="{{ 'active' if active == 'references' else '' }}">References</a>
-      <a href="{{ site.repo_url }}">GitHub ↗</a>
+      <a href="{{ root }}" class="{{ 'active' if active == 'landscape' else '' }}" title="Landscape overview">Landscape</a>
+      <a href="{{ root }}problems/" class="{{ 'active' if active == 'problems' or active == 'problem' else '' }}" title="Problems - mapped to tools">Problems</a>
+      <a href="{{ root }}tools/" class="{{ 'active' if active == 'tools' else '' }}" title="Tools - mapped to problems">Tools</a>
+      <a href="{{ root }}frameworks/" class="{{ 'active' if active == 'frameworks' else '' }}" title="Frameworks and regulations">Frameworks</a>
+      <a href="{{ root }}references/" class="{{ 'active' if active == 'references' else '' }}">References</a>
+      <a href="{{ site.repo_url }}" title="Source code repository">GitHub ↗</a>
     </nav>
   </div>
 </header>
@@ -40,7 +40,7 @@
       Inspired by
       <a href="{{ site.taig_database_url }}">TAIG Database</a> and
       <a href="https://lfaidata.foundation/communityblog/2026/04/22/putting-rgaf-to-work-build-and-audit-responsible-ai-with-open-source/">Putting RGAF to Work</a>.
-      Source and data-update instructions on <a href="{{ site.repo_url }}">GitHub</a>.
+      Source on <a href="{{ site.repo_url }}">GitHub</a>.
     </p>
   </div>
 </footer>
