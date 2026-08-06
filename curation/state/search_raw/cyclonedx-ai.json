@@ -1,0 +1,107 @@
+{
+  "keyword": "CycloneDX AI",
+  "query": "CycloneDX AI stars:>19 pushed:>2025-08-06 archived:false fork:false",
+  "count": 10,
+  "repos": [
+    {
+      "full_name": "CycloneDX/specification",
+      "html_url": "https://github.com/CycloneDX/specification",
+      "description": "OWASP CycloneDX is a full-stack Bill of Materials (BOM) standard that provides advanced supply chain capabilities for cyber risk reduction. SBOM, SaaSBOM, HBOM, AI/ML-BOM, CBOM, OBOM, MBOM, VDR, and VEX",
+      "stars": 532,
+      "pushed_at": "2026-08-05T19:33:20Z",
+      "language": "XSLT",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cyclonedx.org/"
+    },
+    {
+      "full_name": "Trusera/ai-bom",
+      "html_url": "https://github.com/Trusera/ai-bom",
+      "description": "AI Bill of Materials \u2014 discover every AI agent, model, and API in your infrastructure",
+      "stars": 297,
+      "pushed_at": "2026-05-24T16:33:21Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://trusera.dev"
+    },
+    {
+      "full_name": "sbom-tool/sbom-tools",
+      "html_url": "https://github.com/sbom-tool/sbom-tools",
+      "description": "Semantic SBOM/CBOM/AI-BOM diff, quality scoring, and compliance validation for CycloneDX/SPDX \u2014 component, license, and vulnerability change analysis, cryptographic inventory grading, PQC readiness (CNSA 2.0, NIST IR 8547), and regulatory gates for NTIA, FDA, EU CRA, BSI TR-03183, EUCC, SSDF, EO 14028, and the EU AI Act.",
+      "stars": 238,
+      "pushed_at": "2026-08-06T10:11:35Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": "https://sbom.tools"
+    },
+    {
+      "full_name": "apisec-inc/mcp-audit",
+      "html_url": "https://github.com/apisec-inc/mcp-audit",
+      "description": "See what your AI agents can access. Scan MCP configs for exposed secrets, shadow APIs, and AI models. Generate AI-BOMs for compliance.",
+      "stars": 152,
+      "pushed_at": "2026-05-12T20:27:21Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://apisec-inc.github.io/mcp-audit"
+    },
+    {
+      "full_name": "apisec-inc/AI-Surface",
+      "html_url": "https://github.com/apisec-inc/AI-Surface",
+      "description": "Find and govern AI attack surfaces in application code at PR time. Free, OSS, runs offline.",
+      "stars": 94,
+      "pushed_at": "2026-07-27T01:14:30Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://apisec.ai"
+    },
+    {
+      "full_name": "Lab700xOrg/aisbom",
+      "html_url": "https://github.com/Lab700xOrg/aisbom",
+      "description": "AI SBOM: AI Software Bill of Materials - The Supply Chain for Artificial Intelligence",
+      "stars": 76,
+      "pushed_at": "2026-07-26T02:37:41Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.aisbom.io/"
+    },
+    {
+      "full_name": "safedep/xbom",
+      "html_url": "https://github.com/safedep/xbom",
+      "description": "Generate xBOMs enriched with AI, SaaS, Crypto and more using Static Code Analysis",
+      "stars": 36,
+      "pushed_at": "2026-01-22T10:32:02Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://safedep.io"
+    },
+    {
+      "full_name": "GoogleCloudPlatform/k8s-aibom",
+      "html_url": "https://github.com/GoogleCloudPlatform/k8s-aibom",
+      "description": "A Kubernetes controller that generates CycloneDX 1.6 ML-BOM documents for AI workloads at runtime \u2014 inference services, agent stacks, RAG pipelines, training jobs, evaluation harnesses \u2014 with auditor-traceable evidence for every attribute.",
+      "stars": 33,
+      "pushed_at": "2026-07-25T05:26:36Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "CycloneDX/skills",
+      "html_url": "https://github.com/CycloneDX/skills",
+      "description": "Repository of AI skills specific to CycloneDX",
+      "stars": 31,
+      "pushed_at": "2026-04-16T17:56:20Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "msaad00/agent-bom",
+      "html_url": "https://github.com/msaad00/agent-bom",
+      "description": "Open security scanner and self-hosted control plane for AI, MCP, and cloud. One evidence model \u2014 run scans in your environment, centralize findings, govern in your VPC.",
+      "stars": 29,
+      "pushed_at": "2026-08-06T16:59:20Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://msaad00.github.io/agent-bom/"
+    }
+  ]
+}

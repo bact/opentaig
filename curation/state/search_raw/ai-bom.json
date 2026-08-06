@@ -1,0 +1,197 @@
+{
+  "keyword": "AI BOM",
+  "query": "AI BOM stars:>19 pushed:>2025-08-06 archived:false fork:false",
+  "count": 19,
+  "repos": [
+    {
+      "full_name": "Source-Robotics/PAROL6-Desktop-robot-arm",
+      "html_url": "https://github.com/Source-Robotics/PAROL6-Desktop-robot-arm",
+      "description": "BOM, STL files and instructions for PAROL6 3D printed robot arm",
+      "stars": 3124,
+      "pushed_at": "2026-07-07T10:27:30Z",
+      "language": "HTML",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://source-robotics.com/"
+    },
+    {
+      "full_name": "CycloneDX/specification",
+      "html_url": "https://github.com/CycloneDX/specification",
+      "description": "OWASP CycloneDX is a full-stack Bill of Materials (BOM) standard that provides advanced supply chain capabilities for cyber risk reduction. SBOM, SaaSBOM, HBOM, AI/ML-BOM, CBOM, OBOM, MBOM, VDR, and VEX",
+      "stars": 532,
+      "pushed_at": "2026-08-05T19:33:20Z",
+      "language": "XSLT",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cyclonedx.org/"
+    },
+    {
+      "full_name": "LeoKemp223/NextBoard",
+      "html_url": "https://github.com/LeoKemp223/NextBoard",
+      "description": "\u9762\u5411\u786c\u4ef6\u4ea7\u54c1PCB\u65b9\u6848\u8bbe\u8ba1\u7684AI Agent\uff0cAgent\u4f1a\u81ea\u52a8\u5e2e\u4f60\u8fdb\u884c\u9700\u6c42\u786e\u8ba4\uff0c\u5b9e\u65f6\u5206\u6790\u56fd\u5185\u5916\u5404\u7c7b\u82af\u7247\u6280\u672f\u65b9\u6848\uff0c\u8fdb\u884c\u5668\u4ef6\u9009\u578b\uff0c\u4e0b\u8f7ddatasheet\uff0c\u8f93\u51faBOM\u8868\uff0c\u8ba1\u7b97\u4ef7\u683c\uff0c\u8f93\u51fa\u6a21\u5757\u539f\u7406\u56fe\uff0c\u6700\u7ec8\u6574\u5408\u6210\u53ef\u843d\u5730\u6280\u672f\u65b9\u6848\u3002",
+      "stars": 328,
+      "pushed_at": "2026-05-05T02:03:17Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "Trusera/ai-bom",
+      "html_url": "https://github.com/Trusera/ai-bom",
+      "description": "AI Bill of Materials \u2014 discover every AI agent, model, and API in your infrastructure",
+      "stars": 297,
+      "pushed_at": "2026-05-24T16:33:21Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://trusera.dev"
+    },
+    {
+      "full_name": "sbom-tool/sbom-tools",
+      "html_url": "https://github.com/sbom-tool/sbom-tools",
+      "description": "Semantic SBOM/CBOM/AI-BOM diff, quality scoring, and compliance validation for CycloneDX/SPDX \u2014 component, license, and vulnerability change analysis, cryptographic inventory grading, PQC readiness (CNSA 2.0, NIST IR 8547), and regulatory gates for NTIA, FDA, EU CRA, BSI TR-03183, EUCC, SSDF, EO 14028, and the EU AI Act.",
+      "stars": 238,
+      "pushed_at": "2026-08-06T10:11:35Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": "https://sbom.tools"
+    },
+    {
+      "full_name": "timothy-barnes-2357/Build-with-Bombs",
+      "html_url": "https://github.com/timothy-barnes-2357/Build-with-Bombs",
+      "description": "Voxel diffusion AI for Minecraft",
+      "stars": 181,
+      "pushed_at": "2025-10-15T01:59:22Z",
+      "language": "C++",
+      "license_spdx_id": "",
+      "homepage": "https://buildwithbombs.com"
+    },
+    {
+      "full_name": "apisec-inc/mcp-audit",
+      "html_url": "https://github.com/apisec-inc/mcp-audit",
+      "description": "See what your AI agents can access. Scan MCP configs for exposed secrets, shadow APIs, and AI models. Generate AI-BOMs for compliance.",
+      "stars": 152,
+      "pushed_at": "2026-05-12T20:27:21Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://apisec-inc.github.io/mcp-audit"
+    },
+    {
+      "full_name": "CoderOneHQ/bomberland",
+      "html_url": "https://github.com/CoderOneHQ/bomberland",
+      "description": "Bomberland: a multi-agent AI competition based on Bomberman. This repository contains both starter / hello world kits + the engine source code",
+      "stars": 127,
+      "pushed_at": "2026-07-25T17:39:04Z",
+      "language": "C++",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.coderone.dev/bomberland/"
+    },
+    {
+      "full_name": "tracebit-com/context-bombs",
+      "html_url": "https://github.com/tracebit-com/context-bombs",
+      "description": "Context bomb strings",
+      "stars": 108,
+      "pushed_at": "2026-07-22T21:50:09Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": "https://agentic.tracebit.com/context-bombs"
+    },
+    {
+      "full_name": "CodingFeng101/CanvasAnvil",
+      "html_url": "https://github.com/CodingFeng101/CanvasAnvil",
+      "description": "CanvasAnvil is an AI multi-canvas creation platform for flowcharts, interior design, presentations, posters, infographics, and product storytelling.",
+      "stars": 90,
+      "pushed_at": "2026-07-11T13:42:17Z",
+      "language": "TypeScript",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://canvasanvil.codingfgd.asia"
+    },
+    {
+      "full_name": "yinbot/Airsoft-BombPro",
+      "html_url": "https://github.com/yinbot/Airsoft-BombPro",
+      "description": "",
+      "stars": 60,
+      "pushed_at": "2025-08-11T16:46:58Z",
+      "language": "C++",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "4682B4LEE/number-bomb-public",
+      "html_url": "https://github.com/4682B4LEE/number-bomb-public",
+      "description": "\u5c0f\u7ea2\u4e66\u4e0a\u6700\u706b\u7684\u731c\u6570\u5b57\u5fae\u4fe1\u5c0f\u7a0b\u5e8f\u6e38\u620f\u300c\u8c01\u8f93\u8c01\u6d17\u7897\u300d\u5f00\u6e90\u5566\uff0c\u4e0a\u7ebf\u4e00\u4e2a\u6708\u7d2f\u8ba1\u6ce8\u518c\u7528\u6237\u8d85 3w\uff0c\u652f\u6301\u53cc\u4eba\u5bf9\u6218\u7684\u731c\u8c1c\u6e38\u620f\uff0c\u5305\u542b\u731c\u6570\u5b57\u3001\u731c\u989c\u8272\u3001\u6bcf\u65e5\u6311\u6218\u548c\u6b8b\u5c40\u89e3\u8c1c\u7b49\u591a\u79cd\u6e38\u620f\u6a21\u5f0f\u3002The most popular number guessing WeChat mini-program game \"number-bomb\" on Xiaohongshu is now open source!",
+      "stars": 57,
+      "pushed_at": "2026-04-03T02:18:54Z",
+      "language": "JavaScript",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "oaslananka/kicad-mcp-pro",
+      "html_url": "https://github.com/oaslananka/kicad-mcp-pro",
+      "description": "AI-ready MCP server for KiCad: automate schematic, PCB, ERC/DRC, DFM, BOM and manufacturing review from Claude, Cursor, Copilot and other AI agents.",
+      "stars": 46,
+      "pushed_at": "2026-08-05T03:19:48Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://oaslananka.github.io/kicad-mcp-pro/"
+    },
+    {
+      "full_name": "GoogleCloudPlatform/k8s-aibom",
+      "html_url": "https://github.com/GoogleCloudPlatform/k8s-aibom",
+      "description": "A Kubernetes controller that generates CycloneDX 1.6 ML-BOM documents for AI workloads at runtime \u2014 inference services, agent stacks, RAG pipelines, training jobs, evaluation harnesses \u2014 with auditor-traceable evidence for every attribute.",
+      "stars": 33,
+      "pushed_at": "2026-07-25T05:26:36Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "msaad00/agent-bom",
+      "html_url": "https://github.com/msaad00/agent-bom",
+      "description": "Open security scanner and self-hosted control plane for AI, MCP, and cloud. One evidence model \u2014 run scans in your environment, centralize findings, govern in your VPC.",
+      "stars": 29,
+      "pushed_at": "2026-08-06T16:59:20Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://msaad00.github.io/agent-bom/"
+    },
+    {
+      "full_name": "oaslananka/easyeda-mcp-pro",
+      "html_url": "https://github.com/oaslananka/easyeda-mcp-pro",
+      "description": "MCP server for EasyEDA Pro: PCB inspection, BOM sourcing, manufacturing export, and AI-assisted hardware review.",
+      "stars": 29,
+      "pushed_at": "2026-08-05T03:07:51Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://oaslananka.github.io/easyeda-mcp-pro"
+    },
+    {
+      "full_name": "nclamvn/bom-cham",
+      "html_url": "https://github.com/nclamvn/bom-cham",
+      "description": "B\u1eddm Ch\u0103m \u2014 AI ch\u0103m s\u00f3c ng\u01b0\u1eddi th\u00e2n cao tu\u1ed5i \ud83c\udfe0 \u0110\u1ec3 gia \u0111\u00ecnh y\u00ean t\u00e2m, \u0111\u1ec3 \u00f4ng b\u00e0 an vui",
+      "stars": 26,
+      "pushed_at": "2026-02-21T15:45:50Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "ForestHubAI/boardsmith",
+      "html_url": "https://github.com/ForestHubAI/boardsmith",
+      "description": "Text prompt \u2192 KiCad schematic, BOM, and firmware. No templates \u2014 real wired circuits with computed values.",
+      "stars": 26,
+      "pushed_at": "2026-03-11T23:12:11Z",
+      "language": "Python",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://github.com/ForestHubAI/boardsmith#quick-start"
+    },
+    {
+      "full_name": "sitiancheng/Bome",
+      "html_url": "https://github.com/sitiancheng/Bome",
+      "description": "\u4e00\u4e2a\u7eaf\u524d\u7aef\u7684 AI \u89d2\u8272\u8bed\u97f3\u804a\u5929\u7f51\u9875\uff0c5 \u4e2a\u6a21\u578b\u7248\u672c\u53ef\u9009\uff08Claude/DeepSeek/Gemini/GPT/Grok\uff09",
+      "stars": 25,
+      "pushed_at": "2026-07-09T02:12:20Z",
+      "language": "HTML",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    }
+  ]
+}

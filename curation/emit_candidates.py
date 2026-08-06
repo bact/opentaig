@@ -19,7 +19,19 @@ Deterministic; no model, no network. Input is a JSON file of judgments (see
         "tool_type": "software",
         "name": "Display Name",
         "summary": "one-line summary, distilled from the README",
-        "license": "MIT",                 // leave "" rather than guess
+        "license": "",                     // leave "" -- collect_project_metadata.py
+                                          // auto-collects this from the GitHub repo
+                                          // API's own SPDX detection into
+                                          // tool_metadata now, same override
+                                          // precedence as stars/programming_language.
+                                          // Only set this if the judgment used a
+                                          // higher-confidence source GitHub's own
+                                          // detector wouldn't have (a dedicated
+                                          // license-scan tool, or a human/AI judge
+                                          // actually reading the LICENSE file text,
+                                          // e.g. to correct a NOASSERTION or a
+                                          // GitHub misdetection) -- not just repeating
+                                          // what the repo API already reports.
         "programming_language": "Python", // semicolon-separated if more than
                                           // one, e.g. "Python; Rust"; leave
                                           // "" for tool_type "specification"
@@ -32,7 +44,15 @@ Deterministic; no model, no network. Input is a JSON file of judgments (see
         "reject_category": "",            // required if verdict=="reject";
                                           // one of REJECT_CATEGORIES below
         "problem_area": "",               // optional; defaults to --problem-area
-        "mappings": [                     // only for verdict=="accept"
+        "no_rq_mapping_reason": "",       // set instead of "mappings" when the tool is a
+                                          // real accept but doesn't fit any RQ in the
+                                          // current taxonomy -- it's added with zero
+                                          // tool_map rows and surfaces under "Pending
+                                          // mapping" on the site's problems index (see
+                                          // build.py's orphan_tools) rather than being
+                                          // held back for lack of a place to put it
+        "mappings": [                     // required for verdict=="accept" unless
+                                          // "no_rq_mapping_reason" is set instead
           {"rq_no": "1", "role": "implement", "rationale": "..."},
           {"rq_no": "4", "role": "eval", "rationale": "..."}
         ],
@@ -422,8 +442,11 @@ def main() -> None:
             })
 
         mappings = j.get("mappings", [])
-        if not mappings:
-            errors.append(f"{repo}: verdict=accept but no RQ mappings given")
+        if not mappings and not j.get("no_rq_mapping_reason"):
+            errors.append(f"{repo}: verdict=accept but no RQ mappings given (if this is "
+                           f"deliberate -- a real tool with no matching RQ in the current "
+                           f"taxonomy yet -- set 'no_rq_mapping_reason' explaining why; it'll "
+                           f"land on the site's 'Pending mapping' list instead of an RQ page)")
         for m in mappings:
             role = m.get("role", "")
             if role not in VALID_ROLES:
@@ -480,9 +503,13 @@ def main() -> None:
     pass_a_path = Path(args.pass_a_out)
     pass_a_written, pass_a_skipped = append_rows(pass_a_path, PASS_A_FIELDNAMES, pass_a_rows, ["tool_id", "rq_no"])
 
+    pending_mapping_count = sum(1 for j in judgments
+                                 if j.get("verdict") == "accept" and not j.get("mappings"))
     print(f"{tools_written} accepted tool(s) -> {tools_out}"
           + (f" ({tools_skipped} already present, skipped)" if tools_skipped else "")
-          + (f" ({live_tools_skipped} already live in tools tab, tools-row skipped)" if live_tools_skipped else ""))
+          + (f" ({live_tools_skipped} already live in tools tab, tools-row skipped)" if live_tools_skipped else "")
+          + (f" ({pending_mapping_count} with no RQ mapping -- will show under 'Pending mapping' on the site)"
+             if pending_mapping_count else ""))
     print(f"{map_written} RQ mapping(s) -> {map_out}"
           + (f" ({map_skipped} already present, skipped)" if map_skipped else ""))
     print(f"{seen_written} repo(s) newly logged -> {seen_path}"

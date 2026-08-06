@@ -1,0 +1,217 @@
+{
+  "keyword": "DVC",
+  "query": "DVC stars:>19 pushed:>2025-08-06 archived:false fork:false",
+  "count": 21,
+  "repos": [
+    {
+      "full_name": "treeverse/dvc",
+      "html_url": "https://github.com/treeverse/dvc",
+      "description": "\ud83e\udd89 Data Versioning and ML Experiments",
+      "stars": 15799,
+      "pushed_at": "2026-08-06T04:17:42Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://dvc.org"
+    },
+    {
+      "full_name": "iterative/PyDrive2",
+      "html_url": "https://github.com/iterative/PyDrive2",
+      "description": "Google Drive API Python wrapper library. Maintained fork of PyDrive.",
+      "stars": 671,
+      "pushed_at": "2026-08-05T01:53:05Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://docs.iterative.ai/PyDrive2"
+    },
+    {
+      "full_name": "treeverse/dvc.org",
+      "html_url": "https://github.com/treeverse/dvc.org",
+      "description": "\ud83d\udcd6 DVC documentation website",
+      "stars": 384,
+      "pushed_at": "2026-08-06T06:42:37Z",
+      "language": "JavaScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://doc.dvc.org"
+    },
+    {
+      "full_name": "METR/eval-analysis-public",
+      "html_url": "https://github.com/METR/eval-analysis-public",
+      "description": "Public repository containing METR's DVC pipeline for eval data analysis",
+      "stars": 308,
+      "pushed_at": "2026-03-06T00:59:30Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "vincentjzy/OpenCorr",
+      "html_url": "https://github.com/vincentjzy/OpenCorr",
+      "description": "Digital Image Correlation & Digital Volume Correlation Library",
+      "stars": 286,
+      "pushed_at": "2026-08-01T09:08:25Z",
+      "language": "C++",
+      "license_spdx_id": "MPL-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "drhsqlite/fossil-mirror",
+      "html_url": "https://github.com/drhsqlite/fossil-mirror",
+      "description": "A test of the ability of the Fossil DVCS to mirror to GitHub",
+      "stars": 231,
+      "pushed_at": "2026-08-06T16:54:09Z",
+      "language": "C",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "treeverse/vscode-dvc",
+      "html_url": "https://github.com/treeverse/vscode-dvc",
+      "description": "Machine learning experiment tracking and data versioning with DVC extension for VS Code",
+      "stars": 219,
+      "pushed_at": "2026-08-03T19:44:06Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://marketplace.visualstudio.com/items?itemName=lakefs.lakefs-dvc"
+    },
+    {
+      "full_name": "treeverse/dvclive",
+      "html_url": "https://github.com/treeverse/dvclive",
+      "description": "\ud83d\udcc8 Log and track ML metrics, parameters, models with Git and/or DVC",
+      "stars": 196,
+      "pushed_at": "2026-08-03T18:46:16Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://dvc.org/doc/dvclive"
+    },
+    {
+      "full_name": "DagsHub/client",
+      "html_url": "https://github.com/DagsHub/client",
+      "description": "DagsHub client libraries",
+      "stars": 103,
+      "pushed_at": "2026-08-03T14:53:15Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://dagshub.com/docs/client/"
+    },
+    {
+      "full_name": "iam-veeramalla/Realtime-MLOps-Project",
+      "html_url": "https://github.com/iam-veeramalla/Realtime-MLOps-Project",
+      "description": "Realtime MLOps Implementation using DVC, Docker, GitHub Actions, Kubernetes, KServe and Argo CD.",
+      "stars": 80,
+      "pushed_at": "2026-01-19T14:50:37Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "swiss-ai-center/a-guide-to-mlops",
+      "html_url": "https://github.com/swiss-ai-center/a-guide-to-mlops",
+      "description": "A simple yet complete guide to MLOps tools and practices - from a conventional way to a modern approach of working with ML projects.",
+      "stars": 61,
+      "pushed_at": "2026-07-31T14:18:38Z",
+      "language": "Dockerfile",
+      "license_spdx_id": "CC-BY-SA-4.0",
+      "homepage": "https://mlops.swiss-ai-center.ch"
+    },
+    {
+      "full_name": "zincware/ZnTrack",
+      "html_url": "https://github.com/zincware/ZnTrack",
+      "description": "Create, visualize, run & benchmark DVC pipelines in Python & Jupyter notebooks.",
+      "stars": 57,
+      "pushed_at": "2026-08-03T20:32:52Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://zntrack.readthedocs.io"
+    },
+    {
+      "full_name": "calkit/calkit",
+      "html_url": "https://github.com/calkit/calkit",
+      "description": "Integrated, automated, accelerated research projects.",
+      "stars": 51,
+      "pushed_at": "2026-08-05T16:36:22Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://docs.calkit.org"
+    },
+    {
+      "full_name": "Suraj-G-Rao/Complete-MLOPS",
+      "html_url": "https://github.com/Suraj-G-Rao/Complete-MLOPS",
+      "description": "Learned comprehensive MLOps practices covering the complete machine learning lifecycle from development to production deployment and monitoring.",
+      "stars": 47,
+      "pushed_at": "2026-05-11T12:31:57Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Suraj-G-Rao/Network_Security",
+      "html_url": "https://github.com/Suraj-G-Rao/Network_Security",
+      "description": "An end-to-end machine learning pipeline for detecting network security threats and phishing attempts with real-time prediction capabilities. The system leverages FastAPI for high-performance API serving, MongoDB for data management, and MLflow for comprehensive experiment tracking throughout the model lifecycle.",
+      "stars": 45,
+      "pushed_at": "2026-04-15T10:29:01Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "treeverse/setup-dvc",
+      "html_url": "https://github.com/treeverse/setup-dvc",
+      "description": "DVC GitHub action",
+      "stars": 43,
+      "pushed_at": "2026-08-05T14:24:53Z",
+      "language": "JavaScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "Shankar-105/DVC",
+      "html_url": "https://github.com/Shankar-105/DVC",
+      "description": "A Repository demonstrating the use of DVC to version control data",
+      "stars": 35,
+      "pushed_at": "2026-01-15T13:19:52Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "treeverse/scmrepo",
+      "html_url": "https://github.com/treeverse/scmrepo",
+      "description": "SCM wrapper and fsspec filesystem for Git for use in DVC.",
+      "stars": 26,
+      "pushed_at": "2026-08-03T18:46:20Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://dvc.org"
+    },
+    {
+      "full_name": "troyguo/dvcon_download",
+      "html_url": "https://github.com/troyguo/dvcon_download",
+      "description": "Download proccedings from DVCon",
+      "stars": 24,
+      "pushed_at": "2026-03-29T09:23:34Z",
+      "language": "Shell",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "treeverse/dvc-bench",
+      "html_url": "https://github.com/treeverse/dvc-bench",
+      "description": "Benchmarks for DVC",
+      "stars": 22,
+      "pushed_at": "2026-08-03T18:46:07Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "cusyio/Python4DataScience",
+      "html_url": "https://github.com/cusyio/Python4DataScience",
+      "description": "Teaching materials for the cusy training courses on Python-based data science workflows: https://cusy.io/en/our-training-courses/index.html",
+      "stars": 22,
+      "pushed_at": "2026-08-04T07:47:30Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://www.python4data.science/"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "keyword": "feature store open source",
+  "query": "feature store open source stars:>19 pushed:>2025-08-06 archived:false fork:false",
+  "count": 3,
+  "repos": [
+    {
+      "full_name": "feast-dev/feast",
+      "html_url": "https://github.com/feast-dev/feast",
+      "description": "The Open Source Feature Store for AI/ML",
+      "stars": 7193,
+      "pushed_at": "2026-08-06T11:30:41Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://feast.dev"
+    },
+    {
+      "full_name": "feast-dev/feast-workshop",
+      "html_url": "https://github.com/feast-dev/feast-workshop",
+      "description": "A workshop with several modules to help learn Feast, an open-source feature store",
+      "stars": 104,
+      "pushed_at": "2025-11-19T08:04:40Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "",
+      "homepage": "http://feast.dev"
+    },
+    {
+      "full_name": "eraneos/snowflake-mlops",
+      "html_url": "https://github.com/eraneos/snowflake-mlops",
+      "description": "Open-source reference monorepo for end-to-end MLOps on Snowflake, centered around Snowflake-native MLOps tooling (Feature Store, Model Registry, Tasks) in a hub-spoke layout. Questions, issues, or ideas about Snowflake ML in general are warmly welcomed.",
+      "stars": 34,
+      "pushed_at": "2026-05-20T12:08:48Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://eraneos.github.io/snowflake-mlops/"
+    }
+  ]
+}

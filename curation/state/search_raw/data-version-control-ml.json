@@ -1,0 +1,17 @@
+{
+  "keyword": "data version control ML",
+  "query": "data version control ML stars:>19 pushed:>2025-08-06 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "cosdata/cosdata",
+      "html_url": "https://github.com/cosdata/cosdata",
+      "description": "Cosdata: A cutting-edge AI data platform for next-gen search pipelines. Features semantic search, hybrid capabilities, real-time scalability, and ML integration. Designed for immutability and version control to enhance AI projects.",
+      "stars": 341,
+      "pushed_at": "2025-12-22T10:15:11Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.cosdata.io"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "keyword": "agent identity authentication",
+  "query": "agent identity authentication stars:>19 pushed:>2025-08-06 archived:false fork:false",
+  "count": 4,
+  "repos": [
+    {
+      "full_name": "casdoor/casdoor",
+      "html_url": "https://github.com/casdoor/casdoor",
+      "description": "An open-source Agent-first Identity and Access Management (IAM) /LLM MCP & agent gateway and auth server with web UI supporting OpenClaw, MCP, OAuth, OIDC, SAML, CAS, LDAP, SCIM, WebAuthn, TOTP, MFA, Face ID, Google Workspace, Azure AD",
+      "stars": 14130,
+      "pushed_at": "2026-08-06T14:20:55Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://casdoor.ai"
+    },
+    {
+      "full_name": "thunder-id/thunderid",
+      "html_url": "https://github.com/thunder-id/thunderid",
+      "description": "ThunderID is a high-performance, open-source identity stack designed for developers to secure and manage access for humans, AI agents, and workloads through fully composable identity flows.",
+      "stars": 386,
+      "pushed_at": "2026-08-06T13:09:08Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://thunderid.dev"
+    },
+    {
+      "full_name": "highflame-ai/zeroid",
+      "html_url": "https://github.com/highflame-ai/zeroid",
+      "description": "ZeroID: Autonomous Agent Identity Management System (AAIMS)",
+      "stars": 155,
+      "pushed_at": "2026-08-06T11:30:59Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://highflame.com/"
+    },
+    {
+      "full_name": "DeepTrail/deepsecure",
+      "html_url": "https://github.com/DeepTrail/deepsecure",
+      "description": "Effortlessly secure your AI agents and AI-powered workflows \u2014 from prototype to production. Get easy-to-use identity, credential, and access management built for fast-moving AI developers.",
+      "stars": 51,
+      "pushed_at": "2026-02-05T00:00:49Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    }
+  ]
+}

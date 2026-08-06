@@ -1,0 +1,177 @@
+{
+  "keyword": "model provenance",
+  "query": "model provenance stars:>19 pushed:>2025-08-06 archived:false fork:false",
+  "count": 17,
+  "repos": [
+    {
+      "full_name": "EveryInc/proof-sdk",
+      "html_url": "https://github.com/EveryInc/proof-sdk",
+      "description": "Proof SDK: open-source collaborative editor, provenance model, and agent HTTP bridge",
+      "stars": 1078,
+      "pushed_at": "2026-03-23T14:39:16Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "sipyourdrink-ltd/bernstein",
+      "html_url": "https://github.com/sipyourdrink-ltd/bernstein",
+      "description": "Deterministic orchestrator for CLI coding agents (Claude Code, Codex, Gemini CLI, +40 more). No model in the coordination loop, so parallel runs in per-task git worktrees replay byte-identically. Signed lineage plus an opt-in HMAC audit chain a reviewer checks offline, without rerunning it. Cluster mode, air-gap deploy. https://bernstein.run",
+      "stars": 793,
+      "pushed_at": "2026-08-06T16:59:47Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://bernstein.run"
+    },
+    {
+      "full_name": "esaradev/icarus-memory-infra",
+      "html_url": "https://github.com/esaradev/icarus-memory-infra",
+      "description": "Agent memory infrastructure: provenance, rollback, lifecycle/supersession, three-layer model (working memory + session archive + wiki). Markdown on disk, MCP-native.",
+      "stars": 292,
+      "pushed_at": "2026-05-08T06:12:37Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://x.com/IcarusHermes"
+    },
+    {
+      "full_name": "paxlabs-inc/machine-genome",
+      "html_url": "https://github.com/paxlabs-inc/machine-genome",
+      "description": "Machine Genome is an open identity and provenance protocol for models, agents, harnesses, datasets, and the artifacts that connect them.",
+      "stars": 192,
+      "pushed_at": "2026-08-03T11:26:28Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://machinegenome.org/"
+    },
+    {
+      "full_name": "trungdong/prov",
+      "html_url": "https://github.com/trungdong/prov",
+      "description": "A Python library for W3C Provenance Data Model (PROV)",
+      "stars": 137,
+      "pushed_at": "2026-07-31T08:16:55Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "http://prov.readthedocs.io/"
+    },
+    {
+      "full_name": "cisco-ai-defense/model-provenance-kit",
+      "html_url": "https://github.com/cisco-ai-defense/model-provenance-kit",
+      "description": "Toolkit to assess and determine model provenance",
+      "stars": 101,
+      "pushed_at": "2026-08-05T08:55:02Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "sergezuber/FABULA-LLM-5",
+      "html_url": "https://github.com/sergezuber/FABULA-LLM-5",
+      "description": "The agent harness that makes small local models finish hard tasks \u2014 and prove it. Done is enforced by the engine, not the prompt: gates, rewinds, a judge, and a replayable Proof-of-Done receipt on every finished run. Any model in the socket. Local, sovereign, air-gapped-capable. macOS \u00b7 Linux \u00b7 Windows.",
+      "stars": 96,
+      "pushed_at": "2026-08-06T16:00:52Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://github.com/sergezuber/FABULA-LLM-5/blob/main/docs/GREENPAPER.md"
+    },
+    {
+      "full_name": "lucmoreau/ProvToolbox",
+      "html_url": "https://github.com/lucmoreau/ProvToolbox",
+      "description": "Java toolkit to create and convert W3C PROV data model representations, and build provenance-enabled applications in a variety of programming languages (java, python, typescript, javascript)",
+      "stars": 82,
+      "pushed_at": "2026-07-28T12:50:19Z",
+      "language": "Java",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "http://lucmoreau.github.io/ProvToolbox/"
+    },
+    {
+      "full_name": "RomaLytar/yammi-audit-log",
+      "html_url": "https://github.com/RomaLytar/yammi-audit-log",
+      "description": "Laravel audit log & change history with real actor attribution (user / job / command / scheduler), cross-model change traces, time machine, tamper-evident hash chain, GDPR reports, anomaly detection, Slack/webhook alerts, multi-tenancy and an optional dashboard.",
+      "stars": 63,
+      "pushed_at": "2026-06-30T14:30:18Z",
+      "language": "PHP",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "devallibus/shiplog",
+      "html_url": "https://github.com/devallibus/shiplog",
+      "description": "SUPERCHARGE AI-assisted development by using Git. Cross-model review gates, evidence-linked closure, verification profiles, model-tier routing, artifact envelopes, and provenance signing \u2014 all from a single skill for Claude Code, Codex, and Cursor.",
+      "stars": 55,
+      "pushed_at": "2026-04-22T10:57:47Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "ByteYellow/AgentProvenance",
+      "html_url": "https://github.com/ByteYellow/AgentProvenance",
+      "description": "Security-oriented three-axis observability for sandboxed AI agents: model intent, app context, and runtime telemetry into verifiable evidence graphs for risk, forensics, and audit.",
+      "stars": 45,
+      "pushed_at": "2026-08-05T06:12:49Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "ruvnet/rufield",
+      "html_url": "https://github.com/ruvnet/rufield",
+      "description": "RuField MFS \u2014 the open specification for camera-free multimodal field sensing (WiFi/radar/ultrasound/IR/quantum \u2192 one privacy-aware, provenance-rich, fusion-ready event model). v0.1 Rust reference stack.",
+      "stars": 26,
+      "pushed_at": "2026-08-02T19:08:07Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "humblemat810/kogwistar",
+      "html_url": "https://github.com/humblemat810/kogwistar",
+      "description": "Graph-native AI substrate for HyperGraphRAG. Knowledge, Workflow orchestration, conversation memory and wisdom are modeled as hypergraphs. Support strong event sourced provenance and replay.",
+      "stars": 23,
+      "pushed_at": "2026-08-01T08:03:25Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "SaravananJaichandar/world-model-mcp",
+      "html_url": "https://github.com/SaravananJaichandar/world-model-mcp",
+      "description": "Temporal knowledge graph + authenticated audit chain for AI coding agents. Prevents hallucinations, repeated mistakes, regressions across 12 runtime adapters (Claude Code, Cursor, Codex, Copilot, Cline, Continue, and more). FIPS 205 hybrid signing (Ed25519 + SLH-DSA), streaming offline reference verifier. Hosted companion: etch.systems.",
+      "stars": 22,
+      "pushed_at": "2026-08-02T18:15:58Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://etch.systems"
+    },
+    {
+      "full_name": "IntelLabs/atlas-cli",
+      "html_url": "https://github.com/IntelLabs/atlas-cli",
+      "description": "A command-line interface tool for creating, managing, and verifying Content Provenance and Authenticity (C2PA) manifests for machine learning models, datasets, and related artifacts.",
+      "stars": 22,
+      "pushed_at": "2026-07-27T06:53:57Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "YinBo0927/RePro",
+      "html_url": "https://github.com/YinBo0927/RePro",
+      "description": "The official code of Refinement Provenance Inference: Detecting LLM-Refined Training Prompts from Model Behavior",
+      "stars": 22,
+      "pushed_at": "2026-01-06T06:38:47Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "Zhonghao1995/agentic-swmm-workflow",
+      "html_url": "https://github.com/Zhonghao1995/agentic-swmm-workflow",
+      "description": "Agentic SWMM is an automated, auditable, and memory-informed framework for reproducible stormwater modelling, integrating QGIS and EPA SWMM through the aiswmm runtime, reusable Skills, and MCP interfaces, with QA verification, provenance tracking, calibration support, and Codex, Hermes, Claude code as well as OpenClaw compatibility",
+      "stars": 21,
+      "pushed_at": "2026-07-29T17:06:30Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://aiswmm.com"
+    }
+  ]
+}

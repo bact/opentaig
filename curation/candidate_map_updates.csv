@@ -1,1 +1,9 @@
 rq_no,tool_id,role,rationale,datetime_added,datetime_checked,datetime_updated
+63,kitops,implement,"OCI-artifact packaging gives each model version a content-addressed, verifiable identity, letting an auditor confirm the model version used matches what's deployed.",2026-08-06 17:15,2026-08-06 17:15,2026-08-06 17:15
+63,modelstore,implement,Maintains a versioned model store so the exact model version used in an evaluation or audit can be retrieved and compared against the deployed one.,2026-08-06 17:15,2026-08-06 17:15,2026-08-06 17:15
+63,model-signing-spec,implement,Cryptographic model signatures let an auditor verify the exact model version being evaluated matches the signed artifact that was deployed.,2026-08-06 17:15,2026-08-06 17:15,2026-08-06 17:15
+57,model-signing-spec,implement,"A verifiable signature over a model's weights is a concrete mechanism for demonstrating and verifying model ownership, the question RQ 57 asks about.",2026-08-06 17:15,2026-08-06 17:15,2026-08-06 17:15
+63,k8s-aibom,implement,"Generates auditor-traceable ML-BOM evidence at runtime, directly supporting verification that the model version audited matches what's actually running.",2026-08-06 17:15,2026-08-06 17:15,2026-08-06 17:15
+63,sbom-tools,implement,"Diffing two AI-BOMs detects exactly when a model/component version has drifted, the core mechanism needed to verify an audited model version still matches production.",2026-08-06 17:15,2026-08-06 17:15,2026-08-06 17:15
+63,trusera-ai-bom,implement,"Automated discovery of deployed models/agents/APIs gives auditors ground truth to check the audited model version against, rather than relying on self-reported inventories.",2026-08-06 17:15,2026-08-06 17:15,2026-08-06 17:15
+63,xbom,implement,"Static-analysis-derived AI-component inventory helps confirm which model/version an application actually ships with, supporting audit-version verification.",2026-08-06 17:15,2026-08-06 17:15,2026-08-06 17:15

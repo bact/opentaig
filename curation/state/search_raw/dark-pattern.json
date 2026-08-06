@@ -1,0 +1,57 @@
+{
+  "keyword": "dark pattern",
+  "query": "dark pattern stars:>19 pushed:>2025-08-06 archived:false fork:false",
+  "count": 5,
+  "repos": [
+    {
+      "full_name": "microsoft/FeatureManagement-Dotnet",
+      "html_url": "https://github.com/microsoft/FeatureManagement-Dotnet",
+      "description": "Microsoft.FeatureManagement provides standardized APIs for enabling feature flags within applications. Utilize this library to secure a consistent experience when developing applications that use patterns such as beta access, rollout, dark deployments, and more.",
+      "stars": 1180,
+      "pushed_at": "2026-07-29T09:24:57Z",
+      "language": "C#",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "vlvagerviwager/protect-your-privacy",
+      "html_url": "https://github.com/vlvagerviwager/protect-your-privacy",
+      "description": "Privacy resources for the layperson. Highlights resources, tools, VPNs, search engines, articles, books, and dark patterns.",
+      "stars": 70,
+      "pushed_at": "2026-07-28T17:15:37Z",
+      "language": "",
+      "license_spdx_id": "GPL-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "chvvkrishnakumar/expo-nativewind-template",
+      "html_url": "https://github.com/chvvkrishnakumar/expo-nativewind-template",
+      "description": "A production-ready Expo + React Native + TypeScript starter kit with NativeWind (Tailwind CSS), pre-styled UI components, dark mode support, and Expo Router navigation \u2014 designed for building beautiful cross-platform iOS & Android apps quickly.  This template brings together best-in-class tools and patterns, including shadcn-style component archite",
+      "stars": 57,
+      "pushed_at": "2026-06-17T05:49:57Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "microsoft/FeatureManagement-Python",
+      "html_url": "https://github.com/microsoft/FeatureManagement-Python",
+      "description": "This library provides standardized APIs for enabling feature flags within python applications. Utilize this library to secure a consistent experience when developing applications that use patterns such as beta access, rollout, dark deployments, and more.",
+      "stars": 25,
+      "pushed_at": "2026-07-16T20:44:23Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "ScepticDope/FuckDarkPatterns",
+      "html_url": "https://github.com/ScepticDope/FuckDarkPatterns",
+      "description": "A small, opinionated **\\*cough\\*** project, aimed at undoing manipulative interface decisions. Better known as dark pattern design.",
+      "stars": 20,
+      "pushed_at": "2026-07-07T22:25:03Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}

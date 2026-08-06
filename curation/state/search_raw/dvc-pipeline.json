@@ -1,0 +1,37 @@
+{
+  "keyword": "DVC pipeline",
+  "query": "DVC pipeline stars:>19 pushed:>2025-08-06 archived:false fork:false",
+  "count": 3,
+  "repos": [
+    {
+      "full_name": "METR/eval-analysis-public",
+      "html_url": "https://github.com/METR/eval-analysis-public",
+      "description": "Public repository containing METR's DVC pipeline for eval data analysis",
+      "stars": 308,
+      "pushed_at": "2026-03-06T00:59:30Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "zincware/ZnTrack",
+      "html_url": "https://github.com/zincware/ZnTrack",
+      "description": "Create, visualize, run & benchmark DVC pipelines in Python & Jupyter notebooks.",
+      "stars": 57,
+      "pushed_at": "2026-08-03T20:32:52Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://zntrack.readthedocs.io"
+    },
+    {
+      "full_name": "Suraj-G-Rao/Network_Security",
+      "html_url": "https://github.com/Suraj-G-Rao/Network_Security",
+      "description": "An end-to-end machine learning pipeline for detecting network security threats and phishing attempts with real-time prediction capabilities. The system leverages FastAPI for high-performance API serving, MongoDB for data management, and MLflow for comprehensive experiment tracking throughout the model lifecycle.",
+      "stars": 45,
+      "pushed_at": "2026-04-15T10:29:01Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    }
+  ]
+}

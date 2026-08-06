@@ -1,0 +1,27 @@
+{
+  "keyword": "model bill of materials",
+  "query": "model bill of materials stars:>19 pushed:>2025-08-06 archived:false fork:false",
+  "count": 2,
+  "repos": [
+    {
+      "full_name": "Trusera/ai-bom",
+      "html_url": "https://github.com/Trusera/ai-bom",
+      "description": "AI Bill of Materials \u2014 discover every AI agent, model, and API in your infrastructure",
+      "stars": 297,
+      "pushed_at": "2026-05-24T16:33:21Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://trusera.dev"
+    },
+    {
+      "full_name": "manifest-cyber/aibom",
+      "html_url": "https://github.com/manifest-cyber/aibom",
+      "description": "A community wiki for all things AI/ML bill of materials (MLBOM, AIBOM) and transparency into AI/ML models.",
+      "stars": 46,
+      "pushed_at": "2026-07-17T15:44:11Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.manifestcyber.com"
+    }
+  ]
+}

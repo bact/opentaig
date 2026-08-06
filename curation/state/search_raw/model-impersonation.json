@@ -1,0 +1,27 @@
+{
+  "keyword": "model impersonation",
+  "query": "model impersonation stars:>19 pushed:>2025-08-06 archived:false fork:false",
+  "count": 2,
+  "repos": [
+    {
+      "full_name": "vibheksoni/t3router",
+      "html_url": "https://github.com/vibheksoni/t3router",
+      "description": "Rust client for t3.chat  access Claude Fable-5, GPT-5.6, Gemini 3.5, Grok 4.3, DeepSeek V4 & 50+ frontier AI models from your terminal. TLS impersonation, credit tracking, usage billing.",
+      "stars": 70,
+      "pushed_at": "2026-07-25T00:24:45Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "OID-See/OID-See",
+      "html_url": "https://github.com/OID-See/OID-See",
+      "description": "OID-See is an identity attack surface mapping tool that models OAuth trust, persistence, and impersonation paths in Entra using a graph-based approach.",
+      "stars": 38,
+      "pushed_at": "2026-07-25T19:01:33Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    }
+  ]
+}

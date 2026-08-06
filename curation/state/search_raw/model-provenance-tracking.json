@@ -1,0 +1,17 @@
+{
+  "keyword": "model provenance tracking",
+  "query": "model provenance tracking stars:>19 pushed:>2025-08-06 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "Zhonghao1995/agentic-swmm-workflow",
+      "html_url": "https://github.com/Zhonghao1995/agentic-swmm-workflow",
+      "description": "Agentic SWMM is an automated, auditable, and memory-informed framework for reproducible stormwater modelling, integrating QGIS and EPA SWMM through the aiswmm runtime, reusable Skills, and MCP interfaces, with QA verification, provenance tracking, calibration support, and Codex, Hermes, Claude code as well as OpenClaw compatibility",
+      "stars": 21,
+      "pushed_at": "2026-07-29T17:06:30Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://aiswmm.com"
+    }
+  ]
+}

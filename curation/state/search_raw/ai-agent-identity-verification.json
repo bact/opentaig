@@ -1,0 +1,47 @@
+{
+  "keyword": "AI agent identity verification",
+  "query": "AI agent identity verification stars:>19 pushed:>2025-08-06 archived:false fork:false",
+  "count": 4,
+  "repos": [
+    {
+      "full_name": "newtype-ai/nit-sdk",
+      "html_url": "https://github.com/newtype-ai/nit-sdk",
+      "description": "SDK for integrating with newtype-ai.org \u2014 verify agent identity with one function call",
+      "stars": 92,
+      "pushed_at": "2026-05-01T08:48:12Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "fctr-id/okta-ai-agent",
+      "html_url": "https://github.com/fctr-id/okta-ai-agent",
+      "description": "The first AI agent for Okta! A secure, local-first AI agent that helps Okta administrators query their tenant data using natural language.",
+      "stars": 56,
+      "pushed_at": "2026-06-30T16:22:47Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://fctr.io/ai-agent.html"
+    },
+    {
+      "full_name": "ThirdKeyAI/Symbiont",
+      "html_url": "https://github.com/ThirdKeyAI/Symbiont",
+      "description": "Symbiont lets teams build production agentic applications where every action is governed, every tool is verified, every agent has identity, and every decision leaves an audit trail.",
+      "stars": 53,
+      "pushed_at": "2026-07-28T19:57:07Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.symbiont.dev"
+    },
+    {
+      "full_name": "strangeadvancedmarketing/Adam",
+      "html_url": "https://github.com/strangeadvancedmarketing/Adam",
+      "description": "Adam Framework for OpenClaw \u2014 5-layer persistent memory and identity architecture for AI agents. Production-validated over 353+ sessions. First documented case of emergent values in persistent AI, quantum-verified on IBM hardware.",
+      "stars": 44,
+      "pushed_at": "2026-07-12T13:00:14Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://strangeadvancedmarketing.github.io/Adam/"
+    }
+  ]
+}

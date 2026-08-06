@@ -1,0 +1,37 @@
+{
+  "keyword": "SPDX AI",
+  "query": "SPDX AI stars:>19 pushed:>2025-08-06 archived:false fork:false",
+  "count": 3,
+  "repos": [
+    {
+      "full_name": "CycloneDX/specification",
+      "html_url": "https://github.com/CycloneDX/specification",
+      "description": "OWASP CycloneDX is a full-stack Bill of Materials (BOM) standard that provides advanced supply chain capabilities for cyber risk reduction. SBOM, SaaSBOM, HBOM, AI/ML-BOM, CBOM, OBOM, MBOM, VDR, and VEX",
+      "stars": 532,
+      "pushed_at": "2026-08-05T19:33:20Z",
+      "language": "XSLT",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cyclonedx.org/"
+    },
+    {
+      "full_name": "sbom-tool/sbom-tools",
+      "html_url": "https://github.com/sbom-tool/sbom-tools",
+      "description": "Semantic SBOM/CBOM/AI-BOM diff, quality scoring, and compliance validation for CycloneDX/SPDX \u2014 component, license, and vulnerability change analysis, cryptographic inventory grading, PQC readiness (CNSA 2.0, NIST IR 8547), and regulatory gates for NTIA, FDA, EU CRA, BSI TR-03183, EUCC, SSDF, EO 14028, and the EU AI Act.",
+      "stars": 238,
+      "pushed_at": "2026-08-06T10:11:35Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": "https://sbom.tools"
+    },
+    {
+      "full_name": "openSUSE/cavil",
+      "html_url": "https://github.com/openSUSE/cavil",
+      "description": "The legal review and SBOM system used by SUSE and openSUSE",
+      "stars": 63,
+      "pushed_at": "2026-08-06T15:32:33Z",
+      "language": "Perl",
+      "license_spdx_id": "GPL-2.0",
+      "homepage": ""
+    }
+  ]
+}

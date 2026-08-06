@@ -1,0 +1,57 @@
+{
+  "keyword": "SBOM generator",
+  "query": "SBOM generator stars:>19 pushed:>2025-08-06 archived:false fork:false",
+  "count": 5,
+  "repos": [
+    {
+      "full_name": "CycloneDX/cyclonedx-python",
+      "html_url": "https://github.com/CycloneDX/cyclonedx-python",
+      "description": "CycloneDX Software Bill of Materials (SBOM) generator for Python projects and environments",
+      "stars": 388,
+      "pushed_at": "2026-08-06T12:55:57Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cyclonedx.org"
+    },
+    {
+      "full_name": "CycloneDX/cyclonedx-linux-generator",
+      "html_url": "https://github.com/CycloneDX/cyclonedx-linux-generator",
+      "description": "Lockheed Martin developed utility to generate CycloneDX SBOMs for Linux distributions",
+      "stars": 55,
+      "pushed_at": "2025-12-02T19:02:03Z",
+      "language": "Java",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://cyclonedx.org/"
+    },
+    {
+      "full_name": "tweag/genealogos",
+      "html_url": "https://github.com/tweag/genealogos",
+      "description": "Genealogos, a Nix sbom generator",
+      "stars": 55,
+      "pushed_at": "2026-07-28T01:07:59Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "sebastienrousseau/static-site-generator",
+      "html_url": "https://github.com/sebastienrousseau/static-site-generator",
+      "description": "A secure-by-default static site generator built in Rust. WCAG 2.2 AA validation, CSP/SRI hardening, native JS/CSS minification, automated CycloneDX SBOM, local LLM content pipeline, WebAssembly target, interactive islands, streaming compilation for 100K+ pages, 28-locale i18n, and one-command deployment.",
+      "stars": 51,
+      "pushed_at": "2026-08-05T17:16:16Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.static-site-generator.com/"
+    },
+    {
+      "full_name": "siemens/debsbom",
+      "html_url": "https://github.com/siemens/debsbom",
+      "description": "SBOM generator for Debian-based distributions",
+      "stars": 37,
+      "pushed_at": "2026-08-06T12:50:40Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}

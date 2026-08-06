@@ -1,0 +1,1007 @@
+{
+  "keyword": "SBOM",
+  "query": "SBOM stars:>19 pushed:>2025-08-06 archived:false fork:false",
+  "count": 100,
+  "repos": [
+    {
+      "full_name": "aquasecurity/trivy",
+      "html_url": "https://github.com/aquasecurity/trivy",
+      "description": "Find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more",
+      "stars": 37284,
+      "pushed_at": "2026-08-06T14:52:05Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://trivy.dev"
+    },
+    {
+      "full_name": "anchore/syft",
+      "html_url": "https://github.com/anchore/syft",
+      "description": "CLI tool and library for generating a Software Bill of Materials from container images and filesystems",
+      "stars": 9362,
+      "pushed_at": "2026-08-06T16:59:09Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "RetireJS/retire.js",
+      "html_url": "https://github.com/RetireJS/retire.js",
+      "description": "scanner detecting the use of JavaScript libraries with known vulnerabilities. Can also generate an SBOM of the libraries it finds.",
+      "stars": 4157,
+      "pushed_at": "2026-08-04T14:39:20Z",
+      "language": "JavaScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://retirejs.github.io/retire.js/"
+    },
+    {
+      "full_name": "DependencyTrack/dependency-track",
+      "html_url": "https://github.com/DependencyTrack/dependency-track",
+      "description": "Dependency-Track is an intelligent Component Analysis platform that allows organizations to identify and reduce risk in the software supply chain.",
+      "stars": 4086,
+      "pushed_at": "2026-08-06T08:10:26Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://dependencytrack.org/"
+    },
+    {
+      "full_name": "e-m-b-a/emba",
+      "html_url": "https://github.com/e-m-b-a/emba",
+      "description": "EMBA - The firmware security analyzer",
+      "stars": 3588,
+      "pushed_at": "2026-08-03T13:54:14Z",
+      "language": "Shell",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://www.securefirmware.de"
+    },
+    {
+      "full_name": "aboutcode-org/scancode-toolkit",
+      "html_url": "https://github.com/aboutcode-org/scancode-toolkit",
+      "description": ":mag: ScanCode detects licenses, copyrights, dependencies by \"scanning code\" ... to discover and inventory open source and third-party packages used in your code. Sponsored by NLnet, the Google Summer of Code, Azure credits, nexB and other generous sponsors!",
+      "stars": 2597,
+      "pushed_at": "2026-07-09T18:01:49Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://scancode-toolkit.readthedocs.io/"
+    },
+    {
+      "full_name": "oss-review-toolkit/ort",
+      "html_url": "https://github.com/oss-review-toolkit/ort",
+      "description": "A suite of tools to automate software compliance checks.",
+      "stars": 2065,
+      "pushed_at": "2026-08-06T16:29:59Z",
+      "language": "Kotlin",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://oss-review-toolkit.org"
+    },
+    {
+      "full_name": "microsoft/sbom-tool",
+      "html_url": "https://github.com/microsoft/sbom-tool",
+      "description": "The SBOM tool is a highly scalable and enterprise ready tool to create SPDX 2.2 compatible SBOMs for any variety of artifacts.",
+      "stars": 2059,
+      "pushed_at": "2026-06-18T04:21:38Z",
+      "language": "C#",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "zarf-dev/zarf",
+      "html_url": "https://github.com/zarf-dev/zarf",
+      "description": "The Airgap Native Package Manager for Kubernetes",
+      "stars": 2001,
+      "pushed_at": "2026-08-06T16:20:51Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.zarf.dev/"
+    },
+    {
+      "full_name": "ossf/cve-bin-tool",
+      "html_url": "https://github.com/ossf/cve-bin-tool",
+      "description": "The CVE Binary Tool helps you determine if your system includes known vulnerabilities. You can scan binaries for over 350 common, vulnerable components (openssl, libpng, libxml2, expat and others), or if you know the components used, you can get a list of known vulnerabilities associated with an SBOM or a list of components and versions.",
+      "stars": 1743,
+      "pushed_at": "2026-08-05T06:06:27Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://cve-bin-tool.readthedocs.io/en/latest/"
+    },
+    {
+      "full_name": "guacsec/guac",
+      "html_url": "https://github.com/guacsec/guac",
+      "description": "GUAC aggregates software security metadata into a high fidelity graph database.",
+      "stars": 1522,
+      "pushed_at": "2026-08-04T12:13:34Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://guac.sh"
+    },
+    {
+      "full_name": "owasp-dep-scan/dep-scan",
+      "html_url": "https://github.com/owasp-dep-scan/dep-scan",
+      "description": "OWASP dep-scan is a next-generation security and risk audit tool based on known vulnerabilities, advisories, and license limitations for project dependencies. Both local repositories and container images are supported as the input, and the tool is ideal for integration.",
+      "stars": 1276,
+      "pushed_at": "2026-08-06T11:37:09Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://depscan.readthedocs.io"
+    },
+    {
+      "full_name": "XmirrorSecurity/OpenSCA-cli",
+      "html_url": "https://github.com/XmirrorSecurity/OpenSCA-cli",
+      "description": "OpenSCA is an open source software supply chain security solution that supports the detection of open source dependencies, vulnerabilities and license compliance with a widely noticed accuracy by the community.",
+      "stars": 1120,
+      "pushed_at": "2026-05-15T11:52:02Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://opensca.xmirror.cn"
+    },
+    {
+      "full_name": "package-url/purl-spec",
+      "html_url": "https://github.com/package-url/purl-spec",
+      "description": "A minimal specification for purl aka. a package \"mostly universal\" URL, join the discussion at https://gitter.im/package-url/Lobby",
+      "stars": 1089,
+      "pushed_at": "2026-08-06T12:37:32Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://packageurl.org/"
+    },
+    {
+      "full_name": "cdxgen/cdxgen",
+      "html_url": "https://github.com/cdxgen/cdxgen",
+      "description": "Creates CycloneDX Bill of Materials (BOM) for your projects from source and container images. Supports many languages and package managers. Integrate in your CI/CD pipeline with automatic submission to Dependency Track server",
+      "stars": 1033,
+      "pushed_at": "2026-08-06T14:59:51Z",
+      "language": "JavaScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cdxgen.github.io/cdxgen/"
+    },
+    {
+      "full_name": "rust-secure-code/cargo-auditable",
+      "html_url": "https://github.com/rust-secure-code/cargo-auditable",
+      "description": "Make production Rust binaries auditable",
+      "stars": 839,
+      "pushed_at": "2026-07-24T08:27:55Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "ARPSyndicate/puncia",
+      "html_url": "https://github.com/ARPSyndicate/puncia",
+      "description": "Panthera(P.)uncia - Official CLI utility for Subdomain Center & Exploit Observer.",
+      "stars": 661,
+      "pushed_at": "2026-08-03T07:49:39Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://pypi.org/project/puncia/"
+    },
+    {
+      "full_name": "devops-kung-fu/bomber",
+      "html_url": "https://github.com/devops-kung-fu/bomber",
+      "description": "Scans Software Bill of Materials (SBOMs) for security vulnerabilities",
+      "stars": 624,
+      "pushed_at": "2026-02-10T19:55:52Z",
+      "language": "Go",
+      "license_spdx_id": "MPL-2.0",
+      "homepage": "https://devops-kung-fu.github.io/bomber/"
+    },
+    {
+      "full_name": "kdeldycke/meta-package-manager",
+      "html_url": "https://github.com/kdeldycke/meta-package-manager",
+      "description": "\ud83c\udf81 wraps all package managers with a unifying CLI",
+      "stars": 609,
+      "pushed_at": "2026-08-06T16:02:02Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-2.0",
+      "homepage": "https://kdeldycke.github.io/meta-package-manager"
+    },
+    {
+      "full_name": "awesomeSBOM/awesome-sbom",
+      "html_url": "https://github.com/awesomeSBOM/awesome-sbom",
+      "description": "A curated list of SBOM (Software Bill Of Materials) related tools, frameworks, blogs, podcasts, and articles",
+      "stars": 595,
+      "pushed_at": "2026-05-27T06:02:04Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "fsfe/reuse-tool",
+      "html_url": "https://github.com/fsfe/reuse-tool",
+      "description": "This is a mirror of https://codeberg.org/fsfe/reuse-tool",
+      "stars": 582,
+      "pushed_at": "2026-07-24T10:50:01Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://reuse.software"
+    },
+    {
+      "full_name": "chainloop-dev/chainloop",
+      "html_url": "https://github.com/chainloop-dev/chainloop",
+      "description": "SDLC evidence store and policy engine for your Software Supply Chain attestations, SBOMs, VEX, SARIF, QA reports, and more",
+      "stars": 570,
+      "pushed_at": "2026-08-06T10:54:50Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.chainloop.dev"
+    },
+    {
+      "full_name": "microsoft/component-detection",
+      "html_url": "https://github.com/microsoft/component-detection",
+      "description": "Scans your project to determine what components you use",
+      "stars": 548,
+      "pushed_at": "2026-08-05T21:27:17Z",
+      "language": "C#",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "CycloneDX/specification",
+      "html_url": "https://github.com/CycloneDX/specification",
+      "description": "OWASP CycloneDX is a full-stack Bill of Materials (BOM) standard that provides advanced supply chain capabilities for cyber risk reduction. SBOM, SaaSBOM, HBOM, AI/ML-BOM, CBOM, OBOM, MBOM, VDR, and VEX",
+      "stars": 532,
+      "pushed_at": "2026-08-05T19:33:20Z",
+      "language": "XSLT",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cyclonedx.org/"
+    },
+    {
+      "full_name": "CycloneDX/cyclonedx-cli",
+      "html_url": "https://github.com/CycloneDX/cyclonedx-cli",
+      "description": "CycloneDX CLI tool for SBOM analysis, merging, diffs and format conversions.",
+      "stars": 529,
+      "pushed_at": "2026-07-23T23:45:18Z",
+      "language": "C#",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cyclonedx.org/"
+    },
+    {
+      "full_name": "kubernetes-sigs/bom",
+      "html_url": "https://github.com/kubernetes-sigs/bom",
+      "description": "A utility to generate SPDX-compliant Bill of Materials manifests",
+      "stars": 461,
+      "pushed_at": "2026-08-04T03:42:52Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://kubernetes-sigs.github.io/bom/"
+    },
+    {
+      "full_name": "owasp-dep-scan/blint",
+      "html_url": "https://github.com/owasp-dep-scan/blint",
+      "description": "blint is a Binary Linter that checks the security properties and capabilities of your executables. It can also generate a Software Bill-of-Materials (SBOM) for supported binaries.",
+      "stars": 452,
+      "pushed_at": "2026-07-21T07:51:45Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "xeol-io/xeol",
+      "html_url": "https://github.com/xeol-io/xeol",
+      "description": "A scanner for end-of-life (EOL) software and dependencies in container images, filesystems, and SBOMs",
+      "stars": 445,
+      "pushed_at": "2026-06-25T09:02:06Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.xeol.io/"
+    },
+    {
+      "full_name": "trailofbits/it-depends",
+      "html_url": "https://github.com/trailofbits/it-depends",
+      "description": "A tool to automatically build a dependency graph and Software Bill of Materials (SBOM) for packages and arbitrary source code repositories.",
+      "stars": 404,
+      "pushed_at": "2026-08-06T11:31:59Z",
+      "language": "Python",
+      "license_spdx_id": "LGPL-3.0",
+      "homepage": "https://blog.trailofbits.com/2021/12/16/it-depends/"
+    },
+    {
+      "full_name": "Fannar-afk/shadowguard",
+      "html_url": "https://github.com/Fannar-afk/shadowguard",
+      "description": "\u8fd9\u662f\u4e00\u4e2a\u672c\u5730\u5316\u8f6f\u4ef6\u4f9b\u5e94\u94fe\u5b89\u5168\u626b\u63cf\u5de5\u5177\uff0c\u652f\u6301\u4f9d\u8d56\u98ce\u9669\u5206\u6790\u3001SBOM \u751f\u6210\u3001\u5b89\u5168\u95f8\u95e8\u4e0e OSV \u6f0f\u6d1e\u67e5\u8be2\u3002",
+      "stars": 395,
+      "pushed_at": "2026-05-31T06:17:14Z",
+      "language": "C#",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "CycloneDX/cyclonedx-python",
+      "html_url": "https://github.com/CycloneDX/cyclonedx-python",
+      "description": "CycloneDX Software Bill of Materials (SBOM) generator for Python projects and environments",
+      "stars": 388,
+      "pushed_at": "2026-08-06T12:55:57Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cyclonedx.org"
+    },
+    {
+      "full_name": "CycloneDX/cyclonedx-maven-plugin",
+      "html_url": "https://github.com/CycloneDX/cyclonedx-maven-plugin",
+      "description": "Creates CycloneDX Software Bill of Materials (SBOM) from Maven projects",
+      "stars": 377,
+      "pushed_at": "2026-07-31T11:32:50Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cyclonedx.org/"
+    },
+    {
+      "full_name": "spdx/spdx-spec",
+      "html_url": "https://github.com/spdx/spdx-spec",
+      "description": "The System Package Data Exchange (SPDX) specification in Markdown and HTML formats.",
+      "stars": 376,
+      "pushed_at": "2026-08-06T14:06:35Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://spdx.github.io/spdx-spec/"
+    },
+    {
+      "full_name": "bureado/awesome-software-supply-chain-security",
+      "html_url": "https://github.com/bureado/awesome-software-supply-chain-security",
+      "description": "A compilation of resources in the software supply chain security domain, with emphasis on open source",
+      "stars": 374,
+      "pushed_at": "2026-06-07T02:04:12Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "vulnersCom/api",
+      "html_url": "https://github.com/vulnersCom/api",
+      "description": "Official Python SDK for the Vulners vulnerability-intelligence API \u2014 search CVEs, exploits and advisories (CVSS/EPSS/KEV), audit software, Linux/Windows hosts and SBOMs, and stream the whole graph. Typed sync + async clients, 100% v3-compatible, with a built-in MCP server for AI agents.",
+      "stars": 371,
+      "pushed_at": "2026-08-05T02:21:05Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://vulners.com"
+    },
+    {
+      "full_name": "protobom/protobom",
+      "html_url": "https://github.com/protobom/protobom",
+      "description": "A universal SBOM representation in protocol buffers",
+      "stars": 326,
+      "pushed_at": "2026-08-06T00:27:39Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "tiiuae/sbomnix",
+      "html_url": "https://github.com/tiiuae/sbomnix",
+      "description": "SBOM, provenance, dependency graph, and vulnerability tools for Nix.",
+      "stars": 303,
+      "pushed_at": "2026-07-24T13:02:07Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "aboutcode-org/aboutcode",
+      "html_url": "https://github.com/aboutcode-org/aboutcode",
+      "description": "AboutCode project: tools and data to uncover things about code: the provenance, origin, license, and more (packages, security, quality, etc.) of FOSS code. Get started at https://aboutcode.readthedocs.io/",
+      "stars": 302,
+      "pushed_at": "2026-04-14T06:57:59Z",
+      "language": "Batchfile",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://aboutcode.readthedocs.io/"
+    },
+    {
+      "full_name": "interlynk-io/sbomqs",
+      "html_url": "https://github.com/interlynk-io/sbomqs",
+      "description": "sbomqs: The Comprehensive SBOM Quality & Compliance Tool",
+      "stars": 299,
+      "pushed_at": "2026-08-03T21:26:11Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "Trusera/ai-bom",
+      "html_url": "https://github.com/Trusera/ai-bom",
+      "description": "AI Bill of Materials \u2014 discover every AI agent, model, and API in your infrastructure",
+      "stars": 297,
+      "pushed_at": "2026-05-24T16:33:21Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://trusera.dev"
+    },
+    {
+      "full_name": "CycloneDX/cyclonedx-dotnet",
+      "html_url": "https://github.com/CycloneDX/cyclonedx-dotnet",
+      "description": "Creates CycloneDX Software Bill of Materials (SBOM) from .NET Projects",
+      "stars": 286,
+      "pushed_at": "2026-08-03T22:35:13Z",
+      "language": "C#",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cyclonedx.org/"
+    },
+    {
+      "full_name": "obsTR/quantum-notary",
+      "html_url": "https://github.com/obsTR/quantum-notary",
+      "description": "quantum_notary is a command-line tool for cryptographically signing and verifying Software Bills of Materials (SBOMs) using post-quantum cryptography (Dilithium5). It helps secure your software supply chain with NIST-standard quantum-resistant signatures, transparency logging, and optional policy-based verification.",
+      "stars": 262,
+      "pushed_at": "2026-02-20T13:14:22Z",
+      "language": "Rust",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "anchore/sbom-action",
+      "html_url": "https://github.com/anchore/sbom-action",
+      "description": "GitHub Action for creating software bill of materials using Syft.",
+      "stars": 254,
+      "pushed_at": "2026-08-05T13:29:30Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "sbom-tool/sbom-tools",
+      "html_url": "https://github.com/sbom-tool/sbom-tools",
+      "description": "Semantic SBOM/CBOM/AI-BOM diff, quality scoring, and compliance validation for CycloneDX/SPDX \u2014 component, license, and vulnerability change analysis, cryptographic inventory grading, PQC readiness (CNSA 2.0, NIST IR 8547), and regulatory gates for NTIA, FDA, EU CRA, BSI TR-03183, EUCC, SSDF, EO 14028, and the EU AI Act.",
+      "stars": 238,
+      "pushed_at": "2026-08-06T10:11:35Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": "https://sbom.tools"
+    },
+    {
+      "full_name": "snyk/parlay",
+      "html_url": "https://github.com/snyk/parlay",
+      "description": "Enrich SBOMs with data from third party services",
+      "stars": 234,
+      "pushed_at": "2026-08-06T10:26:54Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "ckotzbauer/sbom-operator",
+      "html_url": "https://github.com/ckotzbauer/sbom-operator",
+      "description": "Catalogue all images of a Kubernetes cluster to multiple targets with Syft",
+      "stars": 233,
+      "pushed_at": "2026-08-04T09:04:33Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "CycloneDX/cyclonedx-gradle-plugin",
+      "html_url": "https://github.com/CycloneDX/cyclonedx-gradle-plugin",
+      "description": "Creates CycloneDX Software Bill of Materials (SBOM) from Gradle projects",
+      "stars": 233,
+      "pushed_at": "2026-08-05T13:04:54Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cyclonedx.org/"
+    },
+    {
+      "full_name": "CycloneDX/bom-examples",
+      "html_url": "https://github.com/CycloneDX/bom-examples",
+      "description": "A repository with examples of CycloneDX BOMs (SBOM, SaaSBOM, OBOM, VEX, etc)",
+      "stars": 233,
+      "pushed_at": "2025-10-21T15:13:32Z",
+      "language": "",
+      "license_spdx_id": "CC0-1.0",
+      "homepage": "https://cyclonedx.org"
+    },
+    {
+      "full_name": "laoshanxi/app-mesh",
+      "html_url": "https://github.com/laoshanxi/app-mesh",
+      "description": "A secure, high-performance, multi-tenant micro-service platform for remote \"App Management\" and \"Computing\"",
+      "stars": 218,
+      "pushed_at": "2026-08-04T07:38:22Z",
+      "language": "C++",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "oracle/macaron",
+      "html_url": "https://github.com/oracle/macaron",
+      "description": "Macaron is an extensible supply-chain security analysis framework from Oracle Labs that supports a wide range of build systems and CI/CD services. It can be used to prevent supply chain attacks, detect malicious Python packages, or check conformance to frameworks, such as SLSA. Documentation:",
+      "stars": 210,
+      "pushed_at": "2026-08-06T10:57:27Z",
+      "language": "Python",
+      "license_spdx_id": "UPL-1.0",
+      "homepage": "https://oracle.github.io/macaron/"
+    },
+    {
+      "full_name": "CycloneDX/cyclonedx-gomod",
+      "html_url": "https://github.com/CycloneDX/cyclonedx-gomod",
+      "description": "Creates CycloneDX Software Bill of Materials (SBOM) from Go modules",
+      "stars": 182,
+      "pushed_at": "2026-04-17T22:40:17Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cyclonedx.org"
+    },
+    {
+      "full_name": "anchore/grant",
+      "html_url": "https://github.com/anchore/grant",
+      "description": "A license scanner for container images and filesystems.",
+      "stars": 179,
+      "pushed_at": "2026-07-31T13:10:50Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "konflux-ci/konflux-ci",
+      "html_url": "https://github.com/konflux-ci/konflux-ci",
+      "description": "Trusted builds made easy! A cloud-native software factory for building, testing, and releasing trusted software artifacts",
+      "stars": 172,
+      "pushed_at": "2026-08-06T12:58:53Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://konflux-ci.dev/"
+    },
+    {
+      "full_name": "CycloneDX/cyclonedx-rust-cargo",
+      "html_url": "https://github.com/CycloneDX/cyclonedx-rust-cargo",
+      "description": "Creates CycloneDX Software Bill of Materials (SBOM) from Rust (Cargo) projects",
+      "stars": 171,
+      "pushed_at": "2026-05-05T17:58:16Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cyclonedx.org/"
+    },
+    {
+      "full_name": "f3rb123/beetle",
+      "html_url": "https://github.com/f3rb123/beetle",
+      "description": "Modern offline-first Application Security Intelligence Platform for Android, iOS, Flutter and React Native with attack-chain analysis, explainable findings, source exploration, AI-assisted investigation and professional reporting.",
+      "stars": 161,
+      "pushed_at": "2026-07-21T14:07:06Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "CycloneDX/sbom-utility",
+      "html_url": "https://github.com/CycloneDX/sbom-utility",
+      "description": "Utility that provides an API platform for validating, querying and managing BOM data",
+      "stars": 160,
+      "pushed_at": "2026-08-04T15:06:18Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "bomctl/bomctl",
+      "html_url": "https://github.com/bomctl/bomctl",
+      "description": "Format agnostic SBOM tooling",
+      "stars": 155,
+      "pushed_at": "2025-11-20T02:03:28Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "apisec-inc/mcp-audit",
+      "html_url": "https://github.com/apisec-inc/mcp-audit",
+      "description": "See what your AI agents can access. Scan MCP configs for exposed secrets, shadow APIs, and AI models. Generate AI-BOMs for compliance.",
+      "stars": 152,
+      "pushed_at": "2026-05-12T20:27:21Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://apisec-inc.github.io/mcp-audit"
+    },
+    {
+      "full_name": "CycloneDX/cyclonedx-node-npm",
+      "html_url": "https://github.com/CycloneDX/cyclonedx-node-npm",
+      "description": "Create CycloneDX Software Bill of Materials (SBOM) from Node.js NPM projects.",
+      "stars": 146,
+      "pushed_at": "2026-07-25T16:03:14Z",
+      "language": "JavaScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cyclonedx.org/"
+    },
+    {
+      "full_name": "nikstur/bombon",
+      "html_url": "https://github.com/nikstur/bombon",
+      "description": "Nix CycloneDX Software Bills of Materials (SBOMs)",
+      "stars": 144,
+      "pushed_at": "2026-08-01T18:05:40Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "CycloneDX/cyclonedx-node-module",
+      "html_url": "https://github.com/CycloneDX/cyclonedx-node-module",
+      "description": "creates CycloneDX Software-Bill-of-Materials (SBOM) from Node.js-based projects",
+      "stars": 144,
+      "pushed_at": "2026-07-25T06:22:22Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cyclonedx.org/"
+    },
+    {
+      "full_name": "fatihtokus/scan2html",
+      "html_url": "https://github.com/fatihtokus/scan2html",
+      "description": "A Trivy plugin that scans and outputs the results (vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more) to an interactive html file.",
+      "stars": 144,
+      "pushed_at": "2026-07-16T15:14:45Z",
+      "language": "HTML",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "trailofbits/deptective",
+      "html_url": "https://github.com/trailofbits/deptective",
+      "description": "Deptective automatically determines the native dependencies required to run any arbitrary program or command.",
+      "stars": 132,
+      "pushed_at": "2026-07-27T09:34:13Z",
+      "language": "Python",
+      "license_spdx_id": "LGPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "cbomkit/cbomkit",
+      "html_url": "https://github.com/cbomkit/cbomkit",
+      "description": "A toolset for dealing with Cryptography Bill of Materials (CBOM)",
+      "stars": 126,
+      "pushed_at": "2026-06-05T10:19:46Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "relizaio/rearm",
+      "html_url": "https://github.com/relizaio/rearm",
+      "description": "ReARM - Release Governance Platform",
+      "stars": 123,
+      "pushed_at": "2026-08-06T12:16:59Z",
+      "language": "Java",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://rearmhq.com"
+    },
+    {
+      "full_name": "interlynk-io/sbomasm",
+      "html_url": "https://github.com/interlynk-io/sbomasm",
+      "description": "sbomasm: The Complete SBOM Management Toolkit",
+      "stars": 122,
+      "pushed_at": "2026-08-03T18:46:20Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "ossf/sbom-everywhere",
+      "html_url": "https://github.com/ossf/sbom-everywhere",
+      "description": "Improve Software Bill of Materials (SBOM) tooling and training to encourage adoption",
+      "stars": 121,
+      "pushed_at": "2026-02-28T17:00:35Z",
+      "language": "Vue",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "CycloneDX/Sunshine",
+      "html_url": "https://github.com/CycloneDX/Sunshine",
+      "description": "Sunshine - SBOM visualization tool",
+      "stars": 119,
+      "pushed_at": "2026-05-17T22:49:56Z",
+      "language": "HTML",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cyclonedx.org"
+    },
+    {
+      "full_name": "CycloneDX/cyclonedx-core-java",
+      "html_url": "https://github.com/CycloneDX/cyclonedx-core-java",
+      "description": "CycloneDX SBOM Model and Utils for Creating and Validating BOMs",
+      "stars": 117,
+      "pushed_at": "2026-08-06T07:26:09Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cyclonedx.org/"
+    },
+    {
+      "full_name": "CycloneDX/cyclonedx-go",
+      "html_url": "https://github.com/CycloneDX/cyclonedx-go",
+      "description": "Go library to consume and produce CycloneDX Software Bill of Materials (SBOM)",
+      "stars": 116,
+      "pushed_at": "2026-07-21T09:52:37Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cyclonedx.org/"
+    },
+    {
+      "full_name": "gitsocial-org/gitsocial",
+      "html_url": "https://github.com/gitsocial-org/gitsocial",
+      "description": "Cross-forge collaboration platform",
+      "stars": 115,
+      "pushed_at": "2026-08-03T21:22:08Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": "https://gitsocial.org/"
+    },
+    {
+      "full_name": "CycloneDX/cyclonedx-python-lib",
+      "html_url": "https://github.com/CycloneDX/cyclonedx-python-lib",
+      "description": "Functionality and DataModels of OWASP CycloneDX for Python",
+      "stars": 113,
+      "pushed_at": "2026-08-06T13:41:42Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cyclonedx.org/"
+    },
+    {
+      "full_name": "CycloneDX/transparency-exchange-api",
+      "html_url": "https://github.com/CycloneDX/transparency-exchange-api",
+      "description": "A standard API specification for exchanging supply chain artifacts and intelligence",
+      "stars": 110,
+      "pushed_at": "2026-08-06T08:27:59Z",
+      "language": "Shell",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://tc54.org/"
+    },
+    {
+      "full_name": "spdx/spdx-3-model",
+      "html_url": "https://github.com/spdx/spdx-3-model",
+      "description": "The model for the information captured in SPDX version 3 standard.",
+      "stars": 103,
+      "pushed_at": "2026-08-05T18:52:54Z",
+      "language": "",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://spdx.dev/use/specifications/"
+    },
+    {
+      "full_name": "spdx/ntia-conformance-checker",
+      "html_url": "https://github.com/spdx/ntia-conformance-checker",
+      "description": "Validate SPDX 2 and 3 SBOM against NTIA, CISA, and other minimum element requirements.",
+      "stars": 89,
+      "pushed_at": "2026-08-03T13:48:22Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://spdx.github.io/ntia-conformance-checker/"
+    },
+    {
+      "full_name": "ckotzbauer/vulnerability-operator",
+      "html_url": "https://github.com/ckotzbauer/vulnerability-operator",
+      "description": "Scans SBOMs for vulnerabilities with Grype",
+      "stars": 88,
+      "pushed_at": "2026-07-31T22:52:14Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "CycloneDX/cyclonedx-php-composer",
+      "html_url": "https://github.com/CycloneDX/cyclonedx-php-composer",
+      "description": "Create CycloneDX Software Bill of Materials (SBOM) from PHP Composer projects",
+      "stars": 87,
+      "pushed_at": "2026-08-01T20:12:37Z",
+      "language": "PHP",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cyclonedx.org/"
+    },
+    {
+      "full_name": "arsbr/Veritensor",
+      "html_url": "https://github.com/arsbr/Veritensor",
+      "description": "The Anti-Virus for AI Artifacts & RAG Firewall. A static analysis tool scanning Models and Notebooks for RCE, Datasets and RAG docs for Data Poisoning, PII, and Prompt Injections. Secure your AI Supply Chain.",
+      "stars": 84,
+      "pushed_at": "2026-08-04T11:11:06Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.veritensor.com"
+    },
+    {
+      "full_name": "trailofbits/vendetect",
+      "html_url": "https://github.com/trailofbits/vendetect",
+      "description": "A tool to automatically detect copy+pasted and vendored code between repositories",
+      "stars": 83,
+      "pushed_at": "2026-05-11T18:09:07Z",
+      "language": "Python",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "docker/github-builder",
+      "html_url": "https://github.com/docker/github-builder",
+      "description": "Official Docker-maintained reusable GitHub Actions workflows to securely build container images",
+      "stars": 81,
+      "pushed_at": "2026-08-06T11:59:15Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.docker.com/build/ci/github-actions/github-builder/"
+    },
+    {
+      "full_name": "inno-devops-labs/DevSecOps-Intro",
+      "html_url": "https://github.com/inno-devops-labs/DevSecOps-Intro",
+      "description": "\ud83d\ude80 DevSecOps intro elective \u2014 10 hands-on labs + 2 bonus hardening OWASP Juice Shop: threat modeling (STRIDE/Threagile), signed commits & secret scanning, SBOM/SCA, SAST + DAST, IaC security (Checkov/KICS), container & supply-chain hardening (Trivy, Cosign), runtime detection with Falco, and DefectDojo vuln management.",
+      "stars": 80,
+      "pushed_at": "2026-06-30T10:04:45Z",
+      "language": "Shell",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "cbomkit/sonar-cryptography",
+      "html_url": "https://github.com/cbomkit/sonar-cryptography",
+      "description": "This repository contains a SonarQube Plugin that detects cryptographic assets in source code and generates CBOM.",
+      "stars": 80,
+      "pushed_at": "2026-08-05T07:34:18Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "hermetoproject/hermeto",
+      "html_url": "https://github.com/hermetoproject/hermeto",
+      "description": "Hermeto is a CLI tool that prefetches project dependencies for hermetic container builds.",
+      "stars": 79,
+      "pushed_at": "2026-08-06T14:09:57Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://hermetoproject.github.io/hermeto/"
+    },
+    {
+      "full_name": "Lab700xOrg/aisbom",
+      "html_url": "https://github.com/Lab700xOrg/aisbom",
+      "description": "AI SBOM: AI Software Bill of Materials - The Supply Chain for Artificial Intelligence",
+      "stars": 76,
+      "pushed_at": "2026-07-26T02:37:41Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.aisbom.io/"
+    },
+    {
+      "full_name": "patriksvensson/covenant",
+      "html_url": "https://github.com/patriksvensson/covenant",
+      "description": "A tool to generate SBOM (Software Bill of Material) from source code artifacts.",
+      "stars": 73,
+      "pushed_at": "2025-11-24T12:34:24Z",
+      "language": "C#",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "kubernetes-sigs/tejolote",
+      "html_url": "https://github.com/kubernetes-sigs/tejolote",
+      "description": "A highly configurable build executor and observer designed to generate signed SLSA provenance attestations about build runs.",
+      "stars": 73,
+      "pushed_at": "2026-08-04T06:14:29Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "savoirfairelinux/vulnscout",
+      "html_url": "https://github.com/savoirfairelinux/vulnscout",
+      "description": "SBOM Vulnerability Scanning & Assessment tool",
+      "stars": 72,
+      "pushed_at": "2026-08-05T21:14:50Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "spdx/Spdx-Java-Library",
+      "html_url": "https://github.com/spdx/Spdx-Java-Library",
+      "description": "Java library which implements the Java object model for SPDX and provides useful helper functions",
+      "stars": 69,
+      "pushed_at": "2026-07-27T12:04:21Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "eclipse-apoapsis/ort-server",
+      "html_url": "https://github.com/eclipse-apoapsis/ort-server",
+      "description": "A scalable server implementation of the OSS Review Toolkit.",
+      "stars": 68,
+      "pushed_at": "2026-08-06T16:05:37Z",
+      "language": "Kotlin",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://eclipse-apoapsis.github.io/ort-server/"
+    },
+    {
+      "full_name": "edoardottt/depsdev",
+      "html_url": "https://github.com/edoardottt/depsdev",
+      "description": "CLI client (and Golang module) for deps.dev API. Free access to dependencies, licenses, advisories, and other critical health and security signals for open source package versions.",
+      "stars": 68,
+      "pushed_at": "2026-06-09T07:17:24Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://deps.dev"
+    },
+    {
+      "full_name": "DependencyTrack/gh-upload-sbom",
+      "html_url": "https://github.com/DependencyTrack/gh-upload-sbom",
+      "description": "Publishes BOMs to Dependency-Track from GitHub Actions",
+      "stars": 66,
+      "pushed_at": "2026-08-06T15:38:25Z",
+      "language": "JavaScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "openSUSE/cavil",
+      "html_url": "https://github.com/openSUSE/cavil",
+      "description": "The legal review and SBOM system used by SUSE and openSUSE",
+      "stars": 63,
+      "pushed_at": "2026-08-06T15:32:33Z",
+      "language": "Perl",
+      "license_spdx_id": "GPL-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "scanoss/sbom-workbench",
+      "html_url": "https://github.com/scanoss/sbom-workbench",
+      "description": "The SCANOSS SBOM Workbench graphical user interface to scan and audit your source code.",
+      "stars": 62,
+      "pushed_at": "2026-08-04T17:48:33Z",
+      "language": "TypeScript",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://scanoss.com/"
+    },
+    {
+      "full_name": "demcon/cmake-sbom",
+      "html_url": "https://github.com/demcon/cmake-sbom",
+      "description": "Guided SBOM generation from CMake",
+      "stars": 62,
+      "pushed_at": "2026-08-01T18:04:27Z",
+      "language": "CMake",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "guacsec/trustify",
+      "html_url": "https://github.com/guacsec/trustify",
+      "description": "SBOM analysis platform for storing, correlating, and querying software bill of materials and security advisories (CSAF/VEX, OSV, CVE) at scale. Exposes a correlation graph of vuln :left_right_arrow: component :left_right_arrow: product :left_right_arrow: VEX",
+      "stars": 62,
+      "pushed_at": "2026-08-04T05:31:57Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://matrix.to/#/#trustification:matrix.org"
+    },
+    {
+      "full_name": "cschneid-the-elder/mapa",
+      "html_url": "https://github.com/cschneid-the-elder/mapa",
+      "description": "mainframe application portfolio analysis, antlr4 grammars and java for static analysis of cobol+cics+db2+sqlims+execdli, jcl",
+      "stars": 62,
+      "pushed_at": "2026-06-29T13:24:05Z",
+      "language": "ANTLR",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "goreleaser/example-supply-chain",
+      "html_url": "https://github.com/goreleaser/example-supply-chain",
+      "description": "Example goreleaser + github actions config with keyless signing, SBOM generation, and attestations",
+      "stars": 61,
+      "pushed_at": "2026-08-01T21:43:46Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": "https://goreleaser.com"
+    },
+    {
+      "full_name": "aws-actions/vulnerability-scan-github-action-for-amazon-inspector",
+      "html_url": "https://github.com/aws-actions/vulnerability-scan-github-action-for-amazon-inspector",
+      "description": "Scan artifacts with Amazon Inspector from GitHub Actions workflows.",
+      "stars": 59,
+      "pushed_at": "2026-07-31T16:03:04Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://docs.aws.amazon.com/inspector/"
+    },
+    {
+      "full_name": "mschwaig/laut",
+      "html_url": "https://github.com/mschwaig/laut",
+      "description": "A new signature format for Nix - for verifiable provenance data and SBOMs.",
+      "stars": 59,
+      "pushed_at": "2026-07-05T11:40:13Z",
+      "language": "Rust",
+      "license_spdx_id": "EUPL-1.2",
+      "homepage": "https://matrix.to/#/#laut:matrix.org"
+    },
+    {
+      "full_name": "gensecaihq/react2shell-scanner",
+      "html_url": "https://github.com/gensecaihq/react2shell-scanner",
+      "description": "Security scanner for CVE-2025-55182 - Critical RCE vulnerability in React Server Components. Scan npm/pnpm/yarn    lockfiles, Docker images, SBOMs, and live URLs. Auto-fix, SARIF output, GitHub Actions, Vercel integration,   and runtime protection middleware.",
+      "stars": 59,
+      "pushed_at": "2025-12-07T07:59:50Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.npmjs.com/package/react2shell-guard"
+    }
+  ]
+}

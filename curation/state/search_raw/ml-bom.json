@@ -1,0 +1,27 @@
+{
+  "keyword": "ML-BOM",
+  "query": "ML-BOM stars:>19 pushed:>2025-08-06 archived:false fork:false",
+  "count": 2,
+  "repos": [
+    {
+      "full_name": "CycloneDX/specification",
+      "html_url": "https://github.com/CycloneDX/specification",
+      "description": "OWASP CycloneDX is a full-stack Bill of Materials (BOM) standard that provides advanced supply chain capabilities for cyber risk reduction. SBOM, SaaSBOM, HBOM, AI/ML-BOM, CBOM, OBOM, MBOM, VDR, and VEX",
+      "stars": 532,
+      "pushed_at": "2026-08-05T19:33:20Z",
+      "language": "XSLT",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cyclonedx.org/"
+    },
+    {
+      "full_name": "GoogleCloudPlatform/k8s-aibom",
+      "html_url": "https://github.com/GoogleCloudPlatform/k8s-aibom",
+      "description": "A Kubernetes controller that generates CycloneDX 1.6 ML-BOM documents for AI workloads at runtime \u2014 inference services, agent stacks, RAG pipelines, training jobs, evaluation harnesses \u2014 with auditor-traceable evidence for every attribute.",
+      "stars": 33,
+      "pushed_at": "2026-07-25T05:26:36Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    }
+  ]
+}

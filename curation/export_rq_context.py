@@ -13,7 +13,13 @@ text, taxonomy, and the tool ids already mapped to it.
 This is the input the discovery agent reads so it knows the **spine** (every
 research question) and what is already covered -- so it maps NEW tools
 *directly* to research questions, and never re-proposes a tool already
-attached to a question.
+attached to a question. Deliberately compact: `tools_implement`/`tools_eval`
+are bare id lists, not full tool records -- a Pass A judge re-mapping an
+*existing* tool to a new RQ should look that id up directly in
+`site/data.json`'s top-level `tools` array instead (the already-merged view
+of both `tools` and `tool_metadata`, every field from both tabs resolved
+through the precedence rule -- see "PASS A" in curation/README.md), not
+duplicate that here.
 
 Deterministic: no model, no network. It only reshapes the local
 ``site/data.json`` that ``build.py`` already produces (which is itself the
@@ -47,9 +53,11 @@ def rq_sort_key(rq_no: str):
 
 
 def tool_ids(entries: list) -> list:
-    """data.json stores tools as [{id, name, homepage}, ...]; we only need the
-    ids here (the agent looks up full metadata in the tools catalog / candidate
-    CSV, not from this context file)."""
+    """data.json's per-problem tools_implement/tools_eval entries carry only
+    {id, name, homepage, rationale, freshness} -- we only need the ids here.
+    The agent looks up a tool's full merged record (both `tools` and
+    `tool_metadata`) in data.json's top-level `tools` array by id, not from
+    this context file -- see the module docstring."""
     return [e["id"] for e in entries if e.get("id")]
 
 

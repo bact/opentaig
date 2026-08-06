@@ -1631,3 +1631,20 @@ narimangharib/starlink-iran-gps-spoofing,reject,not-a-tool-paper-artifact,"A tec
 alicmu2024/GNSS-Jamming-Detection-and-Classification-using-Machine-Learning-Deep-Learning-and-Computer-Vision,reject,not-a-tool-paper-artifact,"Single-project academic research code for GNSS jamming/spoofing detection; not a maintained general-purpose tool, and its object (satellite/GNSS receivers) doesn't match RQ49's object (on-chip AI-accelerator geolocation).",,none-declared,Verification of Chip Location,GPS spoofing detection,61,2026-07-29T15:35:55+00:00
 zencefilefendi/satguard,reject,out-of-scope-narrow,"Narrowly scoped to Starlink satellite terminal telemetry specifically, not a general GPS-spoofing-resistance mechanism transferable to on-chip AI-hardware geolocation as RQ49 asks about.",MIT,osi-approved,Verification of Chip Location,GPS spoofing detection,22,2026-07-29T15:35:55+00:00
 ibm-granite/granite-guardian,accept,,,,none-declared,,,,2026-07-29T16:07:26+00:00
+microsoft/FeatureManagement-Dotnet,reject,not-relevant,"Feature-flag library; unrelated to dark-pattern detection, matched on incidental 'dark' text.",MIT,osi-approved,dark-pattern-detection,dark pattern,1180,2026-08-06T17:04:16+00:00
+vlvagerviwager/protect-your-privacy,reject,not-a-tool-linklist,Curated link list of privacy resources; not a runnable tool.,GPL-2.0,osi-approved,dark-pattern-detection,dark pattern,70,2026-08-06T17:04:16+00:00
+chvvkrishnakumar/expo-nativewind-template,reject,not-relevant,"React Native app starter template with a dark-mode UI theme; matched on 'dark mode', not dark patterns.",MIT,osi-approved,dark-pattern-detection,dark pattern,57,2026-08-06T17:04:16+00:00
+microsoft/FeatureManagement-Python,reject,not-relevant,"Feature-flag library; unrelated to dark-pattern detection, matched on incidental 'dark' text.",MIT,osi-approved,dark-pattern-detection,dark pattern,25,2026-08-06T17:04:16+00:00
+ScepticDope/FuckDarkPatterns,reject,low-substance,Small opinionated personal project for manually undoing dark patterns on specific sites; not maintained/general-purpose.,MIT,osi-approved,dark-pattern-detection,dark pattern,20,2026-08-06T17:04:16+00:00
+kitops-ml/kitops,accept,,,Apache-2.0,osi-approved,model-provenance-bom,model versioning,1395,2026-08-06T17:15:30+00:00
+operatorai/modelstore,accept,,,Apache-2.0,osi-approved,model-provenance-bom,model versioning,404,2026-08-06T17:15:30+00:00
+ossf/model-signing-spec,accept,,,Apache-2.0,osi-approved,model-provenance-bom,model signing,23,2026-08-06T17:15:30+00:00
+GoogleCloudPlatform/k8s-aibom,accept,,,Apache-2.0,osi-approved,model-provenance-bom,CycloneDX ML-BOM,33,2026-08-06T17:15:30+00:00
+sbom-tool/sbom-tools,accept,,,MIT,osi-approved,model-provenance-bom,SBOM,238,2026-08-06T17:15:30+00:00
+Trusera/ai-bom,accept,,,Apache-2.0,osi-approved,model-provenance-bom,SBOM,297,2026-08-06T17:15:30+00:00
+safedep/xbom,accept,,,Apache-2.0,osi-approved,model-provenance-bom,CycloneDX AI,36,2026-08-06T17:15:30+00:00
+casdoor/casdoor,accept,,,Apache-2.0,osi-approved,agent-identity-authentication,agent identity authentication,14130,2026-08-06T17:20:18+00:00
+highflame-ai/zeroid,accept,,,Apache-2.0,osi-approved,agent-identity-authentication,agent identity authentication,155,2026-08-06T17:20:18+00:00
+DeepTrail/deepsecure,accept,,,Apache-2.0,osi-approved,agent-identity-authentication,agent identity authentication,51,2026-08-06T17:20:18+00:00
+newtype-ai/nit-sdk,reject,commercial-sdk,"Thin client SDK for the proprietary newtype-ai.org hosted service; the actual agent-identity verification logic is not open source, only the API wrapper is.",MIT,osi-approved,agent-identity-authentication,AI agent identity verification,92,2026-08-06T17:21:52+00:00
+firstorderai/authenticator_mcp,reject,commercial-sdk,MCP server wrapping firstorder.ai's own proprietary 'Authenticator App' product; fronts a commercial service rather than being a standalone tool.,MIT,osi-approved,agent-identity-authentication,agent authentication protocol,41,2026-08-06T17:21:52+00:00

@@ -52,10 +52,12 @@ worth keeping in mind so they don't get "corrected" away in a future run:
   are unusual to see on a code repo (they're intended for creative/data
   works, not source code) — but that unusualness is itself worth keeping,
   not filtering away: it's exactly the kind of observation a paper on tool
-  curation would want data on. Accept the tool, record the license as-is in
-  the `license` column (don't normalize it to something it isn't), and note
-  the licensing anomaly in the mapping `rationale` so a reader doesn't have
-  to go re-derive it.
+  curation would want data on. Accept the tool (leave the judgment's own
+  `license` field blank as usual — see "Extract" below — GitHub's detected
+  SPDX id still flows through to `seen_repos.csv`'s classification via
+  `search_candidates.csv`, unaffected by leaving it blank in the judgment),
+  and note the licensing anomaly in the mapping `rationale` so a reader
+  doesn't have to go re-derive it.
 - **This does NOT extend to source-available/non-compete licenses like the
   Business Source License (BUSL).** A CC license is non-OSI but still
   *free* (`licenses.py` classifies it `free-not-osi`) — it just wasn't
@@ -261,6 +263,40 @@ conflict), so it's specific to the 144 backfilled rows. If you're relying
 on `not-open-source` counts for a paper claim, it's worth spot-checking a
 sample of the backfilled rows against their own `note` text before citing
 the number.
+
+### Future: a second chance for GitHub's license misdetections
+
+Not yet implemented. Right now `not-open-source` rejections (and the
+`license`/`license_class` recorded for every judged repo, see above) rest
+entirely on GitHub's own SPDX detector — both in
+`collect_project_metadata.py`'s auto-collection into `tool_metadata` and in
+`search_repos.py`'s `license_spdx_id` used for the accept/reject gate. That
+detector is known to misfire (`NOASSERTION`, or a wrong guess) on real
+repos — see `docs/methodology-and-findings.md`'s F3 and the matching note in
+`collect_project_metadata.py`'s module docstring. The idea, for later:
+
+1. GitHub's detector says open source -> accept immediately, license
+   recorded in `tool_metadata` as today (`tools`' `license` cell stays
+   blank, deferring to the auto-collected value per the precedence rule).
+2. GitHub's detector says *not* open source, or can't tell -> don't reject
+   outright. Give the repo a second look with
+   [`bact/licenseid`](https://github.com/bact/licenseid) before writing it
+   off. If *that* says open source, keep the candidate — but record the
+   license in `tools` this time (an explicit override, not
+   `tool_metadata`, since it came from a different, non-GitHub method) and
+   flag it for careful human review rather than auto-accepting silently:
+   license is a hard inclusion criterion, not just a display field, so a
+   detector disagreement is exactly the case that should get a second pair
+   of eyes, not less scrutiny.
+
+The `tools`/`tool_metadata` license-conflict warning in `build.py` (fires
+whenever both tabs have a real, differing license value for the same tool)
+already covers the case this workflow would actively create — a `tools`
+override that disagrees with what GitHub's detector put in `tool_metadata`
+— so no further build.py work should be needed once this is picked up, only
+the `licenseid` integration itself (presumably a `search_repos.py` or
+`emit_candidates.py` step, run only for repos GitHub's own check didn't
+clear).
 
 ### Model tiering (cost control)
 
@@ -681,16 +717,25 @@ Judgment rules that matter (details in curation/README.md):
   structurally can't find these -- they surface from mapping a tool's
   *mechanism* to an RQ's *need*, which is most of why topic-tag sweeps and
   direct user-suggested leads outperformed keyword search this session.
-- Fill `programming_language` (e.g. `Python`, `Rust`, `TypeScript`;
-  semicolon-separated if the tool is genuinely polyglot, e.g. `Python;
-  Rust`) for every accepted `tool_type` "software" row -- GitHub's own
-  repo-level `language` field is a reliable single-language source and
-  search_repos.py already captures it per candidate in
-  `state/search_candidates.csv`, so it doesn't need a fresh lookup. A
-  second language is a judgment call (only add one if it's a real,
-  user-facing second implementation language, not an incidental
-  scripting/config language mixed into the repo). Leave it blank for
-  `tool_type` "specification" rows, which have no source code.
+- Leave `programming_language` blank, same as `license` -- both are
+  auto-collected into `tool_metadata` from the GitHub repo API once the
+  tool is live and `collect_project_metadata.py` runs (see "tools /
+  tool_metadata precedence" in `docs/data-schema.md`), so filling in
+  GitHub's own single dominant-by-bytes language by hand here would just
+  be a redundant override that blocks future auto-refresh for no benefit.
+  Only fill it in when it's a genuine judgment call the collector can't
+  make: a real, user-facing second implementation language for a
+  genuinely polyglot tool (semicolon-separated, e.g. `Python; Rust` --
+  not an incidental scripting/config language mixed into the repo), since
+  the auto-collected value is always single-language.
+- **`name` is the opposite case -- always fill it in, don't leave it
+  blank like `license`/`programming_language`.** It's auto-collected too
+  (GitHub's own repo `name` field), but that's frequently an unusable
+  slug or an unwieldy literal project-repo name (e.g.
+  `www-project-top-10-for-large-language-model-applications` for the
+  OWASP LLM Top 10 repo) -- a real display name is exactly the judgment
+  call this override exists for, not a redundant echo of what the
+  collector already has.
 - One tool legitimately answering several RQs is expected, not a smell.
 - An RQ with zero tools is a real finding worth reporting, not a search
   failure to paper over by loosening the matching rule.
@@ -775,6 +820,27 @@ they are NOT currently mapped to. Prioritise tools currently carrying only
 one mapping, and RQs with zero coverage. Use the same judgment rules and
 the same model tiering as any other batch — read the tool's README/docs
 against the candidate RQ's own text, no forced matches.
+
+**Before reading the README, look up the tool's already-known record** in
+`site/data.json`'s top-level `tools` array (keyed by `id`) —
+`python3 -c "import json; d=json.load(open('site/data.json')); print(json.dumps(next(t for t in d['tools'] if t['id']=='<id>'), indent=2))"`,
+or `jq '.tools[] | select(.id=="<id>")' site/data.json`. This is the
+**already-merged view of both `tools` and `tool_metadata`** (every field
+from both tabs, resolved through the precedence rule in `docs/data-schema.md`)
+— `summary`, `license`, `tool_type`, `programming_languages`,
+`development_status`, `paper_url`, and the community-health signals
+(`stars`, `contributors`, `last_commit_date`, OpenSSF scores, ...) are all
+right there, no separate lookup needed against either sheet. Use it before
+spending a README read: an existing `summary` often already answers
+whether the tool's mechanism could plausibly fit the candidate RQ, and
+`development_status`/`last_commit_date` are relevant judgment context a
+README alone won't surface (e.g. a tool that's `unsupported` or hasn't
+been pushed to in years is weaker evidence for a `match`, everything else
+equal). Fall back to the actual README/docs (via `source`/`documentation`)
+only when the recorded summary isn't enough to judge fit against the
+specific RQ text — don't skip that step, `site/data.json`'s `summary` was
+itself written against a *different* RQ's need originally, and this is
+exactly the mismatch Pass A exists to catch.
 
 **Before picking pairs to check, read `state/pass_a_checked.csv`** and skip
 any (tool_id, rq_no) pair already in it, whether its recorded verdict was
@@ -927,19 +993,24 @@ Judgment rules (details in curation/README.md — same as phase 1):
   can all be right if the mechanism fits. This is also why keyword search
   anchored on governance vocabulary structurally under-performs topic-tag
   sweeps and direct leads for this kind of candidate.
-- Fill `programming_language` (e.g. `Python`, `Rust`, `TypeScript`;
-  semicolon-separated if the tool is genuinely polyglot, e.g. `Python;
-  Rust`) for every accepted `tool_type` "software" row -- GitHub's own
-  repo-level `language` field is a reliable single-language source and
-  search_repos.py (and the other search_*.py scripts) already capture it
-  per candidate in `state/search_candidates.csv`, so it doesn't need a
-  fresh lookup. A second language is a judgment call (only add one if it's
-  a real, user-facing second implementation language, not an incidental
-  scripting/config language mixed into the repo). Leave it blank for
-  `tool_type` "specification" rows, which have no source code.
-  Also worth prioritising a batch of `collect_project_metadata.py`
-  against pre-existing tools missing project-quality data, since pass A
-  already has you re-reading the live catalog.
+- Leave `programming_language` blank, same as `license` -- both are
+  auto-collected into `tool_metadata` from the GitHub repo API once the
+  tool is live (see "tools / tool_metadata precedence" in
+  `docs/data-schema.md`), so filling in GitHub's own single
+  dominant-by-bytes language by hand here is a redundant override that
+  blocks future auto-refresh for no benefit. Only fill it in for a
+  genuine judgment call the collector can't make: a real, user-facing
+  second implementation language for a genuinely polyglot tool
+  (semicolon-separated, e.g. `Python; Rust`), since the auto-collected
+  value is always single-language. Also worth prioritising a batch of
+  `collect_project_metadata.py` against pre-existing tools missing
+  project-quality data, since pass A already has you re-reading the live
+  catalog.
+- **`name` is the opposite case -- always fill it in, don't leave it
+  blank like `license`/`programming_language`.** It's auto-collected too
+  (GitHub's own repo `name` field), but that's frequently an unusable
+  slug or an unwieldy literal project-repo name -- a real display name is
+  exactly the judgment call this override exists for.
 - One tool legitimately answering several RQs is expected, not a smell.
   This matters more in phase 2 than phase 1 — pass A exists precisely
   because that rule was under-applied when tools were first judged.
@@ -1240,10 +1311,10 @@ owned by this pipeline, each carrying the three freshness columns above:
   § Findings, F6.
 - **`tool_map`** — `rq_no, tool_id, role, rationale` + freshness columns.
   One row per `(rq_no, tool_id, role)` pairing.
-- **`tools`** (in `OpenTAIG`) — `id, tool_type, name, summary, license,
-  homepage, source, documentation` + freshness columns, **plus every
-  project-quality/community-health field also present in `tool_metadata`**
-  (`programming_language, funding, funder, stars, forks, watchers,
+- **`tools`** (in `OpenTAIG`) — `id, tool_type, summary, homepage, source,
+  documentation` + freshness columns, **plus every judgment-vs-collection
+  field also present in `tool_metadata`** (`name, license,
+  programming_language, funding, funder, stars, forks, watchers,
   contributors, open_issues_count, releases_count, latest_release_date,
   last_commit_date, readme_url, license_url, code_of_conduct_url,
   contributing_url, security_policy_url, governance_url, sbom_url,
@@ -1252,19 +1323,28 @@ owned by this pipeline, each carrying the three freshness columns above:
   openssf_scorecard_url, openssf_scorecard_score,
   openssf_scorecard_branch_protection, openssf_scorecard_code_review,
   openssf_scorecard_maintained, openssf_scorecard_vulnerabilities`) — but
-  as an **optional human override**, not the primary source: a non-blank
-  cell here always wins; the literal text `none` (case-insensitive) forces
-  blank instead of falling through; a truly empty cell falls through to
-  `tool_metadata`'s collected value. `dependents_count` is the one field
-  with nothing to fall through to (never auto-collected — no public API
-  for GitHub's dependency-graph count), so it always resolves to whatever
-  is here. Never written to by any script.
-- **`tool_metadata`** (its own spreadsheet) — `id, name, source` (the last
-  two purely for a human skimming the sheet; `build.py` ignores them) +
-  the same project-quality/community-health field list as above, minus
-  `dependents_count`. 100% written by `collect_project_metadata.py`, safe
-  to bulk-overwrite on every run — no hand edit is ever expected here, so
-  there's nothing a collection run could clobber.
+  as an **optional human-or-AI-judgment override**, not the primary source:
+  a non-blank cell here always wins; the literal text `none`
+  (case-insensitive) forces blank instead of falling through; a truly empty
+  cell falls through to `tool_metadata`'s collected value. `name` and
+  `license` look like fixed identity fields but are collected from the
+  GitHub API too (a repo's own name is often an unusable slug) — same
+  precedence as the rest of this list, not a straight `tools`-only read.
+  `dependents_count` is the one field with nothing to fall through to
+  (never auto-collected — no public API for GitHub's dependency-graph
+  count), so it always resolves to whatever is here. Never written to by
+  any script.
+- **`tool_metadata`** (its own spreadsheet) — `id, source` (the latter
+  purely for a human skimming the sheet; `build.py` ignores it — a tool's
+  `source` always comes from `tools`, since that's how this script finds
+  the repo to collect from) + the same judgment-vs-collection field list as
+  above (including `name`), minus `dependents_count`. 100% written by
+  `collect_project_metadata.py`, safe to bulk-overwrite on every run — no
+  hand edit is ever expected here, so there's nothing a collection run
+  could clobber. `build.py` warns at build time if `tools` and
+  `tool_metadata` disagree on `license` — a hard inclusion criterion, not
+  just a display field, so a detector disagreement is worth a second look
+  even though the `tools` override still wins.
 - **`terms`** — `id, framework_id, name, summary, url` + freshness columns.
 - **`framework`** — `id, name, fullname, summary, homepage, source, group`
   + freshness columns.

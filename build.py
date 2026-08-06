@@ -21,10 +21,11 @@ sheet, joined onto tools by id.
                  than a semicolon list, so a tool can answer more than one
                  RQ and each pairing can carry its own explanation.
   * "tools"    -- our open-source tool catalog (a tab in the OpenTAIG
-                 sheet). Identity fields (name/license/homepage/...) plus
-                 an optional human override for every project-quality/
-                 community-health field also in "tool_metadata" below --
-                 see apply_tool_metadata()/resolve_metadata_field().
+                 sheet). Identity fields (name/homepage/...) plus an
+                 optional human override for every project-quality/
+                 community-health field also in "tool_metadata" below,
+                 including `license` -- see apply_tool_metadata()/
+                 resolve_metadata_field().
   * "tool_metadata" -- auto-collected project-quality/community-health data
                  per tool (a separate spreadsheet from OpenTAIG, so a future
                  write-automation credential can be scoped to touch only
@@ -259,11 +260,15 @@ NONE_TOKEN = "none"
 
 # Every project-quality/community-health field, in the order they're laid
 # out in both the `tools` and `tool_metadata` tabs. Deliberately excludes
-# identity columns (id, tool_type, name, summary, license, homepage, source,
-# documentation) and freshness columns, which are `tools`-only with no
-# tool_metadata counterpart or precedence logic.
+# identity columns (id, tool_type, summary, homepage, source, documentation)
+# and freshness columns, which are `tools`-only with no tool_metadata
+# counterpart or precedence logic. `license` and `name` are NOT identity
+# columns despite looking like ones -- both are auto-collectible from the
+# GitHub repo API same as stars/programming_language (a repo's own `name` is
+# often an ugly slug, not display-ready), so both go through the same
+# override precedence, not a straight `tools`-only read.
 METADATA_FIELDS = [
-    "programming_language", "funding", "funder",
+    "name", "license", "programming_language", "funding", "funder",
     "stars", "forks", "watchers", "contributors",
     "last_commit_date", "open_issues_count", "releases_count", "latest_release_date",
     "readme_url", "license_url", "governance_url", "contributing_url",
@@ -448,12 +453,19 @@ def safe_id_for_path(tool_id: str) -> str:
 
 def build_tool_catalog(rows: list, colmap: dict, warnings: list) -> tuple:
     """Return ({id: Tool}, {id: raw row dict}). Only identity fields (id,
-    tool_type, name, summary, license, homepage, source, documentation) and
-    freshness are set on the Tool here -- every project-quality/community-
-    health field (including the raw, not-yet-typed `programming_language`/
-    `funding`/`funder` cells) is resolved afterward by apply_tool_metadata(),
-    against both this tab and `tool_metadata`. The raw row dict returned
-    alongside the catalog is what that merge reads `tools`' own cells from."""
+    tool_type, summary, homepage, source, documentation) and freshness are
+    set on the Tool here -- every project-quality/community-health field,
+    including `license` and `name` (both auto-collectible from the GitHub
+    repo API, just like stars or programming_language -- neither is a pure
+    hand-entered identity field), plus the raw, not-yet-typed
+    `programming_language`/`funding`/`funder` cells, is resolved afterward
+    by apply_tool_metadata(), against both this tab and `tool_metadata`.
+    `name` is set to `raw_id` here purely as a dataclass-construction
+    placeholder (it has no default) -- apply_tool_metadata() always
+    overwrites it with the precedence-resolved value, falling back to
+    `raw_id` itself only if neither tab has a name yet. The raw row dict
+    returned alongside the catalog is what that merge reads `tools`' own
+    cells from."""
     catalog = {}
     raw_rows = {}
     for i, row in enumerate(rows):
@@ -467,10 +479,9 @@ def build_tool_catalog(rows: list, colmap: dict, warnings: list) -> tuple:
         catalog[raw_id] = Tool(
             id=raw_id,
             slug=safe_id_for_path(raw_id),
-            name=(row.get(colmap["name"]) or "").strip() or raw_id,
+            name=raw_id,
             tool_type=(row.get(colmap["tool_type"]) or "").strip(),
             summary=(row.get(colmap["summary"]) or "").strip(),
-            license=(row.get(colmap["license"]) or "").strip(),
             homepage=(row.get(colmap["homepage"]) or "").strip(),
             source=(row.get(colmap["source"]) or "").strip(),
             documentation=(row.get(colmap["documentation"]) or "").strip(),
@@ -518,8 +529,35 @@ def apply_tool_metadata(tool_catalog: dict, tools_raw_rows: dict, metadata_rows:
             value = resolve_metadata_field(tools_raw, metadata_raw, field, f"{ctx} [{field}]", warnings)
             if field in METADATA_LIST_FIELDS:
                 tool.programming_languages = split_simple_list(value)
+            elif field == "name":
+                # Neither tab has a name yet (brand new tool, not collected
+                # -- or "none" in `tools`, though suppressing name entirely
+                # would be an odd thing to actually want) -- fall back to
+                # the id rather than leaving the display name blank.
+                setattr(tool, field, value or raw_id)
             else:
                 setattr(tool, field, value)
+
+            # `license` is a hard inclusion criterion (open-source-only), not
+            # just a display field like the rest of METADATA_FIELDS -- a
+            # human override that disagrees with what GitHub's own detector
+            # collected is worth a human's attention even though the
+            # override still wins per the normal precedence rule. Only fires
+            # when both sides actually have a real value to disagree about:
+            # a blank or explicit "none" in `tools` isn't a conflict, it's
+            # deferring to (or suppressing) tool_metadata as designed.
+            if field == "license":
+                tools_license = clean(tools_raw)
+                metadata_license = clean(metadata_raw)
+                if (tools_license and tools_license.lower() != NONE_TOKEN
+                        and metadata_license
+                        and tools_license.lower() != metadata_license.lower()):
+                    warnings.append(
+                        f"{ctx}: license conflict -- tools tab says {tools_license!r}, "
+                        f"tool_metadata (GitHub) says {metadata_license!r}; using the tools "
+                        f"tab value per precedence, but review by hand -- license is a hard "
+                        f"criterion for inclusion, not just a display field"
+                    )
 
         # tool_metadata's own freshness, kept separate from `tools`' --
         # blank Freshness() if this tool has no tool_metadata row yet.

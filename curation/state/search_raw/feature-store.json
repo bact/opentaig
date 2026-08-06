@@ -1,0 +1,257 @@
+{
+  "keyword": "feature store",
+  "query": "feature store stars:>19 pushed:>2025-08-06 archived:false fork:false",
+  "count": 25,
+  "repos": [
+    {
+      "full_name": "feast-dev/feast",
+      "html_url": "https://github.com/feast-dev/feast",
+      "description": "The Open Source Feature Store for AI/ML",
+      "stars": 7193,
+      "pushed_at": "2026-08-06T11:30:41Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://feast.dev"
+    },
+    {
+      "full_name": "Clooos/Bubble-Card",
+      "html_url": "https://github.com/Clooos/Bubble-Card",
+      "description": "Bubble Card is a minimalist and customizable card collection for Home Assistant, featuring modern pop-ups and an integrated Module Store with over 100 community-made modules.",
+      "stars": 4478,
+      "pushed_at": "2026-08-01T23:01:00Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "BansheeTech/HomeDockOS",
+      "html_url": "https://github.com/BansheeTech/HomeDockOS",
+      "description": "An intuitive, versatile, and powerful home server operating system for self-hosting. Featuring a curated app store and seamless multi-platform support, it\u2019s designed to empower your personal cloud on Raspberry Pi, x86 systems, or your preferred setup.",
+      "stars": 843,
+      "pushed_at": "2026-07-28T01:37:20Z",
+      "language": "Vue",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://www.homedock.cloud"
+    },
+    {
+      "full_name": "m3ue/m3u-editor",
+      "html_url": "https://github.com/m3ue/m3u-editor",
+      "description": "A full-featured IPTV editor, including features similar to xteve or threadfin. With full EPG management, Xtream API output, ability to store and sync .strm files, post processing with ability to call custom scripts, send webhook requests, or send an email, and much more!",
+      "stars": 810,
+      "pushed_at": "2026-08-06T16:03:01Z",
+      "language": "PHP",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://sparkison.dev/m3u-suite/"
+    },
+    {
+      "full_name": "mienaiyami/yomikiru",
+      "html_url": "https://github.com/mienaiyami/yomikiru",
+      "description": "A powerful offline manga, manhwa, comic, and novel reader for desktop  Yomikiru is a feature-rich desktop application designed for reading locally stored manga, comics, webtoons, and EPUB novels. Built with Electron and React, it offers a customizable and distraction-free reading experience.",
+      "stars": 535,
+      "pushed_at": "2026-08-03T21:27:55Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Shopify/hydrogen-demo-store",
+      "html_url": "https://github.com/Shopify/hydrogen-demo-store",
+      "description": "This template contains a full-featured setup of components, queries and tooling to get started with Hydrogen. It is deployed to https://hydrogen.shop",
+      "stars": 235,
+      "pushed_at": "2026-07-01T11:48:49Z",
+      "language": "TypeScript",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "NVIDIA-Merlin/HierarchicalKV",
+      "html_url": "https://github.com/NVIDIA-Merlin/HierarchicalKV",
+      "description": "HierarchicalKV is a part of NVIDIA Merlin and provides hierarchical key-value storage to meet RecSys requirements.  The key capability of HierarchicalKV is to store key-value feature-embeddings on high-bandwidth memory (HBM) of GPUs and in host memory.  It also can be used as a generic key-value storage.",
+      "stars": 208,
+      "pushed_at": "2026-05-22T00:48:45Z",
+      "language": "Cuda",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "fpytloun/mnemory",
+      "html_url": "https://github.com/fpytloun/mnemory",
+      "description": "A self-hosted, secure, feature-rich memory system for AI agents and assistants. Provides intelligent fact extraction and deduplication, with an artifact store for detailed content.",
+      "stars": 199,
+      "pushed_at": "2026-06-09T09:14:46Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "aws-samples/amazon-sagemaker-feature-store-end-to-end-workshop",
+      "html_url": "https://github.com/aws-samples/amazon-sagemaker-feature-store-end-to-end-workshop",
+      "description": "",
+      "stars": 139,
+      "pushed_at": "2026-03-05T23:05:46Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT-0",
+      "homepage": ""
+    },
+    {
+      "full_name": "beava-dev/beava",
+      "html_url": "https://github.com/beava-dev/beava",
+      "description": "Real-time decision features without streaming infra. Turn live events into product reflexes \u2014 no Kafka, no Flink, no feature store.",
+      "stars": 139,
+      "pushed_at": "2026-05-30T01:59:44Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://beava.dev"
+    },
+    {
+      "full_name": "feast-dev/feast-workshop",
+      "html_url": "https://github.com/feast-dev/feast-workshop",
+      "description": "A workshop with several modules to help learn Feast, an open-source feature store",
+      "stars": 104,
+      "pushed_at": "2025-11-19T08:04:40Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "",
+      "homepage": "http://feast.dev"
+    },
+    {
+      "full_name": "featurestorebook/mlfs-book",
+      "html_url": "https://github.com/featurestorebook/mlfs-book",
+      "description": "O'Reilly book - Building Machine Learning Systems with a feature store: batch, real-time, and LLMs",
+      "stars": 90,
+      "pushed_at": "2026-06-26T12:51:34Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "CozyCommerce/cozycommerce-lite",
+      "html_url": "https://github.com/CozyCommerce/cozycommerce-lite",
+      "description": "Next.js Full-Stack Complete eCommerce solution. Featuring one-click deployment, this platform offers seamless scalability, custom CMS integration, and secure payments - perfect for creating and managing your online store with ease.",
+      "stars": 82,
+      "pushed_at": "2026-05-20T04:32:33Z",
+      "language": "TypeScript",
+      "license_spdx_id": "",
+      "homepage": "https://cozycommerce.dev/"
+    },
+    {
+      "full_name": "ivngineer/sword",
+      "html_url": "https://github.com/ivngineer/sword",
+      "description": "A feature-rich GUI software store for Linux",
+      "stars": 61,
+      "pushed_at": "2026-06-12T14:35:37Z",
+      "language": "Go",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "logicalclocks/feature-store-api",
+      "html_url": "https://github.com/logicalclocks/feature-store-api",
+      "description": "Python - Java/Scala API for the Hopsworks feature store",
+      "stars": 55,
+      "pushed_at": "2025-09-24T11:57:21Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "xyproto/simplehstore",
+      "html_url": "https://github.com/xyproto/simplehstore",
+      "description": ":convenience_store: Easy way to use a PostgreSQL database (and the HSTORE feature) from Go",
+      "stars": 55,
+      "pushed_at": "2026-05-08T17:37:20Z",
+      "language": "Go",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": ""
+    },
+    {
+      "full_name": "jdhitsolutions/PSWorkItem",
+      "html_url": "https://github.com/jdhitsolutions/PSWorkItem",
+      "description": "A PowerShell 7 module for managing work and personal tasks or to-do items. This module uses a SQLite database to store task and category information. The module is not a full-featured project management solution, but should be fine for personal needs. The module requires a 64-bit Windows or Linux platform.",
+      "stars": 48,
+      "pushed_at": "2026-05-14T19:17:32Z",
+      "language": "PowerShell",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "victorcarre6/LocalMind",
+      "html_url": "https://github.com/victorcarre6/LocalMind",
+      "description": "A lightweight chat interface for interacting with local models, featuring persistent memory using a seamless SQLite database to store your conversations.",
+      "stars": 34,
+      "pushed_at": "2025-09-15T15:45:50Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "eraneos/snowflake-mlops",
+      "html_url": "https://github.com/eraneos/snowflake-mlops",
+      "description": "Open-source reference monorepo for end-to-end MLOps on Snowflake, centered around Snowflake-native MLOps tooling (Feature Store, Model Registry, Tasks) in a hub-spoke layout. Questions, issues, or ideas about Snowflake ML in general are warmly welcomed.",
+      "stars": 34,
+      "pushed_at": "2026-05-20T12:08:48Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://eraneos.github.io/snowflake-mlops/"
+    },
+    {
+      "full_name": "faheem-s27/Statics-Public",
+      "html_url": "https://github.com/faheem-s27/Statics-Public",
+      "description": "Statics is a feature-rich Valorant companion app for Android, offering a seamless experience to track and share Valorant stats conveniently on mobile devices. With over 50,000 downloads from the Google Play Store + GitHub, Statics stands out as a reliable tool for Valorant enthusiasts.",
+      "stars": 34,
+      "pushed_at": "2026-07-02T14:24:03Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": "https://statics-fd699.web.app/"
+    },
+    {
+      "full_name": "alaesic/E-Store-reactjs",
+      "html_url": "https://github.com/alaesic/E-Store-reactjs",
+      "description": "A modern, feature-rich e-commerce management system built with React.js, enabling seamless product management, sales tracking, and inventory monitoring with a scalable and modular architecture.",
+      "stars": 31,
+      "pushed_at": "2025-12-10T03:48:20Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "microsoft/print-oem-samples",
+      "html_url": "https://github.com/microsoft/print-oem-samples",
+      "description": "Shows OEM print partners how to use the Print Workflow feature and migrate their existing Windows Store Device Apps (WSDAs) code to the Universal Windows Platform.",
+      "stars": 22,
+      "pushed_at": "2026-03-30T19:10:56Z",
+      "language": "C++",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "scylladb/scylladb-feature-store",
+      "html_url": "https://github.com/scylladb/scylladb-feature-store",
+      "description": "Feature store sample applications built with ScyllaDB",
+      "stars": 21,
+      "pushed_at": "2026-07-20T08:41:05Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "",
+      "homepage": "https://feature-store.scylladb.com/"
+    },
+    {
+      "full_name": "cabberley/utility_meter_evolved",
+      "html_url": "https://github.com/cabberley/utility_meter_evolved",
+      "description": "Utility Meter Next Gen - Home Assistant enhanced and feature rich alternative to the base Utility Meter Helper. Find it in the HACS - Community Store",
+      "stars": 21,
+      "pushed_at": "2026-08-06T05:49:29Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "sbodak/magento2-b2b-disable-add-to-cart-button-for-guest",
+      "html_url": "https://github.com/sbodak/magento2-b2b-disable-add-to-cart-button-for-guest",
+      "description": "This extension allows you to disable Add to cart button for guest. Useful feature for B2B store.",
+      "stars": 20,
+      "pushed_at": "2026-04-18T21:03:34Z",
+      "language": "PHP",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}

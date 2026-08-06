@@ -1,0 +1,9 @@
+tool_id,rq_no,verdict,note,timestamp_utc
+kitops,63,match,,2026-08-06T17:15:30+00:00
+modelstore,63,match,,2026-08-06T17:15:30+00:00
+model-signing-spec,63,match,,2026-08-06T17:15:30+00:00
+model-signing-spec,57,match,,2026-08-06T17:15:30+00:00
+k8s-aibom,63,match,,2026-08-06T17:15:30+00:00
+sbom-tools,63,match,,2026-08-06T17:15:30+00:00
+trusera-ai-bom,63,match,,2026-08-06T17:15:30+00:00
+xbom,63,match,,2026-08-06T17:15:30+00:00

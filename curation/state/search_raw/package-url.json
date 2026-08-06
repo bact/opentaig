@@ -1,0 +1,457 @@
+{
+  "keyword": "Package URL",
+  "query": "Package URL stars:>19 pushed:>2025-08-06 archived:false fork:false",
+  "count": 45,
+  "repos": [
+    {
+      "full_name": "rom1504/img2dataset",
+      "html_url": "https://github.com/rom1504/img2dataset",
+      "description": "Easily turn large sets of image urls to an image dataset. Can download, resize and package 100M urls in 20h on one machine.",
+      "stars": 4440,
+      "pushed_at": "2025-10-19T21:22:50Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "hashicorp/go-getter",
+      "html_url": "https://github.com/hashicorp/go-getter",
+      "description": "Package for downloading things from a string URL using a variety of protocols.",
+      "stars": 1823,
+      "pushed_at": "2026-08-03T06:50:36Z",
+      "language": "Go",
+      "license_spdx_id": "MPL-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "nix-community/nix-init",
+      "html_url": "https://github.com/nix-community/nix-init",
+      "description": "Generate Nix packages from URLs with hash prefetching, dependency inference, license detection, and more [maintainer=@figsoda]",
+      "stars": 1444,
+      "pushed_at": "2026-08-05T08:56:58Z",
+      "language": "Rust",
+      "license_spdx_id": "MPL-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "ash-jc-allen/short-url",
+      "html_url": "https://github.com/ash-jc-allen/short-url",
+      "description": "A Laravel package for creating shortened URLs for your web apps.",
+      "stars": 1376,
+      "pushed_at": "2026-07-22T20:22:19Z",
+      "language": "PHP",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "package-url/purl-spec",
+      "html_url": "https://github.com/package-url/purl-spec",
+      "description": "A minimal specification for purl aka. a package \"mostly universal\" URL, join the discussion at https://gitter.im/package-url/Lobby",
+      "stars": 1089,
+      "pushed_at": "2026-08-06T12:37:32Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://packageurl.org/"
+    },
+    {
+      "full_name": "google/go-licenses",
+      "html_url": "https://github.com/google/go-licenses",
+      "description": "A lightweight tool to report on the licenses used by a Go package and its dependencies. Highlight! Versioned external URL to licenses can be found at the same time.",
+      "stars": 1008,
+      "pushed_at": "2026-07-09T18:03:15Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "brainpink/gravatar",
+      "html_url": "https://github.com/brainpink/gravatar",
+      "description": "A Laravel Gravatar package for retrieving gravatar image URLs or checking the existance of an image.",
+      "stars": 546,
+      "pushed_at": "2026-03-23T16:49:48Z",
+      "language": "PHP",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "sshaw/git-link",
+      "html_url": "https://github.com/sshaw/git-link",
+      "description": "Emacs package to get the GitHub/Bitbucket/GitLab/... URL for a buffer location",
+      "stars": 471,
+      "pushed_at": "2026-07-23T22:13:00Z",
+      "language": "Emacs Lisp",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "vgalin/html2image",
+      "html_url": "https://github.com/vgalin/html2image",
+      "description": "A package acting as a wrapper around the headless mode of existing web browsers to generate images from URLs and from HTML+CSS strings or files.",
+      "stars": 457,
+      "pushed_at": "2026-03-22T20:05:34Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "marcussacana/DirectPackageInstaller",
+      "html_url": "https://github.com/marcussacana/DirectPackageInstaller",
+      "description": "Send Direct PKG URLs to your PS4",
+      "stars": 423,
+      "pushed_at": "2026-06-28T01:10:00Z",
+      "language": "C#",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "r-lib/remotes",
+      "html_url": "https://github.com/r-lib/remotes",
+      "description": "Install R packages from GitHub, GitLab, Bitbucket, git, svn repositories, URLs",
+      "stars": 356,
+      "pushed_at": "2025-11-16T14:55:44Z",
+      "language": "R",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://remotes.r-lib.org/"
+    },
+    {
+      "full_name": "xo/dburl",
+      "html_url": "https://github.com/xo/dburl",
+      "description": "Package dburl provides a standard, URL style mechanism for parsing and opening SQL database connection strings",
+      "stars": 297,
+      "pushed_at": "2026-03-21T00:37:59Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "ecoron/SerpScrap",
+      "html_url": "https://github.com/ecoron/SerpScrap",
+      "description": "SerpScrap retrieves structured search results for SEO, research, and automation. It is available as a Python package, a CLI, a Docker application, and an MCP-compatible server. Results are JSON-compatible and preserve the source engine, rank, URL, title, snippets, result type, and typed failures.",
+      "stars": 273,
+      "pushed_at": "2026-08-06T04:50:47Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://github.com/ecoron/SerpScrap"
+    },
+    {
+      "full_name": "jsdelivr/data.jsdelivr.com",
+      "html_url": "https://github.com/jsdelivr/data.jsdelivr.com",
+      "description": "The public jsDelivr API. Get npm packages, files, versions, entry points, as well as their CDN URLs and download stats.",
+      "stars": 249,
+      "pushed_at": "2026-07-30T15:18:04Z",
+      "language": "JavaScript",
+      "license_spdx_id": "OSL-3.0",
+      "homepage": "https://www.jsdelivr.com/docs/data.jsdelivr.com"
+    },
+    {
+      "full_name": "railsmechanic/nanoid",
+      "html_url": "https://github.com/railsmechanic/nanoid",
+      "description": "Elixir port of NanoID, a secure and URL-friendly unique ID generator. https://hex.pm/packages/nanoid",
+      "stars": 236,
+      "pushed_at": "2026-05-28T12:29:45Z",
+      "language": "Elixir",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "lukeraymonddowning/self-healing-urls",
+      "html_url": "https://github.com/lukeraymonddowning/self-healing-urls",
+      "description": "A Laravel package that allows you to define self-healing URLs for Eloquent models",
+      "stars": 168,
+      "pushed_at": "2026-01-22T18:06:40Z",
+      "language": "PHP",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "YorCreative/Laravel-UrlShortener",
+      "html_url": "https://github.com/YorCreative/Laravel-UrlShortener",
+      "description": "A Laravel URL Shortener package that provides URL redirects with optionally protected URL password, URL expiration, open limits before expiration, ability to set feature activation dates, click tracking, custom vanity identifiers, event dispatching, and soft delete/restore out of the box for your Laravel applications.",
+      "stars": 122,
+      "pushed_at": "2026-07-23T17:07:35Z",
+      "language": "PHP",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "nice-registry/all-the-package-repos",
+      "html_url": "https://github.com/nice-registry/all-the-package-repos",
+      "description": "\ud83c\udf0d Normalized repository URLs for every package in the npm registry. Updated daily.",
+      "stars": 99,
+      "pushed_at": "2026-08-06T12:50:32Z",
+      "language": "JavaScript",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "scarf-sh/gateway",
+      "html_url": "https://github.com/scarf-sh/gateway",
+      "description": "Scarf Gateway is a universal redirect layer for any digital artifact or URL, anywhere online. Scarf Gateway acts much like a customizable link shortener that also lets you serve software like Docker containers, Python packages, or anything other kind of software you distribute.",
+      "stars": 98,
+      "pushed_at": "2026-06-13T16:09:48Z",
+      "language": "Haskell",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://scarf.sh"
+    },
+    {
+      "full_name": "maherzaidoune/react-native-url-preview",
+      "html_url": "https://github.com/maherzaidoune/react-native-url-preview",
+      "description": "react native text parser and link previewer npm package, it makes a preview from an url, grabbing all the information such as title, relevant texts and images.",
+      "stars": 93,
+      "pushed_at": "2026-05-06T15:01:53Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "package-url/packageurl-python",
+      "html_url": "https://github.com/package-url/packageurl-python",
+      "description": "Python implementation of the package url spec.  This project is sponsored by NLnet project https://nlnet.nl/project/vulnerabilitydatabase/ , the Google Summer of Code, nexB and other generous sponsors.",
+      "stars": 91,
+      "pushed_at": "2026-03-11T23:55:06Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "tweetback/tweetback-canonical",
+      "html_url": "https://github.com/tweetback/tweetback-canonical",
+      "description": "A package to resolve twitter URLs to new canonically hosted twitter backups",
+      "stars": 75,
+      "pushed_at": "2026-08-06T07:05:50Z",
+      "language": "JavaScript",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "Shivella/laravel-bitly",
+      "html_url": "https://github.com/Shivella/laravel-bitly",
+      "description": "Laravel package for generating bitly url",
+      "stars": 74,
+      "pushed_at": "2026-02-21T06:24:21Z",
+      "language": "PHP",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "package-url/packageurl-go",
+      "html_url": "https://github.com/package-url/packageurl-go",
+      "description": "Go implementation of the package url spec",
+      "stars": 73,
+      "pushed_at": "2026-05-28T08:38:39Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "AliSayyah/django-urlconfchecks",
+      "html_url": "https://github.com/AliSayyah/django-urlconfchecks",
+      "description": "A package for type-checking the URLs and associated views for Django",
+      "stars": 71,
+      "pushed_at": "2026-08-04T04:13:39Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://alisayyah.github.io/django-urlconfchecks/"
+    },
+    {
+      "full_name": "aboutcode-org/purldb",
+      "html_url": "https://github.com/aboutcode-org/purldb",
+      "description": "Tools to create and deploy a database of software packages metadata, origin, dependencies, and license keyed by PURLs (Package URLs). Supported by AboutCode, sponsored by NLnet https://nlnet.nl/project/vulnerabilitydatabase/ , nexB and other fine supporters. Chat is at https://gitter.im/aboutcode-org/discuss",
+      "stars": 65,
+      "pushed_at": "2026-08-06T05:33:42Z",
+      "language": "HTML",
+      "license_spdx_id": "",
+      "homepage": "https://purldb.readthedocs.io/en/latest/"
+    },
+    {
+      "full_name": "SiroDiaz/laravel-redirection",
+      "html_url": "https://github.com/SiroDiaz/laravel-redirection",
+      "description": "Laravel 8, 9, 10 and 11 package to manage URL redirections inside your Laravel application using different data sources. It allows a better SEO support for your Laravel site.",
+      "stars": 63,
+      "pushed_at": "2025-12-22T16:28:34Z",
+      "language": "PHP",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "hayleigh-dot-dev/modem",
+      "html_url": "https://github.com/hayleigh-dot-dev/modem",
+      "description": "A friendly Lustre package to help you build a router, handle links, and manage URLs.",
+      "stars": 61,
+      "pushed_at": "2026-06-27T08:44:01Z",
+      "language": "Gleam",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "ps5-payload-dev/fetchpkg",
+      "html_url": "https://github.com/ps5-payload-dev/fetchpkg",
+      "description": "Fetch Sony Playstation 4 or 5 package updates referenced by a JSON-formatted manifest at the given URL",
+      "stars": 57,
+      "pushed_at": "2026-04-03T02:47:36Z",
+      "language": "C",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "open-audio-stack/open-audio-stack-registry",
+      "html_url": "https://github.com/open-audio-stack/open-audio-stack-registry",
+      "description": "Audio registry with searchable list of packages containing Plugins, Presets and Projects. Provides an API with file metadata and urls to binaries for installation.",
+      "stars": 57,
+      "pushed_at": "2026-07-31T15:06:21Z",
+      "language": "TypeScript",
+      "license_spdx_id": "CC0-1.0",
+      "homepage": "https://open-audio-stack.github.io/open-audio-stack-registry/"
+    },
+    {
+      "full_name": "minhajuddin/prefixed_uuids",
+      "html_url": "https://github.com/minhajuddin/prefixed_uuids",
+      "description": "A Go package that adds type-safe prefixes to UUIDs, making them shorter and more readable. Converts standard UUIDs (36 chars) to prefixed format (27 chars) like `user.AZXje_k_dRiprKK-aEY8fg`. Includes URL-safe encoding and easy entity type registration. Perfect for database IDs, API endpoints, and logging where type context is valuable.",
+      "stars": 57,
+      "pushed_at": "2026-02-10T03:58:58Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": "https://github.com/minhajuddin/prefixed_uuids"
+    },
+    {
+      "full_name": "package-url/packageurl-java",
+      "html_url": "https://github.com/package-url/packageurl-java",
+      "description": "Java/JVM implementation of the package url spec",
+      "stars": 48,
+      "pushed_at": "2025-11-21T01:01:45Z",
+      "language": "Java",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Shopify/pyreferrer",
+      "html_url": "https://github.com/Shopify/pyreferrer",
+      "description": "A Python package that analyzes and classifies different kinds of referrer URLs (search, social, ...) :rocket:",
+      "stars": 45,
+      "pushed_at": "2026-04-13T21:54:33Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "riezebosch/BoxstarterPackages",
+      "html_url": "https://github.com/riezebosch/BoxstarterPackages",
+      "description": "My wrongly named chocolatey packages repository. See the url for the AU results.",
+      "stars": 31,
+      "pushed_at": "2026-08-03T18:14:20Z",
+      "language": "PowerShell",
+      "license_spdx_id": "",
+      "homepage": "https://gist.github.com/riezebosch/78af415724ed3724701f732956900b2b"
+    },
+    {
+      "full_name": "package-url/packageurl-js",
+      "html_url": "https://github.com/package-url/packageurl-js",
+      "description": "JavaScript implementation of the package url spec",
+      "stars": 29,
+      "pushed_at": "2026-01-28T16:54:45Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.npmjs.com/package/packageurl-js"
+    },
+    {
+      "full_name": "MateusNobreSilva/app_send_mail",
+      "html_url": "https://github.com/MateusNobreSilva/app_send_mail",
+      "description": "PHPMailer PHPMailer \u2013 A full-featured email creation and transfer class for PHP Test status codecov.io Latest Stable Version Total Downloads License API Docs  Features Probably the world's most popular code for sending email from PHP! Used by many open-source projects: WordPress, Drupal, 1CRM, SugarCRM, Yii, Joomla! and many more Integrated SMTP support \u2013 send without a local mail server Send emails with multiple To, CC, BCC and Reply-to addresses Multipart/alternative emails for mail clients that do not read HTML email Add attachments, including inline Support for UTF-8 content and 8bit, base64, binary, and quoted-printable encodings SMTP authentication with LOGIN, PLAIN, CRAM-MD5, and XOAUTH2 mechanisms over SMTPS and SMTP+STARTTLS transports Validates email addresses automatically Protects against header injection attacks Error messages in over 50 languages! DKIM and S/MIME signing support Compatible with PHP 5.5 and later, including PHP 8.1 Namespaced to prevent name clashes Much more! Why you might need it Many PHP developers need to send email from their code. The only PHP function that supports this directly is mail(). However, it does not provide any assistance for making use of popular features such as encryption, authentication, HTML messages, and attachments.  Formatting email correctly is surprisingly difficult. There are myriad overlapping (and conflicting) standards, requiring tight adherence to horribly complicated formatting and encoding rules \u2013 the vast majority of code that you'll find online that uses the mail() function directly is just plain wrong, if not unsafe!  The PHP mail() function usually sends via a local mail server, typically fronted by a sendmail binary on Linux, BSD, and macOS platforms, however, Windows usually doesn't include a local mail server; PHPMailer's integrated SMTP client allows email sending on all platforms without needing a local mail server. Be aware though, that the mail() function should be avoided when possible; it's both faster and safer to use SMTP to localhost.  Please don't be tempted to do it yourself \u2013 if you don't use PHPMailer, there are many other excellent libraries that you should look at before rolling your own. Try SwiftMailer , Laminas/Mail, ZetaComponents etc.  License This software is distributed under the LGPL 2.1 license, along with the GPL Cooperation Commitment. Please read LICENSE for information on the software availability and distribution.  Installation & loading PHPMailer is available on Packagist (using semantic versioning), and installation via Composer is the recommended way to install PHPMailer. Just add this line to your composer.json file:  \"phpmailer/phpmailer\": \"^6.5\" or run  composer require phpmailer/phpmailer Note that the vendor folder and the vendor/autoload.php script are generated by Composer; they are not part of PHPMailer.  If you want to use the Gmail XOAUTH2 authentication class, you will also need to add a dependency on the league/oauth2-client package in your composer.json.  Alternatively, if you're not using Composer, you can download PHPMailer as a zip file, (note that docs and examples are not included in the zip file), then copy the contents of the PHPMailer folder into one of the include_path directories specified in your PHP configuration and load each class file manually:  <?php use PHPMailer\\PHPMailer\\PHPMailer; use PHPMailer\\PHPMailer\\Exception;  require 'path/to/PHPMailer/src/Exception.php'; require 'path/to/PHPMailer/src/PHPMailer.php'; require 'path/to/PHPMailer/src/SMTP.php'; If you're not using the SMTP class explicitly (you're probably not), you don't need a use line for the SMTP class. Even if you're not using exceptions, you do still need to load the Exception class as it is used internally.  Legacy versions PHPMailer 5.2 (which is compatible with PHP 5.0 \u2014 7.0) is no longer supported, even for security updates. You will find the latest version of 5.2 in the 5.2-stable branch. If you're using PHP 5.5 or later (which you should be), switch to the 6.x releases.  Upgrading from 5.2 The biggest changes are that source files are now in the src/ folder, and PHPMailer now declares the namespace PHPMailer\\PHPMailer. This has several important effects \u2013 read the upgrade guide for more details.  Minimal installation While installing the entire package manually or with Composer is simple, convenient, and reliable, you may want to include only vital files in your project. At the very least you will need src/PHPMailer.php. If you're using SMTP, you'll need src/SMTP.php, and if you're using POP-before SMTP (very unlikely!), you'll need src/POP3.php. You can skip the language folder if you're not showing errors to users and can make do with English-only errors. If you're using XOAUTH2 you will need src/OAuth.php as well as the Composer dependencies for the services you wish to authenticate with. Really, it's much easier to use Composer!  A Simple Example <?php //Import PHPMailer classes into the global namespace //These must be at the top of your script, not inside a function use PHPMailer\\PHPMailer\\PHPMailer; use PHPMailer\\PHPMailer\\SMTP; use PHPMailer\\PHPMailer\\Exception;  //Load Composer's autoloader require 'vendor/autoload.php';  //Create an instance; passing `true` enables exceptions $mail = new PHPMailer(true);  try {     //Server settings     $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output     $mail->isSMTP();                                            //Send using SMTP     $mail->Host       = 'smtp.example.com';                     //Set the SMTP server to send through     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication     $mail->Username   = 'user@example.com';                     //SMTP username     $mail->Password   = 'secret';                               //SMTP password     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`      //Recipients     $mail->setFrom('from@example.com', 'Mailer');     $mail->addAddress('joe@example.net', 'Joe User');     //Add a recipient     $mail->addAddress('ellen@example.com');               //Name is optional     $mail->addReplyTo('info@example.com', 'Information');     $mail->addCC('cc@example.com');     $mail->addBCC('bcc@example.com');      //Attachments     $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments     $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name      //Content     $mail->isHTML(true);                                  //Set email format to HTML     $mail->Subject = 'Here is the subject';     $mail->Body    = 'This is the HTML message body <b>in bold!</b>';     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';      $mail->send();     echo 'Message has been sent'; } catch (Exception $e) {     echo \"Message could not be sent. Mailer Error: {$mail->ErrorInfo}\"; } You'll find plenty to play with in the examples folder, which covers many common scenarios including sending through gmail, building contact forms, sending to mailing lists, and more.  If you are re-using the instance (e.g. when sending to a mailing list), you may need to clear the recipient list to avoid sending duplicate messages. See the mailing list example for further guidance.  That's it. You should now be ready to use PHPMailer!  Localization PHPMailer defaults to English, but in the language folder you'll find many translations for PHPMailer error messages that you may encounter. Their filenames contain ISO 639-1 language code for the translations, for example fr for French. To specify a language, you need to tell PHPMailer which one to use, like this:  //To load the French version $mail->setLanguage('fr', '/optional/path/to/language/directory/'); We welcome corrections and new languages \u2013 if you're looking for corrections, run the PHPMailerLangTest.php script in the tests folder and it will show any missing translations.  Documentation Start reading at the GitHub wiki. If you're having trouble, head for the troubleshooting guide as it's frequently updated.  Examples of how to use PHPMailer for common scenarios can be found in the examples folder. If you're looking for a good starting point, we recommend you start with the Gmail example.  To reduce PHPMailer's deployed code footprint, examples are not included if you load PHPMailer via Composer or via GitHub's zip file download, so you'll need to either clone the git repository or use the above links to get to the examples directly.  Complete generated API documentation is available online.  You can generate complete API-level documentation by running phpdoc in the top-level folder, and documentation will appear in the docs folder, though you'll need to have PHPDocumentor installed. You may find the unit tests a good reference for how to do various operations such as encryption.  If the documentation doesn't cover what you need, search the many questions on Stack Overflow, and before you ask a question about \"SMTP Error: Could not connect to SMTP host.\", read the troubleshooting guide.  Tests PHPMailer tests use PHPUnit 9, with a polyfill to let 9-style tests run on older PHPUnit and PHP versions.  Test status  If this isn't passing, is there something you can do to help?  Security Please disclose any vulnerabilities found responsibly \u2013 report security issues to the maintainers privately.  See SECURITY and PHPMailer's security advisories on GitHub.  Contributing Please submit bug reports, suggestions and pull requests to the GitHub issue tracker.  We're particularly interested in fixing edge-cases, expanding test coverage and updating translations.  If you found a mistake in the docs, or want to add something, go ahead and amend the wiki \u2013 anyone can edit it.  If you have git clones from prior to the move to the PHPMailer GitHub organisation, you'll need to update any remote URLs referencing the old GitHub location with a command like this from within your clone:  git remote set-url upstream https://github.com/PHPMailer/PHPMailer.git Please don't use the SourceForge or Google Code projects any more; they are obsolete and no longer maintained.  Sponsorship Development time and resources for PHPMailer are provided by Smartmessages.net, the world's only privacy-first email marketing system.  Smartmessages.net privacy-first email marketing logo  Donations are very welcome, whether in beer \ud83c\udf7a, T-shirts \ud83d\udc55, or cold, hard cash \ud83d\udcb0. Sponsorship through GitHub is a simple and convenient way to say \"thank you\" to PHPMailer's maintainers and contributors \u2013 just click the \"Sponsor\" button on the project page. If your company uses PHPMailer, consider taking part in Tidelift's enterprise support programme.  PHPMailer For Enterprise Available as part of the Tidelift Subscription.  The maintainers of PHPMailer and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source packages you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact packages you use. Learn more.  Changelog See changelog.  History PHPMailer was originally written in 2001 by Brent R. Matzelle as a SourceForge project. Marcus Bointon (coolbru on SF) and Andy Prevost (codeworxtech) took over the project in 2004. Became an Apache incubator project on Google Code in 2010, managed by Jim Jagielski. Marcus created his fork on GitHub in 2008. Jim and Marcus decide to join forces and use GitHub as the canonical and official repo for PHPMailer in 2013. PHPMailer moves to the PHPMailer organisation on GitHub in 2013. What's changed since moving from SourceForge? Official successor to the SourceForge and Google Code projects. Test suite. Continuous integration with Github Actions. Composer support. Public development. Additional languages and language strings. CRAM-MD5 authentication support. Preserves full repo history of authors, commits and branches from the original SourceForge project.",
+      "stars": 29,
+      "pushed_at": "2026-03-10T12:53:30Z",
+      "language": "PHP",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "a21ns1g4ts/filament-short-url",
+      "html_url": "https://github.com/a21ns1g4ts/filament-short-url",
+      "description": "A Filament package that can be used for adding shortened URLs to your existing web app.",
+      "stars": 28,
+      "pushed_at": "2025-08-21T16:12:39Z",
+      "language": "PHP",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "InzamamShaikh567/CatLoad",
+      "html_url": "https://github.com/InzamamShaikh567/CatLoad",
+      "description": "Catload - A free and open-source cross-platform media downloader built with JavaFX 21. Paste a YouTube (or others website) URL, choose a format, and download videos, audio, or entire playlists. Features include custom stream selection, concurrent downloads, cookie-based access for restricted content, and native packaging for Windows and Linux.",
+      "stars": 25,
+      "pushed_at": "2026-07-07T15:38:29Z",
+      "language": "Java",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "Infocaster/UrlTracker",
+      "html_url": "https://github.com/Infocaster/UrlTracker",
+      "description": "An Umbraco package that tracks 404 not found results and helps you redirect visitors to the right page",
+      "stars": 24,
+      "pushed_at": "2026-07-31T13:28:05Z",
+      "language": "C#",
+      "license_spdx_id": "MIT",
+      "homepage": "https://infocaster.net/wat-we-doen/umbraco-plugins/301-url-tracker"
+    },
+    {
+      "full_name": "renesas/rx-driver-package",
+      "html_url": "https://github.com/renesas/rx-driver-package",
+      "description": "This is Renesas MCU \"RX Family\" official device driver package called as \"RX Driver Package\" GitHub repository. This repository is referred from Renesas tools (Smart Configurator) to download appropriate version for user project. Please refer to the URL below for more information.",
+      "stars": 24,
+      "pushed_at": "2026-07-27T03:13:47Z",
+      "language": "C",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://www.renesas.com/products/software-tools/software-os-middleware-driver/software-package/rx-driver-package.html"
+    },
+    {
+      "full_name": "bckohan/django-render-static",
+      "html_url": "https://github.com/bckohan/django-render-static",
+      "description": "Use Django's template engines to render static files at deployment or package time. Includes transpilers for extending Django's url reversal and enums to JavaScript.",
+      "stars": 24,
+      "pushed_at": "2026-08-03T15:37:05Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://django-render-static.rtfd.io"
+    },
+    {
+      "full_name": "OleksandrZhydyk/FastAPI-SQLAlchemy-Filters",
+      "html_url": "https://github.com/OleksandrZhydyk/FastAPI-SQLAlchemy-Filters",
+      "description": "Package that helps to implement easy objects filtering and sorting based on URL query parameters.",
+      "stars": 22,
+      "pushed_at": "2026-02-10T14:30:04Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "dmpe/urlshorteneR",
+      "html_url": "https://github.com/dmpe/urlshorteneR",
+      "description": "R package for 2 URL shortening service :loudspeaker: Compatible with Bitly API v4",
+      "stars": 21,
+      "pushed_at": "2025-09-05T22:34:19Z",
+      "language": "R",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "http://cran.r-project.org/package=urlshorteneR"
+    },
+    {
+      "full_name": "brahma-dev/metafetch",
+      "html_url": "https://github.com/brahma-dev/metafetch",
+      "description": "NodeJS package that fetches a given URL's title, description, images, links etc.",
+      "stars": 21,
+      "pushed_at": "2026-06-29T20:24:32Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.npmjs.org/package/metafetch"
+    },
+    {
+      "full_name": "aneeskhan47/php-cloudflare-image-resizing",
+      "html_url": "https://github.com/aneeskhan47/php-cloudflare-image-resizing",
+      "description": "\u26a1\ufe0f \ud83d\uddbc A PHP package to generate Cloudflare Image Resizing/Optimization URLs",
+      "stars": 20,
+      "pushed_at": "2026-05-25T11:52:35Z",
+      "language": "PHP",
+      "license_spdx_id": "MIT",
+      "homepage": "https://github.com/aneeskhan47/php-cloudflare-image-resizing"
+    }
+  ]
+}

@@ -150,8 +150,15 @@ Same GITHUB_TOKEN / session requirement as search_repos.py -- see that
 script's docstring, or curation/README.md's "Setup" section, for the
 `gh auth token` vs repo-scoped-token distinction.
 
-By default, only considers `tool_type` "software" rows with a GitHub
-`source` URL and no `stars` value yet (i.e. never collected) -- pass
+By default, only considers `tool_type` "software" or "specification" rows
+with a GitHub `source` URL and no `stars` value yet (i.e. never collected)
+-- a specification developed in the open on GitHub has the same
+project-quality signals as software (stars, contributors, governance files,
+release history, ...), so it's collected the same way. `programming_language`
+just comes back whatever GitHub's own language detector reports for the
+repo (often a thin build/lint script, sometimes blank) -- no special-casing
+here or in build.py; a human can still override it in `tools` if that value
+is misleading for a given spec repo. Pass
 `--refresh-all` to re-collect for every eligible tool regardless, which is
 the only way the volatile fields (stars/forks/watchers/contributors/
 open_issues_count/releases_count/scorecard score) actually get refreshed
@@ -186,11 +193,19 @@ Usage:
     python curation/collect_project_metadata.py                # resumes if interrupted
     python curation/collect_project_metadata.py --refresh-all   # re-collect everything
     python curation/collect_project_metadata.py --limit 20      # a small first batch
+
+    # For a batch just emitted by emit_candidates.py, not yet pasted into the
+    # live tools tab -- collects straight from candidate_tools.csv so the
+    # tool_metadata rows are ready to paste in the same round-trip:
+    python curation/collect_project_metadata.py \\
+        --candidates curation/candidate_tools.csv \\
+        --out curation/candidate_tool_metadata.csv --restart
 """
 from __future__ import annotations
 
 import argparse
 import csv
+import datetime
 import json
 import os
 import re
@@ -234,17 +249,28 @@ FUNDING_YML_URL_BUILDERS = {
     "custom": lambda v: v,  # already a full URL
 }
 
+# Matches the live `tool_metadata` sheet's actual column order exactly (verified
+# against a live fetch of its header row) so a run's output pastes in without
+# reordering -- nothing enforces the two staying in sync, so re-check against
+# the live header if a paste ever looks misaligned. "license" and
+# "documentation" are columns that exist on the sheet but this script never
+# writes (both are `tools`-only identity fields per build.py's METADATA_FIELDS
+# -- not part of the tools/tool_metadata precedence resolution at all) --
+# included here, always blank, purely so column position lines up for every
+# column after them.
 OUT_FIELDNAMES = [
-    "id", "name", "source", "programming_language",
-    "stars", "forks", "watchers", "contributors",
-    "open_issues_count", "releases_count", "latest_release_date", "last_commit_date",
-    "readme_url", "license_url", "code_of_conduct_url", "contributing_url",
-    "security_policy_url", "governance_url", "sbom_url",
-    "funding", "funder", "development_status", "paper_url", "software_heritage_id",
+    "id", "name", "license", "programming_language", "source", "documentation",
+    "funding", "funder", "paper_url",
+    "datetime_added", "datetime_checked", "datetime_updated",
+    "stars", "forks", "watchers", "contributors", "last_commit_date",
+    "open_issues_count", "releases_count", "latest_release_date",
+    "readme_url", "license_url", "governance_url", "contributing_url",
+    "code_of_conduct_url", "security_policy_url", "sbom_url",
     "openssf_best_practices_url", "openssf_best_practices_badge_level",
     "openssf_scorecard_url", "openssf_scorecard_score",
     "openssf_scorecard_branch_protection", "openssf_scorecard_code_review",
     "openssf_scorecard_maintained", "openssf_scorecard_vulnerabilities",
+    "development_status", "software_heritage_id",
 ]
 
 
@@ -284,12 +310,27 @@ def fetch_repo_core(session: requests.Session, repo_path: str, warnings: list) -
             warnings.append(f"{repo_path}: GitHub API returned {resp.status_code} for repo core")
             return {}
         data = resp.json()
+        # "NOASSERTION" is GitHub's own detector saying it couldn't classify
+        # the license confidently -- same blind spot as license_url below
+        # (F3 in docs/methodology-and-findings.md); recorded as blank rather
+        # than as a fake SPDX id.
+        license_spdx = (data.get("license") or {}).get("spdx_id") or ""
+        if license_spdx == "NOASSERTION":
+            license_spdx = ""
         return {
+            # The repo's own name (`name`, not `full_name` -- no owner
+            # prefix), for tool_metadata's auto-collected `name` column.
+            # Often not display-ready (a slug, or an ugly long project-repo
+            # name like a WWW-project repo's) -- that's exactly what
+            # `tools`' own `name` override is for, same precedence as
+            # `license`, not a reason to skip collecting it here.
+            "name": data.get("name") or "",
             "stars": data.get("stargazers_count"),
             "forks": data.get("forks_count"),
             "watchers": data.get("subscribers_count"),
             "open_issues_count": data.get("open_issues_count"),
             "last_commit_date": (data.get("pushed_at") or "")[:10],
+            "license": license_spdx,
             # Same field backfill_programming_language.py used to fetch
             # separately -- free here, already in this response. Single
             # dominant-by-bytes language only; a second, genuinely
@@ -626,6 +667,14 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--data-json", default="site/data.json",
                          help="local build output to read the live tool catalog from")
+    parser.add_argument("--candidates", default=None,
+                         help="collect for tools not yet in the live sheet instead of "
+                              "site/data.json -- point this at candidate_tools.csv (or "
+                              "anything with the same 'id'/'tool_type'/'source' columns) "
+                              "so a batch of freshly-emitted candidates gets its "
+                              "tool_metadata row ready to paste alongside the tools/tool_map "
+                              "rows, in one round-trip instead of pasting tools first, "
+                              "rebuilding, then re-running the collector")
     parser.add_argument("--out", default="curation/state/tool_metadata.csv")
     parser.add_argument("--refresh-all", action="store_true",
                          help="re-collect for every eligible tool, not just ones missing `stars`")
@@ -645,12 +694,6 @@ def main() -> None:
             "public read access (no special scopes needed) -- see curation/README.md."
         )
 
-    data_path = Path(args.data_json)
-    if not data_path.exists():
-        raise SystemExit(f"{data_path} not found -- run `python build.py` first.")
-    with open(data_path, "r", encoding="utf-8") as f:
-        data = json.load(f)
-
     session = requests.Session()
     session.headers.update({
         "Authorization": f"Bearer {token}",
@@ -661,9 +704,25 @@ def main() -> None:
     warnings: list = []
     unresolvable_source: list = []
 
-    tools = [t for t in data.get("tools", [])
-             if t.get("tool_type") == "software"
-             and (args.refresh_all or t.get("stars") is None)]
+    if args.candidates:
+        candidates_path = Path(args.candidates)
+        if not candidates_path.exists():
+            raise SystemExit(f"{candidates_path} not found.")
+        with open(candidates_path, "r", encoding="utf-8") as f:
+            tools = [{"id": row["id"], "source": row["source"]}
+                     for row in csv.DictReader(f)
+                     if row.get("tool_type") in ("software", "specification") and row.get("source")]
+        print(f"[collect] reading tools from {candidates_path} (not yet live) "
+              f"instead of {args.data_json}")
+    else:
+        data_path = Path(args.data_json)
+        if not data_path.exists():
+            raise SystemExit(f"{data_path} not found -- run `python build.py` first.")
+        with open(data_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        tools = [t for t in data.get("tools", [])
+                 if t.get("tool_type") in ("software", "specification")
+                 and (args.refresh_all or t.get("stars") is None)]
 
     out_path = Path(args.out)
     checkpointed = set() if args.restart else load_checkpointed_ids(out_path)
@@ -694,6 +753,16 @@ def main() -> None:
 
     print(f"[collect] {len(tools)} software tool(s) to process this run"
           + (" (--refresh-all)" if args.refresh_all else " (missing stars)"))
+
+    # "YYYY-MM-DD HH:MM" (UTC, no seconds, no offset), matching every existing
+    # datetime_* cell in both live sheets exactly -- see emit_candidates.py's
+    # sheet_timestamp for the same convention. All three columns get the same
+    # value: this script never reads the sheet's current content, only
+    # site/data.json, so there's no prior datetime_added to preserve across a
+    # --refresh-all re-collection -- "added" here means "last (re-)collected",
+    # consistent with tool_metadata being a full-replacement paste with
+    # nothing to preserve (see the module docstring).
+    sheet_timestamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M")
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     write_header = args.restart or not out_path.exists()
@@ -737,6 +806,9 @@ def main() -> None:
                   f"best_practices={best_practices.get('openssf_best_practices_badge_level', '-')}")
 
             row = {"id": tool["id"], "name": tool.get("name", ""), "source": tool.get("source", "")}
+            row["datetime_added"] = sheet_timestamp
+            row["datetime_checked"] = sheet_timestamp
+            row["datetime_updated"] = sheet_timestamp
             row.update(core)
             row["contributors"] = contributors
             row.update(releases)
@@ -772,10 +844,24 @@ def main() -> None:
         out_file.close()
 
     total_in_file = len(load_checkpointed_ids(out_path))
-    print(f"\n{out_path} now has {total_in_file} row(s) total -- review, then paste in as "
-          f"a full replacement of the `tool_metadata` sheet's contents (safe: nothing there "
-          f"is ever hand-edited). Use --restart on a periodic full refresh to also drop rows "
-          f"for tools removed from the catalog since the last run.")
+    is_full_catalog_run = args.refresh_all and not args.candidates
+    if is_full_catalog_run:
+        print(f"\n{out_path} now has {total_in_file} row(s) total -- review, then paste in as "
+              f"a full replacement of the `tool_metadata` sheet's contents (safe: nothing there "
+              f"is ever hand-edited). Use --restart on a periodic full refresh to also drop rows "
+              f"for tools removed from the catalog since the last run.")
+    else:
+        # Either --candidates (tools not yet live at all) or the default
+        # incremental mode (only tools missing `stars`, i.e. never
+        # collected) -- either way this file does NOT cover every tool
+        # already live in tool_metadata, so pasting it as a full replacement
+        # would silently delete every row it doesn't happen to include.
+        source_desc = f"from {args.candidates} (not yet live)" if args.candidates else "missing metadata until now"
+        print(f"\n{out_path} now has {total_in_file} row(s) total ({source_desc}) -- review, "
+              f"then APPEND these rows to the `tool_metadata` sheet alongside its existing "
+              f"content. Do NOT paste as a full replacement -- that would wipe out every "
+              f"already-live tool's collected data. Use --refresh-all (without --candidates) "
+              f"for an actual full-catalog replacement run.")
     if unresolvable_source:
         print(f"\n{len(unresolvable_source)} tool(s) have no GitHub-style `source` URL "
               f"and need a manual look (or a GitLab/Codeberg fetch path this script doesn't have yet):")

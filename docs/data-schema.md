@@ -171,17 +171,20 @@ build — every id is just globally unique by construction.
 **`tools` tab** — the open-source tool catalog, one row per tool, defined
 **once** and referenced by id from as many `map` rows as apply, so tool
 metadata never drifts out of sync across multiple mentions. This is a
-**human-curated tab, full stop** — every value in it either was hand-typed,
-or is a deliberate human override of an auto-collected value (see "tools /
-tool_metadata precedence" below). No automation ever writes here.
+**judgment-curated tab, full stop** — every value in it is either a human's
+or an AI agent's judgment call (a display name someone chose, a summary
+distilled from a README, an explicit override of an auto-collected value),
+never a raw API fetch. `tool_metadata` is the mirror image: **every** value
+there is a raw, unedited API response, never a judgment call — see "tools /
+tool_metadata precedence" below for exactly how the two combine. No
+automation writes to `tools`; nothing but automation writes to
+`tool_metadata`.
 
 | Column | Meaning |
 | --- | --- |
 | `id` | Short unique identifier, referenced from `tool_map.tool_id` (e.g. `scancode-toolkit`). |
 | `tool_type` | Free-text category, e.g. `software` or `specification` — not a fixed enum. Some open problems are better addressed by an open standard than by executable software (e.g. `spdx3`, `croissant`); this lets both live in one catalog. Rendered as a small chip, same treatment as `license`. |
-| `name` | Display name. |
 | `summary` | One or two sentence description. |
-| `license` | **SPDX License ID** (e.g. `Apache-2.0`, `MIT`, `GPL-2.0-or-later`) — see [spdx.org/licenses](https://spdx.org/licenses/). |
 | `homepage` | Project homepage URL. |
 | `source` | Source code repository URL. |
 | `documentation` | Documentation URL. |
@@ -191,12 +194,18 @@ tool_metadata precedence" below). No automation ever writes here.
 so the schema isn't inventing its own vocabulary.) Leave any column blank if
 not applicable — the site simply omits blank fields.
 
-Every other column in `tools` — `programming_language`, `funding`,
-`funder`, and the full project-quality/community-health set (`stars`
-through `openssf_scorecard_vulnerabilities`, listed in full under
+Every other column in `tools` — `name`, `license`, `programming_language`,
+`funding`, `funder`, and the full project-quality/community-health set
+(`stars` through `openssf_scorecard_vulnerabilities`, listed in full under
 `tool_metadata` below) — also exists, same column name, in the separate
 **`tool_metadata` sheet**. `tools`' copy is an *optional override*, not the
-primary source; see the precedence rule right below.
+primary source; see the precedence rule right below. `name` and `license`
+look like pure identity fields but aren't treated as ones here — both are
+auto-collectible from the GitHub repo API same as the rest of this set (a
+repo's own name is often an unusable slug, e.g. GitHub's own name for the
+OWASP LLM Top 10 repo is `www-project-top-10-for-large-language-model-applications`
+— exactly the case `tools`' override exists for), so both go through the
+same override precedence rather than a straight `tools`-only read.
 
 ### `tools` / `tool_metadata` precedence
 
@@ -260,9 +269,13 @@ A **separate Google Spreadsheet**, not another tab in the `OpenTAIG`
 sheet — deliberately, so a future automation credential (see
 `curation/collect_project_metadata.py`'s docstring) can be granted write
 access to only this one file, never `tools`/`tool_map`/`map`. One row per
-tool `id`; `name`/`source` are read-only reference columns for a human
-skimming the sheet (`build.py` ignores them — identity always comes from
-`tools`). These columns describe the *repository*, not the tool's
+tool `id`; `source` is a read-only reference column for a human skimming
+the sheet (`build.py` ignores it — a tool's `source` URL always comes from
+`tools`, never `tool_metadata`, since it's how this script finds the repo
+to collect from in the first place). `name`, despite sitting right next to
+`source` in the same read-only-looking position, is *not* read-only in the
+same sense — see the field table below, and "`tools` / `tool_metadata`
+precedence" above. These columns describe the *repository*, not the tool's
 governance-relevance — a signal of maintenance health and openness
 practice that stands apart from the license question (a project can be
 permissively licensed and still be a single-maintainer, no-tests,
@@ -281,6 +294,8 @@ with a hand-typed override in `tools`:
 
 | Column | Meaning |
 | --- | --- |
+| `name` | The repo's own name (GitHub's `name` field, not `full_name` — no owner prefix). Often not display-ready: a bare slug, or an unwieldy literal project-repo name (e.g. `www-project-top-10-for-large-language-model-applications` for the OWASP LLM Top 10 repo) — that's what `tools`' own `name` override exists for, not a reason to skip collecting it here. |
+| `license` | **SPDX License ID** (e.g. `Apache-2.0`, `MIT`, `GPL-2.0-or-later`) — see [spdx.org/licenses](https://spdx.org/licenses/). GitHub's own repo-level license detector, same API call as `programming_language`. `NOASSERTION` (GitHub couldn't classify it confidently) is recorded as blank, not as a literal `NOASSERTION` value — same blind spot as `license_url` below. Since license is a hard inclusion criterion, not just a display field, `build.py` warns at build time whenever `tools` and `tool_metadata` both have a real, *differing* value for the same tool — the `tools` override still wins per the usual rule, but a detector disagreement is worth a human's attention. |
 | `programming_language` | Implementation language(s) — GitHub's own repo-level `language` field, a single dominant-by-bytes language. A second, genuinely polyglot language is a manual addition in `tools` (semicolon-separated, e.g. `Python; Rust`), not something this script infers. |
 | `stars` | Star count (`stargazers_count`). |
 | `forks` | Fork count (`forks_count`). |
@@ -291,7 +306,7 @@ with a hand-typed override in `tools`:
 | `latest_release_date` | Publish date of the most recent release, date-only. Blank for tools that don't use GitHub Releases (e.g. rolling-release or tag-only projects) — that's a real "no formal releases" signal, not a collection failure. |
 | `last_commit_date` | Default branch's last push date (`pushed_at`), date-only. |
 | `readme_url` | From the GitHub Community Profile API. |
-| `license_url` | From the GitHub Community Profile API — the actual LICENSE file's URL, distinct from `license` (the SPDX identifier, `tools`-only, never auto-collected — SPDX classification is a judgment call, not a fetch). Left blank (with a warning at collection time) when GitHub's own license detector returns `NOASSERTION` for the repo — confirmed on a real catalogued tool where the API's `html_url` pointed at an unrelated file, not any license file. |
+| `license_url` | From the GitHub Community Profile API — the actual LICENSE file's URL, distinct from `license` above (the SPDX identifier — a different API call, and a different fallback for the same underlying `NOASSERTION` case: `license_url` is left blank with a warning, `license` is left blank without one, both rather than recording a value known to be junk). Confirmed on a real catalogued tool where the API's `html_url` pointed at an unrelated file, not any license file. |
 | `code_of_conduct_url` | From the GitHub Community Profile API. Blank if the repo has none. |
 | `contributing_url` | From the GitHub Community Profile API. Blank if the repo has none. |
 | `security_policy_url` | GitHub's Community Profile API doesn't reliably surface this, so it's a best-effort fallback: probes `SECURITY.md`, `.github/SECURITY.md`, `docs/SECURITY.md` on the default branch. Blank if none of those exist (doesn't rule out a security policy living somewhere non-standard). |

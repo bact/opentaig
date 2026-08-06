@@ -1,0 +1,57 @@
+{
+  "keyword": "agent authentication protocol",
+  "query": "agent authentication protocol stars:>19 pushed:>2025-08-06 archived:false fork:false",
+  "count": 5,
+  "repos": [
+    {
+      "full_name": "forter/trusted-agentic-commerce-protocol",
+      "html_url": "https://github.com/forter/trusted-agentic-commerce-protocol",
+      "description": "A secure authentication and data encryption protocol for AI agents, merchants and merchant vendors.",
+      "stars": 179,
+      "pushed_at": "2026-07-08T09:07:55Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "JM00NJ/ICMP-Ghost-A-Fileless-x64-Assembly-C2-Agent",
+      "html_url": "https://github.com/JM00NJ/ICMP-Ghost-A-Fileless-x64-Assembly-C2-Agent",
+      "description": "A fileless C2 framework written in pure x64 Linux Assembly with zero libc dependencies. Features dynamic protocol pivoting between raw ICMP sockets and DNS (UDP/53) via in-memory VTable manipulation. 100% direct syscalls, no disk writes, and strict mathematical packet authentication.",
+      "stars": 87,
+      "pushed_at": "2026-06-05T14:55:24Z",
+      "language": "Assembly",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://netacoding.com/posts/icmp-ghost/"
+    },
+    {
+      "full_name": "firstorderai/authenticator_mcp",
+      "html_url": "https://github.com/firstorderai/authenticator_mcp",
+      "description": "A secure MCP (Model Context Protocol) server that enables AI agents to interact with the Authenticator App.",
+      "stars": 41,
+      "pushed_at": "2026-03-31T08:16:54Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://authenticator.firstorder.ai"
+    },
+    {
+      "full_name": "evmauth/evmauth-core",
+      "html_url": "https://github.com/evmauth/evmauth-core",
+      "description": "EVMAuth is an open protocol to enable secure authorization state management in a simple, standard way for applications, APIs, and AI agents.",
+      "stars": 24,
+      "pushed_at": "2025-09-25T13:59:43Z",
+      "language": "Solidity",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "nirholas/Binance-US-MCP",
+      "html_url": "https://github.com/nirholas/Binance-US-MCP",
+      "description": "A Model Context Protocol (MCP) server for Binance.US API. Provides standardized access to market data, spot trading, wallets, accounts, staking, OTC, sub-accounts, and institutional features. Built in TypeScript/Node.js. Handles authentication, rate limiting, and errors automatically. Ideal for AI agents and devs.",
+      "stars": 24,
+      "pushed_at": "2026-07-30T19:20:23Z",
+      "language": "TypeScript",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://github.com/nirholas/Binance-US-MCP"
+    }
+  ]
+}
