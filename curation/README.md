@@ -1084,6 +1084,119 @@ parallel subagents, synthesize their results yourself: each only sees its
 own slice and will make locally-true, globally-false claims about coverage.
 ```
 
+## Prior art: CHAOSS
+
+The project-quality/community-health columns (`stars` through
+`openssf_scorecard_vulnerabilities` in the `tools` tab — see
+`docs/data-schema.md`) were designed independently, then checked against
+[CHAOSS](https://chaoss.community/) (Community Health Analytics in Open
+Source Software, a Linux Foundation project) after the fact — noted here as
+prior art, since CHAOSS is the closest thing this space has to a standards
+body for exactly this question. Their knowledge base indexes
+[89 individual metrics](https://www.chaoss.community/kbtopic/all-metrics/)
+and [17 metrics models](https://www.chaoss.community/kbtopic/all-metrics-models/)
+(combinations of metrics answering a broader question, e.g. "OSS Project
+Viability: Governance", "Starter Project Health", "Safety"). Their metric
+definitions live as markdown files across several working-group repos —
+`chaoss/wg-risk` (focus areas: `security`, `transparency`, `business-risk`,
+`dependency-risk-assessment`, `code-quality`, `licensing`) is the most
+relevant one to this catalog's purpose.
+[`chaoss/collectoss`](https://github.com/chaoss/collectoss) is their
+reference *collection* tool (Python, PostgreSQL-backed, Docker-distributed)
+for gathering the raw forge data those metrics are computed from —
+architecturally a different approach from `collect_project_metadata.py`
+(a relational warehouse ingesting full history across many repos, vs. a
+one-shot per-tool snapshot into a spreadsheet), but the same underlying
+data sources.
+
+**What's already CHAOSS-aligned**, i.e. names or near-equivalents to a
+named CHAOSS metric, confirmed by reading the actual metric definitions
+rather than assumed from the name alone:
+
+| This catalog's column | CHAOSS metric | Note |
+| --- | --- | --- |
+| `openssf_best_practices_url`/`_badge_level` | [OpenSSF Best Practices Badge](https://www.chaoss.community/kb/metric-openssf-best-practices-badge/) | exact match — CHAOSS names this metric directly |
+| `sbom_url` | [SPDX Document](https://www.chaoss.community/kbtopic/all-metrics/) | exact match in spirit; CHAOSS's version isn't GitHub-specific |
+| `programming_language` | Programming Language Distribution | same idea; CHAOSS's is repo-wide byte-proportion, ours is GitHub's single dominant language (see `backfill_programming_language.py`'s docstring) |
+| `contributors` | [Contributors](https://www.chaoss.community/kbtopic/all-metrics/) | same idea, cruder implementation — see the gap below |
+| `forks` | [Technical Fork](https://www.chaoss.community/kb/metric-technical-fork/) | CHAOSS's definition is platform-agnostic ("independent copies... on code development platforms"); ours is specifically GitHub's fork-button count |
+| `license_url`/`license` | Licenses Declared / OSI Approved Licenses / License Coverage | we already do more here than a single column suggests — `licenses.py`'s OSI/FSF classification (see "Rejection tracking & licence classification") predates this comparison and is closer to CHAOSS's three-metric split than to a single field |
+| `code_of_conduct_url` | Code of Conduct for a Project | exact match |
+| `readme_url` | Documentation Discoverability | related, narrower (existence + location, not discoverability/quality) |
+| `funding`/`funder` | Sponsorship, and the *Funding* metrics model | related; CHAOSS's model is broader (impact of funding, not just presence) |
+| `paper_url` | Academic Open Source Project Impact | related, narrower (presence of a citable paper, not impact) |
+
+**What CHAOSS defines that this catalog doesn't have** — candidates for a
+future round, roughly in order of how directly they'd improve on something
+we already collect cheaply:
+
+- **[Contributor Absence Factor](https://www.chaoss.community/kb/metric-contributor-absence-factor/)**
+  (née "Bus Factor") — the minimum number of contributors responsible for
+  50% of all contributions, computed from per-contributor commit counts
+  (`GET /repos/{owner}/{repo}/stats/contributors`). Strictly more
+  informative than our current `contributors` (a raw headcount that treats
+  a drive-by one-line fix the same as a maintainer with 40% of all
+  commits) for the exact question this catalog cares about — is a tool a
+  one-person project that could vanish.
+- **Elephant Factor** — the organizational analogue: minimum number of
+  *organizations* (not individuals) responsible for 50% of contributions.
+  Needs contributor→employer mapping, which GitHub doesn't expose
+  directly; harder to collect than Contributor Absence Factor.
+- **Libyears** — average age, in years, of a project's dependencies
+  relative to their latest available version; a supply-chain-staleness
+  signal distinct from anything currently collected. Needs a dependency
+  manifest + registry lookups per ecosystem (PyPI/npm/crates.io/...), more
+  work than anything else in this table.
+- **Time to First Response / Issue Resolution Duration / Review Cycle
+  Duration** — responsiveness metrics from issue/PR timestamps. We collect
+  `open_issues_count` (a snapshot) but nothing about how fast issues
+  actually get addressed.
+- **Test Coverage** — no general cross-language API for this (would need
+  a CI-provider-specific integration, e.g. Codecov/Coveralls badges, not a
+  single GitHub call), which is likely why it's absent here.
+- **Bot Activity** — CHAOSS explicitly flags filtering bot commits/issues
+  before computing other metrics; our `contributors`/`open_issues_count`
+  don't currently exclude bots, a real accuracy gap worth noting even
+  before adopting Contributor Absence Factor.
+
+None of the above are implemented — this section is the "note it as prior
+art" this catalog owes CHAOSS, plus a concrete starting list if a future
+round wants to close the gap with their more rigorous definitions rather
+than reinventing similar-but-less-precise ones from scratch.
+
+**Deferred decision, not acted on**: whether to compute the gap-list
+metrics above ourselves (extending `collect_project_metadata.py`, more
+GitHub API calls) or pull some/all of them from an existing third-party
+API instead. Checked two real candidates rather than assuming:
+
+- **CHAOSS's own Augur** (their former hosted metrics platform) is
+  deprecated — its repo now reads "no longer part of CHAOSS, use
+  CollectOSS instead." Not usable as a hosted API; `collectoss` above is
+  the only route into CHAOSS's own metric computations, and that's a
+  self-hosted warehouse, not a query-able public endpoint.
+- **[ecosyste.ms](https://ecosyste.ms/)** (`repos.ecosyste.ms`,
+  `packages.ecosyste.ms`) is a real, public, no-auth-needed aggregator API
+  that already surfaces a lot of overlapping ground in one call per repo:
+  stars/forks/subscribers/open_issues, a `funding` field already resolved
+  from `.github/FUNDING.yml`, a `metadata` block noting which of
+  README/CHANGELOG/CONTRIBUTING/LICENSE/CITATION/SECURITY/codemeta.json
+  exist, and even an embedded `scorecard` field — confirmed against a
+  real catalogued tool's repo (`repos.ecosyste.ms/api/v1/hosts/GitHub/
+  repositories/PyThaiNLP%2Fpythainlp`), not assumed from their docs. Their
+  `packages.ecosyste.ms` side (per-registry package metadata — PyPI, npm,
+  crates.io, ...) was also checked for a `dependents_count` answer (the
+  one column this catalog deliberately left manual-only, no GitHub API
+  existing for it) — no explicit dependent-count field surfaced in the
+  single package looked up, so that specific gap isn't obviously solved by
+  switching, but worth a closer look if this gets picked up later.
+
+If this ever gets picked up: ecosyste.ms could plausibly *replace* several
+of `collect_project_metadata.py`'s direct-to-GitHub calls (fewer requests
+per tool, someone else's infrastructure absorbing the GitHub API budget)
+rather than only adding new columns on top — worth weighing against the
+loss of direct control over collection timing/logic before committing
+either way.
+
 ## Setup
 
 Base setup (clone, `pip install -r requirements.txt`) is in
@@ -1119,13 +1232,30 @@ carrying the three freshness columns above:
 - **`tool_map`** — `rq_no, tool_id, role, rationale` + freshness columns.
   One row per `(rq_no, tool_id, role)` pairing.
 - **`tools`** — `id, tool_type, name, summary, license,
-  programming_language, homepage, source, documentation, funding, implement,
-  eval` + freshness columns. `programming_language` (e.g. `Python`, `Rust`;
-  semicolon-separated if the tool is genuinely polyglot) is only meaningful
-  for `tool_type` `software` — leave blank for `specification` rows.
-  Added after the initial ~130 tools were catalogued;
-  fill it in for every new tool going forward, and see
-  `backfill_programming_language.py` for retrofitting existing rows.
+  programming_language, homepage, source, documentation, funding` +
+  freshness columns, plus project-quality/community-health columns
+  (`stars, forks, watchers, contributors, open_issues_count,
+  releases_count, latest_release_date, last_commit_date, readme_url,
+  license_url, code_of_conduct_url, contributing_url, security_policy_url,
+  governance_url, sbom_url, dependents_count, funder, development_status,
+  paper_url, software_heritage_id, openssf_best_practices_url,
+  openssf_best_practices_badge_level, openssf_scorecard_url,
+  openssf_scorecard_score, openssf_scorecard_branch_protection,
+  openssf_scorecard_code_review, openssf_scorecard_maintained,
+  openssf_scorecard_vulnerabilities` — see `docs/data-schema.md` for what
+  each means). `programming_language` (e.g. `Python`, `Rust`;
+  semicolon-separated if the tool is genuinely polyglot) is only
+  meaningful for `tool_type` `software` — leave blank for `specification`
+  rows. Both `programming_language` and the project-quality columns were
+  added after the initial ~130 tools were catalogued; fill them in for
+  every new tool going forward, and see `backfill_programming_language.py`
+  / `collect_project_metadata.py` for retrofitting existing rows.
+  `dependents_count` is the one exception — it's never auto-collected (no
+  public API for GitHub's dependency-graph count), manual-entry only. The
+  existing `funding` column (a plain URL, from the original schema) is
+  auto-enriched by `collect_project_metadata.py` when blank, from
+  `.github/FUNDING.yml` / `pyproject.toml` / `codemeta.json` — see that
+  script's docstring.
 - **`terms`** — `id, framework_id, name, summary, url` + freshness columns.
 - **`framework`** — `id, name, fullname, summary, homepage, source, group`
   + freshness columns.
@@ -1178,6 +1308,44 @@ been triaged (accepted into `tools`/`tool_map`, or rejected) — see
   predicates in [bact/licenseid](https://github.com/bact/licenseid) — see
   that project instead if the input is unstructured license *text* rather
   than an already-resolved SPDX id.
+- **`backfill_programming_language.py`** — built. Reads `site/data.json`
+  for `tool_type` "software" rows missing `programming_language`, looks up
+  GitHub's repo-level `language` field per tool, writes a review CSV
+  (`state/programming_language_backfill.csv`) for pasting into the sheet by
+  hand. Never touches the sheet itself. Needs `GITHUB_TOKEN` + network
+  (see "Setup" above); no model.
+- **`collect_project_metadata.py`** — built. The same read-review-paste
+  shape as the script above, for every project-quality/community-health
+  column plus enriching the existing `funding` column (full list in
+  `docs/data-schema.md`; source-by-source detail is in the script's own
+  docstring, not duplicated here). Pulls from GitHub REST (repo core,
+  contributors, releases, community profile, well-known-path probes for
+  security/governance files, the auto-generated dependency-graph SBOM
+  endpoint, and raw-content reads of `.github/FUNDING.yml`,
+  `pyproject.toml`, `codemeta.json`, `CITATION.cff`), plus the public
+  bestpractices.dev / api.scorecard.dev APIs (unauthenticated, so the
+  GitHub token is never sent to them). NOT `dependents_count`, which has
+  no public API and is deliberately not scraped. Writes
+  `state/project_metadata_backfill.csv`. Defaults to tools missing `stars`
+  (i.e. never collected); pass `--refresh-all` to re-collect the volatile
+  fields (star counts, release counts, Scorecard score, etc.) for
+  everything. Interruption-safe for a full ~130-tool run: prints the
+  GitHub core rate limit and a worst-case call estimate before starting,
+  re-checks every 20 tools and stops early below 100 remaining, writes and
+  flushes each row immediately rather than batching to the end, and skips
+  ids already in `--out` on a re-run (`--restart` to ignore that
+  checkpoint; `--limit N` for a deliberately small batch) -- so a rate
+  limit, network blip, or Ctrl-C loses at most one row, not the whole run.
+  Two real quirks it defends against, both confirmed against
+  live data before being handled rather than assumed from docs: GitHub's
+  community-profile API can return a `license_url` pointing at an
+  unrelated file when its own license detector returns `NOASSERTION` —
+  same blind spot as F3 in `docs/methodology-and-findings.md`, just
+  hitting a different field; and OpenSSF Scorecard's per-check score of
+  `-1` means "could not evaluate," not "worst score." GitHub-only for now;
+  GitLab/Codeberg would need their own fetch functions, not built
+  speculatively since no catalogued tool is hosted there yet. Needs
+  `GITHUB_TOKEN` + network; no model.
 - **`keyword_matrix.py`** — built. PICOC-style keyword generator over four
   dimensions (target/action/objective/context); prints two-dimension combos
   not already in `state/search_log.csv`. See "Keyword expansion" source 6.

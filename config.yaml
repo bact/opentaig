@@ -155,11 +155,48 @@ columns:
     source: "source"
     documentation: "documentation"
     funding: "funding"
-    # Semicolon-separated term ids (from the `terms` tab) declaring which
-    # principle(s) this tool helps implement vs. evaluate/audit. Free
-    # standing tool metadata -- independent of any specific RQ.
-    implement: "implement"
-    eval: "eval"
+    # Project-quality / community-health signals, collected via
+    # curation/collect_project_metadata.py (GitHub-only for now). See
+    # docs/data-schema.md for what each one means and how it's sourced --
+    # several (stars/forks/watchers/contributors) are a collection-time
+    # snapshot, not a live value. dependents_count is NOT auto-collected
+    # (no public API for GitHub's dependency-graph count); manual-entry only.
+    stars: "stars"
+    forks: "forks"
+    watchers: "watchers"
+    contributors: "contributors"
+    open_issues_count: "open_issues_count"
+    releases_count: "releases_count"
+    latest_release_date: "latest_release_date"
+    last_commit_date: "last_commit_date"
+    readme_url: "readme_url"
+    license_url: "license_url"
+    code_of_conduct_url: "code_of_conduct_url"
+    contributing_url: "contributing_url"
+    security_policy_url: "security_policy_url"
+    governance_url: "governance_url"
+    sbom_url: "sbom_url"
+    dependents_count: "dependents_count"
+    # `funding` (see above, existing column) is auto-enriched by
+    # collect_project_metadata.py from FUNDING.yml / pyproject.toml /
+    # codemeta.json when blank -- only ever fills it in, never overwrites a
+    # curated value. `funder` (who funded it -- an org/person name) is a
+    # distinct CodeMeta concept from `funding` (a URL to fund/cite it).
+    funder: "funder"
+    development_status: "development_status"
+    paper_url: "paper_url"
+    software_heritage_id: "software_heritage_id"
+    openssf_best_practices_url: "openssf_best_practices_url"
+    openssf_best_practices_badge_level: "openssf_best_practices_badge_level"
+    openssf_scorecard_url: "openssf_scorecard_url"
+    openssf_scorecard_score: "openssf_scorecard_score"
+    # Individual OpenSSF Scorecard check scores (0-10; -1 means Scorecard
+    # could not evaluate that check, not a real score -- see
+    # collect_project_metadata.py's docstring).
+    openssf_scorecard_branch_protection: "openssf_scorecard_branch_protection"
+    openssf_scorecard_code_review: "openssf_scorecard_code_review"
+    openssf_scorecard_maintained: "openssf_scorecard_maintained"
+    openssf_scorecard_vulnerabilities: "openssf_scorecard_vulnerabilities"
     datetime_added: "datetime_added"
     datetime_checked: "datetime_checked"
     datetime_updated: "datetime_updated"

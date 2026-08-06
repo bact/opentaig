@@ -85,9 +85,39 @@ class Tool:
     source: str = ""
     documentation: str = ""
     funding: str = ""
-    implement: list = dataclasses.field(default_factory=list)  # list[Term]
-    eval: list = dataclasses.field(default_factory=list)  # list[Term]
     freshness: Freshness = dataclasses.field(default_factory=Freshness)
+    # Project-quality / community-health signals -- see docs/data-schema.md.
+    # A collection-time snapshot, not a live value; GitHub-only for now.
+    stars: Optional[int] = None
+    forks: Optional[int] = None
+    watchers: Optional[int] = None
+    contributors: Optional[int] = None
+    open_issues_count: Optional[int] = None
+    releases_count: Optional[int] = None
+    latest_release_date: str = ""
+    last_commit_date: str = ""
+    readme_url: str = ""
+    license_url: str = ""
+    code_of_conduct_url: str = ""
+    contributing_url: str = ""
+    security_policy_url: str = ""
+    governance_url: str = ""
+    sbom_url: str = ""
+    dependents_count: Optional[int] = None  # not auto-collected; manual-entry only
+    funder: str = ""
+    development_status: str = ""
+    paper_url: str = ""
+    software_heritage_id: str = ""
+    openssf_best_practices_url: str = ""
+    openssf_best_practices_badge_level: str = ""
+    openssf_scorecard_url: str = ""
+    openssf_scorecard_score: Optional[float] = None
+    # 0-10; -1 means Scorecard couldn't evaluate that check, not a real
+    # score -- see collect_project_metadata.py's docstring.
+    openssf_scorecard_branch_protection: Optional[float] = None
+    openssf_scorecard_code_review: Optional[float] = None
+    openssf_scorecard_maintained: Optional[float] = None
+    openssf_scorecard_vulnerabilities: Optional[float] = None
 
 
 @dataclasses.dataclass
@@ -145,6 +175,31 @@ def clean(value: Optional[str]) -> str:
     if value is None:
         return ""
     return " ".join(value.split()).strip()
+
+
+def parse_optional_int(value: Optional[str], context: str, warnings: list) -> Optional[int]:
+    """Blank -> None (most tools don't have this collected yet); anything
+    non-blank that isn't a plain integer is a warning, not a crash -- a
+    stray "~1,200" or "N/A" pasted by hand shouldn't break the whole build."""
+    text = clean(value)
+    if not text:
+        return None
+    try:
+        return int(text.replace(",", ""))
+    except ValueError:
+        warnings.append(f"{context}: expected an integer, got {text!r} -- ignoring")
+        return None
+
+
+def parse_optional_float(value: Optional[str], context: str, warnings: list) -> Optional[float]:
+    text = clean(value)
+    if not text:
+        return None
+    try:
+        return float(text)
+    except ValueError:
+        warnings.append(f"{context}: expected a number, got {text!r} -- ignoring")
+        return None
 
 
 def fetch_source(source_cfg: dict, label: str, warnings: list) -> str:
@@ -293,10 +348,8 @@ def safe_id_for_path(tool_id: str) -> str:
 # Build tool catalog
 # --------------------------------------------------------------------------
 
-def build_tool_catalog(rows: list, colmap: dict, terms_catalog: dict, warnings: list) -> dict:
-    """Return {id: Tool}. `implement`/`eval` cells hold semicolon-separated
-    term ids (from the terms tab) resolved against `terms_catalog` -- same
-    warn-on-unknown-id pattern used for the map tab's framework columns."""
+def build_tool_catalog(rows: list, colmap: dict, warnings: list) -> dict:
+    """Return {id: Tool}."""
     catalog = {}
     for i, row in enumerate(rows):
         raw_id = (row.get(colmap["id"]) or "").strip()
@@ -305,18 +358,16 @@ def build_tool_catalog(rows: list, colmap: dict, terms_catalog: dict, warnings: 
         if raw_id in catalog:
             warnings.append(f"tools row {i + 2}: duplicate tool id {raw_id!r}, overwriting earlier entry")
 
-        def resolve_terms(column_key: str) -> list:
-            terms = []
-            for tid in parse_id_list(row.get(colmap[column_key])):
-                term = terms_catalog.get(tid)
-                if term is None:
-                    warnings.append(
-                        f"tools row {i + 2} ({raw_id!r}): term id {tid!r} referenced in "
-                        f"[{colmap[column_key]}] not found in the terms tab"
-                    )
-                    continue
-                terms.append(term)
-            return terms
+        ctx = f"tools row {i + 2} ({raw_id!r})"
+
+        def col_int(key: str) -> Optional[int]:
+            return parse_optional_int(row.get(colmap[key]), f"{ctx} [{key}]", warnings)
+
+        def col_float(key: str) -> Optional[float]:
+            return parse_optional_float(row.get(colmap[key]), f"{ctx} [{key}]", warnings)
+
+        def col_str(key: str) -> str:
+            return (row.get(colmap[key]) or "").strip()
 
         catalog[raw_id] = Tool(
             id=raw_id,
@@ -326,13 +377,39 @@ def build_tool_catalog(rows: list, colmap: dict, terms_catalog: dict, warnings: 
             summary=(row.get(colmap["summary"]) or "").strip(),
             license=(row.get(colmap["license"]) or "").strip(),
             programming_languages=split_simple_list(row.get(colmap["programming_language"])),
-            homepage=(row.get(colmap["homepage"]) or "").strip(),
-            source=(row.get(colmap["source"]) or "").strip(),
-            documentation=(row.get(colmap["documentation"]) or "").strip(),
-            funding=(row.get(colmap["funding"]) or "").strip(),
-            implement=resolve_terms("implement"),
-            eval=resolve_terms("eval"),
-            freshness=parse_freshness(row, colmap, warnings, f"tools row {i + 2} ({raw_id!r})"),
+            homepage=col_str("homepage"),
+            source=col_str("source"),
+            documentation=col_str("documentation"),
+            funding=col_str("funding"),
+            freshness=parse_freshness(row, colmap, warnings, ctx),
+            stars=col_int("stars"),
+            forks=col_int("forks"),
+            watchers=col_int("watchers"),
+            contributors=col_int("contributors"),
+            open_issues_count=col_int("open_issues_count"),
+            releases_count=col_int("releases_count"),
+            latest_release_date=col_str("latest_release_date"),
+            last_commit_date=col_str("last_commit_date"),
+            readme_url=col_str("readme_url"),
+            license_url=col_str("license_url"),
+            code_of_conduct_url=col_str("code_of_conduct_url"),
+            contributing_url=col_str("contributing_url"),
+            security_policy_url=col_str("security_policy_url"),
+            governance_url=col_str("governance_url"),
+            sbom_url=col_str("sbom_url"),
+            dependents_count=col_int("dependents_count"),
+            funder=col_str("funder"),
+            development_status=col_str("development_status"),
+            paper_url=col_str("paper_url"),
+            software_heritage_id=col_str("software_heritage_id"),
+            openssf_best_practices_url=col_str("openssf_best_practices_url"),
+            openssf_best_practices_badge_level=col_str("openssf_best_practices_badge_level"),
+            openssf_scorecard_url=col_str("openssf_scorecard_url"),
+            openssf_scorecard_score=col_float("openssf_scorecard_score"),
+            openssf_scorecard_branch_protection=col_float("openssf_scorecard_branch_protection"),
+            openssf_scorecard_code_review=col_float("openssf_scorecard_code_review"),
+            openssf_scorecard_maintained=col_float("openssf_scorecard_maintained"),
+            openssf_scorecard_vulnerabilities=col_float("openssf_scorecard_vulnerabilities"),
         )
     return catalog
 
@@ -1130,7 +1207,7 @@ def main() -> None:
     facet_defs = list(framework_defs) + [expertise_def]
 
     terms_catalog = build_terms_catalog(terms_rows, colmap["terms"], warnings)
-    tool_catalog = build_tool_catalog(tools_rows, colmap["tools"], terms_catalog, warnings)
+    tool_catalog = build_tool_catalog(tools_rows, colmap["tools"], warnings)
     mapping_index = build_mapping_index(mapping_rows, colmap["mapping"], framework_defs, warnings)
     tool_role_index = build_tool_role_index(tool_map_rows, colmap["tool_map"], warnings)
 

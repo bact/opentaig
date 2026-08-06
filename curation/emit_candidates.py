@@ -63,15 +63,26 @@ copied out first):
   - `curation/candidate_tools.csv` -- new `tools` tab rows, exact live
     column order (id, tool_type, name, summary, license,
     programming_language, homepage, source, documentation, funding,
-    implement, eval, datetime_added, datetime_checked, datetime_updated).
-    `programming_language` should be GitHub's own repo-level `language`
-    field where available (search_repos.py / search_registries.py /
-    search_arxiv.py / snowball.py all already capture it per candidate in
-    state/search_candidates.csv) -- left "" for tool_type "specification",
-    which has no source code to have a language. `implement`/`eval` here are
-    RGAF-style term tags on the tool itself (per the live schema), left
-    blank unless the judgment supplied them -- NOT the RQ mapping, which is
-    the other file. All three timestamps are stamped with the run time,
+    stars, forks, watchers, contributors,
+    open_issues_count, releases_count, latest_release_date,
+    last_commit_date, readme_url, license_url, code_of_conduct_url,
+    contributing_url, security_policy_url, governance_url, sbom_url,
+    dependents_count, funder, development_status, paper_url,
+    software_heritage_id, openssf_best_practices_url,
+    openssf_best_practices_badge_level, openssf_scorecard_url,
+    openssf_scorecard_score, openssf_scorecard_branch_protection,
+    openssf_scorecard_code_review, openssf_scorecard_maintained,
+    openssf_scorecard_vulnerabilities, datetime_added, datetime_checked,
+    datetime_updated). `programming_language` should be GitHub's own
+    repo-level `language` field where available (search_repos.py /
+    search_registries.py / search_arxiv.py / snowball.py all already
+    capture it per candidate in state/search_candidates.csv) -- left "" for
+    tool_type "specification", which has no source code to have a
+    language. The project-quality/community-health columns (stars through
+    openssf_scorecard_vulnerabilities) are always left blank here by
+    design -- run `collect_project_metadata.py` after this tool is live
+    and `site/data.json` is rebuilt, rather than having the judging agent
+    guess at star counts or OpenSSF scan status. All three timestamps are stamped with the run time,
     since a freshly emitted row was just added, checked, and updated at
     once -- formatted "YYYY-MM-DD HH:MM" (UTC, no seconds, no offset) to
     match every existing datetime_* cell in the live sheet exactly, so
@@ -139,7 +150,16 @@ from pathlib import Path
 from licenses import OPEN_CLASSES, classify, load_spdx_index
 
 TOOLS_FIELDNAMES = ["id", "tool_type", "name", "summary", "license", "programming_language",
-                     "homepage", "source", "documentation", "funding", "implement", "eval",
+                     "homepage", "source", "documentation", "funding",
+                     "stars", "forks", "watchers", "contributors",
+                     "open_issues_count", "releases_count", "latest_release_date", "last_commit_date",
+                     "readme_url", "license_url", "code_of_conduct_url", "contributing_url",
+                     "security_policy_url", "governance_url", "sbom_url", "dependents_count",
+                     "funder", "development_status", "paper_url", "software_heritage_id",
+                     "openssf_best_practices_url", "openssf_best_practices_badge_level",
+                     "openssf_scorecard_url", "openssf_scorecard_score",
+                     "openssf_scorecard_branch_protection", "openssf_scorecard_code_review",
+                     "openssf_scorecard_maintained", "openssf_scorecard_vulnerabilities",
                      "datetime_added", "datetime_checked", "datetime_updated"]
 MAP_FIELDNAMES = ["rq_no", "tool_id", "role", "rationale",
                    "datetime_added", "datetime_checked", "datetime_updated"]  # matches the live tool_map tab's header exactly
@@ -342,8 +362,41 @@ def main() -> None:
                 "source": j.get("source", ""),
                 "documentation": j.get("documentation", ""),
                 "funding": j.get("funding", ""),
-                "implement": j.get("implement", ""),
-                "eval": j.get("eval", ""),
+                # Project-quality/community-health columns: left blank here by
+                # design -- run curation/collect_project_metadata.py after this
+                # tool is merged into the live sheet and site/data.json is
+                # rebuilt, rather than having the judging agent try to guess
+                # star counts or OpenSSF scan status by hand. Still listed in
+                # TOOLS_FIELDNAMES so the emitted row's columns line up with
+                # the live tab's, for a clean paste.
+                "stars": j.get("stars", ""),
+                "forks": j.get("forks", ""),
+                "watchers": j.get("watchers", ""),
+                "contributors": j.get("contributors", ""),
+                "open_issues_count": j.get("open_issues_count", ""),
+                "releases_count": j.get("releases_count", ""),
+                "latest_release_date": j.get("latest_release_date", ""),
+                "last_commit_date": j.get("last_commit_date", ""),
+                "readme_url": j.get("readme_url", ""),
+                "license_url": j.get("license_url", ""),
+                "code_of_conduct_url": j.get("code_of_conduct_url", ""),
+                "contributing_url": j.get("contributing_url", ""),
+                "security_policy_url": j.get("security_policy_url", ""),
+                "governance_url": j.get("governance_url", ""),
+                "sbom_url": j.get("sbom_url", ""),
+                "dependents_count": j.get("dependents_count", ""),
+                "funder": j.get("funder", ""),
+                "development_status": j.get("development_status", ""),
+                "paper_url": j.get("paper_url", ""),
+                "software_heritage_id": j.get("software_heritage_id", ""),
+                "openssf_best_practices_url": j.get("openssf_best_practices_url", ""),
+                "openssf_best_practices_badge_level": j.get("openssf_best_practices_badge_level", ""),
+                "openssf_scorecard_url": j.get("openssf_scorecard_url", ""),
+                "openssf_scorecard_score": j.get("openssf_scorecard_score", ""),
+                "openssf_scorecard_branch_protection": j.get("openssf_scorecard_branch_protection", ""),
+                "openssf_scorecard_code_review": j.get("openssf_scorecard_code_review", ""),
+                "openssf_scorecard_maintained": j.get("openssf_scorecard_maintained", ""),
+                "openssf_scorecard_vulnerabilities": j.get("openssf_scorecard_vulnerabilities", ""),
                 "datetime_added": sheet_timestamp,
                 "datetime_checked": sheet_timestamp,
                 "datetime_updated": sheet_timestamp,

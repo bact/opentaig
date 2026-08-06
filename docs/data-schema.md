@@ -177,13 +177,68 @@ metadata never drifts out of sync across multiple mentions:
 | `source` | Source code repository URL. |
 | `documentation` | Documentation URL. |
 | `funding` | Funding/sponsorship URL, if any. |
-| `implement` | Term **ids** (from the `terms` tab) this tool helps *implement* — free-standing tool metadata, independent of any specific question. |
-| `eval` | Term **ids** (from the `terms` tab) this tool helps *evaluate or audit*. |
 
 (These four URL columns reuse the well-known
 [Python Project-URL labels](https://packaging.python.org/en/latest/specifications/well-known-project-urls/),
 so the schema isn't inventing its own vocabulary.) Leave any column blank if
 not applicable — the site simply omits blank fields.
+
+**Project-quality / community-health columns**, added to `tools` alongside
+`programming_language`. These describe the *repository*, not the tool's
+governance-relevance — a signal of maintenance health and openness practice
+that stands apart from the license question (a project can be permissively
+licensed and still be a single-maintainer, no-tests, no-policy repo, or
+GPL-licensed with excellent governance practice). Collected via
+`curation/collect_project_metadata.py`, GitHub-only for now (see that
+script's docstring for the exact API calls and their staleness
+characteristics — several of these, especially the counts, are a snapshot
+at collection time, not a live value). Designed independently, then
+cross-checked against [CHAOSS](https://chaoss.community/)'s own metric
+definitions after the fact — see "Prior art: CHAOSS" in
+`curation/README.md` for which columns already line up with a named CHAOSS
+metric and which of theirs (Contributor Absence Factor, Libyears,
+issue/PR responsiveness durations, ...) aren't collected here yet:
+
+| Column | Meaning |
+| --- | --- |
+| `stars` | Star count (`stargazers_count`). |
+| `forks` | Fork count (`forks_count`). |
+| `watchers` | **Not** GitHub's `watchers_count` field, which has been a silent alias for `stargazers_count` since GitHub folded "Watch" into "Star" years ago — sourced from `subscribers_count` instead, the field that actually reflects people subscribed to repo activity. |
+| `contributors` | Approximate contributor count, from the `Link: rel="last"` page number on `/repos/{owner}/{repo}/contributors?per_page=1`. A bus-factor proxy, not exact (bots and one-line-fix drive-bys count the same as core maintainers). |
+| `open_issues_count` | GitHub's own `open_issues_count` — note this conflates open pull requests into the count, a GitHub API quirk, not a bug here. |
+| `releases_count` | Total release count (same `Link: rel="last"` trick as `contributors`, against `/releases`). |
+| `latest_release_date` | Publish date of the most recent release, date-only. Blank for tools that don't use GitHub Releases (e.g. rolling-release or tag-only projects) — that's a real "no formal releases" signal, not a collection failure. |
+| `last_commit_date` | Default branch's last push date (`pushed_at`), date-only. |
+| `readme_url` | From the GitHub Community Profile API. |
+| `license_url` | From the GitHub Community Profile API — the actual LICENSE file's URL, distinct from `license` (the SPDX identifier). Left blank (with a warning at collection time) when GitHub's own license detector returns `NOASSERTION` for the repo — confirmed on a real catalogued tool where the API's `html_url` pointed at an unrelated file, not any license file. |
+| `code_of_conduct_url` | From the GitHub Community Profile API. Blank if the repo has none. |
+| `contributing_url` | From the GitHub Community Profile API. Blank if the repo has none. |
+| `security_policy_url` | GitHub's Community Profile API doesn't reliably surface this, so it's a best-effort fallback: probes `SECURITY.md`, `.github/SECURITY.md`, `docs/SECURITY.md` on the default branch. Blank if none of those exist (doesn't rule out a security policy living somewhere non-standard). |
+| `governance_url` | Same best-effort fallback shape as `security_policy_url`, probing `GOVERNANCE.md`, `MAINTAINERS.md`, `MAINTAINERS`, `.github/GOVERNANCE.md`, `.github/MAINTAINERS.md`. |
+| `sbom_url` | GitHub auto-generates an SPDX SBOM from the dependency graph for every public repo that has it enabled — this is that API endpoint (`/repos/{owner}/{repo}/dependency-graph/sbom`), which returns the SBOM JSON directly. Confirmed present on a repo that never published its own SBOM file, so this isn't asking whether the *tool* publishes one, just whether GitHub's dependency graph is on (true for almost all public repos). Fetching the URL needs GitHub auth, same as any other API call. |
+| `dependents_count` | **Not auto-collected.** GitHub's "Used by" dependency-graph count (the `/network/dependents` page) has no public API — the only way to get it is scraping the HTML page, which `collect_project_metadata.py` deliberately does not do (fragile against markup changes, and bulk scraping sits in GitHub ToS gray territory that a one-off manual check doesn't). Fill in by hand for a tool worth spot-checking, or leave blank. |
+| `funder` | Name(s) of the organization(s)/person(s) that funded the project (semicolon-separated if more than one) — from `codemeta.json`'s `funder` field. A distinct CodeMeta concept from `funding` (below): *who paid for it* vs *a URL to fund/cite it*. Blank if the repo has no `codemeta.json`, which is most of them (common in the R/rOpenSci ecosystem, rare elsewhere). |
+| `openssf_best_practices_url` | `https://www.bestpractices.dev/projects/<id>` if the project has ever registered for an OpenSSF (formerly CII) Best Practices badge — via the public `bestpractices.dev/projects.json?q=<repo-name>` lookup (note: `q=`, not `pq=`/`url=` — those don't work, confirmed by hand), filtered client-side to a `repo_url` match. Blank if never registered (most projects). |
+| `openssf_best_practices_badge_level` | `in_progress` / `passing` / `silver` / `gold`, from the same lookup. |
+| `openssf_scorecard_url` | `https://scorecard.dev/viewer/?uri=github.com/<org>/<repo>` if OpenSSF Scorecard has ever scanned the repo — via the public `api.scorecard.dev` API. Blank if never scanned. |
+| `openssf_scorecard_score` | Aggregate score, 0–10, from the same API. |
+| `openssf_scorecard_branch_protection`, `openssf_scorecard_code_review`, `openssf_scorecard_maintained`, `openssf_scorecard_vulnerabilities` | Four individual Scorecard check scores (0–10), picked as the highest-signal checks for "is this tool safe to recommend" out of the ~18 Scorecard reports. **A score of `-1` means Scorecard could not evaluate that check** (confirmed on a real catalogued tool — an auth/permission limit on Scorecard's own scanning infrastructure, not a finding about the repo) — read `-1` as "unknown", never as "worst possible score." The full per-check breakdown (Binary-Artifacts, CI-Tests, Fuzzing, Pinned-Dependencies, SAST, Signed-Releases, Token-Permissions, ...) is always re-fetchable from `openssf_scorecard_url`'s API if another check becomes worth its own column. |
+| `development_status` | From `codemeta.json`'s `developmentStatus` — typically a [repostatus.org](https://www.repostatus.org/) or tidyverse-lifecycle URL/label (e.g. `active`, `wip`, `inactive`, `unsupported`). A maturity signal independent of raw activity counts. Blank if no `codemeta.json`. |
+| `paper_url` | DOI or URL of an academic paper describing the tool, if one exists — checked in order from `codemeta.json`'s `citation[].url` (more structured, checked first) and `CITATION.cff`'s `preferred-citation.doi`/`.url` (very common in this catalog's domain — confirmed present on scikit-learn, deepchecks, and others). Blank if the tool has no associated publication. |
+| `software_heritage_id` | [Software Heritage](https://www.softwareheritage.org/) archival identifier (a `swh:1:...` SWHID), if the project has explicitly recorded one — from `CITATION.cff`'s `identifiers` (`type: swh`) or `codemeta.json`'s `@id`. Blank for the large majority of tools, which don't record this even if Software Heritage has in fact archived them (Software Heritage archives essentially all public GitHub repos automatically — this column only reflects whether the *project itself* advertises a citable SWHID, not whether an archival copy exists at all). |
+
+`funding` (the existing column, from the original schema — a plain URL) is
+auto-enriched by `collect_project_metadata.py` when blank, checked in order:
+`.github/FUNDING.yml` (parsed, GitHub's own platform keys mapped to their
+canonical URLs — `github` → GitHub Sponsors, `open_collective`, `patreon`,
+`ko_fi`, `tidelift`, `custom`, etc.), then `pyproject.toml`'s
+`[project.urls]` table matched case/punctuation-insensitively against the
+PyPA well-known label `Funding` (confirmed against real projects using both
+`funding` lowercase and `Funding` capitalized), then `codemeta.json`'s own
+`funding` field if it's URL-shaped. First hit wins; every candidate found is
+still logged at collection time so a human can see what was passed over. The
+script never overwrites an existing `funding` value — enrichment only, same
+"don't override curated content" rule as everywhere else in this pipeline.
 
 **`framework` tab** — descriptive metadata about each framework/regulation
 itself, one row per `key` in `config.yaml`'s `frameworks:` list. This keeps

@@ -14,23 +14,6 @@
   {% endif %}
   {% if tool.summary %}<p>{{ tool.summary }}</p>{% endif %}
 
-  {% if tool.implement %}
-  <p>
-    <span class="tool-row-label">Helps implement:</span>
-    {% for term in tool.implement %}
-    <a class="chip chip-{{ term.framework }} chip-{{ term.id }}" href="{{ root }}frameworks/{{ term.framework }}/{{ term.id }}.html"><span class="chip-ns">{{ term.framework }}</span>{{ term.name }}</a>
-    {% endfor %}
-  </p>
-  {% endif %}
-  {% if tool.eval %}
-  <p>
-    <span class="tool-row-label">Helps evaluate/audit:</span>
-    {% for term in tool.eval %}
-    <a class="chip chip-{{ term.framework }} chip-{{ term.id }}" href="{{ root }}frameworks/{{ term.framework }}/{{ term.id }}.html"><span class="chip-ns">{{ term.framework }}</span>{{ term.name }}</a>
-    {% endfor %}
-  </p>
-  {% endif %}
-
   <ul class="tool-links">
     {% if tool.homepage %}<li><a href="{{ tool.homepage }}">Homepage</a></li>{% endif %}
     {% if tool.source %}<li><a href="{{ tool.source }}">Source code</a></li>{% endif %}
