@@ -408,6 +408,25 @@ support.
 7. **Below-threshold candidates were not reviewed exhaustively.** The topic
    sweep reviewed all 1,363 deduplicated candidates, but the `<50 star` tier
    was triaged in bulk rather than individually.
+8. **GitHub-derived "usage" signals don't transfer cleanly to non-library
+   tools, and are noisy even for libraries.** `dependents_count` (the
+   `tools` tab's manual-entry-only column for GitHub's dependency-graph
+   "Used by" count — see `docs/data-schema.md`) is a reasonable adoption
+   proxy for a package meant to be imported by other code, but this
+   catalog also includes services, web-based tools, AI agent skills, and
+   marketplace-installed plugins — categories the dependency-graph concept
+   doesn't apply to at all, since nothing declares them as a package
+   dependency regardless of how widely used they are. Even for genuine
+   libraries, GitHub's own dependents count is commonly reported as
+   inflated by forks of downstream dependents (a fork of a project that
+   depends on the library shows up as a separate "dependent," whether or
+   not it diverged meaningfully or is still maintained) — this catalog has
+   not independently verified the exact mechanism, but the caveat is
+   documented here so a future assessor computing any composite
+   project-quality/health score from this catalog's data treats
+   GitHub-sourced dependents counts as a rough, upper-bound signal, not a
+   precise usage measurement, and doesn't penalize non-library tools for
+   structurally being unable to have one at all.
 
 ---
 

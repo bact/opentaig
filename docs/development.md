@@ -12,8 +12,8 @@ in a browser to preview.
 
 For offline development without hitting Google Sheets, set a `file:` path
 under `data.taig` / `data.mapping` / `data.tool_map` / `data.tools` /
-`data.terms` / `data.framework` in `config.yaml` (or a copy of it) to point
-at a local CSV instead of a URL — see
+`data.tool_metadata` / `data.terms` / `data.framework` in `config.yaml` (or
+a copy of it) to point at a local CSV instead of a URL — see
 [`tests/config.local.yaml`](../tests/config.local.yaml) for a working
 example against the fixtures in `tests/fixtures/`.
 
@@ -27,7 +27,7 @@ no `gh-pages` branch is used.
 
 ```text
 config.yaml          site title, sheet ids + tab names, column names, taxonomy order
-build.py              fetch (taig + map + tool_map + tools + terms + framework) -> join by rq_no/id -> render
+build.py              fetch (taig + map + tool_map + tools + tool_metadata + terms + framework) -> join by rq_no/id -> render
 templates/            Jinja2 templates
 assets/               CSS + vanilla JS (client-side search/filter, no network calls)
 tests/fixtures/       local CSV fixtures for offline build verification
@@ -65,6 +65,16 @@ tool-discovery pipeline.
   `select_highlighted_problems()` in `build.py`, alongside `first_words()`,
   which truncates a problem's question to the chip's character budget on a
   word boundary (never mid-word).
+- Project-quality/community-health tool fields (`stars` through
+  `openssf_scorecard_vulnerabilities`) live in a separate `tool_metadata`
+  spreadsheet, 100% written by `curation/collect_project_metadata.py`, not
+  hand-edited. The same field names also exist in `tools` as an optional
+  human override (`build.py`'s `apply_tool_metadata()`/
+  `resolve_metadata_field()`): a non-blank `tools` cell always wins, the
+  literal text `none` forces blank, otherwise `tool_metadata`'s value is
+  used. See "`tools` / `tool_metadata` precedence" in
+  `docs/data-schema.md` for the full rule and why it's split this way
+  (permission isolation for a future write-automation credential).
 - If a sheet is ever made private, swap the CSV-export fetch in
   `fetch_source()` (`build.py`) for the Google Sheets API with a service
   account key stored as a GitHub Actions secret.

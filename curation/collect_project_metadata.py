@@ -1,18 +1,27 @@
 #!/usr/bin/env python3
-"""Collect project-quality / community-health metadata for the `tools` tab
-columns added alongside `programming_language` -- see docs/data-schema.md
-for what each column means. GitHub-only for now (GitLab/Codeberg would need
-their own fetch functions; no tool in the catalog is hosted there yet, so
-they aren't built speculatively -- see the module docstring bottom for what
-that would take).
+"""Collect project-quality / community-health metadata for the
+`tool_metadata` tab -- a separate spreadsheet from the main OpenTAIG one,
+100% written by this script, joined onto `tools` by `id` at build time (see
+"tools / tool_metadata precedence" in build.py and docs/data-schema.md).
+GitHub-only for now (GitLab/Codeberg would need their own fetch functions;
+no tool in the catalog is hosted there yet, so they aren't built
+speculatively -- see the module docstring bottom for what that would take).
 
-Read-only against the live sheet: only ever *reads* `site/data.json` (the
+Read-only against both live sheets: only ever *reads* `site/data.json` (the
 last local `python build.py` output) and public read APIs, and writes a
-review CSV -- it never touches the Google Sheet. A human pastes the columns
-into the matching `id` rows in the live `tools` tab, same review-before-
-merge shape as `backfill_programming_language.py` and `candidate_tools.csv`.
+CSV -- it never touches either Google Sheet directly. Because `tool_metadata`
+is machine-owned (no hand edit ever lives there -- overrides for any field
+always go in `tools` instead, resolved by build.py's precedence rule, not
+here), the CSV this script writes is safe to paste in as a **full
+replacement** of the tab's contents, not a cell-by-cell merge -- there is
+nothing to preserve. Folds in what used to be a separate script,
+`backfill_programming_language.py` (removed): `programming_language` comes
+free from the same repo-core API call already made for stars/forks/etc.,
+so a dedicated script for just that one field was redundant once this one
+existed.
 
-Sources -- one repo costs ~10 GitHub API calls + 2 third-party calls, all
+Sources -- one repo costs ~12-18 GitHub API calls (varies with how many
+security/governance path probes short-circuit) + 2 third-party calls, all
 confirmed by hand against real repos before this script was written, not
 assumed from documentation:
 
@@ -21,8 +30,10 @@ assumed from documentation:
     which has been a silent alias for `stargazers_count` since GitHub folded
     "Watch" into "Star"), open_issues_count (`open_issues_count`; GitHub
     conflates open PRs into this count, a known quirk, not a bug in this
-    script), last_commit_date (`pushed_at`, date part only), and
-    `default_branch` (needed by several probes below).
+    script), last_commit_date (`pushed_at`, date part only),
+    programming_language (`language`, the same single dominant-by-bytes
+    field `backfill_programming_language.py` used to fetch on its own),
+    and `default_branch` (needed by several probes below).
   - `GET /repos/{owner}/{repo}/contributors?per_page=1&anon=true` ->
     approximate contributor count from the `Link: rel="last"` page number
     (paginating 1-per-page makes the last page number equal the count). A
@@ -59,12 +70,12 @@ assumed from documentation:
     case/punctuation-insensitively against the PyPA well-known label
     "Funding" -- confirmed against pandas (`funding`, lowercase) and pytest
     (`Funding`, both real examples)), and `codemeta.json` (`funding` field,
-    when itself URL-shaped) are all tried for a funding URL to enrich the
-    *existing* `funding` column (this script only ever fills it if it's
-    currently blank, same "don't overwrite curated content" rule as
-    everything else here) -- first source with a hit wins, in that order;
-    every candidate found across all three is still logged so a human can
-    see what was passed over. `FUNDING.yml`'s own platform keys (`github`,
+    when itself URL-shaped) are all tried for a `funding` URL, written to
+    `tool_metadata` unconditionally -- "should this override a value
+    someone typed in `tools`" is answered later, by build.py's precedence
+    rule, not here. First source with a hit wins, in that order; every
+    candidate found across all three is still logged so a human can see
+    what was passed over. `FUNDING.yml`'s own platform keys (`github`,
     `patreon`, `open_collective`, `ko_fi`, `tidelift`, `custom`, etc.) are
     mapped to their canonical URLs; `custom` entries are used as-is.
   - `codemeta.json` (rarer in this catalog's domain -- common in the
@@ -130,10 +141,9 @@ markup changes, and bulk-scraping a GitHub HTML page for data with no API
 sits in ToS gray territory that a one-off manual check in a browser doesn't.
 Leave that column for manual spot-checks.
 
-Same GITHUB_TOKEN / session requirement as search_repos.py and
-backfill_programming_language.py -- see either script's docstring, or
-curation/README.md's "Setup" section, for the `gh auth token` vs
-repo-scoped-token distinction.
+Same GITHUB_TOKEN / session requirement as search_repos.py -- see that
+script's docstring, or curation/README.md's "Setup" section, for the
+`gh auth token` vs repo-scoped-token distinction.
 
 By default, only considers `tool_type` "software" rows with a GitHub
 `source` URL and no `stars` value yet (i.e. never collected) -- pass
@@ -141,7 +151,7 @@ By default, only considers `tool_type` "software" rows with a GitHub
 the only way the volatile fields (stars/forks/watchers/contributors/
 open_issues_count/releases_count/scorecard score) actually get refreshed
 after the first pass, since site/data.json only reflects what's already
-live in the sheet. The one-shot/rarely-changing fields (readme_url,
+live in the sheets. The one-shot/rarely-changing fields (readme_url,
 license_url, governance_url, funder, development_status, paper_url,
 software_heritage_id, ...) get re-collected on every `--refresh-all` run
 too, even though they don't need it as often -- there's no per-field
@@ -165,7 +175,7 @@ between tools (default 1s) throttles those too, gently.
 
 Usage:
 
-    python build.py   # refresh site/data.json against the live sheet first
+    python build.py   # refresh site/data.json against both live sheets first
     export GITHUB_TOKEN=$(gh auth token)
     python curation/collect_project_metadata.py               # first run
     python curation/collect_project_metadata.py                # resumes if interrupted
@@ -220,7 +230,7 @@ FUNDING_YML_URL_BUILDERS = {
 }
 
 OUT_FIELDNAMES = [
-    "id", "name", "source",
+    "id", "name", "source", "programming_language",
     "stars", "forks", "watchers", "contributors",
     "open_issues_count", "releases_count", "latest_release_date", "last_commit_date",
     "readme_url", "license_url", "code_of_conduct_url", "contributing_url",
@@ -275,6 +285,12 @@ def fetch_repo_core(session: requests.Session, repo_path: str, warnings: list) -
             "watchers": data.get("subscribers_count"),
             "open_issues_count": data.get("open_issues_count"),
             "last_commit_date": (data.get("pushed_at") or "")[:10],
+            # Same field backfill_programming_language.py used to fetch
+            # separately -- free here, already in this response. Single
+            # dominant-by-bytes language only; a second, genuinely
+            # polyglot language is a manual addition in `tools`, not
+            # something this script infers (see docs/data-schema.md).
+            "programming_language": data.get("language") or "",
             "default_branch": data.get("default_branch") or "main",
         }
     except requests.RequestException as e:
@@ -545,17 +561,16 @@ def fetch_openssf_scorecard(repo_path: str, warnings: list) -> dict:
         return {}
 
 
-def collect_funding(session: requests.Session, repo_path: str, existing_funding: str,
+def collect_funding(session: requests.Session, repo_path: str,
                     codemeta_candidate: str, warnings: list) -> str:
-    """Only fills `funding` if it's currently blank in the sheet -- this
-    script enriches, it doesn't override curated content. Tries
+    """Always computes and returns whatever it finds -- this script writes
+    unconditionally to `tool_metadata`, which is 100% machine-owned;
+    "should this override a curated value" is resolved later, in build.py,
+    by the tools/tool_metadata precedence rule, not here. Tries
     FUNDING.yml, then pyproject.toml's `Funding` project URL, then
     codemeta.json's own `funding` field (only if URL-shaped); first hit
     wins, but every candidate found is logged so a human can see what was
     passed over."""
-    if existing_funding:
-        return existing_funding
-
     candidates = []
     funding_yml = fetch_raw_file(session, repo_path, ".github/FUNDING.yml")
     if funding_yml:
@@ -606,7 +621,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--data-json", default="site/data.json",
                          help="local build output to read the live tool catalog from")
-    parser.add_argument("--out", default="curation/state/project_metadata_backfill.csv")
+    parser.add_argument("--out", default="curation/state/tool_metadata.csv")
     parser.add_argument("--refresh-all", action="store_true",
                          help="re-collect for every eligible tool, not just ones missing `stars`")
     parser.add_argument("--restart", action="store_true",
@@ -708,7 +723,7 @@ def main() -> None:
             paper_url = codemeta.get("paper_url") or citation.get("paper_url", "")
             swh_id = codemeta.get("software_heritage_id") or citation.get("software_heritage_id", "")
 
-            funding = collect_funding(session, repo_path, tool.get("funding", ""),
+            funding = collect_funding(session, repo_path,
                                       codemeta.get("funding_candidate", ""), warnings)
 
             print(f"  [{i}/{len(tools)}] {tool['id']}: "
@@ -752,8 +767,10 @@ def main() -> None:
         out_file.close()
 
     total_in_file = len(load_checkpointed_ids(out_path))
-    print(f"\n{out_path} now has {total_in_file} row(s) total -- review, then paste into "
-          f"the matching `id` rows in the live sheet.")
+    print(f"\n{out_path} now has {total_in_file} row(s) total -- review, then paste in as "
+          f"a full replacement of the `tool_metadata` sheet's contents (safe: nothing there "
+          f"is ever hand-edited). Use --restart on a periodic full refresh to also drop rows "
+          f"for tools removed from the catalog since the last run.")
     if unresolvable_source:
         print(f"\n{len(unresolvable_source)} tool(s) have no GitHub-style `source` URL "
               f"and need a manual look (or a GitLab/Codeberg fetch path this script doesn't have yet):")

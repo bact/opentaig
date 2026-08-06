@@ -6,8 +6,10 @@
 
 """Build script for OpenTAIG.
 
-Generates a static site from TWO decoupled Google Sheets, joined by research
-question number (rq_no) (the problem number in the TAIG paper).
+Generates a static site from THREE decoupled Google Sheets: the upstream
+TAIG sheet, joined by research question number (rq_no, the problem number
+in the TAIG paper); our own OpenTAIG sheet; and a separate tool_metadata
+sheet, joined onto tools by id.
 
   * "taig"     -- upstream TAIG paper data (question text + taxonomy +
                  citations + expertise). The spine of the site.
@@ -18,9 +20,19 @@ question number (rq_no) (the problem number in the TAIG paper).
                  (rq_no, tool_id, role) pairing plus a rationale, rather
                  than a semicolon list, so a tool can answer more than one
                  RQ and each pairing can carry its own explanation.
-  * "tools"    -- our open-source tool catalog (a tab in the mapping sheet).
+  * "tools"    -- our open-source tool catalog (a tab in the OpenTAIG
+                 sheet). Identity fields (name/license/homepage/...) plus
+                 an optional human override for every project-quality/
+                 community-health field also in "tool_metadata" below --
+                 see apply_tool_metadata()/resolve_metadata_field().
+  * "tool_metadata" -- auto-collected project-quality/community-health data
+                 per tool (a separate spreadsheet from OpenTAIG, so a future
+                 write-automation credential can be scoped to touch only
+                 this one), 100% written by
+                 curation/collect_project_metadata.py. Joined onto "tools"
+                 by id; never hand-edited.
   * "terms"    -- our RGAF/EU_AI_Act/UNESCO/ASEAN/CoE term catalog (a tab in
-                 the mapping sheet), one shared tab across all frameworks,
+                 the OpenTAIG sheet), one shared tab across all frameworks,
                  with globally-unique namespaced ids (e.g. `euaiact-a8`).
 
 Renders the site with Jinja2. Designed to run once per generation (manually,
@@ -80,14 +92,28 @@ class Tool:
     tool_type: str = ""
     summary: str = ""
     license: str = ""
-    programming_languages: list = dataclasses.field(default_factory=list)  # list[str]
     homepage: str = ""
     source: str = ""
     documentation: str = ""
-    funding: str = ""
+    # `tools`' own freshness -- when this row was discovered/last hand-
+    # edited. Distinct from `metadata_freshness` below: the two tabs carry
+    # independent datetimes, one for curation, one for auto-collection --
+    # never merged into a single value, same reasoning as Problem's
+    # `mapping_freshness` staying separate from each RQ's own freshness.
     freshness: Freshness = dataclasses.field(default_factory=Freshness)
-    # Project-quality / community-health signals -- see docs/data-schema.md.
-    # A collection-time snapshot, not a live value; GitHub-only for now.
+    # `tool_metadata`'s own freshness -- when collect_project_metadata.py
+    # last (re-)collected this tool. Blank Freshness() if the tool has no
+    # tool_metadata row yet (never collected).
+    metadata_freshness: Freshness = dataclasses.field(default_factory=Freshness)
+    # Every field below is resolved by apply_tool_metadata() from BOTH the
+    # `tools` tab (a human override, or the literal token "none" to force
+    # blank) and the `tool_metadata` tab (collect_project_metadata.py's
+    # output) -- see METADATA_FIELDS / resolve_metadata_field() above.
+    # Never set directly by build_tool_catalog(). A collection-time
+    # snapshot, not a live value; GitHub-only for now.
+    programming_languages: list = dataclasses.field(default_factory=list)  # list[str]
+    funding: str = ""
+    funder: str = ""
     stars: Optional[int] = None
     forks: Optional[int] = None
     watchers: Optional[int] = None
@@ -104,7 +130,6 @@ class Tool:
     governance_url: str = ""
     sbom_url: str = ""
     dependents_count: Optional[int] = None  # not auto-collected; manual-entry only
-    funder: str = ""
     development_status: str = ""
     paper_url: str = ""
     software_heritage_id: str = ""
@@ -200,6 +225,79 @@ def parse_optional_float(value: Optional[str], context: str, warnings: list) -> 
     except ValueError:
         warnings.append(f"{context}: expected a number, got {text!r} -- ignoring")
         return None
+
+
+# --------------------------------------------------------------------------
+# tools / tool_metadata precedence
+#
+# Every project-quality/community-health field is collectible by
+# collect_project_metadata.py into the `tool_metadata` tab, but can also be
+# hand-set directly in `tools` -- e.g. to correct a bad auto-collected value,
+# or to fill in `dependents_count`, which is never auto-collected at all. One
+# uniform rule for all of them, applied per field, not per tool:
+#
+#   - a non-blank `tools` cell always wins, parsed as that field's own type
+#   - the literal token "none" (case-insensitive) in `tools` means
+#     "explicitly reviewed and suppressed" -- final value is blank/None,
+#     NOT the tool_metadata value. This is what lets a human say "I know the
+#     collector found something here, and I want nothing shown" -- an empty
+#     `tools` cell alone can't express that, since it's indistinguishable
+#     from "never reviewed" and would otherwise just fall through.
+#   - a blank `tools` cell (anything else, including truly empty) falls
+#     through to `tool_metadata`'s collected value
+#
+# This makes `tool_metadata` 100% machine-owned -- a collection run can
+# safely overwrite the whole tab, since no hand edit ever lives there; every
+# override, for any field, always goes in `tools` instead.
+METADATA_INT_FIELDS = {"stars", "forks", "watchers", "contributors",
+                        "open_issues_count", "releases_count", "dependents_count"}
+METADATA_FLOAT_FIELDS = {"openssf_scorecard_score", "openssf_scorecard_branch_protection",
+                          "openssf_scorecard_code_review", "openssf_scorecard_maintained",
+                          "openssf_scorecard_vulnerabilities"}
+METADATA_LIST_FIELDS = {"programming_language"}  # semicolon list; resolved as a whole raw string, split by the caller
+NONE_TOKEN = "none"
+
+# Every project-quality/community-health field, in the order they're laid
+# out in both the `tools` and `tool_metadata` tabs. Deliberately excludes
+# identity columns (id, tool_type, name, summary, license, homepage, source,
+# documentation) and freshness columns, which are `tools`-only with no
+# tool_metadata counterpart or precedence logic.
+METADATA_FIELDS = [
+    "programming_language", "funding", "funder",
+    "stars", "forks", "watchers", "contributors",
+    "last_commit_date", "open_issues_count", "releases_count", "latest_release_date",
+    "readme_url", "license_url", "governance_url", "contributing_url",
+    "code_of_conduct_url", "security_policy_url", "sbom_url",
+    "dependents_count", "paper_url",
+    "openssf_best_practices_url", "openssf_best_practices_badge_level",
+    "openssf_scorecard_url", "openssf_scorecard_score",
+    "openssf_scorecard_branch_protection", "openssf_scorecard_code_review",
+    "openssf_scorecard_maintained", "openssf_scorecard_vulnerabilities",
+    "development_status", "software_heritage_id",
+]
+
+
+def resolve_metadata_field(tools_raw: Optional[str], metadata_raw: Optional[str],
+                            field: str, context: str, warnings: list):
+    """One field, one tool: apply the tools/tool_metadata precedence rule
+    described above and return the correctly-typed final value (str, or
+    Optional[int]/Optional[float] per METADATA_INT_FIELDS/METADATA_FLOAT_FIELDS).
+    `programming_language` (METADATA_LIST_FIELDS) is returned as the winning
+    *raw* string, not yet split -- the caller runs it through
+    split_simple_list() itself, same as any other programming_language cell."""
+    tools_text = clean(tools_raw)
+    if tools_text.lower() == NONE_TOKEN:
+        winning_raw = ""
+    elif tools_text:
+        winning_raw = tools_text
+    else:
+        winning_raw = clean(metadata_raw)
+
+    if field in METADATA_INT_FIELDS:
+        return parse_optional_int(winning_raw, context, warnings)
+    if field in METADATA_FLOAT_FIELDS:
+        return parse_optional_float(winning_raw, context, warnings)
+    return winning_raw
 
 
 def fetch_source(source_cfg: dict, label: str, warnings: list) -> str:
@@ -348,9 +446,16 @@ def safe_id_for_path(tool_id: str) -> str:
 # Build tool catalog
 # --------------------------------------------------------------------------
 
-def build_tool_catalog(rows: list, colmap: dict, warnings: list) -> dict:
-    """Return {id: Tool}."""
+def build_tool_catalog(rows: list, colmap: dict, warnings: list) -> tuple:
+    """Return ({id: Tool}, {id: raw row dict}). Only identity fields (id,
+    tool_type, name, summary, license, homepage, source, documentation) and
+    freshness are set on the Tool here -- every project-quality/community-
+    health field (including the raw, not-yet-typed `programming_language`/
+    `funding`/`funder` cells) is resolved afterward by apply_tool_metadata(),
+    against both this tab and `tool_metadata`. The raw row dict returned
+    alongside the catalog is what that merge reads `tools`' own cells from."""
     catalog = {}
+    raw_rows = {}
     for i, row in enumerate(rows):
         raw_id = (row.get(colmap["id"]) or "").strip()
         if not raw_id:
@@ -359,16 +464,6 @@ def build_tool_catalog(rows: list, colmap: dict, warnings: list) -> dict:
             warnings.append(f"tools row {i + 2}: duplicate tool id {raw_id!r}, overwriting earlier entry")
 
         ctx = f"tools row {i + 2} ({raw_id!r})"
-
-        def col_int(key: str) -> Optional[int]:
-            return parse_optional_int(row.get(colmap[key]), f"{ctx} [{key}]", warnings)
-
-        def col_float(key: str) -> Optional[float]:
-            return parse_optional_float(row.get(colmap[key]), f"{ctx} [{key}]", warnings)
-
-        def col_str(key: str) -> str:
-            return (row.get(colmap[key]) or "").strip()
-
         catalog[raw_id] = Tool(
             id=raw_id,
             slug=safe_id_for_path(raw_id),
@@ -376,42 +471,61 @@ def build_tool_catalog(rows: list, colmap: dict, warnings: list) -> dict:
             tool_type=(row.get(colmap["tool_type"]) or "").strip(),
             summary=(row.get(colmap["summary"]) or "").strip(),
             license=(row.get(colmap["license"]) or "").strip(),
-            programming_languages=split_simple_list(row.get(colmap["programming_language"])),
-            homepage=col_str("homepage"),
-            source=col_str("source"),
-            documentation=col_str("documentation"),
-            funding=col_str("funding"),
+            homepage=(row.get(colmap["homepage"]) or "").strip(),
+            source=(row.get(colmap["source"]) or "").strip(),
+            documentation=(row.get(colmap["documentation"]) or "").strip(),
             freshness=parse_freshness(row, colmap, warnings, ctx),
-            stars=col_int("stars"),
-            forks=col_int("forks"),
-            watchers=col_int("watchers"),
-            contributors=col_int("contributors"),
-            open_issues_count=col_int("open_issues_count"),
-            releases_count=col_int("releases_count"),
-            latest_release_date=col_str("latest_release_date"),
-            last_commit_date=col_str("last_commit_date"),
-            readme_url=col_str("readme_url"),
-            license_url=col_str("license_url"),
-            code_of_conduct_url=col_str("code_of_conduct_url"),
-            contributing_url=col_str("contributing_url"),
-            security_policy_url=col_str("security_policy_url"),
-            governance_url=col_str("governance_url"),
-            sbom_url=col_str("sbom_url"),
-            dependents_count=col_int("dependents_count"),
-            funder=col_str("funder"),
-            development_status=col_str("development_status"),
-            paper_url=col_str("paper_url"),
-            software_heritage_id=col_str("software_heritage_id"),
-            openssf_best_practices_url=col_str("openssf_best_practices_url"),
-            openssf_best_practices_badge_level=col_str("openssf_best_practices_badge_level"),
-            openssf_scorecard_url=col_str("openssf_scorecard_url"),
-            openssf_scorecard_score=col_float("openssf_scorecard_score"),
-            openssf_scorecard_branch_protection=col_float("openssf_scorecard_branch_protection"),
-            openssf_scorecard_code_review=col_float("openssf_scorecard_code_review"),
-            openssf_scorecard_maintained=col_float("openssf_scorecard_maintained"),
-            openssf_scorecard_vulnerabilities=col_float("openssf_scorecard_vulnerabilities"),
         )
-    return catalog
+        raw_rows[raw_id] = row
+    return catalog, raw_rows
+
+
+def apply_tool_metadata(tool_catalog: dict, tools_raw_rows: dict, metadata_rows: list,
+                        colmap_tools: dict, colmap_metadata: dict, warnings: list) -> None:
+    """Resolve every field in METADATA_FIELDS for every tool, per the
+    tools/tool_metadata precedence rule documented above
+    resolve_metadata_field(), and set it on the matching Tool in place.
+
+    Runs for every tool in `tool_catalog`, not just ones with a
+    `tool_metadata` row -- a `tools`-tab override (or an explicit "none")
+    still applies even for a tool the collector hasn't reached yet; it just
+    resolves against an empty metadata side."""
+    metadata_by_id = {}
+    for i, row in enumerate(metadata_rows):
+        raw_id = (row.get(colmap_metadata["id"]) or "").strip()
+        if not raw_id:
+            continue
+        if raw_id not in tool_catalog:
+            warnings.append(
+                f"tool_metadata row {i + 2}: id {raw_id!r} not found in the tools tab "
+                f"(orphaned metadata row -- typo, or the tool was since removed)"
+            )
+            continue
+        if raw_id in metadata_by_id:
+            warnings.append(f"tool_metadata row {i + 2}: duplicate tool id {raw_id!r}, overwriting earlier entry")
+        metadata_by_id[raw_id] = row
+
+    for raw_id, tool in tool_catalog.items():
+        tools_row = tools_raw_rows.get(raw_id, {})
+        metadata_row = metadata_by_id.get(raw_id, {})
+        ctx = f"tool {raw_id!r}"
+
+        for field in METADATA_FIELDS:
+            tools_col = colmap_tools.get(field)
+            metadata_col = colmap_metadata.get(field)
+            tools_raw = tools_row.get(tools_col) if tools_col else None
+            metadata_raw = metadata_row.get(metadata_col) if metadata_col else None
+            value = resolve_metadata_field(tools_raw, metadata_raw, field, f"{ctx} [{field}]", warnings)
+            if field in METADATA_LIST_FIELDS:
+                tool.programming_languages = split_simple_list(value)
+            else:
+                setattr(tool, field, value)
+
+        # tool_metadata's own freshness, kept separate from `tools`' --
+        # blank Freshness() if this tool has no tool_metadata row yet.
+        if metadata_row:
+            tool.metadata_freshness = parse_freshness(metadata_row, colmap_metadata, warnings,
+                                                       f"tool_metadata ({raw_id!r})")
 
 
 # --------------------------------------------------------------------------
@@ -1189,6 +1303,7 @@ def main() -> None:
     mapping_csv = fetch_source(config["data"]["mapping"], "mapping", warnings)
     tool_map_csv = fetch_source(config["data"]["tool_map"], "tool_map", warnings)
     tools_csv = fetch_source(config["data"]["tools"], "tools", warnings)
+    tool_metadata_csv = fetch_source(config["data"]["tool_metadata"], "tool_metadata", warnings)
     terms_csv = fetch_source(config["data"]["terms"], "terms", warnings)
     framework_csv = fetch_source(config["data"]["framework"], "framework", warnings)
 
@@ -1196,6 +1311,7 @@ def main() -> None:
     mapping_rows = parse_csv_text(mapping_csv)
     tool_map_rows = parse_csv_text(tool_map_csv)
     tools_rows = parse_csv_text(tools_csv)
+    tool_metadata_rows = parse_csv_text(tool_metadata_csv)
     terms_rows = parse_csv_text(terms_csv)
     framework_rows = parse_csv_text(framework_csv)
 
@@ -1207,7 +1323,9 @@ def main() -> None:
     facet_defs = list(framework_defs) + [expertise_def]
 
     terms_catalog = build_terms_catalog(terms_rows, colmap["terms"], warnings)
-    tool_catalog = build_tool_catalog(tools_rows, colmap["tools"], warnings)
+    tool_catalog, tools_raw_rows = build_tool_catalog(tools_rows, colmap["tools"], warnings)
+    apply_tool_metadata(tool_catalog, tools_raw_rows, tool_metadata_rows,
+                        colmap["tools"], colmap["tool_metadata"], warnings)
     mapping_index = build_mapping_index(mapping_rows, colmap["mapping"], framework_defs, warnings)
     tool_role_index = build_tool_role_index(tool_map_rows, colmap["tool_map"], warnings)
 

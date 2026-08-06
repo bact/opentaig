@@ -21,9 +21,11 @@ and
 ## How it works
 
 The site is **fully static**, hosted on **GitHub Pages**, and generated from
-two Google Sheets once per build — the upstream TAIG question set, and our
-own framework mappings + tool catalog. There is no backend and no database:
-the sheets are the only editable source of truth, and everything else
+three Google Sheets once per build — the upstream TAIG question set, our own
+framework mappings + tool catalog, and auto-collected project-quality data
+for each tool (kept in its own sheet so a future automation credential can
+be scoped to write only there). There is no backend and no database: the
+sheets are the only editable source of truth, and everything else
 (including the site itself) is generated from them.
 
 The build runs automatically in GitHub Actions (on every push to `main`,

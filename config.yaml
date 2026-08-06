@@ -21,8 +21,8 @@ site:
 output_dir: "site"
 
 # --- Data sources -----------------------------------------------------------
-# The site is generated from TWO decoupled Google Sheets, joined by research
-# question number (rq_no):
+# The site is generated from THREE decoupled Google Sheets, joined by
+# research question number (rq_no) or tool id:
 #
 #   1. "taig"     -- the upstream TAIG paper data (question text + taxonomy +
 #                   citations + expertise). Manually kept in sync with the
@@ -43,19 +43,29 @@ output_dir: "site"
 #                   not a special case.
 #   4. "tools"    -- OUR open-source tool catalog (a tab in the OpenTAIG
 #                   sheet), referenced by id from the tool_map tab's
-#                   tool_id column.
-#   5. "terms"    -- OUR RGAF/EUAIAct/UNESCOAI/ASEANAI/CoEAI/AIAAIC term catalog
+#                   tool_id column. Identity fields, plus an optional human
+#                   override for every field also in "tool_metadata" below
+#                   -- see the `tools:` columns block further down for the
+#                   precedence rule.
+#   5. "tool_metadata" -- auto-collected project-quality/community-health
+#                   data per tool, keyed by id -- a SEPARATE spreadsheet
+#                   from OpenTAIG (deliberately, so a future write-
+#                   automation credential can be scoped to touch only this
+#                   one), 100% written by
+#                   curation/collect_project_metadata.py, never hand-edited.
+#   6. "terms"    -- OUR RGAF/EUAIAct/UNESCOAI/ASEANAI/CoEAI/AIAAIC term catalog
 #                   (a tab in the OpenTAIG sheet), one shared tab across all
 #                   frameworks listed in `frameworks:` below, referenced by id
-#                   from the mapping tab's framework columns (and from
-#                   tools.implement/tools.eval).
-#   6. "framework" -- OUR descriptive metadata about each framework/
+#                   from the mapping tab's framework columns.
+#   7. "framework" -- OUR descriptive metadata about each framework/
 #                   regulation/recommendation itself (name, homepage, source
 #                   document, publishing body), one row per framework key.
 #
 # The OpenTAIG sheet's tabs are literally named "map", "tool_map", "tools",
 # "terms", "framework". (Any "tools_*_seed" tab, e.g. "tools_rgaf_seed", is a
 # curation-only seed/staging tab -- the build reads only "tools".)
+# "tool_metadata" lives in its own spreadsheet, with its own tab literally
+# named "tool_metadata".
 #
 # Each sheet must be shared as "Anyone with the link" (Viewer) so the CSV
 # export endpoint works without credentials. Each source below is looked up
@@ -83,6 +93,17 @@ data:
   tools:
     sheet_id: "1netgfFKee13Z3_i-ructJkgg08HAPlBKgF-a35bs_ks"
     sheet_name: "tools"
+    file: null
+  # A SEPARATE spreadsheet, deliberately -- not another tab in the OpenTAIG
+  # sheet above. `tool_metadata` is 100% machine-written by
+  # curation/collect_project_metadata.py and safe to bulk-overwrite on every
+  # collection run; keeping it in its own file means a future automation
+  # credential can be granted write access to only this spreadsheet, never
+  # the hand-curated `tools`/`tool_map`/`map` tabs. See "tools /
+  # tool_metadata precedence" in build.py and docs/data-schema.md.
+  tool_metadata:
+    sheet_id: "1A3lTBGtMp8yCmW0ziFMdNG9ezGHsnKKd-oFZDjL7IHI"
+    sheet_name: "tool_metadata"
     file: null
   terms:
     sheet_id: "1netgfFKee13Z3_i-ructJkgg08HAPlBKgF-a35bs_ks"
@@ -114,13 +135,16 @@ columns:
   # live in the separate `tool_map` tab, not here.
   #
   # `datetime_added`/`datetime_checked`/`datetime_updated` (present on every
-  # OUR tab below -- mapping, tool_map, tools, terms, framework) are
-  # freshness bookkeeping, not build inputs: when a row was first added, when
-  # it was last reviewed for staleness, and when its content last actually
-  # changed (a review that confirms nothing changed updates only
-  # `datetime_checked`). Not yet used by any build logic or rendered on the
-  # site -- currently just carried through into data.json so a future
-  # scheduler/crawler can read them to decide what needs re-fetching. Blank
+  # OUR tab below -- mapping, tool_map, tools, tool_metadata, terms,
+  # framework) are freshness bookkeeping, not build inputs: when a row was
+  # first added, when it was last reviewed for staleness, and when its
+  # content last actually changed (a review that confirms nothing changed
+  # updates only `datetime_checked`). `tools` and `tool_metadata` carry
+  # independent freshness -- curation activity vs. collection activity,
+  # never merged (see `tools:` columns below). Not yet used by any build
+  # logic or rendered on the site -- currently just carried through into
+  # data.json so a future scheduler/crawler can read them to decide what
+  # needs re-fetching. Blank
   # is valid (older rows predate the columns).
   mapping:
     rq_no: "rq_no"
@@ -140,27 +164,43 @@ columns:
     datetime_added: "datetime_added"
     datetime_checked: "datetime_checked"
     datetime_updated: "datetime_updated"
+  # Identity columns (id/tool_type/name/summary/license/homepage/source/
+  # documentation) are always sourced from here, full stop -- no
+  # tool_metadata counterpart, no precedence logic.
+  #
+  # Every OTHER column below (programming_language through
+  # openssf_scorecard_vulnerabilities) also exists in `tool_metadata`
+  # (config.data.tool_metadata, a separate spreadsheet), which
+  # collect_project_metadata.py writes to. Same column name in both tabs;
+  # build.py resolves ONE final value per field per tool, per this rule
+  # (see resolve_metadata_field() in build.py for the exact logic):
+  #
+  #   - a non-blank cell HERE (in `tools`) always wins, as a human override
+  #   - the literal text "none" (case-insensitive) HERE means "reviewed,
+  #     deliberately blank" -- suppresses the tool_metadata value instead
+  #     of falling through to it. A plain empty cell is NOT the same thing:
+  #     it means "never reviewed" and falls through as normal.
+  #   - otherwise, tool_metadata's collected value is used
+  #
+  # This is what makes `tool_metadata` 100% safe to bulk-overwrite on every
+  # automated collection run -- no hand edit ever lives there; every
+  # override, for any field, always goes here in `tools` instead.
+  # `dependents_count` is the one field with nothing to fall through to
+  # (never auto-collected, no public API for GitHub's dependency-graph
+  # count) -- same column, same override mechanism, just always resolves
+  # to whatever's here since tool_metadata's side is always blank.
   tools:
     id: "id"
     tool_type: "tool_type"
     name: "name"
     summary: "summary"
     license: "license"
-    # Implementation language(s), semicolon-separated if more than one (e.g.
-    # "Python; Rust"). Only meaningful for tool_type "software" -- leave
-    # blank for "specification" rows, which have no source code to have a
-    # language.
-    programming_language: "programming_language"
     homepage: "homepage"
     source: "source"
     documentation: "documentation"
+    programming_language: "programming_language"
     funding: "funding"
-    # Project-quality / community-health signals, collected via
-    # curation/collect_project_metadata.py (GitHub-only for now). See
-    # docs/data-schema.md for what each one means and how it's sourced --
-    # several (stars/forks/watchers/contributors) are a collection-time
-    # snapshot, not a live value. dependents_count is NOT auto-collected
-    # (no public API for GitHub's dependency-graph count); manual-entry only.
+    funder: "funder"
     stars: "stars"
     forks: "forks"
     watchers: "watchers"
@@ -177,12 +217,6 @@ columns:
     governance_url: "governance_url"
     sbom_url: "sbom_url"
     dependents_count: "dependents_count"
-    # `funding` (see above, existing column) is auto-enriched by
-    # collect_project_metadata.py from FUNDING.yml / pyproject.toml /
-    # codemeta.json when blank -- only ever fills it in, never overwrites a
-    # curated value. `funder` (who funded it -- an org/person name) is a
-    # distinct CodeMeta concept from `funding` (a URL to fund/cite it).
-    funder: "funder"
     development_status: "development_status"
     paper_url: "paper_url"
     software_heritage_id: "software_heritage_id"
@@ -193,6 +227,47 @@ columns:
     # Individual OpenSSF Scorecard check scores (0-10; -1 means Scorecard
     # could not evaluate that check, not a real score -- see
     # collect_project_metadata.py's docstring).
+    openssf_scorecard_branch_protection: "openssf_scorecard_branch_protection"
+    openssf_scorecard_code_review: "openssf_scorecard_code_review"
+    openssf_scorecard_maintained: "openssf_scorecard_maintained"
+    openssf_scorecard_vulnerabilities: "openssf_scorecard_vulnerabilities"
+    datetime_added: "datetime_added"
+    datetime_checked: "datetime_checked"
+    datetime_updated: "datetime_updated"
+  # Machine-written by curation/collect_project_metadata.py, one row per
+  # tool id -- see the big comment on `tools` above for the precedence
+  # rule. `name`/`source` are read-only reference columns for a human
+  # skimming this sheet (build.py ignores them, identity always comes from
+  # `tools`); every other column name matches `tools`' own exactly.
+  tool_metadata:
+    id: "id"
+    name: "name"
+    source: "source"
+    programming_language: "programming_language"
+    funding: "funding"
+    funder: "funder"
+    stars: "stars"
+    forks: "forks"
+    watchers: "watchers"
+    contributors: "contributors"
+    open_issues_count: "open_issues_count"
+    releases_count: "releases_count"
+    latest_release_date: "latest_release_date"
+    last_commit_date: "last_commit_date"
+    readme_url: "readme_url"
+    license_url: "license_url"
+    code_of_conduct_url: "code_of_conduct_url"
+    contributing_url: "contributing_url"
+    security_policy_url: "security_policy_url"
+    governance_url: "governance_url"
+    sbom_url: "sbom_url"
+    development_status: "development_status"
+    paper_url: "paper_url"
+    software_heritage_id: "software_heritage_id"
+    openssf_best_practices_url: "openssf_best_practices_url"
+    openssf_best_practices_badge_level: "openssf_best_practices_badge_level"
+    openssf_scorecard_url: "openssf_scorecard_url"
+    openssf_scorecard_score: "openssf_scorecard_score"
     openssf_scorecard_branch_protection: "openssf_scorecard_branch_protection"
     openssf_scorecard_code_review: "openssf_scorecard_code_review"
     openssf_scorecard_maintained: "openssf_scorecard_maintained"

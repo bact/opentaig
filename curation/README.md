@@ -145,9 +145,9 @@ judgment steps need a model.
 
 ### Freshness columns
 
-Every tab `build.py` owns (`map`, `tool_map`, `tools`, `terms`, `framework`)
-carries three timestamp columns, and every row is expected to have all
-three filled in:
+Every tab `build.py` owns (`map`, `tool_map`, `tools`, `terms`, `framework`,
+and `tool_metadata` in its own spreadsheet) carries three timestamp
+columns, and every row is expected to have all three filled in:
 
 - **`datetime_added`** — when the row was first added.
 - **`datetime_checked`** — when the row was last reviewed for staleness
@@ -156,12 +156,19 @@ three filled in:
   check that finds nothing new bumps `datetime_checked` only —
   `datetime_updated` stays put.
 
+`tools` and `tool_metadata` each carry their own independent set of these
+three (curation activity vs. collection activity — see "`tools` /
+`tool_metadata` precedence" in `docs/data-schema.md`), never merged into
+one value.
+
 These are purely informational today: `build.py` warns (doesn't fail) if
-any of the three is blank on a row, but no build logic reads or compares
-the values yet. They exist so a future scheduler/crawler can decide what's
-stale enough to re-fetch. `emit_candidates.py` stamps all three to the same
-run timestamp on newly emitted rows, since a row that's just been added has
-also, trivially, just been checked and updated.
+any of the three is blank on a row, but no build logic compares the values
+to decide staleness yet — they're carried through to `data.json` as-is.
+They exist so a future scheduler/crawler can decide what's stale enough to
+re-fetch. `emit_candidates.py` stamps all three to the same run timestamp
+on newly emitted rows, since a row that's just been added has also,
+trivially, just been checked and updated; `collect_project_metadata.py`
+does the same for `tool_metadata` rows it writes.
 
 ### Outbound links as judgment signal
 
@@ -930,9 +937,9 @@ Judgment rules (details in curation/README.md — same as phase 1):
   a real, user-facing second implementation language, not an incidental
   scripting/config language mixed into the repo). Leave it blank for
   `tool_type` "specification" rows, which have no source code.
-  Also worth prioritising a batch of `backfill_programming_language.py`
-  against pre-existing tools missing the field, since pass A already has
-  you re-reading the live catalog.
+  Also worth prioritising a batch of `collect_project_metadata.py`
+  against pre-existing tools missing project-quality data, since pass A
+  already has you re-reading the live catalog.
 - One tool legitimately answering several RQs is expected, not a smell.
   This matters more in phase 2 than phase 1 — pass A exists precisely
   because that rule was under-applied when tools were first judged.
@@ -1117,7 +1124,7 @@ rather than assumed from the name alone:
 | --- | --- | --- |
 | `openssf_best_practices_url`/`_badge_level` | [OpenSSF Best Practices Badge](https://www.chaoss.community/kb/metric-openssf-best-practices-badge/) | exact match — CHAOSS names this metric directly |
 | `sbom_url` | [SPDX Document](https://www.chaoss.community/kbtopic/all-metrics/) | exact match in spirit; CHAOSS's version isn't GitHub-specific |
-| `programming_language` | Programming Language Distribution | same idea; CHAOSS's is repo-wide byte-proportion, ours is GitHub's single dominant language (see `backfill_programming_language.py`'s docstring) |
+| `programming_language` | Programming Language Distribution | same idea; CHAOSS's is repo-wide byte-proportion, ours is GitHub's single dominant language (see `collect_project_metadata.py`'s docstring) |
 | `contributors` | [Contributors](https://www.chaoss.community/kbtopic/all-metrics/) | same idea, cruder implementation — see the gap below |
 | `forks` | [Technical Fork](https://www.chaoss.community/kb/metric-technical-fork/) | CHAOSS's definition is platform-agnostic ("independent copies... on code development platforms"); ours is specifically GitHub's fork-button count |
 | `license_url`/`license` | Licenses Declared / OSI Approved Licenses / License Coverage | we already do more here than a single column suggests — `licenses.py`'s OSI/FSF classification (see "Rejection tracking & licence classification") predates this comparison and is closer to CHAOSS's three-metric split than to a single field |
@@ -1219,8 +1226,10 @@ defaults need adjusting after seeing real results).
 
 Quick recap for curation work — see [`docs/data-schema.md`](../docs/data-schema.md)
 for the full column-by-column reference. All tab and column names are
-lowercase with underscores. Five tabs are owned by this pipeline, each
-carrying the three freshness columns above:
+lowercase with underscores. Six sources, across **two spreadsheets**
+(five tabs in `OpenTAIG`, plus the separate `tool_metadata` spreadsheet —
+see "`tools` / `tool_metadata` precedence" in `docs/data-schema.md`), are
+owned by this pipeline, each carrying the three freshness columns above:
 
 - **`map`** — `rq_no` + one column per framework (`rgaf`, `euaiact`,
   `unescoai`, `aseanai`, `coeai`, `aiaaic`) + freshness columns. `aiaaic` is our
@@ -1231,31 +1240,31 @@ carrying the three freshness columns above:
   § Findings, F6.
 - **`tool_map`** — `rq_no, tool_id, role, rationale` + freshness columns.
   One row per `(rq_no, tool_id, role)` pairing.
-- **`tools`** — `id, tool_type, name, summary, license,
-  programming_language, homepage, source, documentation, funding` +
-  freshness columns, plus project-quality/community-health columns
-  (`stars, forks, watchers, contributors, open_issues_count,
-  releases_count, latest_release_date, last_commit_date, readme_url,
-  license_url, code_of_conduct_url, contributing_url, security_policy_url,
-  governance_url, sbom_url, dependents_count, funder, development_status,
-  paper_url, software_heritage_id, openssf_best_practices_url,
-  openssf_best_practices_badge_level, openssf_scorecard_url,
-  openssf_scorecard_score, openssf_scorecard_branch_protection,
-  openssf_scorecard_code_review, openssf_scorecard_maintained,
-  openssf_scorecard_vulnerabilities` — see `docs/data-schema.md` for what
-  each means). `programming_language` (e.g. `Python`, `Rust`;
-  semicolon-separated if the tool is genuinely polyglot) is only
-  meaningful for `tool_type` `software` — leave blank for `specification`
-  rows. Both `programming_language` and the project-quality columns were
-  added after the initial ~130 tools were catalogued; fill them in for
-  every new tool going forward, and see `backfill_programming_language.py`
-  / `collect_project_metadata.py` for retrofitting existing rows.
-  `dependents_count` is the one exception — it's never auto-collected (no
-  public API for GitHub's dependency-graph count), manual-entry only. The
-  existing `funding` column (a plain URL, from the original schema) is
-  auto-enriched by `collect_project_metadata.py` when blank, from
-  `.github/FUNDING.yml` / `pyproject.toml` / `codemeta.json` — see that
-  script's docstring.
+- **`tools`** (in `OpenTAIG`) — `id, tool_type, name, summary, license,
+  homepage, source, documentation` + freshness columns, **plus every
+  project-quality/community-health field also present in `tool_metadata`**
+  (`programming_language, funding, funder, stars, forks, watchers,
+  contributors, open_issues_count, releases_count, latest_release_date,
+  last_commit_date, readme_url, license_url, code_of_conduct_url,
+  contributing_url, security_policy_url, governance_url, sbom_url,
+  dependents_count, development_status, paper_url, software_heritage_id,
+  openssf_best_practices_url, openssf_best_practices_badge_level,
+  openssf_scorecard_url, openssf_scorecard_score,
+  openssf_scorecard_branch_protection, openssf_scorecard_code_review,
+  openssf_scorecard_maintained, openssf_scorecard_vulnerabilities`) — but
+  as an **optional human override**, not the primary source: a non-blank
+  cell here always wins; the literal text `none` (case-insensitive) forces
+  blank instead of falling through; a truly empty cell falls through to
+  `tool_metadata`'s collected value. `dependents_count` is the one field
+  with nothing to fall through to (never auto-collected — no public API
+  for GitHub's dependency-graph count), so it always resolves to whatever
+  is here. Never written to by any script.
+- **`tool_metadata`** (its own spreadsheet) — `id, name, source` (the last
+  two purely for a human skimming the sheet; `build.py` ignores them) +
+  the same project-quality/community-health field list as above, minus
+  `dependents_count`. 100% written by `collect_project_metadata.py`, safe
+  to bulk-overwrite on every run — no hand edit is ever expected here, so
+  there's nothing a collection run could clobber.
 - **`terms`** — `id, framework_id, name, summary, url` + freshness columns.
 - **`framework`** — `id, name, fullname, summary, homepage, source, group`
   + freshness columns.
@@ -1308,44 +1317,46 @@ been triaged (accepted into `tools`/`tool_map`, or rejected) — see
   predicates in [bact/licenseid](https://github.com/bact/licenseid) — see
   that project instead if the input is unstructured license *text* rather
   than an already-resolved SPDX id.
-- **`backfill_programming_language.py`** — built. Reads `site/data.json`
-  for `tool_type` "software" rows missing `programming_language`, looks up
-  GitHub's repo-level `language` field per tool, writes a review CSV
-  (`state/programming_language_backfill.csv`) for pasting into the sheet by
-  hand. Never touches the sheet itself. Needs `GITHUB_TOKEN` + network
-  (see "Setup" above); no model.
-- **`collect_project_metadata.py`** — built. The same read-review-paste
-  shape as the script above, for every project-quality/community-health
-  column plus enriching the existing `funding` column (full list in
-  `docs/data-schema.md`; source-by-source detail is in the script's own
-  docstring, not duplicated here). Pulls from GitHub REST (repo core,
-  contributors, releases, community profile, well-known-path probes for
-  security/governance files, the auto-generated dependency-graph SBOM
+- **`collect_project_metadata.py`** — built. Writes every project-quality/
+  community-health field, unconditionally, to `tool_metadata` (full list
+  in `docs/data-schema.md`; source-by-source detail is in the script's own
+  docstring, not duplicated here). Since `tool_metadata` is 100%
+  machine-owned (see "`tools`/`tool_metadata` precedence" above -- any
+  hand override always lives in `tools` instead, never here), this script
+  never has to check "is this already curated" before writing; that's
+  resolved later, by `build.py`, not at collection time. Folds in what
+  used to be a separate script, `backfill_programming_language.py`
+  (removed) -- `programming_language` comes free from the same repo-core
+  API call already made for stars/forks/etc. Pulls from GitHub REST (repo
+  core, contributors, releases, community profile, well-known-path probes
+  for security/governance files, the auto-generated dependency-graph SBOM
   endpoint, and raw-content reads of `.github/FUNDING.yml`,
   `pyproject.toml`, `codemeta.json`, `CITATION.cff`), plus the public
   bestpractices.dev / api.scorecard.dev APIs (unauthenticated, so the
   GitHub token is never sent to them). NOT `dependents_count`, which has
-  no public API and is deliberately not scraped. Writes
-  `state/project_metadata_backfill.csv`. Defaults to tools missing `stars`
-  (i.e. never collected); pass `--refresh-all` to re-collect the volatile
-  fields (star counts, release counts, Scorecard score, etc.) for
-  everything. Interruption-safe for a full ~130-tool run: prints the
-  GitHub core rate limit and a worst-case call estimate before starting,
-  re-checks every 20 tools and stops early below 100 remaining, writes and
-  flushes each row immediately rather than batching to the end, and skips
-  ids already in `--out` on a re-run (`--restart` to ignore that
-  checkpoint; `--limit N` for a deliberately small batch) -- so a rate
-  limit, network blip, or Ctrl-C loses at most one row, not the whole run.
-  Two real quirks it defends against, both confirmed against
-  live data before being handled rather than assumed from docs: GitHub's
-  community-profile API can return a `license_url` pointing at an
-  unrelated file when its own license detector returns `NOASSERTION` —
-  same blind spot as F3 in `docs/methodology-and-findings.md`, just
-  hitting a different field; and OpenSSF Scorecard's per-check score of
-  `-1` means "could not evaluate," not "worst score." GitHub-only for now;
-  GitLab/Codeberg would need their own fetch functions, not built
-  speculatively since no catalogued tool is hosted there yet. Needs
-  `GITHUB_TOKEN` + network; no model.
+  no public API and is deliberately not scraped -- that one's `tools`-only.
+  Writes `state/tool_metadata.csv`, safe to paste in as a **full
+  replacement** of the tab's contents, not a cell-by-cell merge (nothing
+  there is ever hand-edited). Defaults to tools missing `stars` (i.e.
+  never collected); pass `--refresh-all` to re-collect the volatile fields
+  (star counts, release counts, Scorecard score, etc.) for everything.
+  Interruption-safe for a full ~130-tool run: prints the GitHub core rate
+  limit and a worst-case call estimate before starting, re-checks every 20
+  tools and stops early below 100 remaining, writes and flushes each row
+  immediately rather than batching to the end, and skips ids already in
+  `--out` on a re-run (`--restart` to ignore that checkpoint and also drop
+  rows for tools removed from the catalog since the last run; `--limit N`
+  for a deliberately small batch) -- so a rate limit, network blip, or
+  Ctrl-C loses at most one row, not the whole run. Two real quirks it
+  defends against, both confirmed against live data before being handled
+  rather than assumed from docs: GitHub's community-profile API can
+  return a `license_url` pointing at an unrelated file when its own
+  license detector returns `NOASSERTION` — same blind spot as F3 in
+  `docs/methodology-and-findings.md`, just hitting a different field; and
+  OpenSSF Scorecard's per-check score of `-1` means "could not evaluate,"
+  not "worst score." GitHub-only for now; GitLab/Codeberg would need
+  their own fetch functions, not built speculatively since no catalogued
+  tool is hosted there yet. Needs `GITHUB_TOKEN` + network; no model.
 - **`keyword_matrix.py`** — built. PICOC-style keyword generator over four
   dimensions (target/action/objective/context); prints two-dimension combos
   not already in `state/search_log.csv`. See "Keyword expansion" source 6.

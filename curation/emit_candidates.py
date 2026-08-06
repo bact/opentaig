@@ -60,29 +60,37 @@ once, not once per batch (the previous overwrite-per-run behaviour meant a
 batch's output was silently destroyed by the next batch's run unless it was
 copied out first):
 
-  - `curation/candidate_tools.csv` -- new `tools` tab rows, exact live
-    column order (id, tool_type, name, summary, license,
-    programming_language, homepage, source, documentation, funding,
-    stars, forks, watchers, contributors,
-    open_issues_count, releases_count, latest_release_date,
-    last_commit_date, readme_url, license_url, code_of_conduct_url,
-    contributing_url, security_policy_url, governance_url, sbom_url,
-    dependents_count, funder, development_status, paper_url,
-    software_heritage_id, openssf_best_practices_url,
+  - `curation/candidate_tools.csv` -- new `tools` tab rows, matching the
+    live tab's *current* actual column order (see the comment above
+    `TOOLS_FIELDNAMES` -- nothing enforces the two staying in sync, so
+    re-check against the live header if a paste ever looks misaligned):
+    id, tool_type, name, summary, license, programming_language, homepage,
+    source, documentation, funding, funder, paper_url, dependents_count,
+    datetime_added, datetime_checked, datetime_updated, stars, forks,
+    watchers, contributors, last_commit_date, open_issues_count,
+    releases_count, latest_release_date, readme_url, license_url,
+    governance_url, contributing_url, code_of_conduct_url,
+    security_policy_url, sbom_url, openssf_best_practices_url,
     openssf_best_practices_badge_level, openssf_scorecard_url,
     openssf_scorecard_score, openssf_scorecard_branch_protection,
     openssf_scorecard_code_review, openssf_scorecard_maintained,
-    openssf_scorecard_vulnerabilities, datetime_added, datetime_checked,
-    datetime_updated). `programming_language` should be GitHub's own
-    repo-level `language` field where available (search_repos.py /
-    search_registries.py / search_arxiv.py / snowball.py all already
-    capture it per candidate in state/search_candidates.csv) -- left "" for
-    tool_type "specification", which has no source code to have a
-    language. The project-quality/community-health columns (stars through
-    openssf_scorecard_vulnerabilities) are always left blank here by
-    design -- run `collect_project_metadata.py` after this tool is live
-    and `site/data.json` is rebuilt, rather than having the judging agent
-    guess at star counts or OpenSSF scan status. All three timestamps are stamped with the run time,
+    openssf_scorecard_vulnerabilities, development_status,
+    software_heritage_id. `dependents_count` is `tools`-only, never
+    auto-collected (no public API for GitHub's dependency-graph count) --
+    fill it in by hand if a candidate is worth spot-checking.
+    `programming_language`, `funding`, `funder`, and
+    every project-quality/community-health column (stars through
+    openssf_scorecard_vulnerabilities) are all overrides in `tools` now,
+    not the primary source -- `tool_metadata` (a separate sheet,
+    collect_project_metadata.py's output) is, and build.py resolves one
+    from the other (see "tools / tool_metadata precedence" in
+    docs/data-schema.md). Leave them blank here by design rather than
+    having the judging agent guess at star counts or OpenSSF scan status
+    -- run `collect_project_metadata.py` after this tool is live and
+    `site/data.json` is rebuilt; it'll pick up this new id automatically.
+    Only set one of these fields here if the judgment genuinely needs to
+    force a value the collector would get wrong (the literal token "none"
+    forces blank instead of falling through to tool_metadata). All three timestamps are stamped with the run time,
     since a freshly emitted row was just added, checked, and updated at
     once -- formatted "YYYY-MM-DD HH:MM" (UTC, no seconds, no offset) to
     match every existing datetime_* cell in the live sheet exactly, so
@@ -149,18 +157,24 @@ from pathlib import Path
 
 from licenses import OPEN_CLASSES, classify, load_spdx_index
 
+# Column order matches the live `tools` tab's *current* actual order, which
+# is independent of build.py (a plain DictReader match by name, order-
+# agnostic) and only matters for the "paste without reformatting" promise
+# below -- re-check against the live header if this ever seems to produce a
+# misaligned paste, since nothing enforces the two staying in sync.
 TOOLS_FIELDNAMES = ["id", "tool_type", "name", "summary", "license", "programming_language",
-                     "homepage", "source", "documentation", "funding",
-                     "stars", "forks", "watchers", "contributors",
-                     "open_issues_count", "releases_count", "latest_release_date", "last_commit_date",
-                     "readme_url", "license_url", "code_of_conduct_url", "contributing_url",
-                     "security_policy_url", "governance_url", "sbom_url", "dependents_count",
-                     "funder", "development_status", "paper_url", "software_heritage_id",
+                     "homepage", "source", "documentation", "funding", "funder", "paper_url",
+                     "dependents_count",
+                     "datetime_added", "datetime_checked", "datetime_updated",
+                     "stars", "forks", "watchers", "contributors", "last_commit_date",
+                     "open_issues_count", "releases_count", "latest_release_date",
+                     "readme_url", "license_url", "governance_url", "contributing_url",
+                     "code_of_conduct_url", "security_policy_url", "sbom_url",
                      "openssf_best_practices_url", "openssf_best_practices_badge_level",
                      "openssf_scorecard_url", "openssf_scorecard_score",
                      "openssf_scorecard_branch_protection", "openssf_scorecard_code_review",
                      "openssf_scorecard_maintained", "openssf_scorecard_vulnerabilities",
-                     "datetime_added", "datetime_checked", "datetime_updated"]
+                     "development_status", "software_heritage_id"]
 MAP_FIELDNAMES = ["rq_no", "tool_id", "role", "rationale",
                    "datetime_added", "datetime_checked", "datetime_updated"]  # matches the live tool_map tab's header exactly
 SEEN_FIELDNAMES = ["full_name", "verdict", "reject_category", "note",
@@ -384,10 +398,10 @@ def main() -> None:
                 "security_policy_url": j.get("security_policy_url", ""),
                 "governance_url": j.get("governance_url", ""),
                 "sbom_url": j.get("sbom_url", ""),
-                "dependents_count": j.get("dependents_count", ""),
                 "funder": j.get("funder", ""),
                 "development_status": j.get("development_status", ""),
                 "paper_url": j.get("paper_url", ""),
+                "dependents_count": j.get("dependents_count", ""),
                 "software_heritage_id": j.get("software_heritage_id", ""),
                 "openssf_best_practices_url": j.get("openssf_best_practices_url", ""),
                 "openssf_best_practices_badge_level": j.get("openssf_best_practices_badge_level", ""),
