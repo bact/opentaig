@@ -1648,3 +1648,10 @@ highflame-ai/zeroid,accept,,,Apache-2.0,osi-approved,agent-identity-authenticati
 DeepTrail/deepsecure,accept,,,Apache-2.0,osi-approved,agent-identity-authentication,agent identity authentication,51,2026-08-06T17:20:18+00:00
 newtype-ai/nit-sdk,reject,commercial-sdk,"Thin client SDK for the proprietary newtype-ai.org hosted service; the actual agent-identity verification logic is not open source, only the API wrapper is.",MIT,osi-approved,agent-identity-authentication,AI agent identity verification,92,2026-08-06T17:21:52+00:00
 firstorderai/authenticator_mcp,reject,commercial-sdk,MCP server wrapping firstorder.ai's own proprietary 'Authenticator App' product; fronts a commercial service rather than being a standalone tool.,MIT,osi-approved,agent-identity-authentication,agent authentication protocol,41,2026-08-06T17:21:52+00:00
+bact/licenseid,accept,,,,none-declared,license-collection-automation,,,2026-08-06T22:17:25+00:00
+spdx/spdx-license-matcher,accept,,,,none-declared,license-collection-automation,,,2026-08-06T22:17:25+00:00
+rgopikrishnan91/aikaboom,accept,,,,none-declared,ai-bom-aggregation,,,2026-08-06T22:17:25+00:00
+idlab-discover/aibomgen-cli,accept,,,,none-declared,ai-bom-generation,,,2026-08-06T22:17:25+00:00
+anthonyharrison/mlbomdoc,accept,,,,none-declared,ai-bom-generation,,,2026-08-06T22:17:25+00:00
+CycloneDX/specification,accept,,,Apache-2.0,osi-approved,ai-bom-generation,SBOM,532,2026-08-06T22:17:25+00:00
+bact/pitloom,accept,,,,none-declared,ai-bom-generation,,,2026-08-06T22:19:25+00:00

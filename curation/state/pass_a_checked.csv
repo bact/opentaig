@@ -7,3 +7,12 @@ k8s-aibom,63,match,,2026-08-06T17:15:30+00:00
 sbom-tools,63,match,,2026-08-06T17:15:30+00:00
 trusera-ai-bom,63,match,,2026-08-06T17:15:30+00:00
 xbom,63,match,,2026-08-06T17:15:30+00:00
+licenseid,2,match,,2026-08-06T22:17:25+00:00
+spdx-license-matcher,2,match,,2026-08-06T22:17:25+00:00
+aikaboom,3,match,,2026-08-06T22:17:25+00:00
+aikaboom,63,match,,2026-08-06T22:17:25+00:00
+aibomgen-cli,63,match,,2026-08-06T22:17:25+00:00
+mlbomdoc,63,match,,2026-08-06T22:17:25+00:00
+cyclonedx-spec,63,match,,2026-08-06T22:17:25+00:00
+owasp-aibom-generator,63,match,,2026-08-06T22:17:42+00:00
+pitloom,63,match,,2026-08-06T22:19:25+00:00
