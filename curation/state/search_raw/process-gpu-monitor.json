@@ -1,0 +1,67 @@
+{
+  "keyword": "process GPU monitor",
+  "query": "process GPU monitor stars:>19 pushed:>2025-08-07 archived:false fork:false",
+  "count": 6,
+  "repos": [
+    {
+      "full_name": "Syllo/nvtop",
+      "html_url": "https://github.com/Syllo/nvtop",
+      "description": "GPU & Accelerator process monitoring for AMD, Apple, Huawei, Intel, NVIDIA and Qualcomm",
+      "stars": 10896,
+      "pushed_at": "2026-05-06T06:41:23Z",
+      "language": "C",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "hakandundar34coding/system-monitoring-center",
+      "html_url": "https://github.com/hakandundar34coding/system-monitoring-center",
+      "description": "Multi-featured system monitor",
+      "stars": 982,
+      "pushed_at": "2026-05-25T10:35:34Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "msminhas93/nviwatch",
+      "html_url": "https://github.com/msminhas93/nviwatch",
+      "description": "NviWatch: A blazingly fast rust based TUI for managing and monitoring NVIDIA GPU processes",
+      "stars": 237,
+      "pushed_at": "2026-08-06T04:13:33Z",
+      "language": "Rust",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "scotttylerwqxn2241/cortex-windows-gpu-monitor",
+      "html_url": "https://github.com/scotttylerwqxn2241/cortex-windows-gpu-monitor",
+      "description": "Cortex v2026 is a native Windows 11 desktop monitor for GPU-intensive workloads, combining NVIDIA-centered telemetry, TensorBoard access, and on-device processing in a Rust + Tauri application.",
+      "stars": 38,
+      "pushed_at": "2026-08-07T02:56:19Z",
+      "language": "HTML",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "nrhevu/roctop",
+      "html_url": "https://github.com/nrhevu/roctop",
+      "description": "`roctop` is a small AMD ROCm GPU monitor. It shows GPU VRAM usage, utilization, temperature, and GPU processes in a refreshing terminal UI.",
+      "stars": 30,
+      "pushed_at": "2026-07-14T05:07:28Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://pypi.org/project/roctop/"
+    },
+    {
+      "full_name": "ajokela/rktop",
+      "html_url": "https://github.com/ajokela/rktop",
+      "description": "High-performance system monitor for Rockchip SoCs (RK3588, RK3399) with real-time CPU, GPU, NPU, RGA,   memory, and process monitoring. Written in Rust.",
+      "stars": 28,
+      "pushed_at": "2025-11-25T03:16:50Z",
+      "language": "Rust",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": ""
+    }
+  ]
+}

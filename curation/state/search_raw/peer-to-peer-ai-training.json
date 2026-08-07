@@ -1,0 +1,17 @@
+{
+  "keyword": "peer-to-peer AI training",
+  "query": "peer-to-peer AI training stars:>19 pushed:>2025-08-07 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "p2pfl/p2pfl",
+      "html_url": "https://github.com/p2pfl/p2pfl",
+      "description": "P2PFL is a decentralized federated learning library that enables federated learning on peer-to-peer networks using gossip protocols, making collaborative AI model training possible without reliance on central servers.",
+      "stars": 155,
+      "pushed_at": "2026-05-09T10:24:24Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://p2pfl.com"
+    }
+  ]
+}

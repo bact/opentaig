@@ -1,0 +1,32 @@
+{
+  "seed": "google/gce-tcb-verifier",
+  "links_found": [
+    "google/go-sev-guest",
+    "google/go-tdx-guest",
+    "google/go-tpm-tools"
+  ],
+  "kept": [
+    {
+      "full_name": "google/go-sev-guest",
+      "html_url": "https://github.com/google/go-sev-guest",
+      "description": "go-sev-guest offers a library to wrap the /dev/sev-guest device in Linux, as well as a library for attestation verification of fundamental components of an attestation report.",
+      "stars": 77,
+      "pushed_at": "2026-07-14T23:05:31Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "",
+      "found_via_keyword": "snowball:google/gce-tcb-verifier"
+    },
+    {
+      "full_name": "google/go-tdx-guest",
+      "html_url": "https://github.com/google/go-tdx-guest",
+      "description": "go-tdx-guest offers a library to wrap the /dev/tdx-guest device in Linux, as well as a library for attestation verification of fundamental components of an attestation quote.",
+      "stars": 97,
+      "pushed_at": "2026-07-30T20:03:02Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "",
+      "found_via_keyword": "snowball:google/gce-tcb-verifier"
+    }
+  ]
+}

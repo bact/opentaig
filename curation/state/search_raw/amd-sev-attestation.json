@@ -1,0 +1,37 @@
+{
+  "keyword": "AMD SEV attestation",
+  "query": "AMD SEV attestation stars:>19 pushed:>2025-08-07 archived:false fork:false",
+  "count": 3,
+  "repos": [
+    {
+      "full_name": "virtee/sev-snp-measure",
+      "html_url": "https://github.com/virtee/sev-snp-measure",
+      "description": "Calculate AMD SEV/SEV-ES/SEV-SNP measurement for confidential computing",
+      "stars": 74,
+      "pushed_at": "2026-05-28T15:30:19Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "Fraunhofer-AISEC/cmc",
+      "html_url": "https://github.com/Fraunhofer-AISEC/cmc",
+      "description": "Remote attestation for Trusted and Confidential Computing platforms (TPM, AMD SEV-SNP, Intel SGX/TDX)",
+      "stars": 24,
+      "pushed_at": "2026-08-06T21:12:47Z",
+      "language": "C",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://pkg.go.dev/github.com/Fraunhofer-AISEC/cmc"
+    },
+    {
+      "full_name": "automata-network/amd-sev-snp-attestation-sdk",
+      "html_url": "https://github.com/automata-network/amd-sev-snp-attestation-sdk",
+      "description": "The Automata AMD SEV-SNP Attestation SDK is a software development kit designed to help users generate the AMD SEV-SNP Attestation Report using Rust across different cloud service providers, and generate Risc0 and SP1 ZK Proofs which can be verified on-chain. Powered by Automata",
+      "stars": 20,
+      "pushed_at": "2026-07-09T17:17:32Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://ata.network"
+    }
+  ]
+}

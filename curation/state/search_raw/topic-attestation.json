@@ -1,0 +1,307 @@
+{
+  "keyword": "topic:attestation",
+  "query": "topic:attestation stars:>19 pushed:>2025-08-07 archived:false fork:false",
+  "count": 30,
+  "repos": [
+    {
+      "full_name": "sipyourdrink-ltd/bernstein",
+      "html_url": "https://github.com/sipyourdrink-ltd/bernstein",
+      "description": "Deterministic orchestrator for CLI coding agents (Claude Code, Codex, Gemini CLI, +40 more). No model in the coordination loop, so parallel runs in per-task git worktrees replay byte-identically. Signed lineage plus an opt-in HMAC audit chain a reviewer checks offline, without rerunning it. Cluster mode, air-gap deploy. https://bernstein.run",
+      "stars": 800,
+      "pushed_at": "2026-08-07T06:57:05Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://bernstein.run"
+    },
+    {
+      "full_name": "GrapheneOS/Auditor",
+      "html_url": "https://github.com/GrapheneOS/Auditor",
+      "description": "Hardware-based attestation and intrusion detection app for Android. It provides both local verification with another Android device via QR codes and optional scheduled server-based verification with support for alert emails. It uses hardware-backed keys and attestation support as the foundation and chains trust to the app for software checks.",
+      "stars": 684,
+      "pushed_at": "2026-08-06T06:12:18Z",
+      "language": "Java",
+      "license_spdx_id": "MIT",
+      "homepage": "https://attestation.app/"
+    },
+    {
+      "full_name": "chainloop-dev/chainloop",
+      "html_url": "https://github.com/chainloop-dev/chainloop",
+      "description": "SDLC evidence store and policy engine for your Software Supply Chain attestations, SBOMs, VEX, SARIF, QA reports, and more",
+      "stars": 570,
+      "pushed_at": "2026-08-07T09:55:57Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.chainloop.dev"
+    },
+    {
+      "full_name": "keylime/keylime",
+      "html_url": "https://github.com/keylime/keylime",
+      "description": "A CNCF Project to Bootstrap & Maintain Trust on the Edge / Cloud and IoT",
+      "stars": 554,
+      "pushed_at": "2026-08-03T11:14:14Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://keylime.dev"
+    },
+    {
+      "full_name": "in-toto/witness",
+      "html_url": "https://github.com/in-toto/witness",
+      "description": "Witness is a pluggable framework for software supply chain risk management.  It automates, normalizes, and verifies software artifact provenance.",
+      "stars": 542,
+      "pushed_at": "2026-08-05T19:42:13Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://witness.dev"
+    },
+    {
+      "full_name": "google/go-attestation",
+      "html_url": "https://github.com/google/go-attestation",
+      "description": "Libraries to abstract aspects of working with TPMs for the purposes of attestation",
+      "stars": 438,
+      "pushed_at": "2026-08-07T04:09:03Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "bureado/awesome-software-supply-chain-security",
+      "html_url": "https://github.com/bureado/awesome-software-supply-chain-security",
+      "description": "A compilation of resources in the software supply chain security domain, with emphasis on open source",
+      "stars": 374,
+      "pushed_at": "2026-06-07T02:04:12Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "Brain0-ai/brain0",
+      "html_url": "https://github.com/Brain0-ai/brain0",
+      "description": "The black box for AI-written code. Passive decision graph linking every commit to the agent prompts behind it: drift detection, DLP audit of what agents read, evidence-driven risk, MCP memory for coding agents, signed provenance attestations. One command, offline by default.",
+      "stars": 367,
+      "pushed_at": "2026-07-19T08:17:17Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "in-toto/attestation",
+      "html_url": "https://github.com/in-toto/attestation",
+      "description": "in-toto Attestation Framework",
+      "stars": 361,
+      "pushed_at": "2026-08-04T22:09:30Z",
+      "language": "Rust",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "intel/confidential-computing-zoo",
+      "html_url": "https://github.com/intel/confidential-computing-zoo",
+      "description": "Confidential Computing Zoo provides confidential computing solutions based on Intel SGX, TDX, HEXL, etc. technologies.",
+      "stars": 359,
+      "pushed_at": "2026-08-03T08:26:42Z",
+      "language": "C++",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cczoo.readthedocs.io/en/latest/index.html"
+    },
+    {
+      "full_name": "evoker0/AlwaysStrong",
+      "html_url": "https://github.com/evoker0/AlwaysStrong",
+      "description": "Always Strong: Strong Play Integrity in one drop in module TEESimulator-RS + PlayIntegrityFork bundled.",
+      "stars": 249,
+      "pushed_at": "2026-08-06T21:20:26Z",
+      "language": "Shell",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://t.me/keyboxstrong"
+    },
+    {
+      "full_name": "a-sit-plus/signum",
+      "html_url": "https://github.com/a-sit-plus/signum",
+      "description": "Kotlin Multiplatform Crypto/PKI/ASN.1 Library with Attestation and Hardware-Backed Crypto Support on Mobile",
+      "stars": 192,
+      "pushed_at": "2026-08-07T08:04:14Z",
+      "language": "Kotlin",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://a-sit-plus.github.io/signum/"
+    },
+    {
+      "full_name": "Consensys/linea-attestation-registry",
+      "html_url": "https://github.com/Consensys/linea-attestation-registry",
+      "description": "Verax is a shared registry for storing attestations of public interest on EVM chains, designed to enhance data discoverability and consumption for dApps across the network.",
+      "stars": 176,
+      "pushed_at": "2026-08-06T07:49:14Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://ver.ax"
+    },
+    {
+      "full_name": "confidential-containers/trustee",
+      "html_url": "https://github.com/confidential-containers/trustee",
+      "description": "Attestation and Secret Delivery Components",
+      "stars": 172,
+      "pushed_at": "2026-08-07T16:31:57Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "GrapheneOS/AttestationServer",
+      "html_url": "https://github.com/GrapheneOS/AttestationServer",
+      "description": "attestation.app remote attestation server. Server code for use with the Auditor app: https://github.com/GrapheneOS/Auditor. It provides two services: submission of attestation data samples and a remote attestation implementation with email alerts to go along with the local implementation based on QR code scanning in the app.",
+      "stars": 164,
+      "pushed_at": "2026-08-07T06:13:44Z",
+      "language": "Java",
+      "license_spdx_id": "MIT",
+      "homepage": "https://attestation.app/"
+    },
+    {
+      "full_name": "CycloneDX/cyclonedx-python-lib",
+      "html_url": "https://github.com/CycloneDX/cyclonedx-python-lib",
+      "description": "Functionality and DataModels of OWASP CycloneDX for Python",
+      "stars": 113,
+      "pushed_at": "2026-08-07T10:52:27Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cyclonedx.org/"
+    },
+    {
+      "full_name": "GlobalPlatform/psa-api",
+      "html_url": "https://github.com/GlobalPlatform/psa-api",
+      "description": "Documentation source and development of the PSA API",
+      "stars": 85,
+      "pushed_at": "2026-08-05T11:51:33Z",
+      "language": "C",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://arm-software.github.io/psa-api/"
+    },
+    {
+      "full_name": "virtee/sev-snp-measure",
+      "html_url": "https://github.com/virtee/sev-snp-measure",
+      "description": "Calculate AMD SEV/SEV-ES/SEV-SNP measurement for confidential computing",
+      "stars": 74,
+      "pushed_at": "2026-05-28T15:30:19Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "kubernetes-sigs/tejolote",
+      "html_url": "https://github.com/kubernetes-sigs/tejolote",
+      "description": "A highly configurable build executor and observer designed to generate signed SLSA provenance attestations about build runs.",
+      "stars": 73,
+      "pushed_at": "2026-08-07T05:44:53Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "bkuan001/halo-record",
+      "html_url": "https://github.com/bkuan001/halo-record",
+      "description": "Tamper-evident runtime evidence for AI agents: hash-chained Runtime Records, dependency-free, verifiable by anyone.",
+      "stars": 61,
+      "pushed_at": "2026-08-02T18:30:28Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://pypi.org/project/halo-record/"
+    },
+    {
+      "full_name": "carabiner-dev/ampel",
+      "html_url": "https://github.com/carabiner-dev/ampel",
+      "description": "\ud83d\udd34\ud83d\udfe1\ud83d\udfe2 The Amazing Multipurpose Policy Engine (and L)",
+      "stars": 54,
+      "pushed_at": "2026-08-06T16:56:59Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "a-sit-plus/warden-supreme",
+      "html_url": "https://github.com/a-sit-plus/warden-supreme",
+      "description": "Integrated Key Attestation Suite",
+      "stars": 51,
+      "pushed_at": "2026-08-07T13:18:43Z",
+      "language": "Kotlin",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://a-sit-plus.github.io/warden-supreme/"
+    },
+    {
+      "full_name": "Foxboron/attezt",
+      "html_url": "https://github.com/Foxboron/attezt",
+      "description": "An open-source TPM device-attest-01 CA server",
+      "stars": 48,
+      "pushed_at": "2026-03-21T14:32:03Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "pkic/remote-key-attestation",
+      "html_url": "https://github.com/pkic/remote-key-attestation",
+      "description": "Remote Key Attestation",
+      "stars": 39,
+      "pushed_at": "2026-03-06T10:46:32Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "iamjosephmj/DeviceIntelligence",
+      "html_url": "https://github.com/iamjosephmj/DeviceIntelligence",
+      "description": "Open-source Android SDK that detects rooted, emulated, or tampered devices. Outputs one JSON report \u2014 your backend decides the policy. No tracking, not a RASP.",
+      "stars": 37,
+      "pushed_at": "2026-07-11T14:29:18Z",
+      "language": "Kotlin",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "nokia/AttestationEngine",
+      "html_url": "https://github.com/nokia/AttestationEngine",
+      "description": "An experimental (but fully functional) Remote Attestation Engine and Applications for TPM2.0 based systems (cloud, edge, IoT etc)",
+      "stars": 30,
+      "pushed_at": "2025-12-02T17:39:35Z",
+      "language": "Go",
+      "license_spdx_id": "BSD-3-Clause-Clear",
+      "homepage": ""
+    },
+    {
+      "full_name": "nolabs-ai/agent-sign",
+      "html_url": "https://github.com/nolabs-ai/agent-sign",
+      "description": "Provide full security provenance and agent attestations from source to runtime",
+      "stars": 26,
+      "pushed_at": "2026-06-28T17:00:15Z",
+      "language": "Shell",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://nono.sh"
+    },
+    {
+      "full_name": "Korext/ai-attestation",
+      "html_url": "https://github.com/Korext/ai-attestation",
+      "description": "Track AI generated code in your repository. Open standard. Detects 19 AI coding tools. CC0 spec.",
+      "stars": 26,
+      "pushed_at": "2026-05-30T07:01:27Z",
+      "language": "JavaScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://oss.korext.com/ai-attestation"
+    },
+    {
+      "full_name": "aflock-ai/aflock",
+      "html_url": "https://github.com/aflock-ai/aflock",
+      "description": "Cryptographically signed policies that constrain AI agent behavior. Same attestation primitives as cilock, applied to agent execution: identity binding via MCP, JWT + signing-key separation, sublayouts for sub-agents.",
+      "stars": 25,
+      "pushed_at": "2026-08-07T07:09:02Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://aflock.ai"
+    },
+    {
+      "full_name": "joemiller/yk-attest-verify",
+      "html_url": "https://github.com/joemiller/yk-attest-verify",
+      "description": "Verify and assert policy on YubiKey attestation certificates",
+      "stars": 20,
+      "pushed_at": "2025-11-01T18:53:37Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    }
+  ]
+}

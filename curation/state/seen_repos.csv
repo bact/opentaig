@@ -1655,3 +1655,23 @@ idlab-discover/aibomgen-cli,accept,,,,none-declared,ai-bom-generation,,,2026-08-
 anthonyharrison/mlbomdoc,accept,,,,none-declared,ai-bom-generation,,,2026-08-06T22:17:25+00:00
 CycloneDX/specification,accept,,,Apache-2.0,osi-approved,ai-bom-generation,SBOM,532,2026-08-06T22:17:25+00:00
 bact/pitloom,accept,,,,none-declared,ai-bom-generation,,,2026-08-06T22:19:25+00:00
+Syllo/nvtop,reject,not-relevant,Does not provide direct mechanisms for candidate RQs,NOASSERTION,source-available,Verification of Compute Workloads,process GPU monitor,10896,2026-08-07T16:37:25+00:00
+plasma-umass/scalene,reject,not-relevant,Does not provide direct mechanisms for candidate RQs,Apache-2.0,osi-approved,Verification of Compute Workloads,GPU power profiler,13486,2026-08-07T16:37:25+00:00
+green-coding-solutions/green-metrics-tool,accept,,,NOASSERTION,source-available,Verification of Compute Workloads,topic:carbon-footprint,251,2026-08-07T16:37:25+00:00
+cloud-carbon-footprint/cloud-carbon-footprint,accept,,,Apache-2.0,osi-approved,Verification of Compute Workloads,topic:carbon-footprint,1051,2026-08-07T16:37:25+00:00
+GreenScheduler/cats,accept,,,MIT,osi-approved,Verification of Compute Workloads,topic:carbon-footprint,78,2026-08-07T16:37:25+00:00
+ROCm/device-metrics-exporter,reject,not-relevant,Does not provide direct mechanisms for candidate RQs,Apache-2.0,osi-approved,Verification of Compute Workloads,GPU metric collector,63,2026-08-07T16:37:25+00:00
+GPUOpen-Tools/radeon_gpu_profiler,reject,not-relevant,Does not provide direct mechanisms for candidate RQs,,none-declared,Verification of Compute Workloads,GPU workload profiling,449,2026-08-07T16:37:25+00:00
+MooreThreads/SimuMax,accept,,,NOASSERTION,source-available,Verification of Compute Workloads,distributed LLM training,165,2026-08-07T16:37:25+00:00
+enarx/enarx,accept,,,Apache-2.0,osi-approved,Verification of Compute Workloads,topic:confidential-computing,1425,2026-08-07T16:37:25+00:00
+apache/teaclave,accept,,,Apache-2.0,osi-approved,Verification of Compute Workloads,topic:confidential-computing,805,2026-08-07T16:37:25+00:00
+edgelesssys/ego,accept,,,MPL-2.0,osi-approved,Verification of Compute Workloads,topic:confidential-computing,591,2026-08-07T16:37:25+00:00
+virtee/sev-snp-measure,accept,,,Apache-2.0,osi-approved,Verification of Compute Workloads,topic:confidential-computing,74,2026-08-07T16:37:25+00:00
+automata-network/amd-sev-snp-attestation-sdk,accept,,,Apache-2.0,osi-approved,Verification of Compute Workloads,AMD SEV attestation,20,2026-08-07T16:37:25+00:00
+automata-network/tdx-attestation-sdk,accept,,,Apache-2.0,osi-approved,Verification of Compute Workloads,Intel TDX attestation,35,2026-08-07T16:37:25+00:00
+aws/aws-nitro-enclaves-nsm-api,accept,,,Apache-2.0,osi-approved,Verification of Compute Workloads,secure enclave attestation,86,2026-08-07T16:37:25+00:00
+green-coding-solutions/eco-ci-energy-estimation,accept,,,MIT,osi-approved,Verification of Compute Workloads,topic:carbon-footprint,113,2026-08-07T16:37:25+00:00
+fvaleye/tracarbon,accept,,,Apache-2.0,osi-approved,Verification of Compute Workloads,topic:carbon-footprint,110,2026-08-07T16:37:25+00:00
+HewlettPackard/sustain-cluster,accept,,,MIT,osi-approved,Verification of Compute Workloads,topic:carbon-footprint,72,2026-08-07T16:37:25+00:00
+volcengine/veScale,reject,not-relevant,Does not provide direct mechanisms for candidate RQs,Apache-2.0,osi-approved,Verification of Compute Workloads,distributed LLM training,1036,2026-08-07T16:37:25+00:00
+kubeflow/trainer,accept,,,Apache-2.0,osi-approved,Verification of Compute Workloads,distributed LLM training,2173,2026-08-07T16:37:25+00:00

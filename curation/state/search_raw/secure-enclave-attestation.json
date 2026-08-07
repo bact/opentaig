@@ -1,0 +1,17 @@
+{
+  "keyword": "secure enclave attestation",
+  "query": "secure enclave attestation stars:>19 pushed:>2025-08-07 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "aws/aws-nitro-enclaves-nsm-api",
+      "html_url": "https://github.com/aws/aws-nitro-enclaves-nsm-api",
+      "description": "This provides a library for interacting with the Nitro Secure Module, which provides Nitro Enclaves with attestation capability.",
+      "stars": 86,
+      "pushed_at": "2026-07-08T15:28:38Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    }
+  ]
+}

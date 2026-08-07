@@ -1,0 +1,87 @@
+{
+  "keyword": "topic:secure-enclave",
+  "query": "topic:secure-enclave stars:>19 pushed:>2025-08-07 archived:false fork:false",
+  "count": 8,
+  "repos": [
+    {
+      "full_name": "maxgoedjen/secretive",
+      "html_url": "https://github.com/maxgoedjen/secretive",
+      "description": "Protect your SSH keys with your Mac's Secure Enclave",
+      "stars": 8731,
+      "pushed_at": "2026-07-02T19:49:09Z",
+      "language": "Swift",
+      "license_spdx_id": "MIT",
+      "homepage": "https://secretive.dev"
+    },
+    {
+      "full_name": "mCodex/react-native-sensitive-info",
+      "html_url": "https://github.com/mCodex/react-native-sensitive-info",
+      "description": "\ud83d\udd10 React Native secure storage, rebuilt with Nitro Modules \u26a1\ufe0f Biometric-ready, StrongBox-aware, and metadata-rich for modern mobile apps",
+      "stars": 1059,
+      "pushed_at": "2026-08-04T09:39:19Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "HMAKT99/UnTouchID",
+      "html_url": "https://github.com/HMAKT99/UnTouchID",
+      "description": "Use your phone's Face ID or fingerprint to approve sudo and unlock your Mac. QR pairing, encrypted BLE, Secure Enclave signing \u2014 keys never leave your phone. Works with iPhone, Android, Apple Watch, Wear OS, or any browser. No $199 Magic Keyboard needed.",
+      "stars": 282,
+      "pushed_at": "2026-08-05T15:55:22Z",
+      "language": "Swift",
+      "license_spdx_id": "MIT",
+      "homepage": "https://hmakt99.github.io/UnTouchID/"
+    },
+    {
+      "full_name": "remko/age-plugin-se",
+      "html_url": "https://github.com/remko/age-plugin-se",
+      "description": "Age plugin for Apple's Secure Enclave",
+      "stars": 232,
+      "pushed_at": "2026-04-12T11:40:11Z",
+      "language": "Swift",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "enclaver-io/enclaver",
+      "html_url": "https://github.com/enclaver-io/enclaver",
+      "description": "Open source toolkit created to enable easy adoption of software enclaves",
+      "stars": 164,
+      "pushed_at": "2025-12-12T19:24:44Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://enclaver.io"
+    },
+    {
+      "full_name": "pkic/remote-key-attestation",
+      "html_url": "https://github.com/pkic/remote-key-attestation",
+      "description": "Remote Key Attestation",
+      "stars": 39,
+      "pushed_at": "2026-03-06T10:46:32Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "ivan-magda/swift-security-skill",
+      "html_url": "https://github.com/ivan-magda/swift-security-skill",
+      "description": "AI agent skill for secure credential storage & cryptography on Apple platforms - Keychain Services, biometric auth, CryptoKit, and OWASP compliance (iOS 13\u201326+)",
+      "stars": 29,
+      "pushed_at": "2026-06-17T11:50:46Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "wiedem/swift-keychain-kit",
+      "html_url": "https://github.com/wiedem/swift-keychain-kit",
+      "description": "A modern API for iOS and macOS Keychain services",
+      "stars": 23,
+      "pushed_at": "2026-03-19T15:49:35Z",
+      "language": "Swift",
+      "license_spdx_id": "MIT",
+      "homepage": "https://wiedem.github.io/swift-keychain-kit/documentation/swiftkeychainkit/"
+    }
+  ]
+}

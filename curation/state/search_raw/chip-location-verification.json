@@ -1,0 +1,17 @@
+{
+  "keyword": "chip location verification",
+  "query": "chip location verification stars:>19 pushed:>2025-08-07 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "BLANK2077/xverif",
+      "html_url": "https://github.com/BLANK2077/xverif",
+      "description": "xverif is a local toolkit for chip-verification debug agents. It contains deterministic tools for design and waveform debug, coverage, bit calculations, structured entry decoding, log source locations, SVA semantics, persistent verification knowledge, and a unified MCP entry point",
+      "stars": 77,
+      "pushed_at": "2026-08-07T01:42:08Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}

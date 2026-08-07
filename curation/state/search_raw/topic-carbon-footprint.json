@@ -1,0 +1,337 @@
+{
+  "keyword": "topic:carbon-footprint",
+  "query": "topic:carbon-footprint stars:>19 pushed:>2025-08-07 archived:false fork:false",
+  "count": 33,
+  "repos": [
+    {
+      "full_name": "hubblo-org/scaphandre",
+      "html_url": "https://github.com/hubblo-org/scaphandre",
+      "description": "\u26a1 Energy consumption metrology agent. Let \"scaph\" dive and bring back the metrics that will help you make your systems and applications more sustainable !",
+      "stars": 1958,
+      "pushed_at": "2026-07-19T18:33:40Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "mlco2/codecarbon",
+      "html_url": "https://github.com/mlco2/codecarbon",
+      "description": "Track emissions from Compute and recommend ways to reduce their impact on the environment.",
+      "stars": 1896,
+      "pushed_at": "2026-08-04T15:55:55Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://docs.codecarbon.io/"
+    },
+    {
+      "full_name": "philsturgeon/awesome-earth",
+      "html_url": "https://github.com/philsturgeon/awesome-earth",
+      "description": "\"What can I do about the climate crisis?\" Here are 326 things you can do.",
+      "stars": 1421,
+      "pushed_at": "2026-01-30T16:29:43Z",
+      "language": "JavaScript",
+      "license_spdx_id": "",
+      "homepage": "https://protect.earth"
+    },
+    {
+      "full_name": "cloud-carbon-footprint/cloud-carbon-footprint",
+      "html_url": "https://github.com/cloud-carbon-footprint/cloud-carbon-footprint",
+      "description": "Cloud Carbon Footprint is a tool to estimate energy use (kilowatt-hours) and carbon emissions (metric tons CO2e) from public cloud usage",
+      "stars": 1051,
+      "pushed_at": "2026-04-23T09:45:56Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cloudcarbonfootprint.org"
+    },
+    {
+      "full_name": "green-coding-solutions/green-metrics-tool",
+      "html_url": "https://github.com/green-coding-solutions/green-metrics-tool",
+      "description": "Measure energy consumption and carbon emissions of software - Timelines, git-integration, Comparions, Dashboards and Optimizations included",
+      "stars": 251,
+      "pushed_at": "2026-08-07T08:55:22Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://metrics.green-coding.io"
+    },
+    {
+      "full_name": "Daminoup88/WattSeal",
+      "html_url": "https://github.com/Daminoup88/WattSeal",
+      "description": "Real-time PC power consumption monitor - see watts per app & per component, track your carbon footprint & electricity cost.",
+      "stars": 161,
+      "pushed_at": "2026-08-07T02:40:28Z",
+      "language": "Rust",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://wattseal.com"
+    },
+    {
+      "full_name": "gwittebolle/claude-carbon",
+      "html_url": "https://github.com/gwittebolle/claude-carbon",
+      "description": "Track the carbon footprint of your Claude Code sessions",
+      "stars": 155,
+      "pushed_at": "2026-08-03T16:25:10Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": "https://tokenclimate.com"
+    },
+    {
+      "full_name": "HewlettPackard/dc-rl",
+      "html_url": "https://github.com/HewlettPackard/dc-rl",
+      "description": "SustainDC is a set of Python environments for Data Center simulation and control using Heterogeneous Multi Agent Reinforcement Learning. Includes customizable environments for workload scheduling, cooling optimization, and battery management, with integration into Gymnasium.",
+      "stars": 118,
+      "pushed_at": "2025-08-25T20:51:08Z",
+      "language": "HTML",
+      "license_spdx_id": "MIT",
+      "homepage": "https://hewlettpackard.github.io/dc-rl/index.html"
+    },
+    {
+      "full_name": "green-coding-solutions/eco-ci-energy-estimation",
+      "html_url": "https://github.com/green-coding-solutions/eco-ci-energy-estimation",
+      "description": "Eco CI Energy estimation for Github Actions, GitLab and Jenkins",
+      "stars": 113,
+      "pushed_at": "2026-08-02T07:50:45Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": "https://metrics.green-coding.io/ci-index.html"
+    },
+    {
+      "full_name": "fvaleye/tracarbon",
+      "html_url": "https://github.com/fvaleye/tracarbon",
+      "description": "\ud83c\udf0d Tracarbon tracks your device's energy consumption and calculates your carbon emissions using your location.",
+      "stars": 110,
+      "pushed_at": "2026-07-27T09:19:26Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://fvaleye.github.io/tracarbon/documentation/"
+    },
+    {
+      "full_name": "lucasm/findto",
+      "html_url": "https://github.com/lucasm/findto",
+      "description": "\ud83d\udd35\ud83d\udd0e Findto is a decentralized search assistant for AI and Web.",
+      "stars": 102,
+      "pushed_at": "2026-05-30T20:30:50Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://findto.app"
+    },
+    {
+      "full_name": "Boavizta/boaviztapi",
+      "html_url": "https://github.com/Boavizta/boaviztapi",
+      "description": "\ud83d\udee0 Giving access to BOAVIZTA reference data and methodologies trough a RESTful API",
+      "stars": 98,
+      "pushed_at": "2026-08-05T12:57:11Z",
+      "language": "Python",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "MarosMacko/CarbonFootprintCalculator",
+      "html_url": "https://github.com/MarosMacko/CarbonFootprintCalculator",
+      "description": "Calculate your carbon footprint, and find out how much you have to do to eliminate it!",
+      "stars": 89,
+      "pushed_at": "2026-01-24T14:04:40Z",
+      "language": "HTML",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "open-risk/awesome-sustainable-finance",
+      "html_url": "https://github.com/open-risk/awesome-sustainable-finance",
+      "description": "A curated list of sustainable finance resources (software, data and more)",
+      "stars": 82,
+      "pushed_at": "2026-07-21T05:33:06Z",
+      "language": "Python",
+      "license_spdx_id": "CC0-1.0",
+      "homepage": "https://www.openriskmanagement.com"
+    },
+    {
+      "full_name": "NMF-earth/carbon-footprint",
+      "html_url": "https://github.com/NMF-earth/carbon-footprint",
+      "description": "Calculate your carbon footprint \ud83c\udfed\ud83d\udc63  from food, transport, purchases, fashion, electricity and digital activities like streaming, NFT or blockchain.",
+      "stars": 79,
+      "pushed_at": "2026-03-13T08:59:23Z",
+      "language": "TypeScript",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://nmf.earth"
+    },
+    {
+      "full_name": "GreenScheduler/cats",
+      "html_url": "https://github.com/GreenScheduler/cats",
+      "description": "\ud83d\udc08 CATS: the Climate-Aware Task Scheduler \ud83c\udf0d",
+      "stars": 78,
+      "pushed_at": "2026-07-31T14:23:11Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://cats.readthedocs.io"
+    },
+    {
+      "full_name": "Cambridge-Sustainable-Computing-Lab/GreenAlgorithms4HPC",
+      "html_url": "https://github.com/Cambridge-Sustainable-Computing-Lab/GreenAlgorithms4HPC",
+      "description": "GA4HPC is a user-facing, terminal-based tool that generates an energy usage and carbon footprint report for your computational workloads.",
+      "stars": 73,
+      "pushed_at": "2026-08-07T14:29:56Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "http://www.green-algorithms.org"
+    },
+    {
+      "full_name": "XavB64/lowtrip",
+      "html_url": "https://github.com/XavB64/lowtrip",
+      "description": "A web app to compute travel CO2eq for different means of transport worldwide",
+      "stars": 72,
+      "pushed_at": "2026-08-07T05:55:32Z",
+      "language": "TypeScript",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://lowtrip.fr"
+    },
+    {
+      "full_name": "HewlettPackard/sustain-cluster",
+      "html_url": "https://github.com/HewlettPackard/sustain-cluster",
+      "description": "SustainCluster: A high-fidelity, open-source Gymnasium environment for benchmarking multi-objective, sustainable workload scheduling across geo-distributed data centers. Integrates real-world AI traces, energy/carbon/weather data, and detailed DC physics.",
+      "stars": 72,
+      "pushed_at": "2026-01-12T22:30:29Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://hewlettpackard.github.io/sustain-cluster/"
+    },
+    {
+      "full_name": "GoogleCloudPlatform/region-picker",
+      "html_url": "https://github.com/GoogleCloudPlatform/region-picker",
+      "description": "Tool to help you pick a Google Cloud region considering carbon footprint, price and latency.",
+      "stars": 69,
+      "pushed_at": "2025-08-11T22:05:40Z",
+      "language": "JavaScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cloud.withgoogle.com/region-picker/"
+    },
+    {
+      "full_name": "MTES-MCT/ecobalyse",
+      "html_url": "https://github.com/MTES-MCT/ecobalyse",
+      "description": "Acc\u00e9lerer la mise en place de l'affichage environnemental",
+      "stars": 50,
+      "pushed_at": "2026-08-07T15:31:05Z",
+      "language": "Elm",
+      "license_spdx_id": "MIT",
+      "homepage": "https://ecobalyse.beta.gouv.fr"
+    },
+    {
+      "full_name": "Institut-du-Numerique-Responsable/green-claude",
+      "html_url": "https://github.com/Institut-du-Numerique-Responsable/green-claude",
+      "description": "\ud83c\udf31 Skill \u00e9co-responsable pour Claude Code : sobri\u00e9t\u00e9 num\u00e9rique, audit d'\u00e9co-conception (RGESN, GR491, Green Software Foundation) et pratiques de sobri\u00e9t\u00e9 IA",
+      "stars": 41,
+      "pushed_at": "2026-08-03T22:44:24Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": "https://institut-du-numerique-responsable.github.io/green-claude/"
+    },
+    {
+      "full_name": "GreenKubeCloud/GreenKube",
+      "html_url": "https://github.com/GreenKubeCloud/GreenKube",
+      "description": "GreenKube: CO2 monitoring and FinGreenOps tool for K8s",
+      "stars": 36,
+      "pushed_at": "2026-06-26T18:09:46Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://greenkube.cloud"
+    },
+    {
+      "full_name": "Zwony/ecotrace",
+      "html_url": "https://github.com/Zwony/ecotrace",
+      "description": "A lightweight Python library to measure the carbon footprint of your code",
+      "stars": 33,
+      "pushed_at": "2026-08-02T12:47:26Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "mobility-team/mobility",
+      "html_url": "https://github.com/mobility-team/mobility",
+      "description": "Mobility, an open-source library for mobility modelisation",
+      "stars": 31,
+      "pushed_at": "2026-07-31T19:05:41Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "borisruf/carbon-footprint-modeling-tool",
+      "html_url": "https://github.com/borisruf/carbon-footprint-modeling-tool",
+      "description": "A data model and a viewer for carbon footprint scenarios.",
+      "stars": 28,
+      "pushed_at": "2026-07-31T11:45:29Z",
+      "language": "HTML",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "CIRAIG/OpenIO-Canada",
+      "html_url": "https://github.com/CIRAIG/OpenIO-Canada",
+      "description": "Module to create symmetric Environmentally Extended Input-Output tables for Canada.",
+      "stars": 28,
+      "pushed_at": "2026-07-15T18:10:26Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "KKulma/carbon-intensity-app",
+      "html_url": "https://github.com/KKulma/carbon-intensity-app",
+      "description": "A web app showing how much electricity is made from renewable sources in different parts of UK",
+      "stars": 25,
+      "pushed_at": "2026-08-07T07:05:07Z",
+      "language": "R",
+      "license_spdx_id": "",
+      "homepage": "http://kasiakulma.shinyapps.io/carbon-intensity-app"
+    },
+    {
+      "full_name": "gauravsonii/EcoChain",
+      "html_url": "https://github.com/gauravsonii/EcoChain",
+      "description": "Blockchain-Driven Carbon Management ensures transparency, XRC-20 carbon trading, AI-powered predictions, rewards, and compliance\u2014driving sustainable emissions control.",
+      "stars": 24,
+      "pushed_at": "2025-09-18T09:31:35Z",
+      "language": "EJS",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://ecochains.vercel.app/"
+    },
+    {
+      "full_name": "ScottLogic/Technology-Carbon-Standard",
+      "html_url": "https://github.com/ScottLogic/Technology-Carbon-Standard",
+      "description": "An emerging unifying standard for understanding, quantifying, and reducing carbon emissions from an organisation's technology landscape. A component of a holistic Technology Sustainability Framework.",
+      "stars": 23,
+      "pushed_at": "2026-01-16T15:36:06Z",
+      "language": "HTML",
+      "license_spdx_id": "CC-BY-SA-4.0",
+      "homepage": "https://www.techcarbonstandard.org"
+    },
+    {
+      "full_name": "AmadeusITGroup/carmen",
+      "html_url": "https://github.com/AmadeusITGroup/carmen",
+      "description": "Open-source carbon measurement for cloud infrastructure and Kubernetes workloads. Track emissions from VMs to individual pods.",
+      "stars": 22,
+      "pushed_at": "2026-01-22T15:18:42Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "RETIT/opentelemetry-javaagent-extension",
+      "html_url": "https://github.com/RETIT/opentelemetry-javaagent-extension",
+      "description": "This repository contains an extension for the OpenTelemetry Java Auto-Instrumentation agent to collect resource demand data and to publish carbon emissions of software systems.",
+      "stars": 21,
+      "pushed_at": "2026-08-03T04:07:59Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "patch-technology/patch-python",
+      "html_url": "https://github.com/patch-technology/patch-python",
+      "description": "Patch's Python client library - https://www.patch.io",
+      "stars": 20,
+      "pushed_at": "2025-11-08T06:09:21Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://www.usepatch.com"
+    }
+  ]
+}

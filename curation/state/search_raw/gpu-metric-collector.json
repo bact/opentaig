@@ -1,0 +1,17 @@
+{
+  "keyword": "GPU metric collector",
+  "query": "GPU metric collector stars:>19 pushed:>2025-08-07 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "ROCm/device-metrics-exporter",
+      "html_url": "https://github.com/ROCm/device-metrics-exporter",
+      "description": "Device Metrics Exporter exports metrics from AMD devices (GPUs) to collectors like Prometheus.",
+      "stars": 63,
+      "pushed_at": "2026-08-05T14:56:10Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    }
+  ]
+}

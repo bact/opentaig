@@ -1,0 +1,17 @@
+{
+  "keyword": "topic:energy-estimation",
+  "query": "topic:energy-estimation stars:>19 pushed:>2025-08-07 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "TomLXXVI/python-hvac",
+      "html_url": "https://github.com/TomLXXVI/python-hvac",
+      "description": "A multi-package for HVAC engineering written in Python.",
+      "stars": 134,
+      "pushed_at": "2026-01-05T17:43:42Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}

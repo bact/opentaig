@@ -1,0 +1,17 @@
+{
+  "keyword": "remote attestation client",
+  "query": "remote attestation client stars:>19 pushed:>2025-08-07 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "ethereum/remote-signing-api",
+      "html_url": "https://github.com/ethereum/remote-signing-api",
+      "description": "This repository outlines standard remote signing application programming interface (APIs) for communication between remote signers and Ethereum validator clients.  Remote signing service allows validator clients to offload signing of validation duties (e.g Attestations, BeaconBlocks) by managing security, slashing protection, and key management.",
+      "stars": 24,
+      "pushed_at": "2025-09-08T23:07:00Z",
+      "language": "HTML",
+      "license_spdx_id": "CC0-1.0",
+      "homepage": "https://ethereum.github.io/remote-signing-api/"
+    }
+  ]
+}

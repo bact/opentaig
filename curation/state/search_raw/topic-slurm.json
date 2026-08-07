@@ -1,0 +1,917 @@
+{
+  "keyword": "topic:slurm",
+  "query": "topic:slurm stars:>19 pushed:>2025-08-07 archived:false fork:false",
+  "count": 91,
+  "repos": [
+    {
+      "full_name": "stas00/ml-engineering",
+      "html_url": "https://github.com/stas00/ml-engineering",
+      "description": "Machine Learning Engineering Open Book",
+      "stars": 18531,
+      "pushed_at": "2026-08-07T04:44:59Z",
+      "language": "Python",
+      "license_spdx_id": "CC-BY-SA-4.0",
+      "homepage": "https://stasosphere.com/machine-learning/"
+    },
+    {
+      "full_name": "skypilot-org/skypilot",
+      "html_url": "https://github.com/skypilot-org/skypilot",
+      "description": "The AI Compute Platform for frontier teams. SkyPilot turns fragmented AI compute into one AI supercomputer, so frontier AI teams build custom intelligence faster.",
+      "stars": 10456,
+      "pushed_at": "2026-08-07T15:27:28Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://skypilot.ai/"
+    },
+    {
+      "full_name": "SchedMD/slurm",
+      "html_url": "https://github.com/SchedMD/slurm",
+      "description": "Slurm: A Highly Scalable Workload Manager",
+      "stars": 4224,
+      "pushed_at": "2026-08-07T12:01:28Z",
+      "language": "C",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://slurm.schedmd.com/"
+    },
+    {
+      "full_name": "nextflow-io/nextflow",
+      "html_url": "https://github.com/nextflow-io/nextflow",
+      "description": "A DSL for data-driven computational pipelines",
+      "stars": 3458,
+      "pushed_at": "2026-08-07T15:50:54Z",
+      "language": "Groovy",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "http://nextflow.io"
+    },
+    {
+      "full_name": "dstackai/dstack",
+      "html_url": "https://github.com/dstackai/dstack",
+      "description": "Vendor-agnostic orchestration for training, inference and agentic workloads across NVIDIA, AMD, TPU, and Tenstorrent on clouds, Kubernetes, and bare metal.",
+      "stars": 2208,
+      "pushed_at": "2026-08-07T14:30:24Z",
+      "language": "Python",
+      "license_spdx_id": "MPL-2.0",
+      "homepage": "https://dstack.ai/docs"
+    },
+    {
+      "full_name": "facebookincubator/submitit",
+      "html_url": "https://github.com/facebookincubator/submitit",
+      "description": "Python 3.8+ toolbox for submitting jobs to Slurm",
+      "stars": 1630,
+      "pushed_at": "2026-01-14T13:07:31Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "DataBiosphere/toil",
+      "html_url": "https://github.com/DataBiosphere/toil",
+      "description": "A WDL, CWL and Python API supporting easy-to-use workflow engine. It is scalable, efficient and cross-platform (Linux/macOS).",
+      "stars": 936,
+      "pushed_at": "2026-08-06T22:54:41Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "http://toil.ucsc-cgl.org/."
+    },
+    {
+      "full_name": "LambdaLabsML/distributed-training-guide",
+      "html_url": "https://github.com/LambdaLabsML/distributed-training-guide",
+      "description": "Best practices & guides on how to write distributed pytorch training code",
+      "stars": 628,
+      "pushed_at": "2025-10-22T21:27:41Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "rackslab/Slurm-web",
+      "html_url": "https://github.com/rackslab/Slurm-web",
+      "description": "Open source web interface for Slurm HPC & AI clusters",
+      "stars": 596,
+      "pushed_at": "2026-08-04T09:07:22Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://slurm-web.com"
+    },
+    {
+      "full_name": "PySlurm/pyslurm",
+      "html_url": "https://github.com/PySlurm/pyslurm",
+      "description": "Python Interface to Slurm",
+      "stars": 570,
+      "pushed_at": "2026-07-21T13:01:56Z",
+      "language": "Cython",
+      "license_spdx_id": "GPL-2.0",
+      "homepage": "https://pyslurm.github.io"
+    },
+    {
+      "full_name": "giovtorres/slurm-docker-cluster",
+      "html_url": "https://github.com/giovtorres/slurm-docker-cluster",
+      "description": "A Slurm cluster using docker-compose",
+      "stars": 534,
+      "pushed_at": "2026-08-05T11:27:01Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "karimknaebel/turm",
+      "html_url": "https://github.com/karimknaebel/turm",
+      "description": "TUI for the Slurm Workload Manager",
+      "stars": 497,
+      "pushed_at": "2026-07-02T07:25:59Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": "https://crates.io/crates/turm"
+    },
+    {
+      "full_name": "pipefunc/pipefunc",
+      "html_url": "https://github.com/pipefunc/pipefunc",
+      "description": "Lightweight fast function pipeline (DAG) creation in pure Python for scientific (HPC) workflows \ud83d\udd78\ufe0f\ud83e\uddea",
+      "stars": 475,
+      "pushed_at": "2026-08-06T15:16:09Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://pipefunc.readthedocs.io/"
+    },
+    {
+      "full_name": "awslabs/awsome-distributed-ai",
+      "html_url": "https://github.com/awslabs/awsome-distributed-ai",
+      "description": "Collection of best practices, reference architectures, model training examples and utilities to train large models on AWS.",
+      "stars": 468,
+      "pushed_at": "2026-08-07T09:25:48Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT-0",
+      "homepage": "https://awslabs.github.io/awsome-distributed-ai/"
+    },
+    {
+      "full_name": "meta-pytorch/torchx",
+      "html_url": "https://github.com/meta-pytorch/torchx",
+      "description": "TorchX is a universal job launcher for PyTorch applications. TorchX is designed to have fast iteration time for training/research and support for E2E production ML pipelines when you're ready.",
+      "stars": 428,
+      "pushed_at": "2026-08-06T22:07:52Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://pytorch.org/torchx"
+    },
+    {
+      "full_name": "nebius/soperator",
+      "html_url": "https://github.com/nebius/soperator",
+      "description": "Run Slurm in Kubernetes",
+      "stars": 411,
+      "pushed_at": "2026-08-07T16:27:23Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "SlinkyProject/slurm-operator",
+      "html_url": "https://github.com/SlinkyProject/slurm-operator",
+      "description": "Run Slurm on Kubernetes. A Slinky project.",
+      "stars": 341,
+      "pushed_at": "2026-08-06T09:12:27Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://slinky.ai/"
+    },
+    {
+      "full_name": "dell/omnia",
+      "html_url": "https://github.com/dell/omnia",
+      "description": "An open-source toolkit for deploying and managing high performance clusters for HPC, AI, and data analytics workloads.",
+      "stars": 296,
+      "pushed_at": "2026-08-07T12:49:47Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://omnia.readthedocs.io/en/latest/index.html"
+    },
+    {
+      "full_name": "facebookresearch/gcm",
+      "html_url": "https://github.com/facebookresearch/gcm",
+      "description": "GPU Cluster Monitoring (GCM): Large-Scale AI Research Cluster Monitoring",
+      "stars": 235,
+      "pushed_at": "2026-07-31T17:24:23Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://facebookresearch.github.io/gcm/"
+    },
+    {
+      "full_name": "gerlero/foamlib",
+      "html_url": "https://github.com/gerlero/foamlib",
+      "description": "\u2728 A modern Python package for interacting with OpenFOAM",
+      "stars": 217,
+      "pushed_at": "2026-08-06T11:29:03Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://foamlib.readthedocs.io"
+    },
+    {
+      "full_name": "TUM-DAML/seml",
+      "html_url": "https://github.com/TUM-DAML/seml",
+      "description": "SEML: Slurm Experiment Management Library",
+      "stars": 191,
+      "pushed_at": "2026-08-05T00:23:43Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "mlr-org/batchtools",
+      "html_url": "https://github.com/mlr-org/batchtools",
+      "description": "Tools for computation on batch systems",
+      "stars": 182,
+      "pushed_at": "2026-07-23T20:00:15Z",
+      "language": "R",
+      "license_spdx_id": "LGPL-3.0",
+      "homepage": "https://batchtools.mlr-org.com/"
+    },
+    {
+      "full_name": "traceopt-ai/traceml",
+      "html_url": "https://github.com/traceopt-ai/traceml",
+      "description": "Open-source performance diagnostics for PyTorch training runs.",
+      "stars": 181,
+      "pushed_at": "2026-08-07T16:16:38Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://traceopt.ai/"
+    },
+    {
+      "full_name": "NatLabRockies/HPC",
+      "html_url": "https://github.com/NatLabRockies/HPC",
+      "description": "A collection of various resources, examples, and executables for the general NLR HPC user community's benefit. Use the following website for accessing documentation.",
+      "stars": 155,
+      "pushed_at": "2026-07-30T15:31:39Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://natlabrockies.github.io/HPC/"
+    },
+    {
+      "full_name": "mschubert/clustermq",
+      "html_url": "https://github.com/mschubert/clustermq",
+      "description": "R package to send function calls as jobs on LSF, SGE, Slurm, PBS/Torque, or each via SSH",
+      "stars": 153,
+      "pushed_at": "2026-06-04T08:50:44Z",
+      "language": "R",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://mschubert.github.io/clustermq/"
+    },
+    {
+      "full_name": "NVIDIA/topograph",
+      "html_url": "https://github.com/NVIDIA/topograph",
+      "description": "A toolkit for discovering cluster network topology.",
+      "stars": 151,
+      "pushed_at": "2026-08-07T04:47:12Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "calypr/funnel",
+      "html_url": "https://github.com/calypr/funnel",
+      "description": "Funnel is a toolkit for distributed task execution via a simple, standard API.",
+      "stars": 143,
+      "pushed_at": "2026-07-20T15:45:45Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": "https://calypr.org/tools/funnel"
+    },
+    {
+      "full_name": "neilmunday/slurm-mail",
+      "html_url": "https://github.com/neilmunday/slurm-mail",
+      "description": "Slurm-Mail is a drop in replacement for Slurm's e-mails to give users much more information about their jobs compared to the standard Slurm e-mails.",
+      "stars": 122,
+      "pushed_at": "2026-07-25T15:54:21Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "wjwei-handsome/Slurmer",
+      "html_url": "https://github.com/wjwei-handsome/Slurmer",
+      "description": "A TUI application for monitoring and managing SLURM jobs.",
+      "stars": 110,
+      "pushed_at": "2025-11-24T13:58:35Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": "https://crates.io/crates/slurmer"
+    },
+    {
+      "full_name": "mil-ad/stui",
+      "html_url": "https://github.com/mil-ad/stui",
+      "description": "A Slurm dashboard for the terminal.",
+      "stars": 104,
+      "pushed_at": "2026-02-15T14:01:08Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "aws-samples/aws-hpc-recipes",
+      "html_url": "https://github.com/aws-samples/aws-hpc-recipes",
+      "description": "Contains example recipes that demonstrate how to build HPC systems using AWS services and solutions.",
+      "stars": 97,
+      "pushed_at": "2026-08-05T18:08:14Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT-0",
+      "homepage": ""
+    },
+    {
+      "full_name": "chenggroup/ai2-kit",
+      "html_url": "https://github.com/chenggroup/ai2-kit",
+      "description": "A command line and python toolkit featured artificial intelligence \u00d7 ab initio for complex chemistry systems research.",
+      "stars": 97,
+      "pushed_at": "2026-07-30T03:26:31Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "SlinkyProject/slurm-bridge",
+      "html_url": "https://github.com/SlinkyProject/slurm-bridge",
+      "description": "Run Slurm as a Kubernetes scheduler. A Slinky project.",
+      "stars": 91,
+      "pushed_at": "2026-08-06T09:22:18Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://slinky.ai/"
+    },
+    {
+      "full_name": "AndPuQing/gflow",
+      "html_url": "https://github.com/AndPuQing/gflow",
+      "description": "A lightweight, single-node GPU job scheduler implemented in Rust.",
+      "stars": 86,
+      "pushed_at": "2026-08-07T14:23:06Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": "https://runqd.com"
+    },
+    {
+      "full_name": "futureverse/future.batchtools",
+      "html_url": "https://github.com/futureverse/future.batchtools",
+      "description": ":rocket: R package future.batchtools: A Future API for Parallel and Distributed Processing using batchtools",
+      "stars": 86,
+      "pushed_at": "2026-07-27T09:07:37Z",
+      "language": "R",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://future.batchtools.futureverse.org"
+    },
+    {
+      "full_name": "genepi/nf-gwas",
+      "html_url": "https://github.com/genepi/nf-gwas",
+      "description": "A nextflow pipeline to perform state-of-the-art genome-wide association studies.",
+      "stars": 84,
+      "pushed_at": "2025-10-07T15:44:37Z",
+      "language": "Nextflow",
+      "license_spdx_id": "MIT",
+      "homepage": "https://genepi.github.io/nf-gwas"
+    },
+    {
+      "full_name": "pyiron/executorlib",
+      "html_url": "https://github.com/pyiron/executorlib",
+      "description": "Up-scale python functions for high-performance computing (HPC)",
+      "stars": 76,
+      "pushed_at": "2026-08-07T09:17:27Z",
+      "language": "Python",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": "https://executorlib.readthedocs.io"
+    },
+    {
+      "full_name": "hill/lazyslurm",
+      "html_url": "https://github.com/hill/lazyslurm",
+      "description": "like lazygit/lazydocker but for slurm",
+      "stars": 76,
+      "pushed_at": "2026-07-28T01:48:55Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "JuliaParallel/SlurmClusterManager.jl",
+      "html_url": "https://github.com/JuliaParallel/SlurmClusterManager.jl",
+      "description": "Julia package for running code on Slurm clusters",
+      "stars": 75,
+      "pushed_at": "2026-08-01T18:23:46Z",
+      "language": "Julia",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "cmkobel/CompareM2",
+      "html_url": "https://github.com/cmkobel/CompareM2",
+      "description": "\ud83e\udda0\ud83e\uddec\ud83e\uddd1\u200d\ud83d\udcbb\ud83d\udcc7 Microbial genomes-to-report pipeline",
+      "stars": 75,
+      "pushed_at": "2026-03-14T19:58:52Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://CompareM2.readthedocs.io"
+    },
+    {
+      "full_name": "mbhall88/ssubmit",
+      "html_url": "https://github.com/mbhall88/ssubmit",
+      "description": "Submit slurm sbatch jobs without a script",
+      "stars": 75,
+      "pushed_at": "2026-08-06T09:28:51Z",
+      "language": "Rust",
+      "license_spdx_id": "Unlicense",
+      "homepage": ""
+    },
+    {
+      "full_name": "thediymaker/slurm-node-dashboard",
+      "html_url": "https://github.com/thediymaker/slurm-node-dashboard",
+      "description": "Slurm HPC node status page",
+      "stars": 75,
+      "pushed_at": "2026-07-06T23:26:52Z",
+      "language": "TypeScript",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://slurmdash.com"
+    },
+    {
+      "full_name": "ceems-dev/ceems",
+      "html_url": "https://github.com/ceems-dev/ceems",
+      "description": "A Prometheus exporter and a REST API server to export metrics of compute units of resource managers like SLURM, LSF, Openstack, k8s",
+      "stars": 74,
+      "pushed_at": "2026-08-04T16:14:48Z",
+      "language": "C",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://ceems-dev.github.io/ceems/"
+    },
+    {
+      "full_name": "Cambridge-Sustainable-Computing-Lab/GreenAlgorithms4HPC",
+      "html_url": "https://github.com/Cambridge-Sustainable-Computing-Lab/GreenAlgorithms4HPC",
+      "description": "GA4HPC is a user-facing, terminal-based tool that generates an energy usage and carbon footprint report for your computational workloads.",
+      "stars": 73,
+      "pushed_at": "2026-08-07T14:29:56Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "http://www.green-algorithms.org"
+    },
+    {
+      "full_name": "stackhpc/ansible-slurm-appliance",
+      "html_url": "https://github.com/stackhpc/ansible-slurm-appliance",
+      "description": "A Slurm-based HPC workload management environment, driven by Ansible.",
+      "stars": 72,
+      "pushed_at": "2026-08-07T14:23:52Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "rivosinc/prometheus-slurm-exporter",
+      "html_url": "https://github.com/rivosinc/prometheus-slurm-exporter",
+      "description": "Export select slurm metrics to prometheus",
+      "stars": 68,
+      "pushed_at": "2026-02-19T22:01:11Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "bsc-wdc/compss",
+      "html_url": "https://github.com/bsc-wdc/compss",
+      "description": "COMP Superscalar (COMPSs) is a framework which aims to ease the development and execution of applications for distributed infrastructures, such as Clusters, Grids and Clouds.",
+      "stars": 65,
+      "pushed_at": "2026-08-07T09:58:58Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://compss.bsc.es"
+    },
+    {
+      "full_name": "USCbiostats/slurmR",
+      "html_url": "https://github.com/USCbiostats/slurmR",
+      "description": "slurmR: A Lightweight Wrapper for Slurm",
+      "stars": 61,
+      "pushed_at": "2026-08-06T07:31:40Z",
+      "language": "R",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://uscbiostats.github.io/slurmR/"
+    },
+    {
+      "full_name": "cihga39871/JobSchedulers.jl",
+      "html_url": "https://github.com/cihga39871/JobSchedulers.jl",
+      "description": "A Julia-based job scheduler and workload manager inspired by Slurm, PBS and Crontab.",
+      "stars": 60,
+      "pushed_at": "2026-07-04T20:30:04Z",
+      "language": "Julia",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "deepmodeling/dpdispatcher",
+      "html_url": "https://github.com/deepmodeling/dpdispatcher",
+      "description": "generate HPC scheduler systems jobs input scripts and submit these scripts to HPC systems and poke until they finish",
+      "stars": 60,
+      "pushed_at": "2026-08-03T20:49:35Z",
+      "language": "Python",
+      "license_spdx_id": "LGPL-3.0",
+      "homepage": "https://docs.deepmodeling.com/projects/dpdispatcher/"
+    },
+    {
+      "full_name": "ascii-supply-networks/dagster-slurm",
+      "html_url": "https://github.com/ascii-supply-networks/dagster-slurm",
+      "description": "Dagster SLURM integration",
+      "stars": 57,
+      "pushed_at": "2026-08-04T19:34:25Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://dagster-slurm.geoheil.com"
+    },
+    {
+      "full_name": "last9/gpu-telemetry",
+      "html_url": "https://github.com/last9/gpu-telemetry",
+      "description": "GPU Observability with workload attribution. One OTLP agent per node ties hardware metrics (NVIDIA, AMD, Intel Gaudi) to the K8s pod or Slurm job burning the GPU.",
+      "stars": 57,
+      "pushed_at": "2026-08-02T09:12:57Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://last9.io/gpu-observability/"
+    },
+    {
+      "full_name": "qiskit-community/spank-plugins",
+      "html_url": "https://github.com/qiskit-community/spank-plugins",
+      "description": "Slurm Spank plugins for Quantum resources and jobs support",
+      "stars": 57,
+      "pushed_at": "2026-07-31T22:02:10Z",
+      "language": "C",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "Ensembl/ensembl-hive",
+      "html_url": "https://github.com/Ensembl/ensembl-hive",
+      "description": "EnsEMBL Hive - a system for creating and running pipelines on a distributed compute resource",
+      "stars": 55,
+      "pushed_at": "2026-01-06T13:30:46Z",
+      "language": "Perl",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "ualberta-rcg/SoftMig",
+      "html_url": "https://github.com/ualberta-rcg/SoftMig",
+      "description": "SLURM-native software GPU slicing for NVIDIA clusters using memory limits and compute time-slicing.",
+      "stars": 51,
+      "pushed_at": "2026-05-24T18:12:48Z",
+      "language": "C",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.ualberta.ca/en/information-services-and-technology/research-computing/index.html"
+    },
+    {
+      "full_name": "natefoo/slurm-drmaa",
+      "html_url": "https://github.com/natefoo/slurm-drmaa",
+      "description": "DRMAA for Slurm: Implementation of the DRMAA C bindings for Slurm",
+      "stars": 50,
+      "pushed_at": "2026-06-24T09:27:52Z",
+      "language": "C",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "epigen/cemm.slurm.sm",
+      "html_url": "https://github.com/epigen/cemm.slurm.sm",
+      "description": "CeMM's Snakemake SLURM cluster profile",
+      "stars": 50,
+      "pushed_at": "2025-10-08T14:19:59Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "guilbaults/slurm-job-exporter",
+      "html_url": "https://github.com/guilbaults/slurm-job-exporter",
+      "description": "Prometheus exporter for the stats in the cgroup accounting with slurm. This will also collect stats of a job using NVIDIA GPUs.",
+      "stars": 49,
+      "pushed_at": "2026-07-27T19:09:15Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "qtop/qtop",
+      "html_url": "https://github.com/qtop/qtop",
+      "description": "qtop (pronounced queue-top) is a tool written in order to monitor the state of Queueing Systems, along with related information relevant on HPC & related clusters. It supports **SLURM, PBS, SGE & OAR** families.  It is the evolution of the historic shell version of the tool, born out of CERN's LHC project needs:",
+      "stars": 47,
+      "pushed_at": "2026-07-30T12:00:21Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://cern.ch/fotis/QTOP"
+    },
+    {
+      "full_name": "c3se/alvis-intro",
+      "html_url": "https://github.com/c3se/alvis-intro",
+      "description": "Introduction tutorial and examples for Alvis",
+      "stars": 45,
+      "pushed_at": "2025-08-27T09:17:59Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "vultr/slik",
+      "html_url": "https://github.com/vultr/slik",
+      "description": "Slurm in Kubernetes",
+      "stars": 43,
+      "pushed_at": "2026-07-15T18:28:21Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://vultr.com"
+    },
+    {
+      "full_name": "aws-samples/aws-parallelcluster-monitoring",
+      "html_url": "https://github.com/aws-samples/aws-parallelcluster-monitoring",
+      "description": "Monitoring Dashboard for AWS ParallelCluster AWS ParallelCluster & AWS PCS + Amazon RES virtual desktops",
+      "stars": 41,
+      "pushed_at": "2026-07-23T08:36:57Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT-0",
+      "homepage": ""
+    },
+    {
+      "full_name": "saforem2/ezpz",
+      "html_url": "https://github.com/saforem2/ezpz",
+      "description": "Write once, run anywhere; ezpz \ud83c\udf4b",
+      "stars": 39,
+      "pushed_at": "2026-08-06T05:46:49Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "http://ezpz.cool/"
+    },
+    {
+      "full_name": "francois-rozet/dawgz",
+      "html_url": "https://github.com/francois-rozet/dawgz",
+      "description": "Unleash the true power of scheduling",
+      "stars": 39,
+      "pushed_at": "2026-07-09T15:09:42Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://pypi.org/project/dawgz"
+    },
+    {
+      "full_name": "pyiron/pysqa",
+      "html_url": "https://github.com/pyiron/pysqa",
+      "description": "Simple HPC queuing system adapter for Python on based jinja templates to automate the submission script creation.",
+      "stars": 35,
+      "pushed_at": "2026-08-03T20:13:07Z",
+      "language": "Python",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": "https://pysqa.readthedocs.io"
+    },
+    {
+      "full_name": "geoalgo/slurmpilot",
+      "html_url": "https://github.com/geoalgo/slurmpilot",
+      "description": "Launching and monitoring Slurm experiments in Python",
+      "stars": 34,
+      "pushed_at": "2026-06-29T15:34:02Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "SlinkyProject/slurm-client",
+      "html_url": "https://github.com/SlinkyProject/slurm-client",
+      "description": "OpenAPI Golang client library for Slurm REST API. A Slinky project.",
+      "stars": 33,
+      "pushed_at": "2026-08-04T18:58:01Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://slinky.ai/"
+    },
+    {
+      "full_name": "basnijholt/adaptive-scheduler",
+      "html_url": "https://github.com/basnijholt/adaptive-scheduler",
+      "description": "Run many functions (adaptively) on many cores (>10k-100k) using mpi4py.futures, ipyparallel, loky, or dask-mpi. :tada:",
+      "stars": 31,
+      "pushed_at": "2026-08-03T19:17:57Z",
+      "language": "Python",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": "http://adaptive-scheduler.readthedocs.io"
+    },
+    {
+      "full_name": "aws-samples/aws-parallelcluster-post-install-scripts",
+      "html_url": "https://github.com/aws-samples/aws-parallelcluster-post-install-scripts",
+      "description": "Scripts to customize AWS ParallelCluster",
+      "stars": 30,
+      "pushed_at": "2026-06-11T13:29:19Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT-0",
+      "homepage": ""
+    },
+    {
+      "full_name": "AMD-AGI/maxtext-slurm",
+      "html_url": "https://github.com/AMD-AGI/maxtext-slurm",
+      "description": "Toolkit for launching and observing MaxText training on Slurm-managed GPU clusters",
+      "stars": 29,
+      "pushed_at": "2026-07-19T08:04:44Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "NL-BioImaging/biomero",
+      "html_url": "https://github.com/NL-BioImaging/biomero",
+      "description": "BIOMERO.analyzer - A python library for easy connecting between OMERO (jobs) and a Slurm cluster",
+      "stars": 28,
+      "pushed_at": "2026-08-06T16:17:28Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://nl-bioimaging.github.io/biomero/"
+    },
+    {
+      "full_name": "aws-samples/aws-eda-slurm-cluster",
+      "html_url": "https://github.com/aws-samples/aws-eda-slurm-cluster",
+      "description": "AWS Slurm Cluster for EDA Workloads",
+      "stars": 27,
+      "pushed_at": "2026-04-13T18:28:50Z",
+      "language": "Python",
+      "license_spdx_id": "MIT-0",
+      "homepage": ""
+    },
+    {
+      "full_name": "dirkpetersen/froster",
+      "html_url": "https://github.com/dirkpetersen/froster",
+      "description": "Froster is a user-friendly archiving tool for teams that move data between Posix file systems and S3 like object storage systems such as AWS Glacier",
+      "stars": 27,
+      "pushed_at": "2026-07-11T12:37:00Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "aws-samples/aws-do-hyperpod",
+      "html_url": "https://github.com/aws-samples/aws-do-hyperpod",
+      "description": "Create and manage Amazon SageMaker HyperPod clusters, run distributed model training",
+      "stars": 26,
+      "pushed_at": "2026-07-21T23:51:02Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT-0",
+      "homepage": "https://bit.ly/aws-do-hyperpod"
+    },
+    {
+      "full_name": "AgnostiqHQ/covalent-slurm-plugin",
+      "html_url": "https://github.com/AgnostiqHQ/covalent-slurm-plugin",
+      "description": "Executor plugin interfacing Covalent with Slurm",
+      "stars": 26,
+      "pushed_at": "2026-07-13T17:13:37Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://covalent.xyz"
+    },
+    {
+      "full_name": "gmertes/vscode-remote-hpc",
+      "html_url": "https://github.com/gmertes/vscode-remote-hpc",
+      "description": "Connect VS Code to a Slurm-based HPC compute node directly from the remote explorer.",
+      "stars": 26,
+      "pushed_at": "2026-06-10T10:32:05Z",
+      "language": "Shell",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "ycrc/dSQ",
+      "html_url": "https://github.com/ycrc/dSQ",
+      "description": "dead Simple Queue - Slurm arrays for files with jobs in them.",
+      "stars": 25,
+      "pushed_at": "2026-04-13T19:37:59Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/dsq/"
+    },
+    {
+      "full_name": "facebookresearch/clusterscope",
+      "html_url": "https://github.com/facebookresearch/clusterscope",
+      "description": "Clusterscope is a CLI and python library to extract information from HPC Clusters and Jobs.",
+      "stars": 24,
+      "pushed_at": "2026-07-14T17:11:31Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://facebookresearch.github.io/clusterscope/"
+    },
+    {
+      "full_name": "uabrc/uabrc.github.io",
+      "html_url": "https://github.com/uabrc/uabrc.github.io",
+      "description": "UAB Research Computing Documentation",
+      "stars": 24,
+      "pushed_at": "2026-07-31T19:23:28Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://docs.rc.uab.edu"
+    },
+    {
+      "full_name": "link89/oh-my-batch",
+      "html_url": "https://github.com/link89/oh-my-batch",
+      "description": "A command line toolkit to simplify batch tasks generation and execution.",
+      "stars": 23,
+      "pushed_at": "2026-08-06T09:25:11Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "rokroskar/sparkhpc",
+      "html_url": "https://github.com/rokroskar/sparkhpc",
+      "description": "launching and controlling spark on hpc clusters",
+      "stars": 23,
+      "pushed_at": "2026-03-09T22:40:44Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "http://sparkhpc.readthedocs.io/"
+    },
+    {
+      "full_name": "amoghj98/rcac-utils",
+      "html_url": "https://github.com/amoghj98/rcac-utils",
+      "description": "This repository contains bash scripts for launching, orchestrating, managing, and monitoring jobs on Purdue's RCAC clusters.",
+      "stars": 23,
+      "pushed_at": "2025-12-22T19:33:42Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "NVIDIA/ai-cloud-validation",
+      "html_url": "https://github.com/NVIDIA/ai-cloud-validation",
+      "description": "Validation and management tools for NVIDIA AI Cloud environments.",
+      "stars": 23,
+      "pushed_at": "2026-08-07T15:08:34Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.nvidia.com/en-us/data-center/isv-validation-program/"
+    },
+    {
+      "full_name": "Daylily-Informatics/daylily-ephemeral-cluster",
+      "html_url": "https://github.com/Daylily-Informatics/daylily-ephemeral-cluster",
+      "description": "(current) A NGS analysis framework for WGS data, which automates the entire process of spinning up AWS EC2 spot instances and processing FASTQ to snvVCF in <60m, for dollars a sample and achieving Fscores of 0.998.",
+      "stars": 22,
+      "pushed_at": "2026-07-08T10:52:24Z",
+      "language": "HTML",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "http://daylilyinformatics.com"
+    },
+    {
+      "full_name": "Antvirf/stui",
+      "html_url": "https://github.com/Antvirf/stui",
+      "description": "Terminal user interface for Slurm HPC clusters",
+      "stars": 22,
+      "pushed_at": "2026-07-04T04:29:52Z",
+      "language": "Go",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://stui.dev/"
+    },
+    {
+      "full_name": "unlhcc/job-examples",
+      "html_url": "https://github.com/unlhcc/job-examples",
+      "description": "Example jobs for popular applications on HCC clusters.",
+      "stars": 21,
+      "pushed_at": "2026-07-10T21:19:28Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "SlinkyProject/containers",
+      "html_url": "https://github.com/SlinkyProject/containers",
+      "description": "OCI container images. A Slinky project.",
+      "stars": 21,
+      "pushed_at": "2026-08-07T13:18:41Z",
+      "language": "Dockerfile",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://slinky.ai/"
+    },
+    {
+      "full_name": "silx-kit/jupyterhub_moss",
+      "html_url": "https://github.com/silx-kit/jupyterhub_moss",
+      "description": "Jupyterhub MOdular Slurm Spawner",
+      "stars": 21,
+      "pushed_at": "2025-12-02T08:22:41Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "rackslab/slurm-quota",
+      "html_url": "https://github.com/rackslab/slurm-quota",
+      "description": "CPU/GPU time quotas for users & accounts in Slurm",
+      "stars": 21,
+      "pushed_at": "2026-07-09T13:59:40Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "ULHPC/puppet-slurm",
+      "html_url": "https://github.com/ULHPC/puppet-slurm",
+      "description": "A Puppet module designed to configure and manage SLURM(see https://slurm.schedmd.com/),  an open source, fault-tolerant, and highly scalable cluster management and job scheduling system for large and small Linux clusters",
+      "stars": 21,
+      "pushed_at": "2026-06-01T07:59:09Z",
+      "language": "Puppet",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "bio-phys/asyncmd",
+      "html_url": "https://github.com/bio-phys/asyncmd",
+      "description": "asyncmd is a library to write concurrent code to run and analyze molecular dynamics simulations using pythons async/await syntax. Computationally costly operations can be performed locally or submitted to a queuing system.",
+      "stars": 20,
+      "pushed_at": "2026-07-16T15:14:41Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    }
+  ]
+}

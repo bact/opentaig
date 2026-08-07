@@ -1,0 +1,167 @@
+{
+  "keyword": "distributed LLM training",
+  "query": "distributed LLM training stars:>19 pushed:>2025-08-07 archived:false fork:false",
+  "count": 16,
+  "repos": [
+    {
+      "full_name": "kubeflow/trainer",
+      "html_url": "https://github.com/kubeflow/trainer",
+      "description": "Distributed AI Model Training and LLM Fine-Tuning on Kubernetes",
+      "stars": 2173,
+      "pushed_at": "2026-08-07T16:10:01Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://trainer.kubeflow.org/en/latest/"
+    },
+    {
+      "full_name": "volcengine/veScale",
+      "html_url": "https://github.com/volcengine/veScale",
+      "description": "Byted PyTorch Distributed for Hyperscale Training of LLMs and RLs",
+      "stars": 1036,
+      "pushed_at": "2026-03-03T22:19:43Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "AgileRL/AgileRL",
+      "html_url": "https://github.com/AgileRL/AgileRL",
+      "description": "Streamlining reinforcement learning with RLOps. State-of-the-art RL algorithms and tools, with 10x faster training through evolutionary hyperparameter optimization.",
+      "stars": 941,
+      "pushed_at": "2026-08-07T15:20:03Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://agilerl.com"
+    },
+    {
+      "full_name": "NVIDIA-NeMo/Automodel",
+      "html_url": "https://github.com/NVIDIA-NeMo/Automodel",
+      "description": "\ud83d\ude80 Pytorch Distributed native training library for LLMs/VLMs with OOTB Hugging Face support",
+      "stars": 800,
+      "pushed_at": "2026-08-07T16:18:35Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.nvidia.com/nemo/automodel/nightly"
+    },
+    {
+      "full_name": "baidu-baige/LoongForge",
+      "html_url": "https://github.com/baidu-baige/LoongForge",
+      "description": "A unified, high-performance framework for training LLMs, VLMs, diffusion, and embodied models on NVIDIA GPUs and Kunlun XPUs.",
+      "stars": 338,
+      "pushed_at": "2026-08-05T13:00:15Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://baidu-baige.github.io/LoongForge/"
+    },
+    {
+      "full_name": "MooreThreads/SimuMax",
+      "html_url": "https://github.com/MooreThreads/SimuMax",
+      "description": "a static analytical model for LLM distributed training",
+      "stars": 165,
+      "pushed_at": "2026-05-11T08:53:47Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "autonomous-ai/autonomous-grid",
+      "html_url": "https://github.com/autonomous-ai/autonomous-grid",
+      "description": "Your AI intranet: network the computers you already own for inference and training.",
+      "stars": 133,
+      "pushed_at": "2026-08-07T10:49:47Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.autonomous.ai/grid"
+    },
+    {
+      "full_name": "laoshan-song/Awesome-LLM-Interview",
+      "html_url": "https://github.com/laoshan-song/Awesome-LLM-Interview",
+      "description": "LLM interview prep notes: Transformer, RLHF, DPO, LoRA, KV Cache,RAG, MoE, distributed training & 2026 frontier topics",
+      "stars": 131,
+      "pushed_at": "2026-06-21T05:19:36Z",
+      "language": "HTML",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "phonism/genrec",
+      "html_url": "https://github.com/phonism/genrec",
+      "description": "GenRec: Generative Recommender Systems with RQ-VAE semantic IDs, Transformer-based retrieval, and LLM integration. Built on PyTorch with distributed training support.",
+      "stars": 116,
+      "pushed_at": "2026-06-03T11:50:40Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://phonism.github.io/genrec/"
+    },
+    {
+      "full_name": "OpenSQZ/MegatronApp",
+      "html_url": "https://github.com/OpenSQZ/MegatronApp",
+      "description": "Toolchain built around the Megatron-LM for Distributed Training",
+      "stars": 98,
+      "pushed_at": "2026-05-20T15:10:50Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "blackbird-io/blackbird",
+      "html_url": "https://github.com/blackbird-io/blackbird",
+      "description": "A high-performance RDMA distributed file system for fast LLM Inference and GPU Training.",
+      "stars": 47,
+      "pushed_at": "2026-02-20T03:48:51Z",
+      "language": "C++",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "zhebrak/llm-cluster-simulator",
+      "html_url": "https://github.com/zhebrak/llm-cluster-simulator",
+      "description": "Simulate distributed LLM training and inference across GPU clusters in your browser. Memory, throughput, cost, and parallelism strategy planning.",
+      "stars": 34,
+      "pushed_at": "2026-04-01T08:15:08Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://simulator.zhebrak.io/"
+    },
+    {
+      "full_name": "AutomataNexus/AxonML",
+      "html_url": "https://github.com/AutomataNexus/AxonML",
+      "description": "PyTorch-equivalent deep learning framework in pure Rust \u2014 22 crates, CUDA GPU, vision, LLMs, ONNX, autograd, distributed training",
+      "stars": 29,
+      "pushed_at": "2026-06-28T06:30:03Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://automatanexus.com"
+    },
+    {
+      "full_name": "d9d-project/d9d",
+      "html_url": "https://github.com/d9d-project/d9d",
+      "description": "d9d - d[istribute]d - distributed training framework based on PyTorch that tries to be efficient yet hackable",
+      "stars": 28,
+      "pushed_at": "2026-08-07T07:53:17Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://d9d-project.github.io/d9d/"
+    },
+    {
+      "full_name": "AFDWang/Hetu-Galvatron",
+      "html_url": "https://github.com/AFDWang/Hetu-Galvatron",
+      "description": "Galvatron is an automatic distributed training system designed for Transformer models, including Large Language Models (LLMs). If you have any interests, please visit/star/fork https://github.com/PKU-DAIR/Hetu-Galvatron",
+      "stars": 25,
+      "pushed_at": "2025-10-22T12:30:13Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "MatN23/AdaptiveTrainingSystem",
+      "html_url": "https://github.com/MatN23/AdaptiveTrainingSystem",
+      "description": "A PyTorch framework for training transformer language models with Mixture of Experts (MoE) architecture support, Mixture of Depths (MoD), and DeepSpeed integration. Implements models from 70M to 300B parameters with automatic dataset processing, distributed training, and memory management.",
+      "stars": 21,
+      "pushed_at": "2026-08-01T02:23:56Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    }
+  ]
+}

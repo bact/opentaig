@@ -1,26 +1,26 @@
 {
   "keyword": "topic:trusted-computing",
-  "query": "topic:trusted-computing stars:>19 pushed:>2025-07-29 archived:false fork:false",
+  "query": "topic:trusted-computing stars:>19 pushed:>2025-08-07 archived:false fork:false",
   "count": 8,
   "repos": [
+    {
+      "full_name": "IBM/ACE-RISCV",
+      "html_url": "https://github.com/IBM/ACE-RISCV",
+      "description": "Assured confidential execution (ACE) implements VM-based trusted execution environment (TEE) for embedded RISC-V systems with focus on a formally verified and auditable firmware.",
+      "stars": 212,
+      "pushed_at": "2026-08-07T05:09:48Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
     {
       "full_name": "nsacyber/HIRS",
       "html_url": "https://github.com/nsacyber/HIRS",
       "description": "Trusted Computing based services supporting TPM provisioning and supply chain validation concepts. #nsacyber",
       "stars": 212,
-      "pushed_at": "2026-07-29T13:19:48Z",
+      "pushed_at": "2026-08-06T21:56:05Z",
       "language": "JavaScript",
       "license_spdx_id": "NOASSERTION",
-      "homepage": ""
-    },
-    {
-      "full_name": "IBM/ACE-RISCV",
-      "html_url": "https://github.com/IBM/ACE-RISCV",
-      "description": "Assured confidential execution (ACE) implements VM-based trusted execution environment (TEE) for embedded RISC-V systems with focus on a formally verified and auditable firmware.",
-      "stars": 211,
-      "pushed_at": "2026-07-29T02:33:21Z",
-      "language": "Rust",
-      "license_spdx_id": "Apache-2.0",
       "homepage": ""
     },
     {
@@ -38,7 +38,7 @@
       "html_url": "https://github.com/nsacyber/paccor",
       "description": "The Platform Attribute Certificate Creator can gather component details, create, sign, and validate the TCG-defined Platform Certificate. #nsacyber",
       "stars": 78,
-      "pushed_at": "2026-07-21T12:28:10Z",
+      "pushed_at": "2026-08-06T16:56:22Z",
       "language": "Java",
       "license_spdx_id": "Apache-2.0",
       "homepage": "https://github.com/nsacyber/HIRS"
@@ -57,8 +57,8 @@
       "full_name": "riscv/riscv-smmtt",
       "html_url": "https://github.com/riscv/riscv-smmtt",
       "description": "This specification will define the RISC-V privilege ISA extensions required to support Supervisor Domain isolation for multi-tenant security use cases e.g. confidential-computing, trusted platform services, fault isolation and so on.",
-      "stars": 72,
-      "pushed_at": "2026-07-29T09:46:07Z",
+      "stars": 73,
+      "pushed_at": "2026-08-03T15:43:24Z",
       "language": "Makefile",
       "license_spdx_id": "CC-BY-4.0",
       "homepage": "https://riscv.atlassian.net/browse/RVG-65"
@@ -68,7 +68,7 @@
       "html_url": "https://github.com/skalenetwork/sgxwallet",
       "description": "sgxwallet is the first-ever opensource high-performance hardware secure crypto wallet that is based on Intel SGX technology.  First opensource product on Intel SGX whitelist. Scales to 100,000+ transactions per second. Currently supports ETH and SKALE, and will support BTC in the future.  Sgxwallet is under heavy development and use by SKALE network.",
       "stars": 68,
-      "pushed_at": "2026-07-29T15:12:38Z",
+      "pushed_at": "2026-08-05T12:49:24Z",
       "language": "Shell",
       "license_spdx_id": "AGPL-3.0",
       "homepage": "https://skale.network"

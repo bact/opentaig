@@ -1,0 +1,37 @@
+{
+  "keyword": "hardware security module",
+  "query": "hardware security module stars:>19 pushed:>2025-08-07 archived:false fork:false",
+  "count": 3,
+  "repos": [
+    {
+      "full_name": "polhenarejos/pico-hsm",
+      "html_url": "https://github.com/polhenarejos/pico-hsm",
+      "description": "Hardware Security Module (HSM) for Raspberry Pico and ESP32",
+      "stars": 557,
+      "pushed_at": "2026-07-28T05:22:49Z",
+      "language": "C",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://www.picokeys.com"
+    },
+    {
+      "full_name": "vegardit/docker-softhsm2-pkcs11-proxy",
+      "html_url": "https://github.com/vegardit/docker-softhsm2-pkcs11-proxy",
+      "description": "Docker image to run a virtual HSM (Hardware Security Module) network service based on SoftHSM2 and pkcs11-proxy.",
+      "stars": 49,
+      "pushed_at": "2026-03-09T15:00:05Z",
+      "language": "Shell",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "anishathalye/knox",
+      "html_url": "https://github.com/anishathalye/knox",
+      "description": "A framework for formally verifying hardware security modules to be free of hardware, software, and timing side-channel vulnerabilities \ud83d\udd0f",
+      "stars": 42,
+      "pushed_at": "2025-11-29T17:09:14Z",
+      "language": "Racket",
+      "license_spdx_id": "MIT",
+      "homepage": "https://anish.io/knox"
+    }
+  ]
+}

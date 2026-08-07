@@ -1,0 +1,27 @@
+{
+  "keyword": "GPU power profiler",
+  "query": "GPU power profiler stars:>19 pushed:>2025-08-07 archived:false fork:false",
+  "count": 2,
+  "repos": [
+    {
+      "full_name": "plasma-umass/scalene",
+      "html_url": "https://github.com/plasma-umass/scalene",
+      "description": "Scalene: a high-performance, high-precision CPU, GPU, and memory profiler for Python with AI-powered optimization proposals",
+      "stars": 13486,
+      "pushed_at": "2026-08-01T19:34:24Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "ssprea/ssprea-nvidia-control",
+      "html_url": "https://github.com/ssprea/ssprea-nvidia-control",
+      "description": "A GUI tool to overclock NVIDIA GPUs on Wayland and X11. Also supports fan curves,oc profiles, and adjusting power limits.",
+      "stars": 83,
+      "pushed_at": "2026-08-02T14:55:33Z",
+      "language": "C#",
+      "license_spdx_id": "",
+      "homepage": ""
+    }
+  ]
+}

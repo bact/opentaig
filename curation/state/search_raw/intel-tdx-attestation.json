@@ -1,0 +1,37 @@
+{
+  "keyword": "Intel TDX attestation",
+  "query": "Intel TDX attestation stars:>19 pushed:>2025-08-07 archived:false fork:false",
+  "count": 3,
+  "repos": [
+    {
+      "full_name": "intel/confidential-computing-zoo",
+      "html_url": "https://github.com/intel/confidential-computing-zoo",
+      "description": "Confidential Computing Zoo provides confidential computing solutions based on Intel SGX, TDX, HEXL, etc. technologies.",
+      "stars": 359,
+      "pushed_at": "2026-08-03T08:26:42Z",
+      "language": "C++",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cczoo.readthedocs.io/en/latest/index.html"
+    },
+    {
+      "full_name": "automata-network/tdx-attestation-sdk",
+      "html_url": "https://github.com/automata-network/tdx-attestation-sdk",
+      "description": "The Automata TDX Attestation SDK is a software development kit designed to help users generate the Intel TDX Quote using Rust across different cloud service providers, and generate Risc0 and SP1 ZK Proofs which can be verified on-chain. Powered by Automata",
+      "stars": 35,
+      "pushed_at": "2026-07-15T14:35:48Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://ata.network"
+    },
+    {
+      "full_name": "Fraunhofer-AISEC/cmc",
+      "html_url": "https://github.com/Fraunhofer-AISEC/cmc",
+      "description": "Remote attestation for Trusted and Confidential Computing platforms (TPM, AMD SEV-SNP, Intel SGX/TDX)",
+      "stars": 24,
+      "pushed_at": "2026-08-06T21:12:47Z",
+      "language": "C",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://pkg.go.dev/github.com/Fraunhofer-AISEC/cmc"
+    }
+  ]
+}

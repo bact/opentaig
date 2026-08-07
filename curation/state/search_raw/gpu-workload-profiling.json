@@ -1,0 +1,27 @@
+{
+  "keyword": "GPU workload profiling",
+  "query": "GPU workload profiling stars:>19 pushed:>2025-08-07 archived:false fork:false",
+  "count": 2,
+  "repos": [
+    {
+      "full_name": "GPUOpen-Tools/radeon_gpu_profiler",
+      "html_url": "https://github.com/GPUOpen-Tools/radeon_gpu_profiler",
+      "description": "Radeon GPU Profiler (RGP) is a tool from AMD that allows for deep inspection of GPU workloads.",
+      "stars": 449,
+      "pushed_at": "2026-06-11T16:25:51Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "AMD-AGI/Apex",
+      "html_url": "https://github.com/AMD-AGI/Apex",
+      "description": "Agents, and RL environment, for optimizing GPU kernels on AMD ROCm using LLM agents. Benchmarks LLM serving workloads end-to-end, profiles bottleneck kernels, optimizes them via Claude Code or Codex, and scores on compilation, correctness, and speedup.",
+      "stars": 74,
+      "pushed_at": "2026-08-07T02:53:20Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}
