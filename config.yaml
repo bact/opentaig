@@ -164,9 +164,13 @@ columns:
     datetime_added: "datetime_added"
     datetime_checked: "datetime_checked"
     datetime_updated: "datetime_updated"
-  # Identity columns (id/tool_type/name/summary/license/homepage/source/
-  # documentation) are always sourced from here, full stop -- no
-  # tool_metadata counterpart, no precedence logic.
+  # Identity columns (id/tool_type/summary/source) are always sourced from
+  # here, full stop -- no tool_metadata counterpart, no precedence logic.
+  # `name`, `license`, `documentation`, and `homepage` look like identity
+  # fields too but aren't treated as ones -- all four are auto-collectible
+  # (GitHub repo API for name/license/homepage, pyproject.toml/package.json/
+  # Cargo.toml for documentation/homepage), so they go through the
+  # precedence rule below like every other tool_metadata column.
   #
   # Every OTHER column below (programming_language through
   # openssf_scorecard_vulnerabilities) also exists in `tool_metadata`
@@ -185,7 +189,7 @@ columns:
   # This is what makes `tool_metadata` 100% safe to bulk-overwrite on every
   # automated collection run -- no hand edit ever lives there; every
   # override, for any field, always goes here in `tools` instead.
-  # `dependents_count` is the one field with nothing to fall through to
+  # `dependents` is the one field with nothing to fall through to
   # (never auto-collected, no public API for GitHub's dependency-graph
   # count) -- same column, same override mechanism, just always resolves
   # to whatever's here since tool_metadata's side is always blank.
@@ -216,7 +220,7 @@ columns:
     security_policy_url: "security_policy_url"
     governance_url: "governance_url"
     sbom_url: "sbom_url"
-    dependents_count: "dependents_count"
+    dependents: "dependents"
     development_status: "development_status"
     paper_url: "paper_url"
     software_heritage_id: "software_heritage_id"
@@ -231,6 +235,11 @@ columns:
     openssf_scorecard_code_review: "openssf_scorecard_code_review"
     openssf_scorecard_maintained: "openssf_scorecard_maintained"
     openssf_scorecard_vulnerabilities: "openssf_scorecard_vulnerabilities"
+    # GitHub repo topics unioned with package-manifest `keywords` fields
+    # (semicolon list); active GitHub Sponsors count for the repo owner, via
+    # sponsors.ecosyste.ms -- see collect_project_metadata.py's docstring.
+    keywords: "keywords"
+    sponsors: "sponsors"
     datetime_added: "datetime_added"
     datetime_checked: "datetime_checked"
     datetime_updated: "datetime_updated"
@@ -245,6 +254,8 @@ columns:
     source: "source"
     license: "license"
     programming_language: "programming_language"
+    documentation: "documentation"
+    homepage: "homepage"
     funding: "funding"
     funder: "funder"
     stars: "stars"
@@ -273,6 +284,8 @@ columns:
     openssf_scorecard_code_review: "openssf_scorecard_code_review"
     openssf_scorecard_maintained: "openssf_scorecard_maintained"
     openssf_scorecard_vulnerabilities: "openssf_scorecard_vulnerabilities"
+    keywords: "keywords"
+    sponsors: "sponsors"
     datetime_added: "datetime_added"
     datetime_checked: "datetime_checked"
     datetime_updated: "datetime_updated"

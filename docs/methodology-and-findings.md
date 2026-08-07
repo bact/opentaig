@@ -409,7 +409,7 @@ support.
    sweep reviewed all 1,363 deduplicated candidates, but the `<50 star` tier
    was triaged in bulk rather than individually.
 8. **GitHub-derived "usage" signals don't transfer cleanly to non-library
-   tools, and are noisy even for libraries.** `dependents_count` (the
+   tools, and are noisy even for libraries.** `dependents` (the
    `tools` tab's manual-entry-only column for GitHub's dependency-graph
    "Used by" count — see `docs/data-schema.md`) is a reasonable adoption
    proxy for a package meant to be imported by other code, but this

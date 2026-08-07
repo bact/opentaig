@@ -185,26 +185,24 @@ automation writes to `tools`; nothing but automation writes to
 | `id` | Short unique identifier, referenced from `tool_map.tool_id` (e.g. `scancode-toolkit`). |
 | `tool_type` | Free-text category, e.g. `software` or `specification` — not a fixed enum. Some open problems are better addressed by an open standard than by executable software (e.g. `spdx3`, `croissant`); this lets both live in one catalog. Rendered as a small chip, same treatment as `license`. |
 | `summary` | One or two sentence description. |
-| `homepage` | Project homepage URL. |
 | `source` | Source code repository URL. |
-| `documentation` | Documentation URL. |
 
-(These four URL columns reuse the well-known
-[Python Project-URL labels](https://packaging.python.org/en/latest/specifications/well-known-project-urls/),
-so the schema isn't inventing its own vocabulary.) Leave any column blank if
-not applicable — the site simply omits blank fields.
+Leave any column blank if not applicable — the site simply omits blank
+fields.
 
 Every other column in `tools` — `name`, `license`, `programming_language`,
-`funding`, `funder`, and the full project-quality/community-health set
-(`stars` through `openssf_scorecard_vulnerabilities`, listed in full under
-`tool_metadata` below) — also exists, same column name, in the separate
-**`tool_metadata` sheet**. `tools`' copy is an *optional override*, not the
-primary source; see the precedence rule right below. `name` and `license`
-look like pure identity fields but aren't treated as ones here — both are
-auto-collectible from the GitHub repo API same as the rest of this set (a
-repo's own name is often an unusable slug, e.g. GitHub's own name for the
-OWASP LLM Top 10 repo is `www-project-top-10-for-large-language-model-applications`
-— exactly the case `tools`' override exists for), so both go through the
+`documentation`, `homepage`, `funding`, `funder`, and the full project-
+quality/community-health set (`stars` through `sponsors`, listed in full
+under `tool_metadata` below) — also exists, same column name, in the
+separate **`tool_metadata` sheet**. `tools`' copy is an *optional override*,
+not the primary source; see the precedence rule right below. `name`,
+`license`, `documentation`, and `homepage` look like pure identity fields
+but aren't treated as ones here — all four are auto-collectible (a repo's
+own name is often an unusable slug, e.g. GitHub's own name for the OWASP
+LLM Top 10 repo is `www-project-top-10-for-large-language-model-applications`
+— exactly the case `tools`' override exists for; `documentation`/`homepage`
+come from a package manifest's own well-known Project-URL labels or
+GitHub's repo API, see `tool_metadata` below), so all four go through the
 same override precedence rather than a straight `tools`-only read.
 
 ### `tools` / `tool_metadata` precedence
@@ -215,7 +213,7 @@ per tool, per this rule (`resolve_metadata_field()` in `build.py`):
 
 1. **A non-blank cell in `tools` always wins**, as a human override —
    e.g. correcting a bad auto-collected value, or filling in
-   `dependents_count`, which is never auto-collected at all (no public API
+   `dependents`, which is never auto-collected at all (no public API
    for GitHub's dependency-graph count — see `tool_metadata` below).
 2. **The literal text `none` in `tools` (case-insensitive) means
    "reviewed, deliberately blank"** — it suppresses `tool_metadata`'s
@@ -316,6 +314,8 @@ with a hand-typed override in `tools`:
 | `name` | The repo's own name (GitHub's `name` field, not `full_name` — no owner prefix). Often not display-ready: a bare slug, or an unwieldy literal project-repo name (e.g. `www-project-top-10-for-large-language-model-applications` for the OWASP LLM Top 10 repo) — that's what `tools`' own `name` override exists for, not a reason to skip collecting it here. |
 | `license` | **SPDX License ID** (e.g. `Apache-2.0`, `MIT`, `GPL-2.0-or-later`) — see [spdx.org/licenses](https://spdx.org/licenses/). Resolved through a priority chain: `codemeta.json`'s own `license` field → `CITATION.cff`'s own `license` field → **GitHub's own detector, if it found one** → an ecosystem package manifest whose license field is conventionally already clean SPDX (`Cargo.toml`, `package.json`, `pyproject.toml`) → Maven's `pom.xml` license name, normalized via [`licenseid`](https://github.com/bact/licenseid)'s fuzzy SPDX text-matcher → the repo's actual `LICENSE` file text, matched the same way, as the genuine last resort. GitHub's detection is checked ahead of ecosystem manifests (it's free either way, already fetched for every tool, and reliable when it has an answer — its real failure mode is coming up empty, not being confidently wrong), and both outrank `licenseid`'s fuzzy match, which only runs at all once everything else has failed — confirmed on real repos: DPV's `CITATION.cff` declares `license: W3C` directly, resolving it without `licenseid` ever running; fossology has no such metadata, but GitHub correctly detects `GPL-2.0-only` there, while `licenseid`'s own best match against that same LICENSE file text is the *wrong* `LGPL-2.1-only`. Only trusted at or above an 80% similarity floor — below that, a match is noise, not signal (confirmed on real repos matching at 7-9% similarity to a license that plainly isn't theirs), and is discarded outright rather than recorded. `NOASSERTION` is recorded as blank, not as a literal value — same blind spot as `license_url` below. Full detail in `collect_project_metadata.py`'s docstring. Since license is a hard inclusion criterion, not just a display field, `build.py` warns at build time whenever `tools` and `tool_metadata` both have a real, *differing* value for the same tool — the `tools` override still wins per the usual rule, but a detector disagreement is worth a human's attention. |
 | `programming_language` | Implementation language(s), semicolon-separated for genuinely polyglot tools (e.g. `Rust; JavaScript`). `codemeta.json`'s own `programmingLanguage` field is checked first; otherwise GitHub's own repo-level `language` field is trusted directly **if it's a plausible implementation language** — it's wrong often enough to matter when it isn't: DPV (a semantic-web vocabulary) byte-counts as `HTML` because its rendered spec pages outweigh the actual `.ttl`/`.owl` files, and several ML/research repos in this catalog byte-count as `Jupyter Notebook` because notebook cell *output* blobs outweigh the actual Python. Only when GitHub's answer is blank or one of these implausible cases does the collector spend the extra calls to check every ecosystem package manifest's mere *presence* at the repo root (`Cargo.toml` → Rust, `go.mod` → Go, `package.json` → JavaScript/TypeScript, `pyproject.toml` → Python, `pom.xml`/`build.gradle` → Java, `build.gradle.kts` → Kotlin, `composer.json` → PHP) — *every* manifest found contributes to the result, not just the first, so this is where genuine polyglot detection happens. A repo with none of these manifests (DPV; also fossology, which is genuinely PHP+C but predates Composer and has no `composer.json`) resolves to blank rather than a guess — correctly means "no signal available" here, but isn't always the most *useful* answer, so it's also exactly the case "flag suspicious auto-collected values for review" in `curation/README.md`'s PASS A section exists to catch by hand. No universal manifest exists for C/C++ the way it does for the other ecosystems listed, a known remaining gap. |
+| `documentation` | Dedicated documentation URL, when the project names one explicitly. `pyproject.toml`'s `Documentation` well-known Project-URL (`[project.urls]`, matched the same way as `funding`'s `Funding` label below), then `Cargo.toml`'s own `documentation` field (a direct URL, the crates.io/docs.rs convention). No fuzzy-match fallback the way `license` has `licenseid` — an approximately-right documentation link is worse than none, so this is blank unless a manifest genuinely names one. |
+| `homepage` | Project homepage URL. `pyproject.toml`'s `Homepage` well-known Project-URL, then `package.json`'s top-level `homepage`, then `Cargo.toml`'s `package.homepage`, then GitHub's own repo `homepage` field as the true last resort — ranked below every manifest declaration since it's frequently blank even when a real homepage exists elsewhere, and occasionally just duplicates the repo's own GitHub URL rather than naming a distinct site. |
 | `stars` | Star count (`stargazers_count`). |
 | `forks` | Fork count (`forks_count`). |
 | `watchers` | **Not** GitHub's `watchers_count` field, which has been a silent alias for `stargazers_count` since GitHub folded "Watch" into "Star" years ago — sourced from `subscribers_count` instead, the field that actually reflects people subscribed to repo activity. |
@@ -341,8 +341,10 @@ with a hand-typed override in `tools`:
 | `development_status` | From `codemeta.json`'s `developmentStatus` — typically a [repostatus.org](https://www.repostatus.org/) or tidyverse-lifecycle URL/label (e.g. `active`, `wip`, `inactive`, `unsupported`). A maturity signal independent of raw activity counts. Blank if no `codemeta.json`. |
 | `paper_url` | DOI or URL of an academic paper describing the tool, if one exists — checked in order from `codemeta.json`'s `citation[].url` (more structured, checked first) and `CITATION.cff`'s `preferred-citation.doi`/`.url` (very common in this catalog's domain — confirmed present on scikit-learn, deepchecks, and others). Blank if the tool has no associated publication. |
 | `software_heritage_id` | [Software Heritage](https://www.softwareheritage.org/) archival identifier (a `swh:1:...` SWHID), if the project has explicitly recorded one — from `CITATION.cff`'s `identifiers` (`type: swh`) or `codemeta.json`'s `@id`. Blank for the large majority of tools, which don't record this even if Software Heritage has in fact archived them (Software Heritage archives essentially all public GitHub repos automatically — this column only reflects whether the *project itself* advertises a citable SWHID, not whether an archival copy exists at all). |
+| `keywords` | Semicolon-separated tags: GitHub's own repo `topics` (hand-curated, the primary source) unioned with whatever package-manifest `keywords` field(s) happen to already be fetched — `Cargo.toml`, `package.json`, `pyproject.toml` (`[project].keywords`, falling back to `[tool.poetry].keywords`), `composer.json`. Opportunistic, not exhaustive: `pyproject.toml` is always checked, the others only when language/license resolution already needed to probe manifests for this tool — a repo whose language/license both resolved from GitHub directly never has its `package.json`/`Cargo.toml` keywords checked. Meant for search/quick categorization, not as a complete tag list. |
+| `sponsors` | Active GitHub Sponsors count for the repo's **owner** (user or org — GitHub Sponsors listings are account-level, not per-repo), via the public [sponsors.ecosyste.ms](https://sponsors.ecosyste.ms/) API. Blank means that owner has no GitHub Sponsors listing at all — not the same as a listing with zero current sponsors (rare, but reads as `0`). Multiple tools sharing one owner get the same value from a single lookup. Known limitation: an owner ecosyste.ms has never indexed before can read as `0` on its very first collection run (it syncs GitHub's Sponsors data in the background, not inline with the request) and correct itself on a later `--refresh-all`. |
 
-`dependents_count` is deliberately **absent from `tool_metadata`** — it's
+`dependents` is deliberately **absent from `tool_metadata`** — it's
 never auto-collected (GitHub's "Used by" dependency-graph count has no
 public API; the only way to get it is scraping the HTML page, which
 `collect_project_metadata.py` deliberately does not do — fragile against

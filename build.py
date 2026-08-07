@@ -130,7 +130,20 @@ class Tool:
     security_policy_url: str = ""
     governance_url: str = ""
     sbom_url: str = ""
-    dependents_count: Optional[int] = None  # not auto-collected; manual-entry only
+    dependents: Optional[int] = None  # not auto-collected; manual-entry only
+    # GitHub repo topics unioned with whatever package-manifest `keywords`
+    # fields collect_project_metadata.py happened to have already fetched
+    # (pyproject.toml always; others only when language/license resolution
+    # already triggered a manifest probe) -- see that script's docstring.
+    # Best-effort, not exhaustive: a repo's keywords can come from more
+    # manifests than were fetched this run.
+    keywords: list = dataclasses.field(default_factory=list)  # list[str]
+    # Active GitHub Sponsors count for the repo owner (user or org), via
+    # sponsors.ecosyste.ms -- a sponsor listing belongs to the owner
+    # account, not the individual repo, so this is the same value for every
+    # tool sharing an owner. None means no GitHub Sponsors listing found for
+    # that owner (not zero active sponsors) -- see collect_project_metadata.py.
+    sponsors: Optional[int] = None
     development_status: str = ""
     paper_url: str = ""
     software_heritage_id: str = ""
@@ -234,7 +247,7 @@ def parse_optional_float(value: Optional[str], context: str, warnings: list) -> 
 # Every project-quality/community-health field is collectible by
 # collect_project_metadata.py into the `tool_metadata` tab, but can also be
 # hand-set directly in `tools` -- e.g. to correct a bad auto-collected value,
-# or to fill in `dependents_count`, which is never auto-collected at all. One
+# or to fill in `dependents`, which is never auto-collected at all. One
 # uniform rule for all of them, applied per field, not per tool:
 #
 #   - a non-blank `tools` cell always wins, parsed as that field's own type
@@ -251,34 +264,41 @@ def parse_optional_float(value: Optional[str], context: str, warnings: list) -> 
 # safely overwrite the whole tab, since no hand edit ever lives there; every
 # override, for any field, always goes in `tools` instead.
 METADATA_INT_FIELDS = {"stars", "forks", "watchers", "contributors",
-                        "open_issues_count", "releases_count", "dependents_count"}
+                        "open_issues_count", "releases_count", "dependents",
+                        "sponsors"}
 METADATA_FLOAT_FIELDS = {"openssf_scorecard_score", "openssf_scorecard_branch_protection",
                           "openssf_scorecard_code_review", "openssf_scorecard_maintained",
                           "openssf_scorecard_vulnerabilities"}
-METADATA_LIST_FIELDS = {"programming_language"}  # semicolon list; resolved as a whole raw string, split by the caller
+# field -> Tool attribute. Semicolon list; resolved as a whole raw string,
+# split by the caller (apply_tool_metadata()) via split_simple_list(). A
+# dict, not a set, because "programming_language" (singular, matching the
+# tools/tool_metadata column name) sets the plural `programming_languages`
+# attribute -- `keywords` needs no such rename.
+METADATA_LIST_FIELDS = {"programming_language": "programming_languages", "keywords": "keywords"}
 NONE_TOKEN = "none"
 
 # Every project-quality/community-health field, in the order they're laid
 # out in both the `tools` and `tool_metadata` tabs. Deliberately excludes
-# identity columns (id, tool_type, summary, homepage, source, documentation)
-# and freshness columns, which are `tools`-only with no tool_metadata
-# counterpart or precedence logic. `license` and `name` are NOT identity
-# columns despite looking like ones -- both are auto-collectible from the
-# GitHub repo API same as stars/programming_language (a repo's own `name` is
-# often an ugly slug, not display-ready), so both go through the same
-# override precedence, not a straight `tools`-only read.
+# identity columns (id, tool_type, summary, source) and freshness columns,
+# which are `tools`-only with no tool_metadata counterpart or precedence
+# logic. `license`, `name`, `documentation`, and `homepage` are NOT identity
+# columns despite looking like ones -- all four are auto-collectible (a
+# repo's own `name` is often an ugly slug, not display-ready;
+# `documentation`/`homepage` come from GitHub's own repo API field and/or a
+# package manifest's own URL, see collect_project_metadata.py), so all four
+# go through the same override precedence, not a straight `tools`-only read.
 METADATA_FIELDS = [
-    "name", "license", "programming_language", "funding", "funder",
+    "name", "license", "programming_language", "documentation", "homepage", "funding", "funder",
     "stars", "forks", "watchers", "contributors",
     "last_commit_date", "open_issues_count", "releases_count", "latest_release_date",
     "readme_url", "license_url", "governance_url", "contributing_url",
     "code_of_conduct_url", "security_policy_url", "sbom_url",
-    "dependents_count", "paper_url",
+    "dependents", "paper_url",
     "openssf_best_practices_url", "openssf_best_practices_badge_level",
     "openssf_scorecard_url", "openssf_scorecard_score",
     "openssf_scorecard_branch_protection", "openssf_scorecard_code_review",
     "openssf_scorecard_maintained", "openssf_scorecard_vulnerabilities",
-    "development_status", "software_heritage_id",
+    "development_status", "software_heritage_id", "keywords", "sponsors",
 ]
 
 
@@ -453,19 +473,19 @@ def safe_id_for_path(tool_id: str) -> str:
 
 def build_tool_catalog(rows: list, colmap: dict, warnings: list) -> tuple:
     """Return ({id: Tool}, {id: raw row dict}). Only identity fields (id,
-    tool_type, summary, homepage, source, documentation) and freshness are
-    set on the Tool here -- every project-quality/community-health field,
-    including `license` and `name` (both auto-collectible from the GitHub
-    repo API, just like stars or programming_language -- neither is a pure
-    hand-entered identity field), plus the raw, not-yet-typed
-    `programming_language`/`funding`/`funder` cells, is resolved afterward
-    by apply_tool_metadata(), against both this tab and `tool_metadata`.
-    `name` is set to `raw_id` here purely as a dataclass-construction
-    placeholder (it has no default) -- apply_tool_metadata() always
-    overwrites it with the precedence-resolved value, falling back to
-    `raw_id` itself only if neither tab has a name yet. The raw row dict
-    returned alongside the catalog is what that merge reads `tools`' own
-    cells from."""
+    tool_type, summary, source) and freshness are set on the Tool here --
+    every project-quality/community-health field, including `license`,
+    `name`, `documentation`, and `homepage` (all four auto-collectible from
+    the GitHub repo API or a package manifest, just like stars or
+    programming_language -- none is a pure hand-entered identity field),
+    plus the raw, not-yet-typed `programming_language`/`funding`/`funder`
+    cells, is resolved afterward by apply_tool_metadata(), against both this
+    tab and `tool_metadata`. `name` is set to `raw_id` here purely as a
+    dataclass-construction placeholder (it has no default) --
+    apply_tool_metadata() always overwrites it with the precedence-resolved
+    value, falling back to `raw_id` itself only if neither tab has a name
+    yet. The raw row dict returned alongside the catalog is what that merge
+    reads `tools`' own cells from."""
     catalog = {}
     raw_rows = {}
     for i, row in enumerate(rows):
@@ -482,9 +502,7 @@ def build_tool_catalog(rows: list, colmap: dict, warnings: list) -> tuple:
             name=raw_id,
             tool_type=(row.get(colmap["tool_type"]) or "").strip(),
             summary=(row.get(colmap["summary"]) or "").strip(),
-            homepage=(row.get(colmap["homepage"]) or "").strip(),
             source=(row.get(colmap["source"]) or "").strip(),
-            documentation=(row.get(colmap["documentation"]) or "").strip(),
             freshness=parse_freshness(row, colmap, warnings, ctx),
         )
         raw_rows[raw_id] = row
@@ -528,7 +546,7 @@ def apply_tool_metadata(tool_catalog: dict, tools_raw_rows: dict, metadata_rows:
             metadata_raw = metadata_row.get(metadata_col) if metadata_col else None
             value = resolve_metadata_field(tools_raw, metadata_raw, field, f"{ctx} [{field}]", warnings)
             if field in METADATA_LIST_FIELDS:
-                tool.programming_languages = split_simple_list(value)
+                setattr(tool, METADATA_LIST_FIELDS[field], split_simple_list(value))
             elif field == "name":
                 # Neither tab has a name yet (brand new tool, not collected
                 # -- or "none" in `tools`, though suppressing name entirely

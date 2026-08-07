@@ -771,6 +771,14 @@ Judgment rules that matter (details in curation/README.md):
   genuinely polyglot tool (semicolon-separated, e.g. `Python; Rust` --
   not an incidental scripting/config language mixed into the repo), since
   the auto-collected value is always single-language.
+- **`documentation`/`homepage` are the same as `license`/`programming_language`
+  -- leave them blank.** Both are now auto-collected into `tool_metadata`
+  from a package manifest's own well-known Project-URL labels (or GitHub's
+  own repo API as a last resort), once the tool is live and
+  `collect_project_metadata.py` runs. Only override by hand for a genuine
+  judgment call the collector can't make -- e.g. the collector picked up a
+  stale/wrong URL, or the real docs site lives somewhere no manifest names
+  (see "flag suspicious auto-collected values for review" below).
 - **`name` is the opposite case -- always fill it in, don't leave it
   blank like `license`/`programming_language`.** It's auto-collected too
   (GitHub's own repo `name` field), but that's frequently an unusable
@@ -1076,6 +1084,14 @@ Judgment rules (details in curation/README.md — same as phase 1):
   `collect_project_metadata.py` against pre-existing tools missing
   project-quality data, since pass A already has you re-reading the live
   catalog.
+- **`documentation`/`homepage` are the same as `license`/`programming_language`
+  -- leave them blank.** Both are now auto-collected into `tool_metadata`
+  from a package manifest's own well-known Project-URL labels (or GitHub's
+  own repo API as a last resort), once the tool is live and
+  `collect_project_metadata.py` runs. Only override by hand for a genuine
+  judgment call the collector can't make -- e.g. the collector picked up a
+  stale/wrong URL, or the real docs site lives somewhere no manifest names
+  (see "flag suspicious auto-collected values for review" below).
 - **`name` is the opposite case -- always fill it in, don't leave it
   blank like `license`/`programming_language`.** It's auto-collected too
   (GitHub's own repo `name` field), but that's frequently an unusable
@@ -1332,7 +1348,7 @@ API instead. Checked two real candidates rather than assuming:
   real catalogued tool's repo (`repos.ecosyste.ms/api/v1/hosts/GitHub/
   repositories/PyThaiNLP%2Fpythainlp`), not assumed from their docs. Their
   `packages.ecosyste.ms` side (per-registry package metadata — PyPI, npm,
-  crates.io, ...) was also checked for a `dependents_count` answer (the
+  crates.io, ...) was also checked for a `dependents` answer (the
   one column this catalog deliberately left manual-only, no GitHub API
   existing for it) — no explicit dependent-count field surfaced in the
   single package looked up, so that specific gap isn't obviously solved by
@@ -1399,26 +1415,29 @@ owned by this pipeline, each carrying the three freshness columns above:
   § Findings, F6.
 - **`tool_map`** — `rq_no, tool_id, role, rationale` + freshness columns.
   One row per `(rq_no, tool_id, role)` pairing.
-- **`tools`** (in `OpenTAIG`) — `id, tool_type, summary, homepage, source,
-  documentation` + freshness columns, **plus every judgment-vs-collection
+- **`tools`** (in `OpenTAIG`) — `id, tool_type, summary, source` + freshness
+  columns, **plus every judgment-vs-collection
   field also present in `tool_metadata`** (`name, license,
-  programming_language, funding, funder, stars, forks, watchers,
-  contributors, open_issues_count, releases_count, latest_release_date,
-  last_commit_date, readme_url, license_url, code_of_conduct_url,
-  contributing_url, security_policy_url, governance_url, sbom_url,
-  dependents_count, development_status, paper_url, software_heritage_id,
-  openssf_best_practices_url, openssf_best_practices_badge_level,
-  openssf_scorecard_url, openssf_scorecard_score,
-  openssf_scorecard_branch_protection, openssf_scorecard_code_review,
-  openssf_scorecard_maintained, openssf_scorecard_vulnerabilities`) — but
+  programming_language, documentation, homepage, funding, funder, stars,
+  forks, watchers, contributors, open_issues_count, releases_count,
+  latest_release_date, last_commit_date, readme_url, license_url,
+  code_of_conduct_url, contributing_url, security_policy_url,
+  governance_url, sbom_url, dependents, development_status, paper_url,
+  software_heritage_id, openssf_best_practices_url,
+  openssf_best_practices_badge_level, openssf_scorecard_url,
+  openssf_scorecard_score, openssf_scorecard_branch_protection,
+  openssf_scorecard_code_review, openssf_scorecard_maintained,
+  openssf_scorecard_vulnerabilities, keywords, sponsors`) — but
   as an **optional human-or-AI-judgment override**, not the primary source:
   a non-blank cell here always wins; the literal text `none`
   (case-insensitive) forces blank instead of falling through; a truly empty
-  cell falls through to `tool_metadata`'s collected value. `name` and
-  `license` look like fixed identity fields but are collected from the
-  GitHub API too (a repo's own name is often an unusable slug) — same
-  precedence as the rest of this list, not a straight `tools`-only read.
-  `dependents_count` is the one field with nothing to fall through to
+  cell falls through to `tool_metadata`'s collected value. `name`,
+  `license`, `documentation`, and `homepage` look like fixed identity
+  fields but are collected too (GitHub API for name/license/homepage,
+  package manifests for documentation/homepage; a repo's own name is often
+  an unusable slug) — same precedence as the rest of this list, not a
+  straight `tools`-only read.
+  `dependents` is the one field with nothing to fall through to
   (never auto-collected — no public API for GitHub's dependency-graph
   count), so it always resolves to whatever is here. Never written to by
   any script.
@@ -1426,7 +1445,7 @@ owned by this pipeline, each carrying the three freshness columns above:
   purely for a human skimming the sheet; `build.py` ignores it — a tool's
   `source` always comes from `tools`, since that's how this script finds
   the repo to collect from) + the same judgment-vs-collection field list as
-  above (including `name`), minus `dependents_count`. 100% written by
+  above (including `name`), minus `dependents`. 100% written by
   `collect_project_metadata.py`, safe to bulk-overwrite on every run — no
   hand edit is ever expected here, so there's nothing a collection run
   could clobber. `build.py` warns at build time if `tools` and
@@ -1508,7 +1527,7 @@ been triaged (accepted into `tools`/`tool_map`, or rejected) — see
   endpoint, and raw-content reads of `.github/FUNDING.yml`,
   `pyproject.toml`, `codemeta.json`, `CITATION.cff`), plus the public
   bestpractices.dev / api.scorecard.dev APIs (unauthenticated, so the
-  GitHub token is never sent to them). NOT `dependents_count`, which has
+  GitHub token is never sent to them). NOT `dependents`, which has
   no public API and is deliberately not scraped -- that one's `tools`-only.
   Writes `state/tool_metadata.csv`, safe to paste in as a **full
   replacement** of the tab's contents, not a cell-by-cell merge (nothing

@@ -35,9 +35,14 @@ Deterministic; no model, no network. Input is a JSON file of judgments (see
         "programming_language": "Python", // semicolon-separated if more than
                                           // one, e.g. "Python; Rust"; leave
                                           // "" for tool_type "specification"
-        "homepage": "https://...",
+        "homepage": "",                   // auto-collected into tool_metadata now, same
+                                          // as documentation/license/programming_language
+                                          // -- only set for a genuine judgment call the
+                                          // collector can't make (wrong/stale auto value,
+                                          // or the real site lives somewhere no manifest
+                                          // names)
         "source": "https://github.com/org/name.git",
-        "documentation": "",
+        "documentation": "",              // same as homepage -- leave blank, auto-collected
         "funding": "",
         "verdict": "accept",              // or "reject"
         "reject_reason": "",              // required if verdict=="reject"
@@ -90,17 +95,17 @@ copied out first):
     `TOOLS_FIELDNAMES` -- nothing enforces the two staying in sync, so
     re-check against the live header if a paste ever looks misaligned):
     id, tool_type, name, summary, license, programming_language, homepage,
-    source, documentation, funding, funder, paper_url, dependents_count,
-    datetime_added, datetime_checked, datetime_updated, stars, forks,
-    watchers, contributors, last_commit_date, open_issues_count,
-    releases_count, latest_release_date, readme_url, license_url,
-    governance_url, contributing_url, code_of_conduct_url,
+    source, documentation, funding, funder, paper_url, dependents,
+    datetime_added, datetime_checked, datetime_updated, keywords, stars,
+    forks, watchers, contributors, sponsors, last_commit_date,
+    open_issues_count, releases_count, latest_release_date, readme_url,
+    license_url, governance_url, contributing_url, code_of_conduct_url,
     security_policy_url, sbom_url, openssf_best_practices_url,
     openssf_best_practices_badge_level, openssf_scorecard_url,
     openssf_scorecard_score, openssf_scorecard_branch_protection,
     openssf_scorecard_code_review, openssf_scorecard_maintained,
     openssf_scorecard_vulnerabilities, development_status,
-    software_heritage_id. `dependents_count` is `tools`-only, never
+    software_heritage_id. `dependents` is `tools`-only, never
     auto-collected (no public API for GitHub's dependency-graph count) --
     fill it in by hand if a candidate is worth spot-checking.
     `programming_language`, `funding`, `funder`, and
@@ -189,9 +194,10 @@ from licenses import OPEN_CLASSES, classify, load_spdx_index
 # misaligned paste, since nothing enforces the two staying in sync.
 TOOLS_FIELDNAMES = ["id", "tool_type", "name", "summary", "license", "programming_language",
                      "homepage", "source", "documentation", "funding", "funder", "paper_url",
-                     "dependents_count",
+                     "dependents",
                      "datetime_added", "datetime_checked", "datetime_updated",
-                     "stars", "forks", "watchers", "contributors", "last_commit_date",
+                     "keywords",
+                     "stars", "forks", "watchers", "contributors", "sponsors", "last_commit_date",
                      "open_issues_count", "releases_count", "latest_release_date",
                      "readme_url", "license_url", "governance_url", "contributing_url",
                      "code_of_conduct_url", "security_policy_url", "sbom_url",
@@ -412,6 +418,8 @@ def main() -> None:
                 "forks": j.get("forks", ""),
                 "watchers": j.get("watchers", ""),
                 "contributors": j.get("contributors", ""),
+                "sponsors": j.get("sponsors", ""),
+                "keywords": j.get("keywords", ""),
                 "open_issues_count": j.get("open_issues_count", ""),
                 "releases_count": j.get("releases_count", ""),
                 "latest_release_date": j.get("latest_release_date", ""),
@@ -426,7 +434,7 @@ def main() -> None:
                 "funder": j.get("funder", ""),
                 "development_status": j.get("development_status", ""),
                 "paper_url": j.get("paper_url", ""),
-                "dependents_count": j.get("dependents_count", ""),
+                "dependents": j.get("dependents", ""),
                 "software_heritage_id": j.get("software_heritage_id", ""),
                 "openssf_best_practices_url": j.get("openssf_best_practices_url", ""),
                 "openssf_best_practices_badge_level": j.get("openssf_best_practices_badge_level", ""),

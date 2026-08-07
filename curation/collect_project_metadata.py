@@ -43,10 +43,12 @@ existed.
 Sources -- one repo costs ~18 GitHub API calls in the common case (GitHub's
 own language/license detection trusted directly, no package-manifest
 probing needed) up to ~28 in the worst case (that detection was blank or
-implausible, see NON_IMPLEMENTATION_LANGUAGES) + 2 third-party calls +
-local (no-network-per-call) license text matching via `licenseid`,
-all confirmed by hand against real repos before this script was written,
-not assumed from documentation:
+implausible, see NON_IMPLEMENTATION_LANGUAGES) + 3 third-party calls
+(bestpractices.dev, scorecard.dev, sponsors.ecosyste.ms -- the last one
+cached per repo *owner*, so it's often free for a tool sharing an org with
+one already processed this run) + local (no-network-per-call) license text
+matching via `licenseid`, all confirmed by hand against real repos before
+this script was written, not assumed from documentation:
 
   - `GET /repos/{owner}/{repo}` -> stars (`stargazers_count`), forks
     (`forks_count`), watchers (`subscribers_count` -- NOT `watchers_count`,
@@ -208,13 +210,64 @@ not assumed from documentation:
 
 [licenseid]: https://github.com/bact/licenseid
 
-Both third-party calls (bestpractices.dev, scorecard.dev) are made with a
-**plain, unauthenticated request** -- never through the GitHub-authed
-session, so the GITHUB_TOKEN header is never sent to a third-party host.
-The same is true of every GitHub *contents* fetch used for YAML/TOML/JSON
-parsing below -- they go through the normal authed `session`, since they're
-still github.com, just returned as base64-decoded raw content via the
-`vnd.github.raw+json` media type rather than JSON-wrapped.
+  - `keywords`: GitHub's own repo `topics` (free in the repo-core response
+    above, the primary source -- hand-curated tags, not inferred) unioned
+    with whatever package-manifest `keywords` field(s) happen to already be
+    in `manifests` when this runs -- `Cargo.toml`, `package.json`,
+    `pyproject.toml` (PEP 621's `[project].keywords`, falling back to
+    `[tool.poetry].keywords`), `composer.json`. Opportunistic, not a
+    dedicated fetch: `pyproject.toml` is always fetched (see
+    fetch_package_manifests()), the rest only when `include_all` was
+    already set for language/license resolution -- a repo whose language
+    and license both resolved from GitHub/codemeta.json directly never has
+    its package.json/Cargo.toml/composer.json checked for keywords at all.
+    A deliberate cost tradeoff (this field doesn't justify its own extra
+    GitHub calls on every tool), not a bug -- see collect_keywords().
+  - `sponsors`: active GitHub Sponsors count for the repo's OWNER
+    (user or org, not the individual repo -- GitHub Sponsors listings are
+    account-level, and there's no public per-repo count), via
+    `GET sponsors.ecosyste.ms/api/v1/accounts/{owner}` (public, no auth).
+    Blank if that owner has no Sponsors listing at all (`has_sponsors_
+    listing: false`, confirmed on real accounts, e.g. pandas-dev) -- not
+    the same as a listing with zero current sponsors, which is rare but
+    real and reads as 0. Cached per owner for the whole run (see
+    `sponsors_cache` in main()) -- multiple tools under one org share a
+    single lookup. Known limitation, confirmed by hand: an owner
+    ecosyste.ms has never indexed before returns 0 with no error on its
+    first-ever lookup (it syncs GitHub's Sponsors data asynchronously,
+    after responding, not inline) -- see fetch_sponsors_count()'s
+    docstring for what that means for a freshly-added tool's first
+    collection run.
+  - `documentation`: `pyproject.toml`'s own `Documentation` well-known
+    Project-URL (`[project.urls]`, matched the same case/punctuation-
+    insensitive way as `funding`'s `Funding` label -- see
+    pyproject_url_by_label()), then `Cargo.toml`'s `package.documentation`
+    field (a direct URL string, the crates.io convention -- usually
+    docs.rs). No fuzzy-match last resort the way `license` has `licenseid`
+    -- an approximately-right documentation link is worse than none, so
+    this only ever records a URL the project explicitly labeled as its
+    documentation. Opportunistic like `keywords`: `pyproject.toml` is
+    always fetched already (for `funding`), `Cargo.toml` only when
+    `include_all` was already set for language/license resolution -- see
+    collect_documentation().
+  - `homepage`: `pyproject.toml`'s `Homepage` well-known Project-URL, then
+    `package.json`'s top-level `homepage`, then `Cargo.toml`'s `package.
+    homepage`, then GitHub's own repo `homepage` field (see fetch_repo_
+    core()) as the true last resort -- ranked below every manifest
+    declaration because it's frequently blank even when a real homepage
+    exists elsewhere, and occasionally just duplicates the repo's own
+    GitHub URL rather than naming a distinct site. Opportunistic like
+    `keywords`/`documentation` in the normal run; unconditional in the
+    `--fields` backfill path -- see collect_homepage().
+
+Both third-party calls (bestpractices.dev, scorecard.dev) -- and
+sponsors.ecosyste.ms above -- are made with a **plain, unauthenticated
+request** -- never through the GitHub-authed session, so the GITHUB_TOKEN
+header is never sent to a third-party host. The same is true of every
+GitHub *contents* fetch used for YAML/TOML/JSON parsing below -- they go
+through the normal authed `session`, since they're still github.com, just
+returned as base64-decoded raw content via the `vnd.github.raw+json` media
+type rather than JSON-wrapped.
 
   - OpenSSF Best Practices: `GET bestpractices.dev/projects.json?q=<repo
     name>` (public, no auth -- note it needs `q=`, not the `pq=`/`url=`
@@ -245,7 +298,7 @@ still github.com, just returned as base64-decoded raw content via the
     limit on Scorecard's own scanning infrastructure, not a finding about
     the repo) -- read it as "unknown", never as "worst possible score."
 
-`dependents_count` is deliberately NOT collected here -- GitHub's "Used by"
+`dependents` is deliberately NOT collected here -- GitHub's "Used by"
 dependency-graph count has no public API, only an HTML page
 (`/network/dependents`), and this script doesn't scrape it: fragile against
 markup changes, and bulk-scraping a GitHub HTML page for data with no API
@@ -313,6 +366,16 @@ Usage:
     python curation/collect_project_metadata.py \\
         --candidates curation/candidate_tools.csv \\
         --out curation/candidate_tool_metadata.csv --restart
+
+    # Cheaply backfill just a few columns for every already-collected tool
+    # missing them (e.g. right after adding new columns to a live sheet that
+    # predates them) -- a few calls/tool instead of ~18-28, and skips every
+    # other column entirely. Output is a column patch, not a full row --
+    # paste it into ONLY the requested columns, matched by id, never as a
+    # row/tab replacement (see --fields' own help text, or main()'s
+    # completion message, for exactly why):
+    python curation/collect_project_metadata.py --fields keywords,sponsors,documentation \\
+        --out curation/state/backfill.csv --restart
 """
 from __future__ import annotations
 
@@ -335,6 +398,7 @@ from licenseid.matcher import AggregatedLicenseMatcher
 GITHUB_API = "https://api.github.com"
 BESTPRACTICES_API = "https://www.bestpractices.dev/projects.json"
 SCORECARD_API = "https://api.scorecard.dev/projects"
+SPONSORS_API = "https://sponsors.ecosyste.ms/api/v1/accounts"
 REPO_PATH_RE = re.compile(r"github\.com[:/]+([^/]+/[^/.]+?)(?:\.git)?/?$", re.IGNORECASE)
 SECURITY_POLICY_PATHS = ["SECURITY.md", ".github/SECURITY.md", "docs/SECURITY.md"]
 GOVERNANCE_PATHS = ["GOVERNANCE.md", "MAINTAINERS.md", "MAINTAINERS",
@@ -430,20 +494,18 @@ FUNDING_YML_URL_BUILDERS = {
     "custom": lambda v: v,  # already a full URL
 }
 
-# Matches the live `tool_metadata` sheet's actual column order exactly (verified
-# against a live fetch of its header row) so a run's output pastes in without
-# reordering -- nothing enforces the two staying in sync, so re-check against
-# the live header if a paste ever looks misaligned. "license" and
-# "documentation" are columns that exist on the sheet but this script never
-# writes (both are `tools`-only identity fields per build.py's METADATA_FIELDS
-# -- not part of the tools/tool_metadata precedence resolution at all) --
-# included here, always blank, purely so column position lines up for every
-# column after them.
+# Matches the live `tool_metadata` sheet's actual column order exactly
+# (re-verified against a live header fetch after `homepage` was added) so a
+# run's output pastes in without reordering -- nothing enforces the two
+# staying in sync, so re-check against the live header if a paste ever looks
+# misaligned. `keywords`/`sponsors`/`homepage` all already exist as live
+# columns (positioned here to match, not appended at the end) -- no sheet
+# changes needed for them at this point.
 OUT_FIELDNAMES = [
-    "id", "name", "license", "programming_language", "source", "documentation",
+    "id", "name", "license", "programming_language", "homepage", "source", "documentation",
     "funding", "funder", "paper_url",
     "datetime_added", "datetime_checked", "datetime_updated",
-    "stars", "forks", "watchers", "contributors", "last_commit_date",
+    "keywords", "stars", "forks", "watchers", "contributors", "sponsors", "last_commit_date",
     "open_issues_count", "releases_count", "latest_release_date",
     "readme_url", "license_url", "governance_url", "contributing_url",
     "code_of_conduct_url", "security_policy_url", "sbom_url",
@@ -512,6 +574,18 @@ def fetch_repo_core(session: requests.Session, repo_path: str, warnings: list) -
             "open_issues_count": data.get("open_issues_count"),
             "last_commit_date": (data.get("pushed_at") or "")[:10],
             "license": license_spdx,
+            # GitHub's own repo topics -- free in this same response, the
+            # base of `keywords` (see collect_keywords()) before any
+            # package-manifest keywords are unioned in.
+            "topics": data.get("topics") or [],
+            # GitHub's own repo `homepage` field -- a maintainer-set URL,
+            # but ranked BELOW every manifest's own homepage declaration in
+            # collect_homepage() (below), not above: it's frequently blank
+            # even when a real homepage exists elsewhere (in pyproject.toml/
+            # package.json/Cargo.toml), and occasionally just duplicates the
+            # repo's own GitHub URL rather than a distinct site -- treated
+            # as the fallback, not the primary source.
+            "homepage": data.get("homepage") or "",
             # Same field backfill_programming_language.py used to fetch
             # separately -- free here, already in this response. Single
             # dominant-by-bytes language only; a second, genuinely
@@ -749,6 +823,172 @@ def parse_pom_xml_license_name(text: str, warnings: list, repo_path: str) -> str
     return ""
 
 
+# Manifest files collect_keywords() actually reads for a `keywords` field --
+# unlike PACKAGE_MANIFEST_LANGUAGES, deliberately excludes go.mod/pom.xml/
+# build.gradle* (no keywords convention exists in those ecosystems). Used by
+# both the normal run (opportunistically, whatever's already in `manifests`)
+# and the `--fields` backfill path below (fetched unconditionally, since
+# that mode skips language/license resolution -- and the manifest-gating
+# triggers built for those -- entirely).
+KEYWORD_MANIFEST_FILENAMES = ["Cargo.toml", "package.json", "pyproject.toml", "composer.json"]
+# Manifest files collect_documentation() reads -- just the two ecosystems
+# with an explicit "documentation URL" convention (PyPA's well-known
+# `Documentation` Project-URL label, Cargo's `package.documentation` field).
+DOCUMENTATION_MANIFEST_FILENAMES = ["pyproject.toml", "Cargo.toml"]
+# Manifest files collect_homepage() reads -- PyPA's well-known `Homepage`
+# Project-URL label, package.json's top-level `homepage`, Cargo's `package.
+# homepage`. No composer.json/go.mod/pom.xml/build.gradle* equivalent
+# checked -- same reasoning as KEYWORD_MANIFEST_FILENAMES, extend if a
+# confirmed convention for one of those shows up.
+HOMEPAGE_MANIFEST_FILENAMES = ["pyproject.toml", "package.json", "Cargo.toml"]
+# The only columns cheap enough to backfill without the rest of a normal
+# collection run -- each needs an entry in BACKFILL_MANIFEST_FILES (if it
+# reads any manifest) or its own branch in main()'s backfill loop (like
+# `sponsors`, which reads no manifest at all). Adding another field here
+# would need its own cheap, standalone fetch path to be worth doing this way.
+BACKFILL_FIELDS = {"keywords", "sponsors", "documentation", "homepage"}
+# field -> manifest filenames it reads, for the `--fields` backfill path's
+# per-tool fetch (see main()) -- computed as the UNION across every
+# requested field before fetching, so e.g. `--fields keywords,documentation`
+# fetches pyproject.toml once, not twice, one request per distinct filename
+# regardless of how many fields want it. `sponsors` reads no manifest (all
+# via sponsors.ecosyste.ms), so it has no entry here.
+BACKFILL_MANIFEST_FILES = {
+    "keywords": KEYWORD_MANIFEST_FILENAMES,
+    "documentation": DOCUMENTATION_MANIFEST_FILENAMES,
+    "homepage": HOMEPAGE_MANIFEST_FILENAMES,
+}
+
+
+def parse_cargo_toml_keywords(text: str, warnings: list, repo_path: str) -> list[str]:
+    try:
+        data = tomllib.loads(text)
+    except (tomllib.TOMLDecodeError, UnicodeDecodeError):
+        return []  # already warned once for this file by the license parser
+    return [k for k in (data.get("package") or {}).get("keywords") or [] if isinstance(k, str) and k]
+
+
+def parse_package_json_keywords(text: str, warnings: list, repo_path: str) -> list[str]:
+    try:
+        data = json.loads(text)
+    except json.JSONDecodeError:
+        return []
+    return [k for k in data.get("keywords") or [] if isinstance(k, str) and k]
+
+
+def parse_composer_json_keywords(text: str, warnings: list, repo_path: str) -> list[str]:
+    try:
+        data = json.loads(text)
+    except json.JSONDecodeError as e:
+        warnings.append(f"{repo_path}: composer.json failed to parse ({e})")
+        return []
+    return [k for k in data.get("keywords") or [] if isinstance(k, str) and k]
+
+
+def parse_pyproject_toml_keywords(text: str, warnings: list, repo_path: str) -> list[str]:
+    """PEP 621's `[project].keywords` (a plain list of strings) is checked
+    first; `[tool.poetry].keywords` (Poetry's own pre-PEP-621 convention,
+    still common in older or Poetry-only projects that never migrated their
+    metadata to the `[project]` table) is checked as a fallback, not merged
+    with it -- a project using both would be unusual, and PEP 621 is the
+    modern standard."""
+    try:
+        data = tomllib.loads(text)
+    except (tomllib.TOMLDecodeError, UnicodeDecodeError):
+        return []
+    project_keywords = [k for k in (data.get("project") or {}).get("keywords") or []
+                         if isinstance(k, str) and k]
+    if project_keywords:
+        return project_keywords
+    return [k for k in (data.get("tool") or {}).get("poetry", {}).get("keywords") or []
+            if isinstance(k, str) and k]
+
+
+def collect_keywords(topics: list[str], manifests: dict, warnings: list, repo_path: str) -> str:
+    """GitHub's own repo topics (hand-curated tags, the primary source),
+    unioned with whatever package-manifest `keywords` fields happen to
+    already be in `manifests` -- opportunistic, not a dedicated fetch pass:
+    `manifests` only has pyproject.toml unless `include_all` was set for
+    language/license resolution (see fetch_package_manifests()), so a repo
+    whose language/license were both resolved from GitHub/codemeta.json
+    directly never has its package.json/Cargo.toml/composer.json keywords
+    checked at all -- a deliberate cost tradeoff (this field doesn't
+    justify its own extra GitHub calls), not a bug; pyproject.toml is
+    always present, so Python projects' keywords are the one case never
+    missed this way. No pom.xml/build.gradle case -- Maven/Gradle have no
+    equivalent standard "keywords" convention. Deduped case-insensitively,
+    first-seen casing kept (topics win ties, since they're checked first);
+    "" if nothing found anywhere."""
+    seen_lower = set()
+    keywords = []
+
+    def add_all(values):
+        for v in values:
+            if v.lower() not in seen_lower:
+                seen_lower.add(v.lower())
+                keywords.append(v)
+
+    add_all(topics)
+    for filename, parser in (
+        ("Cargo.toml", parse_cargo_toml_keywords),
+        ("package.json", parse_package_json_keywords),
+        ("pyproject.toml", parse_pyproject_toml_keywords),
+        ("composer.json", parse_composer_json_keywords),
+    ):
+        text = manifests.get(filename)
+        if text:
+            add_all(parser(text, warnings, repo_path))
+    return "; ".join(keywords)
+
+
+def fetch_sponsors_count(owner: str, cache: dict, warnings: list) -> int | None:
+    """Active GitHub Sponsors count for a repo's owner (user or org), via
+    sponsors.ecosyste.ms's public, unauthenticated `/accounts/{login}` API
+    -- a plain `requests.get`, never through the GitHub-authed session, same
+    as bestpractices.dev/scorecard.dev below. A sponsors listing belongs to
+    the OWNER account, not the individual repo (GitHub has no per-repo
+    sponsor count), so `owner` -- not `repo_path` -- is both the lookup key
+    and the cache key: multiple tools sharing an org (confirmed in this
+    catalog, e.g. several `aboutcode-org` repos) cost one call total, not
+    one per tool.
+
+    Returns None (not 0) when the owner has no GitHub Sponsors listing at
+    all (`has_sponsors_listing: false`, confirmed on real accounts with no
+    listing, e.g. pandas-dev) -- that's a different fact than "a listing
+    exists with zero current sponsors," which is genuinely rare but
+    possible and should read as 0, not blank. Uses `active_sponsors_count`
+    (current, not the lifetime-cumulative `sponsors_count` the API also
+    returns) as the more meaningful "how many sponsors does this project
+    have right now" signal.
+
+    Known limitation, confirmed by hand: an owner ecosyste.ms has never
+    indexed before returns `sponsors_count`/`active_sponsors_count` as 0
+    with `last_synced_at: null` on its very first lookup, even when
+    `has_sponsors_listing` later turns out true -- ecosyste.ms syncs GitHub
+    Sponsors data asynchronously in the background after first request, not
+    inline with it. This script does one request and takes whatever comes
+    back (no retry/wait loop, which would slow every run for a one-time
+    cold-start cost) -- an owner's sponsor count collected on their very
+    first appearance in this catalog may read as 0 for one run and correct
+    itself on the next `--refresh-all`."""
+    if owner in cache:
+        return cache[owner]
+    try:
+        resp = requests.get(f"{SPONSORS_API}/{quote(owner)}", timeout=30)
+        if resp.status_code != 200:
+            warnings.append(f"{owner}: sponsors.ecosyste.ms returned {resp.status_code}")
+            cache[owner] = None
+            return None
+        data = resp.json()
+        result = data.get("active_sponsors_count") if data.get("has_sponsors_listing") else None
+        cache[owner] = result
+        return result
+    except requests.RequestException as e:
+        warnings.append(f"{owner}: sponsors.ecosyste.ms request failed ({e})")
+        cache[owner] = None
+        return None
+
+
 def match_license_text(matcher: "AggregatedLicenseMatcher", text: str, warnings: list,
                        repo_path: str, source_desc: str) -> str:
     """Runs `text` through licenseid's fuzzy SPDX matcher, returning the top
@@ -876,21 +1116,113 @@ def funding_yml_urls(text: str, warnings: list, repo_path: str) -> list[str]:
     return urls
 
 
-def pyproject_funding_url(text: str, warnings: list, repo_path: str) -> str:
+def pyproject_url_by_label(text: str, label: str, warnings: list, repo_path: str) -> str:
+    """`[project.urls]`'s value for `label`, matched case/punctuation-
+    insensitively against PyPA's well-known Project-URL labels (spec:
+    packaging.python.org/en/latest/specifications/well-known-project-urls)
+    -- confirmed against real projects using both `funding` (pandas) and
+    `Funding` (pytest) for the same label. Shared by pyproject_funding_url()
+    and pyproject_documentation_url(); "" if `label` isn't present at all."""
     try:
         data = tomllib.loads(text)
     except (tomllib.TOMLDecodeError, UnicodeDecodeError) as e:
         warnings.append(f"{repo_path}: pyproject.toml failed to parse ({e})")
         return ""
     urls = (data.get("project") or {}).get("urls") or {}
-    # PyPA well-known labels match case/punctuation-insensitively (spec:
-    # packaging.python.org/en/latest/specifications/well-known-project-urls)
-    # -- confirmed against real projects using both "funding" (pandas) and
-    # "Funding" (pytest).
-    for label, url in urls.items():
-        if re.sub(r"[^a-z0-9]", "", label.lower()) == "funding":
+    target = re.sub(r"[^a-z0-9]", "", label.lower())
+    for candidate_label, url in urls.items():
+        if re.sub(r"[^a-z0-9]", "", candidate_label.lower()) == target:
             return url
     return ""
+
+
+def pyproject_funding_url(text: str, warnings: list, repo_path: str) -> str:
+    return pyproject_url_by_label(text, "funding", warnings, repo_path)
+
+
+def pyproject_documentation_url(text: str, warnings: list, repo_path: str) -> str:
+    return pyproject_url_by_label(text, "documentation", warnings, repo_path)
+
+
+def parse_cargo_toml_documentation(text: str, warnings: list, repo_path: str) -> str:
+    """Cargo.toml's `package.documentation` is a direct URL string (the
+    crates.io convention -- usually a docs.rs link), used as-is, no label
+    matching needed the way pyproject.toml's `[project.urls]` table does."""
+    try:
+        data = tomllib.loads(text)
+    except (tomllib.TOMLDecodeError, UnicodeDecodeError):
+        return ""  # already warned once for this file by the license/keywords parsers
+    return (data.get("package") or {}).get("documentation") or ""
+
+
+def collect_documentation(manifests: dict, warnings: list, repo_path: str) -> str:
+    """Priority: pyproject.toml's `Documentation` well-known Project-URL,
+    then Cargo.toml's own `documentation` field. No fuzzy fallback the way
+    `license` has `licenseid` -- an approximately-right documentation URL is
+    worse than none, so this only ever returns a source that named itself
+    as documentation explicitly. "" if neither manifest is present in
+    `manifests` (opportunistic like collect_keywords() in the normal run --
+    pyproject.toml is always fetched, Cargo.toml only when already fetched
+    for language/license reasons -- or unconditional in the --fields
+    backfill path, see main())."""
+    pyproject_text = manifests.get("pyproject.toml")
+    if pyproject_text:
+        url = pyproject_documentation_url(pyproject_text, warnings, repo_path)
+        if url:
+            return url
+    cargo_text = manifests.get("Cargo.toml")
+    if cargo_text:
+        return parse_cargo_toml_documentation(cargo_text, warnings, repo_path)
+    return ""
+
+
+def parse_package_json_homepage(text: str, warnings: list, repo_path: str) -> str:
+    """npm's package.json has a top-level `homepage` string -- unlike its
+    `keywords`/`license` fields, not nested under anything."""
+    try:
+        data = json.loads(text)
+    except json.JSONDecodeError:
+        return ""  # already warned once for this file by the license/keywords parsers
+    homepage = data.get("homepage")
+    return homepage if isinstance(homepage, str) else ""
+
+
+def parse_cargo_toml_homepage(text: str, warnings: list, repo_path: str) -> str:
+    """Cargo.toml's `package.homepage` -- the crates.io convention for a
+    project's own site, distinct from `package.documentation` (docs.rs-style
+    API docs) and `package.repository` (the source repo itself)."""
+    try:
+        data = tomllib.loads(text)
+    except (tomllib.TOMLDecodeError, UnicodeDecodeError):
+        return ""
+    return (data.get("package") or {}).get("homepage") or ""
+
+
+def collect_homepage(manifests: dict, github_homepage: str, warnings: list, repo_path: str) -> str:
+    """Priority: pyproject.toml's `Homepage` well-known Project-URL, then
+    package.json's top-level `homepage`, then Cargo.toml's `package.
+    homepage`, then GitHub's own repo `homepage` field as the last resort
+    (see fetch_repo_core() for why it ranks below the manifests: often
+    blank, occasionally just a duplicate of the repo's own GitHub URL).
+    Manifest checks are opportunistic in the normal run (whatever's already
+    in `manifests`), unconditional in the --fields backfill path -- same
+    pattern as collect_keywords()/collect_documentation()."""
+    pyproject_text = manifests.get("pyproject.toml")
+    if pyproject_text:
+        url = pyproject_url_by_label(pyproject_text, "homepage", warnings, repo_path)
+        if url:
+            return url
+    package_json_text = manifests.get("package.json")
+    if package_json_text:
+        url = parse_package_json_homepage(package_json_text, warnings, repo_path)
+        if url:
+            return url
+    cargo_text = manifests.get("Cargo.toml")
+    if cargo_text:
+        url = parse_cargo_toml_homepage(cargo_text, warnings, repo_path)
+        if url:
+            return url
+    return github_homepage
 
 
 def fetch_codemeta(session: requests.Session, repo_path: str, warnings: list) -> dict:
@@ -1109,6 +1441,20 @@ def load_checkpointed_ids(out_path: Path) -> set:
         return {row["id"] for row in csv.DictReader(f)}
 
 
+def _backfill_field_missing(tool: dict, field: str) -> bool:
+    """Used only by --fields backfill selection. `sponsors` is Optional[int]
+    in site/data.json -- 0 is a real, already-collected answer (an owner
+    with a Sponsors listing and no current sponsors), not "missing", so it
+    needs `is None` specifically rather than a truthiness check (which
+    would treat 0 as blank and re-fetch it forever). `keywords` has no such
+    zero-vs-blank distinction -- an empty list and "never collected" mean
+    the same thing."""
+    value = tool.get(field)
+    if field == "sponsors":
+        return value is None
+    return not value
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--data-json", default="site/data.json",
@@ -1131,6 +1477,20 @@ def main() -> None:
                          help="seconds to sleep between tools (stays polite to the third-party APIs)")
     parser.add_argument("--limit", type=int, default=None,
                          help="stop after this many tools this run (for a deliberately small batch)")
+    parser.add_argument("--fields", default=None,
+                         help="comma-separated subset of {keywords,sponsors,documentation,homepage} -- "
+                              "cheaply backfill "
+                              "ONLY these columns for tools already collected (non-blank `stars` "
+                              "in --data-json), skipping every other API call (repo core beyond "
+                              "topics, contributors, releases, community profile, security/"
+                              "governance probes, sbom, codemeta.json, CITATION.cff, funding, "
+                              "license/language resolution, OpenSSF lookups -- none of it runs). "
+                              "Output is a minimal id+field(s) CSV, NOT a full tool_metadata row -- "
+                              "paste it into ONLY those columns in the live sheet, matched by id, "
+                              "never as a row or full-tab replacement (every other column is left "
+                              "unfetched, not just unchanged, so a full-row paste would blank them "
+                              "out). Not compatible with --candidates (nothing to backfill for a "
+                              "tool that's never been collected at all).")
     args = parser.parse_args()
 
     token = os.environ.get("GITHUB_TOKEN")
@@ -1150,15 +1510,33 @@ def main() -> None:
     warnings: list = []
     unresolvable_source: list = []
 
-    try:
-        matcher = AggregatedLicenseMatcher()
-    except Exception as e:
-        print(f"[collect] WARNING: licenseid matcher unavailable ({e}) -- license resolution "
-              f"will skip LICENSE-file text-matching and pom.xml normalization, falling straight "
-              f"through to GitHub's own detected license wherever codemeta.json and the ecosystem "
-              f"manifests don't already answer it. Run `licenseid update` to build its local "
-              f"database (see curation/README.md's Setup), then re-run.")
-        matcher = None
+    fields = None
+    if args.fields:
+        if args.candidates:
+            raise SystemExit(
+                "--fields backfill mode reads already-collected tools (non-blank `stars`) from "
+                "--data-json -- it doesn't apply to --candidates, brand new tools with nothing "
+                "collected yet. Run the normal full collection for those instead."
+            )
+        fields = {f.strip() for f in args.fields.split(",") if f.strip()}
+        unknown = fields - BACKFILL_FIELDS
+        if unknown:
+            raise SystemExit(f"--fields only supports {sorted(BACKFILL_FIELDS)}, got unknown: {sorted(unknown)}")
+
+    # licenseid's local SQLite index is only needed for the normal run's
+    # license resolution (resolve_license()'s steps 5/6) -- --fields
+    # backfill mode never calls resolve_license() at all, so loading it here
+    # would just cost startup time for nothing.
+    matcher = None
+    if fields is None:
+        try:
+            matcher = AggregatedLicenseMatcher()
+        except Exception as e:
+            print(f"[collect] WARNING: licenseid matcher unavailable ({e}) -- license resolution "
+                  f"will skip LICENSE-file text-matching and pom.xml normalization, falling straight "
+                  f"through to GitHub's own detected license wherever codemeta.json and the ecosystem "
+                  f"manifests don't already answer it. Run `licenseid update` to build its local "
+                  f"database (see curation/README.md's Setup), then re-run.")
 
     if args.candidates:
         candidates_path = Path(args.candidates)
@@ -1176,9 +1554,20 @@ def main() -> None:
             raise SystemExit(f"{data_path} not found -- run `python build.py` first.")
         with open(data_path, "r", encoding="utf-8") as f:
             data = json.load(f)
-        tools = [t for t in data.get("tools", [])
-                 if t.get("tool_type") in ("software", "specification")
-                 and (args.refresh_all or t.get("stars") is None)]
+        if fields is not None:
+            # Already-collected tools only (never-collected ones get
+            # keywords/sponsors for free the next time they go through a
+            # normal run) -- and, unless --refresh-all, only ones actually
+            # missing at least one requested field, so a re-run after a
+            # partial paste doesn't redo work for ids already filled in live.
+            tools = [t for t in data.get("tools", [])
+                     if t.get("tool_type") in ("software", "specification")
+                     and t.get("stars") is not None
+                     and (args.refresh_all or any(_backfill_field_missing(t, f) for f in fields))]
+        else:
+            tools = [t for t in data.get("tools", [])
+                     if t.get("tool_type") in ("software", "specification")
+                     and (args.refresh_all or t.get("stars") is None)]
 
     out_path = Path(args.out)
     checkpointed = set() if args.restart else load_checkpointed_ids(out_path)
@@ -1206,7 +1595,36 @@ def main() -> None:
     # worst-case for every tool, which historically way overshoots actual
     # usage. licenseid's own matching is local (its SQLite index, no
     # network per call), so it doesn't add to either estimate.
-    estimated_calls = len(tools) * 20
+    if fields is not None:
+        # keywords/homepage share one repo-core call (1 GitHub call total,
+        # not one each, if both are requested -- see main()'s backfill
+        # loop). Every field that reads a manifest (keywords, documentation,
+        # homepage) does so via BACKFILL_MANIFEST_FILES, unioned across
+        # every requested field so a shared file (e.g. pyproject.toml,
+        # wanted by all three) is only counted once per tool, not once per
+        # field. sponsors -> 0 GitHub calls (sponsors.ecosyste.ms only,
+        # cached per owner across the run). No manifest fetch here is gated
+        # behind language/license resolution the way the normal run's is,
+        # since that resolution never runs in this mode.
+        manifest_call_count = len(set().union(*(BACKFILL_MANIFEST_FILES.get(f, []) for f in fields)))
+        calls_per_tool = manifest_call_count + (1 if ("keywords" in fields or "homepage" in fields) else 0)
+        estimated_calls = len(tools) * calls_per_tool
+    else:
+        # Rough worst case per tool: repo core (1) + contributors (1) + releases
+        # (2) + community profile (1) + security probe (up to 3) + governance
+        # probe (up to 5) + sbom (1) + codemeta (1) + CITATION.cff (1) +
+        # FUNDING.yml (1) + pyproject.toml (1, always) = ~18 GitHub calls in the
+        # common case, where GitHub's own language/license answers are trusted
+        # and the rest of the package manifests are never fetched at all (see
+        # `language_needs_manifests`/`license_needs_manifests` in the main
+        # loop). Worst case (GitHub's language guess is blank/implausible, or
+        # its license is also blank) adds the other 6 manifests (+1 conditional
+        # tsconfig.json) and up to 6 LICENSE-filename probes -- ~28. Estimate
+        # for the *whole run* splits the difference rather than assuming
+        # worst-case for every tool, which historically way overshoots actual
+        # usage. licenseid's own matching is local (its SQLite index, no
+        # network per call), so it doesn't add to either estimate.
+        estimated_calls = len(tools) * 20
     if remaining >= 0:
         print(f"[collect] GitHub rate limit: {remaining}/{rate_limit} remaining "
               f"(this run needs up to ~{estimated_calls})")
@@ -1218,7 +1636,8 @@ def main() -> None:
                   f"or pass --limit to deliberately do a smaller batch now.")
 
     print(f"[collect] {len(tools)} software tool(s) to process this run"
-          + (" (--refresh-all)" if args.refresh_all else " (missing stars)"))
+          + (f" (--fields {','.join(sorted(fields))})" if fields is not None
+             else " (--refresh-all)" if args.refresh_all else " (missing stars)"))
 
     # "YYYY-MM-DD HH:MM" (UTC, no seconds, no offset), matching every existing
     # datetime_* cell in both live sheets exactly -- see emit_candidates.py's
@@ -1230,12 +1649,33 @@ def main() -> None:
     # nothing to preserve (see the module docstring).
     sheet_timestamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M")
 
+    # In --fields mode, a minimal id + requested-fields header, NOT
+    # OUT_FIELDNAMES -- this file is a column patch, never a full
+    # tool_metadata row, so it must never carry the other columns at all
+    # (blank would look like "collected, and empty," which is wrong).
+    out_fieldnames = (["id"] + [f for f in OUT_FIELDNAMES if f in fields]) if fields is not None else OUT_FIELDNAMES
+
     out_path.parent.mkdir(parents=True, exist_ok=True)
     write_header = args.restart or not out_path.exists()
     out_file = open(out_path, "w" if args.restart else "a", encoding="utf-8", newline="")
-    writer = csv.DictWriter(out_file, fieldnames=OUT_FIELDNAMES)
+    writer = csv.DictWriter(out_file, fieldnames=out_fieldnames)
     if write_header:
         writer.writeheader()
+
+    # owner login -> active_sponsors_count (or None), populated across the
+    # whole run -- see fetch_sponsors_count(). Multiple tools under the same
+    # GitHub org/user (confirmed in this catalog) share one lookup instead
+    # of paying for it per tool.
+    sponsors_cache: dict = {}
+
+    # --fields backfill mode only: the union of manifest filenames every
+    # requested field needs, computed once for the whole run -- e.g.
+    # `--fields keywords,documentation` both want pyproject.toml, so this
+    # fetches it once per tool, not once per field that happens to want it.
+    backfill_manifest_files = (
+        sorted(set().union(*(BACKFILL_MANIFEST_FILES.get(f, []) for f in fields)))
+        if fields is not None else []
+    )
 
     try:
         for i, tool in enumerate(tools, 1):
@@ -1244,8 +1684,49 @@ def main() -> None:
                 unresolvable_source.append(tool["id"])
                 continue
 
+            if fields is not None:
+                # The entire point of --fields: none of the normal run's
+                # other ~18-28 calls happen here -- just what each requested
+                # field actually needs. `manifests` is fetched once per tool
+                # (the union computed above), then handed to whichever
+                # collectors are asked for, same as the normal run's shared
+                # `manifests` dict.
+                row = {"id": tool["id"]}
+                manifests = {filename: fetch_raw_file(session, repo_path, filename)
+                             for filename in backfill_manifest_files}
+                # repo core is only fetched once, shared by `keywords`
+                # (topics) and `homepage` (its own last-resort fallback) --
+                # neither needs it if the other isn't also requested.
+                core = fetch_repo_core(session, repo_path, warnings) \
+                    if ("keywords" in fields or "homepage" in fields) else {}
+                if "keywords" in fields:
+                    row["keywords"] = collect_keywords(core.get("topics", []), manifests, warnings, repo_path)
+                if "documentation" in fields:
+                    row["documentation"] = collect_documentation(manifests, warnings, repo_path)
+                if "homepage" in fields:
+                    row["homepage"] = collect_homepage(manifests, core.get("homepage", ""), warnings, repo_path)
+                if "sponsors" in fields:
+                    row["sponsors"] = fetch_sponsors_count(repo_path.split("/")[0], sponsors_cache, warnings)
+
+                print(f"  [{i}/{len(tools)}] {tool['id']}: "
+                      + " ".join(f"{f}={row.get(f) or '-'}" for f in sorted(fields)))
+                writer.writerow(row)
+                out_file.flush()
+
+                if i % 20 == 0:
+                    remaining, rate_limit = check_rate_limit(session)
+                    if 0 <= remaining < 100:
+                        print(f"[collect] stopping early: GitHub rate limit down to "
+                              f"{remaining}/{rate_limit}. {out_path} has everything collected so "
+                              f"far -- re-run the same command once the limit resets to continue.")
+                        break
+
+                time.sleep(args.sleep)
+                continue
+
             core = fetch_repo_core(session, repo_path, warnings)
             default_branch = core.pop("default_branch", "main")
+            topics = core.pop("topics", [])
             contributors = fetch_contributors_count(session, repo_path, warnings)
             releases = fetch_releases(session, repo_path, warnings)
             profile = fetch_community_profile(session, repo_path, warnings)
@@ -1312,6 +1793,15 @@ def main() -> None:
                 # guess, which would defeat the whole point of rejecting it.
                 programming_language_value = "; ".join(detect_languages_from_manifests(manifests))
 
+            keywords_value = collect_keywords(topics, manifests, warnings, repo_path)
+            sponsors_value = fetch_sponsors_count(repo_path.split("/")[0], sponsors_cache, warnings)
+            documentation_value = collect_documentation(manifests, warnings, repo_path)
+            # `core["homepage"]` (GitHub's own field) is the last-resort
+            # fallback inside collect_homepage() itself, not used directly
+            # here -- `row["homepage"]` below overrides whatever `row.
+            # update(core)` just set with the full priority-chain result.
+            homepage_value = collect_homepage(manifests, core.get("homepage", ""), warnings, repo_path)
+
             print(f"  [{i}/{len(tools)}] {tool['id']}: "
                   f"stars={core.get('stars', '?')} "
                   f"license={license_value or '-'} "
@@ -1335,6 +1825,10 @@ def main() -> None:
             row["funding"] = funding
             row["funder"] = codemeta.get("funder", "")
             row["development_status"] = codemeta.get("development_status", "")
+            row["keywords"] = keywords_value
+            row["sponsors"] = sponsors_value
+            row["documentation"] = documentation_value
+            row["homepage"] = homepage_value
             row["paper_url"] = paper_url
             row["software_heritage_id"] = swh_id
             row.update(best_practices)
@@ -1361,7 +1855,14 @@ def main() -> None:
 
     total_in_file = len(load_checkpointed_ids(out_path))
     is_full_catalog_run = args.refresh_all and not args.candidates
-    if is_full_catalog_run:
+    if fields is not None:
+        print(f"\n{out_path} now has {total_in_file} row(s) total ({', '.join(sorted(fields))} "
+              f"only) -- this is a COLUMN PATCH, not a tool_metadata row: paste it into ONLY the "
+              f"{'/'.join(sorted(fields))} column(s) of the live sheet, matched by id (e.g. sort "
+              f"both by id and paste-special just those columns). Do NOT paste as a row or full-"
+              f"tab replacement -- every other column was never fetched this run, so that would "
+              f"blank them out for every id in this file.")
+    elif is_full_catalog_run:
         print(f"\n{out_path} now has {total_in_file} row(s) total -- review, then paste in as "
               f"a full replacement of the `tool_metadata` sheet's contents (safe: nothing there "
               f"is ever hand-edited). Use --restart on a periodic full refresh to also drop rows "
