@@ -83,5 +83,5 @@ Code: [Apache License 2.0](LICENSE).
 Data (the catalog itself — open problems, tool mappings, and
 project-quality/community-health fields, published as `data.json` at the
 built site's root, linked from its About page):
-[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/), public
-domain, no attribution required.
+[CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/), public
+domain.
