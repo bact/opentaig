@@ -12,6 +12,10 @@
 {% include "_matrix_compact.html" %}
 
 <section class="filter-bar" id="tools-filter-bar" tabindex="-1">
+  <div class="active-filter-banner" id="tools-active-filter" hidden>
+    <span id="tools-active-filter-text"></span>
+    <button type="button" class="filter-reset" id="tools-active-filter-clear">Clear filter</button>
+  </div>
   <div class="disclosure-header" data-disclosure>
     <span class="disclosure-title">Filter tools</span>
     <button type="button" class="disclosure-toggle" aria-expanded="false" aria-controls="tools-filter-body">Show</button>
@@ -29,6 +33,35 @@
       </label>
       <button type="button" class="filter-reset" id="tools-filter-reset">Reset</button>
     </div>
+    <fieldset class="filter-fieldset">
+      <legend class="filter-group-label">OpenSSF Best Practices badge</legend>
+      <div class="filter-search-row">
+        <label class="filter-checkbox">
+          <input type="checkbox" class="tools-filter-badge" data-value="in_progress">
+          In progress
+        </label>
+        <label class="filter-checkbox">
+          <input type="checkbox" class="tools-filter-badge" data-value="passing">
+          Passing
+        </label>
+        <label class="filter-checkbox">
+          <input type="checkbox" class="tools-filter-badge" data-value="silver">
+          Silver
+        </label>
+        <label class="filter-checkbox">
+          <input type="checkbox" class="tools-filter-badge" data-value="gold">
+          Gold
+        </label>
+        <label class="filter-select-label">
+          OpenSSF Scorecard
+          <select id="tools-filter-scorecard-min">
+            <option value="">Any score</option>
+            <option value="4">4 or higher</option>
+            <option value="7">7 or higher</option>
+          </select>
+        </label>
+      </div>
+    </fieldset>
     <span id="tools-filter-count" class="filter-count" aria-live="polite"></span>
   </div>
 </section>
@@ -37,13 +70,40 @@
 {% for entry in entries %}
   <article class="tool-list-item"
     data-type="{{ entry.tool.tool_type }}"
-    data-search="{{ (entry.tool.name ~ ' ' ~ (entry.tool.summary or '')) | lower }}"
+    data-search="{{ (entry.tool.name ~ ' ' ~ (entry.tool.summary or '') ~ ' ' ~ (entry.tool.keywords | join(' '))) | lower }}"
+    data-badge-level="{{ entry.badge_level_class or '' }}"
+    data-scorecard-score="{{ entry.tool.openssf_scorecard_score if entry.tool.openssf_scorecard_score is not none else '' }}"
+    data-language="{{ ('|' ~ (entry.tool.programming_languages | join('|')) ~ '|') if entry.tool.programming_languages else '' }}"
+    data-license="{{ ('|' ~ entry.tool.license ~ '|') if entry.tool.license else '' }}"
   >
     <div class="tool-list-head">
-      <a href="{{ root }}tools/{{ entry.tool.slug }}/">{{ entry.tool.name }}</a>
+      <a class="tool-list-name" href="{{ root }}tools/{{ entry.tool.slug }}/">{{ entry.tool.name }}</a>
       {% if entry.tool.tool_type %}<span class="chip chip-tool-type">{{ entry.tool.tool_type }}</span>{% endif %}
-      {% for lang in entry.tool.programming_languages %}<span class="chip chip-language">{{ lang }}</span>{% endfor %}
-      {% if entry.tool.license %}<span class="chip chip-license">{{ entry.tool.license }}</span>{% endif %}
+      {% if entry.tool.license %}
+      <a class="chip chip-license" href="{{ root }}tools/?license={{ entry.tool.license | urlencode }}">
+        <span class="chip-ns">Licence:</span> {{ entry.tool.license }}
+      </a>
+      {% endif %}
+      {% if entry.tool.programming_languages %}
+      <a class="chip chip-language" href="{{ root }}tools/?language={{ entry.tool.programming_languages | join(',') | urlencode }}">
+        <span class="chip-ns">Language:</span> {{ entry.tool.programming_languages | join(', ') }}
+      </a>
+      {% endif %}
+      {% if entry.badge_level_label %}
+      <a class="chip chip-badge chip-badge-{{ entry.badge_level_class }}" href="{{ entry.tool.openssf_best_practices_url }}" title="OpenSSF Best Practices badge">
+        <span class="chip-ns">OpenSSF Best Practices:</span> {{ entry.badge_level_label }}
+      </a>
+      {% endif %}
+      {% if entry.scorecard_display %}
+      <a class="chip chip-scorecard chip-scorecard-{{ entry.scorecard_bucket }}" href="{{ entry.tool.openssf_scorecard_url }}" title="OpenSSF Scorecard aggregate score, out of 10">
+        <span class="chip-ns">OpenSSF Scorecard:</span> {{ entry.scorecard_display }}
+      </a>
+      {% endif %}
+      {% if entry.quality_parts %}
+      <p class="tool-stats-line">
+        {% for part in entry.quality_parts %}{% if not loop.first %} &middot; {% endif %}<span{% if part.title %} title="{{ part.title }}"{% endif %}>{{ part.text }}</span>{% endfor %}
+      </p>
+      {% endif %}
     </div>
     {% if entry.tool.summary %}<p class="tool-list-summary">{{ entry.tool.summary }}</p>{% endif %}
     {% if entry.highlighted_problems %}

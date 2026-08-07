@@ -993,6 +993,50 @@ def build_matrix(problems: list, capacities_order: list, targets_order: list) ->
     return rows
 
 
+def relative_date(date_str: str, now: datetime.datetime) -> str:
+    """A date-only "YYYY-MM-DD" string as a coarse, human-scale relative
+    label -- "today"/"yesterday"/"N days ago"/"N weeks ago"/"N months
+    ago"/"last year"/"N years ago" -- for the tool card's "updated ..."
+    stat, where the exact date is noise next to stars/contributors but
+    freshness at a glance is the point. Blank or unparseable -> "" (the
+    caller blank-guards on that), never a raised exception -- a malformed
+    date shouldn't break the whole tools page."""
+    text = clean(date_str)
+    if not text:
+        return ""
+    try:
+        then = datetime.datetime.strptime(text, "%Y-%m-%d").replace(tzinfo=datetime.timezone.utc)
+    except ValueError:
+        return ""
+    days = (now.date() - then.date()).days
+    if days < 0:
+        return ""  # a future release date is a data error, not a display -- suppress rather than say "in N days"
+    if days == 0:
+        return "today"
+    if days == 1:
+        return "yesterday"
+    if days < 7:
+        return f"{days} days ago"
+    if days < 30:
+        weeks = days // 7
+        return f"{weeks} week{'' if weeks == 1 else 's'} ago"
+    if days < 365:
+        months = days // 30
+        return f"{months} month{'' if months == 1 else 's'} ago"
+    years = days // 365
+    return "last year" if years == 1 else f"{years} years ago"
+
+
+def format_count(n: Optional[int]) -> str:
+    """Abbreviate a star/contributor count the way GitHub does -- 950 stays
+    "950", 1200 becomes "1.2k" -- so a 27,400-star tool doesn't blow out the
+    card's stat line. None (never collected) -> caller blank-guards, this
+    is never called with it."""
+    if n < 1000:
+        return str(n)
+    return f"{n / 1000:.1f}".rstrip("0").rstrip(".") + "k"
+
+
 def first_words(text: str, max_chars: int = 75) -> str:
     """As many whole words as fit within `max_chars`, ellipsized -- the short
     problem-question label on a tool's preview chip, where the full question
@@ -1070,7 +1114,45 @@ def select_highlighted_problems(tool_id: str, problems_for_tool: list, max_shown
     return [c[0] for c in selected], len(candidates) - len(selected)
 
 
-def build_tools_index(problems: list, tool_catalog: dict) -> list:
+def build_quality_display(tool: "Tool", now: datetime.datetime) -> dict:
+    """Precomputed, template-ready project-quality/community-health display
+    data for one tool's card -- stats line tokens (each independently
+    blank-guarded, joined by the template with " · "), and a bucket/label
+    pair for each of the two OpenSSF signals. Kept out of the template
+    (which just blank-guards and renders) the same way select_highlighted_
+    problems()/first_words() keep the card's problem-chip logic there --
+    the template should never need date math or number formatting."""
+    quality_parts = []
+    if tool.stars is not None:
+        quality_parts.append({"text": f"{format_count(tool.stars)} stars"})
+    if tool.contributors is not None:
+        n = tool.contributors
+        quality_parts.append({"text": f"{format_count(n)} contributor{'' if n == 1 else 's'}"})
+    release_rel = relative_date(tool.latest_release_date, now)
+    if release_rel:
+        quality_parts.append({"text": f"updated {release_rel}", "title": tool.latest_release_date})
+
+    badge_level = clean(tool.openssf_best_practices_badge_level)
+    badge_level_class = badge_level.replace("_", "-") if badge_level else None
+    badge_level_label = badge_level.replace("_", " ").title() if badge_level else None
+
+    scorecard_bucket = None
+    scorecard_display = None
+    if tool.openssf_scorecard_score is not None:
+        score = tool.openssf_scorecard_score
+        scorecard_bucket = "low" if score < 4 else ("mid" if score < 7 else "high")
+        scorecard_display = f"{score:.1f}"
+
+    return {
+        "quality_parts": quality_parts,
+        "badge_level_class": badge_level_class,
+        "badge_level_label": badge_level_label,
+        "scorecard_bucket": scorecard_bucket,
+        "scorecard_display": scorecard_display,
+    }
+
+
+def build_tools_index(problems: list, tool_catalog: dict, now: datetime.datetime) -> list:
     usage = {tid: [] for tid in tool_catalog}
     for p in problems:
         for pairing in list(p.tools_implement) + list(p.tools_eval):
@@ -1090,6 +1172,7 @@ def build_tools_index(problems: list, tool_catalog: dict) -> list:
                 for p in highlighted
             ],
             "more_count": more_count,
+            **build_quality_display(tool, now),
         })
     entries.sort(key=lambda e: e["tool"].name.lower())
     return entries
@@ -1112,8 +1195,9 @@ def format_csl_date(issued: dict) -> str:
 def load_references(path: Path) -> list:
     """Load a CSL-JSON array (see
     https://github.com/citation-style-language/schema) and render each item
-    to a simple {citation, url} pair for the References page. Not a full
-    CSL formatter -- just enough to produce "Authors, Year. Title." """
+    to a simple {citation, url} pair for the About page's References
+    section. Not a full CSL formatter -- just enough to produce "Authors,
+    Year. Title." """
     items = json.loads(path.read_text(encoding="utf-8"))
     references = []
     for item in items:
@@ -1253,7 +1337,7 @@ def render_site(
     (out_dir / "frameworks").mkdir()
     for fw in framework_defs:
         (out_dir / "frameworks" / fw["key"]).mkdir()
-    (out_dir / "references").mkdir()
+    (out_dir / "about").mkdir()
 
     def write(path: Path, template_name: str, **ctx):
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -1332,7 +1416,7 @@ def render_site(
                 active="frameworks",
             )
 
-    write(out_dir / "references" / "index.html", "references.html", root="../", active="references")
+    write(out_dir / "about" / "index.html", "about.html", root="../", active="about")
 
     data_json = {
         "generated_at": generated_at,
@@ -1418,10 +1502,11 @@ def main() -> None:
         config["taxonomy"]["targets"],
         config["taxonomy"]["uncategorized_label"],
     )
-    tools_index = build_tools_index(problems, tool_catalog)
+    now = datetime.datetime.now(datetime.timezone.utc)
+    tools_index = build_tools_index(problems, tool_catalog, now)
     frameworks_index = build_frameworks_index(problems, framework_defs, terms_catalog)
 
-    generated_at = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    generated_at = now.strftime("%Y-%m-%d %H:%M UTC")
 
     out_dir = Path(config["output_dir"])
     render_site(

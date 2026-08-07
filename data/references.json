@@ -20,5 +20,41 @@
     ],
     "issued": { "date-parts": [[2026, 4, 22]] },
     "URL": "https://lfaidata.foundation/communityblog/2026/04/22/putting-rgaf-to-work-build-and-audit-responsible-ai-with-open-source/"
+  },
+  {
+    "id": "ecosystems",
+    "type": "webpage",
+    "title": "Open source project metadata and dependency data",
+    "author": [
+      { "literal": "ecosyste.ms" }
+    ],
+    "URL": "https://ecosyste.ms/"
+  },
+  {
+    "id": "openssf-best-practices",
+    "type": "webpage",
+    "title": "Best Practices badge programme",
+    "author": [
+      { "literal": "OpenSSF" }
+    ],
+    "URL": "https://www.bestpractices.dev/"
+  },
+  {
+    "id": "openssf-scorecard",
+    "type": "webpage",
+    "title": "Scorecard",
+    "author": [
+      { "literal": "OpenSSF" }
+    ],
+    "URL": "https://scorecard.dev/"
+  },
+  {
+    "id": "chaoss",
+    "type": "webpage",
+    "title": "Community Health Analytics in Open Source Software",
+    "author": [
+      { "literal": "CHAOSS" }
+    ],
+    "URL": "https://chaoss.community/"
   }
 ]

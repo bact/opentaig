@@ -244,10 +244,30 @@ function resetMultiselectsIn(scopeEl) {
   var searchInput = document.getElementById("tools-filter-search");
   var softwareCheckbox = document.getElementById("tools-filter-software");
   var specCheckbox = document.getElementById("tools-filter-spec");
+  var badgeCheckboxes = Array.prototype.slice.call(document.querySelectorAll(".tools-filter-badge"));
+  var scorecardMinSelect = document.getElementById("tools-filter-scorecard-min");
   var resetButton = document.getElementById("tools-filter-reset");
   var countEl = document.getElementById("tools-filter-count");
   var noResultsEl = document.getElementById("tools-no-results");
   var items = Array.prototype.slice.call(document.querySelectorAll("#tool-list .tool-list-item"));
+
+  // License/language chips link here as "?license=MIT" / "?language=Python,C%2B%2B"
+  // (comma-joined, OR-matched -- a multi-language chip's click shows tools
+  // in ANY of those languages, not just tools matching every one). Read
+  // once on load, not tied to any checkbox -- there's no bounded facet UI
+  // for these (open-ended cardinality, unlike the 4-value badge facet).
+  var activeFilterBanner = document.getElementById("tools-active-filter");
+  var activeFilterText = document.getElementById("tools-active-filter-text");
+  var activeFilterClear = document.getElementById("tools-active-filter-clear");
+
+  function parseListParam(name) {
+    var raw = new URLSearchParams(location.search).get(name);
+    if (!raw) return [];
+    return raw.split(",").map(function (s) { return s.trim(); }).filter(Boolean);
+  }
+
+  var activeLanguages = parseListParam("language");
+  var activeLicenses = parseListParam("license");
 
   function matches(item) {
     var q = searchInput.value.trim().toLowerCase();
@@ -256,8 +276,62 @@ function resetMultiselectsIn(scopeEl) {
     if (softwareCheckbox.checked) checkedTypes.push("software");
     if (specCheckbox.checked) checkedTypes.push("specification");
     if (checkedTypes.length && checkedTypes.indexOf(item.dataset.type) === -1) return false;
+
+    var checkedBadges = badgeCheckboxes.filter(function (c) { return c.checked; }).map(function (c) { return c.dataset.value; });
+    if (checkedBadges.length && checkedBadges.indexOf(item.dataset.badgeLevel) === -1) return false;
+
+    var scorecardMin = scorecardMinSelect.value;
+    if (scorecardMin) {
+      var score = parseFloat(item.dataset.scorecardScore);
+      if (isNaN(score) || score < parseFloat(scorecardMin)) return false;
+    }
+
+    // Pipe-delimited substring match, same convention as the Problems
+    // page's "pipe" facet type -- "|Python|C++|" so "R" can't false-match
+    // inside "Rust", and ready for license to become multi-valued later
+    // without changing this matching logic at all.
+    if (activeLanguages.length) {
+      var langs = item.dataset.language || "";
+      var anyLang = activeLanguages.some(function (v) { return langs.indexOf("|" + v + "|") !== -1; });
+      if (!anyLang) return false;
+    }
+    if (activeLicenses.length) {
+      var licenses = item.dataset.license || "";
+      var anyLicense = activeLicenses.some(function (v) { return licenses.indexOf("|" + v + "|") !== -1; });
+      if (!anyLicense) return false;
+    }
     return true;
   }
+
+  function clearActiveFilter() {
+    activeLanguages = [];
+    activeLicenses = [];
+    activeFilterBanner.hidden = true;
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState(null, "", location.pathname);
+    }
+  }
+
+  if (activeLanguages.length || activeLicenses.length) {
+    var filterDescription = [];
+    if (activeLicenses.length) filterDescription.push("License: " + activeLicenses.join(", "));
+    if (activeLanguages.length) filterDescription.push("Language: " + activeLanguages.join(", "));
+    activeFilterText.textContent = "Filtering by " + filterDescription.join(" · ");
+    activeFilterBanner.hidden = false;
+
+    // Auto-expand the filter panel so it's obvious why the list is
+    // narrowed, rather than just silently showing fewer cards. Reuses the
+    // disclosure header's own click handler (registered earlier in this
+    // file) instead of duplicating its aria-expanded/hidden/label logic.
+    var disclosureHeader = filterBar.querySelector("[data-disclosure]");
+    var toggleBtn = disclosureHeader && disclosureHeader.querySelector(".disclosure-toggle");
+    if (toggleBtn && toggleBtn.getAttribute("aria-expanded") !== "true") disclosureHeader.click();
+  }
+
+  activeFilterClear.addEventListener("click", function () {
+    clearActiveFilter();
+    applyFilters();
+  });
 
   function applyFilters() {
     var visibleCount = 0;
@@ -270,7 +344,7 @@ function resetMultiselectsIn(scopeEl) {
     noResultsEl.hidden = visibleCount !== 0;
   }
 
-  [searchInput, softwareCheckbox, specCheckbox].forEach(function (el) {
+  [searchInput, softwareCheckbox, specCheckbox, scorecardMinSelect].concat(badgeCheckboxes).forEach(function (el) {
     el.addEventListener("input", applyFilters);
     el.addEventListener("change", applyFilters);
   });
@@ -279,6 +353,9 @@ function resetMultiselectsIn(scopeEl) {
     searchInput.value = "";
     softwareCheckbox.checked = false;
     specCheckbox.checked = false;
+    badgeCheckboxes.forEach(function (c) { c.checked = false; });
+    scorecardMinSelect.value = "";
+    clearActiveFilter();
     applyFilters();
   });
 

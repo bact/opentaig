@@ -40,8 +40,41 @@ See [`docs/data-schema.md`](data-schema.md) for the full Google Sheets
 schema and [`curation/README.md`](../curation/README.md) for the
 tool-discovery pipeline.
 
+## Writing style
+
+Use British English spelling throughout the site's copy (templates, chip
+labels, error/empty-state text, etc.) and in project documentation —
+e.g. "colour" not "color", "organise"/"recognise" not "organize"/"recognize",
+"licence" (noun) vs. "license" (verb), "behaviour", "centre". Code
+identifiers (CSS custom properties, Python/JS names, data field names) are
+unaffected and stay as-is even where they use American spelling already.
+
 ## Notes
 
+- **Visited-link color policy**: the global `a:visited` rule
+  (`assets/style.css`) excludes every link that is its own colored surface
+  -- chips (`.chip`, covers badge/scorecard/licence/language/framework-term/
+  doc-checklist/...), `.tool-problem-chip`, `.matrix-cell`,
+  `.mini-heatmap-cell`, `.button-primary`, `.skip-link` -- via one
+  `:not(...)` chain, rather than a per-component override repeating each
+  one's own color (confirmed unreadable in practice: a visited OpenSSF
+  badge chip rendered orange text on a dark moss-green background). Any
+  **new** colored-surface link class needs adding to that same exclusion
+  list; a plain-text link on the page's own background (citation list,
+  breadcrumbs, tool-detail links, the tool card's own name link, ...)
+  doesn't need anything -- the visited color is safe there and left as an
+  intentional "you've already opened this" cue.
+- Chip sizing: `.chip` and `.chip-ns` (the small uppercase "Label:" prefix
+  used by licence/language/badge/scorecard chips) both pin their own
+  `line-height` rather than inheriting the body's tall `1.55` -- a chip
+  carrying a smaller nested `.chip-ns` span mixes two font sizes on one
+  inline line, which under the inherited line-height rendered visibly
+  taller than a plain single-size chip (e.g. tool-type) sitting next to it
+  in the same row. `.chip-license`/`.chip-language` use the regular sans
+  font, not `--font-mono` -- monospace was tried for the licence chip
+  (it's an SPDX identifier, arguably ID-like) but dropped in favor of
+  matching every other chip, once it was clear mixing font-families
+  per-chip was adding complexity for very little payoff.
 - `/` is the Landscape page: a Capacity x Target coverage matrix (`_matrix.html`,
   built by `build_matrix()`), linking into `/problems/`. The problem listing
   itself ("Explorer") groups problems **Capacity → Target → Problem Area**,
@@ -75,6 +108,69 @@ tool-discovery pipeline.
   used. See "`tools` / `tool_metadata` precedence" in
   `docs/data-schema.md` for the full rule and why it's split this way
   (permission isolation for a future write-automation credential).
+- Project-quality/community-health display, both driven by that same
+  `tool_metadata` data:
+  - **Tool card** (`tools_index.html`): everything lives in one
+    `.tool-list-head` row now -- name (`.tool-list-name`, deliberately
+    styled bigger/bolder than the rest of the row so it doesn't get lost
+    among all the chips), role, then labeled chips (`License: MIT`,
+    `Language: Python, C++` -- one combined chip for every language, not
+    one per language) each using the same `chip-ns` "label: value" grammar
+    as the OpenSSF chips (`OpenSSF Best Practices: Gold`, `OpenSSF
+    Scorecard: 5.0`), then the plain-text stats line
+    (stars/contributors/latest-release-relative, "&middot;"-joined, each
+    token independently blank-guarded) pushed to the row's far end with
+    `margin-left: auto` (same technique as the site nav's trailing GitHub
+    link) so it reads as a secondary glance-signal, not competing with the
+    identity/quality chips. No separate row for any of this -- the summary
+    flows directly into "Problems addressed" below it. Badge/Scorecard
+    color buckets (in_progress/passing/silver/gold and low/4-6.9/&ge;7)
+    all reuse the exact same neutral -> moss-soft -> moss -> moss-ink ramp
+    `_matrix.html` uses for coverage -- one hue family, increasing
+    saturation = increasing goodness, deliberately not color-per-tier
+    (an earlier ochre/gold choice read as a caution color, not "best").
+    All of this is precomputed per-tool in `build_quality_display()`
+    (`build.py`) -- date math (`relative_date()`) and count abbreviation
+    (`format_count()`, e.g. `27400` -> `"27.4k"`) never happen in the
+    template. The filter bar facets on badge level (checkboxes, grouped
+    under a `<fieldset>`/`<legend>`) and Scorecard score (a `&ge;4`/`&ge;7`
+    threshold `<select>`, since it's a continuous value, not a category) --
+    both read `data-badge-level`/`data-scorecard-score` off each
+    `.tool-list-item` in `app.js`. The card's `data-search` also folds in
+    `tool.keywords`, so a tool matches search on its GitHub topics even
+    though the card never displays them.
+  - License/Language chips on the card are real links to
+    `/tools/?license=MIT` / `/tools/?language=Python,C%2B%2B`
+    (comma-joined, URL-encoded, OR-matched against `data-license`/
+    `data-language` -- pipe-delimited `"|Python|C++|"`, same convention
+    Problems page's "pipe" facet type already uses, so `license` can go
+    multi-valued later without touching the matching logic). Read once
+    from `location.search` on page load in `app.js` (not tied to any
+    checkbox -- open-ended cardinality, unlike the 4-value badge facet),
+    auto-expanding the filter panel and showing a dismissible
+    `.active-filter-banner` so it's obvious why the list is narrowed. The
+    banner sits outside `#tools-filter-body` (stays visible even if that
+    panel gets re-collapsed) and gets its own top `border-radius` rather
+    than `overflow: hidden` on `.filter-bar`, since that class is shared
+    with Problems page's absolute-positioned multiselect dropdowns, which
+    `overflow: hidden` would clip. The Tool *detail* page's own license
+    chip stays pointed at its SPDX reference (`spdx.org/licenses/...`) --
+    deliberately not this same filter-link, since "what does this license
+    mean" is the relevant question there, vs. "show me other tools with
+    it" from the listing card.
+  - **Tool detail page** (`tool.html`): a fixed-order, fixed-label,
+    always-all-slots "Project health" checklist for 10 fields (Homepage/
+    Source/Documentation/README/License file/Contributing guide/Code of
+    conduct/Security policy/Governance/Funding) plus `sbom_url`/`paper_url`
+    appended present-only (no ghost) since only the fixed 10 are meant to
+    flag absence. Present is a real `<a class="chip-doc-present">` link;
+    absent is a `<span class="chip-doc-missing">` (dashed ghost,
+    deliberately *not* a link, so keyboard users don't tab through dead
+    stops) with a `visually-hidden` "(not published)" suffix -- link-vs-span
+    carries the state for screen readers, not color alone, same idiom as
+    `_solution_table.html`'s `solution_cell()`. The SPDX license chip
+    (`chip-license`) is itself the link to `spdx.org` now (no separate
+    "(license text)" link).
 - If a sheet is ever made private, swap the CSV-export fetch in
   `fetch_source()` (`build.py`) for the Google Sheets API with a service
   account key stored as a GitHub Actions secret.

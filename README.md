@@ -15,8 +15,16 @@ Inspired by the
 and
 [Putting Responsible Generative AI Framework to Work blog post][putting-rgaf].
 
+We are committed to making this website accessible by adhering to
+[Web Content Accessibility Guidelines (WCAG) 2.2][wcag] guidelines and
+supporting full keyboard navigation.
+While we continually strive to improve accessibility, we recognise there are
+areas that still need attention. If you encounter any barriers or experience
+difficulty navigating the site, please open an issue so we can address them.
+
 [taig-db]: https://taig.stanford.edu/taig_database.html
 [putting-rgaf]: https://lfaidata.foundation/communityblog/2026/04/22/putting-rgaf-to-work-build-and-audit-responsible-ai-with-open-source/
+[wcag]: https://www.w3.org/TR/WCAG22/
 
 ## How it works
 

@@ -8,18 +8,42 @@
   <p>
     {% if tool.tool_type %}<span class="chip chip-tool-type">{{ tool.tool_type }}</span>{% endif %}
     {% for lang in tool.programming_languages %}<span class="chip chip-language">{{ lang }}</span>{% endfor %}
-    {% if tool.license %}<span class="chip chip-license">{{ tool.license }}</span>
-    <a class="doc-link" href="https://spdx.org/licenses/{{ tool.license }}.html">(license text)</a>{% endif %}
+    {% if tool.license %}<a class="chip chip-license" href="https://spdx.org/licenses/{{ tool.license }}.html">{{ tool.license }}</a>{% endif %}
   </p>
   {% endif %}
   {% if tool.summary %}<p>{{ tool.summary }}</p>{% endif %}
 
-  <ul class="tool-links">
-    {% if tool.homepage %}<li><a href="{{ tool.homepage }}">Homepage</a></li>{% endif %}
-    {% if tool.source %}<li><a href="{{ tool.source }}">Source code</a></li>{% endif %}
-    {% if tool.documentation %}<li><a href="{{ tool.documentation }}">Documentation</a></li>{% endif %}
-    {% if tool.funding %}<li><a href="{{ tool.funding }}">Funding / sponsor this project</a></li>{% endif %}
-  </ul>
+  {# Fixed order, fixed labels, every slot always rendered -- present is a
+     real link (moss chip), absent is a dashed ghost (not a link, so it's
+     not a dead keyboard tab stop), same idiom as _solution_table.html's
+     solution_cell(): the link/no-link distinction carries the state for
+     screen readers, not color alone. sbom_url/paper_url are appended
+     present-only (no ghost) since only the fixed 10 are quality signals
+     worth flagging by their absence. #}
+  <div class="tool-doc-checklist">
+    <span class="tool-doc-checklist-label">Project health:</span>
+    {% for label, url in [
+      ("Homepage", tool.homepage),
+      ("Source", tool.source),
+      ("Documentation", tool.documentation),
+      ("README", tool.readme_url),
+      ("Licence file", tool.license_url),
+      ("Contributing guide", tool.contributing_url),
+      ("Code of conduct", tool.code_of_conduct_url),
+      ("Security policy", tool.security_policy_url),
+      ("Governance", tool.governance_url),
+      ("Funding", tool.funding),
+    ] %}
+      {% if url %}
+      <a class="chip chip-doc-present" href="{{ url }}">{{ label }}</a>
+      {% else %}
+      <span class="chip chip-doc-missing">{{ label }}<span class="visually-hidden"> (not published)</span></span>
+      {% endif %}
+    {% endfor %}
+    {% if tool.sbom_url %}<a class="chip chip-doc-present" href="{{ tool.sbom_url }}">SBOM</a>{% endif %}
+    {% if tool.paper_url %}<a class="chip chip-doc-present" href="{{ tool.paper_url }}">Academic paper</a>{% endif %}
+  </div>
+  {% if tool.funder %}<p class="tool-funder">Funded by {{ tool.funder }}</p>{% endif %}
 
   <h2>Open problems this tool helps address ({{ problems | length }})</h2>
   {% if problems %}
