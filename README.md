@@ -29,12 +29,15 @@ difficulty navigating the site, please open an issue so we can address them.
 ## How it works
 
 The site is **fully static**, hosted on **GitHub Pages**, and generated from
-three Google Sheets once per build — the upstream TAIG question set, our own
-framework mappings + tool catalog, and auto-collected project-quality data
-for each tool (kept in its own sheet so a future automation credential can
-be scoped to write only there). There is no backend and no database: the
-sheets are the only editable source of truth, and everything else
-(including the site itself) is generated from them.
+three separate Google Sheets documents once per build — `TAIG` (the
+upstream question set), `OpenTAIG` (our own framework mappings + tool
+catalog), and `OpenTAIG-auto` (auto-collected project-quality data for each
+tool, kept in its own document so a future automation credential can be
+scoped to write only there — see "The three documents" in
+[`docs/data-schema.md`](docs/data-schema.md) for each one's URL). There is
+no backend and no database: these documents are the only editable source of
+truth, and everything else (including the site itself) is generated from
+them.
 
 The build runs automatically in GitHub Actions (on every push to `main`,
 and on a schedule), or can be triggered manually from the Actions tab.
@@ -50,7 +53,7 @@ Writes the site to `site/` (git-ignored) — open `site/index.html` to
 preview, or serve it so relative links behave like the deployed site:
 
 ```bash
-python3 -m http.server 8000 -d site
+python -m http.server 8000 -d site
 ```
 
 then open `http://localhost:8000`. See
@@ -80,8 +83,9 @@ the next build (manual or scheduled) is what picks up your changes.
 
 Code: [Apache License 2.0](LICENSE).
 
-Data (the catalog itself — open problems, tool mappings, and
-project-quality/community-health fields, published as `data.json` at the
-built site's root, linked from its About page):
-[CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/), public
-domain.
+Data: [CC0 1.0 Universal][cc0] (public domain).
+
+See details at the site's [About][about-data] page.
+
+[cc0]: https://creativecommons.org/publicdomain/zero/1.0/
+[about-data]: https://bact.github.io/opentaig/about/#Data

@@ -38,11 +38,13 @@ before picking new pairs so a run doesn't silently redo ground already
 covered). curation/candidate_tools.csv / candidate_map_updates.csv /
 candidate_tool_metadata.csv are all at header-only (last batch already
 merged into the live sheets by the user) — confirm this before assuming
-you're starting clean. Note there are now **three** live sheets, not two:
-`OpenTAIG` (`tools`/`tool_map`/`map`/`terms`/`framework` tabs) and a
-separate `tool_metadata` spreadsheet (100% auto-collected, never
-hand-edited) — see "tools / tool_metadata precedence" in
-docs/data-schema.md before touching anything project-quality-related.
+you're starting clean. Note there are **three separate Google Sheets
+documents**, not one: `TAIG` (upstream question text/taxonomy), `OpenTAIG`
+(`tools`/`tool_map`/`map`/`terms`/`framework` tabs, our own editorial
+work), and `OpenTAIG-auto` (its `tool_metadata` tab, 100% auto-collected,
+never hand-edited) — see "The three documents" and "tools / tool_metadata
+precedence" in docs/data-schema.md before touching anything
+project-quality-related.
 
 Use the Phase 2 prompt in curation/README.md as your working instructions —
 follow it directly (bounded batches of one problem area or ~5-10 RQs, Pass

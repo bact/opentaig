@@ -5,9 +5,11 @@
 # SPDX-License-Identifier: Apache-2.0
 
 """Collect project-quality / community-health metadata for the
-`tool_metadata` tab -- a separate spreadsheet from the main OpenTAIG one,
-100% written by this script, joined onto `tools` by `id` at build time (see
-"tools / tool_metadata precedence" in build.py and docs/data-schema.md).
+`tool_metadata` tab -- the only tab in `OpenTAIG-auto`, a separate Google
+Sheets document from the main `OpenTAIG` one (see "The three documents" in
+docs/data-schema.md for each document's URL), 100% written by this script,
+joined onto `tools` by `id` at build time (see "tools / tool_metadata
+precedence" in build.py and docs/data-schema.md).
 GitHub-only for now (GitLab/Codeberg would need their own fetch functions;
 no tool in the catalog is hosted there yet, so they aren't built
 speculatively -- see the module docstring bottom for what that would take).

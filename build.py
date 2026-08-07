@@ -6,10 +6,11 @@
 
 """Build script for OpenTAIG.
 
-Generates a static site from THREE decoupled Google Sheets: the upstream
-TAIG sheet, joined by research question number (rq_no, the problem number
-in the TAIG paper); our own OpenTAIG sheet; and a separate tool_metadata
-sheet, joined onto tools by id.
+Generates a static site from THREE decoupled Google Sheets documents (see
+"The three documents" in docs/data-schema.md for each one's URL): the
+upstream `TAIG` document, joined by research question number (rq_no, the
+problem number in the TAIG paper); our own `OpenTAIG` document; and
+`OpenTAIG-auto` (its `tool_metadata` tab), joined onto tools by id.
 
   * "taig"     -- upstream TAIG paper data (question text + taxonomy +
                  citations + expertise). The spine of the site.
@@ -27,11 +28,11 @@ sheet, joined onto tools by id.
                  including `license` -- see apply_tool_metadata()/
                  resolve_metadata_field().
   * "tool_metadata" -- auto-collected project-quality/community-health data
-                 per tool (a separate spreadsheet from OpenTAIG, so a future
-                 write-automation credential can be scoped to touch only
-                 this one), 100% written by
-                 curation/collect_project_metadata.py. Joined onto "tools"
-                 by id; never hand-edited.
+                 per tool (the only tab in "OpenTAIG-auto", a separate
+                 document from OpenTAIG, so a future write-automation
+                 credential can be scoped to touch only this one), 100%
+                 written by curation/collect_project_metadata.py. Joined
+                 onto "tools" by id; never hand-edited.
   * "terms"    -- our RGAF/EU_AI_Act/UNESCO/ASEAN/CoE term catalog (a tab in
                  the OpenTAIG sheet), one shared tab across all frameworks,
                  with globally-unique namespaced ids (e.g. `euaiact-a8`).

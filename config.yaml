@@ -21,8 +21,13 @@ site:
 output_dir: "site"
 
 # --- Data sources -----------------------------------------------------------
-# The site is generated from THREE decoupled Google Sheets, joined by
-# research question number (rq_no) or tool id:
+# The site is generated from THREE decoupled Google Sheets DOCUMENTS
+# (separate files/URLs, not just separate tabs) -- "TAIG", "OpenTAIG", and
+# "OpenTAIG-auto" -- joined by research question number (rq_no) or tool id.
+# See "The three documents" in docs/data-schema.md for each document's URL
+# and exactly which tabs live in it; the `data:` block below is the
+# authoritative source for which document + tab each of these seven sources
+# reads from.
 #
 #   1. "taig"     -- the upstream TAIG paper data (question text + taxonomy +
 #                   citations + expertise). Manually kept in sync with the
@@ -48,10 +53,10 @@ output_dir: "site"
 #                   -- see the `tools:` columns block further down for the
 #                   precedence rule.
 #   5. "tool_metadata" -- auto-collected project-quality/community-health
-#                   data per tool, keyed by id -- a SEPARATE spreadsheet
-#                   from OpenTAIG (deliberately, so a future write-
-#                   automation credential can be scoped to touch only this
-#                   one), 100% written by
+#                   data per tool, keyed by id -- lives in "OpenTAIG-auto",
+#                   a SEPARATE document from "OpenTAIG" (deliberately, so a
+#                   future write-automation credential can be scoped to
+#                   touch only this one), 100% written by
 #                   curation/collect_project_metadata.py, never hand-edited.
 #   6. "terms"    -- OUR RGAF/EUAIAct/UNESCOAI/ASEANAI/CoEAI/AIAAIC term catalog
 #                   (a tab in the OpenTAIG sheet), one shared tab across all
@@ -61,11 +66,11 @@ output_dir: "site"
 #                   regulation/recommendation itself (name, homepage, source
 #                   document, publishing body), one row per framework key.
 #
-# The OpenTAIG sheet's tabs are literally named "map", "tool_map", "tools",
-# "terms", "framework". (Any "tools_*_seed" tab, e.g. "tools_rgaf_seed", is a
-# curation-only seed/staging tab -- the build reads only "tools".)
-# "tool_metadata" lives in its own spreadsheet, with its own tab literally
-# named "tool_metadata".
+# The "OpenTAIG" document's tabs are literally named "map", "tool_map",
+# "tools", "terms", "framework". (Any "tools_*_seed" tab, e.g.
+# "tools_rgaf_seed", is a curation-only seed/staging tab -- the build reads
+# only "tools".) "tool_metadata" lives in the "OpenTAIG-auto" document, with
+# its own tab literally named "tool_metadata".
 #
 # Each sheet must be shared as "Anyone with the link" (Viewer) so the CSV
 # export endpoint works without credentials. Each source below is looked up
@@ -94,13 +99,13 @@ data:
     sheet_id: "1netgfFKee13Z3_i-ructJkgg08HAPlBKgF-a35bs_ks"
     sheet_name: "tools"
     file: null
-  # A SEPARATE spreadsheet, deliberately -- not another tab in the OpenTAIG
-  # sheet above. `tool_metadata` is 100% machine-written by
-  # curation/collect_project_metadata.py and safe to bulk-overwrite on every
-  # collection run; keeping it in its own file means a future automation
-  # credential can be granted write access to only this spreadsheet, never
-  # the hand-curated `tools`/`tool_map`/`map` tabs. See "tools /
-  # tool_metadata precedence" in build.py and docs/data-schema.md.
+  # "OpenTAIG-auto" -- a SEPARATE document, deliberately, not another tab in
+  # "OpenTAIG" above. `tool_metadata` (its only tab) is 100% machine-written
+  # by curation/collect_project_metadata.py and safe to bulk-overwrite on
+  # every collection run; keeping it in its own document means a future
+  # automation credential can be granted write access to only this one,
+  # never the hand-curated `tools`/`tool_map`/`map` tabs in `OpenTAIG`. See
+  # "tools / tool_metadata precedence" in build.py and docs/data-schema.md.
   tool_metadata:
     sheet_id: "1A3lTBGtMp8yCmW0ziFMdNG9ezGHsnKKd-oFZDjL7IHI"
     sheet_name: "tool_metadata"

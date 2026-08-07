@@ -39,11 +39,13 @@ Key files:
 
 Current data model, if a tool card or listing page ever needs a new field:
 `Tool` objects (build.py) merge **two** sources per field, not one — a
-hand-curated/AI-judged `tools` tab and an auto-collected `tool_metadata`
-spreadsheet, resolved by a precedence rule (`tools` override wins if
+hand-curated/AI-judged `tools` tab (in the `OpenTAIG` document) and an
+auto-collected `tool_metadata` tab (in the separate `OpenTAIG-auto`
+document), resolved by a precedence rule (`tools` override wins if
 non-blank; the literal text `none` forces blank; otherwise falls through
-to `tool_metadata`) — see "tools / tool_metadata precedence" in
-docs/data-schema.md before assuming any field is always populated. Most
+to `tool_metadata`) — see "The three documents" and "tools / tool_metadata
+precedence" in docs/data-schema.md before assuming any field is always
+populated. Most
 project-quality fields (`stars`, `forks`, `contributors`, OpenSSF scores,
 `development_status`, ...) are legitimately blank far more often than not
 (never collected, or the tool predates a collection run) — any new UI

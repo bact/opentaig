@@ -1,3 +1,9 @@
+---
+SPDX-FileCopyrightText: 2026 OpenTAIG authors
+SPDX-FileType: SOURCE
+SPDX-License-Identifier: CC0-1.0
+---
+
 # Tool curation
 
 Working files for **discovering open-source tools and mapping them to the
@@ -147,9 +153,10 @@ judgment steps need a model.
 
 ### Freshness columns
 
-Every tab `build.py` owns (`map`, `tool_map`, `tools`, `terms`, `framework`,
-and `tool_metadata` in its own spreadsheet) carries three timestamp
-columns, and every row is expected to have all three filled in:
+Every tab `build.py` owns (`map`, `tool_map`, `tools`, `terms`, `framework`
+in the `OpenTAIG` document, and `tool_metadata` in the separate
+`OpenTAIG-auto` document) carries three timestamp columns, and every row is
+expected to have all three filled in:
 
 - **`datetime_added`** — when the row was first added.
 - **`datetime_checked`** — when the row was last reviewed for staleness
@@ -1400,11 +1407,13 @@ single warning printed once per run rather than a hard failure.
 ### Live sheet schema (current)
 
 Quick recap for curation work — see [`docs/data-schema.md`](../docs/data-schema.md)
-for the full column-by-column reference. All tab and column names are
-lowercase with underscores. Six sources, across **two spreadsheets**
-(five tabs in `OpenTAIG`, plus the separate `tool_metadata` spreadsheet —
-see "`tools` / `tool_metadata` precedence" in `docs/data-schema.md`), are
-owned by this pipeline, each carrying the three freshness columns above:
+for the full column-by-column reference (including each document's URL —
+see "The three documents" there). All tab and column names are lowercase
+with underscores. Six sources, across **two documents** (five tabs in
+`OpenTAIG`, plus the `tool_metadata` tab in the separate `OpenTAIG-auto`
+document — see "`tools` / `tool_metadata` precedence" in
+`docs/data-schema.md`), are owned by this pipeline, each carrying the three
+freshness columns above:
 
 - **`map`** — `rq_no` + one column per framework (`rgaf`, `euaiact`,
   `unescoai`, `aseanai`, `coeai`, `aiaaic`) + freshness columns. `aiaaic` is our
@@ -1441,7 +1450,7 @@ owned by this pipeline, each carrying the three freshness columns above:
   (never auto-collected — no public API for GitHub's dependency-graph
   count), so it always resolves to whatever is here. Never written to by
   any script.
-- **`tool_metadata`** (its own spreadsheet) — `id, source` (the latter
+- **`tool_metadata`** (in `OpenTAIG-auto`, its own document) — `id, source` (the latter
   purely for a human skimming the sheet; `build.py` ignores it — a tool's
   `source` always comes from `tools`, since that's how this script finds
   the repo to collect from) + the same judgment-vs-collection field list as

@@ -1,53 +1,73 @@
 # Data schema
 
-The full reference for the three Google Sheets that back the site. See the
-[root README](../README.md) for the high-level picture and
-[`curation/README.md`](../curation/README.md) for how the tool-discovery
-pipeline writes into the `tools`/`tool_map` tabs described below.
+The full reference for the three Google Sheets **documents** (workbooks)
+that back the site. See the [root README](../README.md) for the high-level
+picture and [`curation/README.md`](../curation/README.md) for how the
+tool-discovery pipeline writes into the `tools`/`tool_map` tabs described
+below.
+
+## The three documents
+
+"Sheet" is overloaded in casual use — here, **document** (or **workbook**)
+means a whole Google Sheets file (its own URL, its own share settings), and
+**tab** means one worksheet inside it. Three separate documents back the
+site, each with its own `sheet_id` in `config.yaml`:
+
+| # | Document | URL | Tabs read by `build.py` |
+| --- | --- | --- | --- |
+| 1 | **TAIG** | [docs.google.com/.../1uLYmyC9wBSssO5l5dSf6gYv_2-WoMPBR15q0r2kKsyA](https://docs.google.com/spreadsheets/d/1uLYmyC9wBSssO5l5dSf6gYv_2-WoMPBR15q0r2kKsyA/edit) | `Grid view` |
+| 2 | **OpenTAIG** | [docs.google.com/.../1netgfFKee13Z3_i-ructJkgg08HAPlBKgF-a35bs_ks](https://docs.google.com/spreadsheets/d/1netgfFKee13Z3_i-ructJkgg08HAPlBKgF-a35bs_ks/edit) | `map`, `tool_map`, `tools`, `terms`, `framework` (+ any `tools_*_seed` staging tabs) |
+| 3 | **OpenTAIG-auto** | [docs.google.com/.../1A3lTBGtMp8yCmW0ziFMdNG9ezGHsnKKd-oFZDjL7IHI](https://docs.google.com/spreadsheets/d/1A3lTBGtMp8yCmW0ziFMdNG9ezGHsnKKd-oFZDjL7IHI/edit) | `tool_metadata` |
+
+`config.yaml`'s `data:` block is the authoritative source for exactly which
+document + tab each of `taig`/`mapping`/`tool_map`/`tools`/`tool_metadata`/
+`terms`/`framework` reads from — re-check it if a document or tab is ever
+renamed, since nothing here enforces staying in sync with it.
 
 ## How it works
 
 ```text
-TAIG sheet          ---\
-OpenTAIG sheet         >-- (CSV export, fetched once per build) --> build.py --> site/ --> GitHub Pages
-tool_metadata sheet ---/
+TAIG (doc 1)           ---\
+OpenTAIG (doc 2)           >-- (CSV export, fetched once per build) --> build.py --> site/ --> GitHub Pages
+OpenTAIG-auto (doc 3)  ---/
 ```
 
-The data is split across **three decoupled sheets**, joined by id (research
-question number `rq_no` for the first two; tool `id` for the third), so
-upstream paper content, our own editorial work, and auto-collected data can
-each evolve independently:
+The data is split across **three decoupled documents**, joined by id
+(research question number `rq_no` for the first two; tool `id` for the
+third), so upstream paper content, our own editorial work, and
+auto-collected data can each evolve independently:
 
-- **`TAIG` sheet** — the question text and taxonomy *as published by
-  Stanford's TAIG database*. Updated manually whenever the upstream source
-  changes; `build.py` never writes to it.
-- **`OpenTAIG` sheet** — our own framework/regulation mappings and tool
-  catalog, keyed by `rq_no`. This is where our editorial work happens,
+- **`TAIG`** (doc 1) — the question text and taxonomy *as published by
+  Stanford's TAIG database*, in its `Grid view` tab. Updated manually
+  whenever the upstream source changes; `build.py` never writes to it.
+- **`OpenTAIG`** (doc 2) — our own framework/regulation mappings and tool
+  catalog, spread across the `map`/`tool_map`/`tools`/`terms`/`framework`
+  tabs, keyed by `rq_no`. This is where our editorial work happens,
   independent of upstream updates. Never written to by automation — see
   `tools` below.
-- **`tool_metadata` sheet** — auto-collected project-quality/community-health
-  data for each tool, keyed by tool `id`. A separate file from `OpenTAIG`
-  specifically so a future automation credential can be scoped to write only
-  here, never touching hand-curated content — see "`tools` / `tool_metadata`
-  precedence" below.
+- **`OpenTAIG-auto`** (doc 3) — auto-collected data, in its `tool_metadata`
+  tab, keyed by tool `id`. A separate *document* from `OpenTAIG`
+  (deliberately — not just another tab in it) so a future automation
+  credential can be scoped to write only here, never touching hand-curated
+  content — see "`tools` / `tool_metadata` precedence" below.
 
-`build.py` fetches all three sheets, joins them by id, normalizes the result
-into a set of "open problem" records, and renders the static site with
-Jinja2 templates. It runs in GitHub Actions:
+`build.py` fetches all three documents, joins them by id, normalizes the
+result into a set of "open problem" records, and renders the static site
+with Jinja2 templates. It runs in GitHub Actions:
 
 - **Manually**, any time, via the *Run workflow* button on the
   `Build and deploy site` workflow (Actions tab).
 - **Automatically**, every 2 months (1st of Jan/Mar/May/Jul/Sep/Nov, 03:00 UTC).
 - On every push to `main` (so merged content/template changes go live right away).
 
-No secrets are needed: all three sheets are read via their public CSV export
-URLs, so each must stay shared as **"Anyone with the link" (Viewer)**.
+No secrets are needed: all three documents are read via their public CSV
+export URLs, so each must stay shared as **"Anyone with the link" (Viewer)**.
 
 ## Editing the data
 
-Edit the Google Sheets — nothing else. The next build (manual or scheduled)
-picks up your changes; the sheets are never read live, so edits don't appear
-until a build runs.
+Edit the Google Sheets documents themselves — nothing else. The next build
+(manual or scheduled) picks up your changes; the documents are never read
+live, so edits don't appear until a build runs.
 
 ### 1. `TAIG` sheet — upstream question text & taxonomy
 
@@ -194,7 +214,8 @@ Every other column in `tools` — `name`, `license`, `programming_language`,
 `documentation`, `homepage`, `funding`, `funder`, and the full project-
 quality/community-health set (`stars` through `sponsors`, listed in full
 under `tool_metadata` below) — also exists, same column name, in the
-separate **`tool_metadata` sheet**. `tools`' copy is an *optional override*,
+**`tool_metadata` tab** (in the separate `OpenTAIG-auto` document).
+`tools`' copy is an *optional override*,
 not the primary source; see the precedence rule right below. `name`,
 `license`, `documentation`, and `homepage` look like pure identity fields
 but aren't treated as ones here — all four are auto-collectible (a repo's
@@ -207,9 +228,10 @@ same override precedence rather than a straight `tools`-only read.
 
 ### `tools` / `tool_metadata` precedence
 
-Two Google Sheets carry project-quality/community-health data for the same
-set of fields, and `build.py` resolves exactly one final value per field
-per tool, per this rule (`resolve_metadata_field()` in `build.py`):
+Two tabs, in two separate documents (`tools` in `OpenTAIG`, `tool_metadata`
+in `OpenTAIG-auto`), carry project-quality/community-health data for the
+same set of fields, and `build.py` resolves exactly one final value per
+field per tool, per this rule (`resolve_metadata_field()` in `build.py`):
 
 1. **A non-blank cell in `tools` always wins**, as a human override —
    e.g. correcting a bad auto-collected value, or filling in
@@ -261,14 +283,17 @@ itself as the display label, with no source link — a build warning, not a
 failure. A row here with no matching `key` in `config.yaml` is also just a
 warning (orphaned metadata, not wired to any mapping column).
 
-### 3. `tool_metadata` sheet — auto-collected project-quality data
+### 3. `OpenTAIG-auto` document, `tool_metadata` tab — auto-collected project-quality data
 
-A **separate Google Spreadsheet**, not another tab in the `OpenTAIG`
-sheet — deliberately, so a future automation credential (see
+A **separate Google Sheets document from `OpenTAIG`**, not another tab in
+it — deliberately, so a future automation credential (see
 `curation/collect_project_metadata.py`'s docstring) can be granted write
-access to only this one file, never `tools`/`tool_map`/`map`. One row per
-tool `id`; `source` is a read-only reference column for a human skimming
-the sheet (`build.py` ignores it — a tool's `source` URL always comes from
+access to only this one document, never `OpenTAIG`'s `tools`/`tool_map`/
+`map` tabs. This document has a single tab, `tool_metadata`, referred to
+throughout this doc (and in the code) as just "`tool_metadata`" since
+there's only ever one tab to mean. One row per tool `id`; `source` is a
+read-only reference column for a human skimming the tab (`build.py` ignores
+it — a tool's `source` URL always comes from
 `tools`, never `tool_metadata`, since it's how this script finds the repo
 to collect from in the first place). `name`, despite sitting right next to
 `source` in the same read-only-looking position, is *not* read-only in the
