@@ -11,6 +11,8 @@
 <a class="skip-link" href="#filter-bar">Skip mini-heatmap</a>
 {% include "_matrix_compact.html" %}
 
+{% from "_filter_macros.html" import disclosure_header %}
+
 {# Multi-select dropdown: a disclosure button over a group of native
    checkboxes, rather than a <select multiple>. Real checkboxes carry their
    own checked/unchecked semantics and need no custom keyboard handling, and
@@ -43,19 +45,12 @@
 </div>
 {% endmacro %}
 
-{# Section header that toggles a Show/Hide body -- the whole row is
-   clickable (title text included), not just the button; see .disclosure-*
-   in style.css. #}
-{% macro disclosure_header(title, body_id) %}
-<div class="disclosure-header" data-disclosure>
-  <span class="disclosure-title">{{ title }}</span>
-  <button type="button" class="disclosure-toggle" aria-expanded="false" aria-controls="{{ body_id }}">Show</button>
-</div>
-{% endmacro %}
-
 <section class="filter-bar" id="filter-bar" tabindex="-1">
   <div class="filter-section">
-    <div class="filter-section-title">Search</div>
+    <div class="filter-section-title">
+      Search
+      <span id="filter-count" class="filter-count" aria-live="polite"></span>
+    </div>
     <div class="filter-section-body" id="filter-search-body">
       <div class="filter-search-row">
         <input type="search" id="filter-search" placeholder="Search questions and mappings&hellip;" aria-label="Search open problems">
@@ -66,7 +61,6 @@
         </label>
         <button type="button" class="filter-reset" id="filter-search-reset">Reset</button>
       </div>
-      <span id="filter-count" class="filter-count" aria-live="polite"></span>
     </div>
   </div>
 

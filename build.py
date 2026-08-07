@@ -1212,9 +1212,15 @@ def load_references(path: Path) -> list:
                 "citation": citation,
                 "lead": lead,
                 "title": title,
-                "url": item.get("URL", "")
+                "url": item.get("URL", ""),
+                # First author (or the title, for an author-less entry) --
+                # what a reader's eye actually scans down a bibliography by.
+                # Sorted here, not left to curation order in references.json,
+                # so a newly added entry doesn't need manual alphabetizing.
+                "sort_key": (authors[0] if authors else title).lower(),
             }
         )
+    references.sort(key=lambda r: r["sort_key"])
     return references
 
 
@@ -1420,6 +1426,45 @@ def render_site(
 
     data_json = {
         "generated_at": generated_at,
+        # Mixed provenance, not one blanket license for the whole file --
+        # stated here directly (not just on the About page's "Data"
+        # section), since a downloader of the raw file may never see that
+        # page. `problems[].question`/`.capacity`/`.target`/etc. and
+        # `mappings.expertise` originate in the upstream TAIG database
+        # (problem_source_url) and carry that source's own terms, not
+        # ours. `tools[].*` (stars, license, community-health fields, ...)
+        # is aggregated third-party data from each project's own public
+        # repository/package metadata, published by its respective
+        # authors -- not OpenTAIG's to relicense either. Only the mapping
+        # work itself (problems[].tools_implement/.tools_eval/.mappings
+        # minus .expertise, i.e. which tool answers which question and
+        # which framework/regulation term it maps to, plus the rationale)
+        # is original OpenTAIG curation, and that part is CC0-1.0.
+        "notice": (
+            "Mixed provenance -- see 'sources' below and the About page's "
+            "Data section for the full breakdown before reusing this file."
+        ),
+        "sources": {
+            "problem_text_and_taxonomy": {
+                "origin": "Open Problems in Technical AI Governance database (Stanford)",
+                "url": config["site"]["taig_database_url"],
+                "license": "See source -- not set by OpenTAIG",
+            },
+            "tool_metadata": {
+                "origin": "Aggregated from each project's own public repository and package metadata",
+                "license": "See each project's own license -- not set by OpenTAIG",
+                "community_health_signals_also_aggregated_from": [
+                    {"name": "OpenSSF Best Practices", "url": "https://www.bestpractices.dev/"},
+                    {"name": "OpenSSF Scorecard", "url": "https://scorecard.dev/"},
+                    {"name": "ecosyste.ms", "url": "https://ecosyste.ms/"},
+                ],
+            },
+            "problem_tool_and_framework_mappings": {
+                "origin": "Original OpenTAIG curation",
+                "license": "CC0-1.0",
+                "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+            },
+        },
         "problems": [problem_to_public_dict(p, expertise_key) for p in problems],
         "tools": [dataclasses.asdict(t) for t in tool_catalog.values()],
     }

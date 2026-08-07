@@ -246,7 +246,11 @@ function resetMultiselectsIn(scopeEl) {
   var specCheckbox = document.getElementById("tools-filter-spec");
   var badgeCheckboxes = Array.prototype.slice.call(document.querySelectorAll(".tools-filter-badge"));
   var scorecardMinSelect = document.getElementById("tools-filter-scorecard-min");
-  var resetButton = document.getElementById("tools-filter-reset");
+  // Two scoped Reset buttons, not one global -- same shape as the Problems
+  // page's filter bar, where each section's Reset only clears that
+  // section's own controls.
+  var searchResetButton = document.getElementById("tools-filter-search-reset");
+  var qualityResetButton = document.getElementById("tools-filter-quality-reset");
   var countEl = document.getElementById("tools-filter-count");
   var noResultsEl = document.getElementById("tools-no-results");
   var items = Array.prototype.slice.call(document.querySelectorAll("#tool-list .tool-list-item"));
@@ -318,14 +322,9 @@ function resetMultiselectsIn(scopeEl) {
     if (activeLanguages.length) filterDescription.push("Language: " + activeLanguages.join(", "));
     activeFilterText.textContent = "Filtering by " + filterDescription.join(" · ");
     activeFilterBanner.hidden = false;
-
-    // Auto-expand the filter panel so it's obvious why the list is
-    // narrowed, rather than just silently showing fewer cards. Reuses the
-    // disclosure header's own click handler (registered earlier in this
-    // file) instead of duplicating its aria-expanded/hidden/label logic.
-    var disclosureHeader = filterBar.querySelector("[data-disclosure]");
-    var toggleBtn = disclosureHeader && disclosureHeader.querySelector(".disclosure-toggle");
-    if (toggleBtn && toggleBtn.getAttribute("aria-expanded") !== "true") disclosureHeader.click();
+    // No section to auto-expand here any more -- Search (where the
+    // resulting count shows) is always visible now, and neither license
+    // nor language has a facet control living in a collapsible section.
   }
 
   activeFilterClear.addEventListener("click", function () {
@@ -344,18 +343,27 @@ function resetMultiselectsIn(scopeEl) {
     noResultsEl.hidden = visibleCount !== 0;
   }
 
-  [searchInput, softwareCheckbox, specCheckbox, scorecardMinSelect].concat(badgeCheckboxes).forEach(function (el) {
+  // Badge checkboxes live inside a multiselect dropdown -- enhanceMultiselect
+  // wires their own change listener (which also calls applyFilters via
+  // onChange), so they're deliberately left out of the generic listener
+  // loop below to avoid double-binding.
+  enhanceMultiselect(document.getElementById("tools-filter-badge-multiselect"), applyFilters);
+
+  [searchInput, softwareCheckbox, specCheckbox, scorecardMinSelect].forEach(function (el) {
     el.addEventListener("input", applyFilters);
     el.addEventListener("change", applyFilters);
   });
 
-  resetButton.addEventListener("click", function () {
+  searchResetButton.addEventListener("click", function () {
     searchInput.value = "";
     softwareCheckbox.checked = false;
     specCheckbox.checked = false;
-    badgeCheckboxes.forEach(function (c) { c.checked = false; });
+    applyFilters();
+  });
+
+  qualityResetButton.addEventListener("click", function () {
+    resetMultiselectsIn(filterBar);
     scorecardMinSelect.value = "";
-    clearActiveFilter();
     applyFilters();
   });
 

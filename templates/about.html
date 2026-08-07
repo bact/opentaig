@@ -18,6 +18,49 @@
   so we can address them.
 </p>
 
+<h2>Data</h2>
+<p>
+  The full catalog &mdash; every open problem, tool mapping, and
+  project-quality/community-health field shown across this site &mdash; is
+  also available as a single JSON file:
+  <a href="{{ root }}data.json">data.json</a>
+  ({{ problem_count }} problems, {{ tool_count }} tools, generated
+  {{ generated_at }}).
+</p>
+<p>This dataset aggregates from several sources, each with its own provenance:</p>
+<ul>
+  <li>
+    Problem text and classification (capacity, target, taxonomy) are from
+    the original
+    <a href="{{ site.taig_database_url }}">Open Problems in Technical AI Governance database</a>
+    &mdash; please follow that source's own licence and terms
+    of reuse.
+  </li>
+  <li>
+    Tool metadata (stars, contributors, licence, and similar repository
+    facts) is an aggregation of information from each project's own
+    public repository and package metadata, published by its respective
+    authors. Additional project-quality and community-health signals &mdash;
+    the OpenSSF Best Practices badge, OpenSSF Scorecard, and sponsor listings
+    &mdash; are aggregated from
+    <a href="https://www.bestpractices.dev/">OpenSSF Best Practices</a>'s,
+    <a href="https://scorecard.dev/">OpenSSF Scorecard</a>'s, and
+    <a href="https://ecosyste.ms/">ecosyste.ms</a>'s own public APIs
+    (see References below).
+  </li>
+  <li>
+    The problem&ndash;tool mapping, problem&ndash;framework/regulation
+    mapping, and their accompanying rationale are original OpenTAIG work,
+    dedicated to the public domain under
+    <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0-1.0</a>
+    &mdash; reuse this part however you like, no attribution required.
+  </li>
+</ul>
+<p>
+  (The site's own code is separately licensed, Apache-2.0 &mdash; see the
+  <a href="{{ site.repo_url }}">repository</a>.)
+</p>
+
 <h2>References</h2>
 <p class="framework-note">We build upon or are inspired by these works.</p>
 <ul class="citation-list">

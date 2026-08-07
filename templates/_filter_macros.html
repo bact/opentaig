@@ -1,0 +1,14 @@
+{# Shared filter-bar macros -- used by both problems_index.html and
+   tools_index.html so their filter bars stay structurally identical
+   (same section/disclosure/reset shape) rather than drifting as two
+   hand-copies. #}
+
+{# Section header that toggles a Show/Hide body -- the whole row is
+   clickable (title text included), not just the button; see .disclosure-*
+   in style.css. #}
+{% macro disclosure_header(title, body_id) %}
+<div class="disclosure-header" data-disclosure>
+  <span class="disclosure-title">{{ title }}</span>
+  <button type="button" class="disclosure-toggle" aria-expanded="false" aria-controls="{{ body_id }}">Show</button>
+</div>
+{% endmacro %}

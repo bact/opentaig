@@ -132,14 +132,35 @@ unaffected and stay as-is even where they use American spelling already.
     All of this is precomputed per-tool in `build_quality_display()`
     (`build.py`) -- date math (`relative_date()`) and count abbreviation
     (`format_count()`, e.g. `27400` -> `"27.4k"`) never happen in the
-    template. The filter bar facets on badge level (checkboxes, grouped
-    under a `<fieldset>`/`<legend>`) and Scorecard score (a `&ge;4`/`&ge;7`
-    threshold `<select>`, since it's a continuous value, not a category) --
-    both read `data-badge-level`/`data-scorecard-score` off each
-    `.tool-list-item` in `app.js`. The card's `data-search` also folds in
-    `tool.keywords`, so a tool matches search on its GitHub topics even
-    though the card never displays them.
-  - License/Language chips on the card are real links to
+    template. The Tools filter bar's "Filter by project quality" section
+    facets on OpenSSF Best Practices badge level (a multiselect dropdown,
+    same `.multiselect`/`enhanceMultiselect()` machinery as every other
+    dropdown facet on the site -- not bare checkboxes) and Scorecard score
+    (a `&ge;4`/`&ge;7` threshold `<select>`, since it's a continuous value,
+    not a category) -- both read `data-badge-level`/`data-scorecard-score`
+    off each `.tool-list-item` in `app.js`. The card's `data-search` also
+    folds in `tool.keywords`, so a tool matches search on its GitHub
+    topics even though the card never displays them.
+  - **Tools filter bar shape matches Problems page's** (Search always
+    visible with its own scoped Reset; other facet groups individually
+    collapsible, each with its own scoped Reset -- not one master Show/Hide
+    over the whole bar, and not one global Reset). `disclosure_header()`
+    (the Show/Hide section-header macro) now lives in
+    `templates/_filter_macros.html`, imported by both `problems_index.html`
+    and `tools_index.html`, so the two bars can't structurally drift again.
+    The result count (`N of M shown`) sits inline next to the "Search"
+    section title on both pages now (`.filter-count`, deliberately smaller/
+    unbolded/non-uppercase so it reads as a live annotation, not a second
+    label competing with "Search"), not on its own line below the search
+    row. `.filter-field` (every dropdown/select's label+control wrapper) is
+    a fixed `flex: 0 0 220px`, not `min-width` -- a field with a long label
+    (e.g. "UNESCO Recommendation on the Ethics of AI") would otherwise
+    render wider than its siblings and desync the columns once fields wrap
+    onto a second row; fixed width makes every field a true grid column
+    (long labels wrap within it instead), matching row-to-row and
+    column-to-column across "Filter by frameworks & principles"' six
+    dropdowns.
+  - License/Language chips on the tool card are real links to
     `/tools/?license=MIT` / `/tools/?language=Python,C%2B%2B`
     (comma-joined, URL-encoded, OR-matched against `data-license`/
     `data-language` -- pipe-delimited `"|Python|C++|"`, same convention
@@ -147,17 +168,18 @@ unaffected and stay as-is even where they use American spelling already.
     multi-valued later without touching the matching logic). Read once
     from `location.search` on page load in `app.js` (not tied to any
     checkbox -- open-ended cardinality, unlike the 4-value badge facet),
-    auto-expanding the filter panel and showing a dismissible
-    `.active-filter-banner` so it's obvious why the list is narrowed. The
-    banner sits outside `#tools-filter-body` (stays visible even if that
-    panel gets re-collapsed) and gets its own top `border-radius` rather
-    than `overflow: hidden` on `.filter-bar`, since that class is shared
-    with Problems page's absolute-positioned multiselect dropdowns, which
-    `overflow: hidden` would clip. The Tool *detail* page's own license
-    chip stays pointed at its SPDX reference (`spdx.org/licenses/...`) --
-    deliberately not this same filter-link, since "what does this license
-    mean" is the relevant question there, vs. "show me other tools with
-    it" from the listing card.
+    showing a dismissible `.active-filter-banner` so it's obvious why the
+    list is narrowed (no section to auto-expand for this any more -- Search,
+    where the resulting count shows, is always visible). The banner sits
+    outside the collapsible section bodies (stays visible regardless of
+    which of those are expanded) and gets its own top `border-radius`
+    rather than `overflow: hidden` on `.filter-bar`, since that class is
+    shared with Problems page's absolute-positioned multiselect dropdowns,
+    which `overflow: hidden` would clip. The Tool *detail* page's own
+    license chip stays pointed at its SPDX reference
+    (`spdx.org/licenses/...`) -- deliberately not this same filter-link,
+    since "what does this license mean" is the relevant question there,
+    vs. "show me other tools with it" from the listing card.
   - **Tool detail page** (`tool.html`): a fixed-order, fixed-label,
     always-all-slots "Project health" checklist for 10 fields (Homepage/
     Source/Documentation/README/License file/Contributing guide/Code of

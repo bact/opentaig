@@ -11,58 +11,83 @@
 <a class="skip-link" href="#tools-filter-bar">Skip mini-heatmap</a>
 {% include "_matrix_compact.html" %}
 
+{% from "_filter_macros.html" import disclosure_header %}
+
+{# Same section/disclosure/scoped-reset shape as Problems page's filter
+   bar (templates/problems_index.html) -- Search always visible, other
+   facet groups individually collapsible with their own Reset, rather than
+   the whole bar behind one master Show/Hide. #}
 <section class="filter-bar" id="tools-filter-bar" tabindex="-1">
   <div class="active-filter-banner" id="tools-active-filter" hidden>
     <span id="tools-active-filter-text"></span>
     <button type="button" class="filter-reset" id="tools-active-filter-clear">Clear filter</button>
   </div>
-  <div class="disclosure-header" data-disclosure>
-    <span class="disclosure-title">Filter tools</span>
-    <button type="button" class="disclosure-toggle" aria-expanded="false" aria-controls="tools-filter-body">Show</button>
-  </div>
-  <div class="filter-section-body" id="tools-filter-body" hidden>
-    <div class="filter-search-row">
-      <input type="search" id="tools-filter-search" placeholder="Tool name or keyword&hellip;" aria-label="Search tools">
-      <label class="filter-checkbox">
-        <input type="checkbox" id="tools-filter-software">
-        Software
-      </label>
-      <label class="filter-checkbox">
-        <input type="checkbox" id="tools-filter-spec">
-        Specification
-      </label>
-      <button type="button" class="filter-reset" id="tools-filter-reset">Reset</button>
+
+  <div class="filter-section">
+    <div class="filter-section-title">
+      Search
+      <span id="tools-filter-count" class="filter-count" aria-live="polite"></span>
     </div>
-    <fieldset class="filter-fieldset">
-      <legend class="filter-group-label">OpenSSF Best Practices badge</legend>
+    <div class="filter-section-body" id="tools-filter-search-body">
       <div class="filter-search-row">
+        <input type="search" id="tools-filter-search" placeholder="Tool name or keyword&hellip;" aria-label="Search tools">
         <label class="filter-checkbox">
-          <input type="checkbox" class="tools-filter-badge" data-value="in_progress">
-          In progress
+          <input type="checkbox" id="tools-filter-software">
+          Software
         </label>
         <label class="filter-checkbox">
-          <input type="checkbox" class="tools-filter-badge" data-value="passing">
-          Passing
+          <input type="checkbox" id="tools-filter-spec">
+          Specification
         </label>
-        <label class="filter-checkbox">
-          <input type="checkbox" class="tools-filter-badge" data-value="silver">
-          Silver
-        </label>
-        <label class="filter-checkbox">
-          <input type="checkbox" class="tools-filter-badge" data-value="gold">
-          Gold
-        </label>
-        <label class="filter-select-label">
-          OpenSSF Scorecard
+        <button type="button" class="filter-reset" id="tools-filter-search-reset">Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="filter-section">
+    {{ disclosure_header("Filter by project quality", "tools-filter-quality-body") }}
+    <div class="filter-section-body" id="tools-filter-quality-body" hidden>
+      <div class="filter-fields-row">
+        <div class="filter-field">
+          <span class="filter-group-label" id="tools-filter-badge-label">OpenSSF Best Practices</span>
+          <div class="multiselect" id="tools-filter-badge-multiselect">
+            <button type="button" class="multiselect-trigger" id="tools-filter-badge-trigger"
+                    aria-expanded="false" aria-controls="tools-filter-badge-panel"
+                    aria-labelledby="tools-filter-badge-label tools-filter-badge-trigger">
+              <span class="multiselect-trigger-text">&nbsp;</span>
+              <span class="multiselect-caret" aria-hidden="true">&#9662;</span>
+            </button>
+            <div class="multiselect-panel" id="tools-filter-badge-panel" role="group" aria-labelledby="tools-filter-badge-label" hidden>
+              <label class="chip-toggle">
+                <input type="checkbox" class="chip-toggle-input tools-filter-badge" data-value="in_progress">
+                In progress
+              </label>
+              <label class="chip-toggle">
+                <input type="checkbox" class="chip-toggle-input tools-filter-badge" data-value="passing">
+                Passing
+              </label>
+              <label class="chip-toggle">
+                <input type="checkbox" class="chip-toggle-input tools-filter-badge" data-value="silver">
+                Silver
+              </label>
+              <label class="chip-toggle">
+                <input type="checkbox" class="chip-toggle-input tools-filter-badge" data-value="gold">
+                Gold
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="filter-field">
+          <label class="filter-group-label" for="tools-filter-scorecard-min">OpenSSF Scorecard</label>
           <select id="tools-filter-scorecard-min">
             <option value="">Any score</option>
             <option value="4">4 or higher</option>
             <option value="7">7 or higher</option>
           </select>
-        </label>
+        </div>
       </div>
-    </fieldset>
-    <span id="tools-filter-count" class="filter-count" aria-live="polite"></span>
+      <button type="button" class="filter-reset" id="tools-filter-quality-reset">Reset</button>
+    </div>
   </div>
 </section>
 
