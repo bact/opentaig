@@ -1,3 +1,1 @@
 rq_no,tool_id,role,rationale,datetime_added,datetime_checked,datetime_updated
-31,livebench,eval,Provides a contamination-resistant benchmark framework that regularly updates evaluation questions from newly released sources to prevent test set contamination.,2026-08-17 19:15,2026-08-17 19:15,2026-08-17 19:15
-31,llm-decontaminator,implement,"Detects, quantifies, and removes benchmark test samples and rephrasings from training datasets to prevent training data contamination.",2026-08-17 19:15,2026-08-17 19:15,2026-08-17 19:15
