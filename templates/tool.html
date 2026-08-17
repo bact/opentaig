@@ -1,17 +1,44 @@
 {% extends "base.html" %}
 {% block title %}{{ tool.name }} — {{ site.title }}{% endblock %}
 {% block content %}
-<p class="breadcrumb"><a href="{{ root }}tools/">&larr; All tools</a></p>
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="{{ root }}tools/">&larr; All tools</a></nav>
 <article class="tool-detail">
-  <h1>{{ tool.name }}</h1>
-  {% if tool.tool_type or tool.license or tool.programming_languages %}
-  <p>
-    {% if tool.tool_type %}<span class="chip chip-tool-type">{{ tool.tool_type }}</span>{% endif %}
-    {% for lang in tool.programming_languages %}<span class="chip chip-language">{{ lang }}</span>{% endfor %}
-    {% if tool.license %}<a class="chip chip-license" href="https://spdx.org/licenses/{{ tool.license }}.html">{{ tool.license }}</a>{% endif %}
-  </p>
-  {% endif %}
-  {% if tool.summary %}<p>{{ tool.summary }}</p>{% endif %}
+  <div class="tool-detail-head">
+    <h1>{{ tool.name }}</h1>
+    {% if tool.tool_type or tool.license or tool.programming_languages or entry.badge_level_label or entry.scorecard_display or entry.quality_parts %}
+    <div class="tool-detail-meta">
+      <div class="tool-chips">
+        {% if tool.tool_type %}<span class="chip chip-tool-type">{{ tool.tool_type }}</span>{% endif %}
+        {% if tool.license %}
+        <a class="chip chip-license" href="{{ root }}tools/?license={{ tool.license | urlencode }}">
+          <span class="chip-ns">Licence:</span> {{ tool.license }}
+        </a>
+        {% endif %}
+        {% if tool.programming_languages %}
+        <a class="chip chip-language" href="{{ root }}tools/?language={{ tool.programming_languages | join(',') | urlencode }}">
+          <span class="chip-ns">Language:</span> {{ tool.programming_languages | join(', ') }}
+        </a>
+        {% endif %}
+        {% if entry.badge_level_label %}
+        <a class="chip chip-badge chip-badge-{{ entry.badge_level_class }}" href="{{ tool.openssf_best_practices_url }}" title="OpenSSF Best Practices badge">
+          <span class="chip-ns">OpenSSF Best Practices:</span> {{ entry.badge_level_label }}
+        </a>
+        {% endif %}
+        {% if entry.scorecard_display %}
+        <a class="chip chip-scorecard chip-scorecard-{{ entry.scorecard_bucket }}" href="{{ tool.openssf_scorecard_url }}" title="OpenSSF Scorecard aggregate score, out of 10">
+          <span class="chip-ns">OpenSSF Scorecard:</span> {{ entry.scorecard_display }}
+        </a>
+        {% endif %}
+      </div>
+      {% if entry.quality_parts %}
+      <p class="tool-stats-line">
+        {% for part in entry.quality_parts %}{% if not loop.first %} &middot; {% endif %}<span{% if part.title %} title="{{ part.title }}"{% endif %}>{{ part.text }}</span>{% endfor %}
+      </p>
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+  {% if tool.summary %}<p class="tool-detail-summary">{{ tool.summary }}</p>{% endif %}
 
   {# Fixed order, fixed labels, every slot always rendered -- present is a
      real link (moss chip), absent is a dashed ghost (not a link, so it's
@@ -21,27 +48,29 @@
      present-only (no ghost) since only the fixed 10 are quality signals
      worth flagging by their absence. #}
   <div class="tool-doc-checklist">
-    <span class="tool-doc-checklist-label">Project health:</span>
-    {% for label, url in [
-      ("Homepage", tool.homepage),
-      ("Source", tool.source),
-      ("Documentation", tool.documentation),
-      ("README", tool.readme_url),
-      ("Licence file", tool.license_url),
-      ("Contributing guide", tool.contributing_url),
-      ("Code of conduct", tool.code_of_conduct_url),
-      ("Security policy", tool.security_policy_url),
-      ("Governance", tool.governance_url),
-      ("Funding", tool.funding),
-    ] %}
-      {% if url %}
-      <a class="chip chip-doc-present" href="{{ url }}">{{ label }}</a>
-      {% else %}
-      <span class="chip chip-doc-missing">{{ label }}<span class="visually-hidden"> (not published)</span></span>
-      {% endif %}
-    {% endfor %}
-    {% if tool.sbom_url %}<a class="chip chip-doc-present" href="{{ tool.sbom_url }}">SBOM</a>{% endif %}
-    {% if tool.paper_url %}<a class="chip chip-doc-present" href="{{ tool.paper_url }}">Academic paper</a>{% endif %}
+    <span class="tool-doc-checklist-label">Resources &amp; governance:</span>
+    <div class="tool-doc-checklist-chips">
+      {% for label, url in [
+        ("Homepage", tool.homepage),
+        ("Source", tool.source),
+        ("Documentation", tool.documentation),
+        ("README", tool.readme_url),
+        ("Licence file", tool.license_url),
+        ("Contributing guide", tool.contributing_url),
+        ("Code of conduct", tool.code_of_conduct_url),
+        ("Security policy", tool.security_policy_url),
+        ("Governance", tool.governance_url),
+        ("Funding", tool.funding),
+      ] %}
+        {% if url %}
+        <a class="chip chip-doc-present" href="{{ url }}">{{ label }}</a>
+        {% else %}
+        <span class="chip chip-doc-missing">{{ label }}<span class="visually-hidden"> (not published)</span></span>
+        {% endif %}
+      {% endfor %}
+      {% if tool.sbom_url %}<a class="chip chip-doc-present" href="{{ tool.sbom_url }}">SBOM</a>{% endif %}
+      {% if tool.paper_url %}<a class="chip chip-doc-present" href="{{ tool.paper_url }}">Academic paper</a>{% endif %}
+    </div>
   </div>
   {% if tool.funder %}<p class="tool-funder">Funded by {{ tool.funder }}</p>{% endif %}
 

@@ -188,7 +188,7 @@ unaffected and stay as-is even where they use American spelling already.
     since "what does this license mean" is the relevant question there,
     vs. "show me other tools with it" from the listing card.
   - **Tool detail page** (`tool.html`): a fixed-order, fixed-label,
-    always-all-slots "Project health" checklist for 10 fields (Homepage/
+    always-all-slots "Resources & governance" checklist for 10 fields (Homepage/
     Source/Documentation/README/License file/Contributing guide/Code of
     conduct/Security policy/Governance/Funding) plus `sbom_url`/`paper_url`
     appended present-only (no ghost) since only the fixed 10 are meant to
