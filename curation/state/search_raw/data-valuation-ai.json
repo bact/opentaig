@@ -1,0 +1,37 @@
+{
+  "keyword": "data valuation AI",
+  "query": "data valuation AI stars:>19 pushed:>2025-08-17 archived:false fork:false",
+  "count": 3,
+  "repos": [
+    {
+      "full_name": "daviddao/awesome-data-valuation",
+      "html_url": "https://github.com/daviddao/awesome-data-valuation",
+      "description": "\ud83d\udcb1 A curated list of data valuation (DV) to design your next data marketplace",
+      "stars": 143,
+      "pushed_at": "2026-08-14T22:21:13Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Agentic-Analyst/stock-analyst",
+      "html_url": "https://github.com/Agentic-Analyst/stock-analyst",
+      "description": "VYNN AI Agent Backend is a standalone agent execution system for financial analysis. It orchestrates LLM-based agents to scrape historical financial data, build valuation models, analyze real-time financial news, and generate structured financial reports, with a focus on modularity and reproducible execution.",
+      "stars": 119,
+      "pushed_at": "2026-08-17T07:32:10Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://vynnai.com"
+    },
+    {
+      "full_name": "maskgo68/StockAnalysisKit",
+      "html_url": "https://github.com/maskgo68/StockAnalysisKit",
+      "description": "AI-powered stock analysis kit combining market data, financials, and valuation insights for single and multi-stock analysis.",
+      "stars": 39,
+      "pushed_at": "2026-02-11T13:41:44Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    }
+  ]
+}

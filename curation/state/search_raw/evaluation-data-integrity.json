@@ -1,0 +1,17 @@
+{
+  "keyword": "evaluation data integrity",
+  "query": "evaluation data integrity stars:>19 pushed:>2025-08-17 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "3DCF-Labs/doc2dataset",
+      "html_url": "https://github.com/3DCF-Labs/doc2dataset",
+      "description": "3DCF / doc2dataset: token-efficient document layer with NumGuard numeric integrity and multi-framework exports for RAG & fine-tuning.",
+      "stars": 55,
+      "pushed_at": "2026-02-10T21:11:50Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "keyword": "model attribution data",
+  "query": "model attribution data stars:>19 pushed:>2025-08-17 archived:false fork:false",
+  "count": 2,
+  "repos": [
+    {
+      "full_name": "Portkey-AI/models",
+      "html_url": "https://github.com/Portkey-AI/models",
+      "description": "This repository contains comprehensive pricing and configuration data for LLMs. It powers cost attribution for 200+ enterprises running 400B+ tokens through Portkey AI Gateway every day.",
+      "stars": 125,
+      "pushed_at": "2026-08-17T11:18:48Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://portkey.ai/models"
+    },
+    {
+      "full_name": "sail-sg/NDA",
+      "html_url": "https://github.com/sail-sg/NDA",
+      "description": "Code for \"Nonparametric Data Attribution for Diffusion Models\"",
+      "stars": 26,
+      "pushed_at": "2026-05-27T09:51:43Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "",
+      "homepage": ""
+    }
+  ]
+}

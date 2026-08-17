@@ -1,0 +1,617 @@
+{
+  "keyword": "topic:policy-as-code",
+  "query": "topic:policy-as-code stars:>19 pushed:>2025-08-17 archived:false fork:false",
+  "count": 61,
+  "repos": [
+    {
+      "full_name": "kyverno/kyverno",
+      "html_url": "https://github.com/kyverno/kyverno",
+      "description": "Unified Policy as Code",
+      "stars": 8044,
+      "pushed_at": "2026-08-17T11:30:34Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://kyverno.io"
+    },
+    {
+      "full_name": "permitio/opal",
+      "html_url": "https://github.com/permitio/opal",
+      "description": "Policy and data administration, distribution, and real-time updates on top of Policy Agents (OPA, Cedar, ...)",
+      "stars": 5499,
+      "pushed_at": "2026-08-17T11:28:02Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://opal.ac"
+    },
+    {
+      "full_name": "octelium/octelium",
+      "html_url": "https://github.com/octelium/octelium",
+      "description": "A next-gen FOSS self-hosted unified zero trust secure access platform that can operate as a remote access VPN, a ZTNA platform, API/AI/MCP gateway, a PaaS, an ngrok-alternative and a homelab infrastructure.",
+      "stars": 4008,
+      "pushed_at": "2026-08-17T11:31:19Z",
+      "language": "Go",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://octelium.com/docs"
+    },
+    {
+      "full_name": "someengineering/fixinventory",
+      "html_url": "https://github.com/someengineering/fixinventory",
+      "description": "Fix Inventory helps you identify and remove the most critical risks in AWS, GCP, Azure and Kubernetes.",
+      "stars": 2074,
+      "pushed_at": "2026-03-28T19:14:05Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://fixinventory.org"
+    },
+    {
+      "full_name": "kptdev/kpt",
+      "html_url": "https://github.com/kptdev/kpt",
+      "description": "Automate Kubernetes Configuration Editing",
+      "stars": 1891,
+      "pushed_at": "2026-08-14T12:20:38Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://kpt.dev"
+    },
+    {
+      "full_name": "aws-cloudformation/cloudformation-guard",
+      "html_url": "https://github.com/aws-cloudformation/cloudformation-guard",
+      "description": "Guard offers a policy-as-code domain-specific language (DSL) to write rules and validate JSON- and YAML-formatted data such as CloudFormation Templates, K8s configurations, and Terraform JSON plans/configurations against those rules. Take this survey to provide feedback about cfn-guard: https://amazonmr.au1.qualtrics.com/jfe/form/SV_bpyzpfoYGGuuUl0",
+      "stars": 1385,
+      "pushed_at": "2026-08-10T17:24:30Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "safedep/vet",
+      "html_url": "https://github.com/safedep/vet",
+      "description": "Protect against malicious open source packages \ud83e\udd16",
+      "stars": 1097,
+      "pushed_at": "2026-08-16T06:07:09Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://safedep.io"
+    },
+    {
+      "full_name": "open-policy-agent/awesome-opa",
+      "html_url": "https://github.com/open-policy-agent/awesome-opa",
+      "description": "A curated list of OPA related tools, frameworks and articles",
+      "stars": 899,
+      "pushed_at": "2026-08-17T11:54:34Z",
+      "language": "",
+      "license_spdx_id": "CC0-1.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "openmobilityfoundation/mobility-data-specification",
+      "html_url": "https://github.com/openmobilityfoundation/mobility-data-specification",
+      "description": "A data specification to enable right-of-way regulation, digital policy, geofencing, and two-way communication between mobility companies and public agencies worldwide for any regulated, shared, or agency vehicle.",
+      "stars": 747,
+      "pushed_at": "2026-07-09T03:03:08Z",
+      "language": "",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://www.openmobilityfoundation.org/about-mds/"
+    },
+    {
+      "full_name": "globalbao/awesome-azure-policy",
+      "html_url": "https://github.com/globalbao/awesome-azure-policy",
+      "description": "A curated list of blogs, videos, tutorials, code, tools, scripts, and anything useful to help you learn Azure Policy - by @JesseLoudon",
+      "stars": 540,
+      "pushed_at": "2026-05-30T07:05:04Z",
+      "language": "",
+      "license_spdx_id": "CC0-1.0",
+      "homepage": "https://aka.ms/AzurePolicy"
+    },
+    {
+      "full_name": "decionis/agent-safe-pipeline",
+      "html_url": "https://github.com/decionis/agent-safe-pipeline",
+      "description": "Reference architecture for AI agents that propose actions but cannot authorize them \u2014 immutable intent capture, an independent Decionis policy verdict (ALLOW/ESCALATE/BLOCK), verified human approval, and a SafeExecutor that consumes a single-use intent-bound grant.",
+      "stars": 506,
+      "pushed_at": "2026-08-17T12:15:52Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://decionis.com/docs?utm_source=github&utm_medium=org_readme&utm_campaign=dev_discovery"
+    },
+    {
+      "full_name": "mondoohq/cnspec",
+      "html_url": "https://github.com/mondoohq/cnspec",
+      "description": "An open source, cloud-native security to protect everything from build to runtime",
+      "stars": 441,
+      "pushed_at": "2026-08-17T12:54:26Z",
+      "language": "Go",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://cnspec.ai"
+    },
+    {
+      "full_name": "AndrewDryga/emisar",
+      "html_url": "https://github.com/AndrewDryga/emisar",
+      "description": "An MCP that lets AI tools securely connect to your infrastructure, write IaaS code, debug issues, and assist during incidents - without risking production stability. Built for security teams to approve and infrastructure teams to experience like magic.",
+      "stars": 416,
+      "pushed_at": "2026-08-17T11:10:43Z",
+      "language": "Elixir",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://emisar.dev/"
+    },
+    {
+      "full_name": "open-policy-agent/regal",
+      "html_url": "https://github.com/open-policy-agent/regal",
+      "description": "Regal is a linter and language server for Rego, bringing your policy development experience to the next level!",
+      "stars": 398,
+      "pushed_at": "2026-08-17T12:11:07Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "GRCEngClub/claude-grc-engineering",
+      "html_url": "https://github.com/GRCEngClub/claude-grc-engineering",
+      "description": "Open-source GRC toolkit from the GRC Engineering Club. Claude Code plugins for evidence collection, SCF crosswalks, multi-framework gap reports, OSCAL workflows.",
+      "stars": 376,
+      "pushed_at": "2026-08-16T04:40:35Z",
+      "language": "JavaScript",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://grcengclub.com"
+    },
+    {
+      "full_name": "microsoft/regorus",
+      "html_url": "https://github.com/microsoft/regorus",
+      "description": "Regorus - A fast, lightweight Rego (OPA policy language) interpreter written in Rust.",
+      "stars": 338,
+      "pushed_at": "2026-08-16T14:28:59Z",
+      "language": "Rust",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "mattrobinsonsre/terrapod",
+      "html_url": "https://github.com/mattrobinsonsre/terrapod",
+      "description": "Open-source Terraform Enterprise replacement",
+      "stars": 252,
+      "pushed_at": "2026-08-17T05:38:42Z",
+      "language": "Python",
+      "license_spdx_id": "MPL-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "kubewarden/adm-controller",
+      "html_url": "https://github.com/kubewarden/adm-controller",
+      "description": "Manage admission policies in your Kubernetes cluster with ease",
+      "stars": 232,
+      "pushed_at": "2026-08-17T14:08:52Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://kubewarden.io"
+    },
+    {
+      "full_name": "KimGLee/Cambium",
+      "html_url": "https://github.com/KimGLee/Cambium",
+      "description": "Governance standard and reference toolset for LLM-maintained knowledge corpora",
+      "stars": 214,
+      "pushed_at": "2026-08-15T07:55:54Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "stakpak/devx",
+      "html_url": "https://github.com/stakpak/devx",
+      "description": "A tool for generating, validating & sharing all your configurations, powered by CUE. Works with Kubernetes, Terraform, Compose, GitHub actions and much more...",
+      "stars": 210,
+      "pushed_at": "2026-07-04T13:15:45Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://devx.stakpak.dev"
+    },
+    {
+      "full_name": "open-policy-agent/rego-style-guide",
+      "html_url": "https://github.com/open-policy-agent/rego-style-guide",
+      "description": "Style guide for Rego",
+      "stars": 205,
+      "pushed_at": "2026-06-18T17:26:34Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.styra.com/opa/rego-style-guide"
+    },
+    {
+      "full_name": "permitio/cedar-agent",
+      "html_url": "https://github.com/permitio/cedar-agent",
+      "description": "Cedar-agent is the easiest way to deploy and run Cedar",
+      "stars": 204,
+      "pushed_at": "2025-10-16T16:42:51Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "aipotheosis-labs/gate22",
+      "html_url": "https://github.com/aipotheosis-labs/gate22",
+      "description": "Open-source MCP gateway and control plane for teams to govern which tools agents can use, what they can do, and how it\u2019s audited\u2014across agentic IDEs like Cursor, or other agents and AI tools.",
+      "stars": 177,
+      "pushed_at": "2025-12-12T02:27:52Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://gateway.aci.dev"
+    },
+    {
+      "full_name": "anderseknert/kube-review",
+      "html_url": "https://github.com/anderseknert/kube-review",
+      "description": "Create Kubernetes AdmissionReview requests from Kubernetes resource manifests",
+      "stars": 161,
+      "pushed_at": "2026-05-02T02:17:21Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "LF-Decentralized-Trust-labs/gitmesh",
+      "html_url": "https://github.com/LF-Decentralized-Trust-labs/gitmesh",
+      "description": "GitMesh: Policy-as-Code Engine for Open Source AI Agent Orchestration",
+      "stars": 143,
+      "pushed_at": "2026-08-15T05:55:33Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "antonbabenko/awesome-terraform-compliance",
+      "html_url": "https://github.com/antonbabenko/awesome-terraform-compliance",
+      "description": "Awesome Terraform Compliance - tools, frameworks, and resources for implementing compliance, security, and governance controls in Terraform and OpenTofu infrastructure.",
+      "stars": 142,
+      "pushed_at": "2026-07-29T14:43:58Z",
+      "language": "",
+      "license_spdx_id": "CC0-1.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "open-policy-agent/vscode-opa",
+      "html_url": "https://github.com/open-policy-agent/vscode-opa",
+      "description": "An extension for VS Code which provides support for OPA and the Rego policy language",
+      "stars": 132,
+      "pushed_at": "2026-08-17T10:34:08Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://openpolicyagent.org"
+    },
+    {
+      "full_name": "cleancloud-io/cleancloud",
+      "html_url": "https://github.com/cleancloud-io/cleancloud",
+      "description": "The cloud hygiene platform - including AI and GPU infrastructure",
+      "stars": 120,
+      "pushed_at": "2026-06-18T20:43:00Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.getcleancloud.com"
+    },
+    {
+      "full_name": "KeyArgo/custodian-kernel",
+      "html_url": "https://github.com/KeyArgo/custodian-kernel",
+      "description": "Kernel-enforced authority and spend platform for AI agents",
+      "stars": 118,
+      "pushed_at": "2026-08-16T03:42:00Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://getcustodian.xyz"
+    },
+    {
+      "full_name": "chef/cookstyle",
+      "html_url": "https://github.com/chef/cookstyle",
+      "description": "A linting tool that helps you to write better Chef Infra cookbooks and InSpec profiles by detecting and automatically correcting style, syntax, and logic mistakes in your code.",
+      "stars": 112,
+      "pushed_at": "2026-08-14T16:11:37Z",
+      "language": "Ruby",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "arthurpanhku/dvalincode",
+      "html_url": "https://github.com/arthurpanhku/dvalincode",
+      "description": "Approvable, local-first AI coding agent for regulated teams: policy controls, governed MCP, evidence packs, audit trails, secure remediation, and any OpenAI-compatible model.",
+      "stars": 112,
+      "pushed_at": "2026-08-17T06:08:06Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://dvalincode.dev"
+    },
+    {
+      "full_name": "faramesh/faramesh-core",
+      "html_url": "https://github.com/faramesh/faramesh-core",
+      "description": "Governance-as-Code for AI agents. Declarative constraints with deterministic enforcement. Provisioning Identity, Tool-based rules, Brokering Credentials & Ensuring safe deployment",
+      "stars": 100,
+      "pushed_at": "2026-07-21T15:27:56Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.faramesh.dev/"
+    },
+    {
+      "full_name": "ThreeMoonsLab/agents-shipgate",
+      "html_url": "https://github.com/ThreeMoonsLab/agents-shipgate",
+      "description": "The deterministic merge gate for AI-generated agent capability changes \u2014 a local-first, static Tool-Use Readiness review for MCP, OpenAPI, and SDK tool surfaces. Open-source CLI + GitHub Action.",
+      "stars": 88,
+      "pushed_at": "2026-08-17T05:21:37Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://threemoonslab.com/agents-shipgate/"
+    },
+    {
+      "full_name": "xfhg/intercept",
+      "html_url": "https://github.com/xfhg/intercept",
+      "description": "INTERCEPT / Policy as Code Auditing",
+      "stars": 84,
+      "pushed_at": "2026-01-04T07:40:25Z",
+      "language": "Go",
+      "license_spdx_id": "EUPL-1.2",
+      "homepage": "https://intercept.cc"
+    },
+    {
+      "full_name": "LuD1161/agentjail",
+      "html_url": "https://github.com/LuD1161/agentjail",
+      "description": "Policy guardrails for coding agents (Claude Code, Codex, Cursor) \u2014 every tool call is checked locally, before it runs.",
+      "stars": 77,
+      "pushed_at": "2026-08-17T04:34:13Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://agentjail.io"
+    },
+    {
+      "full_name": "ops0-ai/ops0-cli",
+      "html_url": "https://github.com/ops0-ai/ops0-cli",
+      "description": "Stop your AI agent from shipping insecure IaC. ops0 CLI sits between Claude Code, Codex or Gemini and your cloud, scanning every .tf the agent writes and blocking destroy commands before they run.",
+      "stars": 75,
+      "pushed_at": "2026-07-06T16:55:21Z",
+      "language": "Go",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://ops0.com"
+    },
+    {
+      "full_name": "permguard/permguard",
+      "html_url": "https://github.com/permguard/permguard",
+      "description": "Permguard is the authorization engine for both worlds: enforce policies on today's systems, enforce continuity on tomorrow's. One engine for governance, AI agents, and distributed execution.",
+      "stars": 68,
+      "pushed_at": "2026-04-20T13:23:06Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.permguard.com"
+    },
+    {
+      "full_name": "Parsifal-M/backstage-opa-plugins",
+      "html_url": "https://github.com/Parsifal-M/backstage-opa-plugins",
+      "description": "Open Policy Agent (OPA) Plugins for Backstage",
+      "stars": 65,
+      "pushed_at": "2026-07-17T12:53:37Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://parsifal-m.github.io/backstage-opa-plugins/"
+    },
+    {
+      "full_name": "Chimera-Protocol/Project-Chimera",
+      "html_url": "https://github.com/Chimera-Protocol/Project-Chimera",
+      "description": "Neuro-Symbolic-Causal AI - Project Chimera | \ud83c\udf0c An open research project exploring formal verification of AI agent decisions, combining symbolic reasoning, causal inference, and runtime policy enforcement.",
+      "stars": 55,
+      "pushed_at": "2026-02-20T09:24:18Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://chimera-protocol.com/"
+    },
+    {
+      "full_name": "kopexa-grc/kspec",
+      "html_url": "https://github.com/kopexa-grc/kspec",
+      "description": "A modern, extensible framework for defining and enforcing security policies across your digital infrastructure.",
+      "stars": 53,
+      "pushed_at": "2026-07-01T04:56:14Z",
+      "language": "Go",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://kopexa.com"
+    },
+    {
+      "full_name": "appvia/psp-migration",
+      "html_url": "https://github.com/appvia/psp-migration",
+      "description": "Recreation of common Pod Security Policy configuration in other common Kubernetes policy engines",
+      "stars": 52,
+      "pushed_at": "2026-08-17T10:10:02Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://appvia.github.io/psp-migration"
+    },
+    {
+      "full_name": "preloop/preloop",
+      "html_url": "https://github.com/preloop/preloop",
+      "description": "The open-source AI agent control plane: MCP firewall, model gateway with budgets, human approvals, runtime observability, and audit trails",
+      "stars": 46,
+      "pushed_at": "2026-08-17T13:11:36Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://preloop.ai"
+    },
+    {
+      "full_name": "nscuro/dtapac",
+      "html_url": "https://github.com/nscuro/dtapac",
+      "description": "Audit Dependency-Track findings and policy violations via policy as code",
+      "stars": 45,
+      "pushed_at": "2026-08-16T17:57:22Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "canada-ca/open-source-logiciel-libre",
+      "html_url": "https://github.com/canada-ca/open-source-logiciel-libre",
+      "description": "Open Source Software Requirements and Guidance (Draft) - Exigences et guides li\u00e9s aux logiciels libres (\u00c9bauche)",
+      "stars": 44,
+      "pushed_at": "2026-08-11T21:08:09Z",
+      "language": "HTML",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://canada-ca.github.io/open-source-logiciel-libre/"
+    },
+    {
+      "full_name": "pulumi/pulumi-policy",
+      "html_url": "https://github.com/pulumi/pulumi-policy",
+      "description": "Pulumi's Policy as Code SDK, CrossGuard. Define infrastructure checks in code to enforce security, compliance, cost, and other practices, enforced at deployment time.",
+      "stars": 44,
+      "pushed_at": "2026-08-09T07:53:10Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.pulumi.com/docs/guides/crossguard/"
+    },
+    {
+      "full_name": "Keesan12/martin-loop",
+      "html_url": "https://github.com/Keesan12/martin-loop",
+      "description": "Make AI coding agents safe to scale autonomously: assign work, cap spend, enforce policy, verify output, roll back failures, learn from loops, and prove ROI across every repo.",
+      "stars": 44,
+      "pushed_at": "2026-08-15T13:53:10Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://martinloop.com"
+    },
+    {
+      "full_name": "GoogleCloudPlatform/gcp-hardening-toolkit",
+      "html_url": "https://github.com/GoogleCloudPlatform/gcp-hardening-toolkit",
+      "description": "Deep GCP security hardening via automated triage and state-aware IaC. Built to power rapid, agile task-force engagements and remediate complex brownfield environments at scale.",
+      "stars": 41,
+      "pushed_at": "2026-08-10T13:37:42Z",
+      "language": "HCL",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://codewiki.google/github.com/googlecloudplatform/gcp-hardening-toolkit"
+    },
+    {
+      "full_name": "anderseknert/rego-test-assertions",
+      "html_url": "https://github.com/anderseknert/rego-test-assertions",
+      "description": "Tiny Rego library with helper functions for unit testing",
+      "stars": 40,
+      "pushed_at": "2026-06-19T00:12:22Z",
+      "language": "Open Policy Agent",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "miniforge-ai/miniforge",
+      "html_url": "https://github.com/miniforge-ai/miniforge",
+      "description": "miniforge is an autonomous software development system designed to behave like a factory, not a chatbot",
+      "stars": 38,
+      "pushed_at": "2026-08-17T10:19:35Z",
+      "language": "Clojure",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "StyraOSS/opa-aws-cloudformation-hook",
+      "html_url": "https://github.com/StyraOSS/opa-aws-cloudformation-hook",
+      "description": "AWS Cloudformation Hook for OPA-powered infrastructure policy enforcement",
+      "stars": 37,
+      "pushed_at": "2025-12-15T13:10:31Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "permitio/PDP",
+      "html_url": "https://github.com/permitio/PDP",
+      "description": "Permit Policy Decision Point service. High-performance, policy-driven authorization for your apps and service.",
+      "stars": 31,
+      "pushed_at": "2026-08-13T18:59:33Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.permit.io/concepts/pdp/overview"
+    },
+    {
+      "full_name": "gnt-ai/gnt",
+      "html_url": "https://github.com/gnt-ai/gnt",
+      "description": "Checks every AI agent action against your company's real rules before it runs. Git-native, PR-reviewed.",
+      "stars": 27,
+      "pushed_at": "2026-08-16T19:26:34Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://gntai.dev"
+    },
+    {
+      "full_name": "yagna-1/astragraph",
+      "html_url": "https://github.com/yagna-1/astragraph",
+      "description": "Policy-enforced observability and fail-closed guardrails for MCP/A2A multi-agent systems.",
+      "stars": 26,
+      "pushed_at": "2026-03-16T11:56:33Z",
+      "language": "Rust",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "open-policy-agent/opa-springboot",
+      "html_url": "https://github.com/open-policy-agent/opa-springboot",
+      "description": "A driver to connect Spring Boot applications to Open Policy Agent (OPA) deployments.",
+      "stars": 25,
+      "pushed_at": "2026-06-16T20:23:36Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.styra.com/sdk"
+    },
+    {
+      "full_name": "nirmata/kyverno-policies",
+      "html_url": "https://github.com/nirmata/kyverno-policies",
+      "description": "Curated Kyverno Policy Sets from Nirmata",
+      "stars": 23,
+      "pushed_at": "2026-08-14T18:42:54Z",
+      "language": "HCL",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://nirmata.com"
+    },
+    {
+      "full_name": "Clawdlinux/agentic-operator-core",
+      "html_url": "https://github.com/Clawdlinux/agentic-operator-core",
+      "description": "Runtime-agnostic Kubernetes governance for AI agents: gVisor isolation, egress policy, cost controls, and offline audit verification primitives.",
+      "stars": 23,
+      "pushed_at": "2026-08-17T14:09:37Z",
+      "language": "Go",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://clawdlinux.org"
+    },
+    {
+      "full_name": "StyraOSS/zed-rego",
+      "html_url": "https://github.com/StyraOSS/zed-rego",
+      "description": "Zed extension for the Rego policy language from Open Policy Agent (OPA)",
+      "stars": 22,
+      "pushed_at": "2025-11-21T23:09:59Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/StyraInc/zed-rego"
+    },
+    {
+      "full_name": "stackabletech/opa-operator",
+      "html_url": "https://github.com/stackabletech/opa-operator",
+      "description": "Kubernetes operator for the Open Policy Agent (OPA). Deploy and run OPA for authorization with the Stackable Data Platform (SDP).",
+      "stars": 21,
+      "pushed_at": "2026-08-17T12:54:17Z",
+      "language": "Rust",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://docs.stackable.tech/home/stable/opa/"
+    },
+    {
+      "full_name": "hugobatista/zerotrust-ca-powertoys",
+      "html_url": "https://github.com/hugobatista/zerotrust-ca-powertoys",
+      "description": "CA-PowerToys is a set of tools to help you manage Conditional Access policies. It is a command line tool that can be used to export, import, and clean up Conditional Access policies and associated Groups, helping to implement a Policy-as-Code approach.",
+      "stars": 21,
+      "pushed_at": "2026-06-07T18:44:34Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "hipocap/hipocap",
+      "html_url": "https://github.com/hipocap/hipocap",
+      "description": "An opensource DevSecOps Layer for your AI agent. Governance, Custom Guard Rails and Observablity at one platform.",
+      "stars": 20,
+      "pushed_at": "2026-08-07T07:49:57Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://hipocap.com"
+    },
+    {
+      "full_name": "algorismo-au/lanekeep",
+      "html_url": "https://github.com/algorismo-au/lanekeep",
+      "description": "Governance guardrails and insights for AI coding agents",
+      "stars": 20,
+      "pushed_at": "2026-08-15T04:33:15Z",
+      "language": "Shell",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    }
+  ]
+}

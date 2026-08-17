@@ -1,0 +1,1737 @@
+{
+  "keyword": "topic:access-control",
+  "query": "topic:access-control stars:>19 pushed:>2025-08-17 archived:false fork:false",
+  "count": 173,
+  "repos": [
+    {
+      "full_name": "hasura/graphql-engine",
+      "html_url": "https://github.com/hasura/graphql-engine",
+      "description": "Blazing fast, instant realtime GraphQL APIs on all your data with fine grained access control, also trigger webhooks on database events.",
+      "stars": 32091,
+      "pushed_at": "2026-08-17T12:16:04Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://hasura.io"
+    },
+    {
+      "full_name": "apache/casbin",
+      "html_url": "https://github.com/apache/casbin",
+      "description": "Apache Casbin: an authorization library that supports access control models like ACL, RBAC, ABAC.",
+      "stars": 20327,
+      "pushed_at": "2026-08-13T07:16:17Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://casbin.apache.org/"
+    },
+    {
+      "full_name": "Permify/permify",
+      "html_url": "https://github.com/Permify/permify",
+      "description": "An open-source authorization as a service inspired by Google Zanzibar, designed to build and manage fine-grained and scalable authorization systems for any application. \u2014 Permify is now part of FusionAuth \ud83c\udf89",
+      "stars": 5935,
+      "pushed_at": "2026-08-17T05:04:33Z",
+      "language": "Go",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://permify.co/"
+    },
+    {
+      "full_name": "ory/keto",
+      "html_url": "https://github.com/ory/keto",
+      "description": "The most scalable and customizable permission server on the market. Fix your slow or broken permission system with Google's proven \"Zanzibar\" approach. Supports ACL, RBAC, and more. Written in Go, cloud native, headless, API-first. Available as a service on Ory Network and for self-hosters.",
+      "stars": 5388,
+      "pushed_at": "2026-08-17T03:45:05Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.ory.com/?utm_source=github&utm_medium=banner&utm_campaign=keto"
+    },
+    {
+      "full_name": "cerbos/cerbos",
+      "html_url": "https://github.com/cerbos/cerbos",
+      "description": "Cerbos is the open core, language-agnostic, scalable authorization solution that makes user permissions and authorization simple to implement and manage by writing context-aware access control policies for your application resources.",
+      "stars": 4540,
+      "pushed_at": "2026-08-17T09:18:18Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cerbos.dev"
+    },
+    {
+      "full_name": "zenstackhq/zenstack",
+      "html_url": "https://github.com/zenstackhq/zenstack",
+      "description": "Modern data layer for TypeScript apps - type-safe ORM, built-in access control, automatic query services",
+      "stars": 2926,
+      "pushed_at": "2026-08-14T07:41:57Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://zenstack.dev"
+    },
+    {
+      "full_name": "apache/casbin-node-casbin",
+      "html_url": "https://github.com/apache/casbin-node-casbin",
+      "description": "An authorization library that supports access control models like ACL, RBAC, ABAC in Node.js and Browser",
+      "stars": 2913,
+      "pushed_at": "2026-08-13T06:03:33Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://casbin.org"
+    },
+    {
+      "full_name": "apache/casbin-jcasbin",
+      "html_url": "https://github.com/apache/casbin-jcasbin",
+      "description": "An authorization library that supports access control models like ACL, RBAC, ABAC in Java",
+      "stars": 2653,
+      "pushed_at": "2026-08-12T03:26:53Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://casbin.org"
+    },
+    {
+      "full_name": "onury/accesscontrol",
+      "html_url": "https://github.com/onury/accesscontrol",
+      "description": "Role and Attribute based Access Control for Node.js",
+      "stars": 2326,
+      "pushed_at": "2026-08-12T04:55:50Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "onury.io/accesscontrol"
+    },
+    {
+      "full_name": "greenpau/caddy-security",
+      "html_url": "https://github.com/greenpau/caddy-security",
+      "description": "\ud83d\udd10 Authentication, Authorization, and Accounting (AAA) App and Plugin for Caddy v2. \ud83d\udc8e Implements Form-Based, Basic, Local, LDAP, OpenID Connect, OAuth 2.0 (Github, Google, Facebook, Okta, etc.), SAML Authentication. MFA/2FA with App Authenticators and Yubico. \ud83d\udc8e Authorization with JWT/PASETO tokens. \ud83d\udd10",
+      "stars": 2221,
+      "pushed_at": "2026-06-29T19:40:15Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://authcrunch.com/"
+    },
+    {
+      "full_name": "apache/casbin-pycasbin",
+      "html_url": "https://github.com/apache/casbin-pycasbin",
+      "description": "An authorization library that supports access control models like ACL, RBAC, ABAC in Python",
+      "stars": 1761,
+      "pushed_at": "2026-08-13T05:58:49Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://casbin.org"
+    },
+    {
+      "full_name": "esprfid/esp-rfid",
+      "html_url": "https://github.com/esprfid/esp-rfid",
+      "description": "ESP8266 RFID (RC522, PN532, Wiegand, RDM6300) Access Control system featuring WebSocket, JSON, NTP Client, Javascript, SPIFFS",
+      "stars": 1478,
+      "pushed_at": "2026-06-17T04:39:34Z",
+      "language": "C++",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "lakekeeper/lakekeeper",
+      "html_url": "https://github.com/lakekeeper/lakekeeper",
+      "description": "Apache Iceberg REST Catalog in Rust \u2014 access control, credential vending and audit for every engine and AI agent. Apache 2.0.",
+      "stars": 1419,
+      "pushed_at": "2026-08-17T13:24:17Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.lakekeeper.io"
+    },
+    {
+      "full_name": "aserto-dev/topaz",
+      "html_url": "https://github.com/aserto-dev/topaz",
+      "description": "Cloud-native authorization for modern applications and APIs",
+      "stars": 1357,
+      "pushed_at": "2026-08-11T15:07:16Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.topaz.sh"
+    },
+    {
+      "full_name": "warrant-dev/warrant",
+      "html_url": "https://github.com/warrant-dev/warrant",
+      "description": "Warrant is a highly scalable, centralized authorization service based on Google Zanzibar. Use it to define, enforce, query, and audit application authorization and access control.",
+      "stars": 1336,
+      "pushed_at": "2025-12-05T19:39:14Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://warrant.dev"
+    },
+    {
+      "full_name": "php-casbin/php-casbin",
+      "html_url": "https://github.com/php-casbin/php-casbin",
+      "description": "An authorization library that supports access control models like ACL, RBAC, ABAC in PHP .",
+      "stars": 1335,
+      "pushed_at": "2026-08-12T03:09:39Z",
+      "language": "PHP",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://casbin.org"
+    },
+    {
+      "full_name": "apache/casbin-Casbin.NET",
+      "html_url": "https://github.com/apache/casbin-Casbin.NET",
+      "description": "An authorization library that supports access control models like ACL, RBAC, ABAC in .NET (C#)",
+      "stars": 1329,
+      "pushed_at": "2026-08-15T14:45:47Z",
+      "language": "C#",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://casbin.org"
+    },
+    {
+      "full_name": "freeipa/freeipa",
+      "html_url": "https://github.com/freeipa/freeipa",
+      "description": "Mirror of FreeIPA, an integrated security information management solution",
+      "stars": 1256,
+      "pushed_at": "2026-08-17T08:21:35Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "http://www.freeipa.org"
+    },
+    {
+      "full_name": "nestjsx/nest-access-control",
+      "html_url": "https://github.com/nestjsx/nest-access-control",
+      "description": "Role and Attribute based Access Control for Nestjs \ud83d\udd10",
+      "stars": 1158,
+      "pushed_at": "2025-12-24T13:02:43Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "apache/casbin-rs",
+      "html_url": "https://github.com/apache/casbin-rs",
+      "description": "An authorization library that supports access control models like ACL, RBAC, ABAC in Rust",
+      "stars": 1132,
+      "pushed_at": "2026-08-13T06:03:25Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://casbin.org"
+    },
+    {
+      "full_name": "OpenIDC/mod_auth_openidc",
+      "html_url": "https://github.com/OpenIDC/mod_auth_openidc",
+      "description": "OpenID Certified\u2122 OpenID Connect and FAPI 2 Relying Party module for Apache HTTPd",
+      "stars": 1092,
+      "pushed_at": "2026-08-16T14:13:33Z",
+      "language": "C",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.openidc.com"
+    },
+    {
+      "full_name": "maxcountryman/axum-login",
+      "html_url": "https://github.com/maxcountryman/axum-login",
+      "description": "\ud83e\udeaa User identification, authentication, and authorization for Axum.",
+      "stars": 1017,
+      "pushed_at": "2026-06-19T09:12:29Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "AlexKhymenko/ngx-permissions",
+      "html_url": "https://github.com/AlexKhymenko/ngx-permissions",
+      "description": "Permission and roles based access control for your angular(angular 2,4,5,6,7,9+) applications(AOT, lazy modules compatible",
+      "stars": 950,
+      "pushed_at": "2025-12-30T08:41:55Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "apache/casbin-gorm-adapter",
+      "html_url": "https://github.com/apache/casbin-gorm-adapter",
+      "description": "GORM adapter for Casbin, see extended version of GORM Adapter Ex at: https://github.com/casbin/gorm-adapter-ex",
+      "stars": 753,
+      "pushed_at": "2026-05-15T19:08:58Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/casbin/casbin"
+    },
+    {
+      "full_name": "nucypher/nucypher",
+      "html_url": "https://github.com/nucypher/nucypher",
+      "description": "Threshold Access Control (TACo) Node Runtime",
+      "stars": 706,
+      "pushed_at": "2026-05-24T21:24:29Z",
+      "language": "Python",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "gittuf/gittuf",
+      "html_url": "https://github.com/gittuf/gittuf",
+      "description": "A security layer for Git repositories",
+      "stars": 653,
+      "pushed_at": "2026-08-14T15:01:00Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://gittuf.dev"
+    },
+    {
+      "full_name": "NetDevPack/Security.Identity",
+      "html_url": "https://github.com/NetDevPack/Security.Identity",
+      "description": ".NET DevPack Identity is a set of common implementations to help you implementing Identity, Jwt, claims validation and another facilities",
+      "stars": 576,
+      "pushed_at": "2026-02-05T04:24:08Z",
+      "language": "C#",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "p2panda/p2panda",
+      "html_url": "https://github.com/p2panda/p2panda",
+      "description": "All the things a panda needs",
+      "stars": 548,
+      "pushed_at": "2026-08-17T13:17:48Z",
+      "language": "Rust",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "xen0l/aws-gate",
+      "html_url": "https://github.com/xen0l/aws-gate",
+      "description": "Better  AWS SSM Session manager CLI client",
+      "stars": 516,
+      "pushed_at": "2026-04-17T21:27:03Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://aws-gate.readthedocs.io"
+    },
+    {
+      "full_name": "sventorben/keycloak-restrict-client-auth",
+      "html_url": "https://github.com/sventorben/keycloak-restrict-client-auth",
+      "description": "A Keycloak authenticator to restrict authorization on clients",
+      "stars": 432,
+      "pushed_at": "2026-08-17T12:33:37Z",
+      "language": "Java",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "SELinuxProject/refpolicy",
+      "html_url": "https://github.com/SELinuxProject/refpolicy",
+      "description": "SELinux Reference Policy v2",
+      "stars": 387,
+      "pushed_at": "2026-08-17T13:10:41Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-2.0",
+      "homepage": "https://github.com/SELinuxProject/refpolicy/wiki"
+    },
+    {
+      "full_name": "apache/casbin-xorm-adapter",
+      "html_url": "https://github.com/apache/casbin-xorm-adapter",
+      "description": "Xorm adapter for Casbin",
+      "stars": 382,
+      "pushed_at": "2026-05-15T19:21:54Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/casbin/casbin"
+    },
+    {
+      "full_name": "HavenDV/H.Pipes",
+      "html_url": "https://github.com/HavenDV/H.Pipes",
+      "description": "A simple, easy to use, strongly-typed, async wrapper around .NET named pipes.",
+      "stars": 363,
+      "pushed_at": "2026-08-03T03:47:24Z",
+      "language": "C#",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "exograph/exograph",
+      "html_url": "https://github.com/exograph/exograph",
+      "description": "Build production-ready backends in minutes",
+      "stars": 350,
+      "pushed_at": "2026-08-16T20:08:24Z",
+      "language": "Rust",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://exograph.dev"
+    },
+    {
+      "full_name": "php-casbin/laravel-authz",
+      "html_url": "https://github.com/php-casbin/laravel-authz",
+      "description": "An authorization library that supports access control models like ACL, RBAC, ABAC in Laravel.",
+      "stars": 337,
+      "pushed_at": "2026-05-02T11:36:44Z",
+      "language": "PHP",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "apache/casbin-server",
+      "html_url": "https://github.com/apache/casbin-server",
+      "description": "Casbin as a Service (CaaS)",
+      "stars": 335,
+      "pushed_at": "2026-05-15T19:20:52Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://casbin.org/docs/service"
+    },
+    {
+      "full_name": "FluxpointDev/CloudFrost-Dev",
+      "html_url": "https://github.com/FluxpointDev/CloudFrost-Dev",
+      "description": "The all-in-one developer dashboard with features for server management using docker, error logging, project management, Discord app builder and game server remote access.",
+      "stars": 333,
+      "pushed_at": "2025-08-20T13:16:03Z",
+      "language": "HTML",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://fluxpoint.dev"
+    },
+    {
+      "full_name": "wecooperate/iDefender",
+      "html_url": "https://github.com/wecooperate/iDefender",
+      "description": "iDefender -  The Infinite Potential Host Intrusion Prevention System (HIPS) & Real-time Endpoint Detection and Response for Home",
+      "stars": 314,
+      "pushed_at": "2026-08-09T11:46:50Z",
+      "language": "",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://idefender.net"
+    },
+    {
+      "full_name": "NextWeb4/lan-file-transfer",
+      "html_url": "https://github.com/NextWeb4/lan-file-transfer",
+      "description": "Local LAN file transfer desktop app with user/group permissions and audit logs.",
+      "stars": 296,
+      "pushed_at": "2026-07-22T14:15:04Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://nextweb4.github.io/"
+    },
+    {
+      "full_name": "leosac/access-control",
+      "html_url": "https://github.com/leosac/access-control",
+      "description": "Leosac Access Control - Open Source Physical Access Control System",
+      "stars": 281,
+      "pushed_at": "2025-10-24T08:44:45Z",
+      "language": "C++",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://leosac.com"
+    },
+    {
+      "full_name": "php-casbin/think-authz",
+      "html_url": "https://github.com/php-casbin/think-authz",
+      "description": "\u4e00\u4e2a\u5728 ThinkPHP \u4e2d\u652f\u6301 ACL\u3001RBAC\u3001ABAC \u7b49\u8bbf\u95ee\u63a7\u5236\u6a21\u578b\u7684\u6388\u6743\u5e93\u3002An authorization library that supports access control models like ACL, RBAC, ABAC in ThinkPHP.",
+      "stars": 275,
+      "pushed_at": "2026-08-03T07:12:06Z",
+      "language": "PHP",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "apache/casbin-mongodb-adapter",
+      "html_url": "https://github.com/apache/casbin-mongodb-adapter",
+      "description": "MongoDB adapter for Casbin",
+      "stars": 267,
+      "pushed_at": "2026-08-05T15:41:37Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/casbin/casbin"
+    },
+    {
+      "full_name": "felixnotka/rbac.dev",
+      "html_url": "https://github.com/felixnotka/rbac.dev",
+      "description": "A collection of good practices and tools for Kubernetes RBAC",
+      "stars": 257,
+      "pushed_at": "2026-03-03T15:55:37Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "http://rbac.dev/"
+    },
+    {
+      "full_name": "dadrus/heimdall",
+      "html_url": "https://github.com/dadrus/heimdall",
+      "description": "A cloud native Identity Aware Proxy and Access Control Decision service",
+      "stars": 253,
+      "pushed_at": "2026-08-17T11:44:24Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://dadrus.github.io/heimdall/"
+    },
+    {
+      "full_name": "apache/casbin-cpp",
+      "html_url": "https://github.com/apache/casbin-cpp",
+      "description": "An authorization library that supports access control models like ACL, RBAC, ABAC in C/C++",
+      "stars": 252,
+      "pushed_at": "2026-08-07T09:08:03Z",
+      "language": "C++",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://casbin.org"
+    },
+    {
+      "full_name": "apache/casbin-caddy-authz",
+      "html_url": "https://github.com/apache/casbin-caddy-authz",
+      "description": "Caddy-authz is a middleware for Caddy that blocks or allows requests based on access control policies.",
+      "stars": 252,
+      "pushed_at": "2026-06-03T21:32:10Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://caddyserver.com/docs/modules/http.handlers.authz"
+    },
+    {
+      "full_name": "linux-application-whitelisting/fapolicyd",
+      "html_url": "https://github.com/linux-application-whitelisting/fapolicyd",
+      "description": "File Access Policy Daemon",
+      "stars": 244,
+      "pushed_at": "2026-08-13T19:56:43Z",
+      "language": "C",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "DDtKey/protect-endpoints",
+      "html_url": "https://github.com/DDtKey/protect-endpoints",
+      "description": "Authorization extension for popular web-frameworks to protect your endpoints",
+      "stars": 231,
+      "pushed_at": "2026-02-02T12:53:02Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "apache/casbin-docker-plugin",
+      "html_url": "https://github.com/apache/casbin-docker-plugin",
+      "description": "Docker RBAC and ABAC Authorization Plugin Based on Casbin: https://github.com/casbin/casbin",
+      "stars": 219,
+      "pushed_at": "2026-05-15T19:07:44Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.docker.com/engine/extend/legacy_plugins/#authorization-plugins"
+    },
+    {
+      "full_name": "apache/casbin-redis-adapter",
+      "html_url": "https://github.com/apache/casbin-redis-adapter",
+      "description": "Redis adapter for Casbin",
+      "stars": 200,
+      "pushed_at": "2026-05-15T19:18:54Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "apache/casbin-protobuf-adapter",
+      "html_url": "https://github.com/apache/casbin-protobuf-adapter",
+      "description": "Google Protocol Buffers adapter for Casbin",
+      "stars": 192,
+      "pushed_at": "2026-05-15T19:16:48Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/casbin/casbin"
+    },
+    {
+      "full_name": "chaitin/OctoBus",
+      "html_url": "https://github.com/chaitin/OctoBus",
+      "description": "A secure local gateway for AI agents to reliably call approved enterprise APIs, tools, and services.",
+      "stars": 190,
+      "pushed_at": "2026-08-17T10:09:27Z",
+      "language": "JavaScript",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://chaitin.github.io/OctoBus/"
+    },
+    {
+      "full_name": "apache/casbin-nest-authz",
+      "html_url": "https://github.com/apache/casbin-nest-authz",
+      "description": "Nest.js RBAC & ABAC authorization module based on Node-Casbin, see example at: https://github.com/node-casbin/nest-authz-example",
+      "stars": 190,
+      "pushed_at": "2026-05-15T19:14:01Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://github.com/casbin/node-casbin"
+    },
+    {
+      "full_name": "jruizaranguren/best-of-digital-identity",
+      "html_url": "https://github.com/jruizaranguren/best-of-digital-identity",
+      "description": "A ranked list of awesome Digital Identity open source projects",
+      "stars": 190,
+      "pushed_at": "2026-08-14T04:47:19Z",
+      "language": "",
+      "license_spdx_id": "CC-BY-SA-4.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "wangshengithub/staticshield",
+      "html_url": "https://github.com/wangshengithub/staticshield",
+      "description": "\u4e00\u6b3e\u5b89\u5168\u53c8\u4fbf\u6377\u7684\u7f51\u9875\u52a0\u5bc6\u5de5\u5177\u3002\u91c7\u7528 AES-256 + PBKDF2 \u767e\u4e07\u6b21\u8fed\u4ee3 + HMAC \u9a8c\u7b7e\uff0c\u5bc6\u7801\u4e0e\u89e3\u5bc6\u5168\u7a0b\u7559\u5728\u6d4f\u89c8\u5668\u672c\u5730\uff1b\u4e00\u6761\u547d\u4ee4\u6216\u56fe\u5f62\u754c\u9762\u5373\u53ef\u628a HTML\uff08\u4e43\u81f3\u6574\u7ad9 css/js/\u56fe\u7247\uff09\u52a0\u5bc6\u6210\u81ea\u89e3\u5bc6\u9875\u9762\uff0c\u90e8\u7f72\u5230\u4efb\u610f\u9759\u6001\u6258\u7ba1\u3002Secure, effortless HTML encryption: AES-256, PBKDF2 (1M iterations), HMAC, with fully client-side decryption. Encrypt an entire site (CSS/JS/images) into a self-decrypting file via one command or GUI\u2014deploy anywhere static.",
+      "stars": 190,
+      "pushed_at": "2026-07-25T23:40:26Z",
+      "language": "JavaScript",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "imhotep/hass-unifi-access",
+      "html_url": "https://github.com/imhotep/hass-unifi-access",
+      "description": "Unifi Access Integration for Home Assistant",
+      "stars": 184,
+      "pushed_at": "2026-07-21T22:52:49Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "jkramarz/TheTick",
+      "html_url": "https://github.com/jkramarz/TheTick",
+      "description": "The Tick is the next evolution in covert access control system implants for simulating adversary-in-the-middle attacks.",
+      "stars": 181,
+      "pushed_at": "2025-09-08T18:55:01Z",
+      "language": "C++",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "apache/casbin-etcd-watcher",
+      "html_url": "https://github.com/apache/casbin-etcd-watcher",
+      "description": "Etcd watcher for Casbin",
+      "stars": 172,
+      "pushed_at": "2026-05-15T19:08:18Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/casbin/casbin"
+    },
+    {
+      "full_name": "cso1z/claude-ip-guard",
+      "html_url": "https://github.com/cso1z/claude-ip-guard",
+      "description": "A Claude Code hook plugin for IP-based access control \u00b7 \u9632 Claude \u5c01\u53f7 \u00b7 Claude IP \u68c0\u6d4b \u00b7 IP \u5730\u7406\u4f4d\u7f6e\u62e6\u622a \u00b7 Claude \u8d26\u53f7\u4fdd\u62a4",
+      "stars": 172,
+      "pushed_at": "2026-07-17T09:23:01Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "ibeizhu/react-secure-state",
+      "html_url": "https://github.com/ibeizhu/react-secure-state",
+      "description": "React Secure State",
+      "stars": 171,
+      "pushed_at": "2025-10-23T07:28:31Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://ibeizhu.github.io/react-secure-state/"
+    },
+    {
+      "full_name": "Netcentric/accesscontroltool",
+      "html_url": "https://github.com/Netcentric/accesscontroltool",
+      "description": "Rights and roles management for AEM made easy",
+      "stars": 157,
+      "pushed_at": "2026-08-17T10:07:46Z",
+      "language": "Java",
+      "license_spdx_id": "EPL-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "apache/casbin-negroni-authz",
+      "html_url": "https://github.com/apache/casbin-negroni-authz",
+      "description": "negroni-authz is an authorization middleware for Negroni",
+      "stars": 157,
+      "pushed_at": "2026-05-15T19:13:56Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "kci-lnk/fn-knock-turborepo",
+      "html_url": "https://github.com/kci-lnk/fn-knock-turborepo",
+      "description": "\u9762\u5411 NAS\u3001\u8f6f\u8def\u7531\u4e0e\u5bb6\u5ead\u670d\u52a1\u5668\u7684\u591a\u5e73\u53f0\u9ad8\u6027\u80fd\u5b89\u5168\u7f51\u5173\uff0c\u91c7\u7528 Rust + Go \u53cc\u6838\u5fc3\u67b6\u6784\uff0c\u96c6\u6210\u53cd\u5411\u4ee3\u7406\u3001\u8eab\u4efd\u8ba4\u8bc1\u3001WAF\u3001SSL\u3001DDNS \u4e0e\u5185\u7f51\u7a7f\u900f\u3002",
+      "stars": 148,
+      "pushed_at": "2026-08-17T14:32:36Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.fnknock.cn/"
+    },
+    {
+      "full_name": "ehmicky/unix-permissions",
+      "html_url": "https://github.com/ehmicky/unix-permissions",
+      "description": "Swiss Army knife for Unix permissions",
+      "stars": 144,
+      "pushed_at": "2025-10-11T04:42:11Z",
+      "language": "JavaScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "MasuRii/pi-permission-system",
+      "html_url": "https://github.com/MasuRii/pi-permission-system",
+      "description": "Permission enforcement extension for the Pi coding agent.",
+      "stars": 137,
+      "pushed_at": "2026-07-03T03:08:37Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "pktharindu/nova-permissions",
+      "html_url": "https://github.com/pktharindu/nova-permissions",
+      "description": "Add Permissions based authorization for your Nova installation via User-based Roles and Permissions. Roles are defined in the database whereas Permissions are defined in the code base.",
+      "stars": 136,
+      "pushed_at": "2026-08-06T02:23:33Z",
+      "language": "PHP",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.pktharindu.com/projects/nova-permissions"
+    },
+    {
+      "full_name": "hdaklue/porter",
+      "html_url": "https://github.com/hdaklue/porter",
+      "description": "Lightweight Access Control for Laravel \u2014 no bloat, no \ud83e\udd2f yet \ud83d\udcaa",
+      "stars": 126,
+      "pushed_at": "2025-10-21T14:06:27Z",
+      "language": "PHP",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "manishchaudhary101/kube-argus",
+      "html_url": "https://github.com/manishchaudhary101/kube-argus",
+      "description": "Real-time Kubernetes dashboard for SREs \u2014 live cluster state, drain wizard, YAML editor, just-in-time exec access, cost analysis, and AI diagnosis in a single binary",
+      "stars": 125,
+      "pushed_at": "2026-07-11T07:18:14Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://manishchaudhary101.github.io/kube-argus/"
+    },
+    {
+      "full_name": "openfga/go-sdk",
+      "html_url": "https://github.com/openfga/go-sdk",
+      "description": "OpenFGA SDK for Go",
+      "stars": 121,
+      "pushed_at": "2026-08-11T02:15:46Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://openfga.dev"
+    },
+    {
+      "full_name": "WhitzardAgent/AgentGuard",
+      "html_url": "https://github.com/WhitzardAgent/AgentGuard",
+      "description": "AgentGuard: Zero-Trust Security Foundation for AI Agents",
+      "stars": 118,
+      "pushed_at": "2026-08-16T16:56:38Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://whitzard.tech/AgentGuard/"
+    },
+    {
+      "full_name": "dashersw/recht",
+      "html_url": "https://github.com/dashersw/recht",
+      "description": "A concise rule engine to express and enforce rules for selections, permissions and the like",
+      "stars": 118,
+      "pushed_at": "2026-03-27T03:37:46Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Firma-AI/openfirma",
+      "html_url": "https://github.com/Firma-AI/openfirma",
+      "description": "Runtime enforcement boundary for AI agents: a local sidecar that gates every outbound call against Cedar policies you own. Deterministic, call-level, no model on the hot path",
+      "stars": 111,
+      "pushed_at": "2026-08-17T13:45:45Z",
+      "language": "Rust",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://firma-ai.github.io/openfirma/"
+    },
+    {
+      "full_name": "SamAthanas/user-rbac",
+      "html_url": "https://github.com/SamAthanas/user-rbac",
+      "description": "User based access control middleware component for Home Assistant",
+      "stars": 109,
+      "pushed_at": "2026-05-28T01:46:38Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "wrr/wwwhisper",
+      "html_url": "https://github.com/wrr/wwwhisper",
+      "description": "Access control for Heroku hosted apps",
+      "stars": 106,
+      "pushed_at": "2025-11-07T16:33:38Z",
+      "language": "Go",
+      "license_spdx_id": "BSD-2-Clause",
+      "homepage": "https://elements.heroku.com/addons/wwwhisper"
+    },
+    {
+      "full_name": "ohs-foundation/fhir-gateway",
+      "html_url": "https://github.com/ohs-foundation/fhir-gateway",
+      "description": "A generic proxy server for applying access-control policies for a FHIR-store.",
+      "stars": 106,
+      "pushed_at": "2026-08-14T22:03:11Z",
+      "language": "Java",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://ohs-foundation.github.io/fhir-gateway/"
+    },
+    {
+      "full_name": "uatuko/ruek",
+      "html_url": "https://github.com/uatuko/ruek",
+      "description": "\ud83d\udd10 Lightning fast, global scale authorization service without the overhead of a yet another DSL.",
+      "stars": 101,
+      "pushed_at": "2026-02-14T10:21:44Z",
+      "language": "C++",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "openfga/cli",
+      "html_url": "https://github.com/openfga/cli",
+      "description": "A cross-platform CLI to interact with an OpenFGA server",
+      "stars": 101,
+      "pushed_at": "2026-08-17T13:13:31Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://openfga.dev"
+    },
+    {
+      "full_name": "authzforce/core",
+      "html_url": "https://github.com/authzforce/core",
+      "description": "AuthzForce ABAC/XACML PDP engine",
+      "stars": 101,
+      "pushed_at": "2026-05-04T20:36:15Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://authzforce.ow2.org"
+    },
+    {
+      "full_name": "abluva/mcp-trust-plane",
+      "html_url": "https://github.com/abluva/mcp-trust-plane",
+      "description": "Composable data security plane for Model Context Protocol. Pluggable layers \u2014 collect, analyze, guard \u2014 across 50+ enterprise providers. Open architecture.",
+      "stars": 100,
+      "pushed_at": "2026-06-19T14:25:55Z",
+      "language": "JavaScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "coupergateway/couper",
+      "html_url": "https://github.com/coupergateway/couper",
+      "description": "Couper is a lightweight API gateway designed to support developers in building and operating API-driven Web projects",
+      "stars": 96,
+      "pushed_at": "2026-08-17T09:41:19Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": "https://couper.io"
+    },
+    {
+      "full_name": "rikhoffbauer/react-abac",
+      "html_url": "https://github.com/rikhoffbauer/react-abac",
+      "description": "Attribute Based Access Control for React",
+      "stars": 96,
+      "pushed_at": "2026-08-17T01:40:24Z",
+      "language": "TypeScript",
+      "license_spdx_id": "",
+      "homepage": "https://rik-hoffbauer.gitlab.io/npm/react-abac/"
+    },
+    {
+      "full_name": "marcus67/little_brother",
+      "html_url": "https://github.com/marcus67/little_brother",
+      "description": "Parental Control Application implemented in Python 3 packaged for Debian and Ubuntu to monitor and limit kids' play time on Linux hosts",
+      "stars": 94,
+      "pushed_at": "2026-03-27T19:36:29Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "usnistgov/policy-machine-core",
+      "html_url": "https://github.com/usnistgov/policy-machine-core",
+      "description": "Core components of the Policy Machine, a NGAC reference implementation.",
+      "stars": 91,
+      "pushed_at": "2026-08-11T14:16:15Z",
+      "language": "Java",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "theronic/eacl",
+      "html_url": "https://github.com/theronic/eacl",
+      "description": "\ud83e\udd85 EACL: Enterprise Access ControL is a ReBAC Authorization library inspired by SpiceDB, built in Clojure and backed by Datomic (v7+), Datahike (v8+) or DataScript (v7+).",
+      "stars": 89,
+      "pushed_at": "2026-08-16T16:36:21Z",
+      "language": "Clojure",
+      "license_spdx_id": "EPL-2.0",
+      "homepage": "http://eacl.dev/"
+    },
+    {
+      "full_name": "apache/casbin-ex",
+      "html_url": "https://github.com/apache/casbin-ex",
+      "description": "An authorization library that supports access control models like ACL, RBAC, ABAC in Elixir",
+      "stars": 89,
+      "pushed_at": "2026-08-07T02:05:45Z",
+      "language": "Elixir",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://casbin.org"
+    },
+    {
+      "full_name": "openfga/js-sdk",
+      "html_url": "https://github.com/openfga/js-sdk",
+      "description": "OpenFGA SDK for node.js and JavaScript - https://www.npmjs.com/package/@openfga/sdk",
+      "stars": 88,
+      "pushed_at": "2026-08-14T07:02:06Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://openfga.dev"
+    },
+    {
+      "full_name": "apache/casbin-dashboard",
+      "html_url": "https://github.com/apache/casbin-dashboard",
+      "description": "The hub for Casbin",
+      "stars": 88,
+      "pushed_at": "2026-05-15T19:07:34Z",
+      "language": "JavaScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://dashboard.casbin.com"
+    },
+    {
+      "full_name": "openfga/python-sdk",
+      "html_url": "https://github.com/openfga/python-sdk",
+      "description": "OpenFGA SDK for Python 3 - https://pypi.org/project/openfga-sdk/",
+      "stars": 86,
+      "pushed_at": "2026-08-04T15:53:28Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://openfga.dev"
+    },
+    {
+      "full_name": "authzed/zanzibar-annotated",
+      "html_url": "https://github.com/authzed/zanzibar-annotated",
+      "description": "Google's Zanzibar paper annotated for folks outside of Google",
+      "stars": 85,
+      "pushed_at": "2026-07-29T23:46:14Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://zanzibar.tech"
+    },
+    {
+      "full_name": "coreybutler/iam",
+      "html_url": "https://github.com/coreybutler/iam",
+      "description": "Identification and access management library for all JS runtimes that support ES Modules.",
+      "stars": 84,
+      "pushed_at": "2026-06-13T21:43:56Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "openfga/dotnet-sdk",
+      "html_url": "https://github.com/openfga/dotnet-sdk",
+      "description": "OpenFGA SDK for .NET - https://www.nuget.org/packages/OpenFga.Sdk",
+      "stars": 84,
+      "pushed_at": "2026-08-02T13:40:57Z",
+      "language": "C#",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://openfga.dev"
+    },
+    {
+      "full_name": "trusted-remote-execution/trusted-remote-execution",
+      "html_url": "https://github.com/trusted-remote-execution/trusted-remote-execution",
+      "description": "Sandboxed Rhai script execution engine with Cedar policy authorization for every system operation.",
+      "stars": 84,
+      "pushed_at": "2026-07-28T16:53:38Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://trusted-remote-execution.com/docs.html"
+    },
+    {
+      "full_name": "bytedreamer/Aporta",
+      "html_url": "https://github.com/bytedreamer/Aporta",
+      "description": "Aporta is an open source physical access controller. The main purpose of the software is to secure doors from unauthorized access. This is accomplished by determining if a person is authorized to enter a door. The door is unlocked momentarily by the software when authorized credential are presented.",
+      "stars": 78,
+      "pushed_at": "2025-10-24T15:26:27Z",
+      "language": "C#",
+      "license_spdx_id": "EPL-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "loresoft/Privileged",
+      "html_url": "https://github.com/loresoft/Privileged",
+      "description": "Privileged is an authorization library for restricting resources by action, subject and qualifiers.",
+      "stars": 76,
+      "pushed_at": "2026-08-17T07:31:39Z",
+      "language": "C#",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Sloth-on-meth/DoorOpener",
+      "html_url": "https://github.com/Sloth-on-meth/DoorOpener",
+      "description": "A sleek web portal for triggering any Home Assistant action (like opening a building door), protected by secure PIN authentication. Perfect for apartment buildings, offices, or any scenario where you want easy, controlled access for multiple users.",
+      "stars": 75,
+      "pushed_at": "2026-07-08T12:29:18Z",
+      "language": "HTML",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "yiisoft/rbac",
+      "html_url": "https://github.com/yiisoft/rbac",
+      "description": "Role based access control",
+      "stars": 74,
+      "pushed_at": "2026-08-09T15:05:51Z",
+      "language": "PHP",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": "https://www.yiiframework.com"
+    },
+    {
+      "full_name": "EaseFilterSDK/mini-filter-driver-framework",
+      "html_url": "https://github.com/EaseFilterSDK/mini-filter-driver-framework",
+      "description": "A mini filter driver development framework allows you to develop minit filter driver with different features.",
+      "stars": 74,
+      "pushed_at": "2026-06-20T19:28:17Z",
+      "language": "C#",
+      "license_spdx_id": "",
+      "homepage": "https://www.easefilter.com/Forums_Files/Comprehensive-file-security-sdk.htm"
+    },
+    {
+      "full_name": "riscv/riscv-smmtt",
+      "html_url": "https://github.com/riscv/riscv-smmtt",
+      "description": "This specification will define the RISC-V privilege ISA extensions required to support Supervisor Domain isolation for multi-tenant security use cases e.g. confidential-computing, trusted platform services, fault isolation and so on.",
+      "stars": 73,
+      "pushed_at": "2026-08-17T10:35:43Z",
+      "language": "Makefile",
+      "license_spdx_id": "CC-BY-4.0",
+      "homepage": "https://riscv.atlassian.net/browse/RVG-65"
+    },
+    {
+      "full_name": "apache/casbin-typeorm-adapter",
+      "html_url": "https://github.com/apache/casbin-typeorm-adapter",
+      "description": "TypeORM adapter for Casbin",
+      "stars": 72,
+      "pushed_at": "2026-08-06T08:20:34Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/casbin/node-casbin"
+    },
+    {
+      "full_name": "dbjpanda/convex-authz",
+      "html_url": "https://github.com/dbjpanda/convex-authz",
+      "description": "A comprehensive RBAC/ABAC/ReBAC authorization component for Convex with O(1) indexed lookups, inspired by Google Zanzibar",
+      "stars": 69,
+      "pushed_at": "2026-06-19T16:21:33Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://convex-authz.vercel.app"
+    },
+    {
+      "full_name": "libellux/Libellux-Up-and-Running",
+      "html_url": "https://github.com/libellux/Libellux-Up-and-Running",
+      "description": "Install open-source software from source to focus on Zero Trust Network principles, enhancing security for existing applications, and deploying tools for threat detection and prevention.",
+      "stars": 69,
+      "pushed_at": "2025-12-26T13:38:00Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": "https://libellux.com"
+    },
+    {
+      "full_name": "shanmuga3/laravel-entrust",
+      "html_url": "https://github.com/shanmuga3/laravel-entrust",
+      "description": "Handle Role-based Permissions for your Laravel application",
+      "stars": 68,
+      "pushed_at": "2026-05-05T08:20:59Z",
+      "language": "PHP",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "apache/casbin-lua-casbin",
+      "html_url": "https://github.com/apache/casbin-lua-casbin",
+      "description": "An authorization library that supports access control models like ACL, RBAC, ABAC in Lua (Kong, APISIX, OpenResty)",
+      "stars": 66,
+      "pushed_at": "2026-08-06T15:39:52Z",
+      "language": "Lua",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "Z-bit-Systems-LLC/OSDP.Net",
+      "html_url": "https://github.com/Z-bit-Systems-LLC/OSDP.Net",
+      "description": "A .NET Core control panel implementation of the Open Supervised Device Protocol(OSDP)",
+      "stars": 64,
+      "pushed_at": "2026-07-26T15:01:55Z",
+      "language": "C#",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "apache/casbin-sequelize-adapter",
+      "html_url": "https://github.com/apache/casbin-sequelize-adapter",
+      "description": "Sequelize adapter for Casbin",
+      "stars": 63,
+      "pushed_at": "2026-05-15T19:20:43Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/casbin/node-casbin"
+    },
+    {
+      "full_name": "hugoii/llm-agent-audit",
+      "html_url": "https://github.com/hugoii/llm-agent-audit",
+      "description": "Trace-backed Agent Authorization Reviews for tool-using AI agents. Staging-only evidence for payment, record-change, access, and export actions.",
+      "stars": 62,
+      "pushed_at": "2026-07-10T21:52:52Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://actionboundary.dev/"
+    },
+    {
+      "full_name": "teramoby/speedle-plus",
+      "html_url": "https://github.com/teramoby/speedle-plus",
+      "description": "Speedle+ is an open source project for access management. It is based on Speedle open source project and maintained by previous Speedle maintainers.",
+      "stars": 62,
+      "pushed_at": "2026-06-25T05:54:16Z",
+      "language": "Go",
+      "license_spdx_id": "UPL-1.0",
+      "homepage": "https://speedle.io"
+    },
+    {
+      "full_name": "apache/casbin-ent-adapter",
+      "html_url": "https://github.com/apache/casbin-ent-adapter",
+      "description": "Ent adapter for Casbin",
+      "stars": 62,
+      "pushed_at": "2026-08-06T14:30:36Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/casbin/casbin"
+    },
+    {
+      "full_name": "apache/casbin-sqlx-adapter",
+      "html_url": "https://github.com/apache/casbin-sqlx-adapter",
+      "description": "Asynchronous casbin adapter for mysql, postgres, sqlite based on sqlx-rs",
+      "stars": 61,
+      "pushed_at": "2026-08-06T05:49:54Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/casbin/casbin-rs"
+    },
+    {
+      "full_name": "apache/casbin-efcore-adapter",
+      "html_url": "https://github.com/apache/casbin-efcore-adapter",
+      "description": "Entity Framework Core Adapter for Casbin.NET",
+      "stars": 60,
+      "pushed_at": "2026-05-15T19:07:54Z",
+      "language": "C#",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/casbin/Casbin.NET"
+    },
+    {
+      "full_name": "browserstack/enigma",
+      "html_url": "https://github.com/browserstack/enigma",
+      "description": "Access management tool",
+      "stars": 60,
+      "pushed_at": "2026-08-09T22:46:28Z",
+      "language": "Python",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "bot-ssttkkl/nonebot-plugin-access-control",
+      "html_url": "https://github.com/bot-ssttkkl/nonebot-plugin-access-control",
+      "description": "Nonebot \u6743\u9650\u63a7\u5236\u63d2\u4ef6",
+      "stars": 58,
+      "pushed_at": "2026-08-03T18:43:58Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "openfga/spring-boot-starter",
+      "html_url": "https://github.com/openfga/spring-boot-starter",
+      "description": "A Spring Boot Starter for OpenFGA",
+      "stars": 56,
+      "pushed_at": "2026-08-13T02:41:31Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "n1ru4l/graphql-public-schema-filter",
+      "html_url": "https://github.com/n1ru4l/graphql-public-schema-filter",
+      "description": "Filter your GraphQL graph into a subgraph. Code-first & SDL-first!",
+      "stars": 55,
+      "pushed_at": "2026-08-14T17:01:00Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "WrenSecurity/wrenam",
+      "html_url": "https://github.com/WrenSecurity/wrenam",
+      "description": "Community fork of OpenAM, an authentication and authorization system originally developed by ForgeRock.",
+      "stars": 55,
+      "pushed_at": "2026-08-13T07:45:27Z",
+      "language": "Java",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "openfga/java-sdk",
+      "html_url": "https://github.com/openfga/java-sdk",
+      "description": "OpenFGA SDK for Java - https://central.sonatype.com/artifact/dev.openfga/openfga-sdk",
+      "stars": 54,
+      "pushed_at": "2026-08-13T06:09:51Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://openfga.dev"
+    },
+    {
+      "full_name": "nangazaki/vue-rbac",
+      "html_url": "https://github.com/nangazaki/vue-rbac",
+      "description": "Role-Based Access Control (RBAC) implementation for Vue.js.",
+      "stars": 53,
+      "pushed_at": "2026-04-28T08:48:43Z",
+      "language": "TypeScript",
+      "license_spdx_id": "",
+      "homepage": "https://vue-rbac.nangazaki.io"
+    },
+    {
+      "full_name": "cloudflare/authr",
+      "html_url": "https://github.com/cloudflare/authr",
+      "description": ":key: a flexible and expressive approach to access-control",
+      "stars": 52,
+      "pushed_at": "2026-04-24T00:52:01Z",
+      "language": "PHP",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": ""
+    },
+    {
+      "full_name": "apache/casbin-redis-watcher",
+      "html_url": "https://github.com/apache/casbin-redis-watcher",
+      "description": "Redis WatcherEx for Casbin",
+      "stars": 47,
+      "pushed_at": "2026-08-06T13:33:04Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/casbin/casbin"
+    },
+    {
+      "full_name": "casbin4d/Casbin4D",
+      "html_url": "https://github.com/casbin4d/Casbin4D",
+      "description": "An authorization library that supports access control models like ACL, RBAC, ABAC in Delphi",
+      "stars": 46,
+      "pushed_at": "2026-01-01T03:49:08Z",
+      "language": "Pascal",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://casbin.org"
+    },
+    {
+      "full_name": "DiegoGuidaF/PulseWeaver",
+      "html_url": "https://github.com/DiegoGuidaF/PulseWeaver",
+      "description": "Self-hosted forward-auth sidecar that gates your services by request IP + host \u2014 give family and friends per-user access without touching the apps behind your reverse proxy. Not authentication; a roaming-IP heartbeat keeps access current.",
+      "stars": 46,
+      "pushed_at": "2026-08-17T02:15:58Z",
+      "language": "TypeScript",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "vhidvz/abacl",
+      "html_url": "https://github.com/vhidvz/abacl",
+      "description": "Attribute Based Access Control Library",
+      "stars": 45,
+      "pushed_at": "2026-08-12T00:55:44Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://vhidvz.github.io/abacl/"
+    },
+    {
+      "full_name": "php-casbin/yii-permission",
+      "html_url": "https://github.com/php-casbin/yii-permission",
+      "description": "Use casbin in Yii PHP Framework, Casbin is a powerful and efficient open-source access control library.",
+      "stars": 45,
+      "pushed_at": "2026-08-01T03:28:32Z",
+      "language": "PHP",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "FriendsOfREDAXO/accessdenied",
+      "html_url": "https://github.com/FriendsOfREDAXO/accessdenied",
+      "description": "Access Denied: Artikel oder Kategoriezugriff im Frontend sperren (offline + kein Zugriff)",
+      "stars": 45,
+      "pushed_at": "2026-06-18T11:12:29Z",
+      "language": "PHP",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "apache/casbin-pg-adapter",
+      "html_url": "https://github.com/apache/casbin-pg-adapter",
+      "description": "A go-pg adapter for casbin",
+      "stars": 45,
+      "pushed_at": "2026-06-16T14:46:55Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/casbin/casbin"
+    },
+    {
+      "full_name": "apache/casbin-dart-casbin",
+      "html_url": "https://github.com/apache/casbin-dart-casbin",
+      "description": "An authorization library that supports access control models like ACL, RBAC, ABAC in Dart/Flutter",
+      "stars": 44,
+      "pushed_at": "2026-05-15T19:07:25Z",
+      "language": "Dart",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://casbin.org"
+    },
+    {
+      "full_name": "Cheater121/rbacx",
+      "html_url": "https://github.com/Cheater121/rbacx",
+      "description": "RBAC/ABAC/ReBAC policy engine for Python with policy sets, condition DSL, and hot reload",
+      "stars": 44,
+      "pushed_at": "2026-04-12T18:28:38Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://cheater121.github.io/rbacx/"
+    },
+    {
+      "full_name": "mac119/ssh_proxy",
+      "html_url": "https://github.com/mac119/ssh_proxy",
+      "description": "\ud83d\udee1\ufe0f A high-performance SSH proxy gateway built in Rust \u2014 unified authentication, per-user access control (ACL), full session audit logging, and terminal replay. Secure your infrastructure without modifying target servers.",
+      "stars": 42,
+      "pushed_at": "2026-05-08T06:16:01Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "orion-belt-dev/orion-belt",
+      "html_url": "https://github.com/orion-belt-dev/orion-belt",
+      "description": "Self-hosted SSH/RDP access gateway with PAM workflows \u2014 reverse-tunnel agents, session recording, JIT approvals, and ReBAC. A lighter self-hosted alternative to the big zero-trust access platforms.",
+      "stars": 42,
+      "pushed_at": "2026-08-06T08:36:53Z",
+      "language": "Go",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://orion-belt.dev"
+    },
+    {
+      "full_name": "chriscohnen/islandr",
+      "html_url": "https://github.com/chriscohnen/islandr",
+      "description": "Self-hosted WireGuard\u00ae access management \u2014 bring every remote worker, device and site securely back to HQ. One native binary (Quarkus + GraalVM).",
+      "stars": 41,
+      "pushed_at": "2026-08-16T13:00:29Z",
+      "language": "Java",
+      "license_spdx_id": "EUPL-1.2",
+      "homepage": ""
+    },
+    {
+      "full_name": "ging/fiware-idm",
+      "html_url": "https://github.com/ging/fiware-idm",
+      "description": "OAuth 2.0-based authentication of users and devices, user profile management, Single Sign-On (SSO) and Identity Federation across multiple administration domains.",
+      "stars": 41,
+      "pushed_at": "2025-11-18T14:56:58Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://keyrock-fiware.github.io"
+    },
+    {
+      "full_name": "ryanhz/osdp-python",
+      "html_url": "https://github.com/ryanhz/osdp-python",
+      "description": "A Python control panel implementation of the Open Supervised Device Protocol (OSDP)",
+      "stars": 40,
+      "pushed_at": "2026-07-07T12:51:35Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "bmuller/pundit-elixir",
+      "html_url": "https://github.com/bmuller/pundit-elixir",
+      "description": "Simple authorization helpers for Elixir stucts, like Ruby's Pundit",
+      "stars": 40,
+      "pushed_at": "2026-05-26T13:10:39Z",
+      "language": "Elixir",
+      "license_spdx_id": "MIT",
+      "homepage": "https://hex.pm/packages/pundit"
+    },
+    {
+      "full_name": "apache/casbin-jcasbin-jdbc-adapter",
+      "html_url": "https://github.com/apache/casbin-jcasbin-jdbc-adapter",
+      "description": "JDBC adapter for Casbin",
+      "stars": 40,
+      "pushed_at": "2026-08-04T18:14:27Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/casbin/jcasbin"
+    },
+    {
+      "full_name": "zacateras/sddl-parser",
+      "html_url": "https://github.com/zacateras/sddl-parser",
+      "description": "Security Descriptor Definition Language (SDDL) Parser",
+      "stars": 38,
+      "pushed_at": "2025-09-24T18:31:31Z",
+      "language": "C#",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "apache/casbin-node-casbin-mongoose-adapter",
+      "html_url": "https://github.com/apache/casbin-node-casbin-mongoose-adapter",
+      "description": "Mongoose adapter for Casbin",
+      "stars": 37,
+      "pushed_at": "2026-05-15T19:15:24Z",
+      "language": "JavaScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/casbin/node-casbin"
+    },
+    {
+      "full_name": "matthewkayne/flipper-access-audit",
+      "html_url": "https://github.com/matthewkayne/flipper-access-audit",
+      "description": "Flipper Zero app for defensive auditing of access-control credentials and tags.",
+      "stars": 36,
+      "pushed_at": "2026-07-03T10:16:03Z",
+      "language": "C",
+      "license_spdx_id": "MIT",
+      "homepage": "https://lab.flipper.net/apps/access_audit"
+    },
+    {
+      "full_name": "valtuutus/valtuutus",
+      "html_url": "https://github.com/valtuutus/valtuutus",
+      "description": "High-performance Google Zanzibar-inspired ReBAC authorization library for .NET and ASP.NET Core.",
+      "stars": 35,
+      "pushed_at": "2026-07-30T18:57:03Z",
+      "language": "C#",
+      "license_spdx_id": "MIT",
+      "homepage": "https://valtuutus.yanpitangui.com/"
+    },
+    {
+      "full_name": "apache/casbin-rust-diesel-adapter",
+      "html_url": "https://github.com/apache/casbin-rust-diesel-adapter",
+      "description": "Diesel adapter for Casbin-RS",
+      "stars": 35,
+      "pushed_at": "2026-08-13T01:58:55Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/casbin/casbin-rs"
+    },
+    {
+      "full_name": "open-policy-agent/opa-typescript",
+      "html_url": "https://github.com/open-policy-agent/opa-typescript",
+      "description": "Open Source TypeScript packages for use with Open Policy Agent (OPA).",
+      "stars": 34,
+      "pushed_at": "2025-11-20T18:10:36Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://open-policy-agent.github.io/opa-typescript/"
+    },
+    {
+      "full_name": "apache/casbin-openstack-policy-editor",
+      "html_url": "https://github.com/apache/casbin-openstack-policy-editor",
+      "description": "A Casbin Policy Editor for OpenStack",
+      "stars": 33,
+      "pushed_at": "2026-05-15T19:16:25Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://cloud.casbin.org/"
+    },
+    {
+      "full_name": "Olivier127/rbac-bundle",
+      "html_url": "https://github.com/Olivier127/rbac-bundle",
+      "description": "PhpRBACBundle is symfony 7 bundle with full access control library for PHP. It provides NIST Level 2 Standard Hierarchical Role Based Access Control as an easy to use library to PHP developers. It's a rework of the phprbac.net library made by OWASP for synfony 7",
+      "stars": 32,
+      "pushed_at": "2026-07-28T20:21:47Z",
+      "language": "PHP",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "wizzdi/FlexiCore",
+      "html_url": "https://github.com/wizzdi/FlexiCore",
+      "description": "FlexiCore is a plugin based spring powered framework",
+      "stars": 31,
+      "pushed_at": "2026-07-29T10:15:12Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://flexicore.io"
+    },
+    {
+      "full_name": "rosteleset/SmartYard-Server",
+      "html_url": "https://github.com/rosteleset/SmartYard-Server",
+      "description": "Open-source IP intercom & video surveillance software platform (RBT/Teledom)",
+      "stars": 31,
+      "pushed_at": "2026-08-14T14:22:07Z",
+      "language": "PHP",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://sesameware.com"
+    },
+    {
+      "full_name": "osmanonurkoc/SecureAppLocker",
+      "html_url": "https://github.com/osmanonurkoc/SecureAppLocker",
+      "description": "A robust system-level application locker for Windows. Powered by an NT Service and a modern WinUI 3 interface, it features instant metadata-based interception, fail-secure lockdown, zero-trust WTS session resets, and isolated Session 0 IPC. Secure your personal apps with master password cryptography and offline recovery.",
+      "stars": 30,
+      "pushed_at": "2026-08-16T11:00:20Z",
+      "language": "C#",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "tylerransdell/onedoor",
+      "html_url": "https://github.com/tylerransdell/onedoor",
+      "description": "Tactical\u2011speed door comm and control \u2014 SIP audio + WebRTC video, fully local.",
+      "stars": 30,
+      "pushed_at": "2026-07-27T20:53:42Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "janweis/Active-Directory-Delegation-Powershell-Wizard",
+      "html_url": "https://github.com/janweis/Active-Directory-Delegation-Powershell-Wizard",
+      "description": "\ud83d\udee1\ufe0f Assign AD permissions via PowerShell templates \u2014 Simplify and standardize AD delegation with reusable PowerShell templates.",
+      "stars": 30,
+      "pushed_at": "2026-04-12T20:56:30Z",
+      "language": "PowerShell",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "pycasbin/django-orm-adapter",
+      "html_url": "https://github.com/pycasbin/django-orm-adapter",
+      "description": "Django ORM Adapter for PyCasbin",
+      "stars": 30,
+      "pushed_at": "2026-07-24T16:30:58Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/casbin/pycasbin"
+    },
+    {
+      "full_name": "tx7do/kratos-authz",
+      "html_url": "https://github.com/tx7do/kratos-authz",
+      "description": "kratos authorization middleware",
+      "stars": 29,
+      "pushed_at": "2026-04-10T06:22:44Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "ben-pr-p/kysely-access-control",
+      "html_url": "https://github.com/ben-pr-p/kysely-access-control",
+      "description": "Complex permissioning at the query builder layer",
+      "stars": 28,
+      "pushed_at": "2025-11-07T01:57:28Z",
+      "language": "TypeScript",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "nu31hackerspace/prismo",
+      "html_url": "https://github.com/nu31hackerspace/prismo",
+      "description": "Your simple solution for access to doors and lockers via RFID",
+      "stars": 28,
+      "pushed_at": "2026-08-09T15:25:44Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://prismo.nu31.space/"
+    },
+    {
+      "full_name": "openfga/sdk-generator",
+      "html_url": "https://github.com/openfga/sdk-generator",
+      "description": "OpenFGA Client SDK Generator",
+      "stars": 28,
+      "pushed_at": "2026-08-03T04:42:47Z",
+      "language": "Mustache",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "hamza1886/role-based-access-control",
+      "html_url": "https://github.com/hamza1886/role-based-access-control",
+      "description": "Implementation of Role-Based Access Control in PHP",
+      "stars": 27,
+      "pushed_at": "2026-03-28T16:41:17Z",
+      "language": "PHP",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "proxmox/pve-access-control",
+      "html_url": "https://github.com/proxmox/pve-access-control",
+      "description": "Access control framework",
+      "stars": 27,
+      "pushed_at": "2026-05-15T14:34:37Z",
+      "language": "Perl",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "apache/casbin-go-client",
+      "html_url": "https://github.com/apache/casbin-go-client",
+      "description": "Go client for Casbin-Server",
+      "stars": 27,
+      "pushed_at": "2026-05-15T19:08:49Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/casbin/casbin-server"
+    },
+    {
+      "full_name": "aiperceivable/apcore",
+      "html_url": "https://github.com/aiperceivable/apcore",
+      "description": "A schema-enforced module framework where every interface is inherently perceivable by AI.",
+      "stars": 26,
+      "pushed_at": "2026-08-17T03:38:47Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "gvray/gvray-react",
+      "html_url": "https://github.com/gvray/gvray-react",
+      "description": "\ud83e\udd84 Enterprise React Admin Template built with React, Umi, TypeScript, Ant Design, RBAC, Zustand, i18n and Dark Mode.",
+      "stars": 24,
+      "pushed_at": "2026-08-16T13:56:07Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://react.gvray.com"
+    },
+    {
+      "full_name": "semenchuk-egor/ProofPay",
+      "html_url": "https://github.com/semenchuk-egor/ProofPay",
+      "description": "Proof\u2011aware payment rail on Base where transfers are gated by EAS attestations and ZK proofs for KYC, access and milestones.",
+      "stars": 24,
+      "pushed_at": "2025-12-09T13:23:28Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "yiisoft/rbac-php",
+      "html_url": "https://github.com/yiisoft/rbac-php",
+      "description": "RBAC PHP file storage.",
+      "stars": 24,
+      "pushed_at": "2026-08-09T16:03:12Z",
+      "language": "PHP",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": "https://www.yiiframework.com/"
+    },
+    {
+      "full_name": "joe-cole1/pangolin-ip-rule-manager",
+      "html_url": "https://github.com/joe-cole1/pangolin-ip-rule-manager",
+      "description": "\u200bAutomatically manage temporary Pangolin IP bypass rules for devices that can't use SSO (like smart TVs). Bootstraps trust from authenticated devices using real-time role validation and a fail-closed security architecture.",
+      "stars": 23,
+      "pushed_at": "2026-08-15T12:22:48Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "apache/casbin-beego-orm-adapter",
+      "html_url": "https://github.com/apache/casbin-beego-orm-adapter",
+      "description": "Beego ORM adapter for Casbin",
+      "stars": 23,
+      "pushed_at": "2026-05-15T19:06:17Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/casbin/casbin"
+    },
+    {
+      "full_name": "hivemq/hivemq-file-rbac-extension",
+      "html_url": "https://github.com/hivemq/hivemq-file-rbac-extension",
+      "description": "HiveMQ extension for managing role-based authorization",
+      "stars": 23,
+      "pushed_at": "2026-08-14T10:44:24Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.hivemq.com/extension/file-rbac-extension/"
+    },
+    {
+      "full_name": "seaworld008/netbird-vpn",
+      "html_url": "https://github.com/seaworld008/netbird-vpn",
+      "description": "NetBird \u81ea\u5efa\u90e8\u7f72\u4e0e\u5b9e\u8df5\u624b\u518c\uff1a\u4e2d\u6587 NetBird VPN\u3001Zero Trust\u3001WireGuard\u3001Kubernetes\u3001Docker Compose \u573a\u666f\u6587\u6863",
+      "stars": 23,
+      "pushed_at": "2026-08-17T08:45:58Z",
+      "language": "Shell",
+      "license_spdx_id": "",
+      "homepage": "https://github.com/seaworld008/netbird-vpn#readme"
+    },
+    {
+      "full_name": "workos/edge-agent",
+      "html_url": "https://github.com/workos/edge-agent",
+      "description": "Warrant Edge agent",
+      "stars": 22,
+      "pushed_at": "2026-07-27T16:15:30Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.warrant.dev"
+    },
+    {
+      "full_name": "DinoMorphica/safeclaw",
+      "html_url": "https://github.com/DinoMorphica/safeclaw",
+      "description": "Security Dashboard for OpenClaw AI Agents - intercept, monitor, and control what OpenClaw does on your system.",
+      "stars": 22,
+      "pushed_at": "2026-02-19T01:04:56Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://safeclaw.io"
+    },
+    {
+      "full_name": "akolishchak/geswall",
+      "html_url": "https://github.com/akolishchak/geswall",
+      "description": "GeSWall, Intrusion Prevention System for Windows",
+      "stars": 22,
+      "pushed_at": "2026-01-18T21:09:19Z",
+      "language": "C++",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "cerbos/cerbos-sdk-python",
+      "html_url": "https://github.com/cerbos/cerbos-sdk-python",
+      "description": "Cerbos Python SDK",
+      "stars": 22,
+      "pushed_at": "2026-08-17T07:24:00Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cerbos.dev"
+    },
+    {
+      "full_name": "apache/casbin-SwiftCasbin",
+      "html_url": "https://github.com/apache/casbin-SwiftCasbin",
+      "description": "An authorization library that supports access control models like ACL, RBAC, ABAC in Apple Swift / Objective-C",
+      "stars": 22,
+      "pushed_at": "2026-08-06T13:19:55Z",
+      "language": "Swift",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://casbin.org"
+    },
+    {
+      "full_name": "huawei-csl/AC-LoRA",
+      "html_url": "https://github.com/huawei-csl/AC-LoRA",
+      "description": "Welcome to the official repository of AC-LORA: (Almost) Training-Free Access Control-Aware Multi-Modal LLMs, a mechanism that provides training-free secure access control for LLMs using separate LoRAs fine-tuned with sensitive data, and merge them based on the user query and permission.",
+      "stars": 21,
+      "pushed_at": "2025-11-14T13:04:14Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "CC0-1.0",
+      "homepage": "https://arxiv.org/abs/2505.11557"
+    },
+    {
+      "full_name": "matejgordon/unipyAccess",
+      "html_url": "https://github.com/matejgordon/unipyAccess",
+      "description": "Python connector for UniFi Access",
+      "stars": 21,
+      "pushed_at": "2025-11-12T21:08:12Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "sybethiesant/pidoors",
+      "html_url": "https://github.com/sybethiesant/pidoors",
+      "description": "PiDoors - Wigand Access Control System using Raspberry Pi",
+      "stars": 21,
+      "pushed_at": "2026-08-10T02:26:20Z",
+      "language": "PHP",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "cerbos/demo-rest",
+      "html_url": "https://github.com/cerbos/demo-rest",
+      "description": "Demo of using Cerbos to secure a Go REST API.",
+      "stars": 20,
+      "pushed_at": "2026-03-19T00:15:42Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cerbos.dev"
+    },
+    {
+      "full_name": "marichu-kt/WEBSITE-CAPTCHA",
+      "html_url": "https://github.com/marichu-kt/WEBSITE-CAPTCHA",
+      "description": "Sistema CAPTCHA sencillo y eficaz desarrollado con HTML, CSS y JavaScript. Protege rutas espec\u00edficas del sitio web verificando que los usuarios sean humanos antes de conceder acceso. Ideal para proyectos que requieren una capa b\u00e1sica de seguridad sin depender de servicios externos.",
+      "stars": 20,
+      "pushed_at": "2025-09-28T08:05:48Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://marichu-kt.github.io/WEBSITE-CAPTCHA/"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "keyword": "topic:ai-policy",
+  "query": "topic:ai-policy stars:>19 pushed:>2025-08-17 archived:false fork:false",
+  "count": 5,
+  "repos": [
+    {
+      "full_name": "EthicalML/awesome-artificial-intelligence-regulation",
+      "html_url": "https://github.com/EthicalML/awesome-artificial-intelligence-regulation",
+      "description": "This repository aims to map the ecosystem of artificial intelligence guidelines, principles, codes of ethics, standards, regulation and beyond.",
+      "stars": 1455,
+      "pushed_at": "2026-08-11T18:50:29Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "open-bias/open-bias",
+      "html_url": "https://github.com/open-bias/open-bias",
+      "description": "Open Source Reliability Harness: Make your agents follow rules. One line of code to\u200e \u200eenforce, trace, and improve. \u200e \u200e",
+      "stars": 137,
+      "pushed_at": "2026-05-23T05:54:44Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.openbias.dev"
+    },
+    {
+      "full_name": "AndrewAltimit/template-repo",
+      "html_url": "https://github.com/AndrewAltimit/template-repo",
+      "description": "Agent orchestration & security template featuring MCP tool building, agent2agent workflows, mechanistic interpretability on sleeper agents, and agent integration via CLI wrappers",
+      "stars": 130,
+      "pushed_at": "2026-07-05T21:02:53Z",
+      "language": "Rust",
+      "license_spdx_id": "Unlicense",
+      "homepage": "https://andrewaltimit.github.io/template-repo/"
+    },
+    {
+      "full_name": "GenAI-Gurus/awesome-eu-ai-act",
+      "html_url": "https://github.com/GenAI-Gurus/awesome-eu-ai-act",
+      "description": "Curated tools, official sources, OSS, templates, and guides for EU AI Act compliance.",
+      "stars": 87,
+      "pushed_at": "2026-06-27T21:53:22Z",
+      "language": "",
+      "license_spdx_id": "CC0-1.0",
+      "homepage": "https://github.com/GenAI-Gurus/awesome-eu-ai-act#readme"
+    },
+    {
+      "full_name": "SciWhite/university-ai-policy-tracker",
+      "html_url": "https://github.com/SciWhite/university-ai-policy-tracker",
+      "description": "Open, evidence-backed infrastructure for tracking university AI policies worldwide.",
+      "stars": 23,
+      "pushed_at": "2026-08-08T13:52:46Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://eduaipolicy.org"
+    }
+  ]
+}

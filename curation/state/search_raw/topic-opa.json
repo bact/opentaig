@@ -1,0 +1,557 @@
+{
+  "keyword": "topic:opa",
+  "query": "topic:opa stars:>19 pushed:>2025-08-17 archived:false fork:false",
+  "count": 55,
+  "repos": [
+    {
+      "full_name": "open-policy-agent/opa",
+      "html_url": "https://github.com/open-policy-agent/opa",
+      "description": "Open Policy Agent (OPA) is an open source, general-purpose policy engine.",
+      "stars": 12110,
+      "pushed_at": "2026-08-17T13:38:29Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.openpolicyagent.org"
+    },
+    {
+      "full_name": "meshery/meshery",
+      "html_url": "https://github.com/meshery/meshery",
+      "description": "Meshery, the cloud native manager",
+      "stars": 11492,
+      "pushed_at": "2026-08-17T13:44:57Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://meshery.io"
+    },
+    {
+      "full_name": "permitio/opal",
+      "html_url": "https://github.com/permitio/opal",
+      "description": "Policy and data administration, distribution, and real-time updates on top of Policy Agents (OPA, Cedar, ...)",
+      "stars": 5499,
+      "pushed_at": "2026-08-17T11:28:02Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://opal.ac"
+    },
+    {
+      "full_name": "open-policy-agent/gatekeeper",
+      "html_url": "https://github.com/open-policy-agent/gatekeeper",
+      "description": "\ud83d\udc0a Policy Controller for Kubernetes",
+      "stars": 4265,
+      "pushed_at": "2026-08-17T10:52:01Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://open-policy-agent.github.io/gatekeeper/"
+    },
+    {
+      "full_name": "aserto-dev/topaz",
+      "html_url": "https://github.com/aserto-dev/topaz",
+      "description": "Cloud-native authorization for modern applications and APIs",
+      "stars": 1357,
+      "pushed_at": "2026-08-11T15:07:16Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.topaz.sh"
+    },
+    {
+      "full_name": "open-policy-agent/awesome-opa",
+      "html_url": "https://github.com/open-policy-agent/awesome-opa",
+      "description": "A curated list of OPA related tools, frameworks and articles",
+      "stars": 899,
+      "pushed_at": "2026-08-17T11:54:34Z",
+      "language": "",
+      "license_spdx_id": "CC0-1.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "open-policy-agent/gatekeeper-library",
+      "html_url": "https://github.com/open-policy-agent/gatekeeper-library",
+      "description": "\ud83d\udcda The OPA Gatekeeper policy library",
+      "stars": 700,
+      "pushed_at": "2026-08-10T20:21:06Z",
+      "language": "Open Policy Agent",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://open-policy-agent.github.io/gatekeeper-library"
+    },
+    {
+      "full_name": "google/gke-policy-automation",
+      "html_url": "https://github.com/google/gke-policy-automation",
+      "description": "Tool and policy library for reviewing Google Kubernetes Engine clusters against best practices",
+      "stars": 526,
+      "pushed_at": "2026-08-17T09:43:39Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "oxyno-zeta/s3-proxy",
+      "html_url": "https://github.com/oxyno-zeta/s3-proxy",
+      "description": "S3 Reverse Proxy with GET, PUT and DELETE methods and authentication (OpenID Connect and Basic Auth)",
+      "stars": 483,
+      "pushed_at": "2026-08-17T10:46:37Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://oxyno-zeta.github.io/s3-proxy/"
+    },
+    {
+      "full_name": "open-policy-agent/regal",
+      "html_url": "https://github.com/open-policy-agent/regal",
+      "description": "Regal is a linter and language server for Rego, bringing your policy development experience to the next level!",
+      "stars": 398,
+      "pushed_at": "2026-08-17T12:11:07Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "plexsystems/konstraint",
+      "html_url": "https://github.com/plexsystems/konstraint",
+      "description": "A policy management tool for interacting with Gatekeeper",
+      "stars": 393,
+      "pushed_at": "2025-11-20T02:18:14Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "open-policy-agent/opa-envoy-plugin",
+      "html_url": "https://github.com/open-policy-agent/opa-envoy-plugin",
+      "description": "A plugin to enforce OPA policies with Envoy",
+      "stars": 360,
+      "pushed_at": "2026-08-17T12:02:47Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "cisagov/ScubaGoggles",
+      "html_url": "https://github.com/cisagov/ScubaGoggles",
+      "description": "SCuBA Secure Configuration Baselines and assessment tool for Google Workspace",
+      "stars": 357,
+      "pushed_at": "2026-08-14T15:53:24Z",
+      "language": "Python",
+      "license_spdx_id": "CC0-1.0",
+      "homepage": "https://www.cisa.gov/resources-tools/services/secure-cloud-business-applications-scuba-project"
+    },
+    {
+      "full_name": "open-policy-agent/contrib",
+      "html_url": "https://github.com/open-policy-agent/contrib",
+      "description": "Integrations, examples, and proof-of-concepts that are not part of OPA proper.",
+      "stars": 348,
+      "pushed_at": "2026-07-16T13:11:14Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "http://www.openpolicyagent.org/"
+    },
+    {
+      "full_name": "microsoft/regorus",
+      "html_url": "https://github.com/microsoft/regorus",
+      "description": "Regorus - A fast, lightweight Rego (OPA policy language) interpreter written in Rust.",
+      "stars": 338,
+      "pushed_at": "2026-08-16T14:28:59Z",
+      "language": "Rust",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "sighupio/gatekeeper-policy-manager",
+      "html_url": "https://github.com/sighupio/gatekeeper-policy-manager",
+      "description": "A simple to use web-based OPA Gatekeeper policy manager",
+      "stars": 328,
+      "pushed_at": "2026-08-17T13:36:31Z",
+      "language": "Go",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": "https://sighup.io"
+    },
+    {
+      "full_name": "eqtylab/cupcake",
+      "html_url": "https://github.com/eqtylab/cupcake",
+      "description": "A native policy enforcement layer for AI coding agents. Built on OPA/Rego.",
+      "stars": 287,
+      "pushed_at": "2026-03-02T17:06:18Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cupcake.eqtylab.io/"
+    },
+    {
+      "full_name": "open-policy-agent/kube-mgmt",
+      "html_url": "https://github.com/open-policy-agent/kube-mgmt",
+      "description": "Sidecar for managing OPA instances in Kubernetes.",
+      "stars": 261,
+      "pushed_at": "2026-08-11T06:27:27Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "mattrobinsonsre/terrapod",
+      "html_url": "https://github.com/mattrobinsonsre/terrapod",
+      "description": "Open-source Terraform Enterprise replacement",
+      "stars": 252,
+      "pushed_at": "2026-08-17T05:38:42Z",
+      "language": "Python",
+      "license_spdx_id": "MPL-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "aquasecurity/postee",
+      "html_url": "https://github.com/aquasecurity/postee",
+      "description": "Notice: Postee is no longer under active development or maintenance.",
+      "stars": 205,
+      "pushed_at": "2026-05-27T08:57:48Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": "https://aquasecurity.github.io/postee/latest"
+    },
+    {
+      "full_name": "open-policy-agent/rego-style-guide",
+      "html_url": "https://github.com/open-policy-agent/rego-style-guide",
+      "description": "Style guide for Rego",
+      "stars": 205,
+      "pushed_at": "2026-06-18T17:26:34Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.styra.com/opa/rego-style-guide"
+    },
+    {
+      "full_name": "antgroup/CloudRec",
+      "html_url": "https://github.com/antgroup/CloudRec",
+      "description": "CloudRec is an open source multi-cloud security posture management (CSPM) platform designed to help organizations improve the security of their cloud environments.",
+      "stars": 190,
+      "pushed_at": "2026-06-12T07:37:17Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://demo.cloudrec.cloud"
+    },
+    {
+      "full_name": "redhat-cop/rego-policies",
+      "html_url": "https://github.com/redhat-cop/rego-policies",
+      "description": "Rego policies collection",
+      "stars": 171,
+      "pushed_at": "2026-08-15T08:29:36Z",
+      "language": "Shell",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "anderseknert/kube-review",
+      "html_url": "https://github.com/anderseknert/kube-review",
+      "description": "Create Kubernetes AdmissionReview requests from Kubernetes resource manifests",
+      "stars": 161,
+      "pushed_at": "2026-05-02T02:17:21Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "open-policy-agent/npm-opa-wasm",
+      "html_url": "https://github.com/open-policy-agent/npm-opa-wasm",
+      "description": "Open Policy Agent WebAssembly NPM module (opa-wasm)",
+      "stars": 156,
+      "pushed_at": "2026-07-10T12:36:42Z",
+      "language": "JavaScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "traefik-plugins/traefik-jwt-plugin",
+      "html_url": "https://github.com/traefik-plugins/traefik-jwt-plugin",
+      "description": "Traefik plugin which checks JWT tokens for required fields. Supports Open Policy Agent (OPA) and signature validation with  JWKS",
+      "stars": 139,
+      "pushed_at": "2026-08-12T15:52:20Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "open-policy-agent/vscode-opa",
+      "html_url": "https://github.com/open-policy-agent/vscode-opa",
+      "description": "An extension for VS Code which provides support for OPA and the Rego policy language",
+      "stars": 132,
+      "pushed_at": "2026-08-17T10:34:08Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://openpolicyagent.org"
+    },
+    {
+      "full_name": "kubescape/regolibrary",
+      "html_url": "https://github.com/kubescape/regolibrary",
+      "description": "The regolibrary package contains the controls Kubescape uses for detecting misconfigurations in Kubernetes manifests.",
+      "stars": 131,
+      "pushed_at": "2026-08-15T14:33:27Z",
+      "language": "Open Policy Agent",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "open-policy-agent/opa-docker-authz",
+      "html_url": "https://github.com/open-policy-agent/opa-docker-authz",
+      "description": "A policy-enabled authorization plugin for Docker.",
+      "stars": 105,
+      "pushed_at": "2026-06-25T09:33:07Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "dzungtran/echo-rest-api",
+      "html_url": "https://github.com/dzungtran/echo-rest-api",
+      "description": "A Golang restful API boilerplate based on Echo framework v4. Includes tools for module generation, db migration, authorization, modular, authentication and more.",
+      "stars": 104,
+      "pushed_at": "2026-04-08T22:06:20Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "denis-prilepskiy/governed-agentic-itsm-blueprint",
+      "html_url": "https://github.com/denis-prilepskiy/governed-agentic-itsm-blueprint",
+      "description": "Don't be the 40%. A production-ready blueprint for governing autonomous AI agents in IT operations \u2014 with executable policies, typed tool contracts, ISO 42001/NIST AI RMF mapping, and a 4-level maturity model. Vendor-neutral.",
+      "stars": 82,
+      "pushed_at": "2026-08-09T15:37:48Z",
+      "language": "Open Policy Agent",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "LuD1161/agentjail",
+      "html_url": "https://github.com/LuD1161/agentjail",
+      "description": "Policy guardrails for coding agents (Claude Code, Codex, Cursor) \u2014 every tool call is checked locally, before it runs.",
+      "stars": 77,
+      "pushed_at": "2026-08-17T04:34:13Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://agentjail.io"
+    },
+    {
+      "full_name": "Parsifal-M/backstage-opa-plugins",
+      "html_url": "https://github.com/Parsifal-M/backstage-opa-plugins",
+      "description": "Open Policy Agent (OPA) Plugins for Backstage",
+      "stars": 65,
+      "pushed_at": "2026-07-17T12:53:37Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://parsifal-m.github.io/backstage-opa-plugins/"
+    },
+    {
+      "full_name": "Turall/OPA-python-client",
+      "html_url": "https://github.com/Turall/OPA-python-client",
+      "description": "Python client for Open Policy Agent",
+      "stars": 65,
+      "pushed_at": "2026-06-25T11:01:29Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "NewbMiao/opa-koans",
+      "html_url": "https://github.com/NewbMiao/opa-koans",
+      "description": "koans for OPA",
+      "stars": 53,
+      "pushed_at": "2026-08-14T22:45:08Z",
+      "language": "Shell",
+      "license_spdx_id": "",
+      "homepage": "https://newbmiao.github.io/opa-koans"
+    },
+    {
+      "full_name": "spacelift-io/spacelift-policies-example-library",
+      "html_url": "https://github.com/spacelift-io/spacelift-policies-example-library",
+      "description": "A library of example Spacelift policies",
+      "stars": 52,
+      "pushed_at": "2026-07-31T20:01:11Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": "https://docs.spacelift.io/concepts/policy"
+    },
+    {
+      "full_name": "appvia/psp-migration",
+      "html_url": "https://github.com/appvia/psp-migration",
+      "description": "Recreation of common Pod Security Policy configuration in other common Kubernetes policy engines",
+      "stars": 52,
+      "pushed_at": "2026-08-17T10:10:02Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://appvia.github.io/psp-migration"
+    },
+    {
+      "full_name": "mxab/nacp",
+      "html_url": "https://github.com/mxab/nacp",
+      "description": "Admission Controller as a proxy for Nomad. Define OPA rules for validation and mutation or plugin remotes",
+      "stars": 51,
+      "pushed_at": "2026-08-17T08:50:04Z",
+      "language": "Go",
+      "license_spdx_id": "MPL-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "microsoft/rego-cpp",
+      "html_url": "https://github.com/microsoft/rego-cpp",
+      "description": "A C++ interpreter for the OPA policy language Rego",
+      "stars": 47,
+      "pushed_at": "2026-08-14T03:54:17Z",
+      "language": "C++",
+      "license_spdx_id": "MIT",
+      "homepage": "https://microsoft.github.io/rego-cpp/"
+    },
+    {
+      "full_name": "nscuro/dtapac",
+      "html_url": "https://github.com/nscuro/dtapac",
+      "description": "Audit Dependency-Track findings and policy violations via policy as code",
+      "stars": 45,
+      "pushed_at": "2026-08-16T17:57:22Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "christophwille/dotnet-opa-wasm",
+      "html_url": "https://github.com/christophwille/dotnet-opa-wasm",
+      "description": "Call Open Policy Agent (OPA) policies in WASM (Web Assembly) from .NET Core",
+      "stars": 45,
+      "pushed_at": "2026-05-26T16:00:27Z",
+      "language": "C#",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "prancer-io/prancer-compliance-test",
+      "html_url": "https://github.com/prancer-io/prancer-compliance-test",
+      "description": "This repository includes cloud security policies for IaC and live resources.",
+      "stars": 42,
+      "pushed_at": "2026-03-11T03:27:53Z",
+      "language": "Open Policy Agent",
+      "license_spdx_id": "",
+      "homepage": "https://www.prancer.io"
+    },
+    {
+      "full_name": "anderseknert/rego-test-assertions",
+      "html_url": "https://github.com/anderseknert/rego-test-assertions",
+      "description": "Tiny Rego library with helper functions for unit testing",
+      "stars": 40,
+      "pushed_at": "2026-06-19T00:12:22Z",
+      "language": "Open Policy Agent",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "sighupio/module-policy",
+      "html_url": "https://github.com/sighupio/module-policy",
+      "description": "Policy Module: Policy enforcement for your Kubernetes Cluster",
+      "stars": 38,
+      "pushed_at": "2026-07-06T09:20:23Z",
+      "language": "Shell",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": "https://docs.sighup.io/"
+    },
+    {
+      "full_name": "StyraOSS/opa-aws-cloudformation-hook",
+      "html_url": "https://github.com/StyraOSS/opa-aws-cloudformation-hook",
+      "description": "AWS Cloudformation Hook for OPA-powered infrastructure policy enforcement",
+      "stars": 37,
+      "pushed_at": "2025-12-15T13:10:31Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "mxlint/mxlint-cli",
+      "html_url": "https://github.com/mxlint/mxlint-cli",
+      "description": "A set of tools to enhance Mendix app development workflows. They are mainly designed for professionals but should be usable for everybody.",
+      "stars": 34,
+      "pushed_at": "2026-08-17T11:44:09Z",
+      "language": "SCSS",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://mxlint.com"
+    },
+    {
+      "full_name": "StyraOSS/enterprise-opa",
+      "html_url": "https://github.com/StyraOSS/enterprise-opa",
+      "description": "Enterprise OPA is a distribution of Open Policy Agent with enterprise-grade features to get OPA into production quickly, easily, and inexpensively.",
+      "stars": 34,
+      "pushed_at": "2026-02-16T12:46:50Z",
+      "language": "Shell",
+      "license_spdx_id": "",
+      "homepage": "https://docs.styra.com/enterprise-opa"
+    },
+    {
+      "full_name": "open-policy-agent/opa-typescript",
+      "html_url": "https://github.com/open-policy-agent/opa-typescript",
+      "description": "Open Source TypeScript packages for use with Open Policy Agent (OPA).",
+      "stars": 34,
+      "pushed_at": "2025-11-20T18:10:36Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://open-policy-agent.github.io/opa-typescript/"
+    },
+    {
+      "full_name": "permitio/PDP",
+      "html_url": "https://github.com/permitio/PDP",
+      "description": "Permit Policy Decision Point service. High-performance, policy-driven authorization for your apps and service.",
+      "stars": 31,
+      "pushed_at": "2026-08-13T18:59:33Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.permit.io/concepts/pdp/overview"
+    },
+    {
+      "full_name": "aserto-dev/runtime",
+      "html_url": "https://github.com/aserto-dev/runtime",
+      "description": "an abstraction library on top of OPA",
+      "stars": 30,
+      "pushed_at": "2026-05-20T09:55:11Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "tx7do/kratos-authz",
+      "html_url": "https://github.com/tx7do/kratos-authz",
+      "description": "kratos authorization middleware",
+      "stars": 29,
+      "pushed_at": "2026-04-10T06:22:44Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "open-policy-agent/opa-java",
+      "html_url": "https://github.com/open-policy-agent/opa-java",
+      "description": "A driver to connect via Java to Open Policy Agent (OPA) deployments.",
+      "stars": 25,
+      "pushed_at": "2026-06-16T02:43:32Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://open-policy-agent.github.io/opa-java/"
+    },
+    {
+      "full_name": "masterpointio/github-action-opa-rego-test",
+      "html_url": "https://github.com/masterpointio/github-action-opa-rego-test",
+      "description": "GitHub Action to automate testing for your OPA (Open Policy Agent) Rego policies, generates a report with coverage information, and posts the test results as a comment on your pull requests.",
+      "stars": 23,
+      "pushed_at": "2026-08-01T08:52:52Z",
+      "language": "TypeScript",
+      "license_spdx_id": "",
+      "homepage": "https://masterpoint.io"
+    },
+    {
+      "full_name": "StyraOSS/zed-rego",
+      "html_url": "https://github.com/StyraOSS/zed-rego",
+      "description": "Zed extension for the Rego policy language from Open Policy Agent (OPA)",
+      "stars": 22,
+      "pushed_at": "2025-11-21T23:09:59Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/StyraInc/zed-rego"
+    },
+    {
+      "full_name": "stackabletech/opa-operator",
+      "html_url": "https://github.com/stackabletech/opa-operator",
+      "description": "Kubernetes operator for the Open Policy Agent (OPA). Deploy and run OPA for authorization with the Stackable Data Platform (SDP).",
+      "stars": 21,
+      "pushed_at": "2026-08-17T12:54:17Z",
+      "language": "Rust",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://docs.stackable.tech/home/stable/opa/"
+    }
+  ]
+}

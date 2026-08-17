@@ -1675,3 +1675,26 @@ fvaleye/tracarbon,accept,,,Apache-2.0,osi-approved,Verification of Compute Workl
 HewlettPackard/sustain-cluster,accept,,,MIT,osi-approved,Verification of Compute Workloads,topic:carbon-footprint,72,2026-08-07T16:37:25+00:00
 volcengine/veScale,reject,not-relevant,Does not provide direct mechanisms for candidate RQs,Apache-2.0,osi-approved,Verification of Compute Workloads,distributed LLM training,1036,2026-08-07T16:37:25+00:00
 kubeflow/trainer,accept,,,Apache-2.0,osi-approved,Verification of Compute Workloads,distributed LLM training,2173,2026-08-07T16:37:25+00:00
+open-metadata/OpenMetadata,reject,not-relevant,Does not provide direct mechanisms for candidate RQs,Apache-2.0,osi-approved,Translation of Governance Goals into Policies and Requirements,topic:data-lineage,14896,2026-08-17T14:52:13+00:00
+open-policy-agent/gatekeeper,reject,out-of-scope-narrow,Does not provide direct mechanisms for candidate RQs,Apache-2.0,osi-approved,Translation of Governance Goals into Policies and Requirements,topic:opa,4265,2026-08-17T14:52:13+00:00
+aserto-dev/topaz,reject,not-relevant,Does not provide direct mechanisms for candidate RQs,Apache-2.0,osi-approved,Translation of Governance Goals into Policies and Requirements,topic:opa,1357,2026-08-17T14:52:13+00:00
+eqtylab/cupcake,accept,,,Apache-2.0,osi-approved,Translation of Governance Goals into Policies and Requirements,topic:opa,287,2026-08-17T14:52:13+00:00
+easeml/datascope,accept,,,MIT,osi-approved,Translation of Governance Goals into Policies and Requirements,shapley value data,45,2026-08-17T14:52:13+00:00
+pgaudit/pgaudit,reject,not-relevant,Does not provide direct mechanisms for candidate RQs,NOASSERTION,source-available,Translation of Governance Goals into Policies and Requirements,topic:audit-log,1689,2026-08-17T14:52:13+00:00
+laminlabs/lamindb,reject,not-relevant,Does not provide direct mechanisms for candidate RQs,Apache-2.0,osi-approved,Translation of Governance Goals into Policies and Requirements,topic:data-lineage,331,2026-08-17T14:52:13+00:00
+reata/sqllineage,reject,not-relevant,Does not provide direct mechanisms for candidate RQs,MIT,osi-approved,Translation of Governance Goals into Policies and Requirements,topic:data-lineage,1674,2026-08-17T14:52:13+00:00
+astaxie/TokenHub,reject,not-relevant,Does not provide direct mechanisms for candidate RQs,Apache-2.0,osi-approved,Translation of Governance Goals into Policies and Requirements,AI access control,1089,2026-08-17T14:52:13+00:00
+mayankjain0141/nixis,accept,,,MIT,osi-approved,Translation of Governance Goals into Policies and Requirements,AI audit logging,40,2026-08-17T14:52:13+00:00
+3DCF-Labs/doc2dataset,reject,out-of-scope-narrow,Does not provide direct mechanisms for candidate RQs,Apache-2.0,osi-approved,Translation of Governance Goals into Policies and Requirements,evaluation data integrity,55,2026-08-17T14:52:13+00:00
+retentioneering/retentioneering-tools,reject,not-relevant,Does not provide direct mechanisms for candidate RQs,Apache-2.0,osi-approved,Translation of Governance Goals into Policies and Requirements,AI audit logging,913,2026-08-17T14:52:13+00:00
+TongjiFinLab/FinTSB,reject,not-relevant,Does not provide direct mechanisms for candidate RQs,GPL-3.0,osi-approved,Translation of Governance Goals into Policies and Requirements,AI forecasting benchmark,131,2026-08-17T14:52:13+00:00
+xfhg/intercept,reject,low-substance,Does not provide direct mechanisms for candidate RQs,EUPL-1.2,osi-approved,Translation of Governance Goals into Policies and Requirements,topic:policy-as-code,84,2026-08-17T14:52:13+00:00
+ThreeMoonsLab/agents-shipgate,accept,,,Apache-2.0,osi-approved,Translation of Governance Goals into Policies and Requirements,topic:policy-as-code,88,2026-08-17T14:52:13+00:00
+agentkitai/agentlens,accept,,,MIT,osi-approved,Translation of Governance Goals into Policies and Requirements,AI audit logging,20,2026-08-17T14:52:13+00:00
+MetapriseAI/OrgKernel,accept,,,Apache-2.0,osi-approved,Translation of Governance Goals into Policies and Requirements,AI audit logging,2703,2026-08-17T14:52:13+00:00
+wissem/cc-filter,reject,out-of-scope-narrow,Does not provide direct mechanisms for candidate RQs,MIT,osi-approved,Translation of Governance Goals into Policies and Requirements,AI access control,83,2026-08-17T14:52:13+00:00
+microsoft/AICentral,accept,,,MIT,osi-approved,Translation of Governance Goals into Policies and Requirements,AI access control,96,2026-08-17T14:52:13+00:00
+pnnl/agent-cage,reject,not-relevant,Does not provide direct mechanisms for candidate RQs,NOASSERTION,source-available,Translation of Governance Goals into Policies and Requirements,AI access control,63,2026-08-17T14:52:13+00:00
+abaxxlabs/agents,accept,,,Apache-2.0,osi-approved,Translation of Governance Goals into Policies and Requirements,AI access control,20,2026-08-17T14:52:13+00:00
+duncatzat/vigils,reject,out-of-scope-narrow,Does not provide direct mechanisms for candidate RQs,Apache-2.0,osi-approved,Translation of Governance Goals into Policies and Requirements,topic:audit-log,302,2026-08-17T14:52:13+00:00
+lutzfinger/SAI-baseversion,reject,not-relevant,Does not provide direct mechanisms for candidate RQs,Apache-2.0,osi-approved,Translation of Governance Goals into Policies and Requirements,AI audit logging,29,2026-08-17T14:52:13+00:00

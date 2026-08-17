@@ -1,0 +1,57 @@
+{
+  "keyword": "model audit trail",
+  "query": "model audit trail stars:>19 pushed:>2025-08-17 archived:false fork:false",
+  "count": 5,
+  "repos": [
+    {
+      "full_name": "cft0808/edict",
+      "html_url": "https://github.com/cft0808/edict",
+      "description": "\ud83c\udfdb\ufe0f \u4e09\u7701\u516d\u90e8\u5236 \u00b7 OpenClaw Multi-Agent Orchestration System \u2014 9 specialized AI agents with real-time dashboard, model config, and full audit trails",
+      "stars": 16379,
+      "pushed_at": "2026-08-03T11:24:42Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://openclaw.ai"
+    },
+    {
+      "full_name": "paper-trail-gem/paper_trail",
+      "html_url": "https://github.com/paper-trail-gem/paper_trail",
+      "description": "Track changes to your rails models",
+      "stars": 7029,
+      "pushed_at": "2026-05-08T14:55:46Z",
+      "language": "Ruby",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "arthurpanhku/dvalincode",
+      "html_url": "https://github.com/arthurpanhku/dvalincode",
+      "description": "Approvable, local-first AI coding agent for regulated teams: policy controls, governed MCP, evidence packs, audit trails, secure remediation, and any OpenAI-compatible model.",
+      "stars": 112,
+      "pushed_at": "2026-08-17T06:08:06Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://dvalincode.dev"
+    },
+    {
+      "full_name": "deedy/imo-2026",
+      "html_url": "https://github.com/deedy/imo-2026",
+      "description": "Frontier AI models solving IMO 2026 autonomously \u2014 7 runs, full audit trails, independently graded (3\u00d7 verified 42/42)",
+      "stars": 60,
+      "pushed_at": "2026-07-23T04:54:50Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "preloop/preloop",
+      "html_url": "https://github.com/preloop/preloop",
+      "description": "The open-source AI agent control plane: MCP firewall, model gateway with budgets, human approvals, runtime observability, and audit trails",
+      "stars": 46,
+      "pushed_at": "2026-08-17T13:11:36Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://preloop.ai"
+    }
+  ]
+}

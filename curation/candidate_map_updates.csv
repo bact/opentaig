@@ -1,1 +1,11 @@
 rq_no,tool_id,role,rationale,datetime_added,datetime_checked,datetime_updated
+91,cupcake,implement,Provides a policy-as-code framework using OPA Rego to formalize governance rules into enforceable constraints on AI agent actions.,2026-08-17 14:52,2026-08-17 14:52,2026-08-17 14:52
+92,cupcake,implement,Intercepts and automatically verifies AI agent events and tool calls against formal policy specifications in real time.,2026-08-17 14:52,2026-08-17 14:52,2026-08-17 14:52
+11,datascope,implement,Computes data Shapley values across ML pipelines to measure and quantify the influence of individual training data points on model behavior.,2026-08-17 14:52,2026-08-17 14:52,2026-08-17 14:52
+91,nixis,implement,Provides a declarative policy engine to formalize security rules and execution boundaries for AI coding agents.,2026-08-17 14:52,2026-08-17 14:52,2026-08-17 14:52
+92,nixis,implement,Intercepts and automatically verifies AI agent tool calls in real time against formal policy specifications.,2026-08-17 14:52,2026-08-17 14:52,2026-08-17 14:52
+92,agents-shipgate,implement,Provides a static deterministic merge gate to automatically verify that AI agent capability changes comply with policy specifications.,2026-08-17 14:52,2026-08-17 14:52,2026-08-17 14:52
+42,agentlens,implement,Implements SHA-256 hash-chained and cryptographically verifiable audit logging for AI agent events to make decision records tamper-evident.,2026-08-17 14:52,2026-08-17 14:52,2026-08-17 14:52
+82,orgkernel,implement,Enforces deterministic governance policies and scoped execution controls across multi-agent and federated enterprise AI deployments using cryptographic identity (Ed25519) and execution tokens.,2026-08-17 14:52,2026-08-17 14:52,2026-08-17 14:52
+40,aicentral,implement,Implements automated PII stripping and redaction on downstream LLM query logs and prompts before storage in audit databases to ensure privacy-safe auditability.,2026-08-17 14:52,2026-08-17 14:52,2026-08-17 14:52
+82,abaxx-agents,implement,Uses Decentralized Identifiers (DIDs) and verifiable cryptographic credentials to establish provenance and enforce scoped governance policies across multi-party AI agent deployments.,2026-08-17 14:52,2026-08-17 14:52,2026-08-17 14:52

@@ -1,0 +1,17 @@
+{
+  "keyword": "topic:model-governance",
+  "query": "topic:model-governance stars:>19 pushed:>2025-08-17 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "GareBear99/ARC-Neuron-LLMBuilder",
+      "html_url": "https://github.com/GareBear99/ARC-Neuron-LLMBuilder",
+      "description": "A governed local AI build-and-memory system that trains small brains, compares them, protects the better one, archives the worse one, and preserves the evidence of why. v1.0.0/governed-v2.2.0+",
+      "stars": 27,
+      "pushed_at": "2026-05-16T23:35:46Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://github.com/GareBear99/ARC-Neuron-LLMBuilder"
+    }
+  ]
+}

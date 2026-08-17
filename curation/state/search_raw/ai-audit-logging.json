@@ -1,0 +1,307 @@
+{
+  "keyword": "AI audit logging",
+  "query": "AI audit logging stars:>19 pushed:>2025-08-17 archived:false fork:false",
+  "count": 30,
+  "repos": [
+    {
+      "full_name": "kite-org/kite",
+      "html_url": "https://github.com/kite-org/kite",
+      "description": "\ud83e\ude81 A lightweight, modern Kubernetes dashboard that unifies multi-cluster and resource management, enterprise-grade user governance (OAuth, RBAC, and audit logs), and AI agents in one workspace. Not just a tool, but more like a platform.",
+      "stars": 3029,
+      "pushed_at": "2026-08-15T10:11:05Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://kite.zzde.me"
+    },
+    {
+      "full_name": "MetapriseAI/OrgKernel",
+      "html_url": "https://github.com/MetapriseAI/OrgKernel",
+      "description": "Open-source trust layer for AI agents \u2014 cryptographic agent identity (Ed25519), instance-scoped execution tokens, SHA-256 hash-chained audit logging, and enterprise SSO/SCIM federation. The security foundation powering every agent in the Metaprise AURA platform.",
+      "stars": 2703,
+      "pushed_at": "2026-07-06T19:46:41Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "xerj-org/xerj",
+      "html_url": "https://github.com/xerj-org/xerj",
+      "description": "XERJ is the new way for AI to search data. Its autoindex capability activates agents to know your data without the token waste of grep and sed. One command indexes code, docs, logs and PDFs for search, RAG, security audits and agent memory, using 40x fewer tokens than grep. Elasticsearch compatible, so existing clients just work.",
+      "stars": 1400,
+      "pushed_at": "2026-08-17T14:28:03Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://xerj.org"
+    },
+    {
+      "full_name": "retentioneering/retentioneering-tools",
+      "html_url": "https://github.com/retentioneering/retentioneering-tools",
+      "description": "Python toolkit, MCP server, and agent skills for reproducible, auditable clickstream and event log analytics. Helps AI agents, data scientists and analysts build, validate, and cross-check product analytics, quantitative UX, customer journeys, graph-based user flows, behavioral segmentation, A/B tests, process mining models, Markov chain simulation",
+      "stars": 913,
+      "pushed_at": "2026-08-13T21:47:40Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://retentioneering.com/docs/"
+    },
+    {
+      "full_name": "ThinkWatchProject/ThinkWatch",
+      "html_url": "https://github.com/ThinkWatchProject/ThinkWatch",
+      "description": "Enterprise AI bastion host for secure AI API and MCP access, with unified proxying, RBAC, audit logs, rate limiting, and cost tracking across OpenAI, Anthropic, Gemini, and self-hosted LLMs.",
+      "stars": 814,
+      "pushed_at": "2026-08-01T15:40:51Z",
+      "language": "Rust",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://thinkwat.ch"
+    },
+    {
+      "full_name": "juyterman1000/entroly",
+      "html_url": "https://github.com/juyterman1000/entroly",
+      "description": "AI context optimization platform for files, conversations, RAG, code, logs and AI agents with context compression, evidence preservation, content-addressed recovery and auditable Context Receipts.",
+      "stars": 437,
+      "pushed_at": "2026-08-17T07:40:30Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://juyterman1000.github.io/entroly/docs/index.html"
+    },
+    {
+      "full_name": "node9-ai/node9-proxy",
+      "html_url": "https://github.com/node9-ai/node9-proxy",
+      "description": "The Execution Security Layer for the Agentic Era. Providing deterministic \"Sudo\" governance and audit logs for autonomous AI agents.",
+      "stars": 209,
+      "pushed_at": "2026-08-12T18:29:38Z",
+      "language": "TypeScript",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://node9.ai/"
+    },
+    {
+      "full_name": "HelpCode-ai/anythingmcp",
+      "html_url": "https://github.com/HelpCode-ai/anythingmcp",
+      "description": "Self-hosted, open-source AI-empowered MCP gateway: turn any API, database or MCP server into custom connectors for Claude, ChatGPT, Gemini, Copilot & Cursor \u2014 no code. Convert REST, SOAP, WSDL, GraphQL & SQL to MCP, with OAuth2, RBAC & audit log. 175+ pre-built adapters (Deutsche Bahn, weclapp, Etsy, DHL, Shopware\u2026)",
+      "stars": 177,
+      "pushed_at": "2026-08-17T07:52:55Z",
+      "language": "TypeScript",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://anythingmcp.com"
+    },
+    {
+      "full_name": "el1ght/aulite",
+      "html_url": "https://github.com/el1ght/aulite",
+      "description": "EU AI Act compliance proxy for AI systems. Drop-in HTTP proxy that monitors every AI interaction for regulatory risks, logs to a tamper-proof audit trail, and generates legal-grade PDF reports. 143 rules across 8 Annex III domains. Self-hosted, open-core",
+      "stars": 132,
+      "pushed_at": "2026-06-14T21:47:10Z",
+      "language": "TypeScript",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "SleuthCo/clawshield-public",
+      "html_url": "https://github.com/SleuthCo/clawshield-public",
+      "description": "Security proxy for AI agents. Scans every message for prompt injection, PII, and secrets. Defense-in-depth: Go proxy + iptables firewall + eBPF kernel monitor. YAML policy engine, audit logging, 5 AI agents with RAG knowledge bases.",
+      "stars": 130,
+      "pushed_at": "2026-03-26T20:29:39Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "CoordClaw/CoordClaw",
+      "html_url": "https://github.com/CoordClaw/CoordClaw",
+      "description": "CoordClaw: a multi-agent system that runs AI like a one-person company. Built on management & organizational theory \u2014 teams defined in natural language, collaboration driven by a message loop (not hard-coded DAGs). Auditable work logs, human god's-eye oversight.",
+      "stars": 114,
+      "pushed_at": "2026-08-17T10:56:33Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Adversis/mcp-snitch",
+      "html_url": "https://github.com/Adversis/mcp-snitch",
+      "description": "MCP Snitch is a macOS application that intercepts and monitors MCP server communications, providing security analysis, access control, and audit logging for AI tool usage.",
+      "stars": 94,
+      "pushed_at": "2025-10-14T20:39:43Z",
+      "language": "Swift",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "microsoft/Data-and-Agent-Governance-and-Security-Accelerator",
+      "html_url": "https://github.com/microsoft/Data-and-Agent-Governance-and-Security-Accelerator",
+      "description": "Automate end-to-end AI governance with Microsoft Purview DSPM for AI and Defender for AI. Configure DLP, sensitivity labels, audit logging, and threat detection across M365 Copilot, Microsoft Foundry, Microsoft Fabric, and custom agentic solutions.",
+      "stars": 70,
+      "pushed_at": "2026-07-16T07:42:01Z",
+      "language": "PowerShell",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "ax128/AegisGate",
+      "html_url": "https://github.com/ax128/AegisGate",
+      "description": "Open-source security gateway for LLM APIs \u2014 prompt injection detection, PII redaction, dangerous response   sanitization, and audit logging. OpenAI/Claude compatible, MCP & Agent SKILL support. Drop-in proxy for AI coding   agents (Cursor, Claude Code, Codex).",
+      "stars": 58,
+      "pushed_at": "2026-06-14T07:03:08Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://github.com/ax128/AegisGate"
+    },
+    {
+      "full_name": "makerchecker/MakerChecker",
+      "html_url": "https://github.com/makerchecker/MakerChecker",
+      "description": "Open-source security gateway & static scanner for AI agents. Enforce role-based access control (RBAC), human-in-the-loop approvals,   segregation of duties, and cryptographically signed, offline-verifiable audit logs.",
+      "stars": 51,
+      "pushed_at": "2026-08-17T03:17:46Z",
+      "language": "TypeScript",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://makerchecker.ai"
+    },
+    {
+      "full_name": "mayankjain0141/nixis",
+      "html_url": "https://github.com/mayankjain0141/nixis",
+      "description": "AI agent firewall that intercepts tool calls (file, shell, network) and enforces deterministic policies at sub-microsecond latency using CEL, IFC, secret scanning, and audit logging.",
+      "stars": 40,
+      "pushed_at": "2026-08-09T13:43:15Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "mattfisherhajl7659/cerebrum-python-task-hub",
+      "html_url": "https://github.com/mattfisherhajl7659/cerebrum-python-task-hub",
+      "description": "Cross-platform Python automation framework for building task bots with AI-assisted workflow orchestration, autonomous execution, and audit logging.",
+      "stars": 37,
+      "pushed_at": "2026-08-17T13:26:42Z",
+      "language": "HTML",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "openagentidentityprotocol/agentidentityprotocol",
+      "html_url": "https://github.com/openagentidentityprotocol/agentidentityprotocol",
+      "description": "Agent Identity Protocol - Zero-trust security layer for AI agents. Policy enforcement proxy for MCP with Human-in-the-Loop approval, DLP scanning, and audit logging.",
+      "stars": 36,
+      "pushed_at": "2026-03-05T13:49:19Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/openagentidentityprotocol/openagentidentityprotocol#readme"
+    },
+    {
+      "full_name": "aliengiraffe/vigilante",
+      "html_url": "https://github.com/aliengiraffe/vigilante",
+      "description": "Vigilante is a sandbox-first orchestration layer for coding agents. It isolates every task in a git worktree, enforces strict credential scoping, and gives you full audit logs \u2014 so your agents can't burn down production.",
+      "stars": 36,
+      "pushed_at": "2026-08-17T03:14:44Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "mholovetskyi/openclawenterprise",
+      "html_url": "https://github.com/mholovetskyi/openclawenterprise",
+      "description": "OpenClaw Enterprise \u2014 zero-trust AI agent platform with IAM/RBAC, audit logging, Vault/AWS/GCP/Azure secrets, Kubernetes Helm chart, and viral install scripts. MIT licensed.",
+      "stars": 35,
+      "pushed_at": "2026-03-24T19:34:50Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "japan1988/multi-agent-mediation",
+      "html_url": "https://github.com/japan1988/multi-agent-mediation",
+      "description": "simulation alignment negotiation governance arbitration multi-agent-systemsmulti-agent orchestration orchestrator mediation ai-safety human-in-the-loop audit-logs reproducibility prompt-injection",
+      "stars": 30,
+      "pushed_at": "2026-08-17T09:47:48Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://github.com/japan1988/multi-agent-mediation"
+    },
+    {
+      "full_name": "lutzfinger/SAI-baseversion",
+      "html_url": "https://github.com/lutzfinger/SAI-baseversion",
+      "description": "AI agents built for trust: structured workflows, human approval, secure tool access, audit logs, and grounded outputs for real enterprise work.",
+      "stars": 29,
+      "pushed_at": "2026-07-17T06:56:40Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "romanklis/openclaw-contained",
+      "html_url": "https://github.com/romanklis/openclaw-contained",
+      "description": "TaskForge runs AI agents in sandboxed Docker containers with capability-based security. Agents start with minimal permissions and must request new capabilities (packages, network access, tools) through a human-in-the-loop approval process. Every approval triggers a container image rebuild, and every LLM interaction is logged for audit.",
+      "stars": 29,
+      "pushed_at": "2026-08-05T06:03:16Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "GarrickLin/any_gateway",
+      "html_url": "https://github.com/GarrickLin/any_gateway",
+      "description": "A light-weight self-hosted AI API gateway that proxies requests to multiple backend providers (OpenAI, Anthropic, Gemini) with user management, quota control, and audit logging.",
+      "stars": 28,
+      "pushed_at": "2026-07-15T15:01:31Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "samerfarida/mcp-ssh-orchestrator",
+      "html_url": "https://github.com/samerfarida/mcp-ssh-orchestrator",
+      "description": "Secure SSH access for AI agents via MCP. Execute commands across your server fleet with policy enforcement, network controls, and comprehensive audit logging.",
+      "stars": 27,
+      "pushed_at": "2026-08-17T13:05:58Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "Alexi5000/ClawKeeper",
+      "html_url": "https://github.com/Alexi5000/ClawKeeper",
+      "description": "Governed Claude agent control plane: deterministic policy engine runs before every LLM call, $0 default autonomous spend, database-enforced immutable audit log. 147 passing tests. MIT.",
+      "stars": 26,
+      "pushed_at": "2026-08-09T03:56:38Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "eric8810/authy",
+      "html_url": "https://github.com/eric8810/authy",
+      "description": "A CLI secrets store & dispatch tool built for AI agents.  Authy stores encrypted secrets locally and dispatches them to agents with policy-based scoping, short-lived session tokens, and audit logging. No server required.",
+      "stars": 24,
+      "pushed_at": "2026-02-26T13:14:26Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": "https://authy.scotares.com"
+    },
+    {
+      "full_name": "microsoft/PAX",
+      "html_url": "https://github.com/microsoft/PAX",
+      "description": "Portable Audit eXporter (PAX) Solution: Enterprise-grade tools for Microsoft 365 audit logs analysis. Export and process Copilot and M365 apps usage data from multiple audit log sources.",
+      "stars": 21,
+      "pushed_at": "2026-07-31T16:30:55Z",
+      "language": "PowerShell",
+      "license_spdx_id": "MIT",
+      "homepage": "https://aka.ms/PAXapp"
+    },
+    {
+      "full_name": "doable-me/Doable",
+      "html_url": "https://github.com/doable-me/Doable",
+      "description": "The self-hosted, multi-tenant AI app builder for teams. Sandboxed, audit-logged, MIT-licensed. The open-source alternative to Multi-Tenant Saas buiders.",
+      "stars": 21,
+      "pushed_at": "2026-07-21T16:09:09Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://doable.me"
+    },
+    {
+      "full_name": "agentkitai/agentlens",
+      "html_url": "https://github.com/agentkitai/agentlens",
+      "description": "Open-source observability and audit trail platform for AI agents. MCP-native, tamper-evident event logging, real-time dashboard.",
+      "stars": 20,
+      "pushed_at": "2026-08-16T17:12:40Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://agentkitai.github.io/agentlens/"
+    }
+  ]
+}

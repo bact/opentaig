@@ -1,0 +1,27 @@
+{
+  "keyword": "AI forecasting benchmark",
+  "query": "AI forecasting benchmark stars:>19 pushed:>2025-08-17 archived:false fork:false",
+  "count": 2,
+  "repos": [
+    {
+      "full_name": "john-rocky/coreai-model-zoo",
+      "html_url": "https://github.com/john-rocky/coreai-model-zoo",
+      "description": "Community model zoo for Apple Core AI (iOS/macOS 27): 62 models \u2014 LLM, VLM, OCR, ASR, TTS, image/video/music gen, forecasting \u2014 each gated against its source model and shipped with the recipe that produced it. Downloadable from Hugging Face, runnable in one line of Swift via CoreAIKit. Plus benchmarks, Metal kernels, knowledge base.",
+      "stars": 386,
+      "pushed_at": "2026-08-17T05:21:31Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://john-rocky.github.io/coreai-model-zoo/"
+    },
+    {
+      "full_name": "TongjiFinLab/FinTSB",
+      "html_url": "https://github.com/TongjiFinLab/FinTSB",
+      "description": "PyTorch Implementation of \"FinTSB: A Comprehensive and Practical Benchmark for Financial Time Series Forecasting\" (FCS & ICAIF 2025 Workshop Best Paper)",
+      "stars": 131,
+      "pushed_at": "2025-08-22T07:35:22Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    }
+  ]
+}

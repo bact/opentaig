@@ -1,0 +1,47 @@
+{
+  "keyword": "topic:model-registry",
+  "query": "topic:model-registry stars:>19 pushed:>2025-08-17 archived:false fork:false",
+  "count": 4,
+  "repos": [
+    {
+      "full_name": "matrixhub-ai/matrixhub",
+      "html_url": "https://github.com/matrixhub-ai/matrixhub",
+      "description": "An Open-source, self-hosted AI model hub with Hugging Face compatibility, accelerating vLLM/SGLang performance.",
+      "stars": 265,
+      "pushed_at": "2026-08-17T09:41:38Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://matrixhub.ai"
+    },
+    {
+      "full_name": "iterative/gto",
+      "html_url": "https://github.com/iterative/gto",
+      "description": "\ud83c\udff7\ufe0f Git Tag Ops. Turn your Git repository into Artifact Registry or Model Registry.",
+      "stars": 161,
+      "pushed_at": "2026-08-15T05:49:36Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://dvc.org/doc/gto"
+    },
+    {
+      "full_name": "flyingriverhorse/Skyulf",
+      "html_url": "https://github.com/flyingriverhorse/Skyulf",
+      "description": "Build ML pipelines you can trust \u2014 visually on a canvas or in Python. Self-hosted platform + Apache-2.0 library. Catches data leakage, keeps scores honest, and takes you from raw data to monitored model.",
+      "stars": 47,
+      "pushed_at": "2026-08-16T17:04:29Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://www.skyulf.com/"
+    },
+    {
+      "full_name": "truefoundry/models",
+      "html_url": "https://github.com/truefoundry/models",
+      "description": "Community-maintained registry of AI/LLM model configurations - pricing, features, and limits across 19 providers and 1000+ models",
+      "stars": 32,
+      "pushed_at": "2026-08-17T00:09:19Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.truefoundry.com/models"
+    }
+  ]
+}
