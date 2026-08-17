@@ -1732,3 +1732,17 @@ ndb796/MachineUnlearning,accept,,,Apache-2.0,osi-approved,Modification Resistanc
 AI-secure/aug-pe,accept,,,Apache-2.0,osi-approved,Modification Resistance and Unlearning,topic:differential-privacy,61,2026-08-17T16:20:34+00:00
 tiktok-privacy-innovation/PrivacyGo,reject,not-relevant,Does not provide direct mechanisms for candidate RQs,Apache-2.0,osi-approved,Modification Resistance and Unlearning,topic:differential-privacy,167,2026-08-17T16:20:34+00:00
 sisaman/GAP,accept,,,CC0-1.0,free-not-osi,Modification Resistance and Unlearning,topic:differential-privacy,50,2026-08-17T16:20:34+00:00
+lowRISC/opentitan,accept,,,Apache-2.0,osi-approved,Hardware-Level Enforcement and On-Chip Controls,open source root of trust,3598,2026-08-17T17:24:09+00:00
+facebookincubator/dynolog,accept,,,MIT,osi-approved,Hardware-Level Enforcement and On-Chip Controls,GPU telemetry monitoring,380,2026-08-17T17:24:09+00:00
+ROCm/omnistat,accept,,,MIT,osi-approved,Hardware-Level Enforcement and On-Chip Controls,GPU telemetry monitoring,26,2026-08-17T17:24:09+00:00
+Penglai-Enclave/Penglai-Enclave-sPMP,accept,,,NOASSERTION,source-available,Hardware-Level Enforcement and On-Chip Controls,RISC-V secure enclave,148,2026-08-17T17:24:09+00:00
+Tribler/software-based-PUF,accept,,,GPL-3.0,osi-approved,Hardware-Level Enforcement and On-Chip Controls,topic:puf,106,2026-08-17T17:24:09+00:00
+xtncl/esp32-sram-puf-authentication,accept,,,MIT,osi-approved,Hardware-Level Enforcement and On-Chip Controls,physical unclonable function,48,2026-08-17T17:24:09+00:00
+cc-api/evidence-api,accept,,,Apache-2.0,osi-approved,Hardware-Level Enforcement and On-Chip Controls,topic:trusted-computing,38,2026-08-17T17:24:09+00:00
+ChairImpSec/PROLEAD,accept,,,BSD-3-Clause,osi-approved,Hardware-Level Enforcement and On-Chip Controls,topic:side-channel-attacks,44,2026-08-17T17:24:09+00:00
+microwalk-project/Microwalk,accept,,,MIT,osi-approved,Hardware-Level Enforcement and On-Chip Controls,topic:side-channel-attacks,86,2026-08-17T17:24:09+00:00
+Ledger-Donjon/rainbow,accept,,,LGPL-3.0,osi-approved,Hardware-Level Enforcement and On-Chip Controls,topic:side-channel-attacks,200,2026-08-17T17:24:09+00:00
+timmclean/rust-timing-shield,accept,,,MIT,osi-approved,Hardware-Level Enforcement and On-Chip Controls,topic:side-channel-attacks,59,2026-08-17T17:24:09+00:00
+Freax13/mushroom,accept,,,AGPL-3.0,osi-approved,Hardware-Level Enforcement and On-Chip Controls,trusted execution environment hardware,44,2026-08-17T17:24:09+00:00
+Foxboron/ssh-tpm-ca-authority,accept,,,MIT,osi-approved,Hardware-Level Enforcement and On-Chip Controls,topic:tpm,62,2026-08-17T17:24:09+00:00
+brandsimon/verity-squash-root,accept,,,MIT,osi-approved,Hardware-Level Enforcement and On-Chip Controls,topic:secure-boot,29,2026-08-17T17:24:09+00:00

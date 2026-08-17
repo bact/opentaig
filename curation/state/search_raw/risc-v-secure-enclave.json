@@ -1,0 +1,17 @@
+{
+  "keyword": "RISC-V secure enclave",
+  "query": "RISC-V secure enclave stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "Penglai-Enclave/Penglai-Enclave-sPMP",
+      "html_url": "https://github.com/Penglai-Enclave/Penglai-Enclave-sPMP",
+      "description": "Penglai Enclave is an open-sourced, secure and scalable TEE system for RISC-V.",
+      "stars": 148,
+      "pushed_at": "2025-03-05T02:19:33Z",
+      "language": "C",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    }
+  ]
+}

@@ -66,6 +66,8 @@ from pathlib import Path
 
 import requests
 
+csv.field_size_limit(sys.maxsize)
+
 GITHUB_API = "https://api.github.com"
 DEFAULT_MIN_STARS = 19  # query is stars:>19, i.e. 20 or more
 DEFAULT_PUSHED_AFTER_DATE = "2022-01-01"

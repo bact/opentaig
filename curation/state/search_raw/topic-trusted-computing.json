@@ -1,14 +1,24 @@
 {
   "keyword": "topic:trusted-computing",
-  "query": "topic:trusted-computing stars:>19 pushed:>2025-08-07 archived:false fork:false",
-  "count": 8,
+  "query": "topic:trusted-computing stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 11,
   "repos": [
+    {
+      "full_name": "gov4git/gov4git",
+      "html_url": "https://github.com/gov4git/gov4git",
+      "description": "Decentralized governance for Git communities",
+      "stars": 216,
+      "pushed_at": "2024-05-19T05:59:57Z",
+      "language": "Go",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://gov4git.org"
+    },
     {
       "full_name": "IBM/ACE-RISCV",
       "html_url": "https://github.com/IBM/ACE-RISCV",
       "description": "Assured confidential execution (ACE) implements VM-based trusted execution environment (TEE) for embedded RISC-V systems with focus on a formally verified and auditable firmware.",
-      "stars": 212,
-      "pushed_at": "2026-08-07T05:09:48Z",
+      "stars": 213,
+      "pushed_at": "2026-08-17T06:51:47Z",
       "language": "Rust",
       "license_spdx_id": "Apache-2.0",
       "homepage": ""
@@ -18,7 +28,7 @@
       "html_url": "https://github.com/nsacyber/HIRS",
       "description": "Trusted Computing based services supporting TPM provisioning and supply chain validation concepts. #nsacyber",
       "stars": 212,
-      "pushed_at": "2026-08-06T21:56:05Z",
+      "pushed_at": "2026-08-13T21:29:56Z",
       "language": "JavaScript",
       "license_spdx_id": "NOASSERTION",
       "homepage": ""
@@ -38,7 +48,7 @@
       "html_url": "https://github.com/nsacyber/paccor",
       "description": "The Platform Attribute Certificate Creator can gather component details, create, sign, and validate the TCG-defined Platform Certificate. #nsacyber",
       "stars": 78,
-      "pushed_at": "2026-08-06T16:56:22Z",
+      "pushed_at": "2026-08-10T12:33:19Z",
       "language": "Java",
       "license_spdx_id": "Apache-2.0",
       "homepage": "https://github.com/nsacyber/HIRS"
@@ -58,7 +68,7 @@
       "html_url": "https://github.com/riscv/riscv-smmtt",
       "description": "This specification will define the RISC-V privilege ISA extensions required to support Supervisor Domain isolation for multi-tenant security use cases e.g. confidential-computing, trusted platform services, fault isolation and so on.",
       "stars": 73,
-      "pushed_at": "2026-08-03T15:43:24Z",
+      "pushed_at": "2026-08-17T10:35:43Z",
       "language": "Makefile",
       "license_spdx_id": "CC-BY-4.0",
       "homepage": "https://riscv.atlassian.net/browse/RVG-65"
@@ -67,11 +77,21 @@
       "full_name": "skalenetwork/sgxwallet",
       "html_url": "https://github.com/skalenetwork/sgxwallet",
       "description": "sgxwallet is the first-ever opensource high-performance hardware secure crypto wallet that is based on Intel SGX technology.  First opensource product on Intel SGX whitelist. Scales to 100,000+ transactions per second. Currently supports ETH and SKALE, and will support BTC in the future.  Sgxwallet is under heavy development and use by SKALE network.",
-      "stars": 68,
-      "pushed_at": "2026-08-05T12:49:24Z",
+      "stars": 69,
+      "pushed_at": "2026-08-13T16:52:28Z",
       "language": "Shell",
       "license_spdx_id": "AGPL-3.0",
       "homepage": "https://skale.network"
+    },
+    {
+      "full_name": "cc-api/evidence-api",
+      "html_url": "https://github.com/cc-api/evidence-api",
+      "description": "Unified API to Access TCG Compliant measurement, event log, quote in Confidential Computing Environment.",
+      "stars": 38,
+      "pushed_at": "2024-11-06T21:29:44Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
     },
     {
       "full_name": "salrashid123/go_tpm_https_embed",
@@ -79,6 +99,16 @@
       "description": "TPM based mTLS",
       "stars": 21,
       "pushed_at": "2025-09-19T13:46:53Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "jeremyhahn/go-trusted-platform",
+      "html_url": "https://github.com/jeremyhahn/go-trusted-platform",
+      "description": "Platform software for Trusted Computing - TPM 2.0, Certificate Authority, and Web Services required to perform Local and Remote Attestation, provision, deploy, manage, and secure connected devices and networks at scale.",
+      "stars": 21,
+      "pushed_at": "2025-04-07T02:59:12Z",
       "language": "Go",
       "license_spdx_id": "Apache-2.0",
       "homepage": ""

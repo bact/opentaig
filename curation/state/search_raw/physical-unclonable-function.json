@@ -1,0 +1,17 @@
+{
+  "keyword": "physical unclonable function",
+  "query": "physical unclonable function stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "xtncl/esp32-sram-puf-authentication",
+      "html_url": "https://github.com/xtncl/esp32-sram-puf-authentication",
+      "description": "Hardware-based authentication using SRAM Physical Unclonable Functions (PUF) on ESP32 microcontrollers. Research-based PoC with 44,778 measurements across 16 devices over 6 months.",
+      "stars": 48,
+      "pushed_at": "2025-10-08T22:32:08Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}

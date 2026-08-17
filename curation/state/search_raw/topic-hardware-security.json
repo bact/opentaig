@@ -1,15 +1,15 @@
 {
   "keyword": "topic:hardware-security",
-  "query": "topic:hardware-security stars:>19 pushed:>2025-07-29 archived:false fork:false",
-  "count": 13,
+  "query": "topic:hardware-security stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 16,
   "repos": [
     {
       "full_name": "google/mantis",
       "html_url": "https://github.com/google/mantis",
       "description": "A modular, stack-agnostic toolkit of security review skills for AI coding agents to autonomously find, reproduce, and patch vulnerabilities.",
-      "stars": 592,
-      "pushed_at": "2026-07-25T20:24:33Z",
-      "language": "",
+      "stars": 754,
+      "pushed_at": "2026-08-17T15:04:15Z",
+      "language": "Python",
       "license_spdx_id": "Apache-2.0",
       "homepage": "https://cloud.google.com/"
     },
@@ -17,18 +17,28 @@
       "full_name": "GainSec/AutoProber",
       "html_url": "https://github.com/GainSec/AutoProber",
       "description": "Hardware hacker\u2019s flying probe automation stack for agent-driven   target discovery, microscope mapping, safety-monitored CNC motion, probe review, and   controlled pin probing.",
-      "stars": 317,
+      "stars": 324,
       "pushed_at": "2026-04-16T06:18:50Z",
       "language": "Python",
       "license_spdx_id": "NOASSERTION",
       "homepage": "https://gainsec.com"
     },
     {
+      "full_name": "JLospinoso/beamgun",
+      "html_url": "https://github.com/JLospinoso/beamgun",
+      "description": "Windows utility for detecting and defeating rogue USB devices.",
+      "stars": 188,
+      "pushed_at": "2022-06-22T16:05:23Z",
+      "language": "C#",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://jlospinoso.github.io/beamgun/"
+    },
+    {
       "full_name": "Infineon/optiga-trust-m",
       "html_url": "https://github.com/Infineon/optiga-trust-m",
       "description": "OPTIGA\u2122 Trust M Host Library for C",
       "stars": 142,
-      "pushed_at": "2026-07-17T09:28:30Z",
+      "pushed_at": "2026-08-17T08:25:46Z",
       "language": "C",
       "license_spdx_id": "MIT",
       "homepage": "https://infineon.github.io/optiga-trust-m/"
@@ -44,52 +54,52 @@
       "homepage": ""
     },
     {
+      "full_name": "0dayInc/pwn",
+      "html_url": "https://github.com/0dayInc/pwn",
+      "description": "PWN is an open security automation framework that aims to stand on the shoulders of security giants, promoting trust and innovation.",
+      "stars": 75,
+      "pushed_at": "2026-08-17T03:38:53Z",
+      "language": "Ruby",
+      "license_spdx_id": "MIT",
+      "homepage": "https://github.com/0dayinc/pwn"
+    },
+    {
       "full_name": "comsec-group/phoenix",
       "html_url": "https://github.com/comsec-group/phoenix",
       "description": "Artifacts for \"Phoenix: Rowhammer Attacks on DDR5 with Self-Correcting Synchronization\" (IEEE S&P '26)",
-      "stars": 75,
+      "stars": 74,
       "pushed_at": "2026-05-14T19:57:38Z",
       "language": "Python",
       "license_spdx_id": "GPL-3.0",
       "homepage": "https://comsec.ethz.ch/phoenix"
     },
     {
-      "full_name": "0dayInc/pwn",
-      "html_url": "https://github.com/0dayInc/pwn",
-      "description": "PWN is an open security automation framework that aims to stand on the shoulders of security giants, promoting trust and innovation.",
-      "stars": 73,
-      "pushed_at": "2026-07-27T15:10:48Z",
-      "language": "Ruby",
-      "license_spdx_id": "MIT",
-      "homepage": "https://github.com/0dayinc/pwn"
-    },
-    {
       "full_name": "yogsec/Hardware-Hacking-Tools",
       "html_url": "https://github.com/yogsec/Hardware-Hacking-Tools",
       "description": "Lists various tools used in hardware hacking.",
-      "stars": 41,
+      "stars": 44,
       "pushed_at": "2026-07-28T15:54:57Z",
       "language": "",
       "license_spdx_id": "MIT",
       "homepage": "https://linktr.ee/abhinavsingwal"
     },
     {
-      "full_name": "b0tacc0unt9952-hub/heino-dma-mitm-bypass-disclosure-riot-fail",
-      "html_url": "https://github.com/b0tacc0unt9952-hub/heino-dma-mitm-bypass-disclosure-riot-fail",
-      "description": "Redacted research on Thunderbolt PCIe DMA bypass via firmware spoofing and commodity adapters. Privately disclosed to Riot Games (HackerOne #35330606) on Jan 29, 2026. Closed ineligible as \"physical facilities\" after 6 days with no human response. Shared defensively to help anticheat teams strengthen hardware protections against cheating.",
-      "stars": 30,
-      "pushed_at": "2026-04-11T16:39:07Z",
-      "language": "",
+      "full_name": "larrylart/blue_keyboard",
+      "html_url": "https://github.com/larrylart/blue_keyboard",
+      "description": "Secure cross-platform USB HID keyboard dongle that types passwords and text from Android and iOS apps into any computer or console, without exposing secrets to the host.",
+      "stars": 32,
+      "pushed_at": "2026-01-23T14:09:00Z",
+      "language": "C++",
       "license_spdx_id": "MIT",
       "homepage": ""
     },
     {
-      "full_name": "larrylart/blue_keyboard",
-      "html_url": "https://github.com/larrylart/blue_keyboard",
-      "description": "Secure cross-platform USB HID keyboard dongle that types passwords and text from Android and iOS apps into any computer or console, without exposing secrets to the host.",
-      "stars": 30,
-      "pushed_at": "2026-01-23T14:09:00Z",
-      "language": "C++",
+      "full_name": "b0tacc0unt9952-hub/heino-dma-mitm-bypass-disclosure-riot-fail",
+      "html_url": "https://github.com/b0tacc0unt9952-hub/heino-dma-mitm-bypass-disclosure-riot-fail",
+      "description": "Redacted research on Thunderbolt PCIe DMA bypass via firmware spoofing and commodity adapters. Privately disclosed to Riot Games (HackerOne #35330606) on Jan 29, 2026. Closed ineligible as \"physical facilities\" after 6 days with no human response. Shared defensively to help anticheat teams strengthen hardware protections against cheating.",
+      "stars": 31,
+      "pushed_at": "2026-04-11T16:39:07Z",
+      "language": "",
       "license_spdx_id": "MIT",
       "homepage": ""
     },
@@ -104,6 +114,16 @@
       "homepage": "https://guardyn.co"
     },
     {
+      "full_name": "Cypherock/emfi-board",
+      "html_url": "https://github.com/Cypherock/emfi-board",
+      "description": "Cypherock EMFI device is a low-cost tool to induce electromagnetic fault injections on general purpose MCUs and SOCs to study various chip level attack vectors",
+      "stars": 26,
+      "pushed_at": "2024-01-06T14:33:09Z",
+      "language": "C",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
       "full_name": "iisys-sns/FlippyRAM",
       "html_url": "https://github.com/iisys-sns/FlippyRAM",
       "description": "FlippyRAM is an automated framework for testing and analyzing Rowhammer vulnerabilities in DRAM. It combines rowhammer tools and supports both Docker and ISO-based execution, making it a powerful resource for hardware security research.",
@@ -114,6 +134,26 @@
       "homepage": "https://flippyr.am"
     },
     {
+      "full_name": "Ringmast4r/RF-Protocol-Database",
+      "html_url": "https://github.com/Ringmast4r/RF-Protocol-Database",
+      "description": "The largest open-source unified Sub-GHz RF device protocol database. 425 protocols across 40 categories.",
+      "stars": 25,
+      "pushed_at": "2026-04-08T10:24:10Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "Coloquinte/moosic-yosys-plugin",
+      "html_url": "https://github.com/Coloquinte/moosic-yosys-plugin",
+      "description": "Yosys plugin for logic locking and supply-chain security",
+      "stars": 24,
+      "pushed_at": "2025-04-05T10:59:55Z",
+      "language": "C++",
+      "license_spdx_id": "GPL-2.0",
+      "homepage": ""
+    },
+    {
       "full_name": "TurtlPass/turtlpass-firmware-arduino",
       "html_url": "https://github.com/TurtlPass/turtlpass-firmware-arduino",
       "description": "\ud83d\udc22 The hardware heart of TurtlPass \u2014 firmware for passwords born in hardware, offline and reproducible (RP2040 / RP2350).",
@@ -121,16 +161,6 @@
       "pushed_at": "2025-12-11T04:21:52Z",
       "language": "C++",
       "license_spdx_id": "GPL-3.0",
-      "homepage": ""
-    },
-    {
-      "full_name": "Ringmast4r/RF-Protocol-Database",
-      "html_url": "https://github.com/Ringmast4r/RF-Protocol-Database",
-      "description": "The largest open-source unified Sub-GHz RF device protocol database. 425 protocols across 40 categories.",
-      "stars": 20,
-      "pushed_at": "2026-04-08T10:24:10Z",
-      "language": "Python",
-      "license_spdx_id": "",
       "homepage": ""
     }
   ]

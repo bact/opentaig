@@ -1,0 +1,67 @@
+{
+  "keyword": "topic:anti-tamper",
+  "query": "topic:anti-tamper stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 6,
+  "repos": [
+    {
+      "full_name": "vxlang/vxlang-page",
+      "html_url": "https://github.com/vxlang/vxlang-page",
+      "description": "protector & obfuscator & code virtualizer",
+      "stars": 769,
+      "pushed_at": "2026-08-05T09:02:04Z",
+      "language": "C++",
+      "license_spdx_id": "",
+      "homepage": "https://vxlang.github.io/"
+    },
+    {
+      "full_name": "donnaskiez/ac",
+      "html_url": "https://github.com/donnaskiez/ac",
+      "description": "kernel mode anti cheat",
+      "stars": 676,
+      "pushed_at": "2024-08-04T06:34:55Z",
+      "language": "C",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "AdvDebug/AntiCrack-DotNet",
+      "html_url": "https://github.com/AdvDebug/AntiCrack-DotNet",
+      "description": ".NET Project containing plenty of advanced techniques to detect various types of malicious actions on your software, with syscall support.",
+      "stars": 357,
+      "pushed_at": "2025-07-19T22:28:02Z",
+      "language": "C#",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "sfr-development/Lua-Obfuscator-Clyde-Protection",
+      "html_url": "https://github.com/sfr-development/Lua-Obfuscator-Clyde-Protection",
+      "description": "Advanced Luau / Lua Obfuscator - VM-based code protection, string encoding, control flow scrambling for Roblox scripts",
+      "stars": 40,
+      "pushed_at": "2026-06-01T11:52:36Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "AlSch092/UltimateDRM",
+      "html_url": "https://github.com/AlSch092/UltimateDRM",
+      "description": "DRM Library for Windows (x64) in C++",
+      "stars": 32,
+      "pushed_at": "2025-10-15T00:00:36Z",
+      "language": "C++",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "nelj14/themida-dumper",
+      "html_url": "https://github.com/nelj14/themida-dumper",
+      "description": "Generic Themida/WinLicense payload extractor. Launches protected PE as suspended process, detects section decryption, dumps unpacked binary with fixed headers, and scans process memory for IOCs. Supports EXE and DLL targets (x86/x64).",
+      "stars": 23,
+      "pushed_at": "2026-04-18T17:15:11Z",
+      "language": "C",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}
