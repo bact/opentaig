@@ -625,8 +625,9 @@ a.chip-license:hover { text-decoration: underline; text-decoration-color: curren
 .tool-chips { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .tool-detail-summary { font-size: var(--text-md); line-height: var(--leading-body); color: var(--ink-2); margin: 0 0 var(--s-4); }
 
-.tool-doc-checklist { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--s-2); margin: var(--s-4) 0; }
-.tool-doc-checklist-label { font-size: var(--text-xs); font-weight: 500; color: var(--ink-3); margin-right: 2px; }
+.tool-doc-checklist { display: flex; align-items: baseline; gap: var(--s-2); margin: var(--s-4) 0; }
+.tool-doc-checklist-label { font-size: var(--text-xs); font-weight: 500; color: var(--ink-3); margin-right: 2px; white-space: nowrap; flex-shrink: 0; }
+.tool-doc-checklist-chips { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--s-2); min-width: 0; flex: 1; }
 .tool-funder { color: var(--ink-3); font-size: var(--text-sm); margin: 0 0 var(--s-4); }
 
 .problem-pager {

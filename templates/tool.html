@@ -49,26 +49,28 @@
      worth flagging by their absence. #}
   <div class="tool-doc-checklist">
     <span class="tool-doc-checklist-label">Resources &amp; governance:</span>
-    {% for label, url in [
-      ("Homepage", tool.homepage),
-      ("Source", tool.source),
-      ("Documentation", tool.documentation),
-      ("README", tool.readme_url),
-      ("Licence file", tool.license_url),
-      ("Contributing guide", tool.contributing_url),
-      ("Code of conduct", tool.code_of_conduct_url),
-      ("Security policy", tool.security_policy_url),
-      ("Governance", tool.governance_url),
-      ("Funding", tool.funding),
-    ] %}
-      {% if url %}
-      <a class="chip chip-doc-present" href="{{ url }}">{{ label }}</a>
-      {% else %}
-      <span class="chip chip-doc-missing">{{ label }}<span class="visually-hidden"> (not published)</span></span>
-      {% endif %}
-    {% endfor %}
-    {% if tool.sbom_url %}<a class="chip chip-doc-present" href="{{ tool.sbom_url }}">SBOM</a>{% endif %}
-    {% if tool.paper_url %}<a class="chip chip-doc-present" href="{{ tool.paper_url }}">Academic paper</a>{% endif %}
+    <div class="tool-doc-checklist-chips">
+      {% for label, url in [
+        ("Homepage", tool.homepage),
+        ("Source", tool.source),
+        ("Documentation", tool.documentation),
+        ("README", tool.readme_url),
+        ("Licence file", tool.license_url),
+        ("Contributing guide", tool.contributing_url),
+        ("Code of conduct", tool.code_of_conduct_url),
+        ("Security policy", tool.security_policy_url),
+        ("Governance", tool.governance_url),
+        ("Funding", tool.funding),
+      ] %}
+        {% if url %}
+        <a class="chip chip-doc-present" href="{{ url }}">{{ label }}</a>
+        {% else %}
+        <span class="chip chip-doc-missing">{{ label }}<span class="visually-hidden"> (not published)</span></span>
+        {% endif %}
+      {% endfor %}
+      {% if tool.sbom_url %}<a class="chip chip-doc-present" href="{{ tool.sbom_url }}">SBOM</a>{% endif %}
+      {% if tool.paper_url %}<a class="chip chip-doc-present" href="{{ tool.paper_url }}">Academic paper</a>{% endif %}
+    </div>
   </div>
   {% if tool.funder %}<p class="tool-funder">Funded by {{ tool.funder }}</p>{% endif %}
 
