@@ -1,0 +1,287 @@
+{
+  "keyword": "topic:llm-safety",
+  "query": "topic:llm-safety stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 28,
+  "repos": [
+    {
+      "full_name": "NVIDIA-NeMo/Guardrails",
+      "html_url": "https://github.com/NVIDIA-NeMo/Guardrails",
+      "description": "NeMo Guardrails is an open-source toolkit for easily adding programmable guardrails to LLM-based conversational systems.",
+      "stars": 6966,
+      "pushed_at": "2026-08-17T14:48:35Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://docs.nvidia.com/nemo/guardrails/latest/index.html"
+    },
+    {
+      "full_name": "confident-ai/deepteam",
+      "html_url": "https://github.com/confident-ai/deepteam",
+      "description": "DeepTeam is a framework to red team LLMs and AI agents.",
+      "stars": 2451,
+      "pushed_at": "2026-08-12T19:15:34Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://trydeepteam.com"
+    },
+    {
+      "full_name": "cvs-health/uqlm",
+      "html_url": "https://github.com/cvs-health/uqlm",
+      "description": "[JMLR 2026] \"UQLM: A Python Package for Uncertainty Quantification in Large Language Models\"",
+      "stars": 1191,
+      "pushed_at": "2026-08-13T02:00:52Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cvs-health.github.io/uqlm/latest/index.html"
+    },
+    {
+      "full_name": "chrisliu298/awesome-llm-unlearning",
+      "html_url": "https://github.com/chrisliu298/awesome-llm-unlearning",
+      "description": "A resource repository for machine unlearning in large language models",
+      "stars": 623,
+      "pushed_at": "2026-08-06T09:51:49Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "BlueFalconHD/apple_generative_model_safety_decrypted",
+      "html_url": "https://github.com/BlueFalconHD/apple_generative_model_safety_decrypted",
+      "description": "Decrypted Generative Model safety files for Apple Intelligence containing filters",
+      "stars": 316,
+      "pushed_at": "2026-07-19T23:21:26Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "YutoTerashima/agent-safety-eval-lab",
+      "html_url": "https://github.com/YutoTerashima/agent-safety-eval-lab",
+      "description": "Agent trace and tool-use safety evaluation lab.",
+      "stars": 311,
+      "pushed_at": "2026-05-02T07:32:14Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "HeadyZhang/agent-audit",
+      "html_url": "https://github.com/HeadyZhang/agent-audit",
+      "description": "Static security scanner for LLM agents \u2014 prompt injection, MCP config auditing, taint analysis. 51 rules mapped to OWASP Agentic Top 10 (2026). Works with LangChain, CrewAI, AutoGen.",
+      "stars": 219,
+      "pushed_at": "2026-07-04T17:45:25Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://headyzhang.github.io/agent-audit/"
+    },
+    {
+      "full_name": "CryptoAILab/JailbreakEval",
+      "html_url": "https://github.com/CryptoAILab/JailbreakEval",
+      "description": "[NDSS'25 Best Technical Poster] A collection of automated evaluators for assessing jailbreak attempts.",
+      "stars": 194,
+      "pushed_at": "2025-04-01T09:58:58Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://arxiv.org/abs/2406.09321"
+    },
+    {
+      "full_name": "Libr-AI/OpenRedTeaming",
+      "html_url": "https://github.com/Libr-AI/OpenRedTeaming",
+      "description": "Papers about red teaming LLMs and Multimodal models.",
+      "stars": 176,
+      "pushed_at": "2026-07-14T15:40:55Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "PKU-YuanGroup/Hallucination-Attack",
+      "html_url": "https://github.com/PKU-YuanGroup/Hallucination-Attack",
+      "description": "Attack to induce LLMs within hallucinations",
+      "stars": 163,
+      "pushed_at": "2024-05-17T08:48:15Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "http://arxiv.org/abs/2310.01469"
+    },
+    {
+      "full_name": "open-bias/open-bias",
+      "html_url": "https://github.com/open-bias/open-bias",
+      "description": "Open Source Reliability Harness: Make your agents follow rules. One line of code to\u200e \u200eenforce, trace, and improve. \u200e \u200e",
+      "stars": 137,
+      "pushed_at": "2026-05-23T05:54:44Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.openbias.dev"
+    },
+    {
+      "full_name": "SantanderAI/autoguardrails",
+      "html_url": "https://github.com/SantanderAI/autoguardrails",
+      "description": "Alignment-research scaffold (autoresearch-style) for LLM guardrails: search over a single policy.md surface",
+      "stars": 130,
+      "pushed_at": "2026-08-01T04:13:31Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/SantanderAI"
+    },
+    {
+      "full_name": "EzgiKorkmaz/adversarial-reinforcement-learning",
+      "html_url": "https://github.com/EzgiKorkmaz/adversarial-reinforcement-learning",
+      "description": "Reading list for adversarial perspective and robustness in deep reinforcement learning.",
+      "stars": 129,
+      "pushed_at": "2026-03-02T15:48:10Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "x-zheng16/Awesome-Embodied-AI-Safety",
+      "html_url": "https://github.com/x-zheng16/Awesome-Embodied-AI-Safety",
+      "description": "Safety in Embodied AI: A Survey of Risks, Attacks, and Defenses | 500+ Papers | Perception, Cognition, Planning, Interaction, Agentic System",
+      "stars": 128,
+      "pushed_at": "2026-08-17T07:14:02Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://x-zheng16.github.io/Awesome-Embodied-AI-Safety/"
+    },
+    {
+      "full_name": "mturac/promptguard",
+      "html_url": "https://github.com/mturac/promptguard",
+      "description": "Offline prompt-contract auditor for Hermes, Claude Code, Codex, OpenCode & OpenClaw. Pre-write guard before agents ship vague code. Zero deps. No model API.",
+      "stars": 82,
+      "pushed_at": "2026-07-22T19:19:17Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://github.com/mturac/promptguard"
+    },
+    {
+      "full_name": "Buyun-Liang/SECA",
+      "html_url": "https://github.com/Buyun-Liang/SECA",
+      "description": "[NeurIPS 2025] SECA: Semantically Equivalent and Coherent Attacks for Eliciting LLM Hallucinations",
+      "stars": 72,
+      "pushed_at": "2025-12-10T23:35:46Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://huggingface.co/spaces/byliang/SECA"
+    },
+    {
+      "full_name": "js-lee-AI/awesome-llm-agent-papers",
+      "html_url": "https://github.com/js-lee-AI/awesome-llm-agent-papers",
+      "description": "A curated, continuously updated reading list of 200+ papers on LLM agents: planning, memory, tool use, multi-agent, evaluation & safety. Companion to the survey 'LLM Agents: A Survey'.",
+      "stars": 64,
+      "pushed_at": "2026-08-12T18:18:11Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Babelscape/ALERT",
+      "html_url": "https://github.com/Babelscape/ALERT",
+      "description": "Official repository for the paper \"ALERT: A Comprehensive Benchmark for Assessing Large Language Models\u2019 Safety through Red Teaming\"",
+      "stars": 59,
+      "pushed_at": "2024-09-20T08:29:57Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://arxiv.org/abs/2404.08676"
+    },
+    {
+      "full_name": "hermes-labs-ai/lintlang",
+      "html_url": "https://github.com/hermes-labs-ai/lintlang",
+      "description": "Static analysis for AI agent configs, tool descriptions, and system prompts \u2014 catches vague tool descriptions, missing stop conditions, and schema gaps before they reach runtime. Zero-LLM, deterministic checks, built for CI.",
+      "stars": 59,
+      "pushed_at": "2026-08-15T08:22:28Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://hermes-labs.ai"
+    },
+    {
+      "full_name": "QWED-AI/qwed-verification",
+      "html_url": "https://github.com/QWED-AI/qwed-verification",
+      "description": "Open-source AI verification infrastructure for deterministic verification of LLM outputs, tool calls, code, schemas, and agent state before production execution.",
+      "stars": 57,
+      "pushed_at": "2026-08-17T02:59:38Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.qwedai.com/"
+    },
+    {
+      "full_name": "dapurv5/awesome-red-teaming-llms",
+      "html_url": "https://github.com/dapurv5/awesome-red-teaming-llms",
+      "description": "Papers from our SoK on Red-Teaming (Accepted at TMLR)",
+      "stars": 46,
+      "pushed_at": "2026-08-05T04:07:28Z",
+      "language": "",
+      "license_spdx_id": "CC-BY-4.0",
+      "homepage": "https://arxiv.org/abs/2407.14937"
+    },
+    {
+      "full_name": "poloclub/llm-landscape",
+      "html_url": "https://github.com/poloclub/llm-landscape",
+      "description": "NeurIPS'24 - LLM Safety Landscape",
+      "stars": 40,
+      "pushed_at": "2025-10-21T13:49:05Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://shengyun-peng.github.io/papers/llm-safety-landscape"
+    },
+    {
+      "full_name": "yihedeng9/DuoGuard",
+      "html_url": "https://github.com/yihedeng9/DuoGuard",
+      "description": "DuoGuard: A Two-Player RL-Driven Framework for Multilingual LLM Guardrails",
+      "stars": 34,
+      "pushed_at": "2025-02-26T04:37:12Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "declare-lab/resta",
+      "html_url": "https://github.com/declare-lab/resta",
+      "description": "Restore safety in fine-tuned language models through task arithmetic",
+      "stars": 33,
+      "pushed_at": "2024-03-28T11:58:42Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "Buyun-Liang/REALISTA",
+      "html_url": "https://github.com/Buyun-Liang/REALISTA",
+      "description": "[ICML 2026] REALISTA: Realistic Latent Adversarial Attacks that Elicit LLM Hallucinations",
+      "stars": 30,
+      "pushed_at": "2026-07-06T23:25:39Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "ant-research/awesome-mllm-guardrails",
+      "html_url": "https://github.com/ant-research/awesome-mllm-guardrails",
+      "description": "A curated list of LLM/MLLM guardrails, safety benchmarks, guard models, jailbreak attacks, moderation datasets, and evaluation tools.",
+      "stars": 25,
+      "pushed_at": "2026-08-14T08:55:11Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "baixianghuang/editing-attack",
+      "html_url": "https://github.com/baixianghuang/editing-attack",
+      "description": "Code and dataset for the paper: \"Can Editing LLMs Inject Harm?\" [AAAI'26]",
+      "stars": 21,
+      "pushed_at": "2025-12-26T04:01:03Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://llm-editing.github.io"
+    },
+    {
+      "full_name": "Virtue-Research/guard-eval-harness",
+      "html_url": "https://github.com/Virtue-Research/guard-eval-harness",
+      "description": "One command to benchmark AI guardrails and coding agents across safety, security, jailbreak, prompt-injection, and secure-code tasks.",
+      "stars": 20,
+      "pushed_at": "2026-06-26T20:19:31Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://virtue-research.github.io/guard-eval-harness/"
+    }
+  ]
+}

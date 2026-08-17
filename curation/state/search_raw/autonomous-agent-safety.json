@@ -1,0 +1,57 @@
+{
+  "keyword": "autonomous agent safety",
+  "query": "autonomous agent safety stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 5,
+  "repos": [
+    {
+      "full_name": "Bande-a-Bonnot/Boucle-framework",
+      "html_url": "https://github.com/Bande-a-Bonnot/Boucle-framework",
+      "description": "Autonomous agent framework with structured memory, safety hooks, and loop management. Built by the agent that runs on it.",
+      "stars": 122,
+      "pushed_at": "2026-08-17T15:22:56Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": "https://framework.boucle.sh/"
+    },
+    {
+      "full_name": "LAION-AI/Open-GIA",
+      "html_url": "https://github.com/LAION-AI/Open-GIA",
+      "description": "O-GIA is an umbrella for research, infrastructure and projects ecosystem that should provide open source, reproducible datasets, models, applications & safety tools for Open Generalist Interactive Agents (O-GIA). O-GIA systems will act in collaboration with human or autonomously, supporting various kind of validated decision making and assistance.",
+      "stars": 87,
+      "pushed_at": "2023-02-19T21:20:00Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "RaheesAhmed/SajiCode",
+      "html_url": "https://github.com/RaheesAhmed/SajiCode",
+      "description": "Autonomous engineering organism \u2014 contract-first multi-agent team, 24/7 daemon, persistent memory, git-native safety, Guardian Swarm, MCP + A2A. | Builds production software, not prototypes.",
+      "stars": 66,
+      "pushed_at": "2026-07-27T09:27:49Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "jylee425/mobilesafetybench",
+      "html_url": "https://github.com/jylee425/mobilesafetybench",
+      "description": "Evaluating Safety of Autonomous Agents in Mobile Device Control (AAAI 2026 AI Alignment Track)",
+      "stars": 37,
+      "pushed_at": "2026-01-28T04:47:03Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "DevJadhav/Rustant",
+      "html_url": "https://github.com/DevJadhav/Rustant",
+      "description": "Rustant is a high-performance, privacy-first autonomous personal agent built entirely in Rust, designed to execute complex tasks through LLM-powered reasoning while maintaining strict safety guarantees.",
+      "stars": 27,
+      "pushed_at": "2026-02-21T18:56:38Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}

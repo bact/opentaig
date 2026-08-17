@@ -1,0 +1,147 @@
+{
+  "keyword": "topic:llm-guardrails",
+  "query": "topic:llm-guardrails stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 14,
+  "repos": [
+    {
+      "full_name": "confident-ai/deepteam",
+      "html_url": "https://github.com/confident-ai/deepteam",
+      "description": "DeepTeam is a framework to red team LLMs and AI agents.",
+      "stars": 2451,
+      "pushed_at": "2026-08-12T19:15:34Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://trydeepteam.com"
+    },
+    {
+      "full_name": "msoedov/agentic_security",
+      "html_url": "https://github.com/msoedov/agentic_security",
+      "description": "Agentic LLM Vulnerability Scanner / AI red teaming kit \ud83e\uddea",
+      "stars": 1966,
+      "pushed_at": "2026-07-31T16:27:20Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://agentic-security.vercel.app"
+    },
+    {
+      "full_name": "ZenGuard-AI/fast-llm-security-guardrails",
+      "html_url": "https://github.com/ZenGuard-AI/fast-llm-security-guardrails",
+      "description": "The fastest Trust Layer for AI Agents",
+      "stars": 154,
+      "pushed_at": "2026-02-03T18:31:21Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://zenguard.ai/"
+    },
+    {
+      "full_name": "beava-dev/beava",
+      "html_url": "https://github.com/beava-dev/beava",
+      "description": "Real-time decision features without streaming infra. Turn live events into product reflexes \u2014 no Kafka, no Flink, no feature store.",
+      "stars": 139,
+      "pushed_at": "2026-05-30T01:59:44Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://beava.dev"
+    },
+    {
+      "full_name": "open-bias/open-bias",
+      "html_url": "https://github.com/open-bias/open-bias",
+      "description": "Open Source Reliability Harness: Make your agents follow rules. One line of code to\u200e \u200eenforce, trace, and improve. \u200e \u200e",
+      "stars": 137,
+      "pushed_at": "2026-05-23T05:54:44Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.openbias.dev"
+    },
+    {
+      "full_name": "arekusandr/last_layer",
+      "html_url": "https://github.com/arekusandr/last_layer",
+      "description": "Ultra-fast, low latency LLM prompt injection/jailbreak detection \u26d3\ufe0f",
+      "stars": 132,
+      "pushed_at": "2024-07-26T02:56:47Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://vibe-eval.com"
+    },
+    {
+      "full_name": "trylonai/gateway",
+      "html_url": "https://github.com/trylonai/gateway",
+      "description": "The Open Source Firewall for LLMs. A self-hosted gateway to secure and control AI applications with powerful guardrails.",
+      "stars": 127,
+      "pushed_at": "2025-06-25T10:01:46Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://www.trylon.ai"
+    },
+    {
+      "full_name": "securelayer7/PROMPTPurify",
+      "html_url": "https://github.com/securelayer7/PROMPTPurify",
+      "description": "Prompt-injection guardrail for LLM applications. Compact model that outperforms larger open-source guards. No regex, no signatures. Demo: anton.securelayer7.net",
+      "stars": 77,
+      "pushed_at": "2026-05-31T13:46:19Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://anton.securelayer7.net"
+    },
+    {
+      "full_name": "Emmimal/control-layer",
+      "html_url": "https://github.com/Emmimal/control-layer",
+      "description": "A production-grade control layer that sits between your application logic and any LLM \u2014 input validation, schema enforcement, circuit breaking, targeted retry, and audit logging in one composable pipeline.",
+      "stars": 62,
+      "pushed_at": "2026-05-25T07:00:39Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "presidio-oss/hai-guardrails",
+      "html_url": "https://github.com/presidio-oss/hai-guardrails",
+      "description": "A TypeScript library providing a set of guards for LLM (Large Language Model) applications",
+      "stars": 48,
+      "pushed_at": "2026-02-06T13:20:46Z",
+      "language": "TypeScript",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://www.npmjs.com/package/@presidio-dev/hai-guardrails"
+    },
+    {
+      "full_name": "TrustAI-laboratory/LMAP",
+      "html_url": "https://github.com/TrustAI-laboratory/LMAP",
+      "description": "LMAP (large language model mapper) is like NMAP for LLM, is an LLM Vulnerability Scanner and Zero-day Vulnerability Fuzzer.",
+      "stars": 31,
+      "pushed_at": "2024-10-16T08:00:47Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.trustai.pro/"
+    },
+    {
+      "full_name": "Ordo-Engine/Ordo",
+      "html_url": "https://github.com/Ordo-Engine/Ordo",
+      "description": "Deterministic guardrails for AI agents \u2014 the LLM proposes, your rules dispose. A sub-microsecond, JIT-compiled rule engine in Rust, with a visual Studio.",
+      "stars": 31,
+      "pushed_at": "2026-07-15T16:02:05Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.ordoengine.com"
+    },
+    {
+      "full_name": "ant-research/awesome-mllm-guardrails",
+      "html_url": "https://github.com/ant-research/awesome-mllm-guardrails",
+      "description": "A curated list of LLM/MLLM guardrails, safety benchmarks, guard models, jailbreak attacks, moderation datasets, and evaluation tools.",
+      "stars": 25,
+      "pushed_at": "2026-08-14T08:55:11Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "ducnguyen67201/FeatherlaneAI",
+      "html_url": "https://github.com/ducnguyen67201/FeatherlaneAI",
+      "description": "Real-time guardrail runtime for AI agents.",
+      "stars": 20,
+      "pushed_at": "2026-08-17T13:12:07Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://featherlane.ai/"
+    }
+  ]
+}

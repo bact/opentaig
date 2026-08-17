@@ -1,0 +1,107 @@
+{
+  "keyword": "efficient LLM evaluation",
+  "query": "efficient LLM evaluation stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 10,
+  "repos": [
+    {
+      "full_name": "modelscope/evalscope",
+      "html_url": "https://github.com/modelscope/evalscope",
+      "description": "A streamlined and customizable framework for efficient large model (LLM, VLM, AIGC) evaluation and performance benchmarking.",
+      "stars": 3250,
+      "pushed_at": "2026-08-17T10:56:31Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://evalscope.readthedocs.io/en/latest/"
+    },
+    {
+      "full_name": "Doriandarko/RepoToTextForLLMs",
+      "html_url": "https://github.com/Doriandarko/RepoToTextForLLMs",
+      "description": "Automate the analysis of GitHub repositories for LLMs with RepoToTextForLLMs. Fetch READMEs, structure, and non-binary files efficiently. Outputs include analysis prompts to aid in comprehensive repo evaluation",
+      "stars": 794,
+      "pushed_at": "2024-05-21T19:36:03Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "Agentic-Systems-Lab/rigorous",
+      "html_url": "https://github.com/Agentic-Systems-Lab/rigorous",
+      "description": "A comprehensive suite of tools, built to liberate science by making the creation, evaluation, and dissemination of research more transparent, affordable, and efficient.",
+      "stars": 252,
+      "pushed_at": "2025-08-08T22:24:23Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://rigorous.review"
+    },
+    {
+      "full_name": "IAAR-Shanghai/xVerify",
+      "html_url": "https://github.com/IAAR-Shanghai/xVerify",
+      "description": "xVerify: Efficient Answer Verifier for Reasoning Model Evaluations",
+      "stars": 148,
+      "pushed_at": "2025-11-13T13:16:34Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://arxiv.org/abs/2504.10481"
+    },
+    {
+      "full_name": "praj2408/End-To-End-Resume-ATS-Tracking-LLM-Project-With-Google-Gemini-Pro",
+      "html_url": "https://github.com/praj2408/End-To-End-Resume-ATS-Tracking-LLM-Project-With-Google-Gemini-Pro",
+      "description": "This is a project aiming to optimize the recruitment process. It integrates an advanced Applicant Tracking System with Google Gemini Pro, streamlining resume parsing, keyword matching, and candidate evaluation for an efficient end-to-end solution in talent acquisition.",
+      "stars": 83,
+      "pushed_at": "2024-01-26T15:54:11Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "UW-Madison-Lee-Lab/LLM-judge-reporting",
+      "html_url": "https://github.com/UW-Madison-Lee-Lab/LLM-judge-reporting",
+      "description": "A simple plug-in framework that corrects bias and computes confidence intervals in reporting LLM-as-a-judge evaluation, and an adaptive algorithm that efficiently allocates calibration samples to reduce uncertainty in estimates.",
+      "stars": 82,
+      "pushed_at": "2025-11-27T03:04:07Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "3DCF-Labs/doc2dataset",
+      "html_url": "https://github.com/3DCF-Labs/doc2dataset",
+      "description": "3DCF / doc2dataset: token-efficient document layer with NumGuard numeric integrity and multi-framework exports for RAG & fine-tuning.",
+      "stars": 55,
+      "pushed_at": "2026-02-10T21:11:50Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "CaviraOSS/OpenReason",
+      "html_url": "https://github.com/CaviraOSS/OpenReason",
+      "description": "Adaptive Reasoning Engine for Efficient and Context-Aware Intelligence",
+      "stars": 49,
+      "pushed_at": "2025-11-15T12:39:12Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "felipemaiapolo/prompteval",
+      "html_url": "https://github.com/felipemaiapolo/prompteval",
+      "description": "Efficient multi-prompt evaluation of LLMs",
+      "stars": 33,
+      "pushed_at": "2024-12-06T20:27:07Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Minw913/FrontierOR",
+      "html_url": "https://github.com/Minw913/FrontierOR",
+      "description": "A benchmark of 180 literature-grounded OR problems evaluating LLM-generated efficient algorithms",
+      "stars": 31,
+      "pushed_at": "2026-08-06T10:42:37Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    }
+  ]
+}

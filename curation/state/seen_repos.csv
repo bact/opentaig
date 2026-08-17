@@ -1698,3 +1698,17 @@ pnnl/agent-cage,reject,not-relevant,Does not provide direct mechanisms for candi
 abaxxlabs/agents,accept,,,Apache-2.0,osi-approved,Translation of Governance Goals into Policies and Requirements,AI access control,20,2026-08-17T14:52:13+00:00
 duncatzat/vigils,reject,out-of-scope-narrow,Does not provide direct mechanisms for candidate RQs,Apache-2.0,osi-approved,Translation of Governance Goals into Policies and Requirements,topic:audit-log,302,2026-08-17T14:52:13+00:00
 lutzfinger/SAI-baseversion,reject,not-relevant,Does not provide direct mechanisms for candidate RQs,Apache-2.0,osi-approved,Translation of Governance Goals into Policies and Requirements,AI audit logging,29,2026-08-17T14:52:13+00:00
+NVIDIA/SkillSpector,accept,,,Apache-2.0,osi-approved,(Multi-)Agent Evaluations,topic:prompt-injection,14704,2026-08-17T15:42:30+00:00
+confident-ai/deepteam,accept,,,Apache-2.0,osi-approved,(Multi-)Agent Evaluations,topic:llm-guardrails,2451,2026-08-17T15:42:30+00:00
+uber/ADR,accept,,,Apache-2.0,osi-approved,(Multi-)Agent Evaluations,topic:prompt-injection,1444,2026-08-17T15:42:30+00:00
+whylabs/langkit,accept,,,Apache-2.0,osi-approved,(Multi-)Agent Evaluations,topic:prompt-injection,994,2026-08-17T15:42:30+00:00
+deadbits/vigil-llm,accept,,,Apache-2.0,osi-approved,(Multi-)Agent Evaluations,topic:prompt-injection,496,2026-08-17T15:42:30+00:00
+automorphic-ai/aegis,reject,commercial-sdk,Does not provide direct mechanisms for candidate RQs,MIT,osi-approved,(Multi-)Agent Evaluations,topic:prompt-injection,269,2026-08-17T15:42:30+00:00
+CryptoAILab/JailbreakEval,accept,,,MIT,osi-approved,(Multi-)Agent Evaluations,topic:llm-safety,194,2026-08-17T15:42:30+00:00
+hidai25/eval-view,accept,,,Apache-2.0,osi-approved,(Multi-)Agent Evaluations,topic:agent-benchmark,128,2026-08-17T15:42:30+00:00
+trylonai/gateway,accept,,,NOASSERTION,source-available,(Multi-)Agent Evaluations,topic:llm-guardrails,127,2026-08-17T15:42:30+00:00
+arekusandr/last_layer,accept,,,MIT,osi-approved,(Multi-)Agent Evaluations,topic:llm-guardrails,132,2026-08-17T15:42:30+00:00
+Babelscape/ALERT,accept,,,NOASSERTION,source-available,(Multi-)Agent Evaluations,topic:llm-safety,59,2026-08-17T15:42:30+00:00
+modelscope/evalscope,accept,,,Apache-2.0,osi-approved,(Multi-)Agent Evaluations,efficient LLM evaluation,3250,2026-08-17T15:42:30+00:00
+kajogo777/the-agent-sandbox-taxonomy,reject,not-a-tool-linklist,Does not provide direct mechanisms for candidate RQs,,none-declared,(Multi-)Agent Evaluations,agent sandboxing evaluation,96,2026-08-17T15:42:30+00:00
+makalin/SecureMCP,accept,,,MIT,osi-approved,(Multi-)Agent Evaluations,topic:prompt-injection,140,2026-08-17T15:42:30+00:00

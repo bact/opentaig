@@ -1,0 +1,17 @@
+{
+  "keyword": "downstream impact evaluation",
+  "query": "downstream impact evaluation stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "mingchen-li/ProteinPretraining",
+      "html_url": "https://github.com/mingchen-li/ProteinPretraining",
+      "description": "Source code of PETA: Evaluating the Impact of Protein Transfer Learning with Sub-word Tokenization on Downstream Applications.",
+      "stars": 34,
+      "pushed_at": "2025-05-16T07:14:41Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    }
+  ]
+}

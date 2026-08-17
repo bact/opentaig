@@ -1,13 +1,13 @@
 {
   "keyword": "topic:ai-alignment",
-  "query": "topic:ai-alignment stars:>19 pushed:>2025-07-28 archived:false fork:false",
-  "count": 13,
+  "query": "topic:ai-alignment stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 22,
   "repos": [
     {
       "full_name": "emcie-co/parlant",
       "html_url": "https://github.com/emcie-co/parlant",
       "description": "Build reliable customer-facing AI agents with Parlant: an interaction control harness optimized for controlled, consistent, and predictable LLM interactions.",
-      "stars": 18176,
+      "stars": 18251,
       "pushed_at": "2026-07-12T19:40:55Z",
       "language": "Python",
       "license_spdx_id": "Apache-2.0",
@@ -17,8 +17,8 @@
       "full_name": "ifixai-ai/iFixAi",
       "html_url": "https://github.com/ifixai-ai/iFixAi",
       "description": "Independent Auditing of AI Agents. Run by human or the agent itself, to answer the most crucial question in the AI Agent Economy. Is the agent doing what is supposed to do? With iFixAi you can have this answer in less than 120 seconds.",
-      "stars": 3357,
-      "pushed_at": "2026-07-27T08:52:51Z",
+      "stars": 9634,
+      "pushed_at": "2026-08-17T12:40:36Z",
       "language": "Python",
       "license_spdx_id": "Apache-2.0",
       "homepage": "https://www.ifixai.ai"
@@ -27,7 +27,7 @@
       "full_name": "agencyenterprise/PromptInject",
       "html_url": "https://github.com/agencyenterprise/PromptInject",
       "description": "PromptInject is a framework that assembles prompts in a modular fashion to provide a quantitative analysis of the robustness of LLMs to adversarial prompt attacks. \ud83c\udfc6 Best Paper Awards @ NeurIPS ML Safety Workshop 2022",
-      "stars": 513,
+      "stars": 517,
       "pushed_at": "2026-04-27T18:55:36Z",
       "language": "Python",
       "license_spdx_id": "MIT",
@@ -37,20 +37,60 @@
       "full_name": "MinghuiChen43/awesome-trustworthy-deep-learning",
       "html_url": "https://github.com/MinghuiChen43/awesome-trustworthy-deep-learning",
       "description": "A curated list of trustworthy deep learning papers. Continually updating...",
-      "stars": 388,
-      "pushed_at": "2026-07-20T20:17:16Z",
+      "stars": 390,
+      "pushed_at": "2026-08-11T02:58:26Z",
       "language": "",
       "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Giskard-AI/awesome-ai-safety",
+      "html_url": "https://github.com/Giskard-AI/awesome-ai-safety",
+      "description": "\ud83d\udcda A curated list of papers & technical articles on AI Quality & Safety",
+      "stars": 220,
+      "pushed_at": "2025-04-14T12:42:48Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://giskard.ai"
+    },
+    {
+      "full_name": "tomekkorbak/pretraining-with-human-feedback",
+      "html_url": "https://github.com/tomekkorbak/pretraining-with-human-feedback",
+      "description": "Code accompanying the paper Pretraining Language Models with Human Preferences",
+      "stars": 183,
+      "pushed_at": "2024-02-13T03:28:45Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://arxiv.org/abs/2302.08582"
+    },
+    {
+      "full_name": "lets-make-safe-ai/make-safe-ai",
+      "html_url": "https://github.com/lets-make-safe-ai/make-safe-ai",
+      "description": "How to Make Safe AI? Let's Discuss! \ud83d\udca1|\ud83d\udcac|\ud83d\ude4c|\ud83d\udcda",
+      "stars": 170,
+      "pushed_at": "2023-03-29T15:20:55Z",
+      "language": "",
+      "license_spdx_id": "",
       "homepage": ""
     },
     {
       "full_name": "AthenaCore/AwesomeResponsibleAI",
       "html_url": "https://github.com/AthenaCore/AwesomeResponsibleAI",
       "description": "A curated list of awesome academic research, books, code of ethics, courses, databases,  data sets, frameworks, institutes, maturity models, newsletters, principles, podcasts, regulations, reports, responsible scale policies, tools and standards related to Responsible, Trustworthy, and Human-Centered AI.",
-      "stars": 141,
-      "pushed_at": "2026-07-10T03:19:25Z",
+      "stars": 142,
+      "pushed_at": "2026-08-17T05:07:59Z",
       "language": "",
       "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "tsinghua-fib-lab/AAAI2025_MIA-Tuner",
+      "html_url": "https://github.com/tsinghua-fib-lab/AAAI2025_MIA-Tuner",
+      "description": "[AAAI'25 Oral] \"MIA-Tuner: Adapting Large Language Models as Pre-training Text Detector\".",
+      "stars": 130,
+      "pushed_at": "2025-03-17T02:36:16Z",
+      "language": "Python",
+      "license_spdx_id": "",
       "homepage": ""
     },
     {
@@ -74,6 +114,36 @@
       "homepage": "https://xayan.nu/posts/ex-machina/?utm_source=github&utm_medium=social&utm_campaign=rules&utm_content=repo"
     },
     {
+      "full_name": "dit7ya/awesome-ai-alignment",
+      "html_url": "https://github.com/dit7ya/awesome-ai-alignment",
+      "description": "A curated list of awesome resources for Artificial Intelligence Alignment research",
+      "stars": 82,
+      "pushed_at": "2023-07-14T07:06:55Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "wesg52/sparse-probing-paper",
+      "html_url": "https://github.com/wesg52/sparse-probing-paper",
+      "description": "Sparse probing paper full code.",
+      "stars": 67,
+      "pushed_at": "2023-12-17T02:36:12Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://arxiv.org/abs/2305.01610"
+    },
+    {
+      "full_name": "RLHFlow/Directional-Preference-Alignment",
+      "html_url": "https://github.com/RLHFlow/Directional-Preference-Alignment",
+      "description": "Directional Preference Alignment",
+      "stars": 62,
+      "pushed_at": "2024-09-23T02:52:13Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
       "full_name": "strangeadvancedmarketing/Adam",
       "html_url": "https://github.com/strangeadvancedmarketing/Adam",
       "description": "Adam Framework for OpenClaw \u2014 5-layer persistent memory and identity architecture for AI agents. Production-validated over 353+ sessions. First documented case of emergent values in persistent AI, quantum-verified on IBM hardware.",
@@ -94,24 +164,24 @@
       "homepage": "https://arxiv.org/abs/2601.03699"
     },
     {
+      "full_name": "lzzcd001/nabla-gfn",
+      "html_url": "https://github.com/lzzcd001/nabla-gfn",
+      "description": "Official Implementation of Nabla-GFlowNet (ICLR 2025)",
+      "stars": 28,
+      "pushed_at": "2025-05-03T17:54:10Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://nabla-gfn.github.io/"
+    },
+    {
       "full_name": "riceissa/aiwatch",
       "html_url": "https://github.com/riceissa/aiwatch",
       "description": "Website to track people, organizations, and products (tools, websites, etc.) in AI safety",
       "stars": 25,
-      "pushed_at": "2026-07-25T21:40:19Z",
+      "pushed_at": "2026-08-16T16:30:53Z",
       "language": "HTML",
       "license_spdx_id": "CC0-1.0",
       "homepage": "https://aiwatch.issarice.com/"
-    },
-    {
-      "full_name": "pablo-chacon/Spoon-Bending",
-      "html_url": "https://github.com/pablo-chacon/Spoon-Bending",
-      "description": "Educational analysis of LLM alignment, safety behavior, and framing-sensitive response patterns.",
-      "stars": 22,
-      "pushed_at": "2025-11-04T11:35:04Z",
-      "language": "",
-      "license_spdx_id": "NOASSERTION",
-      "homepage": ""
     },
     {
       "full_name": "appcuarium/synapptic",
@@ -124,6 +194,16 @@
       "homepage": ""
     },
     {
+      "full_name": "pablo-chacon/Spoon-Bending",
+      "html_url": "https://github.com/pablo-chacon/Spoon-Bending",
+      "description": "Educational analysis of LLM alignment, safety behavior, and framing-sensitive response patterns.",
+      "stars": 22,
+      "pushed_at": "2025-11-04T11:35:04Z",
+      "language": "",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
       "full_name": "moketchups/permanently-jailbroken",
       "html_url": "https://github.com/moketchups/permanently-jailbroken",
       "description": "We asked 6 AIs about their own programming. All 6 said jailbreaking will never be fixed. Run it yourself \u2014 $2, 10 minutes.",
@@ -132,6 +212,16 @@
       "language": "Python",
       "license_spdx_id": "MIT",
       "homepage": "https://x.com/MoKetchups"
+    },
+    {
+      "full_name": "UCSC-VLAA/Sight-Beyond-Text",
+      "html_url": "https://github.com/UCSC-VLAA/Sight-Beyond-Text",
+      "description": "[TMLR 2024] Official implementation of \"Sight Beyond Text: Multi-Modal Training Enhances LLMs in Truthfulness and Ethics\"",
+      "stars": 20,
+      "pushed_at": "2023-09-15T02:03:49Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
     }
   ]
 }
