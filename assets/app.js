@@ -281,7 +281,7 @@ function resetMultiselectsIn(scopeEl) {
     if (specCheckbox.checked) checkedTypes.push("specification");
     if (checkedTypes.length && checkedTypes.indexOf(item.dataset.type) === -1) return false;
 
-    var checkedBadges = badgeCheckboxes.filter(function (c) { return c.checked; }).map(function (c) { return c.dataset.value; });
+    var checkedBadges = badgeCheckboxes.filter(function (c) { return c.checked; }).map(function (c) { return (c.dataset.value || "").replace(/_/g, "-"); });
     if (checkedBadges.length && checkedBadges.indexOf(item.dataset.badgeLevel) === -1) return false;
 
     var scorecardMin = scorecardMinSelect.value;
