@@ -1,14 +1,14 @@
 {
   "keyword": "topic:privacy-preserving-ml",
-  "query": "topic:privacy-preserving-ml stars:>19 pushed:>2025-07-28 archived:false fork:false",
+  "query": "topic:privacy-preserving-ml stars:>19 pushed:>2022-01-01 archived:false fork:false",
   "count": 4,
   "repos": [
     {
       "full_name": "EthicalML/awesome-production-machine-learning",
       "html_url": "https://github.com/EthicalML/awesome-production-machine-learning",
       "description": "A curated list of awesome open source libraries to deploy, monitor, version and scale your machine learning",
-      "stars": 20808,
-      "pushed_at": "2026-07-28T15:04:15Z",
+      "stars": 20851,
+      "pushed_at": "2026-08-12T19:22:45Z",
       "language": "",
       "license_spdx_id": "MIT",
       "homepage": "https://ethicalml.github.io/awesome-production-machine-learning"
@@ -28,7 +28,7 @@
       "html_url": "https://github.com/AnthonyXu109/FairPrivacySignal",
       "description": "Synthetic benchmark for privacy-preserving and fairness-aware ranking under signal loss",
       "stars": 89,
-      "pushed_at": "2026-07-06T06:55:06Z",
+      "pushed_at": "2026-07-29T07:28:04Z",
       "language": "Python",
       "license_spdx_id": "NOASSERTION",
       "homepage": "https://doi.org/10.5281/zenodo.20130952"
@@ -37,8 +37,8 @@
       "full_name": "UnlikedOne/diffuse",
       "html_url": "https://github.com/UnlikedOne/diffuse",
       "description": "Distributed peer-to-peer LLM inference. Your prompt never leaves your device in clear text.",
-      "stars": 26,
-      "pushed_at": "2026-07-22T06:42:42Z",
+      "stars": 27,
+      "pushed_at": "2026-08-05T10:37:02Z",
       "language": "Rust",
       "license_spdx_id": "AGPL-3.0",
       "homepage": "https://unlikedone.github.io/diffuse/"

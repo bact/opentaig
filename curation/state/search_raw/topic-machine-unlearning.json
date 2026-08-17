@@ -1,13 +1,13 @@
 {
   "keyword": "topic:machine-unlearning",
-  "query": "topic:machine-unlearning stars:>19 pushed:>2025-07-28 archived:false fork:false",
-  "count": 18,
+  "query": "topic:machine-unlearning stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 31,
   "repos": [
     {
       "full_name": "jjbrophy47/machine_unlearning",
       "html_url": "https://github.com/jjbrophy47/machine_unlearning",
       "description": "Existing Literature about Machine Unlearning",
-      "stars": 967,
+      "stars": 963,
       "pushed_at": "2025-08-29T19:19:25Z",
       "language": "",
       "license_spdx_id": "",
@@ -17,8 +17,8 @@
       "full_name": "tamlhp/awesome-machine-unlearning",
       "html_url": "https://github.com/tamlhp/awesome-machine-unlearning",
       "description": "Awesome Machine Unlearning (A Survey of Machine Unlearning)",
-      "stars": 965,
-      "pushed_at": "2026-07-06T01:05:57Z",
+      "stars": 962,
+      "pushed_at": "2026-08-13T13:07:13Z",
       "language": "Jupyter Notebook",
       "license_spdx_id": "MIT",
       "homepage": "https://awesome-machine-unlearning.github.io/"
@@ -27,8 +27,8 @@
       "full_name": "chrisliu298/awesome-llm-unlearning",
       "html_url": "https://github.com/chrisliu298/awesome-llm-unlearning",
       "description": "A resource repository for machine unlearning in large language models",
-      "stars": 618,
-      "pushed_at": "2026-07-26T00:50:34Z",
+      "stars": 623,
+      "pushed_at": "2026-08-06T09:51:49Z",
       "language": "",
       "license_spdx_id": "Apache-2.0",
       "homepage": ""
@@ -37,8 +37,8 @@
       "full_name": "MinghuiChen43/awesome-trustworthy-deep-learning",
       "html_url": "https://github.com/MinghuiChen43/awesome-trustworthy-deep-learning",
       "description": "A curated list of trustworthy deep learning papers. Continually updating...",
-      "stars": 388,
-      "pushed_at": "2026-07-20T20:17:16Z",
+      "stars": 390,
+      "pushed_at": "2026-08-11T02:58:26Z",
       "language": "",
       "license_spdx_id": "MIT",
       "homepage": ""
@@ -47,7 +47,7 @@
       "full_name": "EnnengYang/Awesome-Forgetting-in-Deep-Learning",
       "html_url": "https://github.com/EnnengYang/Awesome-Forgetting-in-Deep-Learning",
       "description": "A Comprehensive Survey of Forgetting in Deep Learning Beyond Continual Learning. TPAMI, 2024.",
-      "stars": 365,
+      "stars": 366,
       "pushed_at": "2026-01-27T02:38:26Z",
       "language": "",
       "license_spdx_id": "",
@@ -57,17 +57,27 @@
       "full_name": "OPTML-Group/Unlearn-Saliency",
       "html_url": "https://github.com/OPTML-Group/Unlearn-Saliency",
       "description": "[ICLR24 (Spotlight)] \"SalUn: Empowering Machine Unlearning via Gradient-based Weight Saliency in Both Image Classification and Generation\" by Chongyu Fan*, Jiancheng Liu*, Yihua Zhang, Eric Wong, Dennis Wei, Sijia Liu",
-      "stars": 150,
+      "stars": 151,
       "pushed_at": "2026-02-28T22:35:34Z",
       "language": "Python",
       "license_spdx_id": "MIT",
       "homepage": "https://www.optml-group.com/posts/salun_iclr24"
     },
     {
+      "full_name": "abbottyanginchina/Awesome-Federated-Unlearning",
+      "html_url": "https://github.com/abbottyanginchina/Awesome-Federated-Unlearning",
+      "description": "Awesome Federated Unlearning (FU) Papers (Continually Update)",
+      "stars": 112,
+      "pushed_at": "2024-04-24T17:11:11Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": "https://github.com/abbottyanginchina/Awesome-Federated-Unlearning/tree/main"
+    },
+    {
       "full_name": "gnueaj/Machine-Unlearning-Comparator",
       "html_url": "https://github.com/gnueaj/Machine-Unlearning-Comparator",
       "description": "A Visual Analytics System for Comparative Evaluation of Machine Unlearning Methods (TVCG 2026)",
-      "stars": 100,
+      "stars": 101,
       "pushed_at": "2026-07-17T11:39:30Z",
       "language": "TypeScript",
       "license_spdx_id": "",
@@ -87,11 +97,21 @@
       "full_name": "bjzhb666/GS-LoRA",
       "html_url": "https://github.com/bjzhb666/GS-LoRA",
       "description": "Practical Continual Forgetting for Pre-trained Vision Models (CVPR 2024; T-PAMI 2026)",
-      "stars": 75,
+      "stars": 76,
       "pushed_at": "2026-01-15T12:39:13Z",
       "language": "Python",
       "license_spdx_id": "MIT",
       "homepage": "https://arxiv.org/abs/2403.11530"
+    },
+    {
+      "full_name": "yaojin17/Unlearning_LLM",
+      "html_url": "https://github.com/yaojin17/Unlearning_LLM",
+      "description": "[ACL 2024] Code and data for \"Machine Unlearning of Pre-trained Large Language Models\"",
+      "stars": 68,
+      "pushed_at": "2024-09-30T01:22:07Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
     },
     {
       "full_name": "hxxdtd/Awesome-Diffusion-Model-Unlearning",
@@ -114,6 +134,16 @@
       "homepage": ""
     },
     {
+      "full_name": "MinChen00/Graph-Unlearning",
+      "html_url": "https://github.com/MinChen00/Graph-Unlearning",
+      "description": "Official implementation of \"Graph Unlearning\" (ACM CCS 2022)",
+      "stars": 54,
+      "pushed_at": "2025-07-24T20:22:29Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
       "full_name": "TIML-Group/Mode-Connectivity-Unlearning",
       "html_url": "https://github.com/TIML-Group/Mode-Connectivity-Unlearning",
       "description": "",
@@ -121,6 +151,16 @@
       "pushed_at": "2026-05-01T04:09:19Z",
       "language": "Python",
       "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "MinChen00/UnlearningLeaks",
+      "html_url": "https://github.com/MinChen00/UnlearningLeaks",
+      "description": "Official implementation of \"When Machine Unlearning Jeopardizes Privacy\" (ACM CCS 2021)",
+      "stars": 52,
+      "pushed_at": "2022-05-20T07:15:07Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
       "homepage": ""
     },
     {
@@ -134,11 +174,51 @@
       "homepage": ""
     },
     {
+      "full_name": "mims-harvard/GNNDelete",
+      "html_url": "https://github.com/mims-harvard/GNNDelete",
+      "description": "General Strategy for Unlearning in Graph Neural Networks",
+      "stars": 48,
+      "pushed_at": "2023-02-20T19:33:20Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://zitniklab.hms.harvard.edu/projects/GNNDelete"
+    },
+    {
       "full_name": "OPTML-Group/Unlearn-Simple",
       "html_url": "https://github.com/OPTML-Group/Unlearn-Simple",
       "description": "[NeurIPS25] Official repo for \"Simplicity Prevails: Rethinking Negative Preference Optimization for LLM Unlearning\"",
-      "stars": 45,
+      "stars": 46,
       "pushed_at": "2025-10-03T17:39:54Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "chrisliu298/llm-unlearn-eco",
+      "html_url": "https://github.com/chrisliu298/llm-unlearn-eco",
+      "description": "[NeurIPS 2024] Large Language Model Unlearning via Embedding-Corrupted Prompts",
+      "stars": 41,
+      "pushed_at": "2024-09-26T04:09:15Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://chrisliu298.ai/llm-unlearn-eco-project-page/"
+    },
+    {
+      "full_name": "WenyanLiu/apprenticeship",
+      "html_url": "https://github.com/WenyanLiu/apprenticeship",
+      "description": "A notebook of awesome privacy protection,federated learning, fairness and blockchain research materials.",
+      "stars": 32,
+      "pushed_at": "2022-05-19T14:26:45Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "OPTML-Group/Unlearn-WorstCase",
+      "html_url": "https://github.com/OPTML-Group/Unlearn-WorstCase",
+      "description": "[ECCV24] \"Challenging Forgets: Unveiling the Worst-Case Forget Sets in Machine Unlearning\" by Chongyu Fan*, Jiancheng Liu*, Alfred Hero, Sijia Liu",
+      "stars": 28,
+      "pushed_at": "2025-05-27T01:41:54Z",
       "language": "Python",
       "license_spdx_id": "MIT",
       "homepage": ""
@@ -154,6 +234,16 @@
       "homepage": ""
     },
     {
+      "full_name": "vsingh-group/LCODEC-deep-unlearning",
+      "html_url": "https://github.com/vsingh-group/LCODEC-deep-unlearning",
+      "description": "Code for CVPR22 paper \"Deep Unlearning via Randomized Conditionally Independent Hessians\"",
+      "stars": 25,
+      "pushed_at": "2022-07-09T19:47:46Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
       "full_name": "OPTML-Group/Unlearn-Trace",
       "html_url": "https://github.com/OPTML-Group/Unlearn-Trace",
       "description": "[ICLR26] Unlearning Isn't Invisible: Detecting Unlearning Traces  in LLMs from Model Outputs",
@@ -161,6 +251,26 @@
       "pushed_at": "2026-04-08T03:24:39Z",
       "language": "Python",
       "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "thupchnsky/mufc",
+      "html_url": "https://github.com/thupchnsky/mufc",
+      "description": "A federated clustering approach with the corresponding unlearning mechanism (ICLR 2023)",
+      "stars": 23,
+      "pushed_at": "2023-10-12T15:43:42Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "jjbrophy47/dare_rf",
+      "html_url": "https://github.com/jjbrophy47/dare_rf",
+      "description": "Machine Unlearning for Random Forests",
+      "stars": 22,
+      "pushed_at": "2024-06-17T23:16:33Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
       "homepage": ""
     },
     {
@@ -179,6 +289,26 @@
       "description": "[ICLR26] Safety Mirage: How Spurious Correlations Undermine VLM Safety Fine-Tuning and Can Be Mitigated by Machine Unlearning",
       "stars": 21,
       "pushed_at": "2026-04-16T21:47:23Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "csm9493/L2UL",
+      "html_url": "https://github.com/csm9493/L2UL",
+      "description": "Official Code of Learning to Unlearn: Instance-Wise Unlearning for Pre-trained Classifiers (AAAI 2024)",
+      "stars": 20,
+      "pushed_at": "2024-10-27T19:31:00Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "thupchnsky/sgc_unlearn",
+      "html_url": "https://github.com/thupchnsky/sgc_unlearn",
+      "description": "Certified (approximate) machine unlearning for simplified graph convolutional networks (SGCs) with theoretical guarantees (ICLR 2023)",
+      "stars": 20,
+      "pushed_at": "2023-02-17T16:24:09Z",
       "language": "Python",
       "license_spdx_id": "MIT",
       "homepage": ""

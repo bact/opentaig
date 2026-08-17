@@ -1,0 +1,67 @@
+{
+  "keyword": "agent sandboxing evaluation",
+  "query": "agent sandboxing evaluation stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 6,
+  "repos": [
+    {
+      "full_name": "microsoft/TextWorld",
+      "html_url": "https://github.com/microsoft/TextWorld",
+      "description": "\u200bTextWorld is a sandbox learning environment for the training and evaluation of reinforcement learning (RL) agents on text-based games.",
+      "stars": 1441,
+      "pushed_at": "2026-01-30T19:15:32Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "kajogo777/the-agent-sandbox-taxonomy",
+      "html_url": "https://github.com/kajogo777/the-agent-sandbox-taxonomy",
+      "description": "An open taxonomy and scoring framework for evaluating AI agent sandboxes: 7 defense layers, 7 threat categories, 3 evaluation dimensions, 27 \"sandboxes\" scored.",
+      "stars": 96,
+      "pushed_at": "2026-06-10T18:11:50Z",
+      "language": "Go",
+      "license_spdx_id": "",
+      "homepage": "https://ast.georgebuilds.dev"
+    },
+    {
+      "full_name": "Agentix-Project/Agentix",
+      "html_url": "https://github.com/Agentix-Project/Agentix",
+      "description": "The universal bridge between agents and environments \u2014 evaluate, RL-train, and trace any agent, in any sandbox, on any model.",
+      "stars": 71,
+      "pushed_at": "2026-08-03T07:09:18Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://agentix-project.github.io/Agentix/"
+    },
+    {
+      "full_name": "pensar-x/argus-validation-benchmarks",
+      "html_url": "https://github.com/pensar-x/argus-validation-benchmarks",
+      "description": "Self-contained, Dockerized offensive security challenges for evaluating AI-powered penetration testing agents. Covers modern tech stacks (Node.js, Python, Go, Java, PHP, Ruby) across diverse vulnerability classes and target environments from basic injection to multi-step exploit chains, sandbox escapes, and defense-enabled environments.",
+      "stars": 54,
+      "pushed_at": "2026-07-24T19:21:08Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "agent-diff-bench/agent-diff",
+      "html_url": "https://github.com/agent-diff-bench/agent-diff",
+      "description": "Interactive Sandboxes for AI Agent Evaluations & Reinforcement Learning on 3rd party APIs (Slack, Linear, Box, gCalendar)",
+      "stars": 42,
+      "pushed_at": "2026-07-02T03:24:07Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.agentdiff.dev/"
+    },
+    {
+      "full_name": "UKGovernmentBEIS/aisi-sandboxing",
+      "html_url": "https://github.com/UKGovernmentBEIS/aisi-sandboxing",
+      "description": "The open-source AISI toolkit for sandboxing agentic evaluations",
+      "stars": 27,
+      "pushed_at": "2025-08-07T12:46:22Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    }
+  ]
+}

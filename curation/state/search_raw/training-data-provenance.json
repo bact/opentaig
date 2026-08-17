@@ -1,0 +1,17 @@
+{
+  "keyword": "training data provenance",
+  "query": "training data provenance stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "facebookresearch/content-seal",
+      "html_url": "https://github.com/facebookresearch/content-seal",
+      "description": "Content Seal is a state-of-the-art framework for invisible, robust watermarking across all modalities audio, image, video, and text. This suite spans the entire generative lifecycle, from training data and inference to generated media.",
+      "stars": 240,
+      "pushed_at": "2026-07-08T10:31:22Z",
+      "language": "HTML",
+      "license_spdx_id": "MIT",
+      "homepage": "https://facebookresearch.github.io/content-seal"
+    }
+  ]
+}

@@ -66,9 +66,12 @@ from pathlib import Path
 
 import requests
 
+csv.field_size_limit(sys.maxsize)
+
 GITHUB_API = "https://api.github.com"
 DEFAULT_MIN_STARS = 19  # query is stars:>19, i.e. 20 or more
-DEFAULT_PUSHED_AFTER_MONTHS = 12
+DEFAULT_PUSHED_AFTER_DATE = "2022-01-01"
+DEFAULT_PUSHED_AFTER_MONTHS = 56  # default ~4.6 years from 2026, or 2022-01-01
 DEFAULT_MIN_README_CHARS = 200  # excludes ~1-line "This is X." READMEs
 _slug_re = re.compile(r"[^a-z0-9]+")
 
@@ -77,9 +80,9 @@ def slugify(text: str) -> str:
     return _slug_re.sub("-", text.strip().lower()).strip("-") or "keyword"
 
 
-def cutoff_date(months: int) -> str:
-    # No dateutil dependency: step back by (roughly) `months` months using a
-    # fixed 30.44-day average -- fine for a coarse "still active" filter.
+def cutoff_date(months: int = DEFAULT_PUSHED_AFTER_MONTHS, date_str: str | None = DEFAULT_PUSHED_AFTER_DATE) -> str:
+    if date_str:
+        return date_str
     dt = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(days=months * 30.44)
     return dt.strftime("%Y-%m-%d")
 
@@ -215,6 +218,8 @@ def main() -> None:
                          help="search keyword/phrase; repeat --keyword for multiple")
     parser.add_argument("--min-stars", type=int, default=DEFAULT_MIN_STARS)
     parser.add_argument("--pushed-after-months", type=int, default=DEFAULT_PUSHED_AFTER_MONTHS)
+    parser.add_argument("--pushed-after-date", type=str, default=DEFAULT_PUSHED_AFTER_DATE,
+                         help="fixed YYYY-MM-DD cutoff date (defaults to 2022-01-01)")
     parser.add_argument("--min-readme-chars", type=int, default=DEFAULT_MIN_README_CHARS)
     parser.add_argument("--max-pages", type=int, default=1,
                         help="pages of 100 results to follow per keyword (default 1). "
@@ -242,7 +247,7 @@ def main() -> None:
         "X-GitHub-Api-Version": "2022-11-28",
     })
 
-    pushed_after = cutoff_date(args.pushed_after_months)
+    pushed_after = cutoff_date(args.pushed_after_months, args.pushed_after_date)
     warnings: list = []
     raw_dir = Path(args.raw_dir)
     raw_dir.mkdir(parents=True, exist_ok=True)

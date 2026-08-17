@@ -1,0 +1,277 @@
+{
+  "keyword": "topic:data-curation",
+  "query": "topic:data-curation stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 27,
+  "repos": [
+    {
+      "full_name": "cleanlab/cleanlab",
+      "html_url": "https://github.com/cleanlab/cleanlab",
+      "description": "Cleanlab's open-source library is the standard data-centric AI package for data quality and machine learning with messy, real-world data and labels.",
+      "stars": 11627,
+      "pushed_at": "2026-01-13T17:39:04Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cleanlab.ai"
+    },
+    {
+      "full_name": "voxel51/fiftyone",
+      "html_url": "https://github.com/voxel51/fiftyone",
+      "description": "Refine high-quality datasets and visual AI models",
+      "stars": 11017,
+      "pushed_at": "2026-08-17T15:13:35Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://fiftyone.ai"
+    },
+    {
+      "full_name": "Docta-ai/docta",
+      "html_url": "https://github.com/Docta-ai/docta",
+      "description": "A Doctor for your data",
+      "stars": 3485,
+      "pushed_at": "2026-06-16T06:03:43Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "visual-layer/fastdup",
+      "html_url": "https://github.com/visual-layer/fastdup",
+      "description": "fastdup is a powerful, free tool designed to rapidly generate valuable insights from image and video datasets. It helps enhance the quality of both images and labels, while significantly reducing data operation costs, all with unmatched scalability.",
+      "stars": 1903,
+      "pushed_at": "2026-04-14T06:37:21Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://docs.visual-layer.com/fastdup_docs_old/First%20Steps/getting-started"
+    },
+    {
+      "full_name": "NVIDIA-NeMo/Curator",
+      "html_url": "https://github.com/NVIDIA-NeMo/Curator",
+      "description": "Scalable data pre processing and curation toolkit for LLMs",
+      "stars": 1716,
+      "pushed_at": "2026-08-17T07:23:46Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "Renumics/spotlight",
+      "html_url": "https://github.com/Renumics/spotlight",
+      "description": "Interactively explore unstructured datasets from your dataframe.",
+      "stars": 1272,
+      "pushed_at": "2026-08-11T13:40:50Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://renumics.com"
+    },
+    {
+      "full_name": "daochenzha/data-centric-AI",
+      "html_url": "https://github.com/daochenzha/data-centric-AI",
+      "description": "A curated, but incomplete, list of data-centric AI resources.",
+      "stars": 1156,
+      "pushed_at": "2024-06-26T23:03:47Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "klsdf/GreenResourcesManager",
+      "html_url": "https://github.com/klsdf/GreenResourcesManager",
+      "description": "\u4e00\u4e2a\u7ba1\u7406\u7535\u8111\u5185\u8d44\u6e90\uff0c\u5e76\u63d0\u4f9b\u6e38\u620f\u5316\u7684\u7efc\u5408\u7ba1\u7406\u5668",
+      "stars": 1006,
+      "pushed_at": "2026-04-27T14:06:34Z",
+      "language": "JavaScript",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "Renumics/awesome-open-data-centric-ai",
+      "html_url": "https://github.com/Renumics/awesome-open-data-centric-ai",
+      "description": "Curated list of open source tooling for data-centric AI on unstructured data.",
+      "stars": 736,
+      "pushed_at": "2023-11-15T11:02:12Z",
+      "language": "",
+      "license_spdx_id": "CC-BY-4.0",
+      "homepage": "https://renumics.com"
+    },
+    {
+      "full_name": "duoan/mega-data-factory",
+      "html_url": "https://github.com/duoan/mega-data-factory",
+      "description": "\ud83c\udfed Mega Scale Multimodal DataPipeline for SOTA Foundation Models",
+      "stars": 372,
+      "pushed_at": "2026-05-12T07:10:04Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "GrayboxTech/weightslab",
+      "html_url": "https://github.com/GrayboxTech/weightslab",
+      "description": "Built for AI Engineers working with messy, real-world data (images, videos, LiDAR Point Cloud)",
+      "stars": 166,
+      "pushed_at": "2026-08-17T13:18:13Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.graybx.com/"
+    },
+    {
+      "full_name": "collinear-ai/spider",
+      "html_url": "https://github.com/collinear-ai/spider",
+      "description": "Streamline on-policy/off-policy distillation workflows in a few lines of code",
+      "stars": 109,
+      "pushed_at": "2026-08-05T19:40:45Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.collinear.ai/"
+    },
+    {
+      "full_name": "mengysun/DataParasite",
+      "html_url": "https://github.com/mengysun/DataParasite",
+      "description": "A simple yet versatile context engineered for scalable online data collection",
+      "stars": 101,
+      "pushed_at": "2026-01-26T01:31:02Z",
+      "language": "JavaScript",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": ""
+    },
+    {
+      "full_name": "UCSC-REAL/DS2",
+      "html_url": "https://github.com/UCSC-REAL/DS2",
+      "description": "[ICLR 2025] Official implementation of paper \"Improving Data Efficiency via Curating LLM-Driven Rating Systems\"",
+      "stars": 100,
+      "pushed_at": "2025-03-24T20:02:08Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://arxiv.org/abs/2410.10877"
+    },
+    {
+      "full_name": "getmetamapper/metamapper",
+      "html_url": "https://github.com/getmetamapper/metamapper",
+      "description": "Metamapper is a data discovery and documentation platform for improving how teams understand and interact with their data.",
+      "stars": 81,
+      "pushed_at": "2026-02-15T15:30:22Z",
+      "language": "Python",
+      "license_spdx_id": "BSD-2-Clause",
+      "homepage": "https://www.metamapper.io"
+    },
+    {
+      "full_name": "Renumics/sliceguard",
+      "html_url": "https://github.com/Renumics/sliceguard",
+      "description": "A library for detecting problematic data segments in structured and unstructured data with few lines of code.",
+      "stars": 66,
+      "pushed_at": "2024-01-10T15:46:47Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "LaureBerti/Learn2Clean",
+      "html_url": "https://github.com/LaureBerti/Learn2Clean",
+      "description": "Learn2Clean: Optimizing the Sequence of Tasks for Data Preparation and Cleaning",
+      "stars": 54,
+      "pushed_at": "2026-07-29T14:51:41Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "x-CK-x/Dataset-Curation-Tool",
+      "html_url": "https://github.com/x-CK-x/Dataset-Curation-Tool",
+      "description": "Data Curation Tool is a local-first dataset curation, tagging, model-management, downloader, 3D generation, media metadata, and tool-orchestration application. The current documentation set is stored in docs/wiki/",
+      "stars": 39,
+      "pushed_at": "2026-07-12T16:52:43Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "Digital-Dermatology/SelfClean",
+      "html_url": "https://github.com/Digital-Dermatology/SelfClean",
+      "description": "[NeurIPS 2024] \ud83e\uddfc\ud83d\udd0e A holistic self-supervised data cleaning strategy to detect irrelevant samples, near duplicates and label errors.",
+      "stars": 38,
+      "pushed_at": "2026-04-28T08:01:06Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://selfclean.github.io/"
+    },
+    {
+      "full_name": "cleanlab/cleanlab-studio",
+      "html_url": "https://github.com/cleanlab/cleanlab-studio",
+      "description": "Client interface to Cleanlab Studio",
+      "stars": 32,
+      "pushed_at": "2025-02-18T23:40:22Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://help.cleanlab.ai/"
+    },
+    {
+      "full_name": "brainlife/ezbids",
+      "html_url": "https://github.com/brainlife/ezbids",
+      "description": "A web service for semi-automated conversion of raw imaging data to BIDS",
+      "stars": 32,
+      "pushed_at": "2026-05-20T18:45:48Z",
+      "language": "Vue",
+      "license_spdx_id": "MIT",
+      "homepage": "https://brainlife.io/ezbids"
+    },
+    {
+      "full_name": "PennLINC/CuBIDS",
+      "html_url": "https://github.com/PennLINC/CuBIDS",
+      "description": "Curation of BIDS (CuBIDS): A sanity-preserving software package for processing BIDS datasets.",
+      "stars": 31,
+      "pushed_at": "2026-07-27T00:32:49Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://cubids.readthedocs.io/"
+    },
+    {
+      "full_name": "iwangjian/TopDial",
+      "html_url": "https://github.com/iwangjian/TopDial",
+      "description": "[EMNLP 2023] Target-oriented Proactive Dialogue Systems with Personalization: Problem Formulation and Dataset Curation",
+      "stars": 31,
+      "pushed_at": "2025-10-18T14:35:12Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://arxiv.org/abs/2310.07397"
+    },
+    {
+      "full_name": "TieuLongPhan/SynRBL",
+      "html_url": "https://github.com/TieuLongPhan/SynRBL",
+      "description": "Rebalancing chemical reaction",
+      "stars": 30,
+      "pushed_at": "2026-03-23T09:49:18Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "MigoXLab/awesome-data-quality",
+      "html_url": "https://github.com/MigoXLab/awesome-data-quality",
+      "description": "A comprehensive collection of data quality resources, tools, papers, and projects across various data types including traditional data, LLM pretraining/fine-tuning data, multimodal data, and more. Essential reference for researchers and practitioners in data-centric AI.",
+      "stars": 28,
+      "pushed_at": "2026-06-17T01:52:05Z",
+      "language": "",
+      "license_spdx_id": "CC0-1.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "JustVugg/distillery",
+      "html_url": "https://github.com/JustVugg/distillery",
+      "description": "Turn documents into high-quality instruction datasets with grounding, quality filtering, deduplication, and provenance.",
+      "stars": 27,
+      "pushed_at": "2026-04-23T08:48:35Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "pg-space/panspace",
+      "html_url": "https://github.com/pg-space/panspace",
+      "description": "Embedding-based indexing for compact storage and rapid querying of bacterial pan-genomes",
+      "stars": 23,
+      "pushed_at": "2026-07-11T17:37:02Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    }
+  ]
+}

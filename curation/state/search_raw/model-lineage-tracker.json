@@ -1,0 +1,17 @@
+{
+  "keyword": "model lineage tracker",
+  "query": "model lineage tracker stars:>19 pushed:>2025-08-17 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "BeSmarterWithData/ImpactIQ",
+      "html_url": "https://github.com/BeSmarterWithData/ImpactIQ",
+      "description": "One-click solution for Power BI and Fabric Impact Analysis + Governance. Automatically backs up reports, models, and dataflows while extracting complete metadata for impact analysis, refresh tracking, and complete lineage - down to the visual level - even when multiple reports across workspaces connect to a single model.",
+      "stars": 185,
+      "pushed_at": "2026-08-13T13:53:37Z",
+      "language": "C#",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    }
+  ]
+}

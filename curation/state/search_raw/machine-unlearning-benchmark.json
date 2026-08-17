@@ -1,17 +1,37 @@
 {
   "keyword": "machine unlearning benchmark",
-  "query": "machine unlearning benchmark stars:>19 pushed:>2025-07-28 archived:false fork:false",
-  "count": 2,
+  "query": "machine unlearning benchmark stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 4,
   "repos": [
     {
       "full_name": "gnueaj/Machine-Unlearning-Comparator",
       "html_url": "https://github.com/gnueaj/Machine-Unlearning-Comparator",
       "description": "A Visual Analytics System for Comparative Evaluation of Machine Unlearning Methods (TVCG 2026)",
-      "stars": 100,
+      "stars": 101,
       "pushed_at": "2026-07-17T11:39:30Z",
       "language": "TypeScript",
       "license_spdx_id": "",
       "homepage": "https://gnueaj.github.io/Machine-Unlearning-Comparator/"
+    },
+    {
+      "full_name": "OPTML-Group/UnlearnCanvas",
+      "html_url": "https://github.com/OPTML-Group/UnlearnCanvas",
+      "description": "[NeurIPS 2024 D&B Track] UnlearnCanvas: A Stylized Image Dataset to Benchmark Machine Unlearning for Diffusion Models by Yihua Zhang, Chongyu Fan, Yimeng Zhang, Yuguang Yao, Jinghan Jia, Jiancheng Liu, Gaoyuan Zhang, Gaowen Liu, Ramana Kompella, Xiaoming Liu, Sijia Liu",
+      "stars": 88,
+      "pushed_at": "2024-11-11T14:10:12Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://unlearn-canvas.netlify.app"
+    },
+    {
+      "full_name": "ndb796/MachineUnlearning",
+      "html_url": "https://github.com/ndb796/MachineUnlearning",
+      "description": "Towards Machine Unlearning Benchmarks: Forgetting the Personal Identities in Facial Recognition Systems",
+      "stars": 66,
+      "pushed_at": "2025-05-21T05:23:22Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
     },
     {
       "full_name": "aiim-research/ERASURE",

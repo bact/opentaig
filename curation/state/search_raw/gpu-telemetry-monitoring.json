@@ -1,0 +1,57 @@
+{
+  "keyword": "GPU telemetry monitoring",
+  "query": "GPU telemetry monitoring stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 5,
+  "repos": [
+    {
+      "full_name": "facebookincubator/dynolog",
+      "html_url": "https://github.com/facebookincubator/dynolog",
+      "description": "Dynolog is a telemetry daemon for performance monitoring and tracing. It exports metrics from different components in the system like the linux kernel, CPU, disks, Intel PT, GPUs etc. Dynolog also integrates with pytorch and can trigger traces for distributed training applications.",
+      "stars": 380,
+      "pushed_at": "2026-08-14T05:47:55Z",
+      "language": "C++",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "ProjectPhysX/hw-smi",
+      "html_url": "https://github.com/ProjectPhysX/hw-smi",
+      "description": "A minimal, cross-compatible CPU/GPU telemetry monitor with accurate data directly from vendor APIs and beautiful ASCII visualization.",
+      "stars": 299,
+      "pushed_at": "2026-06-24T19:49:38Z",
+      "language": "C++",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "kil0bit-kb/kil0bit-system-monitor",
+      "html_url": "https://github.com/kil0bit-kb/kil0bit-system-monitor",
+      "description": "A low-latency hardware telemetry overlay for Windows power users. Real-time monitoring of CPU, RAM, Network, and GPU \u2014 directly on your taskbar.",
+      "stars": 207,
+      "pushed_at": "2026-05-28T02:38:12Z",
+      "language": "C#",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "farukkamcici/mectrics",
+      "html_url": "https://github.com/farukkamcici/mectrics",
+      "description": "A lightweight, private system monitor that lives in your macOS menu bar. CPU, memory, battery, network, disk, GPU, temperature, fans. Zero telemetry.",
+      "stars": 128,
+      "pushed_at": "2026-08-04T13:07:56Z",
+      "language": "Swift",
+      "license_spdx_id": "MIT",
+      "homepage": "https://mectrics.app"
+    },
+    {
+      "full_name": "ROCm/omnistat",
+      "html_url": "https://github.com/ROCm/omnistat",
+      "description": "Scale-out system monitoring",
+      "stars": 26,
+      "pushed_at": "2026-08-14T21:10:34Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://rocm.github.io/omnistat/"
+    }
+  ]
+}

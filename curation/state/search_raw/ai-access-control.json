@@ -1,0 +1,387 @@
+{
+  "keyword": "AI access control",
+  "query": "AI access control stars:>19 pushed:>2025-08-17 archived:false fork:false",
+  "count": 38,
+  "repos": [
+    {
+      "full_name": "mlflow/mlflow",
+      "html_url": "https://github.com/mlflow/mlflow",
+      "description": "The open source AI engineering platform for agents, LLMs, and ML models. MLflow enables teams of all sizes to debug, evaluate, monitor, and optimize production-quality AI applications while controlling costs and managing access to models and data.",
+      "stars": 27544,
+      "pushed_at": "2026-08-17T01:04:35Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://mlflow.org"
+    },
+    {
+      "full_name": "ascending-llc/jarvis-registry",
+      "html_url": "https://github.com/ascending-llc/jarvis-registry",
+      "description": "Connect any AI copilot or autonomous agent to your enterprise tools \u2014 through a single, secure MCP/Agent gateway with built-in identity, access control, and full observability.",
+      "stars": 2755,
+      "pushed_at": "2026-08-17T09:15:04Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://jarvisregistry.com"
+    },
+    {
+      "full_name": "Yuan-lab-LLM/ClawManager",
+      "html_url": "https://github.com/Yuan-lab-LLM/ClawManager",
+      "description": "A Kubernetes-native control plane for AI agent instance management, with governed AI access, runtime orchestration, and reusable resources across multiple agent runtimes.",
+      "stars": 1895,
+      "pushed_at": "2026-08-12T06:09:12Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": "https://yuan-lab-llm.github.io/ClawManager/"
+    },
+    {
+      "full_name": "lakekeeper/lakekeeper",
+      "html_url": "https://github.com/lakekeeper/lakekeeper",
+      "description": "Apache Iceberg REST Catalog in Rust \u2014 access control, credential vending and audit for every engine and AI agent. Apache 2.0.",
+      "stars": 1419,
+      "pushed_at": "2026-08-17T13:24:17Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.lakekeeper.io"
+    },
+    {
+      "full_name": "astaxie/TokenHub",
+      "html_url": "https://github.com/astaxie/TokenHub",
+      "description": "TokenHub gives enterprises a private gateway to unify AI model access and governance, making every request controllable, traceable, and attributable.",
+      "stars": 1089,
+      "pushed_at": "2026-08-17T13:08:08Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://thinkinai-labs.github.io/tokenhome/"
+    },
+    {
+      "full_name": "krishnakanthb13/antigravity_phone_chat",
+      "html_url": "https://github.com/krishnakanthb13/antigravity_phone_chat",
+      "description": "\ud83d\udcf1 Real-time mobile monitor & remote control for Antigravity AI sessions. Mirrors your desktop chat to your phone via Chrome DevTools Protocol (CDP) with sub-100ms snapshots, secure global tunnel access (ngrok/Cloudflare/Pinggy), HTTPS, and full remote control.",
+      "stars": 777,
+      "pushed_at": "2026-06-16T17:07:48Z",
+      "language": "JavaScript",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "dannote/figma-use",
+      "html_url": "https://github.com/dannote/figma-use",
+      "description": "Control Figma from the command line. Full read/write access for AI agents \u2014 create shapes, text, components, set styles, export images. 100+ commands.",
+      "stars": 592,
+      "pushed_at": "2026-07-03T14:00:27Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.npmjs.com/package/figma-use"
+    },
+    {
+      "full_name": "bytedance/vArmor",
+      "html_url": "https://github.com/bytedance/vArmor",
+      "description": "vArmor is a cloud-native container hardening system that leverages AppArmor/BPF/Seccomp and NetworkProxy technologies to enforce access control from system calls to application protocols \u2014 protecting workloads including AI Agents.",
+      "stars": 493,
+      "pushed_at": "2026-08-17T03:43:47Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://varmor.org"
+    },
+    {
+      "full_name": "Kocoro-lab/Kocoro",
+      "html_url": "https://github.com/Kocoro-lab/Kocoro",
+      "description": "A Mac-native AI agent with memory, local computer access, browser control, IM channels, and MCP-native integrations. Built on Shannon.",
+      "stars": 402,
+      "pushed_at": "2026-08-17T09:24:12Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": "https://kocoro.ai"
+    },
+    {
+      "full_name": "tysonnbt/Antigravity-Deck",
+      "html_url": "https://github.com/tysonnbt/Antigravity-Deck",
+      "description": "Remote control for Antigravity \u2014 manage AI conversations, workspaces, and agents from any device. One command to set up, one URL to access.",
+      "stars": 155,
+      "pushed_at": "2026-06-11T12:51:18Z",
+      "language": "JavaScript",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "vstorm-co/pydantic-ai-backend",
+      "html_url": "https://github.com/vstorm-co/pydantic-ai-backend",
+      "description": "File Storage & Sandbox Backends for Pydantic AI: console tools for file operations, Docker-isolated sandboxes for safe execution, and permission system with presets for access control. Enables secure multi-user handling and testing in agents via in-memory, local, or containerized storage.",
+      "stars": 120,
+      "pushed_at": "2026-08-16T18:47:30Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://vstorm-co.github.io/pydantic-ai-backend/"
+    },
+    {
+      "full_name": "abydahana/aksara",
+      "html_url": "https://github.com/abydahana/aksara",
+      "description": "Aksara is a modern, developer-friendly framework and CMS built on CodeIgniter 4, featuring rapid CRUD development, modular architecture, smart routing, flexible access control, API integration, and an AI assistant to make content management faster and smarter.",
+      "stars": 112,
+      "pushed_at": "2026-08-17T09:58:12Z",
+      "language": "PHP",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.aksaracms.com"
+    },
+    {
+      "full_name": "sgeraldes/hidock-next",
+      "html_url": "https://github.com/sgeraldes/hidock-next",
+      "description": "HiDock Next: Local control for your HiDock device. Manage recordings, access advanced AI transcription (Gemini, OpenAI), and build your private knowledge base. An open-source alternative to HiNotes.",
+      "stars": 110,
+      "pushed_at": "2026-07-20T18:30:56Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.patreon.com/situx"
+    },
+    {
+      "full_name": "faucetdb/faucet",
+      "html_url": "https://github.com/faucetdb/faucet",
+      "description": "Faucet is an open-source, single-binary server that turns any SQL database into a secure, governed REST API with role-based access control and native MCP support for applications and AI agents.",
+      "stars": 106,
+      "pushed_at": "2026-07-02T20:17:59Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.faucetdb.ai"
+    },
+    {
+      "full_name": "microsoft/AICentral",
+      "html_url": "https://github.com/microsoft/AICentral",
+      "description": "An AI Control Centre for monitoring, authenticating, and providing resilient access to multiple Open AI services.",
+      "stars": 96,
+      "pushed_at": "2025-09-09T13:21:20Z",
+      "language": "C#",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Adversis/mcp-snitch",
+      "html_url": "https://github.com/Adversis/mcp-snitch",
+      "description": "MCP Snitch is a macOS application that intercepts and monitors MCP server communications, providing security analysis, access control, and audit logging for AI tool usage.",
+      "stars": 94,
+      "pushed_at": "2025-10-14T20:39:43Z",
+      "language": "Swift",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "doublewordai/control-layer",
+      "html_url": "https://github.com/doublewordai/control-layer",
+      "description": "The world\u2019s fastest AI model gateway (450x less overhead than LiteLLM). Unified access to LLMs across endpoints (openAI, self-hosted, etc.) behind a single authentication layer - with API key generation, user management, request logging, and more",
+      "stars": 92,
+      "pushed_at": "2026-08-17T13:56:33Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://doublewordai.github.io/control-layer/"
+    },
+    {
+      "full_name": "OpsinTech/opsintech-platform",
+      "html_url": "https://github.com/OpsinTech/opsintech-platform",
+      "description": "OpsinTech Platform \u2014 An enterprise-grade AI agent platform built on LangGraph, featuring multi-tenant architecture, role-based access control, sandboxed tool execution, and an admin UI for managing models, MCP servers, skills, and tools. Designed for production deployment with Docker, PostgreSQL support, and comprehensive governance capabilities.",
+      "stars": 91,
+      "pushed_at": "2026-07-15T12:16:42Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "http://www.opsintech.net"
+    },
+    {
+      "full_name": "wissem/cc-filter",
+      "html_url": "https://github.com/wissem/cc-filter",
+      "description": "cc-filter is a security tool that enforces strict access controls for Claude Code by intercepting and filtering data before it reaches the AI",
+      "stars": 83,
+      "pushed_at": "2026-03-30T10:20:22Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Rich627/whatsapp-claude-plugin",
+      "html_url": "https://github.com/Rich627/whatsapp-claude-plugin",
+      "description": "Claude Code WhatsApp channel plugin \u2014 run AI directly from WhatsApp, voice transcription, remote tool approval, access control. No API keys, no Docker, just a linked device.",
+      "stars": 69,
+      "pushed_at": "2026-07-19T07:52:16Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/anthropics/claude-code/issues/36814"
+    },
+    {
+      "full_name": "pnnl/agent-cage",
+      "html_url": "https://github.com/pnnl/agent-cage",
+      "description": "Agent Cage is a Docker-based sandbox prototype that gives AI agents complete access to an Ubuntu environment while experimenting with IT-grade network control.",
+      "stars": 63,
+      "pushed_at": "2026-06-17T17:30:01Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "makerchecker/MakerChecker",
+      "html_url": "https://github.com/makerchecker/MakerChecker",
+      "description": "Open-source security gateway & static scanner for AI agents. Enforce role-based access control (RBAC), human-in-the-loop approvals,   segregation of duties, and cryptographically signed, offline-verifiable audit logs.",
+      "stars": 51,
+      "pushed_at": "2026-08-17T03:17:46Z",
+      "language": "TypeScript",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://makerchecker.ai"
+    },
+    {
+      "full_name": "charannyk06/conductor-oss",
+      "html_url": "https://github.com/charannyk06/conductor-oss",
+      "description": "Local-first control surface for AI coding agents, workspaces, worktrees, terminals, diffs, previews, and paired-device access.",
+      "stars": 47,
+      "pushed_at": "2026-08-17T08:15:38Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://app.conductross.com/"
+    },
+    {
+      "full_name": "Lightning-AI/LitModels",
+      "html_url": "https://github.com/Lightning-AI/LitModels",
+      "description": "Save, load, host, and share AI model checkpoints without slowing down training. Host on Lightning AI or your own cloud with enterprise-grade access controls.",
+      "stars": 40,
+      "pushed_at": "2026-08-03T21:18:56Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "bravian1/gemini_cli_server",
+      "html_url": "https://github.com/bravian1/gemini_cli_server",
+      "description": "gemini_cli_server provides a seamless bridge between Gemini CLI and Telegram, enabling conversational control of the AI assistant directly through your messaging app. This integration empowers users to harness Gemini\u2019s capabilities\u2014via slash commands, triggers, or AI workflows\u2014without needing direct terminal access.",
+      "stars": 40,
+      "pushed_at": "2025-08-24T12:46:50Z",
+      "language": "Go",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "AbuZar-Ansarii/Openclaw-phone-control",
+      "html_url": "https://github.com/AbuZar-Ansarii/Openclaw-phone-control",
+      "description": "OpenClaw allows you to manage your phone via a Telegram bot using the power of local AI (Ollama). No root access is required, making it accessible for almost any modern Android device",
+      "stars": 35,
+      "pushed_at": "2026-04-07T06:42:15Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "datacline/secure-mcp-gateway",
+      "html_url": "https://github.com/datacline/secure-mcp-gateway",
+      "description": "Secure mcp infrastructure to audit and control every data access by AI agents with minimal efforts",
+      "stars": 33,
+      "pushed_at": "2026-05-13T12:20:10Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://datacline.ai"
+    },
+    {
+      "full_name": "samerfarida/mcp-ssh-orchestrator",
+      "html_url": "https://github.com/samerfarida/mcp-ssh-orchestrator",
+      "description": "Secure SSH access for AI agents via MCP. Execute commands across your server fleet with policy enforcement, network controls, and comprehensive audit logging.",
+      "stars": 27,
+      "pushed_at": "2026-08-17T13:05:58Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "RamiBotAI/ramibot",
+      "html_url": "https://github.com/RamiBotAI/ramibot",
+      "description": "RamiBot v3.8.0 is a local-first AI security operations platform integrating multi-LLM support, a dynamic red/blue team skill pipeline, MCP tool orchestration, Docker terminal access, Tor proxy management, and an auto-integrated Kali-based tool server (rami-kali) for controlled, extensible offensive and defensive workflows",
+      "stars": 26,
+      "pushed_at": "2026-03-22T11:53:39Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://RamiBot.com"
+    },
+    {
+      "full_name": "stacklok/toolhive-registry-server",
+      "html_url": "https://github.com/stacklok/toolhive-registry-server",
+      "description": "Discover, govern and control access to MCP servers and agent skills across your organization",
+      "stars": 24,
+      "pushed_at": "2026-08-17T01:40:42Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.stacklok.com/toolhive/guides-registry/"
+    },
+    {
+      "full_name": "k3nn3dy-ai/kali-mcp",
+      "html_url": "https://github.com/k3nn3dy-ai/kali-mcp",
+      "description": "This project provides a Docker containerized MCP server that runs on Kali Linux, giving AI assistants (like Claude) access to a full suite of security and penetration testing tools. The server communicates via Server-Sent Events (SSE) and allows AI to execute commands in a controlled environment.",
+      "stars": 23,
+      "pushed_at": "2026-03-07T17:40:22Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "noname122021/airpyrt-tools-guide",
+      "html_url": "https://github.com/noname122021/airpyrt-tools-guide",
+      "description": "Jailbreak AirPort Extreme & Time Capsule (802.11ac/n) on macOS. Root SSH access, region speed boost (FCC), manual fan control, and HDD spindown settings for A1521, A1470, A1408 & A1409.",
+      "stars": 22,
+      "pushed_at": "2026-07-29T22:00:32Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "launchiamenterprise/keyrunner",
+      "html_url": "https://github.com/launchiamenterprise/keyrunner",
+      "description": "Governed API and agent runtime for desktop, VS Code, and CLI. Secure API testing, mocking, automation, secret protection, and controlled AI tool access.",
+      "stars": 22,
+      "pushed_at": "2026-06-25T14:44:50Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": "https://keyrunner.app"
+    },
+    {
+      "full_name": "blazickjp/shell-mcp-server",
+      "html_url": "https://github.com/blazickjp/shell-mcp-server",
+      "description": "Secure shell command execution MCP server for Claude AI. Enables controlled shell access within specified directories.",
+      "stars": 21,
+      "pushed_at": "2025-08-19T03:12:54Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "huawei-csl/AC-LoRA",
+      "html_url": "https://github.com/huawei-csl/AC-LoRA",
+      "description": "Welcome to the official repository of AC-LORA: (Almost) Training-Free Access Control-Aware Multi-Modal LLMs, a mechanism that provides training-free secure access control for LLMs using separate LoRAs fine-tuned with sensitive data, and merge them based on the user query and permission.",
+      "stars": 21,
+      "pushed_at": "2025-11-14T13:04:14Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "CC0-1.0",
+      "homepage": "https://arxiv.org/abs/2505.11557"
+    },
+    {
+      "full_name": "abaxxlabs/agents",
+      "html_url": "https://github.com/abaxxlabs/agents",
+      "description": "Identity and access control for AI agents on PostgreSQL.",
+      "stars": 20,
+      "pushed_at": "2026-08-12T14:29:24Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "zzispp/Hook",
+      "html_url": "https://github.com/zzispp/Hook",
+      "description": "AI API gateway and operations platform for unified model routing, token/RBAC access control, billing, provider management, and monitoring.",
+      "stars": 20,
+      "pushed_at": "2026-08-10T01:38:06Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": "https://zzispp.github.io/Hook"
+    },
+    {
+      "full_name": "mrkhachaturov/hindclaw",
+      "html_url": "https://github.com/mrkhachaturov/hindclaw",
+      "description": "Self-hosted Hindsight management platform \u2014 multi-tenant access control, user/group permissions, Terraform-managed infrastructure, and client integrations for AI agent memory.",
+      "stars": 20,
+      "pushed_at": "2026-08-17T04:30:32Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    }
+  ]
+}

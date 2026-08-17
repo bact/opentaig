@@ -1,0 +1,137 @@
+{
+  "keyword": "AI policy engine",
+  "query": "AI policy engine stars:>19 pushed:>2025-08-17 archived:false fork:false",
+  "count": 13,
+  "repos": [
+    {
+      "full_name": "RelayPlane/proxy",
+      "html_url": "https://github.com/RelayPlane/proxy",
+      "description": "Open source cost intelligence proxy for AI agents. Cut costs ~80% with smart model routing. Dashboard, policy engine, 11 providers. MIT licensed.",
+      "stars": 197,
+      "pushed_at": "2026-08-17T07:44:55Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://relayplane.com"
+    },
+    {
+      "full_name": "LF-Decentralized-Trust-labs/gitmesh",
+      "html_url": "https://github.com/LF-Decentralized-Trust-labs/gitmesh",
+      "description": "GitMesh: Policy-as-Code Engine for Open Source AI Agent Orchestration",
+      "stars": 143,
+      "pushed_at": "2026-08-15T05:55:33Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "SleuthCo/clawshield-public",
+      "html_url": "https://github.com/SleuthCo/clawshield-public",
+      "description": "Security proxy for AI agents. Scans every message for prompt injection, PII, and secrets. Defense-in-depth: Go proxy + iptables firewall + eBPF kernel monitor. YAML policy engine, audit logging, 5 AI agents with RAG knowledge bases.",
+      "stars": 130,
+      "pushed_at": "2026-03-26T20:29:39Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "O-ozzz/OctoGuard--Free-OpenClaw-Security-Supervision-System",
+      "html_url": "https://github.com/O-ozzz/OctoGuard--Free-OpenClaw-Security-Supervision-System",
+      "description": "Safety Is All You Need \uff01Meet OctoGuard, the toughest boss for Lobster AI employees \u2014 a security governance and audit system designed for OpenClaw. Featuring an innovative security policy engine, it cuts off high-risk behaviors at their root, making your digital employees safer and more reliable.",
+      "stars": 102,
+      "pushed_at": "2026-04-04T16:38:33Z",
+      "language": "JavaScript",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "peg/rampart",
+      "html_url": "https://github.com/peg/rampart",
+      "description": "Open-source firewall for AI agents. Policy engine that audits and controls what OpenClaw, Claude Code, Cursor, Codex, and any AI tool can do on your machine.",
+      "stars": 82,
+      "pushed_at": "2026-08-16T22:34:16Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://rampart.sh"
+    },
+    {
+      "full_name": "adityaprasad-sudo/ExploreSingapore",
+      "html_url": "https://github.com/adityaprasad-sudo/ExploreSingapore",
+      "description": "A sophisticated RAG intelligence engine for Singaporean laws, policies, and history. Comes with a triple-AI failover backend (Gemini/Llama/Groq), semantic embeddings using FAISS, and an Apple-inspired interactive UI. Designed with precision and high availability in mind.",
+      "stars": 74,
+      "pushed_at": "2026-04-21T12:22:23Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://exploresingapore.vercel.app/"
+    },
+    {
+      "full_name": "permguard/permguard",
+      "html_url": "https://github.com/permguard/permguard",
+      "description": "Permguard is the authorization engine for both worlds: enforce policies on today's systems, enforce continuity on tomorrow's. One engine for governance, AI agents, and distributed execution.",
+      "stars": 68,
+      "pushed_at": "2026-04-20T13:23:06Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.permguard.com"
+    },
+    {
+      "full_name": "Lelu-ai/lelu",
+      "html_url": "https://github.com/Lelu-ai/lelu",
+      "description": "Open source authorization engine for AI agents. Confidence-aware gating \u00b7 Human-in-the-loop review \u00b7 Policy-as-code \u00b7 Full audit trail",
+      "stars": 56,
+      "pushed_at": "2026-08-13T19:02:04Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://lelu-ai.com/"
+    },
+    {
+      "full_name": "jnamaya/SAFi",
+      "html_url": "https://github.com/jnamaya/SAFi",
+      "description": "SAFi is an open-source runtime governance engine for agentic AI that enforces your policies, governs agent actions, and records every decision for audit.",
+      "stars": 50,
+      "pushed_at": "2026-08-17T14:42:08Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://selfalignmentframework.com/"
+    },
+    {
+      "full_name": "claudlos/hermes-katana",
+      "html_url": "https://github.com/claudlos/hermes-katana",
+      "description": "Defense-in-depth security toolkit for LLM agents \u2014 taint tracking, proxy secret guard, policy engine, and red-team benchmarking",
+      "stars": 47,
+      "pushed_at": "2026-08-17T12:51:07Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://claudlos.github.io/hermes-katana/"
+    },
+    {
+      "full_name": "mominalix/ESG-Analysis-Using-Retrieval-Augmented-Generation-Engine",
+      "html_url": "https://github.com/mominalix/ESG-Analysis-Using-Retrieval-Augmented-Generation-Engine",
+      "description": "Analyse environmental, social, and governance policies for potential gaps using AI - powered by LLMs, RAG techniques, and a regulatory knowledge base using OpenAI API, LangChain, Pinecone and Streamlit.",
+      "stars": 41,
+      "pushed_at": "2026-08-12T07:05:15Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "vectimus/vectimus",
+      "html_url": "https://github.com/vectimus/vectimus",
+      "description": "Deterministic governance for AI coding agents. Cedar-based policy engine that intercepts every agent action and evaluates it against deterministic rules before execution.",
+      "stars": 38,
+      "pushed_at": "2026-08-01T09:57:00Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://vectimus.com/"
+    },
+    {
+      "full_name": "Alexi5000/ClawKeeper",
+      "html_url": "https://github.com/Alexi5000/ClawKeeper",
+      "description": "Governed Claude agent control plane: deterministic policy engine runs before every LLM call, $0 default autonomous spend, database-enforced immutable audit log. 147 passing tests. MIT.",
+      "stars": 26,
+      "pushed_at": "2026-08-09T03:56:38Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}

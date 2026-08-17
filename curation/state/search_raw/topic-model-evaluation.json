@@ -1,8 +1,28 @@
 {
   "keyword": "topic:model-evaluation",
-  "query": "topic:model-evaluation stars:>19 pushed:>2025-07-28 archived:false fork:false",
-  "count": 21,
+  "query": "topic:model-evaluation stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 36,
   "repos": [
+    {
+      "full_name": "future-agi/future-agi",
+      "html_url": "https://github.com/future-agi/future-agi",
+      "description": "Open-source, end-to-end platform for evaluating, observing, and improving LLM and AI agent applications. Tracing \u00b7 Evals \u00b7 Simulations \u00b7 Datasets \u00b7 Gateway \u00b7 Guardrails. Self-hostable. Apache 2.0.",
+      "stars": 1691,
+      "pushed_at": "2026-08-17T14:47:00Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://futureagi.com"
+    },
+    {
+      "full_name": "justmarkham/DAT8",
+      "html_url": "https://github.com/justmarkham/DAT8",
+      "description": "General Assembly's 2015 Data Science course in Washington, DC",
+      "stars": 1620,
+      "pushed_at": "2024-06-05T12:04:22Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
     {
       "full_name": "tidymodels/lime",
       "html_url": "https://github.com/tidymodels/lime",
@@ -14,11 +34,31 @@
       "homepage": "https://lime.data-imaginist.com/"
     },
     {
+      "full_name": "eugeneyan/testing-ml",
+      "html_url": "https://github.com/eugeneyan/testing-ml",
+      "description": "\ud83d\udd0d Minimal examples of machine learning tests for implementation, behaviour, and performance.",
+      "stars": 273,
+      "pushed_at": "2022-09-21T15:29:15Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://eugeneyan.com/writing/testing-ml/"
+    },
+    {
+      "full_name": "star-whale/starwhale",
+      "html_url": "https://github.com/star-whale/starwhale",
+      "description": "an MLOps/LLMOps platform",
+      "stars": 235,
+      "pushed_at": "2024-12-20T04:11:17Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://starwhale.ai"
+    },
+    {
       "full_name": "saccofrancesco/deepshot",
       "html_url": "https://github.com/saccofrancesco/deepshot",
       "description": "AI-powered NBA game outcome predictor that uses advanced team stats and trend-based features to forecast winners and track model performance",
-      "stars": 169,
-      "pushed_at": "2026-07-28T13:04:12Z",
+      "stars": 168,
+      "pushed_at": "2026-08-13T05:03:31Z",
       "language": "Jupyter Notebook",
       "license_spdx_id": "MIT",
       "homepage": ""
@@ -34,6 +74,16 @@
       "homepage": "https://gsoc.cloudcv.org"
     },
     {
+      "full_name": "metriculous-ml/metriculous",
+      "html_url": "https://github.com/metriculous-ml/metriculous",
+      "description": "Measure and visualize machine learning model performance without the usual boilerplate.",
+      "stars": 98,
+      "pushed_at": "2024-09-13T09:31:27Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
       "full_name": "ModelOriented/fairmodels",
       "html_url": "https://github.com/ModelOriented/fairmodels",
       "description": "Flexible tool for bias detection, visualization, and mitigation",
@@ -44,22 +94,42 @@
       "homepage": "https://fairmodels.drwhy.ai/"
     },
     {
+      "full_name": "Blackwellboy/model-serving-minefield",
+      "html_url": "https://github.com/Blackwellboy/model-serving-minefield",
+      "description": "Community registry of LLM serving-path traps that produce confidently wrong measurements: templates, tool parsers, reasoning fields, quant kernel paths, CUDA toolchains, KV allocation, eval harnesses, versioning. Symptom-first, with the check that catches each.",
+      "stars": 85,
+      "pushed_at": "2026-08-17T14:50:40Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "Lantianzz/Scorecard-Bundle",
+      "html_url": "https://github.com/Lantianzz/Scorecard-Bundle",
+      "description": "A High-level Scorecard Modeling API  | \u8bc4\u5206\u5361\u5efa\u6a21\u5c3d\u5728\u4e8e\u6b64",
+      "stars": 83,
+      "pushed_at": "2022-10-10T16:09:53Z",
+      "language": "Python",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": "https://scorecard-bundle.bubu.blue/"
+    },
+    {
+      "full_name": "ulyssestenn/omt",
+      "html_url": "https://github.com/ulyssestenn/omt",
+      "description": "Ollama Model Test - Figure out the best model for the task",
+      "stars": 51,
+      "pushed_at": "2026-06-04T03:38:29Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
       "full_name": "PacktWorkshops/The-Deep-Learning-with-Keras-Workshop",
       "html_url": "https://github.com/PacktWorkshops/The-Deep-Learning-with-Keras-Workshop",
       "description": "An Interactive Approach to Understanding Deep Learning with Keras",
       "stars": 51,
       "pushed_at": "2026-03-02T12:34:42Z",
       "language": "Jupyter Notebook",
-      "license_spdx_id": "MIT",
-      "homepage": ""
-    },
-    {
-      "full_name": "ulyssestenn/omt",
-      "html_url": "https://github.com/ulyssestenn/omt",
-      "description": "Ollama Model Test - Figure out the best model for the task",
-      "stars": 49,
-      "pushed_at": "2026-06-04T03:38:29Z",
-      "language": "Python",
       "license_spdx_id": "MIT",
       "homepage": ""
     },
@@ -74,6 +144,16 @@
       "homepage": ""
     },
     {
+      "full_name": "TrentPierce/PolyCouncil",
+      "html_url": "https://github.com/TrentPierce/PolyCouncil",
+      "description": "PolyCouncil is an open-source multi-model deliberation engine for LM Studio. It runs multiple LLMs in parallel, gathers their answers, scores each response using a shared rubric, and produces a final, consensus-driven result. Designed for testing, comparing, and orchestrating local models with ease.",
+      "stars": 42,
+      "pushed_at": "2026-03-24T19:36:53Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
       "full_name": "Striveworks/valor",
       "html_url": "https://github.com/Striveworks/valor",
       "description": "Valor is a lightweight, numpy-based library designed for fast and seamless evaluation of machine learning models.",
@@ -84,30 +164,40 @@
       "homepage": "https://striveworks.github.io/valor/"
     },
     {
-      "full_name": "TrentPierce/PolyCouncil",
-      "html_url": "https://github.com/TrentPierce/PolyCouncil",
-      "description": "PolyCouncil is an open-source multi-model deliberation engine for LM Studio. It runs multiple LLMs in parallel, gathers their answers, scores each response using a shared rubric, and produces a final, consensus-driven result. Designed for testing, comparing, and orchestrating local models with ease.",
-      "stars": 39,
-      "pushed_at": "2026-03-24T19:36:53Z",
-      "language": "Python",
-      "license_spdx_id": "NOASSERTION",
-      "homepage": ""
-    },
-    {
       "full_name": "npstorey/civic-ai-tools",
       "html_url": "https://github.com/npstorey/civic-ai-tools",
       "description": "Open-source platform connecting AI assistants to government open data \u2014 MCP server, curated civic MCP directory, and anti-hallucination framework for all 559 Socrata portals",
-      "stars": 39,
-      "pushed_at": "2026-07-12T19:35:13Z",
-      "language": "Python",
+      "stars": 40,
+      "pushed_at": "2026-08-13T15:47:31Z",
+      "language": "TypeScript",
       "license_spdx_id": "MIT",
       "homepage": "https://civicaitools.org"
+    },
+    {
+      "full_name": "roboflow/cvevals",
+      "html_url": "https://github.com/roboflow/cvevals",
+      "description": "Evaluate the performance of computer vision models and prompts for zero-shot models (Grounding DINO, CLIP, BLIP, DINOv2, ImageBind, models hosted on Roboflow)",
+      "stars": 36,
+      "pushed_at": "2023-10-18T00:32:39Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://roboflow.github.io/cvevals/"
+    },
+    {
+      "full_name": "Zyjacya-In-love/Pedestrian-Detection-on-YOLOv3_Research-and-APP",
+      "html_url": "https://github.com/Zyjacya-In-love/Pedestrian-Detection-on-YOLOv3_Research-and-APP",
+      "description": ":mortar_board: 2020 Undergraduate Graduation Project in Jiangnan University ALL codes including Data-convert, keras-Train, model-Evaluate and Web-App",
+      "stars": 35,
+      "pushed_at": "2022-11-22T06:09:45Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
     },
     {
       "full_name": "Poyu123/CNN-application-on-CRFAR10-picture-distinguish",
       "html_url": "https://github.com/Poyu123/CNN-application-on-CRFAR10-picture-distinguish",
       "description": "A hands-on TensorFlow image recognition project teaching a computer to identify 10 everyday objects, originally for a linear algebra class, with tools to train a CNN, auto-tune settings, and test accuracy on random internet images.",
-      "stars": 36,
+      "stars": 34,
       "pushed_at": "2026-03-20T15:48:29Z",
       "language": "Python",
       "license_spdx_id": "",
@@ -118,7 +208,7 @@
       "html_url": "https://github.com/metno/pyaerocom",
       "description": "Python tools for climate and air quality model evaluation",
       "stars": 33,
-      "pushed_at": "2026-07-24T07:56:28Z",
+      "pushed_at": "2026-08-17T08:38:41Z",
       "language": "Python",
       "license_spdx_id": "GPL-3.0",
       "homepage": "https://pyaerocom.readthedocs.io/"
@@ -127,10 +217,30 @@
       "full_name": "dependentsign/Awesome-LLM-based-Evaluators",
       "html_url": "https://github.com/dependentsign/Awesome-LLM-based-Evaluators",
       "description": "\u2728\u2728Latest Papers about LLM-based Evaluators",
-      "stars": 32,
+      "stars": 33,
       "pushed_at": "2026-02-26T00:10:17Z",
       "language": "",
       "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "lechmazur/deception",
+      "html_url": "https://github.com/lechmazur/deception",
+      "description": "Benchmark evaluating LLMs on their ability to create and resist disinformation. Includes comprehensive testing across major models (Claude, GPT-4, Gemini, Llama, etc.) with standardized evaluation metrics.",
+      "stars": 33,
+      "pushed_at": "2025-03-20T00:18:53Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "AdArya125/Primer-to-Machine-Learning",
+      "html_url": "https://github.com/AdArya125/Primer-to-Machine-Learning",
+      "description": "'Primer to Machine Learning' is a comprehensive guide covering essential topics in machine learning, including statistics, data preprocessing, supervised and unsupervised learning, neural networks, deep learning, NLP, time series analysis, and reinforcement learning. Perfect for beginners and intermediates.",
+      "stars": 32,
+      "pushed_at": "2024-09-01T18:21:20Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
       "homepage": ""
     },
     {
@@ -157,11 +267,21 @@
       "full_name": "ml4t/diagnostic",
       "html_url": "https://github.com/ml4t/diagnostic",
       "description": "Signal diagnostics, statistical validation, and backtest evaluation for quantitative trading workflows.",
-      "stars": 25,
-      "pushed_at": "2026-07-27T10:07:55Z",
+      "stars": 27,
+      "pushed_at": "2026-08-17T10:07:55Z",
       "language": "Python",
       "license_spdx_id": "MIT",
       "homepage": "https://www.ml4trading.io/docs/diagnostic/"
+    },
+    {
+      "full_name": "rohanmistry231/ML-Interview-Preparation",
+      "html_url": "https://github.com/rohanmistry231/ML-Interview-Preparation",
+      "description": "A comprehensive resource for machine learning interview preparation, featuring coding challenges, algorithm explanations, and practical Python examples. Covers supervised and unsupervised learning, model evaluation, and data preprocessing for technical interviews.",
+      "stars": 26,
+      "pushed_at": "2025-05-22T06:09:35Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
     },
     {
       "full_name": "VoxDroid/Construction-Site-Safety-PPE-Detection",
@@ -178,10 +298,30 @@
       "html_url": "https://github.com/Climate-REF/climate-ref",
       "description": "Rapid Evaluation Framework for climate data",
       "stars": 25,
-      "pushed_at": "2026-07-28T10:24:17Z",
+      "pushed_at": "2026-08-17T10:39:13Z",
       "language": "Python",
       "license_spdx_id": "Apache-2.0",
       "homepage": "https://climate-ref.readthedocs.io/en/latest/"
+    },
+    {
+      "full_name": "animator/titus2",
+      "html_url": "https://github.com/animator/titus2",
+      "description": "Titus 2 : Portable Format for Analytics (PFA) implementation for Python 3.4+",
+      "stars": 24,
+      "pushed_at": "2023-02-09T01:33:47Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://realworldpython.github.io/titus2/"
+    },
+    {
+      "full_name": "medoidai/skrobot",
+      "html_url": "https://github.com/medoidai/skrobot",
+      "description": "skrobot is a Python module for designing, running and tracking Machine Learning experiments / tasks. It is built on top of scikit-learn framework.",
+      "stars": 24,
+      "pushed_at": "2024-09-18T23:50:44Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
     },
     {
       "full_name": "greynewell/matchspec",
@@ -198,10 +338,20 @@
       "html_url": "https://github.com/AmirhosseinHonardoust/Financial-Fraud-Risk-Engine",
       "description": "A complete end-to-end fraud detection system for financial transactions, featuring data pipelines, cost-sensitive ML modeling, explainability with SHAP, threshold optimization, batch scoring, and an interactive Streamlit dashboard. Designed to simulate real-world fintech fraud-risk workflows.",
       "stars": 21,
-      "pushed_at": "2026-06-19T22:50:42Z",
+      "pushed_at": "2026-08-13T16:29:59Z",
       "language": "Python",
       "license_spdx_id": "MIT",
       "homepage": ""
+    },
+    {
+      "full_name": "VishalKumar-S/Sales_Conversion_Optimization_MLOps_Project",
+      "html_url": "https://github.com/VishalKumar-S/Sales_Conversion_Optimization_MLOps_Project",
+      "description": "Sales Conversion Optimization MLOps: Boost revenue with AI-powered insights. Features H2O AutoML, ZenML pipelines, Neptune.ai tracking, data validation, drift analysis, CI/CD, Streamlit app, Docker, and GitHub Actions. Includes e-mail alerts, Discord/Slack integration, and SHAP interpretability. Streamline ML workflow and enhance sales performance.",
+      "stars": 21,
+      "pushed_at": "2025-03-22T14:36:13Z",
+      "language": "HTML",
+      "license_spdx_id": "",
+      "homepage": "https://sales-conversion-optimization-mlops-project.streamlit.app/"
     },
     {
       "full_name": "AmirhosseinHonardoust/Cognitivelens-AI-Human-Comparison",

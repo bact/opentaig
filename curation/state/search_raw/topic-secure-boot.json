@@ -1,0 +1,377 @@
+{
+  "keyword": "topic:secure-boot",
+  "query": "topic:secure-boot stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 37,
+  "repos": [
+    {
+      "full_name": "ventoy/Ventoy",
+      "html_url": "https://github.com/ventoy/Ventoy",
+      "description": "A new bootable USB solution.",
+      "stars": 78779,
+      "pushed_at": "2026-08-06T04:51:23Z",
+      "language": "C",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://www.ventoy.net"
+    },
+    {
+      "full_name": "pbatard/rufus",
+      "html_url": "https://github.com/pbatard/rufus",
+      "description": "The Reliable USB Formatting Utility",
+      "stars": 37325,
+      "pushed_at": "2026-08-03T11:33:58Z",
+      "language": "C",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://rufus.ie"
+    },
+    {
+      "full_name": "Foxboron/sbctl",
+      "html_url": "https://github.com/Foxboron/sbctl",
+      "description": ":computer: :lock: :key: Secure Boot key manager",
+      "stars": 2238,
+      "pushed_at": "2026-08-02T18:36:57Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "nix-community/lanzaboote",
+      "html_url": "https://github.com/nix-community/lanzaboote",
+      "description": "Secure Boot & Measured Boot for NixOS [maintainers=@blitz @raitobezarius @nikstur]",
+      "stars": 1805,
+      "pushed_at": "2026-08-17T09:25:14Z",
+      "language": "Rust",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://nix-community.github.io/lanzaboote/"
+    },
+    {
+      "full_name": "GrapheneOS/Auditor",
+      "html_url": "https://github.com/GrapheneOS/Auditor",
+      "description": "Hardware-based attestation and intrusion detection app for Android. It provides both local verification with another Android device via QR codes and optional scheduled server-based verification with support for alert emails. It uses hardware-backed keys and attestation support as the foundation and chains trust to the app for software checks.",
+      "stars": 685,
+      "pushed_at": "2026-08-17T15:26:27Z",
+      "language": "Java",
+      "license_spdx_id": "MIT",
+      "homepage": "https://attestation.app/"
+    },
+    {
+      "full_name": "Wack0/CVE-2022-21894",
+      "html_url": "https://github.com/Wack0/CVE-2022-21894",
+      "description": "baton drop (CVE-2022-21894): Secure Boot Security Feature Bypass Vulnerability",
+      "stars": 354,
+      "pushed_at": "2023-09-27T06:44:27Z",
+      "language": "C",
+      "license_spdx_id": "Unlicense",
+      "homepage": ""
+    },
+    {
+      "full_name": "cjee21/Check-UEFISecureBootVariables",
+      "html_url": "https://github.com/cjee21/Check-UEFISecureBootVariables",
+      "description": "PowerShell scripts to check the UEFI KEK, DB and DBX Secure Boot variables as well as scripts for other Secure Boot related items.",
+      "stars": 309,
+      "pushed_at": "2026-08-12T11:21:23Z",
+      "language": "PowerShell",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "pbatard/Mosby",
+      "html_url": "https://github.com/pbatard/Mosby",
+      "description": "Mosby \u2013 More Secure Secure Boot",
+      "stars": 258,
+      "pushed_at": "2026-07-01T16:07:36Z",
+      "language": "C",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "joembedded/JesFs",
+      "html_url": "https://github.com/joembedded/JesFs",
+      "description": "Jo's Embedded Serial File System (for Standard Serial NOR-Flash)",
+      "stars": 251,
+      "pushed_at": "2026-07-04T08:33:06Z",
+      "language": "C",
+      "license_spdx_id": "MIT",
+      "homepage": "https://joembedded.de"
+    },
+    {
+      "full_name": "Foxboron/go-uefi",
+      "html_url": "https://github.com/Foxboron/go-uefi",
+      "description": "Linux UEFI library written in pure Go.",
+      "stars": 170,
+      "pushed_at": "2025-10-10T19:10:09Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "GrapheneOS/AttestationServer",
+      "html_url": "https://github.com/GrapheneOS/AttestationServer",
+      "description": "attestation.app remote attestation server. Server code for use with the Auditor app: https://github.com/GrapheneOS/Auditor. It provides two services: submission of attestation data samples and a remote attestation implementation with email alerts to go along with the local implementation based on QR code scanning in the app.",
+      "stars": 164,
+      "pushed_at": "2026-08-17T15:17:34Z",
+      "language": "Java",
+      "license_spdx_id": "MIT",
+      "homepage": "https://attestation.app/"
+    },
+    {
+      "full_name": "max-baz/arch-secure-boot",
+      "html_url": "https://github.com/max-baz/arch-secure-boot",
+      "description": "UEFI Secure Boot for Arch Linux + btrfs snapshot recovery",
+      "stars": 146,
+      "pushed_at": "2024-07-18T11:21:45Z",
+      "language": "Shell",
+      "license_spdx_id": "ISC",
+      "homepage": ""
+    },
+    {
+      "full_name": "embetrix/meta-stm32mp15x",
+      "html_url": "https://github.com/embetrix/meta-stm32mp15x",
+      "description": "OpenEmbedded/Yocto BSP layer for STM32MP15x based MPUs",
+      "stars": 134,
+      "pushed_at": "2026-06-10T06:02:47Z",
+      "language": "BitBake",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "sabino-pereira/Modern_Arch_Linux_Install",
+      "html_url": "https://github.com/sabino-pereira/Modern_Arch_Linux_Install",
+      "description": "A comprehensive guide to installing Arch Linux with all of the modern features.",
+      "stars": 119,
+      "pushed_at": "2026-06-25T06:08:32Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": "https://blog.sabino.in"
+    },
+    {
+      "full_name": "cutecatsandvirtualmachines/Sputnik",
+      "html_url": "https://github.com/cutecatsandvirtualmachines/Sputnik",
+      "description": "The sequel to Voyager",
+      "stars": 111,
+      "pushed_at": "2024-08-21T08:17:32Z",
+      "language": "C",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "frederic/amlogic-usbdl",
+      "html_url": "https://github.com/frederic/amlogic-usbdl",
+      "description": "Unsigned code loader for Amlogic BootROM",
+      "stars": 104,
+      "pushed_at": "2022-11-06T06:52:27Z",
+      "language": "C",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "jonasblixt/punchboot",
+      "html_url": "https://github.com/jonasblixt/punchboot",
+      "description": "Punchboot",
+      "stars": 96,
+      "pushed_at": "2026-08-10T22:13:26Z",
+      "language": "C",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "paulveillard/cybersecurity-architecture",
+      "html_url": "https://github.com/paulveillard/cybersecurity-architecture",
+      "description": "An ongoing & curated collection of awesome software best practices and techniques, libraries and frameworks, E-books and videos, websites, blog posts, links to github Repositories, technical guidelines and important resources about Software  & Systems Architecture in Cybersecurity",
+      "stars": 83,
+      "pushed_at": "2022-12-19T04:45:11Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "STMicroelectronics/stm32-mw-mcuboot",
+      "html_url": "https://github.com/STMicroelectronics/stm32-mw-mcuboot",
+      "description": "MCUboot is an OS- and HW-independent secure bootloader for 32-bit MCUs aiming at defining a common infrastructure for the bootloader and the system flash layout on microcontroller systems, and at providing a secure bootloader that enables simple software upgrades.",
+      "stars": 81,
+      "pushed_at": "2026-06-18T13:35:58Z",
+      "language": "C",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.mcuboot.com/"
+    },
+    {
+      "full_name": "xairy/unlockdown",
+      "html_url": "https://github.com/xairy/unlockdown",
+      "description": "Disabling kernel lockdown on Ubuntu without physical access",
+      "stars": 81,
+      "pushed_at": "2023-01-03T02:22:37Z",
+      "language": "C",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "sbaresearch/mbn-mcfg-tools",
+      "html_url": "https://github.com/sbaresearch/mbn-mcfg-tools",
+      "description": "Tools for parsing/extracting/packing Qualcomm mbn MCFG (Modem Configuration) files",
+      "stars": 78,
+      "pushed_at": "2024-07-31T12:41:28Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "embetrix/meta-raspberrypi-secure",
+      "html_url": "https://github.com/embetrix/meta-raspberrypi-secure",
+      "description": "meta-raspberrypi add-on yocto layer for enhanced security/OTA update\ud83d\udd12",
+      "stars": 70,
+      "pushed_at": "2026-08-06T09:22:02Z",
+      "language": "BitBake",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "wimbrts/USB_FORMAT",
+      "html_url": "https://github.com/wimbrts/USB_FORMAT",
+      "description": "USB Format Tool - Make Bootable USB Drive with MBR and 2 Partitions",
+      "stars": 66,
+      "pushed_at": "2024-08-21T09:22:31Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": "https://msfn.org/board/topic/181311-usb-format-tool-and-uefi_multi/"
+    },
+    {
+      "full_name": "tpowa/Archboot",
+      "html_url": "https://github.com/tpowa/Archboot",
+      "description": "Archboot is a most advanced, modular Arch Linux boot/install image creation utility to generate bootable media for CD/USB/PXE, designed for installation or rescue operation.",
+      "stars": 65,
+      "pushed_at": "2026-08-02T10:45:15Z",
+      "language": "Shell",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://archboot.com"
+    },
+    {
+      "full_name": "haz-ard-9/Windows-vSphere-VMs-Bulk-Secure-Boot-2023-Certificate-Remediation",
+      "html_url": "https://github.com/haz-ard-9/Windows-vSphere-VMs-Bulk-Secure-Boot-2023-Certificate-Remediation",
+      "description": "Bulk assessment and remediation of the Windows Secure Boot 2023 certificate transition on VMware vSphere 8 VMs. Cert deployment and PK enrollment via the ESXi P09 silent path or a SetupMode fallback, with a supported-methods-only mode. BitLocker-aware, optionally snapshots before changes, and includes rollback, snapshot, and NVRAM cleanup modes.",
+      "stars": 55,
+      "pushed_at": "2026-06-18T20:56:18Z",
+      "language": "PowerShell",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Wack0/SecureBootPolicyTools",
+      "html_url": "https://github.com/Wack0/SecureBootPolicyTools",
+      "description": "Take back control of Windows Code Integrity, no exploits or patching required! Requires that you control your own Platform Key (PK).",
+      "stars": 54,
+      "pushed_at": "2022-08-22T20:30:08Z",
+      "language": "C",
+      "license_spdx_id": "Unlicense",
+      "homepage": ""
+    },
+    {
+      "full_name": "ShellCode33/ArchLinux-Hardened",
+      "html_url": "https://github.com/ShellCode33/ArchLinux-Hardened",
+      "description": "ArchLinux setup which focuses on desktop security",
+      "stars": 51,
+      "pushed_at": "2025-04-15T00:11:42Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "jiazhang0/SELoader",
+      "html_url": "https://github.com/jiazhang0/SELoader",
+      "description": "Secure EFI Loader designed to authenticate the non-PE files",
+      "stars": 48,
+      "pushed_at": "2022-11-03T01:50:40Z",
+      "language": "C",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": ""
+    },
+    {
+      "full_name": "artkeller/ESP32Features",
+      "html_url": "https://github.com/artkeller/ESP32Features",
+      "description": "Datasheet-derived comparison of all 14 ESP32 SoC variants (ESP32 \u2192 S31): specs, deep sleep, security/PQC readiness, and reasoned multi-chip combinations. Community-maintained, not affiliated with Espressif.",
+      "stars": 46,
+      "pushed_at": "2026-08-16T16:48:58Z",
+      "language": "Python",
+      "license_spdx_id": "CC-BY-4.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "clsty/arCNiso",
+      "html_url": "https://github.com/clsty/arCNiso",
+      "description": "\u2728\u4e2d\u56fd\u7528\u6237\u53cb\u597d\u578b archiso\u2728 <\u4e2d\u6587|xfce4|\u5b89\u5168\u542f\u52a8 secure boot>",
+      "stars": 44,
+      "pushed_at": "2026-05-25T08:46:18Z",
+      "language": "Shell",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://arcn.clsty.link/"
+    },
+    {
+      "full_name": "brandsimon/verity-squash-root",
+      "html_url": "https://github.com/brandsimon/verity-squash-root",
+      "description": "Build signed efi binaries which mount a dm-verity verified squashfs image as rootfs on boot.",
+      "stars": 29,
+      "pushed_at": "2024-10-09T22:38:34Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "jirutka/efi-mkuki",
+      "html_url": "https://github.com/jirutka/efi-mkuki",
+      "description": "EFI Unified Kernel Image Maker",
+      "stars": 26,
+      "pushed_at": "2026-06-05T15:28:25Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "adsumnetworks/Adsum-IoT-Coder",
+      "html_url": "https://github.com/adsumnetworks/Adsum-IoT-Coder",
+      "description": "Open-source IoT coding agent for ESP32/ESP-IDF and Nordic nRF (NCS/Zephyr): build, flash, and debug firmware on real hardware, plus one-click EU Cyber Resilience Act (CRA) readiness with SBOM (SPDX), secure-by-design posture, and CVE remediation.",
+      "stars": 25,
+      "pushed_at": "2026-08-17T17:06:44Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://adsumnetworks.com"
+    },
+    {
+      "full_name": "TheMalwareGuardian/PKfail",
+      "html_url": "https://github.com/TheMalwareGuardian/PKfail",
+      "description": "Use PKfail to install UEFI Bootkits",
+      "stars": 24,
+      "pushed_at": "2026-08-16T11:19:51Z",
+      "language": "",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "redchenjs/wujian100_open",
+      "html_url": "https://github.com/redchenjs/wujian100_open",
+      "description": "\u5e73\u5934\u54e5\u65e0\u5251100\u5f00\u6e90SoC\u5e73\u53f0\uff08\u53cc\u6838E902\uff0c\u5b89\u5168\u542f\u52a8\uff0cBootROM\uff0cIOPMP\uff0cMailbox\uff0cRSA-2048\uff0cSHA-2\uff0c WS2812\uff0cFlash\uff09",
+      "stars": 23,
+      "pushed_at": "2023-09-02T12:23:35Z",
+      "language": "C",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "gnuunixchad/arch-install-guide",
+      "html_url": "https://github.com/gnuunixchad/arch-install-guide",
+      "description": "My Arch Linux Setup",
+      "stars": 21,
+      "pushed_at": "2026-06-07T07:42:08Z",
+      "language": "",
+      "license_spdx_id": "GFDL-1.3",
+      "homepage": ""
+    },
+    {
+      "full_name": "solsticedhiver/archiso-sb-shim",
+      "html_url": "https://github.com/solsticedhiver/archiso-sb-shim",
+      "description": "A patch for mkarchiso to build secure-boot shim enabled iso",
+      "stars": 20,
+      "pushed_at": "2026-04-18T15:14:06Z",
+      "language": "Shell",
+      "license_spdx_id": "",
+      "homepage": ""
+    }
+  ]
+}

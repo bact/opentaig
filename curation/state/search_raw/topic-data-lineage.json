@@ -1,0 +1,247 @@
+{
+  "keyword": "topic:data-lineage",
+  "query": "topic:data-lineage stars:>19 pushed:>2025-08-17 archived:false fork:false",
+  "count": 24,
+  "repos": [
+    {
+      "full_name": "open-metadata/OpenMetadata",
+      "html_url": "https://github.com/open-metadata/OpenMetadata",
+      "description": "The Open Context Layer for Data and AI ,  OpenMetadata is the open platform for building trusted data context and business semantics for humans, AI assistants, and agents.",
+      "stars": 14896,
+      "pushed_at": "2026-08-17T14:34:27Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://open-metadata.org"
+    },
+    {
+      "full_name": "clidey/whodb",
+      "html_url": "https://github.com/clidey/whodb",
+      "description": "Where data access meets operational intelligence",
+      "stars": 5007,
+      "pushed_at": "2026-08-17T13:12:34Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://whodb.com"
+    },
+    {
+      "full_name": "elementary-data/elementary",
+      "html_url": "https://github.com/elementary-data/elementary",
+      "description": "The dbt-native data observability solution for data & analytics engineers. Monitor your data pipelines in minutes. Available as self-hosted or cloud service with premium features.",
+      "stars": 2390,
+      "pushed_at": "2026-08-17T09:08:03Z",
+      "language": "HTML",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.elementary-data.com/"
+    },
+    {
+      "full_name": "MarquezProject/marquez",
+      "html_url": "https://github.com/MarquezProject/marquez",
+      "description": "Collect, aggregate, and visualize a data ecosystem's metadata",
+      "stars": 2260,
+      "pushed_at": "2026-08-11T22:59:23Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://marquezproject.ai"
+    },
+    {
+      "full_name": "reata/sqllineage",
+      "html_url": "https://github.com/reata/sqllineage",
+      "description": "SQL Lineage Analysis Tool powered by Python",
+      "stars": 1674,
+      "pushed_at": "2026-08-16T11:31:10Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "opendatadiscovery/odd-platform",
+      "html_url": "https://github.com/opendatadiscovery/odd-platform",
+      "description": "First open-source data discovery and observability platform. We make a life for data practitioners easy so you can focus on your business.",
+      "stars": 1422,
+      "pushed_at": "2026-07-08T09:16:25Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://opendatadiscovery.org"
+    },
+    {
+      "full_name": "marmotdata/marmot",
+      "html_url": "https://github.com/marmotdata/marmot",
+      "description": "The open-source context layer for your AI. Catalog your tables, topics, queues and APIs then expose real metadata to your AI agents.",
+      "stars": 605,
+      "pushed_at": "2026-08-14T14:31:27Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": "https://marmotdata.io"
+    },
+    {
+      "full_name": "elementary-data/dbt-data-reliability",
+      "html_url": "https://github.com/elementary-data/dbt-data-reliability",
+      "description": "This dbt package captures metadata, artifacts, and test results so you can detect anomalies, monitor data quality, and build metadata tables. It powers Elementary OSS and feeds the wider context layer used by Elementary Cloud\u2019s full Data & AI Control Plane.",
+      "stars": 523,
+      "pushed_at": "2026-08-13T19:11:20Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.elementary-data.com/"
+    },
+    {
+      "full_name": "vmware/versatile-data-kit",
+      "html_url": "https://github.com/vmware/versatile-data-kit",
+      "description": "One framework to develop, deploy and operate data workflows with Python and SQL.",
+      "stars": 489,
+      "pushed_at": "2026-08-10T19:30:56Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "laminlabs/lamindb",
+      "html_url": "https://github.com/laminlabs/lamindb",
+      "description": "Open-source data management for multimodal AI. Query, trace, and govern data with a lineage-native, format-agnostic lakehouse. Use biological formats and registries by the creators of Scanpy. \ud83c\udf4aYC S22",
+      "stars": 331,
+      "pushed_at": "2026-08-17T14:18:17Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.lamin.ai"
+    },
+    {
+      "full_name": "tuva-health/tuva-core",
+      "html_url": "https://github.com/tuva-health/tuva-core",
+      "description": "Main repo including core data model, data marts, data quality tests, and terminology sets.",
+      "stars": 322,
+      "pushed_at": "2026-08-17T03:23:43Z",
+      "language": "JavaScript",
+      "license_spdx_id": "",
+      "homepage": "https://thetuvaproject.com/"
+    },
+    {
+      "full_name": "grai-io/grai-core",
+      "html_url": "https://github.com/grai-io/grai-core",
+      "description": "",
+      "stars": 315,
+      "pushed_at": "2026-01-30T20:28:25Z",
+      "language": "Python",
+      "license_spdx_id": "MIT-0",
+      "homepage": "https://www.grai.io"
+    },
+    {
+      "full_name": "rocky-data/rocky",
+      "html_url": "https://github.com/rocky-data/rocky",
+      "description": "A SQL transformation engine that type-checks your whole pipeline and catches breaking changes before they run \u2014 branches, replay, column-level lineage, compile-time contracts, per-model cost. Adapters: Databricks, Snowflake, BigQuery, DuckDB. Single static Rust binary. Apache 2.0.",
+      "stars": 294,
+      "pushed_at": "2026-08-17T13:22:36Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://rocky-data.dev"
+    },
+    {
+      "full_name": "finos/waltz",
+      "html_url": "https://github.com/finos/waltz",
+      "description": "Enterprise Information Service",
+      "stars": 236,
+      "pushed_at": "2026-08-04T12:33:22Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://waltz.finos.org"
+    },
+    {
+      "full_name": "datajoint/datajoint-python",
+      "html_url": "https://github.com/datajoint/datajoint-python",
+      "description": "Relational Workflows: where database schemas define executable data pipelines.",
+      "stars": 196,
+      "pushed_at": "2026-08-14T21:45:13Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.datajoint.com"
+    },
+    {
+      "full_name": "slidoapp/dbt-superset-lineage",
+      "html_url": "https://github.com/slidoapp/dbt-superset-lineage",
+      "description": "Make dbt docs and Apache Superset talk to one another",
+      "stars": 156,
+      "pushed_at": "2026-02-12T08:34:36Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "animetanver-commits/fabric-unified-data-blueprint",
+      "html_url": "https://github.com/animetanver-commits/fabric-unified-data-blueprint",
+      "description": "Microsoft Fabric Unified Data Foundation with Databricks & Purview 2026",
+      "stars": 115,
+      "pushed_at": "2026-08-17T14:16:02Z",
+      "language": "HTML",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "pondpilot/flowscope",
+      "html_url": "https://github.com/pondpilot/flowscope",
+      "description": "Privacy-first SQL lineage engine. Analyze SQL queries in the browser. Supports PostgreSQL, Snowflake, BigQuery, DuckDB and more.",
+      "stars": 91,
+      "pushed_at": "2026-08-13T11:51:43Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://flowscope.pondpilot.io"
+    },
+    {
+      "full_name": "abeltavares/batch-data-pipeline",
+      "html_url": "https://github.com/abeltavares/batch-data-pipeline",
+      "description": "\ud83e\udd86 Batch data pipeline with Airflow, DuckDB, Delta Lake, Trino, MinIO, and Metabase. Full observability and data quality.",
+      "stars": 90,
+      "pushed_at": "2025-11-05T17:18:18Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "ilum-cloud/duck_lineage",
+      "html_url": "https://github.com/ilum-cloud/duck_lineage",
+      "description": "A extension for DuckDB, which captures lineage events for executed queries",
+      "stars": 78,
+      "pushed_at": "2026-05-26T23:21:55Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://ilum.cloud/"
+    },
+    {
+      "full_name": "JonathanJihwanKim/pbip-lineage-explorer",
+      "html_url": "https://github.com/JonathanJihwanKim/pbip-lineage-explorer",
+      "description": "Trace DAX measure lineage from visuals to source columns in Power BI PBIP projects \u2014 instantly, in your browser",
+      "stars": 38,
+      "pushed_at": "2026-05-09T11:23:04Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://jonathanjihwankim.github.io/pbip-lineage-explorer/"
+    },
+    {
+      "full_name": "microsoft/unified-data-foundation-with-fabric-solution-accelerator",
+      "html_url": "https://github.com/microsoft/unified-data-foundation-with-fabric-solution-accelerator",
+      "description": "Unified Data Foundation with Microsoft Fabric with Options to Integrate with Azure Databricks and Microsoft Purview",
+      "stars": 38,
+      "pushed_at": "2026-08-13T11:37:24Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "tuva-health/demo",
+      "html_url": "https://github.com/tuva-health/demo",
+      "description": "A starter dbt project and synthetic claims dataset for trying out the Tuva Project.",
+      "stars": 34,
+      "pushed_at": "2026-03-15T16:59:14Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://thetuvaproject.com/"
+    },
+    {
+      "full_name": "nshkrdotcom/flowstone",
+      "html_url": "https://github.com/nshkrdotcom/flowstone",
+      "description": "Asset-first data orchestration for Elixir/BEAM. Dagster-inspired with OTP fault tolerance, LiveView dashboard, lineage tracking, checkpoint gates, and distributed execution via Oban.",
+      "stars": 31,
+      "pushed_at": "2026-04-09T05:27:44Z",
+      "language": "Elixir",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}

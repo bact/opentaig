@@ -1,0 +1,167 @@
+{
+  "keyword": "topic:side-channel-attacks",
+  "query": "topic:side-channel-attacks stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 16,
+  "repos": [
+    {
+      "full_name": "bcoles/kasld",
+      "html_url": "https://github.com/bcoles/kasld",
+      "description": "KASLD derandomizes the Linux kernel's virtual and physical memory layout from a local process, using whatever its vantage \u2014 privilege, configuration, and confinement \u2014 allows.",
+      "stars": 520,
+      "pushed_at": "2026-08-17T15:30:15Z",
+      "language": "C",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Ledger-Donjon/rainbow",
+      "html_url": "https://github.com/Ledger-Donjon/rainbow",
+      "description": "Makes Unicorn traces. Generic Side-Channel and Fault Injection simulator",
+      "stars": 200,
+      "pushed_at": "2026-04-02T19:26:45Z",
+      "language": "Python",
+      "license_spdx_id": "LGPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "eurecom-s3/screaming_channels",
+      "html_url": "https://github.com/eurecom-s3/screaming_channels",
+      "description": "Radio Side-Channels in Mixed-Signal Chips",
+      "stars": 153,
+      "pushed_at": "2025-06-25T12:39:10Z",
+      "language": "C",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://eurecom-s3.github.io/screaming_channels/"
+    },
+    {
+      "full_name": "phonchi/awesome-side-channel-attack",
+      "html_url": "https://github.com/phonchi/awesome-side-channel-attack",
+      "description": "A curated list of awesome side-channel attack resources",
+      "stars": 114,
+      "pushed_at": "2025-11-23T15:17:55Z",
+      "language": "",
+      "license_spdx_id": "CC0-1.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "codexlynx/hardware-attacks-state-of-the-art",
+      "html_url": "https://github.com/codexlynx/hardware-attacks-state-of-the-art",
+      "description": "Microarchitectural exploitation and other hardware attacks.",
+      "stars": 96,
+      "pushed_at": "2024-03-25T22:33:38Z",
+      "language": "",
+      "license_spdx_id": "LGPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "microwalk-project/Microwalk",
+      "html_url": "https://github.com/microwalk-project/Microwalk",
+      "description": "A microarchitectural leakage detection framework using dynamic instrumentation.",
+      "stars": 86,
+      "pushed_at": "2025-11-15T10:42:59Z",
+      "language": "C#",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "libtea/frameworks",
+      "html_url": "https://github.com/libtea/frameworks",
+      "description": "Microarchitectural attack development frameworks for prototyping attacks in native code (C, C++, ASM) and in the browser",
+      "stars": 65,
+      "pushed_at": "2022-08-07T14:59:34Z",
+      "language": "C",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://www.usenix.org/conference/usenixsecurity22/presentation/easdon"
+    },
+    {
+      "full_name": "J08nY/pyecsca",
+      "html_url": "https://github.com/J08nY/pyecsca",
+      "description": "Python Elliptic Curve Side-Channel Analysis toolkit.",
+      "stars": 64,
+      "pushed_at": "2026-06-03T12:24:35Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://pyecsca.org/"
+    },
+    {
+      "full_name": "timmclean/rust-timing-shield",
+      "html_url": "https://github.com/timmclean/rust-timing-shield",
+      "description": "Comprehensive timing leak protection for Rust programs  https://www.chosenplaintext.ca/open-source/rust-timing-shield/",
+      "stars": 59,
+      "pushed_at": "2023-08-14T06:12:46Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "DarkMetalMouse/ardiuno-keystroke-reflection",
+      "html_url": "https://github.com/DarkMetalMouse/ardiuno-keystroke-reflection",
+      "description": "Open Source Arduino Program for Keystroke Reflection Side Channel Attack",
+      "stars": 46,
+      "pushed_at": "2022-08-10T10:03:05Z",
+      "language": "C++",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "ChairImpSec/PROLEAD",
+      "html_url": "https://github.com/ChairImpSec/PROLEAD",
+      "description": "PROLEAD - A Probing-Based Leakage Detection Tool for Hardware and Software\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000FIESTA - Fault Injection Evaluation with Statistical Analysis",
+      "stars": 44,
+      "pushed_at": "2026-05-13T15:01:16Z",
+      "language": "C++",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": ""
+    },
+    {
+      "full_name": "zzrcxb/LLCFeasible",
+      "html_url": "https://github.com/zzrcxb/LLCFeasible",
+      "description": "Open-source release of \"Last-Level Cache Side-Channel Attacks Are Feasible in the Modern Public Cloud\" (ASPLOS '24)",
+      "stars": 33,
+      "pushed_at": "2026-05-20T23:02:16Z",
+      "language": "C",
+      "license_spdx_id": "",
+      "homepage": "https://zzrcxb.me/files/papers/ASPLOS24-LLCFeasible.pdf"
+    },
+    {
+      "full_name": "crocs-muni/minerva",
+      "html_url": "https://github.com/crocs-muni/minerva",
+      "description": "Artifacts for the \"Minerva: The curse of ECDSA nonces\" paper at CHES 2020",
+      "stars": 33,
+      "pushed_at": "2022-06-06T19:27:51Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://minerva.crocs.fi.muni.cz"
+    },
+    {
+      "full_name": "forestfoxx/awesome-hardware-fuzzing",
+      "html_url": "https://github.com/forestfoxx/awesome-hardware-fuzzing",
+      "description": "A curated list of research and repositories on the novel technique of hardware fuzzing",
+      "stars": 27,
+      "pushed_at": "2026-08-09T13:54:11Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "p0dalirius/TimeBasedLoginUserEnum",
+      "html_url": "https://github.com/p0dalirius/TimeBasedLoginUserEnum",
+      "description": "A script to enumerate valid usernames based on the requests response times.",
+      "stars": 24,
+      "pushed_at": "2022-05-03T10:39:51Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://podalirius.net/"
+    },
+    {
+      "full_name": "ascon/ascon-hardware-sca",
+      "html_url": "https://github.com/ascon/ascon-hardware-sca",
+      "description": "NIST LWC Hardware Design of Ascon with Protection against Power Side-Channel Attacks",
+      "stars": 20,
+      "pushed_at": "2023-02-22T09:05:06Z",
+      "language": "VHDL",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    }
+  ]
+}

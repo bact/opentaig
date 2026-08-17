@@ -1,0 +1,17 @@
+{
+  "keyword": "topic:puf",
+  "query": "topic:puf stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "Tribler/software-based-PUF",
+      "html_url": "https://github.com/Tribler/software-based-PUF",
+      "description": "The first open source software-based Physically Unclonable Function (PUF) using off-the-shelf SRAM",
+      "stars": 106,
+      "pushed_at": "2025-10-21T04:13:35Z",
+      "language": "C",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    }
+  ]
+}

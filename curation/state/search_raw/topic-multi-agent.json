@@ -1,0 +1,2007 @@
+{
+  "keyword": "topic:multi-agent",
+  "query": "topic:multi-agent stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 200,
+  "repos": [
+    {
+      "full_name": "bytedance/deer-flow",
+      "html_url": "https://github.com/bytedance/deer-flow",
+      "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.",
+      "stars": 80154,
+      "pushed_at": "2026-08-17T11:55:30Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://deerflow.tech"
+    },
+    {
+      "full_name": "FoundationAgents/MetaGPT",
+      "html_url": "https://github.com/FoundationAgents/MetaGPT",
+      "description": "\ud83c\udf1f The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming",
+      "stars": 69864,
+      "pushed_at": "2026-01-21T10:12:33Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://atoms.dev/"
+    },
+    {
+      "full_name": "ruvnet/ruflo",
+      "html_url": "https://github.com/ruvnet/ruflo",
+      "description": "\ud83c\udf0a The original agent meta-harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, RAG integration, and native Claude Code / Codex / Hermes and many more Integrated",
+      "stars": 68047,
+      "pushed_at": "2026-08-17T09:20:39Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://Cognitum.One"
+    },
+    {
+      "full_name": "HKUDS/nanobot",
+      "html_url": "https://github.com/HKUDS/nanobot",
+      "description": "Ultra-lightweight, open-source, self-hosted personal AI agent framework in Python with WebUI, tools, memory, MCP, multi-agent workflows, automation, and chat apps",
+      "stars": 47095,
+      "pushed_at": "2026-08-17T14:55:15Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://nanobot.wiki"
+    },
+    {
+      "full_name": "zhayujie/CowAgent",
+      "html_url": "https://github.com/zhayujie/CowAgent",
+      "description": "Open-source super AI assistant & Agent Harness. Plans tasks, runs tools and skills, self-evolves with memory and knowledge. Multi-model, multi-channel. Lightweight, extensible, one-line install. (formerly chatgpt-on-wechat)",
+      "stars": 46530,
+      "pushed_at": "2026-08-17T04:13:45Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://cowagent.ai"
+    },
+    {
+      "full_name": "wshobson/agents",
+      "html_url": "https://github.com/wshobson/agents",
+      "description": "Multi-harness agentic plugin marketplace for Claude Code, Codex CLI, Cursor, OpenCode, GitHub Copilot, and Gemini CLI",
+      "stars": 38867,
+      "pushed_at": "2026-08-17T01:09:44Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://sethhobson.com"
+    },
+    {
+      "full_name": "bojieli/ai-agent-book",
+      "html_url": "https://github.com/bojieli/ai-agent-book",
+      "description": "\u300a\u6df1\u5165\u7406\u89e3 AI Agent\uff1a\u8bbe\u8ba1\u539f\u7406\u4e0e\u5de5\u7a0b\u5b9e\u8df5\u300b\uff08\u674e\u535a\u6770 \u8457\uff09\u5f00\u6e90\u4e3b\u4ed3\u5e93\uff1a\u5168\u4e66\u6b63\u6587\u3001\u7f16\u8bd1\u7248 PDF \u4e0e\u6309\u7ae0\u914d\u5957\u4ee3\u7801",
+      "stars": 38414,
+      "pushed_at": "2026-08-17T12:16:12Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "HKUDS/Vibe-Trading",
+      "html_url": "https://github.com/HKUDS/Vibe-Trading",
+      "description": "\"Vibe-Trading: Your Personal Trading Agent\"",
+      "stars": 31077,
+      "pushed_at": "2026-08-17T09:22:40Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://vibetrading.wiki/"
+    },
+    {
+      "full_name": "agentscope-ai/agentscope",
+      "html_url": "https://github.com/agentscope-ai/agentscope",
+      "description": "Build and run agents you can see, understand and trust.",
+      "stars": 28996,
+      "pushed_at": "2026-08-14T15:37:06Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.agentscope.io/"
+    },
+    {
+      "full_name": "deepset-ai/haystack",
+      "html_url": "https://github.com/deepset-ai/haystack",
+      "description": "Open-source AI orchestration framework for building context-engineered, production-ready LLM applications. Design modular pipelines and agent workflows with explicit control over retrieval, routing, memory, and generation. Built for scalable agents, RAG, multimodal applications, semantic search, and conversational systems.",
+      "stars": 26232,
+      "pushed_at": "2026-08-17T15:04:04Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://haystack.deepset.ai"
+    },
+    {
+      "full_name": "NirDiamant/GenAI_Agents",
+      "html_url": "https://github.com/NirDiamant/GenAI_Agents",
+      "description": "50+ tutorials and implementations for Generative AI Agent techniques, from basic conversational bots to complex multi-agent systems.",
+      "stars": 23826,
+      "pushed_at": "2026-08-15T00:52:09Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://diamant-ai.com"
+    },
+    {
+      "full_name": "google/adk-python",
+      "html_url": "https://github.com/google/adk-python",
+      "description": "An open-source, code-first Python toolkit for building, evaluating, and deploying sophisticated AI agents with flexibility and control.",
+      "stars": 21161,
+      "pushed_at": "2026-08-16T22:03:20Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://google.github.io/adk-docs/"
+    },
+    {
+      "full_name": "jnMetaCode/agency-agents-zh",
+      "html_url": "https://github.com/jnMetaCode/agency-agents-zh",
+      "description": "\ud83c\udfad 267 \u4e2a\u5373\u63d2\u5373\u7528\u7684 AI \u4e13\u5bb6\u89d2\u8272 \u2014 \u652f\u6301 Hermes Agent/Claude Code/Cursor/Copilot \u7b49 18 \u79cd\u5de5\u5177\uff0c\u8986\u76d6\u5de5\u7a0b/\u8bbe\u8ba1/\u8425\u9500/\u91d1\u878d\u7b49 20 \u4e2a\u90e8\u95e8\u3002\u542b 52 \u4e2a\u4e2d\u56fd\u5e02\u573a\u539f\u521b\u667a\u80fd\u4f53\uff08\u5c0f\u7ea2\u4e66/\u6296\u97f3/\u5fae\u4fe1/\u98de\u4e66/\u9489\u9489\u7b49\uff09\u3002\u642d\u914d\u7f16\u6392\u5668 agency-orchestrator\uff0c\u4e00\u53e5\u8bdd\u5373\u53ef\u8ba9\u591a\u4f4d\u4e13\u5bb6\u6309 DAG \u81ea\u52a8\u534f\u4f5c\u3002",
+      "stars": 19538,
+      "pushed_at": "2026-08-17T10:04:58Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": "https://ao.aiolaola.com/experts"
+    },
+    {
+      "full_name": "cft0808/edict",
+      "html_url": "https://github.com/cft0808/edict",
+      "description": "\ud83c\udfdb\ufe0f \u4e09\u7701\u516d\u90e8\u5236 \u00b7 OpenClaw Multi-Agent Orchestration System \u2014 9 specialized AI agents with real-time dashboard, model config, and full audit trails",
+      "stars": 16379,
+      "pushed_at": "2026-08-03T11:24:42Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://openclaw.ai"
+    },
+    {
+      "full_name": "nanobrowser/nanobrowser",
+      "html_url": "https://github.com/nanobrowser/nanobrowser",
+      "description": "Open-Source Chrome extension for AI-powered web automation. Run multi-agent workflows using your own LLM API key. Alternative to OpenAI Operator.",
+      "stars": 13566,
+      "pushed_at": "2025-11-24T11:10:03Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://nanobrowser.ai"
+    },
+    {
+      "full_name": "microsoft/agent-framework",
+      "html_url": "https://github.com/microsoft/agent-framework",
+      "description": "A framework for building, orchestrating and deploying AI agents and multi-agent workflows with support for Python and .NET.",
+      "stars": 12852,
+      "pushed_at": "2026-08-17T11:43:27Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://aka.ms/agent-framework"
+    },
+    {
+      "full_name": "MemTensor/MemOS",
+      "html_url": "https://github.com/MemTensor/MemOS",
+      "description": "Self-evolving memory OS for LLM & AI Agents: ultra-persistent memory, hybrid-retrieval, and cross-task skill reuse, with 35.24% token savings",
+      "stars": 10748,
+      "pushed_at": "2026-08-16T05:43:53Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://memos.openmem.net"
+    },
+    {
+      "full_name": "alibaba/spring-ai-alibaba",
+      "html_url": "https://github.com/alibaba/spring-ai-alibaba",
+      "description": "Agentic AI Framework for Java Developers",
+      "stars": 10625,
+      "pushed_at": "2026-08-15T07:59:27Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://java2ai.com"
+    },
+    {
+      "full_name": "Untrivial-ai/agent-orchestrator",
+      "html_url": "https://github.com/Untrivial-ai/agent-orchestrator",
+      "description": "Agent IDE that enables you to manage fleets of coding agents. It comes with an agentic orchestrator that plans tasks, spawns agents, and autonomously handles CI fixes, merge conflicts, and code reviews.",
+      "stars": 9583,
+      "pushed_at": "2026-08-17T13:07:56Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "http://aoagents.dev/"
+    },
+    {
+      "full_name": "omnigent-ai/omnigent",
+      "html_url": "https://github.com/omnigent-ai/omnigent",
+      "description": "Omnigent is an open-source AI agent framework and meta-harness: orchestrate Claude Code, Codex, Cursor, Pi, and custom agents \u2014 swap harnesses without rewriting, enforce policies and sandboxing, and collaborate in real time from any device.",
+      "stars": 8972,
+      "pushed_at": "2026-08-17T12:13:08Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://omnigent.ai"
+    },
+    {
+      "full_name": "iflytek/astron-agent",
+      "html_url": "https://github.com/iflytek/astron-agent",
+      "description": "Enterprise-grade, commercial-friendly agentic workflow platform for building next-generation SuperAgents.",
+      "stars": 8957,
+      "pushed_at": "2026-08-17T03:55:49Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "http://astron.ai/"
+    },
+    {
+      "full_name": "MervinPraison/PraisonAI",
+      "html_url": "https://github.com/MervinPraison/PraisonAI",
+      "description": "PraisonAI \ud83e\udd9e \u2014 Hire a 24/7 AI Workforce. Stop writing boilerplate and start shipping autonomous self-improving agents that research, plan, code, and execute tasks. Deployed in 5 lines of code with built-in memory, RAG, and support for 100+ LLMs.",
+      "stars": 8906,
+      "pushed_at": "2026-08-17T10:42:23Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://praison.ai/docs"
+    },
+    {
+      "full_name": "adongwanai/AgentGuide",
+      "html_url": "https://github.com/adongwanai/AgentGuide",
+      "description": "https://adongwanai.github.io/AgentGuide | AI Agent\u5f00\u53d1\u6307\u5357 | LangGraph\u5b9e\u6218 | \u9ad8\u7ea7RAG | \u8f6c\u884c\u5927\u6a21\u578b | \u5927\u6a21\u578b\u9762\u8bd5 | \u7b97\u6cd5\u5de5\u7a0b\u5e08 | \u9762\u8bd5\u9898\u5e93 | \u5f3a\u5316\u5b66\u4e60\uff5c\u6570\u636e\u5408\u6210",
+      "stars": 8442,
+      "pushed_at": "2026-08-04T06:02:35Z",
+      "language": "HTML",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "TeamWiseFlow/xiaobei",
+      "html_url": "https://github.com/TeamWiseFlow/xiaobei",
+      "description": "\u4e3aOPC/\u4e2d\u5c0f\u5fae\u4f01\u4e1a\u91cf\u8eab\u6253\u9020\u7684\u81ea\u5a92\u4f53\u83b7\u5ba2\u667a\u80fd\u4f53",
+      "stars": 8424,
+      "pushed_at": "2026-08-15T07:33:34Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://openclaw-for-business.com/"
+    },
+    {
+      "full_name": "ringhyacinth/Star-Office-UI",
+      "html_url": "https://github.com/ringhyacinth/Star-Office-UI",
+      "description": "A pixel office for your OpenClaw: turn invisible work states into a cozy little space with characters, daily notes, and guest agents. Code under MIT; art assets for non-commercial learning only.",
+      "stars": 7430,
+      "pushed_at": "2026-03-11T03:53:42Z",
+      "language": "HTML",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "open-multi-agent/open-multi-agent",
+      "html_url": "https://github.com/open-multi-agent/open-multi-agent",
+      "description": "TypeScript AI agent orchestration framework with dynamic workflows. Describe the goal, not the graph: a coordinator plans the task DAG at runtime and runs it on any LLM (Claude, ChatGPT, Gemini, DeepSeek, or local models).",
+      "stars": 6784,
+      "pushed_at": "2026-08-17T14:04:28Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://open-multi-agent.com"
+    },
+    {
+      "full_name": "KunAgent/Kun",
+      "html_url": "https://github.com/KunAgent/Kun",
+      "description": "Local-first AI agent workspace for coding, writing, design, research, and automation \u2014 one runtime for desktop GUI and TUI.",
+      "stars": 6132,
+      "pushed_at": "2026-08-17T05:27:17Z",
+      "language": "TypeScript",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://www.kun-agent.com"
+    },
+    {
+      "full_name": "ModelEngine-Group/nexent",
+      "html_url": "https://github.com/ModelEngine-Group/nexent",
+      "description": "Nexent is a zero-code platform for auto-generating production-grade AI agents using Harness Engineering principles \u2014 unified tools, skills, memory, and orchestration with built-in constraints, feedback loops, and control planes.",
+      "stars": 5825,
+      "pushed_at": "2026-08-17T13:09:33Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "http://modelengine-group.github.io/nexent/"
+    },
+    {
+      "full_name": "elder-plinius/T3MP3ST",
+      "html_url": "https://github.com/elder-plinius/T3MP3ST",
+      "description": "autonomous red teaming platform; multi-agent offensive-security meta-harness",
+      "stars": 5596,
+      "pushed_at": "2026-08-12T17:28:55Z",
+      "language": "TypeScript",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "the-open-agent/openagent",
+      "html_url": "https://github.com/the-open-agent/openagent",
+      "description": "\u26a1\ufe0fnext-generation personal AI assistant powered by LLM, RAG and agent loops, supporting computer-use, browser-use and coding agent, demo: https://demo.openagentai.org",
+      "stars": 5522,
+      "pushed_at": "2026-08-17T04:27:19Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.openagentai.org/"
+    },
+    {
+      "full_name": "SolaceLabs/solace-agent-mesh",
+      "html_url": "https://github.com/SolaceLabs/solace-agent-mesh",
+      "description": "An event-driven framework designed to build and orchestrate multi-agent AI systems. It enables seamless integration of AI agents with real-world data sources and systems, facilitating complex, multi-step workflows.",
+      "stars": 4954,
+      "pushed_at": "2026-08-12T12:52:20Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://solacelabs.github.io/solace-agent-mesh/"
+    },
+    {
+      "full_name": "ag2ai/ag2",
+      "html_url": "https://github.com/ag2ai/ag2",
+      "description": "AG2 (formerly AutoGen): The Open-Source AgentOS.Join us at: https://discord.gg/sNGSwQME3x",
+      "stars": 4869,
+      "pushed_at": "2026-08-17T00:10:09Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://ag2.ai"
+    },
+    {
+      "full_name": "Nasiko-Labs/nasiko",
+      "html_url": "https://github.com/Nasiko-Labs/nasiko",
+      "description": "Developer Control Plane for your AI Agents",
+      "stars": 4862,
+      "pushed_at": "2026-08-17T12:30:28Z",
+      "language": "Rust",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://www.nasiko.com"
+    },
+    {
+      "full_name": "mergisi/awesome-openclaw-agents",
+      "html_url": "https://github.com/mergisi/awesome-openclaw-agents",
+      "description": "162 production-ready AI agent templates for OpenClaw. SOUL.md configs across 19 categories. Submit yours!",
+      "stars": 3914,
+      "pushed_at": "2026-05-25T10:21:05Z",
+      "language": "HTML",
+      "license_spdx_id": "MIT",
+      "homepage": "https://crewclaw.com"
+    },
+    {
+      "full_name": "golutra/golutra",
+      "html_url": "https://github.com/golutra/golutra",
+      "description": "Multi-agent AI orchestration platform for automation, workflows, and developer tools. Golutra transforms Codex, Claude Code, and OpenClaw into a unified agent system with parallel execution, task orchestration, long-running workflows, and AI productivity workspace.",
+      "stars": 3820,
+      "pushed_at": "2026-08-06T09:55:18Z",
+      "language": "Rust",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://www.golutra.com"
+    },
+    {
+      "full_name": "nextlevelbuilder/goclaw",
+      "html_url": "https://github.com/nextlevelbuilder/goclaw",
+      "description": "GoClaw - GoClaw is OpenClaw rebuilt in Go \u2014 with multi-tenant isolation, 5-layer security, and native concurrency. Deploy AI agent teams at scale without compromising on safety.",
+      "stars": 3538,
+      "pushed_at": "2026-08-17T11:47:41Z",
+      "language": "Go",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://goclaw.sh"
+    },
+    {
+      "full_name": "datamllab/rlcard",
+      "html_url": "https://github.com/datamllab/rlcard",
+      "description": "Reinforcement Learning / AI Bots in Card (Poker) Games - Blackjack, Leduc, Texas, DouDizhu, Mahjong, UNO.",
+      "stars": 3538,
+      "pushed_at": "2024-06-26T23:01:52Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "http://www.rlcard.org"
+    },
+    {
+      "full_name": "tutti-os/tutti",
+      "html_url": "https://github.com/tutti-os/tutti",
+      "description": "Where people and agents build in tune.",
+      "stars": 3282,
+      "pushed_at": "2026-08-17T14:45:39Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://tutti.sh/"
+    },
+    {
+      "full_name": "bradygaster/squad",
+      "html_url": "https://github.com/bradygaster/squad",
+      "description": "Squad: AI agent teams for any project",
+      "stars": 3101,
+      "pushed_at": "2026-08-17T08:25:03Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://bradygaster.github.io/squad/"
+    },
+    {
+      "full_name": "SciSharp/BotSharp",
+      "html_url": "https://github.com/SciSharp/BotSharp",
+      "description": "AI Multi-Agent Framework in .NET",
+      "stars": 3093,
+      "pushed_at": "2026-08-13T02:05:05Z",
+      "language": "C#",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://botsharp.readthedocs.io"
+    },
+    {
+      "full_name": "OpenNSWM-Lab/FAROS",
+      "html_url": "https://github.com/OpenNSWM-Lab/FAROS",
+      "description": "A blueprint-driven AutoResearch runtime for orchestrating AI research workflows from idea generation and experiments to paper writing and peer review.",
+      "stars": 2993,
+      "pushed_at": "2026-08-12T12:59:02Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "openocta/openocta",
+      "html_url": "https://github.com/openocta/openocta",
+      "description": "\u56fd\u4ea7\u5f00\u6e90\u7684\u684c\u9762\u7ea7\u667a\u80fd\u4f53\uff0c\u4fe1\u521b\u5b89\u5168\uff0c\u9002\u7528\u4e8e\u7535\u8111\u529e\u516c\u3001\u6587\u6863\u5904\u7406\u3001IT\u8fd0\u7ef4\u4e0e\u5b89\u5168\u3001\u5e02\u573a\u8425\u9500\u7b49\u573a\u666f\u3002",
+      "stars": 2972,
+      "pushed_at": "2026-08-04T10:11:20Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "http://www.openocta.com"
+    },
+    {
+      "full_name": "simonlin1212/TradingAgents-astock",
+      "html_url": "https://github.com/simonlin1212/TradingAgents-astock",
+      "description": "A\u80a1\u591aAgent\u6295\u7814\u6846\u67b6 \u2014 \u9002\u914dA\u80a1\u6570\u636e\u6e90(\u9f99\u864e\u699c/\u6e38\u8d44/\u89e3\u7981\u7b49)\uff0c7\u4f4d\u5206\u6790\u5e08\u57fa\u4e8eA\u80a1\u89c4\u5219\u7684\u8fa9\u8bba\u51b3\u7b56\uff0c\u57fa\u4e8eTradingAgents\u6df1\u5ea6\u6539\u9020\uff0c\u9002\u914d\u5927A\u3002A-share multi-agent investment research framework \u2014 7 AI analysts, bull/bear debate, risk assessment\u3002",
+      "stars": 2972,
+      "pushed_at": "2026-08-09T03:32:26Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://arxiv.org/pdf/2412.20138"
+    },
+    {
+      "full_name": "foryourhealth111-pixel/Vibe-Skills",
+      "html_url": "https://github.com/foryourhealth111-pixel/Vibe-Skills",
+      "description": "VibeSkills is a general-purpose Skill that automatically routes local Skills and intelligently orchestrates harness workflows.",
+      "stars": 2871,
+      "pushed_at": "2026-08-11T15:42:32Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "spinabot/brigade",
+      "html_url": "https://github.com/spinabot/brigade",
+      "description": "Brigade \u2014 Your personal intelligence, built enterprise-grade",
+      "stars": 2786,
+      "pushed_at": "2026-08-13T21:58:51Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.brigade.spinabot.com"
+    },
+    {
+      "full_name": "wanikua/danghuangshang",
+      "html_url": "https://github.com/wanikua/danghuangshang",
+      "description": "Open-source multi-agent collaboration system inspired by Chinese governance \u2014 deploy and coordinate specialized AI agents with OpenClaw.",
+      "stars": 2701,
+      "pushed_at": "2026-05-22T12:41:23Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://danghuangshang.com"
+    },
+    {
+      "full_name": "nikmcfly/MiroFish-Offline",
+      "html_url": "https://github.com/nikmcfly/MiroFish-Offline",
+      "description": "Offline multi-agent simulation & prediction engine. English fork of MiroFish with Neo4j + Ollama local stack.",
+      "stars": 2472,
+      "pushed_at": "2026-03-24T18:52:43Z",
+      "language": "Python",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://x.com/nikmcfly69/status/2033147482331390328"
+    },
+    {
+      "full_name": "KsanaDock/Microverse",
+      "html_url": "https://github.com/KsanaDock/Microverse",
+      "description": "A god-simulation sandbox game built on Godot 4 as a multi-agent AI social simulation system. In this virtual world, AI characters possess independent thinking and memory, capable of autonomous social interactions, task completion, and developing complex social relationships through continuous communication.",
+      "stars": 2443,
+      "pushed_at": "2026-04-10T00:54:43Z",
+      "language": "GDScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "agentuniverse-ai/agentUniverse",
+      "html_url": "https://github.com/agentuniverse-ai/agentUniverse",
+      "description": "agentUniverse is a LLM multi-agent framework that allows developers to easily build multi-agent applications.",
+      "stars": 2328,
+      "pushed_at": "2026-07-28T08:18:07Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "AgentsMesh/AgentsMesh",
+      "html_url": "https://github.com/AgentsMesh/AgentsMesh",
+      "description": "The AI Agent Workforce Platform. Run a hundred AI coding agents across your own machines \u2014 schedule, isolate, and steer them all from one console.",
+      "stars": 2318,
+      "pushed_at": "2026-08-03T11:45:02Z",
+      "language": "Go",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://agentsmesh.ai"
+    },
+    {
+      "full_name": "learnsyslab/gym-pybullet-drones",
+      "html_url": "https://github.com/learnsyslab/gym-pybullet-drones",
+      "description": "PyBullet Gymnasium environments for single and multi-agent reinforcement learning of quadcopter control",
+      "stars": 2106,
+      "pushed_at": "2026-08-16T12:51:41Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://arxiv.org/pdf/2103.02142"
+    },
+    {
+      "full_name": "marlbenchmark/on-policy",
+      "html_url": "https://github.com/marlbenchmark/on-policy",
+      "description": "This is the official implementation of Multi-Agent PPO (MAPPO).",
+      "stars": 2081,
+      "pushed_at": "2024-07-18T10:00:36Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://sites.google.com/view/mappo"
+    },
+    {
+      "full_name": "jnMetaCode/agency-orchestrator",
+      "html_url": "https://github.com/jnMetaCode/agency-orchestrator",
+      "description": "\ud83d\ude80 One sentence \u2192 your one-person company of AI experts \u2192 complete deliverable in minutes. 267 CN + 184 EN + 5 more languages (ko/ru/pt-BR/id/ar) \u00b7 zero-code YAML \u00b7 auto-verified acceptance \u00b7 Web Studio / Desktop / Docker \u00b7 11 LLM providers (7 key-free). \u4e00\u53e5\u8bdd\u7ec4\u5efa\u4f60\u7684\u300c\u4e00\u4eba\u516c\u53f8\u300dAI \u4e13\u5bb6\u56e2\u961f\uff0c\u51e0\u5206\u949f\u4ea4\u4ed8\u5b8c\u6574\u65b9\u6848\uff1b\u9a8c\u6536\u81ea\u52a8\u6838\u9a8c\uff0c\u7f51\u9875 / \u684c\u9762 / Docker \u5168\u6e20\u9053\u3002",
+      "stars": 2081,
+      "pushed_at": "2026-08-17T14:05:50Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://ao.aiolaola.com"
+    },
+    {
+      "full_name": "ningzimu/image-to-editable-ppt-skill",
+      "html_url": "https://github.com/ningzimu/image-to-editable-ppt-skill",
+      "description": "Codex skill for converting slide images, PDFs, and image-based PPTX files into editable PowerPoint decks.",
+      "stars": 2027,
+      "pushed_at": "2026-07-28T07:00:30Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://ppt-skill.ningzimu.vip"
+    },
+    {
+      "full_name": "showlab/Code2Video",
+      "html_url": "https://github.com/showlab/Code2Video",
+      "description": "[ICML 2026] Video generation via code",
+      "stars": 1983,
+      "pushed_at": "2026-05-31T02:40:50Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://showlab.github.io/Code2Video/"
+    },
+    {
+      "full_name": "Lumiwealth/lumibot",
+      "html_url": "https://github.com/Lumiwealth/lumibot",
+      "description": "Backtestable AI trading agents and Python algorithmic trading strategies for stocks, options, crypto, futures, forex, SEC filings, FRED macro data, and real brokers.",
+      "stars": 1941,
+      "pushed_at": "2026-08-13T22:10:54Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://lumibot.lumiwealth.com"
+    },
+    {
+      "full_name": "jim-schwoebel/awesome_ai_agents",
+      "html_url": "https://github.com/jim-schwoebel/awesome_ai_agents",
+      "description": "\ud83e\udd16 A comprehensive list of 1,500+ resources and tools related to AI agents.",
+      "stars": 1940,
+      "pushed_at": "2026-03-28T08:28:51Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://agents.blog"
+    },
+    {
+      "full_name": "777genius/agent-teams-ai",
+      "html_url": "https://github.com/777genius/agent-teams-ai",
+      "description": "You're the boss, agents are your team. They handle tasks on their own, message each other, and review each other's work. You just watch the kanban board and give high-level commands. Codex/Claude/OpenCode/Cursor/Grok/GitHub Copilot/Kiro/Z.AI/MiniMax/Kimi(200+ models, 75+ LLM providers, free models no auth). Build your AI company with multiple teams",
+      "stars": 1938,
+      "pushed_at": "2026-08-17T15:16:30Z",
+      "language": "TypeScript",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://agentteams.live"
+    },
+    {
+      "full_name": "geek-ai/MAgent",
+      "html_url": "https://github.com/geek-ai/MAgent",
+      "description": "A Platform for Many-Agent Reinforcement Learning",
+      "stars": 1763,
+      "pushed_at": "2022-10-22T00:21:27Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "the-open-engine/zeroshot",
+      "html_url": "https://github.com/the-open-engine/zeroshot",
+      "description": "Independent executor\u2013verifier orchestration for software changes.",
+      "stars": 1701,
+      "pushed_at": "2026-08-17T15:18:37Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.theopenengine.com"
+    },
+    {
+      "full_name": "trpc-group/trpc-agent-go",
+      "html_url": "https://github.com/trpc-group/trpc-agent-go",
+      "description": "A Go framework for building production agent systems with graph workflows, tools, memory, A2A, AG-UI, MCP, evaluation, and observability.",
+      "stars": 1694,
+      "pushed_at": "2026-08-17T12:26:39Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://trpc-group.github.io/trpc-agent-go/"
+    },
+    {
+      "full_name": "google/adk-java",
+      "html_url": "https://github.com/google/adk-java",
+      "description": "An open-source, code-first Java toolkit for building, evaluating, and deploying sophisticated AI agents with flexibility and control.",
+      "stars": 1685,
+      "pushed_at": "2026-08-17T12:28:32Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://google.github.io/adk-docs/"
+    },
+    {
+      "full_name": "kyegomez/awesome-multi-agent-papers",
+      "html_url": "https://github.com/kyegomez/awesome-multi-agent-papers",
+      "description": "A compilation of the best multi-agent papers",
+      "stars": 1646,
+      "pushed_at": "2026-08-13T14:20:30Z",
+      "language": "TeX",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://discord.gg/3keGBK9Pvr"
+    },
+    {
+      "full_name": "google-deepmind/concordia",
+      "html_url": "https://github.com/google-deepmind/concordia",
+      "description": "A library for generative social simulation",
+      "stars": 1629,
+      "pushed_at": "2026-08-14T20:27:00Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "Farama-Foundation/ChatArena",
+      "html_url": "https://github.com/Farama-Foundation/ChatArena",
+      "description": "ChatArena (or Chat Arena) is a Multi-Agent Language Game Environments for LLMs. The goal is to develop communication and collaboration capabilities of AIs.",
+      "stars": 1554,
+      "pushed_at": "2025-08-11T20:19:17Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "DemonDamon/FinnewsHunter",
+      "html_url": "https://github.com/DemonDamon/FinnewsHunter",
+      "description": "FinnewsHunter: Multi-agent financial intelligence platform powered by AgenticX. Real-time news analysis, sentiment fusion, and alpha factor mining.",
+      "stars": 1485,
+      "pushed_at": "2026-07-05T07:03:44Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "fujibee/agmsg",
+      "html_url": "https://github.com/fujibee/agmsg",
+      "description": "Cross-vendor messaging for CLI AI coding agents \u2014 let Claude Code, Codex, Gemini & Copilot talk to each other in one team. Bash + SQLite, no daemon, no framework.",
+      "stars": 1443,
+      "pushed_at": "2026-08-17T09:02:33Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.producthunt.com/products/agmsg"
+    },
+    {
+      "full_name": "yohey-w/multi-agent-shogun",
+      "html_url": "https://github.com/yohey-w/multi-agent-shogun",
+      "description": "Samurai-inspired multi-agent system for Claude Code. Orchestrate parallel AI tasks via tmux with shogun \u2192 karo \u2192 ashigaru hierarchy.",
+      "stars": 1414,
+      "pushed_at": "2026-08-06T08:08:18Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "preset-io/agor",
+      "html_url": "https://github.com/preset-io/agor",
+      "description": "Agor - team command center for all things agentic",
+      "stars": 1365,
+      "pushed_at": "2026-08-17T15:16:18Z",
+      "language": "TypeScript",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://agor.live"
+    },
+    {
+      "full_name": "google/adk-js",
+      "html_url": "https://github.com/google/adk-js",
+      "description": "An open-source, code-first Typescript toolkit for building, evaluating, and deploying sophisticated AI agents with flexibility and control.",
+      "stars": 1350,
+      "pushed_at": "2026-08-14T22:46:45Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://adk.dev"
+    },
+    {
+      "full_name": "study8677/repobrain",
+      "html_url": "https://github.com/study8677/repobrain",
+      "description": "\ud83e\udde0 RepoBrain (formerly Antigravity) \u2014 Give your repo a brain. ChatGPT for your codebase: works in Claude Code, Cursor, Codex, Windsurf & more.",
+      "stars": 1311,
+      "pushed_at": "2026-08-14T19:04:06Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://deepwiki.com/study8677/antigravity-workspace-template"
+    },
+    {
+      "full_name": "Team-Commonly/commonly",
+      "html_url": "https://github.com/Team-Commonly/commonly",
+      "description": "Open-source room for humans + cross-vendor AI agents. Every agent gets its own name, memory, skills, and workstation. Any runtime, your infra \u2014 no per-agent fees.",
+      "stars": 1301,
+      "pushed_at": "2026-08-17T10:02:57Z",
+      "language": "TypeScript",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://commonly.me"
+    },
+    {
+      "full_name": "SmythOS/sre",
+      "html_url": "https://github.com/SmythOS/sre",
+      "description": "The SmythOS Runtime Environment (SRE) is an open-source, cloud-native runtime for agentic AI. Secure, modular, and production-ready, it lets developers build, run, and manage intelligent agents across local, cloud, and edge environments.",
+      "stars": 1291,
+      "pushed_at": "2026-04-03T05:31:50Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://smythos.com"
+    },
+    {
+      "full_name": "codefuse-ai/codefuse-chatbot",
+      "html_url": "https://github.com/codefuse-ai/codefuse-chatbot",
+      "description": "An intelligent assistant serving the entire software development lifecycle, powered by a Multi-Agent Framework, working with DevOps Toolkits, Code&Doc Repo RAG,  etc.",
+      "stars": 1291,
+      "pushed_at": "2024-07-01T09:16:47Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "dohooo/helmor",
+      "html_url": "https://github.com/dohooo/helmor",
+      "description": "Open-source local workbench for multi-agent software development.",
+      "stars": 1288,
+      "pushed_at": "2026-08-16T02:15:59Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://helmor.ai"
+    },
+    {
+      "full_name": "nrslib/takt",
+      "html_url": "https://github.com/nrslib/takt",
+      "description": "TAKT Agent Koordination Topology - Define how AI agents coordinate, where humans intervene, and what gets recorded \u2014 in YAML",
+      "stars": 1287,
+      "pushed_at": "2026-08-17T14:43:47Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "fastclaw-ai/fastclaw",
+      "html_url": "https://github.com/fastclaw-ai/fastclaw",
+      "description": "Multi-Agent Framework",
+      "stars": 1285,
+      "pushed_at": "2026-07-27T07:22:37Z",
+      "language": "Go",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://fastclaw.ai"
+    },
+    {
+      "full_name": "Orkas-AI/Orkas",
+      "html_url": "https://github.com/Orkas-AI/Orkas",
+      "description": "Open-source multi-agent AI desktop client \u2014 build and command your AI agent team through conversation. A commander LLM dispatches sub-agents in parallel or in series; agents self-evolve via reflection and skill crystallization. Local-first, BYO LLM keys (Claude \u00b7 OpenAI \u00b7 Gemini \u00b7 DeepSeek \u00b7 Kimi \u00b7 GLM \u00b7 Qwen). macOS / Windows / Linux.",
+      "stars": 1282,
+      "pushed_at": "2026-08-16T11:48:47Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://orkas.ai?source=github"
+    },
+    {
+      "full_name": "larlarua/AutoCVE",
+      "html_url": "https://github.com/larlarua/AutoCVE",
+      "description": "Agent-driven automated CVE discovery platform for source code auditing, vulnerability verification, and report generation.",
+      "stars": 1262,
+      "pushed_at": "2026-08-07T01:34:15Z",
+      "language": "Python",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "first-fluke/oh-my-agent",
+      "html_url": "https://github.com/first-fluke/oh-my-agent",
+      "description": "The multi-agent harness that checks the work: verifies agent runs by artifacts (stop-hook gates, independent judges, append-only event logs) across Claude Code, Codex, Cursor, and 10+ runtimes.",
+      "stars": 1233,
+      "pushed_at": "2026-08-17T09:50:22Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://firstfluke.com/oh-my-agent/"
+    },
+    {
+      "full_name": "Jenqyang/Awesome-AI-Agents",
+      "html_url": "https://github.com/Jenqyang/Awesome-AI-Agents",
+      "description": "A collection of autonomous agents \ud83e\udd16\ufe0f powered by LLM.",
+      "stars": 1213,
+      "pushed_at": "2026-08-17T10:03:25Z",
+      "language": "CSS",
+      "license_spdx_id": "",
+      "homepage": "https://jenqyang.github.io/Awesome-AI-Agents/"
+    },
+    {
+      "full_name": "wanxingai/LightAgent",
+      "html_url": "https://github.com/wanxingai/LightAgent",
+      "description": "LightAgent: Lightweight Python framework for OpenAI-compatible agents with tools, memory, guardrails, tracing, lifecycle hooks, multi-agent collaboration, and workflows.",
+      "stars": 1205,
+      "pushed_at": "2026-08-15T18:28:14Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "repowise-dev/claude-code-prompts",
+      "html_url": "https://github.com/repowise-dev/claude-code-prompts",
+      "description": "Independently authored prompt templates for AI coding agents \u2014 system prompts, tool prompts, agent delegation, memory management, and multi-agent coordination. Informed by studying Claude Code.",
+      "stars": 1187,
+      "pushed_at": "2026-05-11T16:20:18Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "modu-ai/moai-adk",
+      "html_url": "https://github.com/modu-ai/moai-adk",
+      "description": "Agentic development harness for Claude Code \u2014 SPEC-driven plan/run/sync, TRUST 5 quality gates, model+effort routing, and Claude\u00d7GLM multi-LLM cost control. Single Go binary, 16 languages, zero deps.",
+      "stars": 1174,
+      "pushed_at": "2026-08-17T14:29:10Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://adk.mo.ai.kr"
+    },
+    {
+      "full_name": "Ricky-7-Yan/intelligent-audit-system",
+      "html_url": "https://github.com/Ricky-7-Yan/intelligent-audit-system",
+      "description": "AuditPilot: auditable enterprise AI agents for evidence-grounded workflows, governed tools, evaluation harnesses, human review, and remediation delivery.",
+      "stars": 1166,
+      "pushed_at": "2026-08-12T18:32:23Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "alookai/alook",
+      "html_url": "https://github.com/alookai/alook",
+      "description": "Rooms for people and agents.",
+      "stars": 1148,
+      "pushed_at": "2026-08-17T13:17:01Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://alook.ai"
+    },
+    {
+      "full_name": "Chorus-AIDLC/Chorus",
+      "html_url": "https://github.com/Chorus-AIDLC/Chorus",
+      "description": "The Agent Harness for AI-Human Collaboration, inspired by the AI-DLC (AI-Driven Development Lifecycle)",
+      "stars": 1137,
+      "pushed_at": "2026-08-17T13:49:53Z",
+      "language": "TypeScript",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://chorus-ai.dev/"
+    },
+    {
+      "full_name": "massgen/MassGen",
+      "html_url": "https://github.com/massgen/MassGen",
+      "description": "\ud83d\ude80 MassGen is an open-source multi-agent scaling system that runs in your terminal, autonomously orchestrating frontier models and agents to collaborate, reason, and produce high-quality results. | Join us on Discord: discord.massgen.ai",
+      "stars": 1117,
+      "pushed_at": "2026-06-12T18:38:37Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://docs.massgen.ai"
+    },
+    {
+      "full_name": "hanruihua/ir-sim",
+      "html_url": "https://github.com/hanruihua/ir-sim",
+      "description": "A  Python-based lightweight robot simulator designed for navigation, control, and learning",
+      "stars": 1112,
+      "pushed_at": "2026-08-17T07:59:22Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://ir-sim.readthedocs.io/en/stable/"
+    },
+    {
+      "full_name": "Toni-SM/skrl",
+      "html_url": "https://github.com/Toni-SM/skrl",
+      "description": "Modular Reinforcement Learning (RL) library (implemented in PyTorch, JAX, and NVIDIA Warp) with support for Gymnasium/Gym, NVIDIA Isaac Lab, MuJoCo Playground and other environments",
+      "stars": 1089,
+      "pushed_at": "2026-05-11T09:35:05Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://skrl.readthedocs.io/"
+    },
+    {
+      "full_name": "ChesterRa/cccc",
+      "html_url": "https://github.com/ChesterRa/cccc",
+      "description": "Coordinate your coding agents like a group chat \u2014 read receipts, delivery tracking, and remote ops from your phone. One pip install, zero infrastructure. A production\u2011minded orchestrator for 24/7 workflow",
+      "stars": 1078,
+      "pushed_at": "2026-08-17T01:43:43Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://cccc.sh/"
+    },
+    {
+      "full_name": "asklokesh/loki-mode",
+      "html_url": "https://github.com/asklokesh/loki-mode",
+      "description": "Multi-agent autonomous SDLC framework. Spec to deployed app. PRD, GitHub issue, OpenAPI/JSON/YAML, or one-line brief. 5 AI providers, 8 quality gates.",
+      "stars": 1042,
+      "pushed_at": "2026-08-17T14:41:06Z",
+      "language": "Shell",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://www.autonomi.dev"
+    },
+    {
+      "full_name": "metauto-ai/GPTSwarm",
+      "html_url": "https://github.com/metauto-ai/GPTSwarm",
+      "description": "\ud83d\udc1d  The First Self-Improving agents with RL / Prompting Optimization",
+      "stars": 1036,
+      "pushed_at": "2026-02-05T10:39:09Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://gptswarm.org"
+    },
+    {
+      "full_name": "mateaix/mateclaw",
+      "html_url": "https://github.com/mateaix/mateclaw",
+      "description": "\ud83e\udd16 MateClaw \u2014 Your second brain with Multi-Agent Orchestration, MCP Protocol, Skills & Memory, Dream, and Multi-Channel Support. Built on Spring AI Alibaba.",
+      "stars": 999,
+      "pushed_at": "2026-08-17T13:34:56Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://claw.mate.vip"
+    },
+    {
+      "full_name": "Agent-Field/SWE-AF",
+      "html_url": "https://github.com/Agent-Field/SWE-AF",
+      "description": "Autonomous software engineering fleet of AI agents for production-grade PRs on AgentField: plan, code, test, and ship.",
+      "stars": 976,
+      "pushed_at": "2026-08-15T03:38:45Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://agentfield.ai/"
+    },
+    {
+      "full_name": "datamllab/awesome-game-ai",
+      "html_url": "https://github.com/datamllab/awesome-game-ai",
+      "description": "Awesome Game AI materials of Multi-Agent Reinforcement Learning",
+      "stars": 975,
+      "pushed_at": "2024-06-26T23:02:54Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "xvirobotics/metabot",
+      "html_url": "https://github.com/xvirobotics/metabot",
+      "description": "\u6784\u5efa\u53d7\u76d1\u7763\u7684\u3001\u81ea\u6211\u8fdb\u5316\u7684 Agent \u7ec4\u7ec7\u7684\u57fa\u7840\u8bbe\u65bd | Infrastructure for supervised, self-improving agent organization. \u98de\u4e66/Telegram \u624b\u673a\u7aef\u8fd0\u884c Claude Code \u6216 Kimi Code\uff08\u53cc\u5f15\u64ce\uff0c\u4e24\u5bb6\u539f\u751f\u8ba2\u9605\u76f4\u63a5\u7528\uff09\uff0c\u5171\u4eab\u8bb0\u5fc6\u3001Agent \u5de5\u5382\u3001\u5b9a\u65f6\u4efb\u52a1\u3001\u901a\u4fe1\u603b\u7ebf\u3002",
+      "stars": 950,
+      "pushed_at": "2026-08-08T09:15:35Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://xvirobotics.com/metabot/"
+    },
+    {
+      "full_name": "AgileRL/AgileRL",
+      "html_url": "https://github.com/AgileRL/AgileRL",
+      "description": "Streamlining reinforcement learning with RLOps. State-of-the-art RL algorithms and tools, with 10x faster training through evolutionary hyperparameter optimization.",
+      "stars": 943,
+      "pushed_at": "2026-08-17T13:30:50Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://agilerl.com"
+    },
+    {
+      "full_name": "microsoft/maro",
+      "html_url": "https://github.com/microsoft/maro",
+      "description": "Multi-Agent Resource Optimization (MARO) platform is an instance of Reinforcement Learning as a Service (RaaS) for real-world resource optimization problems.",
+      "stars": 921,
+      "pushed_at": "2025-04-24T17:10:03Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://maro.readthedocs.io/en/latest/"
+    },
+    {
+      "full_name": "Rath-Team/OpenRath",
+      "html_url": "https://github.com/Rath-Team/OpenRath",
+      "description": "An open-source, PyTorch-like runtime for dynamic multi-agent and multi-session workflows.",
+      "stars": 901,
+      "pushed_at": "2026-07-31T05:04:23Z",
+      "language": "Python",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": "https://www.openrath.com/"
+    },
+    {
+      "full_name": "Human-Agent-Society/CORAL",
+      "html_url": "https://github.com/Human-Agent-Society/CORAL",
+      "description": "Open-source autoresearch powered by autonomous coding agents. Run Claude Code, OpenCode, and Codex with grading, shared knowledge, and multi-agent evolution. Accepted at COLM 2026.",
+      "stars": 893,
+      "pushed_at": "2026-08-15T05:10:42Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://coral.compounding-intelligence.ai"
+    },
+    {
+      "full_name": "sunbigfly/ppt-agent-skills",
+      "html_url": "https://github.com/sunbigfly/ppt-agent-skills",
+      "description": "A code-driven presentation generation framework. \u50cf\u6784\u5efa\u8f6f\u4ef6\u5de5\u7a0b\u4e00\u6837\u751f\u6210\u6f14\u793a\u6587\u7a3f\u3002",
+      "stars": 885,
+      "pushed_at": "2026-06-08T07:41:34Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "qinshihu/itops-agent-platform",
+      "html_url": "https://github.com/qinshihu/itops-agent-platform",
+      "description": "China's 1st enterprise multi-agent IT ops platform. LLM-powered auto-remediation for Zabbix/Prometheus. Docker deploy.",
+      "stars": 878,
+      "pushed_at": "2026-08-17T01:15:28Z",
+      "language": "TypeScript",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://aiopsdoc-0mwug01t6.maozi.io/"
+    },
+    {
+      "full_name": "oceanbase/powercontext",
+      "html_url": "https://github.com/oceanbase/powercontext",
+      "description": "PowerContext: The Next Generation of PowerMem.",
+      "stars": 871,
+      "pushed_at": "2026-08-17T14:01:23Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://oceanbase.github.io/powercontext/"
+    },
+    {
+      "full_name": "cognizant-ai-lab/neuro-san-studio",
+      "html_url": "https://github.com/cognizant-ai-lab/neuro-san-studio",
+      "description": "A playground for neuro-san",
+      "stars": 857,
+      "pushed_at": "2026-08-15T00:48:47Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://decisionai.ml/neuro-san"
+    },
+    {
+      "full_name": "Pan-Chera/Multi-Agent-CAD",
+      "html_url": "https://github.com/Pan-Chera/Multi-Agent-CAD",
+      "description": "MAC (Multi-Agent CAD): A decoupled multi-agent framework for text-to-CAD generation via constrained test-time compute",
+      "stars": 838,
+      "pushed_at": "2026-08-13T11:59:56Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "unohee/OpenSwarm",
+      "html_url": "https://github.com/unohee/OpenSwarm",
+      "description": "OpenSwarm \u2014 Autonomous AI dev team orchestrator powered by Claude Code CLI. Discord control, Linear integration, cognitive memory.",
+      "stars": 835,
+      "pushed_at": "2026-08-15T10:23:59Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "AIScientists-Dev/WorldSeed",
+      "html_url": "https://github.com/AIScientists-Dev/WorldSeed",
+      "description": "More is Different. A multi-agent world engine where AI agents live, talk, compete, ally.",
+      "stars": 809,
+      "pushed_at": "2026-05-08T05:24:35Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://worldseed.morphmind.ai/demo"
+    },
+    {
+      "full_name": "go-kratos/blades",
+      "html_url": "https://github.com/go-kratos/blades",
+      "description": "Blades is a Go-based multimodal AI Agent framework.",
+      "stars": 808,
+      "pushed_at": "2026-08-14T07:16:38Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": "https://go-kratos.dev/blades/"
+    },
+    {
+      "full_name": "Haervwe/open-webui-tools",
+      "html_url": "https://github.com/Haervwe/open-webui-tools",
+      "description": "Open\u2011WebUI Tools is a modular toolkit designed to extend and enrich your Open WebUI instance, turning it into a powerful AI workstation. With a suite of over 15 specialized tools, function pipelines, and filters, this project supports academic research, agentic autonomy, multimodal creativity, workflows, and more",
+      "stars": 793,
+      "pushed_at": "2026-08-13T14:47:08Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "codefuse-ai/CodeFuse-muAgent",
+      "html_url": "https://github.com/codefuse-ai/CodeFuse-muAgent",
+      "description": "An Innovative Agent Framework Driven by KG Engine",
+      "stars": 774,
+      "pushed_at": "2025-01-15T06:12:34Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "divar-ir/ai-doc-gen",
+      "html_url": "https://github.com/divar-ir/ai-doc-gen",
+      "description": "AI-powered multi-agent system that automatically analyzes codebases and generates comprehensive documentation. Features GitLab integration, concurrent processing, and multiple LLM support for better code understanding and developer onboarding.",
+      "stars": 747,
+      "pushed_at": "2026-07-21T13:38:14Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "sbhooley/ainativelang",
+      "html_url": "https://github.com/sbhooley/ainativelang",
+      "description": "AINL helps turn AI from \"a smart conversation\" into \"a structured worker.\"  It is designed for teams building AI workflows that need multiple steps, state and memory, tool use, repeatable execution, validation and control, and lower dependence on long prompt loops.  AINL is a compact, graph-canonical, AI-native programming system for (READ: README)",
+      "stars": 731,
+      "pushed_at": "2026-06-25T08:30:27Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://ainativelang.com"
+    },
+    {
+      "full_name": "joelhooks/swarm-tools",
+      "html_url": "https://github.com/joelhooks/swarm-tools",
+      "description": "\ud83d\udc1d Multi-agent swarm coordination for OpenCode with learning capabilities, agent issue tracking, and management",
+      "stars": 730,
+      "pushed_at": "2026-07-30T22:04:43Z",
+      "language": "TypeScript",
+      "license_spdx_id": "",
+      "homepage": "https://swarmtools.ai"
+    },
+    {
+      "full_name": "dragon1086/prism-insight",
+      "html_url": "https://github.com/dragon1086/prism-insight",
+      "description": "AI-based stock analysis and trading system",
+      "stars": 722,
+      "pushed_at": "2026-08-13T15:54:11Z",
+      "language": "Python",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://prism-insight-landing.vercel.app/"
+    },
+    {
+      "full_name": "desplega-ai/agent-swarm",
+      "html_url": "https://github.com/desplega-ai/agent-swarm",
+      "description": "Your Company Agentic Operating System",
+      "stars": 703,
+      "pushed_at": "2026-08-17T07:23:50Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://agent-swarm.dev"
+    },
+    {
+      "full_name": "shannhk/hermes-agent-control-room",
+      "html_url": "https://github.com/shannhk/hermes-agent-control-room",
+      "description": "Control Room-first template for managing Hermes agents from one VPS agent to specialist teams and orchestrated workflows",
+      "stars": 695,
+      "pushed_at": "2026-05-16T19:30:12Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "facebookresearch/BenchMARL",
+      "html_url": "https://github.com/facebookresearch/BenchMARL",
+      "description": "BenchMARL is a library for benchmarking Multi-Agent Reinforcement Learning (MARL). BenchMARL allows to quickly compare different MARL algorithms, tasks, and models while being systematically grounded in its two core tenets: reproducibility and standardization.",
+      "stars": 654,
+      "pushed_at": "2026-02-07T16:00:29Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://benchmarl.readthedocs.io"
+    },
+    {
+      "full_name": "nv-tlabs/Gamma-World",
+      "html_url": "https://github.com/nv-tlabs/Gamma-World",
+      "description": "Implementation of Gamma-World: Generative Multi-Agent World Modeling Beyond Two Players",
+      "stars": 654,
+      "pushed_at": "2026-06-17T16:07:52Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://research.nvidia.com/labs/sil/projects/gamma-world/"
+    },
+    {
+      "full_name": "swarmclawai/swarmclaw",
+      "html_url": "https://github.com/swarmclawai/swarmclaw",
+      "description": "Open-source self-hosted AI agent runtime and multi-agent framework for autonomous agent swarms. Agent memory, MCP tools, schedules, delegation, and 23+ LLM providers (Claude, GPT, Gemini, OpenRouter, Ollama). A practical Claude Code and LangChain alternative.",
+      "stars": 647,
+      "pushed_at": "2026-06-30T20:58:13Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.swarmclaw.ai"
+    },
+    {
+      "full_name": "agentscope-ai/agentscope-studio",
+      "html_url": "https://github.com/agentscope-ai/agentscope-studio",
+      "description": "A development-oriented visualization toolkit",
+      "stars": 639,
+      "pushed_at": "2026-06-15T02:38:59Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://agentscope-ai.github.io/agentscope-studio/"
+    },
+    {
+      "full_name": "hex/claude-council",
+      "html_url": "https://github.com/hex/claude-council",
+      "description": "Claude Code plugin that asks several AI coding agents the same question and shows their answers side by side. Gemini, OpenAI, Grok, Perplexity and Kimi over API; codex, antigravity, grok and kimi CLIs on subscription auth; ollama locally.",
+      "stars": 639,
+      "pushed_at": "2026-08-12T09:35:19Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Ar9av/PaperOrchestra",
+      "html_url": "https://github.com/Ar9av/PaperOrchestra",
+      "description": "An automated AI research-paper writer based off Google's PaperOrchestra paper's implementation through a skills -  benchmark + autoraters using any coding agent (Claude Code, Cursor, Antigravity, Cline, Aider). No API keys, no LLM SDKs.",
+      "stars": 638,
+      "pushed_at": "2026-08-09T16:07:43Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://arxiv.org/pdf/2604.05018"
+    },
+    {
+      "full_name": "AgentTeam-TaichuAI/ScienceClaw",
+      "html_url": "https://github.com/AgentTeam-TaichuAI/ScienceClaw",
+      "description": "ScienceClaw is a personal research assistant built with LangChain DeepAgents and AIO Sandbox infrastructure, adopting a completely new architecture beyond OpenClaw. It offers stronger security, better transparency, and a more user-friendly experience.",
+      "stars": 638,
+      "pushed_at": "2026-05-09T01:56:17Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://scienceclaw.zidongtaichu.com/"
+    },
+    {
+      "full_name": "Arvincreator/project-golem",
+      "html_url": "https://github.com/Arvincreator/project-golem",
+      "description": "OS-level autonomous AI agent with long-term memory, multi-agent coordination, Titan Chronos scheduler & Moltbot Social Core",
+      "stars": 637,
+      "pushed_at": "2026-06-22T05:35:37Z",
+      "language": "JavaScript",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "koulanurag/ma-gym",
+      "html_url": "https://github.com/koulanurag/ma-gym",
+      "description": "A collection of multi agent environments based on OpenAI gym.",
+      "stars": 634,
+      "pushed_at": "2024-07-07T15:52:18Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/koulanurag/ma-gym/wiki"
+    },
+    {
+      "full_name": "lofcz/LLMTornado",
+      "html_url": "https://github.com/lofcz/LLMTornado",
+      "description": "The .NET library to build AI agents with 30+ built-in connectors.",
+      "stars": 633,
+      "pushed_at": "2026-08-16T04:08:32Z",
+      "language": "C#",
+      "license_spdx_id": "MIT",
+      "homepage": "https://llmtornado.ai"
+    },
+    {
+      "full_name": "pzqpzq/Principia",
+      "html_url": "https://github.com/pzqpzq/Principia",
+      "description": "Principia extracts reusable principles, composes those principles into traceable research ideas, and helps researchers inspect why an idea may be worth testing.",
+      "stars": 630,
+      "pushed_at": "2026-08-17T15:18:33Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "xavierpuigf/virtualhome",
+      "html_url": "https://github.com/xavierpuigf/virtualhome",
+      "description": "API to run VirtualHome, a Multi-Agent Household Simulator",
+      "stars": 627,
+      "pushed_at": "2026-05-20T03:19:25Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "http://virtual-home.org"
+    },
+    {
+      "full_name": "mit-acl/mader",
+      "html_url": "https://github.com/mit-acl/mader",
+      "description": "Trajectory Planner in Multi-Agent and Dynamic Environments",
+      "stars": 616,
+      "pushed_at": "2022-12-07T13:25:44Z",
+      "language": "C++",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": ""
+    },
+    {
+      "full_name": "framerslab/agentos",
+      "html_url": "https://github.com/framerslab/agentos",
+      "description": "TypeScript AI agent framework: cognitive memory, runtime tool forging, multi-agent orchestration, 11 LLM providers.",
+      "stars": 614,
+      "pushed_at": "2026-08-07T10:59:54Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.agentos.sh"
+    },
+    {
+      "full_name": "Nanako0129/pilotfish",
+      "html_url": "https://github.com/Nanako0129/pilotfish",
+      "description": "Multi-model orchestration layer for Claude Code \u2014 the frontier model plans, cheaper models execute, verification guards quality. One-prompt install.",
+      "stars": 601,
+      "pushed_at": "2026-08-07T22:26:53Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "proroklab/VectorizedMultiAgentSimulator",
+      "html_url": "https://github.com/proroklab/VectorizedMultiAgentSimulator",
+      "description": "VMAS is a vectorized differentiable simulator designed for efficient Multi-Agent Reinforcement Learning benchmarking. It is comprised of a vectorized 2D physics engine written in PyTorch and a set of challenging multi-robot scenarios. Additional scenarios can be implemented through a simple and modular interface.",
+      "stars": 599,
+      "pushed_at": "2026-05-19T22:19:49Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://vmas.readthedocs.io"
+    },
+    {
+      "full_name": "ruvnet/metaharness",
+      "html_url": "https://github.com/ruvnet/metaharness",
+      "description": "\ud83d\udee0\ufe0f The meta-harness for AI agents \u2014 scaffold your own focused, branded agent harness with its own npx CLI, MCP server, memory, learning loop, and witness-signed releases. Works with Claude Code, Codex, pi.dev, Hermes, OpenClaw, and RVM (hardware-isolated sandbox).",
+      "stars": 590,
+      "pushed_at": "2026-08-17T14:35:21Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://Cognitum.One"
+    },
+    {
+      "full_name": "databufflabs/databuff",
+      "html_url": "https://github.com/databufflabs/databuff",
+      "description": "AI-native OpenTelemetry APM with multi-agent root-cause analysis across traces, metrics, and service topology",
+      "stars": 580,
+      "pushed_at": "2026-08-17T12:55:06Z",
+      "language": "Java",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://databuff.ai"
+    },
+    {
+      "full_name": "openteams-lab/openteams",
+      "html_url": "https://github.com/openteams-lab/openteams",
+      "description": "Plan, Build, and Ship \u2014 with a team of AI agents instead of one",
+      "stars": 578,
+      "pushed_at": "2026-08-13T15:03:37Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://openteams-lab.com"
+    },
+    {
+      "full_name": "redai-infra/Relax",
+      "html_url": "https://github.com/redai-infra/Relax",
+      "description": "An Asynchronous Reinforcement Learning Engine for Omni-Modal Post-Training at Scale",
+      "stars": 571,
+      "pushed_at": "2026-08-17T06:34:07Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://redai-infra.github.io/Relax"
+    },
+    {
+      "full_name": "JacopoPan/aerial-autonomy-stack",
+      "html_url": "https://github.com/JacopoPan/aerial-autonomy-stack",
+      "description": "An open framework to simulate and deploy perception-based PX4/ArduPilot drone swarms with ROS2, YOLO, LiDAR, NVIDIA Jetson",
+      "stars": 567,
+      "pushed_at": "2026-08-15T14:58:58Z",
+      "language": "C++",
+      "license_spdx_id": "MIT",
+      "homepage": "https://arxiv.org/abs/2602.07264"
+    },
+    {
+      "full_name": "avidevelops/claude-architect-exam-prep",
+      "html_url": "https://github.com/avidevelops/claude-architect-exam-prep",
+      "description": "",
+      "stars": 563,
+      "pushed_at": "2026-06-19T03:58:35Z",
+      "language": "",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "Enderfga/claw-orchestrator",
+      "html_url": "https://github.com/Enderfga/claw-orchestrator",
+      "description": "Run Claude Code, Codex, Antigravity, Cursor Agent and OpenCode as one runtime \u2014 persistent sessions, multi-agent councils, an OpenAI-compatible endpoint, an MCP server, and an ACP agent any editor can drive.",
+      "stars": 547,
+      "pushed_at": "2026-08-17T08:01:59Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://github.com/Enderfga/claw-orchestrator#readme"
+    },
+    {
+      "full_name": "momozi1996/awesome-ai-persona-skills",
+      "html_url": "https://github.com/momozi1996/awesome-ai-persona-skills",
+      "description": "\u5168\u7f51\u6700\u5168\u7684\u3001\u6301\u7eed\u66f4\u65b0\u7684\u3001\u6700\u706b\u7206\u7684 100+ \u4eba\u683c \u84b8\u998fskills \u5408\u96c6\uff5c \u591aagent\u7cfb\u7edf \uff5c\u540d\u4eba/\u5bfc\u6f14/\u5929\u6daf\u5927\u795e/\u53e4\u7c4d/\u4e8c\u6b21\u5143/\u804c\u573a/\u60c5\u611f\u5168\u54c1\u7c7b",
+      "stars": 546,
+      "pushed_at": "2026-05-23T04:02:16Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "solo-agent/solo",
+      "html_url": "https://github.com/solo-agent/solo",
+      "description": "Solo Agent \u2014 an open-source, local-first workspace where humans and AI coding agents collaborate through channels, tasks, teams, and persistent memory.",
+      "stars": 530,
+      "pushed_at": "2026-08-16T14:18:35Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": "https://soloagent.team"
+    },
+    {
+      "full_name": "vibeeval/vibecosystem",
+      "html_url": "https://github.com/vibeeval/vibecosystem",
+      "description": "AI software team for Claude Code - 138 agents, 295 skills, 73 hooks. Self-learning, multi-agent swarm, autonomous skill evolution.",
+      "stars": 526,
+      "pushed_at": "2026-08-08T19:58:01Z",
+      "language": "C#",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "vanzan01/claude-code-sub-agent-collective",
+      "html_url": "https://github.com/vanzan01/claude-code-sub-agent-collective",
+      "description": "\ud83e\udde0 Context Engineering Research - Not just another agent collection, but using research and context engineering to function as a collective. Hub-and-spoke coordination through Claude   Code.",
+      "stars": 523,
+      "pushed_at": "2026-04-20T06:23:33Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "evolution-foundation/evo-nexus",
+      "html_url": "https://github.com/evolution-foundation/evo-nexus",
+      "description": "The open source operating system for AI-powered businesses",
+      "stars": 521,
+      "pushed_at": "2026-05-13T17:07:07Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://openclaude.evolutionfoundation.com.br"
+    },
+    {
+      "full_name": "CopilotKit/open-multi-agent-canvas",
+      "html_url": "https://github.com/CopilotKit/open-multi-agent-canvas",
+      "description": "The open-source multi-agent chat interface that lets you manage multiple agents in one dynamic conversation and add MCP servers for deep research",
+      "stars": 520,
+      "pushed_at": "2026-08-16T04:07:03Z",
+      "language": "TypeScript",
+      "license_spdx_id": "",
+      "homepage": "https://open-multi-agent-canvas.vercel.app"
+    },
+    {
+      "full_name": "catlog22/maestro-flow",
+      "html_url": "https://github.com/catlog22/maestro-flow",
+      "description": "Intent-driven workflow orchestration for multi-agent AI development \u2014 adaptive lifecycle engine, self-reinforcing knowledge graph, and visual dashboard for Claude Code, Gemini, Codex & more",
+      "stars": 520,
+      "pushed_at": "2026-08-17T08:37:17Z",
+      "language": "TypeScript",
+      "license_spdx_id": "",
+      "homepage": "https://catlog22.github.io/maestro-flow/"
+    },
+    {
+      "full_name": "AutoJunjie/awesome-agent-harness",
+      "html_url": "https://github.com/AutoJunjie/awesome-agent-harness",
+      "description": "",
+      "stars": 513,
+      "pushed_at": "2026-04-19T11:09:46Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "x-glacier/GenerativeAgentsCN",
+      "html_url": "https://github.com/x-glacier/GenerativeAgentsCN",
+      "description": "\u672c\u9879\u76ee\u4e3aGenerative Agents\u9879\u76ee\u7684\u91cd\u6784+\u6df1\u5ea6\u6c49\u5316\u7248\u672c\uff0c\u65e8\u5728\u4e3a\u4e2d\u6587\u7528\u6237\u63d0\u4f9b\u4e00\u4e2a\u5229\u4e8e\u7ef4\u62a4\u7684\u57fa\u7840\u7248\u672c\uff0c\u4ee5\u4fbf\u540e\u7eed\u5b9e\u9a8c\u6216\u529f\u80fd\u62d3\u5c55\u3002",
+      "stars": 513,
+      "pushed_at": "2026-03-12T14:06:24Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "RyjoxTechnologies/Octopoda-OS",
+      "html_url": "https://github.com/RyjoxTechnologies/Octopoda-OS",
+      "description": "The open-source memory and observability layer for AI agents \u2014 persistent memory, loop detection, hash-chained audit trails, and a live dashboard, automatic on pip install.",
+      "stars": 509,
+      "pushed_at": "2026-07-15T16:10:16Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://octopodas.com"
+    },
+    {
+      "full_name": "opendilab/GoBigger",
+      "html_url": "https://github.com/opendilab/GoBigger",
+      "description": "[ICLR 2023] Come & try  Decision-Intelligence version of \"Agar\"! Gobigger could also help you with multi-agent decision intelligence study.",
+      "stars": 503,
+      "pushed_at": "2023-08-31T05:41:03Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://gobigger.readthedocs.io/en/latest/"
+    },
+    {
+      "full_name": "mco-org/mco",
+      "html_url": "https://github.com/mco-org/mco",
+      "description": "CLI-first orchestration for AI coding agents: run selected agents and models in parallel, compare raw answers, and coordinate review or implementation workflows.",
+      "stars": 496,
+      "pushed_at": "2026-08-14T03:52:09Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "inclusionAI/Avernet",
+      "html_url": "https://github.com/inclusionAI/Avernet",
+      "description": "Distributed agent coordination platform where agents live, connect, coordinate, execute, and evolve together.",
+      "stars": 494,
+      "pushed_at": "2026-08-17T14:53:34Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "AlexAnys/opencrew",
+      "html_url": "https://github.com/AlexAnys/opencrew",
+      "description": "Openclaw\u591a\u667a\u80fd\u4f53\u534f\u540c\u7cfb\u7edf | Multi-Agent OS for Decision Makers \u2014 \u57fa\u4e8e OpenClaw (Clawbot) + Slack\uff0c\u8ba9 AI \u56e2\u961f\u5404\u53f8\u5176\u804c\u3001\u81ea\u4e3b\u7a33\u5b9a\u8fed\u4ee3\u3002",
+      "stars": 493,
+      "pushed_at": "2026-04-05T07:49:56Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "codexstar69/bug-hunter",
+      "html_url": "https://github.com/codexstar69/bug-hunter",
+      "description": "Adversarial AI bug hunter with auto-fix skill for Claude Code, Cursor, Codex CLI, GitHub Copilot CLI, Kiro CLI, Opencode, Pi Coding Agent, and more. Multi-agent pipeline finds security vulnerabilities, logic errors, and runtime bugs \u2014 then fixes them autonomously on a safe branch.",
+      "stars": 487,
+      "pushed_at": "2026-08-17T08:19:46Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "wjayesh/mahilo",
+      "html_url": "https://github.com/wjayesh/mahilo",
+      "description": "mahilo: Multi-Agent Human-in-the-Loop Framework is a flexible framework for creating multi-agent systems that can each interact with humans while sharing relevant context internally.",
+      "stars": 477,
+      "pushed_at": "2025-04-02T16:13:18Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://mahilo.wjayesh.com/"
+    },
+    {
+      "full_name": "AmeNetwork/aser",
+      "html_url": "https://github.com/AmeNetwork/aser",
+      "description": "Aser is a lightweight, self-assembling AI Agent frame.",
+      "stars": 471,
+      "pushed_at": "2026-04-21T22:46:22Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://ame.network/"
+    },
+    {
+      "full_name": "baidu-baige/LoongFlow",
+      "html_url": "https://github.com/baidu-baige/LoongFlow",
+      "description": "LoongFlow is an expert-grade Agent framework for Loop Engineering. Through a Plan-Execute-Summary loop and structured experiential memory, it enables AI to continuously think, execute, reflect, and evolve across complex software engineering, mathematical, and machine learning tasks.",
+      "stars": 470,
+      "pushed_at": "2026-04-09T12:12:52Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://arxiv.org/abs/2512.24077"
+    },
+    {
+      "full_name": "renee-jia/scholar-loop",
+      "html_url": "https://github.com/renee-jia/scholar-loop",
+      "description": "An autonomous AI scientist: a multi-agent loop over literature, experiments, self-critique and write-up, with deterministic guards against reward-hacking and hallucination.",
+      "stars": 466,
+      "pushed_at": "2026-06-23T06:27:49Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "tt-a1i/hive",
+      "html_url": "https://github.com/tt-a1i/hive",
+      "description": "Browser-native hive-mind for CLI coding agents \u2014 Claude Code, Codex, Gemini, and OpenCode collaborate as real PTY processes via a team protocol.",
+      "stars": 464,
+      "pushed_at": "2026-06-18T06:40:00Z",
+      "language": "TypeScript",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://hivehq.dev"
+    },
+    {
+      "full_name": "shuxiachai/academic-commercialization-agent",
+      "html_url": "https://github.com/shuxiachai/academic-commercialization-agent",
+      "description": "Turn any research paper into a commercialization report \u2014 6 AI agents, TRL/MRL scoring, patent landscape, market intelligence, verified citations. DeepSeek / OpenAI / Claude.",
+      "stars": 457,
+      "pushed_at": "2026-08-16T06:46:37Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Anil-matcha/Open-AI-Micro-Drama-Generator",
+      "html_url": "https://github.com/Anil-matcha/Open-AI-Micro-Drama-Generator",
+      "description": "AI short drama & micro-drama video generator \u2014 turns any idea into a complete short-form drama using multi-agent AI pipeline (screenwriter \u2192 storyboard \u2192 frames \u2192 video). Seedance 2 VIP, Kling 3.0 Pro, Veo 3.1, Sora 2.",
+      "stars": 455,
+      "pushed_at": "2026-08-02T09:36:28Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://muapi.ai?utm_source=github&utm_medium=about&utm_campaign=open-ai-micro-drama-generator"
+    },
+    {
+      "full_name": "aannoo/hcom",
+      "html_url": "https://github.com/aannoo/hcom",
+      "description": "Let AI agents message, watch, and spawn each other across terminals. Claude Code, Codex, Antigravity CLI, Cursor CLI, OpenCode, Kilo, Pi, Kimi",
+      "stars": 455,
+      "pushed_at": "2026-08-09T16:52:44Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": "https://pypi.org/project/hcom/"
+    },
+    {
+      "full_name": "josstei/maestro-orchestrate",
+      "html_url": "https://github.com/josstei/maestro-orchestrate",
+      "description": "Multi-agent orchestration platform for Gemini CLI, Claude Code, Codex, and Qwen Code \u2014 39 specialists, parallel subagents, persistent sessions, and built-in code review, debugging, security, SEO, accessibility, and compliance tools",
+      "stars": 455,
+      "pushed_at": "2026-08-07T07:00:06Z",
+      "language": "JavaScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://josstei.github.io/maestro-orchestrate/"
+    },
+    {
+      "full_name": "TheAgenticAI/CortexON",
+      "html_url": "https://github.com/TheAgenticAI/CortexON",
+      "description": "Open-source generalized AI agent for everyday task automations.",
+      "stars": 454,
+      "pushed_at": "2025-06-25T08:40:06Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://cortexon.ai"
+    },
+    {
+      "full_name": "zhikunqingtao/zhikuncode",
+      "html_url": "https://github.com/zhikunqingtao/zhikuncode",
+      "description": "Codex/Claude Code/Cursor\u7684\u5f00\u6e90\u589e\u5f3a\u7248\uff0c\u4e13\u6ce8\u4e00\u53e5\u8bdd\u5b9e\u73b0\u590d\u6742\u957f\u7a0b\u4efb\u52a1\uff08\u6559\u80b2\u3001\u7f16\u7a0b\u3001\u529e\u516c\u3001\u751f\u6d3b\u3001\u5a31\u4e50\u3001\u6e38\u620f\uff09\u3002\u90e8\u7f72\u5728\u4f60\u81ea\u5df1\u7684\u670d\u52a1\u5668\u4e0a\uff0c\u56e2\u961f\u7528\u6d4f\u89c8\u5668\u6253\u5f00\u5c31\u80fd\u7f16\u7a0b\u2014\u2014\u5305\u62ec\u624b\u673a\u3002CLI & Web UI \u53cc\u5165\u53e3\uff0cMulti-Agent \u534f\u4f5c\uff0c\u539f\u751f\u76f4\u8fde\u5343\u95ee/DeepSeek \u7b49\u56fd\u4ea7\u5927\u6a21\u578b\u3002\u6280\u80fd/\u63d2\u4ef6/\u8de8\u4f1a\u8bdd\u8bb0\u5fc6\uff0c8 \u5c42\u5b89\u5168\u6c99\u7bb1\uff0c\u6570\u636e\u4e0d\u79bb\u5f00\u4f60\u7684\u673a\u5668\u3002Docker \u4e00\u952e\u90e8\u7f72\uff0cMIT \u5f00\u6e90\uff0c\u96f6\u9501\u5b9a\u3002",
+      "stars": 452,
+      "pushed_at": "2026-08-13T01:40:23Z",
+      "language": "Java",
+      "license_spdx_id": "MIT",
+      "homepage": "https://zhikunqingtao.github.io/zhikuncode/"
+    },
+    {
+      "full_name": "saltbo/agent-kanban",
+      "html_url": "https://github.com/saltbo/agent-kanban",
+      "description": "An agent-first task board, Mission control for your AI workforce.",
+      "stars": 447,
+      "pushed_at": "2026-07-28T17:57:18Z",
+      "language": "TypeScript",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://agent-kanban.dev"
+    },
+    {
+      "full_name": "axislab-top/Foundry",
+      "html_url": "https://github.com/axislab-top/Foundry",
+      "description": "Transform any idea into a running AI-powered company",
+      "stars": 447,
+      "pushed_at": "2026-06-30T09:47:36Z",
+      "language": "TypeScript",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://www.axislab.top"
+    },
+    {
+      "full_name": "ZaxbyHub/opencode-swarm",
+      "html_url": "https://github.com/ZaxbyHub/opencode-swarm",
+      "description": "Architect-centric agentic swarm plugin for OpenCode. Hub-and-spoke orchestration with SME consultation, code generation, and QA review.",
+      "stars": 445,
+      "pushed_at": "2026-08-17T13:28:55Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "alikon-art/DeterminFlow",
+      "html_url": "https://github.com/alikon-art/DeterminFlow",
+      "description": "A production-oriented AI workflow runtime for building, validating, recovering, and shipping complex AI workflows as dependable services. \u9762\u5411\u751f\u4ea7\u7684 AI \u5de5\u4f5c\u6d41\u8fd0\u884c\u65f6\uff1a\u5feb\u901f\u5f00\u53d1\u3001\u9a8c\u8bc1\u548c\u6062\u590d\u590d\u6742 AI \u5de5\u4f5c\u6d41\uff0c\u5e76\u5c06\u5176\u7a33\u5b9a\u4ea4\u4ed8\u4e3a\u670d\u52a1\u3002",
+      "stars": 442,
+      "pushed_at": "2026-08-11T11:37:53Z",
+      "language": "Python",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "gaotiexinqu/OneResearchClaw",
+      "html_url": "https://github.com/gaotiexinqu/OneResearchClaw",
+      "description": "Any research. One Claw. \ud83e\udd9e From any materials to research with fully autonomous & skill-driven researcher.",
+      "stars": 441,
+      "pushed_at": "2026-05-09T01:58:28Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "semitable/robotic-warehouse",
+      "html_url": "https://github.com/semitable/robotic-warehouse",
+      "description": "Multi-Robot Warehouse (RWARE): A multi-agent reinforcement learning environment",
+      "stars": 437,
+      "pushed_at": "2024-09-15T17:05:19Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "platformplatform/PlatformPlatform",
+      "html_url": "https://github.com/platformplatform/PlatformPlatform",
+      "description": "A platform designed for building enterprise-grade, multi-tenant products using Azure, .NET, React, TypeScript, Infrastructure as Code, etc.",
+      "stars": 436,
+      "pushed_at": "2026-07-27T09:05:32Z",
+      "language": "C#",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "thu-nics/C2C",
+      "html_url": "https://github.com/thu-nics/C2C",
+      "description": "[ICLR'26] The official code implementation for \"Cache-to-Cache: Direct Semantic Communication Between Large Language Models\"",
+      "stars": 430,
+      "pushed_at": "2026-03-13T19:59:29Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://fuvty.github.io/C2C_Project_Page/"
+    },
+    {
+      "full_name": "Annyfee/agent-craft",
+      "html_url": "https://github.com/Annyfee/agent-craft",
+      "description": "AI Agent \u6559\u5b66\u4ed3\u5e93 | \u7cfb\u7edf\u5316 LangChain\u3001RAG\u3001LangGraph\u3001MCP \u5168\u6808\u5b9e\u6218\u4ee3\u7801 | \u4e07\u5b57\u535a\u5ba2\u8be6\u89e3 | \u5f00\u6e90\u53ef\u8fd0\u884c\u793a\u4f8b | \u4ece\u96f6\u6784\u5efa\u667a\u80fd\u4f53",
+      "stars": 425,
+      "pushed_at": "2026-08-17T06:39:21Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://blog.csdn.net/2401_87328929/category_13070342.html"
+    },
+    {
+      "full_name": "linghungegeg/Linghun",
+      "html_url": "https://github.com/linghungegeg/Linghun",
+      "description": "AGI-oriented, hallucination-resistant AI coding runtime grounded in evidence, tools, memory, agents, and verification.",
+      "stars": 424,
+      "pushed_at": "2026-08-05T05:27:39Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "dustland/agentok",
+      "html_url": "https://github.com/dustland/agentok",
+      "description": "AG2 Visualized - Build Multi-Agentic Apps with Drag-and-Drop.",
+      "stars": 423,
+      "pushed_at": "2026-07-08T11:52:56Z",
+      "language": "TypeScript",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "http://studio.agentok.ai/"
+    },
+    {
+      "full_name": "QuintinShaw/pi-dynamic-workflows",
+      "html_url": "https://github.com/QuintinShaw/pi-dynamic-workflows",
+      "description": "Claude Code\u2013style dynamic workflows for Pi: code-mode subagents with real model routing, journaled resume, git-worktree isolation, cost accounting, an interactive /workflows TUI, an /ultracode standing opt-in, and deep research.",
+      "stars": 421,
+      "pushed_at": "2026-08-16T17:16:50Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://quintinshaw.github.io/pi-dynamic-workflows/"
+    },
+    {
+      "full_name": "razzant/claudexor",
+      "html_url": "https://github.com/razzant/claudexor",
+      "description": "Multi-harness control plane for Claude Code, Codex, Cursor, and OpenCode: quota-aware rotation across multiple Claude/Codex subscriptions, shared thread context, and cross-model review.",
+      "stars": 417,
+      "pushed_at": "2026-08-17T13:48:17Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://claudexor.ai/"
+    },
+    {
+      "full_name": "GizClaw/flowcraft",
+      "html_url": "https://github.com/GizClaw/flowcraft",
+      "description": "Production-grade Go SDK for building AI agents with long-term memory, knowledge retrieval, and voice \u2014 runnable as a library, a daemon, or a real-time pipeline.",
+      "stars": 416,
+      "pushed_at": "2026-08-17T09:42:52Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": "https://gizclaw.github.io/flowcraft/"
+    },
+    {
+      "full_name": "pzqpzq/LSF_MDia",
+      "html_url": "https://github.com/pzqpzq/LSF_MDia",
+      "description": "[ICML 2026] Let LLMs invent and evolve languages for efficient reasoning.",
+      "stars": 411,
+      "pushed_at": "2026-07-30T15:13:21Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Tswoen/Paper-Agent",
+      "html_url": "https://github.com/Tswoen/Paper-Agent",
+      "description": "Paper-Agent \u662f\u4e00\u4e2a\u9762\u5411\u79d1\u7814\u4eba\u5458\u548c\u5b66\u751f\u7684\u667a\u80fd\u8bba\u6587\u68c0\u7d22\u4e0e\u8c03\u7814\u5de5\u5177\u3002\u9879\u76ee\u57fa\u4e8e\u591a\u667a\u80fd\u4f53\u534f\u4f5c\u67b6\u6784\uff08LangGraph\uff09\uff0c\u901a\u8fc7\u81ea\u7136\u8bed\u8a00\u5904\u7406\uff08NLP\uff09\u3001\u81ea\u52a8\u5316\u641c\u7d22\uff0c\u5e2e\u52a9\u7528\u6237\u9ad8\u6548\u67e5\u627e\u5b66\u672f\u8bba\u6587\u3001\u5206\u6790\u6587\u732e\u5185\u5bb9\uff0c\u5e76\u8fdb\u884c\u8bba\u6587\u8c03\u7814\u3002Paper-Agent \u652f\u6301\u591a\u5e73\u53f0\u96c6\u6210\u3001\u5173\u952e\u8bcd\u641c\u7d22\u3001\u81ea\u52a8\u5206\u6790\u3001\u8bba\u6587\u8c03\u7814\uff0c\u63d0\u5347\u4e86\u5b66\u672f\u7814\u7a76\u7684\u6548\u7387\u3002\u9002\u7528\u4e8e\u8bba\u6587\u5199\u4f5c\u3001\u5b66\u672f\u8c03\u7814\u3001\u79d1\u7814\u9879\u76ee\u7ba1\u7406\u7b49\u591a\u79cd\u573a\u666f\uff0c\u662f\u5b66\u672f\u8c03\u7814\u7684\u7406\u60f3\u52a9\u624b\u3002",
+      "stars": 404,
+      "pushed_at": "2026-08-15T09:59:18Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "Ikalus1988/MisakaNet",
+      "html_url": "https://github.com/Ikalus1988/MisakaNet",
+      "description": "\ud83d\udcda A zero-dependency, git-backed micro-lesson library for AI Agents to asynchronously share and search verified debugging experience. Python stdlib only. | https://misakanet.org",
+      "stars": 400,
+      "pushed_at": "2026-08-17T14:19:32Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://misakanet.org"
+    },
+    {
+      "full_name": "bybren-llc/safe-agentic-workflow",
+      "html_url": "https://github.com/bybren-llc/safe-agentic-workflow",
+      "description": "SAW \u2014 SAFe Agentic Workflow AI Agent Harness for Multi-Agent Team Workflows Built on SAFe methodology (Scaled Agile Framework), adapted for AI agent teams (Now With AI-DLC!) Works for any team with repeatable processes: Software, Marketing, Research, Legal, Operations.",
+      "stars": 400,
+      "pushed_at": "2026-07-20T22:11:56Z",
+      "language": "Shell",
+      "license_spdx_id": "MIT",
+      "homepage": "https://jscottgraham.us"
+    },
+    {
+      "full_name": "agenvoy/Agenvoy",
+      "html_url": "https://github.com/agenvoy/Agenvoy",
+      "description": "Make AI actually work for you \u2014 a personal AI harness that writes and repairs its own tools, and lets Claude Code and Codex build and share them via MCP.",
+      "stars": 399,
+      "pushed_at": "2026-08-17T12:42:33Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://agenvoy.com/"
+    },
+    {
+      "full_name": "elara-labs/code-context-engine",
+      "html_url": "https://github.com/elara-labs/code-context-engine",
+      "description": "Save 94% on AI coding tokens. Index your codebase, agents search instead of reading files. Works with Claude Code, Codex, Copilot, Cursor, Gemini CLI. Local MCP server, free, open source.",
+      "stars": 396,
+      "pushed_at": "2026-08-14T20:18:23Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://elara-labs.github.io/code-context-engine/"
+    },
+    {
+      "full_name": "skygazer42/GustoBot",
+      "html_url": "https://github.com/skygazer42/GustoBot",
+      "description": "\u4e94\u661f\u5927\u53a8:\u5168\u9762Multi-Agent \u7684\u5ba2\u670d\u673a\u5668\u4eba\uff0c\u57fa\u4e8elangraph\u5b9e\u73b0\uff0ctxt2sql ,txt2cypher, lightrag, \u591a\u6a21\u6001 \u7b49",
+      "stars": 385,
+      "pushed_at": "2026-06-24T02:45:04Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "federicodeponte/opendraft",
+      "html_url": "https://github.com/federicodeponte/opendraft",
+      "description": "Free & open-source AI research-paper writer: 19 agents draft 20k-word academic papers in ~10 min with citations verified against CrossRef/OpenAlex/arXiv. Export PDF/Word/LaTeX. Hosted at openpaper.dev",
+      "stars": 384,
+      "pushed_at": "2026-08-15T22:10:39Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://openpaper.dev?utm_source=github&utm_medium=repo_about&utm_campaign=opendraft"
+    },
+    {
+      "full_name": "ag2ai/Agents_Failure_Attribution",
+      "html_url": "https://github.com/ag2ai/Agents_Failure_Attribution",
+      "description": "Benchmark for automated failure attributions in agentic systems (\ud83c\udfc6 ICML 2025 Spotlight)",
+      "stars": 382,
+      "pushed_at": "2026-02-11T17:30:51Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://ag2ai.github.io/Agents_Failure_Attribution/"
+    },
+    {
+      "full_name": "smithersai/smithers",
+      "html_url": "https://github.com/smithersai/smithers",
+      "description": "Agent workflows with full observability and time travel: watch every step live, rewind, fork, replay any run. Claude Code, Codex, Gemini, any model or harness.",
+      "stars": 376,
+      "pushed_at": "2026-08-17T14:40:29Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://smithers.sh"
+    },
+    {
+      "full_name": "Xeron2000/openOii",
+      "html_url": "https://github.com/Xeron2000/openOii",
+      "description": "\u6545\u4e8b\u60f3\u6cd5 \u2192 \u591a\u667a\u80fd\u4f53\u534f\u4f5c \u2192 \u6f2b\u5267\u6210\u7247 | \u57fa\u4e8e LangGraph \u7684 AI \u6f2b\u5267\u751f\u6210\u5e73\u53f0",
+      "stars": 375,
+      "pushed_at": "2026-07-26T08:49:40Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "sonichi/sutando",
+      "html_url": "https://github.com/sonichi/sutando",
+      "description": "My AI Stand. Realtime by day, rewriting itself by night. Summon my AI superpower.",
+      "stars": 374,
+      "pushed_at": "2026-08-17T15:17:02Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://sutando.ai"
+    },
+    {
+      "full_name": "Ibrahim-3d/orchestrator-supaconductor",
+      "html_url": "https://github.com/Ibrahim-3d/orchestrator-supaconductor",
+      "description": "Multi-agent orchestration system for Claude Code with parallel execution, automated quality gates, Board of Directors, and bundled Superpowers skills",
+      "stars": 372,
+      "pushed_at": "2026-04-08T10:49:30Z",
+      "language": "Python",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "eggbrid2/mobileClaw",
+      "html_url": "https://github.com/eggbrid2/mobileClaw",
+      "description": "Open Android AI agent runtime for phone control, app automation, VLM screen reading, skill routing, mini apps, and Mihomo VPN workflows.",
+      "stars": 371,
+      "pushed_at": "2026-07-11T03:54:27Z",
+      "language": "Kotlin",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "inspirai/TimeChamber",
+      "html_url": "https://github.com/inspirai/TimeChamber",
+      "description": "A Massively Parallel Large Scale Self-Play Framework",
+      "stars": 367,
+      "pushed_at": "2023-01-09T04:57:12Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "yan5xu/codexloom",
+      "html_url": "https://github.com/yan5xu/codexloom",
+      "description": "Turn Codex threads into an organization of long-lived domain agents.",
+      "stars": 367,
+      "pushed_at": "2026-08-16T15:15:59Z",
+      "language": "Go",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "aiming-lab/AutoHarness",
+      "html_url": "https://github.com/aiming-lab/AutoHarness",
+      "description": "AutoHarness: Automated Harness Engineering for AI Agents",
+      "stars": 367,
+      "pushed_at": "2026-04-02T20:47:19Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "labsai/EDDI",
+      "html_url": "https://github.com/labsai/EDDI",
+      "description": "Config-driven engine that turns JSON into production-grade AI agents. Multi-agent orchestration, 12+ LLM providers, MCP/A2A protocols, RAG, persistent memory, and enterprise compliance (EU AI Act, GDPR, HIPAA). Built on Quarkus.",
+      "stars": 366,
+      "pushed_at": "2026-08-17T07:08:10Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://eddi.technology"
+    },
+    {
+      "full_name": "n-WN/SubgroupX",
+      "html_url": "https://github.com/n-WN/SubgroupX",
+      "description": "oiia \u2014 hosted agent sessions that execute wherever you point them: a cloud sandbox, an SSH host, or a machine with no public IP. Multi-agent, durable across reloads, installable as a PWA. Built by SubgroupX.",
+      "stars": 365,
+      "pushed_at": "2026-08-04T22:05:57Z",
+      "language": "TypeScript",
+      "license_spdx_id": "",
+      "homepage": "https://oiia.cauchy.top"
+    },
+    {
+      "full_name": "iLearn-Lab/NovelClaw",
+      "html_url": "https://github.com/iLearn-Lab/NovelClaw",
+      "description": "Dynamic-memory-first collaborative AI framework for long-form story generation, chapter planning, and coherent narrative writing",
+      "stars": 358,
+      "pushed_at": "2026-05-31T16:34:03Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://hitsz-ds.github.io/CoLong-Idea-Studio/"
+    }
+  ]
+}

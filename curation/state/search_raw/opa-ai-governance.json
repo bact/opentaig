@@ -1,0 +1,17 @@
+{
+  "keyword": "OPA AI governance",
+  "query": "OPA AI governance stars:>19 pushed:>2025-08-17 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "denis-prilepskiy/governed-agentic-itsm-blueprint",
+      "html_url": "https://github.com/denis-prilepskiy/governed-agentic-itsm-blueprint",
+      "description": "Don't be the 40%. A production-ready blueprint for governing autonomous AI agents in IT operations \u2014 with executable policies, typed tool contracts, ISO 42001/NIST AI RMF mapping, and a 4-level maturity model. Vendor-neutral.",
+      "stars": 82,
+      "pushed_at": "2026-08-09T15:37:48Z",
+      "language": "Open Policy Agent",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    }
+  ]
+}

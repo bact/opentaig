@@ -1,0 +1,17 @@
+{
+  "keyword": "prompt perturbation robustness",
+  "query": "prompt perturbation robustness stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "SuperBruceJia/promptcraft",
+      "html_url": "https://github.com/SuperBruceJia/promptcraft",
+      "description": "PromptCraft is a prompt perturbation toolkit from the character, word, and sentence levels for prompt robustness analysis. PyPI Package: pypi.org/project/promptcraft",
+      "stars": 24,
+      "pushed_at": "2024-01-03T17:00:06Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://pypi.org/project/promptcraft"
+    }
+  ]
+}

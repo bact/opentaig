@@ -1,0 +1,17 @@
+{
+  "keyword": "topic:cbrn",
+  "query": "topic:cbrn stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "diwako/diwako_cbrn",
+      "html_url": "https://github.com/diwako/diwako_cbrn",
+      "description": "Arcadey CBRN mechanics",
+      "stars": 21,
+      "pushed_at": "2025-08-02T17:30:47Z",
+      "language": "SQF",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    }
+  ]
+}

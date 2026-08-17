@@ -1,0 +1,17 @@
+{
+  "keyword": "differential privacy ML",
+  "query": "differential privacy ML stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "ipc-lab/private-ml-for-health",
+      "html_url": "https://github.com/ipc-lab/private-ml-for-health",
+      "description": "Dopamine: Differentially Private Federated Learning on Medical Data (AAAI - PPAI)",
+      "stars": 75,
+      "pushed_at": "2025-02-09T22:09:19Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://arxiv.org/abs/2101.11693"
+    }
+  ]
+}

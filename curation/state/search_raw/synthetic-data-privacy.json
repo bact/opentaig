@@ -1,0 +1,287 @@
+{
+  "keyword": "synthetic data privacy",
+  "query": "synthetic data privacy stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 28,
+  "repos": [
+    {
+      "full_name": "hitsz-ids/synthetic-data-generator",
+      "html_url": "https://github.com/hitsz-ids/synthetic-data-generator",
+      "description": "SDG is a specialized framework designed to generate high-quality structured tabular data.",
+      "stars": 2433,
+      "pushed_at": "2026-08-10T18:33:47Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "vanderschaarlab/synthcity",
+      "html_url": "https://github.com/vanderschaarlab/synthcity",
+      "description": "A library for generating and evaluating synthetic tabular data for privacy, fairness and data augmentation.",
+      "stars": 676,
+      "pushed_at": "2026-04-21T17:24:15Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.vanderschaar-lab.com/"
+    },
+    {
+      "full_name": "syncora-ai/synthetic-personality-dataset",
+      "html_url": "https://github.com/syncora-ai/synthetic-personality-dataset",
+      "description": "Synthetic dataset and notebooks for introvert vs. extrovert personality modeling (privacy-safe, ML-ready).",
+      "stars": 668,
+      "pushed_at": "2025-08-25T09:55:38Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "syncora-ai/Synthetic-AI-Developer-Productivity-Dataset",
+      "html_url": "https://github.com/syncora-ai/Synthetic-AI-Developer-Productivity-Dataset",
+      "description": "High-fidelity synthetic dataset capturing AI developer productivity metrics \u2014 including focus hours, task completion rates, and burnout indicators. Privacy-safe, ideal for ML and workflow analytics.",
+      "stars": 658,
+      "pushed_at": "2025-09-04T12:08:16Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "syncora-ai/uk-retail-synthetic-data-generation",
+      "html_url": "https://github.com/syncora-ai/uk-retail-synthetic-data-generation",
+      "description": "Synthetic data generation demo using a UK retail transactional dataset. Ideal for professionals in retail, e-commerce, finance, and supply chain sectors who want to create privacy-preserving, realistic synthetic data for testing, analysis, and machine learning.",
+      "stars": 330,
+      "pushed_at": "2025-08-25T10:48:09Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Unity-Technologies/PeopleSansPeople",
+      "html_url": "https://github.com/Unity-Technologies/PeopleSansPeople",
+      "description": "Unity's privacy-preserving human-centric synthetic data generator",
+      "stars": 328,
+      "pushed_at": "2024-03-05T01:05:37Z",
+      "language": "C#",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://unity-technologies.github.io/PeopleSansPeople/"
+    },
+    {
+      "full_name": "statice/anonymeter",
+      "html_url": "https://github.com/statice/anonymeter",
+      "description": "A Unified Framework for Quantifying Privacy Risk in Synthetic Data according to the GDPR",
+      "stars": 108,
+      "pushed_at": "2026-07-23T10:01:08Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "sunchang0124/dp_cgans",
+      "html_url": "https://github.com/sunchang0124/dp_cgans",
+      "description": "A library to generate synthetic tabular or RDF data using Conditional Generative Adversary Networks (GANs) combined with Differential Privacy techniques.",
+      "stars": 99,
+      "pushed_at": "2026-05-12T11:54:34Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "sodascience/metasyn",
+      "html_url": "https://github.com/sodascience/metasyn",
+      "description": "Transparent and privacy-friendly synthetic data generation",
+      "stars": 56,
+      "pushed_at": "2026-08-17T11:47:49Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://metasyn.readthedocs.io"
+    },
+    {
+      "full_name": "DPBayes/twinify",
+      "html_url": "https://github.com/DPBayes/twinify",
+      "description": "A software package for privacy-preserving generation of a synthetic twin to a given sensitive data set.",
+      "stars": 55,
+      "pushed_at": "2024-09-03T22:16:29Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "meilfang/SynthASpoof",
+      "html_url": "https://github.com/meilfang/SynthASpoof",
+      "description": "SynthASpoof: Developing Face Presentation Attack Detection Based on Privacy-friendly Synthetic Data",
+      "stars": 53,
+      "pushed_at": "2023-04-11T09:49:30Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "nhsx/SynthVAE",
+      "html_url": "https://github.com/nhsx/SynthVAE",
+      "description": "Synthetic data generation by a Variational AutoEncoder with Differential Privacy assessed using Synthetic Data Vault metrics",
+      "stars": 45,
+      "pushed_at": "2023-04-04T12:36:39Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "fdbtrs/SFace-Privacy-friendly-and-Accurate-Face-Recognition-using-Synthetic-Data",
+      "html_url": "https://github.com/fdbtrs/SFace-Privacy-friendly-and-Accurate-Face-Recognition-using-Synthetic-Data",
+      "description": "SFace: Privacy-friendly and Accurate Face Recognition using Synthetic Data",
+      "stars": 45,
+      "pushed_at": "2024-07-10T16:04:51Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "HReynaud/EchoNet-Synthetic",
+      "html_url": "https://github.com/HReynaud/EchoNet-Synthetic",
+      "description": "MICCAI 2024 code for the paper: EchoNet-Synthetic: Privacy-preserving Video Generation for Safe Medical Data Sharing. EchoNet-Synthetic is a synthetic dataset generated by following a protocol to generate surrogate privacy-preserving synthetic datasets.",
+      "stars": 42,
+      "pushed_at": "2025-06-16T10:10:36Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "Unity-Technologies/AnthroNet",
+      "html_url": "https://github.com/Unity-Technologies/AnthroNet",
+      "description": "Unity's Privacy-Preserving Novel Human Body Model Trained Solely on Synthetic Data and Corresponding Dense Anthropometric Measurements",
+      "stars": 40,
+      "pushed_at": "2023-09-08T00:38:41Z",
+      "language": "Rich Text Format",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://unity-technologies.github.io/AnthroNet/"
+    },
+    {
+      "full_name": "Manushree1005/synthetic-data-quality-validator",
+      "html_url": "https://github.com/Manushree1005/synthetic-data-quality-validator",
+      "description": "Validate synthetic datasets using ML utility, similarity & privacy risk",
+      "stars": 38,
+      "pushed_at": "2026-02-07T15:37:21Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "rapiddweller/datamimic",
+      "html_url": "https://github.com/rapiddweller/datamimic",
+      "description": "Model-driven synthetic test data for CI/CD and analytics - deterministic, privacy-preserving, and domain-aware. Includes Python APIs, XML pipelines, and MCP/IDE integration to orchestrate realistic datasets for finance, healthcare, and other regulated environments.",
+      "stars": 37,
+      "pushed_at": "2026-07-17T07:02:39Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://datamimic.io"
+    },
+    {
+      "full_name": "FriedRonaldo/Primitives-PS",
+      "html_url": "https://github.com/FriedRonaldo/Primitives-PS",
+      "description": "Commonality in Natural Images Rescues GANs: Pretraining GANs with Generic and Privacy-free Synthetic Data - Official PyTorch Implementation (CVPR 2022)",
+      "stars": 34,
+      "pushed_at": "2022-11-14T08:43:28Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "concretios/smock-it",
+      "html_url": "https://github.com/concretios/smock-it",
+      "description": "Smock-it is a CLI plugin for generating synthetic test data in Salesforce, helping SF devs, QAs, and admins create realistic data without using live customer info\u2014boosting efficiency and privacy.",
+      "stars": 30,
+      "pushed_at": "2026-01-22T17:39:22Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.concret.io/salesforce-test-data-generator"
+    },
+    {
+      "full_name": "dataxid/dataxid-python",
+      "html_url": "https://github.com/dataxid/dataxid-python",
+      "description": "The Synthetic Data API. Generate privacy-safe synthetic data with 5 lines of code.",
+      "stars": 25,
+      "pushed_at": "2026-07-25T05:39:47Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://app.dataxid.com"
+    },
+    {
+      "full_name": "Urz1/synthetic-data-studio",
+      "html_url": "https://github.com/Urz1/synthetic-data-studio",
+      "description": "Generate hyper-realistic, privacy-safe synthetic data and compliance packs for regulated startups, Bootcamps, competitions, and Learning.",
+      "stars": 22,
+      "pushed_at": "2026-03-30T16:50:04Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.synthdata.studio/"
+    },
+    {
+      "full_name": "mostly-ai/virtualdatalab",
+      "html_url": "https://github.com/mostly-ai/virtualdatalab",
+      "description": "Benchmarking synthetic data generators for sequential data in terms of accuracy and privacy.",
+      "stars": 21,
+      "pushed_at": "2025-07-05T08:29:32Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "aberke/lbs-data",
+      "html_url": "https://github.com/aberke/lbs-data",
+      "description": "Generating synthetic mobility data for a realistic population with RNNs to improve utility and privacy",
+      "stars": 21,
+      "pushed_at": "2024-04-01T14:09:54Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "emmanuelwunjc/synthweave",
+      "html_url": "https://github.com/emmanuelwunjc/synthweave",
+      "description": "Synthetic tabular data without real microdata: schema-driven generation, statistical synthesis, realistic messiness, and deterministic relational keys.",
+      "stars": 21,
+      "pushed_at": "2026-08-05T15:28:04Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://pypi.org/project/synthweave/"
+    },
+    {
+      "full_name": "naserdamer/SMDD-Synthetic-Face-Morphing-Attack-Detection-Development-dataset",
+      "html_url": "https://github.com/naserdamer/SMDD-Synthetic-Face-Morphing-Attack-Detection-Development-dataset",
+      "description": "Official repository of the paper Privacy-friendly Synthetic Data for the Development of Face Morphing Attack Detectors",
+      "stars": 20,
+      "pushed_at": "2023-03-06T08:57:23Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "AmirhosseinHonardoust/Autocurator-Synthetic-Data-Benchmark",
+      "html_url": "https://github.com/AmirhosseinHonardoust/Autocurator-Synthetic-Data-Benchmark",
+      "description": "Autocurator is a comprehensive benchmarking toolkit for evaluating synthetic tabular data. It measures fidelity, coverage, privacy, and utility through quantitative metrics, visual reports, and PCA/correlation diagnostics. Ideal for validating VAE, GAN, Copula, or Diffusion-generated datasets.",
+      "stars": 20,
+      "pushed_at": "2026-07-26T20:17:02Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "AmirhosseinHonardoust/Measuring-The-Soul-of-Data",
+      "html_url": "https://github.com/AmirhosseinHonardoust/Measuring-The-Soul-of-Data",
+      "description": "A narrative and technical exploration of data authenticity through the four pillars of synthetic data realism, Fidelity, Coverage, Privacy, and Utility. This thought-leadership piece combines storytelling, mathematics, and code to explain how these metrics define the ethical and functional \u201csoul\u201d of data in AI systems.",
+      "stars": 20,
+      "pushed_at": "2025-11-14T08:05:10Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "AmirhosseinHonardoust/Teaching-Neural-Networks-to-Imagine-Tables",
+      "html_url": "https://github.com/AmirhosseinHonardoust/Teaching-Neural-Networks-to-Imagine-Tables",
+      "description": "A comprehensive deep dive into how Variational Autoencoders (VAEs) learn to generate realistic synthetic tabular data. This project explores latent space learning, probabilistic modeling, and neural creativity, combining data privacy, interpretability, and generative AI techniques in a structured format.",
+      "stars": 20,
+      "pushed_at": "2025-11-10T15:56:07Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}

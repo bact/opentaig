@@ -1,0 +1,27 @@
+{
+  "keyword": "shapley value data",
+  "query": "shapley value data stars:>19 pushed:>2025-08-17 archived:false fork:false",
+  "count": 2,
+  "repos": [
+    {
+      "full_name": "easeml/datascope",
+      "html_url": "https://github.com/easeml/datascope",
+      "description": "Measuring data importance over ML pipelines using the Shapley value.",
+      "stars": 45,
+      "pushed_at": "2025-08-26T01:48:11Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://ease.ml/datascope"
+    },
+    {
+      "full_name": "ajsanjoaquin/Shapley_Valuation",
+      "html_url": "https://github.com/ajsanjoaquin/Shapley_Valuation",
+      "description": "PyTorch reimplementation of computing Shapley values via Truncated Monte Carlo sampling from \"What is your data worth? Equitable Valuation of Data\" by Amirata Ghorbani and James Zou [ICML 2019]",
+      "stars": 28,
+      "pushed_at": "2026-06-01T12:27:50Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}

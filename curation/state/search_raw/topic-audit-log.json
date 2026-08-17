@@ -1,0 +1,527 @@
+{
+  "keyword": "topic:audit-log",
+  "query": "topic:audit-log stars:>19 pushed:>2025-08-17 archived:false fork:false",
+  "count": 52,
+  "repos": [
+    {
+      "full_name": "iflytek/skillhub",
+      "html_url": "https://github.com/iflytek/skillhub",
+      "description": "Self-hosted, open-source agent skill registry for enterprises. Publish & version skill packages, govern with RBAC and audit logs, deploy   on-premise with Docker or Kubernetes.",
+      "stars": 4881,
+      "pushed_at": "2026-08-12T04:42:51Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://skill.xfyun.cn"
+    },
+    {
+      "full_name": "collectiveidea/audited",
+      "html_url": "https://github.com/collectiveidea/audited",
+      "description": "Audited (formerly acts_as_audited) is an ORM extension that logs all changes to your Rails models.",
+      "stars": 3494,
+      "pushed_at": "2025-11-18T19:05:29Z",
+      "language": "Ruby",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "thepirat000/Audit.NET",
+      "html_url": "https://github.com/thepirat000/Audit.NET",
+      "description": "An extensible framework to audit executing operations in .NET",
+      "stars": 2642,
+      "pushed_at": "2026-08-17T06:02:46Z",
+      "language": "C#",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.learnentityframeworkcore.com/extensions/audit-entityframework-core"
+    },
+    {
+      "full_name": "pgaudit/pgaudit",
+      "html_url": "https://github.com/pgaudit/pgaudit",
+      "description": "PostgreSQL Audit Extension",
+      "stars": 1689,
+      "pushed_at": "2026-07-30T13:08:02Z",
+      "language": "C",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "http://pgaudit.org/"
+    },
+    {
+      "full_name": "sipyourdrink-ltd/bernstein",
+      "html_url": "https://github.com/sipyourdrink-ltd/bernstein",
+      "description": "Deterministic orchestrator for CLI coding agents (Claude Code, Codex, Gemini CLI, +40 more). No model in the coordination loop, so parallel runs in per-task git worktrees replay byte-identically. Signed lineage plus an opt-in HMAC audit chain a reviewer checks offline. Cluster mode, air-gap deploy. Status: beta. https://bernstein.run",
+      "stars": 915,
+      "pushed_at": "2026-08-17T13:55:12Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://bernstein.run"
+    },
+    {
+      "full_name": "izelnakri/paper_trail",
+      "html_url": "https://github.com/izelnakri/paper_trail",
+      "description": "Track and record all the changes in your database with Ecto. Revert back to anytime in history.",
+      "stars": 600,
+      "pushed_at": "2026-01-21T23:17:57Z",
+      "language": "Elixir",
+      "license_spdx_id": "MIT",
+      "homepage": "https://hex.pm/packages/paper_trail"
+    },
+    {
+      "full_name": "DamienHarper/auditor-bundle",
+      "html_url": "https://github.com/DamienHarper/auditor-bundle",
+      "description": "The missing audit log library",
+      "stars": 472,
+      "pushed_at": "2026-07-27T04:33:51Z",
+      "language": "PHP",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "lupu60/nestjs-toolbox",
+      "html_url": "https://github.com/lupu60/nestjs-toolbox",
+      "description": "The repository contains a suite of components and modules for Nest.js",
+      "stars": 403,
+      "pushed_at": "2026-08-07T15:32:00Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://lupu60.github.io/nestjs-toolbox/"
+    },
+    {
+      "full_name": "BemiHQ/bemi-io",
+      "html_url": "https://github.com/BemiHQ/bemi-io",
+      "description": "Automatic data change tracking for PostgreSQL",
+      "stars": 401,
+      "pushed_at": "2025-12-23T18:02:07Z",
+      "language": "TypeScript",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://bemi.io"
+    },
+    {
+      "full_name": "duncatzat/vigils",
+      "html_url": "https://github.com/duncatzat/vigils",
+      "description": "A local control plane for AI agents \u2014 see what they do, approve what matters, keep secrets out. Rust + Tauri + Chrome MV3.",
+      "stars": 302,
+      "pushed_at": "2026-08-13T22:55:42Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://vigils.ai"
+    },
+    {
+      "full_name": "NextWeb4/lan-file-transfer",
+      "html_url": "https://github.com/NextWeb4/lan-file-transfer",
+      "description": "Local LAN file transfer desktop app with user/group permissions and audit logs.",
+      "stars": 296,
+      "pushed_at": "2026-07-22T14:15:04Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://nextweb4.github.io/"
+    },
+    {
+      "full_name": "compartmentdev/compartment",
+      "html_url": "https://github.com/compartmentdev/compartment",
+      "description": "Compartment is a self-hosted deployment system for small software on infrastructure your team controls.",
+      "stars": 209,
+      "pushed_at": "2026-08-17T14:32:26Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://compartment.dev"
+    },
+    {
+      "full_name": "DamienHarper/auditor",
+      "html_url": "https://github.com/DamienHarper/auditor",
+      "description": "auditor, the missing audit log library",
+      "stars": 195,
+      "pushed_at": "2026-07-20T00:05:26Z",
+      "language": "PHP",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "tumf/mcp-shell-server",
+      "html_url": "https://github.com/tumf/mcp-shell-server",
+      "description": "Secure MCP server for whitelisted shell command execution with stdin, argv pipelines, timeouts, and structured audit logging.",
+      "stars": 186,
+      "pushed_at": "2026-08-15T12:41:46Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "yajra/laravel-auditable",
+      "html_url": "https://github.com/yajra/laravel-auditable",
+      "description": "Basic Auditable package for Eloquent Model.",
+      "stars": 176,
+      "pushed_at": "2026-03-20T10:11:27Z",
+      "language": "PHP",
+      "license_spdx_id": "MIT",
+      "homepage": "http://yajrabox.com/docs/laravel-auditable"
+    },
+    {
+      "full_name": "iamfarhad/laravel-audit-log",
+      "html_url": "https://github.com/iamfarhad/laravel-audit-log",
+      "description": "A comprehensive entity-level audit logging package for Laravel with model-specific tables for tracking changes in your application's data. Perfect for compliance, debugging, and maintaining data integrity in modern web applications.",
+      "stars": 137,
+      "pushed_at": "2026-05-18T21:42:36Z",
+      "language": "PHP",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "laravel-chronicle/core",
+      "html_url": "https://github.com/laravel-chronicle/core",
+      "description": "Chronicle - Verifiable Audit Logging and Append-Only Audit Trails for Laravel.",
+      "stars": 125,
+      "pushed_at": "2026-07-22T14:10:03Z",
+      "language": "PHP",
+      "license_spdx_id": "MIT",
+      "homepage": "https://laravel-chronicle.dev/"
+    },
+    {
+      "full_name": "skoruba/AuditLogging",
+      "html_url": "https://github.com/skoruba/AuditLogging",
+      "description": "\ud83d\udd4a\ufe0f Simple audit logging for .NET Core with EntityFramework Core",
+      "stars": 121,
+      "pushed_at": "2026-02-23T17:37:46Z",
+      "language": "C#",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "vouchdev/vouch",
+      "html_url": "https://github.com/vouchdev/vouch",
+      "description": "A git-native, review-gated knowledge base for AI agents: they propose writes, you approve them. Every claim cites a source, every change is a diff in your repo. MCP + CLI.",
+      "stars": 111,
+      "pushed_at": "2026-08-16T03:53:01Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://vouchai.dev"
+    },
+    {
+      "full_name": "Adyen/kubectl-rexec",
+      "html_url": "https://github.com/Adyen/kubectl-rexec",
+      "description": "tooling to make audited kubectl exec easy",
+      "stars": 101,
+      "pushed_at": "2026-08-17T11:37:35Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "RichardoC/kube-audit-rest",
+      "html_url": "https://github.com/RichardoC/kube-audit-rest",
+      "description": "Kubernetes audit logging, when you don't control the control plane",
+      "stars": 94,
+      "pushed_at": "2026-08-17T10:05:10Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "wowtrust/trustdb",
+      "html_url": "https://github.com/wowtrust/trustdb",
+      "description": "Self-hosted tamper-evident evidence database for files, audit events, and data handoffs with portable offline verification",
+      "stars": 92,
+      "pushed_at": "2026-08-16T23:49:52Z",
+      "language": "Go",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://www.trustdb.ryan-wong.cn/"
+    },
+    {
+      "full_name": "github/audit-actions-workflow-runs",
+      "html_url": "https://github.com/github/audit-actions-workflow-runs",
+      "description": "Audit your GitHub Actions workflow runs to see exactly which Actions were downloaded",
+      "stars": 91,
+      "pushed_at": "2026-06-15T22:01:44Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "xiidea/EasyAuditBundle",
+      "html_url": "https://github.com/xiidea/EasyAuditBundle",
+      "description": "A Symfony Bundle To Log Selective Events",
+      "stars": 91,
+      "pushed_at": "2026-06-05T00:21:12Z",
+      "language": "PHP",
+      "license_spdx_id": "MIT",
+      "homepage": "http://xiidea.github.io/EasyAuditBundle/"
+    },
+    {
+      "full_name": "elliot35/deterministic-agent-control-protocol",
+      "html_url": "https://github.com/elliot35/deterministic-agent-control-protocol",
+      "description": "Governance gateway for AI agents \u2014 bounded, auditable, session-aware control with MCP proxy, shell proxy & HTTP API. Works with Cursor, Claude Code, Codex, and any MCP-compatible agent.",
+      "stars": 87,
+      "pushed_at": "2026-02-12T06:31:56Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.npmjs.com/package/@det-acp/core"
+    },
+    {
+      "full_name": "zengzifan1/multi-agent-moderation",
+      "html_url": "https://github.com/zengzifan1/multi-agent-moderation",
+      "description": "\u591a\u667a\u80fd\u4f53\u6587\u672c\u5185\u5bb9\u5ba1\u6838\u7cfb\u7edf\uff0c\u63d0\u4f9b\u7ed3\u6784\u5316\u5ba1\u6838\u3001\u8bc1\u636e\u94fe\u4e0e\u590d\u6838\u8def\u7531\uff0c\u9002\u7528\u4e8e\u5185\u5bb9\u5b89\u5168\u4e0e\u5408\u89c4\u6cbb\u7406\u3002",
+      "stars": 81,
+      "pushed_at": "2026-05-04T11:37:01Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "auditumio/auditum",
+      "html_url": "https://github.com/auditumio/auditum",
+      "description": "Audit Log management system for any application. Cloud-native, developer-friendly and open-source.",
+      "stars": 79,
+      "pushed_at": "2026-04-30T22:27:31Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://auditum.io"
+    },
+    {
+      "full_name": "lorenzo/audit-stash",
+      "html_url": "https://github.com/lorenzo/audit-stash",
+      "description": "Flexible and rock solid audit log tracking for CakePHP 3",
+      "stars": 78,
+      "pushed_at": "2026-03-06T02:39:24Z",
+      "language": "PHP",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "ops0-ai/ops0-cli",
+      "html_url": "https://github.com/ops0-ai/ops0-cli",
+      "description": "Stop your AI agent from shipping insecure IaC. ops0 CLI sits between Claude Code, Codex or Gemini and your cloud, scanning every .tf the agent writes and blocking destroy commands before they run.",
+      "stars": 75,
+      "pushed_at": "2026-07-06T16:55:21Z",
+      "language": "Go",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://ops0.com"
+    },
+    {
+      "full_name": "RomaLytar/yammi-audit-log",
+      "html_url": "https://github.com/RomaLytar/yammi-audit-log",
+      "description": "Laravel audit log & change history with real actor attribution (user / job / command / scheduler), cross-model change traces, time machine, tamper-evident hash chain, GDPR reports, anomaly detection, Slack/webhook alerts, multi-tenancy and an optional dashboard.",
+      "stars": 64,
+      "pushed_at": "2026-06-30T14:30:18Z",
+      "language": "PHP",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "bkuan001/halo-record",
+      "html_url": "https://github.com/bkuan001/halo-record",
+      "description": "Tamper-evident runtime evidence for AI agents: hash-chained Runtime Records, dependency-free, verifiable by anyone.",
+      "stars": 63,
+      "pushed_at": "2026-08-13T23:36:49Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://pypi.org/project/halo-record/"
+    },
+    {
+      "full_name": "ash-project/ash_paper_trail",
+      "html_url": "https://github.com/ash-project/ash_paper_trail",
+      "description": "The extension for keeping an audit log of changes to your Ash resources.",
+      "stars": 53,
+      "pushed_at": "2026-08-01T17:03:05Z",
+      "language": "Elixir",
+      "license_spdx_id": "",
+      "homepage": "https://hexdocs.pm/ash_paper_trail"
+    },
+    {
+      "full_name": "ejirocodes/better-auth-audit-logs",
+      "html_url": "https://github.com/ejirocodes/better-auth-audit-logs",
+      "description": "Audit log plugin for Better Auth. Auto-captures auth events with severity inference, PII redaction, custom storage backends, and retention policies.",
+      "stars": 48,
+      "pushed_at": "2026-03-20T10:09:15Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://npm.im/better-auth-audit-logs"
+    },
+    {
+      "full_name": "mac119/ssh_proxy",
+      "html_url": "https://github.com/mac119/ssh_proxy",
+      "description": "\ud83d\udee1\ufe0f A high-performance SSH proxy gateway built in Rust \u2014 unified authentication, per-user access control (ACL), full session audit logging, and terminal replay. Secure your infrastructure without modifying target servers.",
+      "stars": 42,
+      "pushed_at": "2026-05-08T06:16:01Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Locastic/Loggastic",
+      "html_url": "https://github.com/Locastic/Loggastic",
+      "description": "Symfony bundle for logging activity logs to ElasticSearch",
+      "stars": 38,
+      "pushed_at": "2026-07-09T12:56:38Z",
+      "language": "PHP",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "sourcefuse/loopback4-audit-log",
+      "html_url": "https://github.com/sourcefuse/loopback4-audit-log",
+      "description": "A loopback-next extension for implementing audit logs in loopback applications for all DB transactions.",
+      "stars": 36,
+      "pushed_at": "2026-08-17T08:30:43Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://npmjs.com/package/@sourceloop/audit-log"
+    },
+    {
+      "full_name": "Bestpart-Irene/secondsign-core",
+      "html_url": "https://github.com/Bestpart-Irene/secondsign-core",
+      "description": "The gate between an AI agent and real money. Runtime authorization for financial AI agents: structured intent, deterministic policy, human approval, execute-once gateway, tamper-evident receipts. Open core, Apache-2.0.",
+      "stars": 32,
+      "pushed_at": "2026-08-14T04:15:10Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://secondsignruntime.com"
+    },
+    {
+      "full_name": "giancarloerra/JanuScope",
+      "html_url": "https://github.com/giancarloerra/JanuScope",
+      "description": "Local-first MCP policy proxy. Tool-block, SQL-mutation gate, PII redact, audit, rate-limit, OpenTelemetry, vault secrets, first-use quarantine, schema pre-inject. No hosted gateway. One YAML Lens wraps any MCP, 20 included (Postgres, MySQL, MongoDB, GitHub, Stripe, Snowflake, etc.). 84% fewer tokens, ~3x faster, holds PII leaks. AGPL or commercial.",
+      "stars": 27,
+      "pushed_at": "2026-08-14T09:40:01Z",
+      "language": "TypeScript",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "oracle-quickstart/oci-observability-and-management",
+      "html_url": "https://github.com/oracle-quickstart/oci-observability-and-management",
+      "description": "Oracle Cloud Infrastructure Observability and Management",
+      "stars": 25,
+      "pushed_at": "2026-03-19T15:45:21Z",
+      "language": "Python",
+      "license_spdx_id": "UPL-1.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "chanceryhq/chancery",
+      "html_url": "https://github.com/chanceryhq/chancery",
+      "description": "The identity provider for AI agents \u2014 registry, scoped delegation, in-path MCP enforcement, instant revocation, tamper-evident audit.",
+      "stars": 25,
+      "pushed_at": "2026-07-21T07:39:20Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "ahmetrende/database-queryhub",
+      "html_url": "https://github.com/ahmetrende/database-queryhub",
+      "description": "Admin-approved, audited SQL gateway \u2014 Slack + web IDE, tier-matched creds (RO/RW/DDL), PII masking, full audit. PostgreSQL & SQL Server.",
+      "stars": 24,
+      "pushed_at": "2026-08-17T09:57:45Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "MrAdder/filament-logger",
+      "html_url": "https://github.com/MrAdder/filament-logger",
+      "description": "Audit logging, exports, alerts, and dashboards for Filament admin panels.",
+      "stars": 24,
+      "pushed_at": "2026-08-14T08:46:00Z",
+      "language": "PHP",
+      "license_spdx_id": "MIT",
+      "homepage": "https://mradder.github.io/filament-logger/"
+    },
+    {
+      "full_name": "crabwise-ai/crabwise",
+      "html_url": "https://github.com/crabwise-ai/crabwise",
+      "description": "Crabwise is oversight infrastructure for your AI agents. Observe, govern, and audit what OpenClaw, Claude Code, Codex CLI do on your machine.",
+      "stars": 24,
+      "pushed_at": "2026-04-05T22:53:03Z",
+      "language": "Go",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://crabwise.ai"
+    },
+    {
+      "full_name": "dcp-ai-protocol/dcp-ai",
+      "html_url": "https://github.com/dcp-ai-protocol/dcp-ai",
+      "description": "Accountability protocol for autonomous AI agents on open networks",
+      "stars": 23,
+      "pushed_at": "2026-07-22T00:04:59Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://dcp-ai.org"
+    },
+    {
+      "full_name": "ilovepixelart/ts-patch-mongoose",
+      "html_url": "https://github.com/ilovepixelart/ts-patch-mongoose",
+      "description": "Patch history & events plugin for mongoose",
+      "stars": 23,
+      "pushed_at": "2026-07-28T13:18:04Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "SaravananJaichandar/world-model-mcp",
+      "html_url": "https://github.com/SaravananJaichandar/world-model-mcp",
+      "description": "world-model-mcp is a signed audit memory server for AI coding agents, delivered as an MCP tool. Every event Ed25519-signed and Merkle-chained; offline-verifiable against pinned public keys. Hosted platform with hybrid post-quantum signing at etch.systems.",
+      "stars": 22,
+      "pushed_at": "2026-08-02T18:15:58Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://etch.systems"
+    },
+    {
+      "full_name": "ConfigButler/gitops-reverser",
+      "html_url": "https://github.com/ConfigButler/gitops-reverser",
+      "description": "Reconciles Kubernetes API resources into a git destination as clean deployable YAML files (audit trail through git commits).",
+      "stars": 21,
+      "pushed_at": "2026-08-13T20:28:31Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "microsoft/PAX",
+      "html_url": "https://github.com/microsoft/PAX",
+      "description": "Portable Audit eXporter (PAX) Solution: Enterprise-grade tools for Microsoft 365 audit logs analysis. Export and process Copilot and M365 apps usage data from multiple audit log sources.",
+      "stars": 21,
+      "pushed_at": "2026-07-31T16:30:55Z",
+      "language": "PowerShell",
+      "license_spdx_id": "MIT",
+      "homepage": "https://aka.ms/PAXapp"
+    },
+    {
+      "full_name": "b1rdmania/legalise",
+      "html_url": "https://github.com/b1rdmania/legalise",
+      "description": "Open-source governance infrastructure for AI-assisted legal work",
+      "stars": 21,
+      "pushed_at": "2026-08-11T20:47:42Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://legalise.dev"
+    },
+    {
+      "full_name": "azerozero/grob",
+      "html_url": "https://github.com/azerozero/grob",
+      "description": "LLM proxy with built-in DLP and regulatory compliance. Redacts secrets before they reach the API. EU AI Act, GDPR, HDS/PCI DSS ready. Multi-provider failover, live TUI, virtual keys, fan-out. 6 MB, zero deps. Rust.",
+      "stars": 20,
+      "pushed_at": "2026-08-06T17:21:22Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "jamjet-labs/jamjet",
+      "html_url": "https://github.com/jamjet-labs/jamjet",
+      "description": "The open-source safety layer for AI agents \u2014 block unsafe tool calls, require approval, enforce budgets, audit, replay.",
+      "stars": 20,
+      "pushed_at": "2026-08-03T12:44:55Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://jamjet.dev"
+    },
+    {
+      "full_name": "kakunin-ai/kakunin-core",
+      "html_url": "https://github.com/kakunin-ai/kakunin-core",
+      "description": "Open-source AI agent identity & compliance platform \u2014 X.509 certificates via AWS KMS, behavioral risk scoring, auto-revocation, and MiCA / EU AI Act audit trails.",
+      "stars": 20,
+      "pushed_at": "2026-07-09T04:20:58Z",
+      "language": "TypeScript",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://www.kakunin.ai/open-source"
+    }
+  ]
+}
