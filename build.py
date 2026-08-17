@@ -1489,6 +1489,7 @@ def render_site(
             "tool.html",
             root="../../",
             tool=tool,
+            entry=entry,
             problems=entry["problems"],
             active="tools",
         )

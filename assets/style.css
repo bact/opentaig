@@ -619,6 +619,12 @@ a.chip-license:hover { text-decoration: underline; text-decoration-color: curren
 .tool-summary { color: var(--ink-3); margin: 6px 0 0; }
 .tool-rationale { color: var(--ink-3); font-style: italic; margin: 6px 0 0; font-size: 0.92rem; }
 
+.tool-detail-head { margin-bottom: var(--s-4); }
+.tool-detail-head h1 { margin: 0 0 var(--s-2); }
+.tool-detail-meta { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-top: var(--s-2); }
+.tool-chips { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.tool-detail-summary { font-size: var(--text-md); line-height: var(--leading-body); color: var(--ink-2); margin: 0 0 var(--s-4); }
+
 .tool-doc-checklist { display: flex; flex-wrap: wrap; align-items: flex-start; gap: var(--s-2); margin: var(--s-4) 0; }
 .tool-doc-checklist-label { font-size: var(--text-xs); font-weight: 500; color: var(--ink-3); margin-right: 2px; padding-top: 6px; }
 .tool-funder { color: var(--ink-3); font-size: var(--text-sm); margin: 0 0 var(--s-4); }
@@ -661,7 +667,7 @@ a.chip-license:hover { text-decoration: underline; text-decoration-color: curren
    site nav's trailing GitHub link) -- stars/contributors/last-release read
    as a secondary, at-a-glance signal, so they sit apart from the
    identity/quality chips rather than competing with them for the eye. */
-.tool-list-head .tool-stats-line { margin: 0 0 0 auto; font-size: var(--text-xs); color: var(--ink-3); }
+.tool-list-head .tool-stats-line, .tool-detail-meta .tool-stats-line { margin: 0 0 0 auto; font-size: var(--text-xs); color: var(--ink-3); }
 a.chip-language:hover, .chip-badge:hover, .chip-scorecard:hover { text-decoration: underline; text-decoration-color: currentColor; }
 
 /* flex-start, not center: a chip that wraps to two lines would otherwise
