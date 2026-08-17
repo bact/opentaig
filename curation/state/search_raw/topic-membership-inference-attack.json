@@ -1,0 +1,157 @@
+{
+  "keyword": "topic:membership-inference-attack",
+  "query": "topic:membership-inference-attack stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 15,
+  "repos": [
+    {
+      "full_name": "privacytrustlab/ml_privacy_meter",
+      "html_url": "https://github.com/privacytrustlab/ml_privacy_meter",
+      "description": "Privacy Meter: An open-source library to audit data privacy in statistical and machine learning algorithms.",
+      "stars": 723,
+      "pushed_at": "2025-04-26T02:58:53Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "MinghuiChen43/awesome-trustworthy-deep-learning",
+      "html_url": "https://github.com/MinghuiChen43/awesome-trustworthy-deep-learning",
+      "description": "A curated list of trustworthy deep learning papers. Continually updating...",
+      "stars": 390,
+      "pushed_at": "2026-08-11T02:58:26Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "tsinghua-fib-lab/ANeurIPS2024_SPV-MIA",
+      "html_url": "https://github.com/tsinghua-fib-lab/ANeurIPS2024_SPV-MIA",
+      "description": "[NeurIPS'24] \"Membership Inference Attacks against Fine-tuned Large Language Models via Self-prompt Calibration\"",
+      "stars": 184,
+      "pushed_at": "2025-03-13T02:07:58Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "OPTML-Group/Unlearn-Saliency",
+      "html_url": "https://github.com/OPTML-Group/Unlearn-Saliency",
+      "description": "[ICLR24 (Spotlight)] \"SalUn: Empowering Machine Unlearning via Gradient-based Weight Saliency in Both Image Classification and Generation\" by Chongyu Fan*, Jiancheng Liu*, Yihua Zhang, Eric Wong, Dennis Wei, Sijia Liu",
+      "stars": 151,
+      "pushed_at": "2026-02-28T22:35:34Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.optml-group.com/posts/salun_iclr24"
+    },
+    {
+      "full_name": "PrivPkt/PrivPkt",
+      "html_url": "https://github.com/PrivPkt/PrivPkt",
+      "description": "Privacy Preserving Collaborative Encrypted Network Traffic Classification (Differential Privacy, Federated Learning, Membership Inference Attack, Encrypted Traffic Classification)",
+      "stars": 130,
+      "pushed_at": "2023-05-01T20:37:29Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "tsinghua-fib-lab/AAAI2025_MIA-Tuner",
+      "html_url": "https://github.com/tsinghua-fib-lab/AAAI2025_MIA-Tuner",
+      "description": "[AAAI'25 Oral] \"MIA-Tuner: Adapting Large Language Models as Pre-training Text Detector\".",
+      "stars": 130,
+      "pushed_at": "2025-03-17T02:36:16Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "jinzhuoran/RWKU",
+      "html_url": "https://github.com/jinzhuoran/RWKU",
+      "description": "RWKU: Benchmarking Real-World Knowledge Unlearning for Large Language Models. NeurIPS 2024",
+      "stars": 100,
+      "pushed_at": "2024-09-30T13:26:32Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://rwku-bench.github.io"
+    },
+    {
+      "full_name": "liuyugeng/ML-Doctor",
+      "html_url": "https://github.com/liuyugeng/ML-Doctor",
+      "description": "Code for ML Doctor",
+      "stars": 91,
+      "pushed_at": "2024-08-14T16:33:04Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "OPTML-Group/Unlearn-Sparse",
+      "html_url": "https://github.com/OPTML-Group/Unlearn-Sparse",
+      "description": "[NeurIPS23 (Spotlight)] \"Model Sparsity Can Simplify Machine Unlearning\" by Jinghan Jia*, Jiancheng Liu*, Parikshit Ram, Yuguang Yao, Gaowen Liu, Yang Liu, Pranay Sharma, Sijia Liu",
+      "stars": 89,
+      "pushed_at": "2026-06-28T07:23:15Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "shrebox/Privacy-Attacks-in-Machine-Learning",
+      "html_url": "https://github.com/shrebox/Privacy-Attacks-in-Machine-Learning",
+      "description": "Membership Inference, Attribute Inference and Model Inversion attacks implemented using PyTorch.",
+      "stars": 69,
+      "pushed_at": "2024-10-04T13:58:02Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "zjysteven/mink-plus-plus",
+      "html_url": "https://github.com/zjysteven/mink-plus-plus",
+      "description": "[ICLR'25 Spotlight] Min-K%++: Improved baseline for detecting pre-training data of LLMs",
+      "stars": 60,
+      "pushed_at": "2025-05-26T17:07:57Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://zjysteven.github.io/mink-plus-plus/"
+    },
+    {
+      "full_name": "MinChen00/UnlearningLeaks",
+      "html_url": "https://github.com/MinChen00/UnlearningLeaks",
+      "description": "Official implementation of \"When Machine Unlearning Jeopardizes Privacy\" (ACM CCS 2021)",
+      "stars": 52,
+      "pushed_at": "2022-05-20T07:15:07Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "AI-SDC/SACRO-ML",
+      "html_url": "https://github.com/AI-SDC/SACRO-ML",
+      "description": "Collection of tools and resources for managing the statistical disclosure control of trained machine learning models",
+      "stars": 40,
+      "pushed_at": "2026-08-13T11:50:47Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://ai-sdc.github.io/SACRO-ML/"
+    },
+    {
+      "full_name": "yonsei-sslab/MIA",
+      "html_url": "https://github.com/yonsei-sslab/MIA",
+      "description": "\ud83d\udd12 Implementation of Shokri et al(2016) \"Membership Inference Attacks against Machine Learning Models\"",
+      "stars": 34,
+      "pushed_at": "2022-08-29T07:07:52Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Koukyosyumei/Attack_SplitNN",
+      "html_url": "https://github.com/Koukyosyumei/Attack_SplitNN",
+      "description": "reveal the vulnerabilities of SplitNN",
+      "stars": 32,
+      "pushed_at": "2022-06-16T14:08:41Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}

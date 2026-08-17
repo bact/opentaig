@@ -1,0 +1,17 @@
+{
+  "keyword": "topic:model-watermarking",
+  "query": "topic:model-watermarking stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "conditionWang/NTL",
+      "html_url": "https://github.com/conditionWang/NTL",
+      "description": "This is the code of ICLR 2022 Oral paper 'Non-Transferable Learning: A New Approach for Model Ownership Verification and Applicability Authorization'.",
+      "stars": 30,
+      "pushed_at": "2023-10-22T09:24:15Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    }
+  ]
+}

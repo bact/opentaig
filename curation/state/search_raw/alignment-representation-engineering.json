@@ -1,0 +1,17 @@
+{
+  "keyword": "alignment representation engineering",
+  "query": "alignment representation engineering stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "chrisliu298/awesome-representation-engineering",
+      "html_url": "https://github.com/chrisliu298/awesome-representation-engineering",
+      "description": "A resource repository for representation engineering in large language models",
+      "stars": 156,
+      "pushed_at": "2024-11-14T21:03:30Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    }
+  ]
+}

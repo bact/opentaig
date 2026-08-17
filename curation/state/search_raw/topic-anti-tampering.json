@@ -1,0 +1,47 @@
+{
+  "keyword": "topic:anti-tampering",
+  "query": "topic:anti-tampering stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 4,
+  "repos": [
+    {
+      "full_name": "mocikadev/mocika-shield",
+      "html_url": "https://github.com/mocikadev/mocika-shield",
+      "description": "Android APK \u52a0\u56fa\u5de5\u5177\uff08DEX \u52a0\u5bc6 + \u58f3\u4fdd\u62a4 + \u53cd\u8c03\u8bd5\uff09 \u00b7 Android APK hardening \u2014 DEX encryption, stub loader & anti-debug",
+      "stars": 51,
+      "pushed_at": "2026-08-17T02:11:57Z",
+      "language": "Rust",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "ykus4/kagura",
+      "html_url": "https://github.com/ykus4/kagura",
+      "description": "LLVM pass plugin for native code obfuscation and anti-tamper. CFG flattening, string encryption, VM virtualization, anti-cheat, and more. iOS \u00b7 Android \u00b7 macOS \u00b7 Windows \u00b7 Wasm.",
+      "stars": 26,
+      "pushed_at": "2026-08-06T14:12:22Z",
+      "language": "C++",
+      "license_spdx_id": "MIT",
+      "homepage": "https://ykus4.github.io/kagura/"
+    },
+    {
+      "full_name": "duddu/cordova-plugin-antitampering",
+      "html_url": "https://github.com/duddu/cordova-plugin-antitampering",
+      "description": "Verify the integrity of cordova static assets - Android / iOS",
+      "stars": 22,
+      "pushed_at": "2022-12-30T18:18:05Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "rexiox/sentinel",
+      "html_url": "https://github.com/rexiox/sentinel",
+      "description": "Sentinel is a modular Kotlin Multiplatform security toolkit designed to analyze operating environments and detect potential security threats in real time.",
+      "stars": 21,
+      "pushed_at": "2026-06-05T07:09:46Z",
+      "language": "Kotlin",
+      "license_spdx_id": "MIT",
+      "homepage": "https://sentinel.rexiox.co"
+    }
+  ]
+}

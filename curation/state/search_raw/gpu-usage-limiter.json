@@ -1,0 +1,27 @@
+{
+  "keyword": "GPU usage limiter",
+  "query": "GPU usage limiter stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 2,
+  "repos": [
+    {
+      "full_name": "SameSalamander5710/DynamicFPSLimiter",
+      "html_url": "https://github.com/SameSalamander5710/DynamicFPSLimiter",
+      "description": "A GUI app to assess GPU/CPU usage and dynamically alter FPS limits via RTSS",
+      "stars": 112,
+      "pushed_at": "2026-06-11T16:23:03Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "bryant-rh/kubectl-resource-view",
+      "html_url": "https://github.com/bryant-rh/kubectl-resource-view",
+      "description": "kubernetes Display Resource (CPU/Memory/Gpu/PodCount) Usage and Request and Limit.",
+      "stars": 22,
+      "pushed_at": "2024-11-28T07:06:50Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    }
+  ]
+}

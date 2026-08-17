@@ -1,0 +1,17 @@
+{
+  "keyword": "LLM watermark detection",
+  "query": "LLM watermark detection stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "Anil-matcha/AI-Youtube-Shorts-Generator",
+      "html_url": "https://github.com/Anil-matcha/AI-Youtube-Shorts-Generator",
+      "description": "Open-source alternative to Opus Clip, Vidyo.ai, Klap & SubMagic. Turn long-form YouTube videos into viral 9:16 shorts using LLM highlight detection, Whisper transcription, and auto vertical cropping \u2014 free, no watermarks, no per-clip credits.",
+      "stars": 4618,
+      "pushed_at": "2026-07-29T05:22:52Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://www.vadoo.tv/ai-youtube-shorts-generator"
+    }
+  ]
+}

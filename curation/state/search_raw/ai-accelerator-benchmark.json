@@ -1,0 +1,37 @@
+{
+  "keyword": "AI accelerator benchmark",
+  "query": "AI accelerator benchmark stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 3,
+  "repos": [
+    {
+      "full_name": "bytedance/xpu-perf",
+      "html_url": "https://github.com/bytedance/xpu-perf",
+      "description": "[HPCA 2026] AI Accelerator Benchmark focuses on evaluating AI Accelerators from a practical production perspective, including the ease of use and versatility of software and hardware.",
+      "stars": 374,
+      "pushed_at": "2026-04-22T07:31:12Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://xpu-perf.ai/"
+    },
+    {
+      "full_name": "alibaba/ai-matrix",
+      "html_url": "https://github.com/alibaba/ai-matrix",
+      "description": "To make it easy to benchmark AI accelerators",
+      "stars": 193,
+      "pushed_at": "2022-12-27T15:35:34Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "wafer-ai/kernel-arena",
+      "html_url": "https://github.com/wafer-ai/kernel-arena",
+      "description": "Public benchmark results from Kernel Arena, a leaderboard for LLM-generated AI accelerator kernels.",
+      "stars": 21,
+      "pushed_at": "2026-03-11T16:41:33Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://kernelarena.com/eval"
+    }
+  ]
+}

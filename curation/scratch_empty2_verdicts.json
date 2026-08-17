@@ -1,0 +1,44 @@
+[
+  {
+    "repo": "gnss-sdr/gnss-sdr",
+    "verdict": "reject",
+    "reject_category": "not-relevant",
+    "mappings": []
+  },
+  {
+    "repo": "nlsfi/FGI-GSRx",
+    "verdict": "reject",
+    "reject_category": "not-relevant",
+    "mappings": []
+  },
+  {
+    "repo": "bytedance/xpu-perf",
+    "verdict": "reject",
+    "reject_category": "not-relevant",
+    "mappings": []
+  },
+  {
+    "repo": "alibaba/ai-matrix",
+    "verdict": "reject",
+    "reject_category": "not-relevant",
+    "mappings": []
+  },
+  {
+    "repo": "microsoft/Data-and-Agent-Governance-and-Security-Accelerator",
+    "verdict": "reject",
+    "reject_category": "not-relevant",
+    "mappings": []
+  },
+  {
+    "repo": "ascending-llc/jarvis-registry",
+    "verdict": "reject",
+    "reject_category": "not-relevant",
+    "mappings": []
+  },
+  {
+    "repo": "Yuan-lab-LLM/ClawManager",
+    "verdict": "reject",
+    "reject_category": "not-relevant",
+    "mappings": []
+  }
+]

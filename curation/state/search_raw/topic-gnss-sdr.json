@@ -1,0 +1,77 @@
+{
+  "keyword": "topic:gnss-sdr",
+  "query": "topic:gnss-sdr stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 7,
+  "repos": [
+    {
+      "full_name": "LiZhengXiao99/Navigation-Learning",
+      "html_url": "https://github.com/LiZhengXiao99/Navigation-Learning",
+      "description": "\u6211\u7684\u5bfc\u822a\u7b97\u6cd5\u5b66\u4e60\u7b14\u8bb0\uff0c\u5185\u5bb9\u6db5\u76d6\u5bfc\u822a\u5b9a\u4f4d\u5f00\u6e90\u7a0b\u5e8f\u7684\u6e90\u7801\u89e3\u8bfb\u3001\u5f00\u6e90\u9879\u76ee\u68b3\u7406\u3001\u4e66\u7c4d\u8bb2\u4e49\u3001\u535a\u5ba2\u7ffb\u8bd1\u3001\u6559\u7a0b\u8bb2\u5ea7\u63a8\u8350\uff1b\u6240\u6709\u5185\u5bb9\u90fd\u53ef\u4ee5\u968f\u610f\u8f6c\u8f7d\uff0c\u539f\u59cb\u6587\u4ef6\u90fd\u653e\u5728\u8fd9\u91cc\u4e86\uff0c\u5927\u5bb6\u53ef\u4ee5\u5728\u6211\u7684\u57fa\u7840\u4e0a\u6574\u7406\u51fa\u81ea\u5df1\u7684\u4e00\u4e9b\u6587\u6863\u3002\uff08Tips\uff1a\u2460\u4e3b\u8981\u662f\u5199\u7ed9\u521d\u5b66\u8005\uff0c\u5df2\u7ecf\u6709\u57fa\u7840\u7684\u540c\u5b66\u5e94\u8be5\u591a\u770b\u8bba\u6587\u548c\u4ee3\u7801\uff0c\u770b\u6211\u7684\u7b14\u8bb0\u5b66\u4e0d\u5230\u5565\uff1b\u2461\u4ed3\u5e93\u6301\u7eed\u66f4\u65b0\u4e2d\uff0c\u4e0d\u5efa\u8bae fork\uff09",
+      "stars": 2387,
+      "pushed_at": "2025-06-07T06:21:33Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "gnss-sdr/gnss-sdr",
+      "html_url": "https://github.com/gnss-sdr/gnss-sdr",
+      "description": "GNSS-SDR, an open-source software-defined GNSS receiver",
+      "stars": 2207,
+      "pushed_at": "2026-08-09T09:27:08Z",
+      "language": "C++",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://gnss-sdr.org"
+    },
+    {
+      "full_name": "nlsfi/FGI-GSRx",
+      "html_url": "https://github.com/nlsfi/FGI-GSRx",
+      "description": "FGI-GSRx Open Source multi-GNSS software receiver",
+      "stars": 188,
+      "pushed_at": "2026-07-10T14:04:12Z",
+      "language": "MATLAB",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "acebrianjuan/gnss-sdr-monitor",
+      "html_url": "https://github.com/acebrianjuan/gnss-sdr-monitor",
+      "description": "A graphical user interface to monitor the GNSS-SDR status in real time",
+      "stars": 116,
+      "pushed_at": "2024-03-10T05:09:50Z",
+      "language": "C++",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "perrysou/SoftGNSS-python",
+      "html_url": "https://github.com/perrysou/SoftGNSS-python",
+      "description": "A software-defined GNSS receiver toolkit",
+      "stars": 43,
+      "pushed_at": "2023-05-10T06:05:12Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "Sergio-Vicenzo/GPSL1-DPEmodule",
+      "html_url": "https://github.com/Sergio-Vicenzo/GPSL1-DPEmodule",
+      "description": "Open-source GNSS Direct Position Estimation Plug-in Module for MATLAB-based Two-step Positioning Software Defined Receivers",
+      "stars": 32,
+      "pushed_at": "2026-06-25T20:59:18Z",
+      "language": "MATLAB",
+      "license_spdx_id": "GPL-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "gnss-sdr/geniuss-place",
+      "html_url": "https://github.com/gnss-sdr/geniuss-place",
+      "description": "GNSS-SDR Website",
+      "stars": 25,
+      "pushed_at": "2026-08-09T09:29:12Z",
+      "language": "SCSS",
+      "license_spdx_id": "CC-BY-4.0",
+      "homepage": "https://gnss-sdr.org"
+    }
+  ]
+}

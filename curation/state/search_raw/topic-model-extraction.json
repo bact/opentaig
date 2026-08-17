@@ -1,8 +1,18 @@
 {
   "keyword": "topic:model-extraction",
-  "query": "topic:model-extraction stars:>19 pushed:>2025-07-29 archived:false fork:false",
-  "count": 1,
+  "query": "topic:model-extraction stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 2,
   "repos": [
+    {
+      "full_name": "DescartesResearch/TeaStore",
+      "html_url": "https://github.com/DescartesResearch/TeaStore",
+      "description": "A micro-service reference test application for model extraction, cloud management, energy efficiency, power prediction, single- and multi-tier auto-scaling",
+      "stars": 155,
+      "pushed_at": "2025-01-08T16:29:47Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://se.informatik.uni-wuerzburg.de"
+    },
     {
       "full_name": "nclarius/pyPL",
       "html_url": "https://github.com/nclarius/pyPL",

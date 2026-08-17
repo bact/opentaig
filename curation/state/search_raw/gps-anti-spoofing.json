@@ -1,0 +1,17 @@
+{
+  "keyword": "GPS anti-spoofing",
+  "query": "GPS anti-spoofing stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "HasnainDarkNet/HDN-Locator",
+      "html_url": "https://github.com/HasnainDarkNet/HDN-Locator",
+      "description": "HDN-Locator - Advanced GPS Location Tracker with Anti-Spoofing | Capture exact GPS coordinates | Fake YouTube video page | Works on Windows, Linux & macOS",
+      "stars": 34,
+      "pushed_at": "2026-05-05T12:14:35Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    }
+  ]
+}

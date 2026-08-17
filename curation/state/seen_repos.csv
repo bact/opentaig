@@ -1746,3 +1746,26 @@ timmclean/rust-timing-shield,accept,,,MIT,osi-approved,Hardware-Level Enforcemen
 Freax13/mushroom,accept,,,AGPL-3.0,osi-approved,Hardware-Level Enforcement and On-Chip Controls,trusted execution environment hardware,44,2026-08-17T17:24:09+00:00
 Foxboron/ssh-tpm-ca-authority,accept,,,MIT,osi-approved,Hardware-Level Enforcement and On-Chip Controls,topic:tpm,62,2026-08-17T17:24:09+00:00
 brandsimon/verity-squash-root,accept,,,MIT,osi-approved,Hardware-Level Enforcement and On-Chip Controls,topic:secure-boot,29,2026-08-17T17:24:09+00:00
+GPUprobe/gpuprobe-daemon,reject,not-relevant,Does not directly address target empty RQs,MIT,osi-approved,Verification of Compute Workloads,eBPF GPU monitoring,155,2026-08-17T19:06:10+00:00
+Ricks-Lab/gpu-utils,reject,not-relevant,Does not directly address target empty RQs,GPL-3.0,osi-approved,Verification of Compute Workloads,topic:gpu-monitoring,154,2026-08-17T19:06:10+00:00
+tonyd2wild/The-Sparky-Command-Center,reject,not-relevant,Does not directly address target empty RQs,MIT,osi-approved,Verification of Compute Workloads,topic:gpu-monitoring,32,2026-08-17T19:06:10+00:00
+microsoft/Spartan,accept,,,MIT,osi-approved,Verification of Compute Workloads,topic:verifiable-computing,868,2026-08-17T19:06:10+00:00
+Layr-Labs/eigensdk-rs,reject,not-relevant,Does not directly address target empty RQs,NOASSERTION,source-available,Verification of Compute Workloads,topic:verifiable-computing,95,2026-08-17T19:06:10+00:00
+zjysteven/mink-plus-plus,reject,not-a-tool-paper-artifact,Does not directly address target empty RQs,MIT,osi-approved,Verification of Compute Workloads,topic:membership-inference-attack,60,2026-08-17T19:06:10+00:00
+tsinghua-fib-lab/ANeurIPS2024_SPV-MIA,reject,not-a-tool-paper-artifact,Does not directly address target empty RQs,,none-declared,Verification of Compute Workloads,topic:membership-inference-attack,184,2026-08-17T19:06:10+00:00
+jinzhuoran/RWKU,reject,not-relevant,Does not directly address target empty RQs,,none-declared,Verification of Compute Workloads,topic:membership-inference-attack,100,2026-08-17T19:06:10+00:00
+kyo-takano/chinchilla,accept,,,Apache-2.0,osi-approved,Verification of Compute Workloads,topic:scaling-laws,69,2026-08-17T19:06:10+00:00
+ryoungj/ObsScaling,accept,,,Apache-2.0,osi-approved,Verification of Compute Workloads,topic:scaling-laws,61,2026-08-17T19:06:10+00:00
+LAION-AI/scaling-laws-openclip,reject,not-a-tool-paper-artifact,Does not directly address target empty RQs,,none-declared,Verification of Compute Workloads,topic:scaling-laws,201,2026-08-17T19:06:10+00:00
+linhaowei1/SLD,accept,,,,none-declared,Verification of Compute Workloads,topic:scaling-laws,31,2026-08-17T19:06:10+00:00
+9elements/tpmtool,reject,not-relevant,Does not directly address target empty RQs,BSD-3-Clause,osi-approved,Verification of Compute Workloads,topic:tpm,36,2026-08-17T19:06:10+00:00
+joholl/tpmstream,reject,not-relevant,Does not directly address target empty RQs,BSD-2-Clause,osi-approved,Verification of Compute Workloads,topic:tpm,49,2026-08-17T19:06:10+00:00
+Trusted-AI/adversarial-robustness-toolbox,accept,,,MIT,osi-approved,Verification of Compute Workloads,topic:adversarial-machine-learning,6146,2026-08-17T19:06:10+00:00
+LiveBench/LiveBench,accept,,,NOASSERTION,source-available,Preservation of Evaluation Data Integrity,benchmark contamination LLM,1287,2026-08-17T19:15:13+00:00
+lm-sys/llm-decontaminator,accept,,,Apache-2.0,osi-approved,Preservation of Evaluation Data Integrity,benchmark contamination LLM,325,2026-08-17T19:15:13+00:00
+microsoft/MMLU-CF,reject,not-a-tool-dataset,Does not directly address target RQs,MIT,osi-approved,Preservation of Evaluation Data Integrity,benchmark contamination LLM,126,2026-08-17T19:15:13+00:00
+forecastingresearch/forecastbench,reject,not-relevant,Does not directly address target RQs,MIT,osi-approved,Preservation of Evaluation Data Integrity,benchmark contamination LLM,80,2026-08-17T19:15:13+00:00
+IBM/activation-steering,reject,not-relevant,Does not directly address target RQs,Apache-2.0,osi-approved,Preservation of Evaluation Data Integrity,topic:representation-engineering,182,2026-08-17T19:15:13+00:00
+wisent-ai/ster,reject,not-relevant,Does not directly address target RQs,MIT,osi-approved,Preservation of Evaluation Data Integrity,topic:representation-engineering,344,2026-08-17T19:15:13+00:00
+steering-vectors/steering-vectors,reject,not-relevant,Does not directly address target RQs,MIT,osi-approved,Preservation of Evaluation Data Integrity,topic:representation-engineering,162,2026-08-17T19:15:13+00:00
+conditionWang/NTL,reject,not-relevant,Does not directly address target RQs,,none-declared,Preservation of Evaluation Data Integrity,topic:model-watermarking,30,2026-08-17T19:15:13+00:00

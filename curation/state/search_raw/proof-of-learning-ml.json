@@ -1,6 +1,17 @@
 {
   "keyword": "proof of learning ML",
-  "query": "proof of learning ML stars:>19 pushed:>2025-07-28 archived:false fork:false",
-  "count": 0,
-  "repos": []
+  "query": "proof of learning ML stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "tlringer/ml-for-proofs",
+      "html_url": "https://github.com/tlringer/ml-for-proofs",
+      "description": "An open bibliography of machine learning for formal proof papers",
+      "stars": 32,
+      "pushed_at": "2023-09-30T18:56:08Z",
+      "language": "TeX",
+      "license_spdx_id": "",
+      "homepage": ""
+    }
+  ]
 }
