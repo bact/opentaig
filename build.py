@@ -51,6 +51,7 @@ from Google Sheets.
 from __future__ import annotations
 
 import argparse
+import concurrent.futures
 import csv
 import dataclasses
 import datetime
@@ -59,8 +60,10 @@ import json
 import re
 import shutil
 import sys
+import time
 from pathlib import Path
 from typing import Optional
+from urllib.parse import quote
 
 import requests
 import yaml
@@ -326,8 +329,17 @@ def resolve_metadata_field(tools_raw: Optional[str], metadata_raw: Optional[str]
     return winning_raw
 
 
-def fetch_source(source_cfg: dict, label: str, warnings: list) -> str:
-    """Return CSV text for a data source, preferring a local `file` override.
+def fetch_source(
+    source_cfg: dict,
+    label: str,
+    warnings: list,
+    session: Optional[requests.Session] = None,
+    cache_dir: Optional[Path] = None,
+    cache_ttl: int = 0,
+    offline: bool = False,
+) -> str:
+    """Return CSV text for a data source, preferring a local `file` override,
+    then cache (if valid/offline), and finally fetching over network.
 
     Prefers `sheet_name` (the tab's visible name) over `gid` (the tab's
     opaque numeric id) when both are absent-or-present, since a tab name is
@@ -341,11 +353,25 @@ def fetch_source(source_cfg: dict, label: str, warnings: list) -> str:
         with open(p, "r", encoding="utf-8-sig") as f:
             return f.read()
 
+    cache_file = (cache_dir / f"{label}.csv") if cache_dir else None
+
+    # Check cache freshness
+    if cache_file and cache_file.exists():
+        age = time.time() - cache_file.stat().st_mtime
+        if offline or (cache_ttl > 0 and age < cache_ttl):
+            print(f"[data] {label}: using cached file {cache_file} ({int(age)}s old)")
+            with open(cache_file, "r", encoding="utf-8-sig") as f:
+                return f.read()
+
+    if offline:
+        raise SystemExit(
+            f"Offline mode requested, but no local file or cache found for {label} "
+            f"(expected cache file {cache_file})."
+        )
+
     sheet_id = source_cfg["sheet_id"]
     sheet_name = source_cfg.get("sheet_name")
     if sheet_name:
-        from urllib.parse import quote
-
         url = (
             f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq"
             f"?tqx=out:csv&sheet={quote(sheet_name)}"
@@ -355,22 +381,85 @@ def fetch_source(source_cfg: dict, label: str, warnings: list) -> str:
         url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid={gid}"
 
     print(f"[data] {label}: fetching {url}")
+    requester = session if session is not None else requests
     last_err = None
     for attempt in range(1, 4):
         try:
-            resp = requests.get(url, timeout=30)
+            resp = requester.get(url, timeout=30)
             resp.raise_for_status()
             resp.encoding = "utf-8-sig"
-            return resp.text
+            text = resp.text
+            if not text or not text.strip():
+                raise requests.RequestException(f"Received empty response from {url}")
+            if cache_file:
+                try:
+                    cache_file.parent.mkdir(parents=True, exist_ok=True)
+                    cache_file.write_text(text, encoding="utf-8-sig")
+                except OSError as e:
+                    warnings.append(f"Failed to write cache for {label} to {cache_file}: {e}")
+            return text
         except requests.RequestException as e:  # pragma: no cover - network
             last_err = e
             print(f"[data] {label}: attempt {attempt} failed ({e})", file=sys.stderr)
+
+    # Fallback to stale cache if available
+    if cache_file and cache_file.exists():
+        age = int(time.time() - cache_file.stat().st_mtime)
+        warn_msg = (
+            f"Failed to fetch {label} from {url} after 3 attempts ({last_err}); "
+            f"falling back to stale cache ({cache_file}, {age}s old)"
+        )
+        print(f"[data] {label}: {warn_msg}", file=sys.stderr)
+        warnings.append(warn_msg)
+        with open(cache_file, "r", encoding="utf-8-sig") as f:
+            return f.read()
+
     raise SystemExit(
         f"Failed to fetch {label} from {url} after 3 attempts: {last_err}\n"
         "Is the sheet shared as 'Anyone with the link'? Is the sheet_name/gid correct? "
         "A '400 Bad Request' here almost always means the tab name or gid doesn't "
         "match any tab in the spreadsheet -- open the tab and check its exact name."
     )
+
+
+def fetch_all_sources(
+    data_configs: dict[str, dict],
+    warnings: list,
+    cache_dir: Optional[Path] = None,
+    cache_ttl: int = 0,
+    offline: bool = False,
+) -> dict[str, str]:
+    """Fetch all data sources concurrently with a shared HTTP session."""
+    results: dict[str, str] = {}
+    session = requests.Session()
+    adapter = requests.adapters.HTTPAdapter(pool_connections=10, pool_maxsize=10)
+    session.mount("https://", adapter)
+    session.mount("http://", adapter)
+
+    def _fetch_one(key: str, cfg: dict) -> tuple[str, str, list[str]]:
+        local_warnings: list[str] = []
+        text = fetch_source(
+            cfg,
+            key,
+            local_warnings,
+            session=session,
+            cache_dir=cache_dir,
+            cache_ttl=cache_ttl,
+            offline=offline,
+        )
+        return key, text, local_warnings
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=min(len(data_configs), 8)) as executor:
+        futures = [
+            executor.submit(_fetch_one, key, cfg)
+            for key, cfg in data_configs.items()
+        ]
+        for f in concurrent.futures.as_completed(futures):
+            key, text, local_warnings = f.result()
+            results[key] = text
+            warnings.extend(local_warnings)
+
+    return results
 
 
 def parse_csv_text(text: str) -> list:
@@ -1486,27 +1575,61 @@ def render_site(
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--config", default="config.yaml")
+    parser.add_argument("--config", default="config.yaml", help="Path to configuration file")
+    parser.add_argument(
+        "--cache-dir",
+        default=None,
+        help="Directory to cache fetched Google Sheets CSVs (default: from config.yaml or .cache/sheets)",
+    )
+    parser.add_argument(
+        "--cache-ttl",
+        type=int,
+        default=None,
+        help="Cache TTL in seconds (default: from config.yaml or 3600; 0 to always fetch fresh unless offline)",
+    )
+    parser.add_argument(
+        "--no-cache",
+        action="store_true",
+        help="Disable cache read/write completely",
+    )
+    parser.add_argument(
+        "--offline",
+        action="store_true",
+        help="Run completely offline; only read from cache or local files",
+    )
     args = parser.parse_args()
 
     config = load_yaml(Path(args.config))
     warnings: list = []
 
-    taig_csv = fetch_source(config["data"]["taig"], "taig", warnings)
-    mapping_csv = fetch_source(config["data"]["mapping"], "mapping", warnings)
-    tool_map_csv = fetch_source(config["data"]["tool_map"], "tool_map", warnings)
-    tools_csv = fetch_source(config["data"]["tools"], "tools", warnings)
-    tool_metadata_csv = fetch_source(config["data"]["tool_metadata"], "tool_metadata", warnings)
-    terms_csv = fetch_source(config["data"]["terms"], "terms", warnings)
-    framework_csv = fetch_source(config["data"]["framework"], "framework", warnings)
+    # Resolve cache settings
+    if args.no_cache:
+        cache_dir = None
+        cache_ttl = 0
+    else:
+        cache_cfg = config.get("cache", {}) if isinstance(config.get("cache"), dict) else {}
+        cache_dir_str = args.cache_dir or cache_cfg.get("dir", ".cache/sheets")
+        cache_dir = Path(cache_dir_str) if cache_dir_str else None
+        if args.cache_ttl is not None:
+            cache_ttl = args.cache_ttl
+        else:
+            cache_ttl = cache_cfg.get("ttl", 3600)
 
-    taig_rows = parse_csv_text(taig_csv)
-    mapping_rows = parse_csv_text(mapping_csv)
-    tool_map_rows = parse_csv_text(tool_map_csv)
-    tools_rows = parse_csv_text(tools_csv)
-    tool_metadata_rows = parse_csv_text(tool_metadata_csv)
-    terms_rows = parse_csv_text(terms_csv)
-    framework_rows = parse_csv_text(framework_csv)
+    raw_csvs = fetch_all_sources(
+        config["data"],
+        warnings,
+        cache_dir=cache_dir,
+        cache_ttl=cache_ttl,
+        offline=args.offline,
+    )
+
+    taig_rows = parse_csv_text(raw_csvs["taig"])
+    mapping_rows = parse_csv_text(raw_csvs["mapping"])
+    tool_map_rows = parse_csv_text(raw_csvs["tool_map"])
+    tools_rows = parse_csv_text(raw_csvs["tools"])
+    tool_metadata_rows = parse_csv_text(raw_csvs["tool_metadata"])
+    terms_rows = parse_csv_text(raw_csvs["terms"])
+    framework_rows = parse_csv_text(raw_csvs["framework"])
 
     colmap = config["columns"]
     framework_catalog = build_framework_catalog(framework_rows, colmap["framework"], warnings)

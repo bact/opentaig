@@ -1,10 +1,10 @@
-jinja2>=3.1,<4
-pyyaml>=6.0,<7
-requests>=2.31,<3
+jinja2>=3.1.6,<4
+pyyaml>=6.0.3,<7
+requests>=2.34.2,<3
 
 # curation/collect_project_metadata.py only -- not needed to build the site
 # itself, just to auto-collect `tool_metadata`. Matches raw license text
 # against the full SPDX list (https://github.com/bact/licenseid); requires
 # a one-time `licenseid update` after install to build its local index --
 # see curation/README.md's "Setup".
-licenseid>=0.3,<1
+licenseid>=0.3.4,<1
