@@ -1,0 +1,167 @@
+{
+  "keyword": "topic:scaling-laws",
+  "query": "topic:scaling-laws stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 16,
+  "repos": [
+    {
+      "full_name": "AkaliKong/MiniOneRec",
+      "html_url": "https://github.com/AkaliKong/MiniOneRec",
+      "description": "Minimal reproduction of OneRec",
+      "stars": 1746,
+      "pushed_at": "2026-05-14T15:56:06Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "huggingface/datablations",
+      "html_url": "https://github.com/huggingface/datablations",
+      "description": "Scaling Data-Constrained Language Models",
+      "stars": 346,
+      "pushed_at": "2025-06-28T00:02:14Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://arxiv.org/abs/2305.16264"
+    },
+    {
+      "full_name": "LAION-AI/scaling-laws-openclip",
+      "html_url": "https://github.com/LAION-AI/scaling-laws-openclip",
+      "description": "Reproducible scaling laws for contrastive language-image learning (https://arxiv.org/abs/2212.07143)",
+      "stars": 201,
+      "pushed_at": "2025-06-21T17:19:27Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "USTC-StarTeam/Awesome-Large-Recommendation-Models",
+      "html_url": "https://github.com/USTC-StarTeam/Awesome-Large-Recommendation-Models",
+      "description": "\ud83d\udd25\ud83d\udd25\ud83d\udd25 Latest Advances on Large Recommendation Models",
+      "stars": 119,
+      "pushed_at": "2024-12-05T07:27:16Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "vLAR-group/PhysInOne",
+      "html_url": "https://github.com/vLAR-group/PhysInOne",
+      "description": "\ud83d\udd25PhysInOne in Python (CVPR 2026)",
+      "stars": 106,
+      "pushed_at": "2026-07-23T13:00:27Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "stanford-star/plurel",
+      "html_url": "https://github.com/stanford-star/plurel",
+      "description": "A synthetic tabular and relational data generation framework",
+      "stars": 72,
+      "pushed_at": "2026-07-23T06:57:33Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://star-project.stanford.edu/plurel/"
+    },
+    {
+      "full_name": "kyo-takano/chinchilla",
+      "html_url": "https://github.com/kyo-takano/chinchilla",
+      "description": "A toolkit for scaling law research \u2696",
+      "stars": 69,
+      "pushed_at": "2025-01-27T11:46:44Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "ryoungj/ObsScaling",
+      "html_url": "https://github.com/ryoungj/ObsScaling",
+      "description": "[NeurIPS'24 Spotlight] Observational Scaling Laws",
+      "stars": 61,
+      "pushed_at": "2024-10-02T00:13:55Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "xiaoyuxie-vico/PyDimension",
+      "html_url": "https://github.com/xiaoyuxie-vico/PyDimension",
+      "description": "Dimensionless learning",
+      "stars": 48,
+      "pushed_at": "2026-04-10T17:24:18Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://xiaoyuxie.top/PyDimension-Book/intro.html"
+    },
+    {
+      "full_name": "linhaowei1/SLD",
+      "html_url": "https://github.com/linhaowei1/SLD",
+      "description": "[ICLR26] AI-based scaling law discovery",
+      "stars": 31,
+      "pushed_at": "2026-01-30T02:25:16Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://linhaowei1.github.io/scaling_law_discovery"
+    },
+    {
+      "full_name": "CJReinforce/JOWA",
+      "html_url": "https://github.com/CJReinforce/JOWA",
+      "description": "Official code for the ICLR 2025 paper, \"Scaling Offline Model-Based RL via Jointly-Optimized World-Action Model Pretraining\"",
+      "stars": 30,
+      "pushed_at": "2024-12-01T18:43:31Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "josancamon19/rl-scaling-laws",
+      "html_url": "https://github.com/josancamon19/rl-scaling-laws",
+      "description": "qwen3-base family of models RL on gsm8k using verl, is there an RL power law on downstream tasks?",
+      "stars": 27,
+      "pushed_at": "2025-10-19T02:03:37Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://joan.so/learning/ml/research/rl+scaling+laws"
+    },
+    {
+      "full_name": "chen-hao-chao/mdm-prime-v2",
+      "html_url": "https://github.com/chen-hao-chao/mdm-prime-v2",
+      "description": "MDM-Prime-v2: Binary Encoding and Index Shuffling Enable Scaling of Diffusion Language Models",
+      "stars": 27,
+      "pushed_at": "2026-05-23T02:35:37Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "Leading-AI-IO/the-silence-of-intelligence",
+      "html_url": "https://github.com/Leading-AI-IO/the-silence-of-intelligence",
+      "description": "The Silence of Intelligence \u2014 A comprehensive analysis of Anthropic CEO Dario Amodei's philosophy on Scaling Laws, AI safety, and the future of humanity. / Anthropic CEO \u30c0\u30ea\u30aa\u30fb\u30a2\u30e2\u30c7\u30a3\u306e\u601d\u60f3\u3092\u4f53\u7cfb\u5316\u3057\u305fOSS\u66f8\u7c4d\u3002\u30b9\u30b1\u30fc\u30ea\u30f3\u30b0\u5247\u306e\u672c\u8cea\u3068AI\u306e\u672a\u6765\u3092\u89e3\u304d\u660e\u304b\u3059\u3002",
+      "stars": 24,
+      "pushed_at": "2026-07-31T19:00:29Z",
+      "language": "",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://www.leading-ai.io/"
+    },
+    {
+      "full_name": "Qingrenn/TSFM-ScalingLaws",
+      "html_url": "https://github.com/Qingrenn/TSFM-ScalingLaws",
+      "description": "[ICLR 2025] Official implementation of \"Towards Neural Scaling Laws for Time Series Foundation Models\"",
+      "stars": 21,
+      "pushed_at": "2025-10-15T13:09:03Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://arxiv.org/abs/2410.12360"
+    },
+    {
+      "full_name": "machinelearningnuremberg/DPL",
+      "html_url": "https://github.com/machinelearningnuremberg/DPL",
+      "description": "[NeurIPS 2023] Multi-fidelity hyperparameter optimization with deep power laws that achieves state-of-the-art results across diverse benchmarks.",
+      "stars": 20,
+      "pushed_at": "2023-11-12T11:31:01Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "keyword": "eBPF GPU monitoring",
+  "query": "eBPF GPU monitoring stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "GPUprobe/gpuprobe-daemon",
+      "html_url": "https://github.com/GPUprobe/gpuprobe-daemon",
+      "description": "Lightweight daemon for monitoring CUDA runtime API calls with eBPF uprobes",
+      "stars": 155,
+      "pushed_at": "2025-03-29T12:52:12Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}

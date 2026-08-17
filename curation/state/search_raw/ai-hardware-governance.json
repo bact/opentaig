@@ -1,0 +1,17 @@
+{
+  "keyword": "AI hardware governance",
+  "query": "AI hardware governance stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "lfedgeai/AegisSovereignAI",
+      "html_url": "https://github.com/lfedgeai/AegisSovereignAI",
+      "description": "AegisSovereignAI: The Cross-Ecosystem Trust Layer for the Distributed Enterprise. Verifiable Identity, Hardware-Rooted Integrity, and Sovereign AI Governance - from Silicon to Prompt. Unifying AI, Cloud-Native, and Decentralized architectures.",
+      "stars": 20,
+      "pushed_at": "2026-05-02T14:48:53Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/lfedgeai/AegisSovereignAI"
+    }
+  ]
+}

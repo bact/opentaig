@@ -1,0 +1,27 @@
+{
+  "keyword": "topic:verifiable-computing",
+  "query": "topic:verifiable-computing stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 2,
+  "repos": [
+    {
+      "full_name": "microsoft/Spartan",
+      "html_url": "https://github.com/microsoft/Spartan",
+      "description": "Spartan: High-speed zkSNARKs without trusted setup",
+      "stars": 868,
+      "pushed_at": "2025-10-15T00:02:53Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Layr-Labs/eigensdk-rs",
+      "html_url": "https://github.com/Layr-Labs/eigensdk-rs",
+      "description": "EigenLayer Rust Developer Tooling",
+      "stars": 95,
+      "pushed_at": "2026-05-28T18:02:35Z",
+      "language": "Rust",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    }
+  ]
+}

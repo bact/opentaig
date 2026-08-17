@@ -1,0 +1,47 @@
+{
+  "keyword": "dynamic evaluation benchmark LLM",
+  "query": "dynamic evaluation benchmark LLM stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 4,
+  "repos": [
+    {
+      "full_name": "ethz-spylab/agentdojo",
+      "html_url": "https://github.com/ethz-spylab/agentdojo",
+      "description": "A Dynamic Environment to Evaluate Attacks and Defenses for LLM Agents.",
+      "stars": 754,
+      "pushed_at": "2026-06-02T10:01:31Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://agentdojo.spylab.ai/"
+    },
+    {
+      "full_name": "facebookresearch/meta-agents-research-environments",
+      "html_url": "https://github.com/facebookresearch/meta-agents-research-environments",
+      "description": "Meta Agents Research Environments is a comprehensive platform designed to evaluate AI agents in dynamic, realistic scenarios. Unlike static benchmarks, this platform introduces evolving environments where agents must adapt their strategies as new information becomes available, mirroring real-world challenges.",
+      "stars": 544,
+      "pushed_at": "2026-08-14T16:24:47Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://facebookresearch.github.io/meta-agents-research-environments/"
+    },
+    {
+      "full_name": "SeekingDream/Static-to-Dynamic-LLMEval",
+      "html_url": "https://github.com/SeekingDream/Static-to-Dynamic-LLMEval",
+      "description": "The official GitHub repository of the paper \"Recent advances in large language model benchmarks against data contamination: From static to dynamic evaluation\"",
+      "stars": 498,
+      "pushed_at": "2026-08-11T13:57:47Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": "https://arxiv.org/abs/2502.17521"
+    },
+    {
+      "full_name": "SeekingDream/DyCodeEval",
+      "html_url": "https://github.com/SeekingDream/DyCodeEval",
+      "description": "Official repository of the ICML2025 paper \u201cDynamic Benchmarking of Reasoning Capabilities in Code Large Language Models Under Data Contamination\u201d",
+      "stars": 225,
+      "pushed_at": "2025-12-23T14:50:22Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://arxiv.org/abs/2503.04149"
+    }
+  ]
+}

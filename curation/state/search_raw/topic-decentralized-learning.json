@@ -1,0 +1,47 @@
+{
+  "keyword": "topic:decentralized-learning",
+  "query": "topic:decentralized-learning stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 4,
+  "repos": [
+    {
+      "full_name": "JonasGeiping/breaching",
+      "html_url": "https://github.com/JonasGeiping/breaching",
+      "description": "Breaching privacy in federated learning scenarios for vision and text",
+      "stars": 323,
+      "pushed_at": "2026-01-24T17:46:49Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "epfml/disco",
+      "html_url": "https://github.com/epfml/disco",
+      "description": "DISCO is a code-free and installation-free browser platform that allows any non-technical user to collaboratively train machine learning models without sharing any private data.",
+      "stars": 187,
+      "pushed_at": "2026-08-14T14:49:33Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://discolab.ai"
+    },
+    {
+      "full_name": "Raiden-Zhu/Generalization-of-DSGD",
+      "html_url": "https://github.com/Raiden-Zhu/Generalization-of-DSGD",
+      "description": "The official implementation of the paper \"Topology-aware Generalization of Decentralized SGD\"",
+      "stars": 37,
+      "pushed_at": "2023-03-29T04:35:22Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "Raiden-Zhu/ICML-2023-DSGD-and-SAM",
+      "html_url": "https://github.com/Raiden-Zhu/ICML-2023-DSGD-and-SAM",
+      "description": "[ICML 2023] Decentralized SGD and Average-direction SAM are Asymptotically Equivalent",
+      "stars": 20,
+      "pushed_at": "2023-12-04T15:57:42Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://raiden-zhu.github.io/resources/"
+    }
+  ]
+}

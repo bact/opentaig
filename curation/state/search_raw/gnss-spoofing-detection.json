@@ -1,0 +1,27 @@
+{
+  "keyword": "GNSS spoofing detection",
+  "query": "GNSS spoofing detection stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 2,
+  "repos": [
+    {
+      "full_name": "alicmu2024/GNSS-Jamming-Detection-and-Classification-using-Machine-Learning-Deep-Learning-and-Computer-Vision",
+      "html_url": "https://github.com/alicmu2024/GNSS-Jamming-Detection-and-Classification-using-Machine-Learning-Deep-Learning-and-Computer-Vision",
+      "description": "GNSS/GPS Spoofing and Jamming Detection and Classification Using Machine Learning, Deep Learning, and Computer Vision",
+      "stars": 63,
+      "pushed_at": "2025-11-17T14:13:24Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "josephtule/GPS-Spoofing-Detect",
+      "html_url": "https://github.com/josephtule/GPS-Spoofing-Detect",
+      "description": "GNSS/GPS Spoofing Detection",
+      "stars": 34,
+      "pushed_at": "2022-01-28T03:01:22Z",
+      "language": "MATLAB",
+      "license_spdx_id": "",
+      "homepage": ""
+    }
+  ]
+}

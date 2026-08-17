@@ -1,0 +1,77 @@
+{
+  "keyword": "neural network fingerprinting",
+  "query": "neural network fingerprinting stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 7,
+  "repos": [
+    {
+      "full_name": "masashitsubaki/molecularGNN_smiles",
+      "html_url": "https://github.com/masashitsubaki/molecularGNN_smiles",
+      "description": "The code of a graph neural network (GNN) for molecules, which is based on learning representations of r-radius subgraphs (i.e., fingerprints) in molecules.",
+      "stars": 339,
+      "pushed_at": "2026-06-25T08:44:06Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "huankoh/PSICHIC",
+      "html_url": "https://github.com/huankoh/PSICHIC",
+      "description": "PSICHIC (pronounced Psychic) - PhySIcoCHemICal graph neural network for learning protein-ligand interaction fingerprints from sequence data",
+      "stars": 142,
+      "pushed_at": "2026-04-09T04:50:29Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "stdio2016/pfann",
+      "html_url": "https://github.com/stdio2016/pfann",
+      "description": "Neural Network Audio FingerPrint",
+      "stars": 65,
+      "pushed_at": "2023-03-05T04:10:24Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "SensorOrgNet/Recurrent_Neural_Networks_for_Accurate_RSSI_Indoor_Localization",
+      "html_url": "https://github.com/SensorOrgNet/Recurrent_Neural_Networks_for_Accurate_RSSI_Indoor_Localization",
+      "description": "Source code for M.T. Hoang, B. Yuen, X. Dong, T. Lu, R. Westendorp and K. Reddy, \u201cRecurrent Neural Networks for Accurate RSSI Indoor Localization,\u201d IEEE Internet of Things Journal, 2019",
+      "stars": 60,
+      "pushed_at": "2022-03-23T04:54:11Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "http://sensor-net.net"
+    },
+    {
+      "full_name": "krishna111809/fingerprint-based-blood-group-detection",
+      "html_url": "https://github.com/krishna111809/fingerprint-based-blood-group-detection",
+      "description": "This repository presents an innovative approach to classifying blood groups using fingerprint images through deep learning techniques. The project explores state-of-the-art convolutional neural network (CNN) architectures, such as ResNet, VGG16, AlexNet, and LeNet, to analyze and predict blood groups accurately.",
+      "stars": 47,
+      "pushed_at": "2024-11-12T10:46:23Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "jmhIcoding/fgnet",
+      "html_url": "https://github.com/jmhIcoding/fgnet",
+      "description": "Accurate Mobile-App Fingerprinting Using Flow-level Relationship with Graph Neural Networks",
+      "stars": 38,
+      "pushed_at": "2022-08-28T03:01:35Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "hcji/DeepEI",
+      "html_url": "https://github.com/hcji/DeepEI",
+      "description": "Predicting molecular fingerprint from electron\u2212ionization mass spectrum with deep neural networks",
+      "stars": 35,
+      "pushed_at": "2024-03-21T05:52:00Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    }
+  ]
+}

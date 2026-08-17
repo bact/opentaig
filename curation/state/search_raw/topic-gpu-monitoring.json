@@ -1,13 +1,13 @@
 {
   "keyword": "topic:gpu-monitoring",
-  "query": "topic:gpu-monitoring stars:>19 pushed:>2025-08-07 archived:false fork:false",
-  "count": 37,
+  "query": "topic:gpu-monitoring stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 48,
   "repos": [
     {
       "full_name": "XuehaiPan/nvitop",
       "html_url": "https://github.com/XuehaiPan/nvitop",
       "description": "An interactive NVIDIA-GPU process viewer and beyond, the one-stop solution for GPU process management.",
-      "stars": 7092,
+      "stars": 7104,
       "pushed_at": "2026-07-27T05:01:07Z",
       "language": "Python",
       "license_spdx_id": "Apache-2.0",
@@ -17,8 +17,8 @@
       "full_name": "openlit/openlit",
       "html_url": "https://github.com/openlit/openlit",
       "description": "Open source platform for AI Engineering: OpenTelemetry-native LLM Observability, GPU Monitoring, Guardrails, Evaluations, Prompt Management, Vault, Playground. \ud83d\ude80\ud83d\udcbb Integrates with 50+ LLM Providers, VectorDBs, Agent Frameworks and GPUs.",
-      "stars": 2674,
-      "pushed_at": "2026-08-03T10:38:23Z",
+      "stars": 2695,
+      "pushed_at": "2026-08-17T10:35:57Z",
       "language": "TypeScript",
       "license_spdx_id": "Apache-2.0",
       "homepage": "https://docs.openlit.io"
@@ -27,8 +27,8 @@
       "full_name": "rbonghi/jetson_stats",
       "html_url": "https://github.com/rbonghi/jetson_stats",
       "description": "\ud83d\udcca Simple package for monitoring and control your NVIDIA Jetson [Orin, Xavier, Nano, TX] series",
-      "stars": 2606,
-      "pushed_at": "2026-07-30T02:18:47Z",
+      "stars": 2611,
+      "pushed_at": "2026-08-09T08:40:36Z",
       "language": "Python",
       "license_spdx_id": "AGPL-3.0",
       "homepage": "https://rnext.it/jetson_stats"
@@ -47,7 +47,7 @@
       "full_name": "vladkens/macmon",
       "html_url": "https://github.com/vladkens/macmon",
       "description": "\ud83e\udd80\ud83c\udf21\ufe0f Real-time system monitor for Apple Silicon Macs (M1\u2013M5). No sudo. TUI, JSON/Prometheus metrics server, and Rust library.",
-      "stars": 1787,
+      "stars": 1809,
       "pushed_at": "2026-08-04T16:26:01Z",
       "language": "Rust",
       "license_spdx_id": "MIT",
@@ -57,7 +57,7 @@
       "full_name": "psalias2006/gpu-hot",
       "html_url": "https://github.com/psalias2006/gpu-hot",
       "description": "\ud83d\udd25 Real-time NVIDIA GPU dashboard",
-      "stars": 1593,
+      "stars": 1620,
       "pushed_at": "2026-07-18T16:57:35Z",
       "language": "JavaScript",
       "license_spdx_id": "MIT",
@@ -67,7 +67,7 @@
       "full_name": "metaspartan/mactop",
       "html_url": "https://github.com/metaspartan/mactop",
       "description": "mactop - Apple Silicon Monitor Top",
-      "stars": 1550,
+      "stars": 1568,
       "pushed_at": "2026-07-29T10:28:56Z",
       "language": "Go",
       "license_spdx_id": "MIT",
@@ -77,8 +77,8 @@
       "full_name": "Atoptool/atop",
       "html_url": "https://github.com/Atoptool/atop",
       "description": "System and process monitor for Linux",
-      "stars": 1042,
-      "pushed_at": "2026-07-21T07:21:47Z",
+      "stars": 1046,
+      "pushed_at": "2026-08-15T10:33:16Z",
       "language": "C",
       "license_spdx_id": "GPL-2.0",
       "homepage": ""
@@ -88,7 +88,7 @@
       "html_url": "https://github.com/nickbabcock/OhmGraphite",
       "description": "Expose hardware sensor data to Graphite / InfluxDB / Prometheus / Postgres / Timescaledb",
       "stars": 532,
-      "pushed_at": "2026-07-24T02:46:46Z",
+      "pushed_at": "2026-08-15T16:59:23Z",
       "language": "C#",
       "license_spdx_id": "NOASSERTION",
       "homepage": ""
@@ -104,10 +104,20 @@
       "homepage": ""
     },
     {
+      "full_name": "mikeroyal/GPU-Guide",
+      "html_url": "https://github.com/mikeroyal/GPU-Guide",
+      "description": "Graphics Processing Unit (GPU) Architecture Guide",
+      "stars": 318,
+      "pushed_at": "2022-02-01T23:35:02Z",
+      "language": "Shell",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
       "full_name": "ProjectPhysX/hw-smi",
       "html_url": "https://github.com/ProjectPhysX/hw-smi",
       "description": "A minimal, cross-compatible CPU/GPU telemetry monitor with accurate data directly from vendor APIs and beautiful ASCII visualization.",
-      "stars": 290,
+      "stars": 299,
       "pushed_at": "2026-06-24T19:49:38Z",
       "language": "C++",
       "license_spdx_id": "NOASSERTION",
@@ -134,40 +144,60 @@
       "homepage": ""
     },
     {
-      "full_name": "shm11C3/HardwareVisualizer",
-      "html_url": "https://github.com/shm11C3/HardwareVisualizer",
-      "description": "A cross-platform hardware monitor with real-time dashboards, usage graphs, and customizable visualizations.",
-      "stars": 175,
-      "pushed_at": "2026-08-07T04:02:41Z",
-      "language": "Rust",
+      "full_name": "cnstark/gputasker",
+      "html_url": "https://github.com/cnstark/gputasker",
+      "description": "An awesome gpu tasks scheduler. \u8f7b\u91cf\u597d\u7528\u7684GPU\u673a\u7fa4\u4efb\u52a1\u8c03\u5ea6\u5de5\u5177\u3002\u89c9\u5f97\u6709\u7528\u53ef\u4ee5\u70b9\u4e2astar",
+      "stars": 206,
+      "pushed_at": "2022-08-19T04:48:01Z",
+      "language": "Python",
       "license_spdx_id": "MIT",
-      "homepage": "https://hardviz.com/"
+      "homepage": ""
     },
     {
       "full_name": "SikamikanikoBG/homelab-monitor",
       "html_url": "https://github.com/SikamikanikoBG/homelab-monitor",
       "description": "Plug-and-play homelab dashboard in one container \u2014 GPU, local-AI VRAM, Docker, systemd, host health. Built-in read-only MCP server so AI agents can explore it too.",
-      "stars": 172,
-      "pushed_at": "2026-08-06T14:38:29Z",
+      "stars": 182,
+      "pushed_at": "2026-08-17T13:10:46Z",
       "language": "Python",
       "license_spdx_id": "MIT",
       "homepage": "https://sikamikanikobg.github.io/homelab-monitor/"
     },
     {
+      "full_name": "shm11C3/HardwareVisualizer",
+      "html_url": "https://github.com/shm11C3/HardwareVisualizer",
+      "description": "A cross-platform hardware monitor with real-time dashboards, usage graphs, and customizable visualizations.",
+      "stars": 178,
+      "pushed_at": "2026-08-17T13:42:17Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": "https://hardviz.com/"
+    },
+    {
       "full_name": "RafhaanShah/grAfterburner",
       "html_url": "https://github.com/RafhaanShah/grAfterburner",
       "description": "Monitor your PC in style with Grafana and MSI Afterburner",
-      "stars": 158,
+      "stars": 157,
       "pushed_at": "2025-09-08T20:53:42Z",
       "language": "",
       "license_spdx_id": "MIT",
       "homepage": ""
     },
     {
+      "full_name": "Ricks-Lab/gpu-utils",
+      "html_url": "https://github.com/Ricks-Lab/gpu-utils",
+      "description": "A set of utilities for monitoring and customizing GPU performance",
+      "stars": 154,
+      "pushed_at": "2024-05-31T07:27:12Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
       "full_name": "peva3/SmarterRouter",
       "html_url": "https://github.com/peva3/SmarterRouter",
       "description": "SmarterRouter: An intelligent LLM gateway and VRAM-aware router for Ollama, llama.cpp, and OpenAI. Features semantic caching, model profiling, and automatic failover for local AI labs.",
-      "stars": 146,
+      "stars": 148,
       "pushed_at": "2026-05-10T02:47:50Z",
       "language": "Python",
       "license_spdx_id": "MIT",
@@ -177,8 +207,8 @@
       "full_name": "pmady/keda-gpu-scaler",
       "html_url": "https://github.com/pmady/keda-gpu-scaler",
       "description": "KEDA External gRPC Scaler for GPU workloads - native NVML metrics via DaemonSet, no Prometheus required",
-      "stars": 113,
-      "pushed_at": "2026-08-05T10:38:24Z",
+      "stars": 115,
+      "pushed_at": "2026-08-14T20:01:08Z",
       "language": "Go",
       "license_spdx_id": "Apache-2.0",
       "homepage": "https://keda-gpu-scaler.readthedocs.io/en/latest/"
@@ -187,7 +217,7 @@
       "full_name": "niklasfrick/spark-dashboard",
       "html_url": "https://github.com/niklasfrick/spark-dashboard",
       "description": "Real-time hardware and LLM inference monitoring \u2014 GPU, CPU, memory, and vLLM metrics streamed to a dashboard.",
-      "stars": 88,
+      "stars": 101,
       "pushed_at": "2026-07-28T09:31:58Z",
       "language": "TypeScript",
       "license_spdx_id": "MIT",
@@ -207,7 +237,7 @@
       "full_name": "brontoguana/ktop",
       "html_url": "https://github.com/brontoguana/ktop",
       "description": "Terminal system resource monitor for hybrid LLM workloads",
-      "stars": 84,
+      "stars": 85,
       "pushed_at": "2026-05-06T18:17:07Z",
       "language": "Rust",
       "license_spdx_id": "",
@@ -237,8 +267,8 @@
       "full_name": "helasaoudi/llm-inspector",
       "html_url": "https://github.com/helasaoudi/llm-inspector",
       "description": "The htop for LLM inference  see exactly where every GB of VRAM goes and get measured quantization savings.",
-      "stars": 66,
-      "pushed_at": "2026-07-22T07:58:37Z",
+      "stars": 69,
+      "pushed_at": "2026-08-11T10:19:05Z",
       "language": "Python",
       "license_spdx_id": "MIT",
       "homepage": ""
@@ -247,11 +277,31 @@
       "full_name": "last9/gpu-telemetry",
       "html_url": "https://github.com/last9/gpu-telemetry",
       "description": "GPU Observability with workload attribution. One OTLP agent per node ties hardware metrics (NVIDIA, AMD, Intel Gaudi) to the K8s pod or Slurm job burning the GPU.",
-      "stars": 57,
+      "stars": 58,
       "pushed_at": "2026-08-02T09:12:57Z",
       "language": "Python",
       "license_spdx_id": "MIT",
       "homepage": "https://last9.io/gpu-observability/"
+    },
+    {
+      "full_name": "b3rs3rk/gpustat-unraid",
+      "html_url": "https://github.com/b3rs3rk/gpustat-unraid",
+      "description": "An UnRAID plugin for displaying GPU status",
+      "stars": 50,
+      "pushed_at": "2025-04-23T12:52:10Z",
+      "language": "PHP",
+      "license_spdx_id": "MIT",
+      "homepage": "https://forums.unraid.net/topic/89453-plugin-gpu-statistics/?tab=comments#comment-830112"
+    },
+    {
+      "full_name": "curtisgray/wingman",
+      "html_url": "https://github.com/curtisgray/wingman",
+      "description": "Wingman is the fastest and easiest way to run Llama models on your PC or Mac.",
+      "stars": 47,
+      "pushed_at": "2024-06-02T01:47:47Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://curtisgray.github.io/wingman/"
     },
     {
       "full_name": "Orange-OpenSource/cppuprofile",
@@ -264,14 +314,24 @@
       "homepage": ""
     },
     {
-      "full_name": "reacher-z/gpu-monitor",
-      "html_url": "https://github.com/reacher-z/gpu-monitor",
-      "description": "Lightweight NVIDIA GPU monitor \u2014 alerts on Slack/Discord/Telegram/20 channels when training crashes or GPU overheats. Zero dependencies. Single file.",
-      "stars": 39,
-      "pushed_at": "2026-03-08T12:32:24Z",
-      "language": "Python",
+      "full_name": "hongshibao/gpu-monitoring-docker-compose",
+      "html_url": "https://github.com/hongshibao/gpu-monitoring-docker-compose",
+      "description": "Docker compose file to set up NVIDIA GPU monitoring on a single server",
+      "stars": 40,
+      "pushed_at": "2022-08-16T09:35:47Z",
+      "language": "Shell",
       "license_spdx_id": "MIT",
-      "homepage": "https://reacher-z.github.io/gpu-monitor/"
+      "homepage": ""
+    },
+    {
+      "full_name": "kubeara/core",
+      "html_url": "https://github.com/kubeara/core",
+      "description": "Self-hosted PaaS for private infrastructure.  Deploy 200+ services on any server in one click.  GPU monitoring, AI model management,  VRAM checker, and MCP built in.  Coolify alternative. MIT licensed. Free forever.",
+      "stars": 39,
+      "pushed_at": "2026-08-17T13:58:39Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://kubeara.dev/"
     },
     {
       "full_name": "bigsk1/gpu-monitor",
@@ -282,16 +342,6 @@
       "language": "HTML",
       "license_spdx_id": "MIT",
       "homepage": "https://github.com/bigsk1/gpu-monitor/wiki"
-    },
-    {
-      "full_name": "kubeara/core",
-      "html_url": "https://github.com/kubeara/core",
-      "description": "Self-hosted PaaS for private infrastructure.  Deploy 200+ services on any server in one click.  GPU monitoring, AI model management,  VRAM checker, and MCP built in.  Coolify alternative. MIT licensed. Free forever.",
-      "stars": 38,
-      "pushed_at": "2026-08-07T10:26:38Z",
-      "language": "TypeScript",
-      "license_spdx_id": "MIT",
-      "homepage": "https://kubeara.dev/"
     },
     {
       "full_name": "KempnerInstitute/kempnerpulse",
@@ -317,18 +367,28 @@
       "full_name": "AppControlLabs/appcontrol-mcp-go",
       "html_url": "https://github.com/AppControlLabs/appcontrol-mcp-go",
       "description": "AppControl MCP is a local server connecting AI agents and IDEs like Claude, Cursor, and Windsurf to system history provided by the AppControl desktop app. Ask which apps used CPU, GPU, RAM, or disk, and what caused slowdowns, heat spikes, or webcam, mic, and location access. Built for deep historical monitoring and useful real-world PC insights.",
-      "stars": 37,
+      "stars": 36,
       "pushed_at": "2026-08-02T23:15:19Z",
       "language": "Go",
       "license_spdx_id": "MIT",
       "homepage": "https://www.appcontrol.com"
     },
     {
+      "full_name": "reacher-z/gpu-monitor",
+      "html_url": "https://github.com/reacher-z/gpu-monitor",
+      "description": "Lightweight NVIDIA GPU monitor \u2014 alerts on Slack/Discord/Telegram/20 channels when training crashes or GPU overheats. Zero dependencies. Single file.",
+      "stars": 36,
+      "pushed_at": "2026-03-08T12:32:24Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://reacher-z.github.io/gpu-monitor/"
+    },
+    {
       "full_name": "damachine/coolerdash",
       "html_url": "https://github.com/damachine/coolerdash",
       "description": "Plug-in for CoolerControl that extends the LCD functionality with additional features",
-      "stars": 34,
-      "pushed_at": "2026-07-31T12:10:42Z",
+      "stars": 35,
+      "pushed_at": "2026-08-15T19:10:19Z",
       "language": "C",
       "license_spdx_id": "MIT",
       "homepage": ""
@@ -347,10 +407,50 @@
       "full_name": "zen66ten/NIX-Z",
       "html_url": "https://github.com/zen66ten/NIX-Z",
       "description": "NIX-Z is a hardware monitoring suite for Linux, inspired by HWiNFO64.",
-      "stars": 31,
+      "stars": 33,
       "pushed_at": "2026-08-03T22:26:20Z",
       "language": "Go",
       "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "djosix/servstat",
+      "html_url": "https://github.com/djosix/servstat",
+      "description": "Server resource and GPU process monitor.",
+      "stars": 33,
+      "pushed_at": "2023-06-01T18:53:20Z",
+      "language": "Vue",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "tonyd2wild/The-Sparky-Command-Center",
+      "html_url": "https://github.com/tonyd2wild/The-Sparky-Command-Center",
+      "description": "Plug-and-play, dependency-free web command center for DGX Spark fleets (and any GPU boxes): live per-node GPU/CPU/mem/temps/power, optional RouterOS switch monitoring, and per-model decode/prefill/TTFT/KV cards. Point it at your own hardware.",
+      "stars": 32,
+      "pushed_at": "2026-08-16T15:16:22Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "secsilm/bifrost",
+      "html_url": "https://github.com/secsilm/bifrost",
+      "description": "Connect gpus with your eyes.",
+      "stars": 25,
+      "pushed_at": "2023-05-01T20:33:32Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "AI-Ocean/Ocean",
+      "html_url": "https://github.com/AI-Ocean/Ocean",
+      "description": "GPU management System on Kubernetes For AI, Deep-Learning, Machine-Learning Researcher.",
+      "stars": 24,
+      "pushed_at": "2023-10-29T14:10:34Z",
+      "language": "",
+      "license_spdx_id": "",
       "homepage": ""
     },
     {
@@ -372,6 +472,16 @@
       "language": "C++",
       "license_spdx_id": "BSD-3-Clause",
       "homepage": "https://qengineering.eu/"
+    },
+    {
+      "full_name": "deep-on/dockprobe",
+      "html_url": "https://github.com/deep-on/dockprobe",
+      "description": "Lightweight Docker monitoring dashboard with anomaly detection & Telegram alerts. One-liner install, zero config.",
+      "stars": 20,
+      "pushed_at": "2026-04-11T08:07:46Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://hub.docker.com/r/deeponinc/dockprobe"
     }
   ]
 }

@@ -1,0 +1,87 @@
+{
+  "keyword": "benchmark contamination LLM",
+  "query": "benchmark contamination LLM stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 8,
+  "repos": [
+    {
+      "full_name": "LiveBench/LiveBench",
+      "html_url": "https://github.com/LiveBench/LiveBench",
+      "description": "LiveBench: A Challenging, Contamination-Free LLM Benchmark",
+      "stars": 1287,
+      "pushed_at": "2026-08-17T01:41:23Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "SeekingDream/Static-to-Dynamic-LLMEval",
+      "html_url": "https://github.com/SeekingDream/Static-to-Dynamic-LLMEval",
+      "description": "The official GitHub repository of the paper \"Recent advances in large language model benchmarks against data contamination: From static to dynamic evaluation\"",
+      "stars": 498,
+      "pushed_at": "2026-08-11T13:57:47Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": "https://arxiv.org/abs/2502.17521"
+    },
+    {
+      "full_name": "lm-sys/llm-decontaminator",
+      "html_url": "https://github.com/lm-sys/llm-decontaminator",
+      "description": "Code for the paper \"Rethinking Benchmark and Contamination for Language Models with Rephrased Samples\"",
+      "stars": 325,
+      "pushed_at": "2023-12-20T22:33:26Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "SeekingDream/DyCodeEval",
+      "html_url": "https://github.com/SeekingDream/DyCodeEval",
+      "description": "Official repository of the ICML2025 paper \u201cDynamic Benchmarking of Reasoning Capabilities in Code Large Language Models Under Data Contamination\u201d",
+      "stars": 225,
+      "pushed_at": "2025-12-23T14:50:22Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://arxiv.org/abs/2503.04149"
+    },
+    {
+      "full_name": "microsoft/MMLU-CF",
+      "html_url": "https://github.com/microsoft/MMLU-CF",
+      "description": "A Contamination-free Multi-task Language Understanding Benchmark [Official, ACL 2025]",
+      "stars": 126,
+      "pushed_at": "2025-05-17T16:52:16Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": "https://arxiv.org/pdf/2412.15194"
+    },
+    {
+      "full_name": "forecastingresearch/forecastbench",
+      "html_url": "https://github.com/forecastingresearch/forecastbench",
+      "description": "Forecastbench is a dynamic, contamination-free benchmark of LLM forecasting accuracy with human comparison groups, serving as a valuable proxy for general intelligence.",
+      "stars": 80,
+      "pushed_at": "2026-08-17T15:45:14Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.forecastbench.org"
+    },
+    {
+      "full_name": "diohabara/pychd",
+      "html_url": "https://github.com/diohabara/pychd",
+      "description": "Python .pyc decompiler (3.0\u20133.14) with a contamination-aware benchmark harness. Rule-only pass + one Codex call per module; evaluated on fuzz-synthetic (LLM-na\u00efve) and *-obf (anonymised) corpora to put a number on the memorisation share. Three independent PyPI packages: pychd, pychd-pyfuzz, pychd-pyobf.",
+      "stars": 53,
+      "pushed_at": "2026-05-27T14:51:44Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "llmeval/Llmeval-Gaokao2024-Math",
+      "html_url": "https://github.com/llmeval/Llmeval-Gaokao2024-Math",
+      "description": "LLM evaluation on 2024 Chinese Gaokao Mathematics \u2014 zero-contamination benchmark with dual prompt formats",
+      "stars": 21,
+      "pushed_at": "2026-04-15T15:15:29Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "keyword": "AI risk allocation",
+  "query": "AI risk allocation stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 2,
+  "repos": [
+    {
+      "full_name": "Deveshsaipandian/Offline-Multimodal-Financial-Intelligent-System-",
+      "html_url": "https://github.com/Deveshsaipandian/Offline-Multimodal-Financial-Intelligent-System-",
+      "description": "An offline multimodal AI system that analyzes documents, images, and audio to support financial risk assessment, insurance claim verification, and relief fund allocation during disasters. Designed for low-connectivity environments with privacy-preserving, citation-backed insights.",
+      "stars": 63,
+      "pushed_at": "2026-02-02T16:42:19Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "",
+      "homepage": "https://offline-multimodal-financial-intell.vercel.app"
+    },
+    {
+      "full_name": "DavieObi/Smart-Loan-Recovery-System",
+      "html_url": "https://github.com/DavieObi/Smart-Loan-Recovery-System",
+      "description": "The Smart Loan Recovery System is an AI-driven solution that predicts loan default risk using ML, segments borrowers, and assigns dynamic, tailored recovery strategies. It enhances efficiency, optimizes resource allocation, and improves loan recovery rates for effective debt management.",
+      "stars": 55,
+      "pushed_at": "2025-10-18T17:21:52Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}

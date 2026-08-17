@@ -1,0 +1,97 @@
+{
+  "keyword": "topic:representation-engineering",
+  "query": "topic:representation-engineering stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 9,
+  "repos": [
+    {
+      "full_name": "vgel/repeng",
+      "html_url": "https://github.com/vgel/repeng",
+      "description": "A library for making RepE control vectors",
+      "stars": 755,
+      "pushed_at": "2025-09-24T02:03:28Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://vgel.me/posts/representation-engineering/"
+    },
+    {
+      "full_name": "wisent-ai/ster",
+      "html_url": "https://github.com/wisent-ai/ster",
+      "description": "Native Rust representation reading and activation steering for open-weight language models.",
+      "stars": 344,
+      "pushed_at": "2026-08-12T06:28:32Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.wisent.ai/documentation/ster"
+    },
+    {
+      "full_name": "IBM/activation-steering",
+      "html_url": "https://github.com/IBM/activation-steering",
+      "description": "[ICLR 2025] General-purpose activation steering library",
+      "stars": 182,
+      "pushed_at": "2025-09-18T01:41:31Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://arxiv.org/abs/2409.05907"
+    },
+    {
+      "full_name": "steering-vectors/steering-vectors",
+      "html_url": "https://github.com/steering-vectors/steering-vectors",
+      "description": "Steering vectors for transformer language models in Pytorch / Huggingface",
+      "stars": 162,
+      "pushed_at": "2025-02-21T21:13:58Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://steering-vectors.github.io/steering-vectors/"
+    },
+    {
+      "full_name": "chrisliu298/awesome-representation-engineering",
+      "html_url": "https://github.com/chrisliu298/awesome-representation-engineering",
+      "description": "A resource repository for representation engineering in large language models",
+      "stars": 156,
+      "pushed_at": "2024-11-14T21:03:30Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "AISmithLab/CoBRA",
+      "html_url": "https://github.com/AISmithLab/CoBRA",
+      "description": "[\ud83c\udfc6 CHI26 Best Paper] CoBRA: Reproducible control of LLM agent behavior via classic social science experiments",
+      "stars": 96,
+      "pushed_at": "2026-04-21T03:40:42Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://cobra.clawder.ai/"
+    },
+    {
+      "full_name": "MaxBelitsky/cache-steering",
+      "html_url": "https://github.com/MaxBelitsky/cache-steering",
+      "description": "KV Cache Steering for Inducing Reasoning in Small Language Models",
+      "stars": 50,
+      "pushed_at": "2025-07-24T04:27:03Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://arxiv.org/abs/2507.08799"
+    },
+    {
+      "full_name": "krnel-ai/krnel-graph",
+      "html_url": "https://github.com/krnel-ai/krnel-graph",
+      "description": "Lightweight representation engineering dataflow operations for agent developers.",
+      "stars": 23,
+      "pushed_at": "2026-05-27T23:49:11Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://krnel.ai"
+    },
+    {
+      "full_name": "moudrkat/steeropathy",
+      "html_url": "https://github.com/moudrkat/steeropathy",
+      "description": "Agents that talk through model internals \u2014 activations & J-space \u2014 instead of text. No words pass between them. The lab on top of brainscope + hidden-directions.",
+      "stars": 22,
+      "pushed_at": "2026-08-03T13:20:50Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}
