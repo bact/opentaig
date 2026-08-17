@@ -1,0 +1,17 @@
+{
+  "keyword": "membership inference defense",
+  "query": "membership inference defense stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "Machine-Learning-Security-Lab/mia_prune",
+      "html_url": "https://github.com/Machine-Learning-Security-Lab/mia_prune",
+      "description": "Membership Inference Attacks and Defenses in Neural Network Pruning",
+      "stars": 28,
+      "pushed_at": "2022-07-12T18:08:00Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    }
+  ]
+}

@@ -379,19 +379,20 @@ Usage:
     python curation/collect_project_metadata.py --fields keywords,sponsors,documentation \\
         --out curation/state/backfill.csv --restart
 """
-from __future__ import annotations
-
 import argparse
 import csv
 import datetime
 import json
 import os
 import re
+import sys
 import time
 import tomllib
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from urllib.parse import quote
+
+csv.field_size_limit(sys.maxsize)
 
 import requests
 import yaml

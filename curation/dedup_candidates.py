@@ -36,6 +36,7 @@ import argparse
 import csv
 import json
 import re
+import sys
 from pathlib import Path
 
 REPO_PATH_RE = re.compile(r"github\.com[:/]+([^/]+/[^/.]+?)(?:\.git)?/?$")
@@ -73,6 +74,7 @@ def load_seen_repos(seen_path: Path) -> dict:
 
 
 def main() -> None:
+    csv.field_size_limit(sys.maxsize)
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--candidates", default="curation/state/search_candidates.csv")
     parser.add_argument("--data-json", default="site/data.json")

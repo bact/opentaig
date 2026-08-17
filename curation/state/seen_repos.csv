@@ -1712,3 +1712,23 @@ Babelscape/ALERT,accept,,,NOASSERTION,source-available,(Multi-)Agent Evaluations
 modelscope/evalscope,accept,,,Apache-2.0,osi-approved,(Multi-)Agent Evaluations,efficient LLM evaluation,3250,2026-08-17T15:42:30+00:00
 kajogo777/the-agent-sandbox-taxonomy,reject,not-a-tool-linklist,Does not provide direct mechanisms for candidate RQs,,none-declared,(Multi-)Agent Evaluations,agent sandboxing evaluation,96,2026-08-17T15:42:30+00:00
 makalin/SecureMCP,accept,,,MIT,osi-approved,(Multi-)Agent Evaluations,topic:prompt-injection,140,2026-08-17T15:42:30+00:00
+arx-deidentifier/arx,accept,,,Apache-2.0,osi-approved,Modification Resistance and Unlearning,topic:data-anonymization,733,2026-08-17T16:20:34+00:00
+securitybunker/databunker,reject,not-relevant,Does not provide direct mechanisms for candidate RQs,MIT,osi-approved,Modification Resistance and Unlearning,topic:data-anonymization,1481,2026-08-17T16:20:34+00:00
+thoughtbot/top_secret,reject,not-relevant,Does not provide direct mechanisms for candidate RQs,MIT,osi-approved,Modification Resistance and Unlearning,topic:data-anonymization,414,2026-08-17T16:20:34+00:00
+iamgroot42/mimir,reject,not-relevant,Does not provide direct mechanisms for candidate RQs,MIT,osi-approved,Modification Resistance and Unlearning,topic:membership-inference,195,2026-08-17T16:20:34+00:00
+statice/anonymeter,accept,,,NOASSERTION,source-available,Modification Resistance and Unlearning,synthetic data privacy,108,2026-08-17T16:20:34+00:00
+lxuechen/private-transformers,accept,,,Apache-2.0,osi-approved,Modification Resistance and Unlearning,topic:differential-privacy,189,2026-08-17T16:20:34+00:00
+BorealisAI/private-data-generation,accept,,,NOASSERTION,source-available,Modification Resistance and Unlearning,topic:differential-privacy,132,2026-08-17T16:20:34+00:00
+OPTML-Group/UnlearnCanvas,accept,,,,none-declared,Modification Resistance and Unlearning,machine unlearning benchmark,88,2026-08-17T16:20:34+00:00
+yaojin17/Unlearning_LLM,accept,,,MIT,osi-approved,Modification Resistance and Unlearning,topic:machine-unlearning,68,2026-08-17T16:20:34+00:00
+NVIDIA-NeMo/Curator,accept,,,Apache-2.0,osi-approved,Modification Resistance and Unlearning,topic:data-curation,1716,2026-08-17T16:20:34+00:00
+visual-layer/fastdup,reject,not-relevant,Does not provide direct mechanisms for candidate RQs,NOASSERTION,source-available,Modification Resistance and Unlearning,topic:data-curation,1903,2026-08-17T16:20:34+00:00
+Renumics/sliceguard,reject,not-relevant,Does not provide direct mechanisms for candidate RQs,MIT,osi-approved,Modification Resistance and Unlearning,topic:data-curation,66,2026-08-17T16:20:34+00:00
+ArtLabss/open-data-anonymizer,accept,,,BSD-3-Clause,osi-approved,Modification Resistance and Unlearning,topic:data-anonymization,303,2026-08-17T16:20:34+00:00
+MinChen00/Graph-Unlearning,accept,,,,none-declared,Modification Resistance and Unlearning,topic:machine-unlearning,54,2026-08-17T16:20:34+00:00
+mims-harvard/GNNDelete,accept,,,MIT,osi-approved,Modification Resistance and Unlearning,topic:machine-unlearning,48,2026-08-17T16:20:34+00:00
+chrisliu298/llm-unlearn-eco,accept,,,,none-declared,Modification Resistance and Unlearning,topic:machine-unlearning,41,2026-08-17T16:20:34+00:00
+ndb796/MachineUnlearning,accept,,,Apache-2.0,osi-approved,Modification Resistance and Unlearning,machine unlearning benchmark,66,2026-08-17T16:20:34+00:00
+AI-secure/aug-pe,accept,,,Apache-2.0,osi-approved,Modification Resistance and Unlearning,topic:differential-privacy,61,2026-08-17T16:20:34+00:00
+tiktok-privacy-innovation/PrivacyGo,reject,not-relevant,Does not provide direct mechanisms for candidate RQs,Apache-2.0,osi-approved,Modification Resistance and Unlearning,topic:differential-privacy,167,2026-08-17T16:20:34+00:00
+sisaman/GAP,accept,,,CC0-1.0,free-not-osi,Modification Resistance and Unlearning,topic:differential-privacy,50,2026-08-17T16:20:34+00:00

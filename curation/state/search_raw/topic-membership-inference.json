@@ -1,14 +1,14 @@
 {
   "keyword": "topic:membership-inference",
-  "query": "topic:membership-inference stars:>19 pushed:>2025-07-29 archived:false fork:false",
-  "count": 6,
+  "query": "topic:membership-inference stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 8,
   "repos": [
     {
       "full_name": "tamlhp/awesome-machine-unlearning",
       "html_url": "https://github.com/tamlhp/awesome-machine-unlearning",
       "description": "Awesome Machine Unlearning (A Survey of Machine Unlearning)",
-      "stars": 965,
-      "pushed_at": "2026-07-06T01:05:57Z",
+      "stars": 962,
+      "pushed_at": "2026-08-13T13:07:13Z",
       "language": "Jupyter Notebook",
       "license_spdx_id": "MIT",
       "homepage": "https://awesome-machine-unlearning.github.io/"
@@ -17,7 +17,7 @@
       "full_name": "locuslab/open-unlearning",
       "html_url": "https://github.com/locuslab/open-unlearning",
       "description": "[NeurIPS D&B '25] The one-stop repository for LLM unlearning",
-      "stars": 574,
+      "stars": 586,
       "pushed_at": "2026-03-18T15:31:54Z",
       "language": "Python",
       "license_spdx_id": "MIT",
@@ -34,10 +34,20 @@
       "homepage": "https://koukyosyumei.github.io/AIJack/"
     },
     {
+      "full_name": "iamgroot42/mimir",
+      "html_url": "https://github.com/iamgroot42/mimir",
+      "description": "Python package for measuring memorization in LLMs.",
+      "stars": 195,
+      "pushed_at": "2025-07-16T02:55:46Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://iamgroot42.github.io/mimir/"
+    },
+    {
       "full_name": "OPTML-Group/Unlearn-Saliency",
       "html_url": "https://github.com/OPTML-Group/Unlearn-Saliency",
       "description": "[ICLR24 (Spotlight)] \"SalUn: Empowering Machine Unlearning via Gradient-based Weight Saliency in Both Image Classification and Generation\" by Chongyu Fan*, Jiancheng Liu*, Yihua Zhang, Eric Wong, Dennis Wei, Sijia Liu",
-      "stars": 150,
+      "stars": 151,
       "pushed_at": "2026-02-28T22:35:34Z",
       "language": "Python",
       "license_spdx_id": "MIT",
@@ -61,6 +71,16 @@
       "pushed_at": "2025-09-19T05:26:36Z",
       "language": "Python",
       "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "Koukyosyumei/Attack_SplitNN",
+      "html_url": "https://github.com/Koukyosyumei/Attack_SplitNN",
+      "description": "reveal the vulnerabilities of SplitNN",
+      "stars": 32,
+      "pushed_at": "2022-06-16T14:08:41Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
       "homepage": ""
     }
   ]

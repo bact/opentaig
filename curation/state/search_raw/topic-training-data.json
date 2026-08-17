@@ -1,0 +1,257 @@
+{
+  "keyword": "topic:training-data",
+  "query": "topic:training-data stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 25,
+  "repos": [
+    {
+      "full_name": "snorkel-team/snorkel",
+      "html_url": "https://github.com/snorkel-team/snorkel",
+      "description": "A system for quickly generating training data with weak supervision",
+      "stars": 5999,
+      "pushed_at": "2026-06-08T19:59:20Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://snorkel.org"
+    },
+    {
+      "full_name": "diffgram/diffgram",
+      "html_url": "https://github.com/diffgram/diffgram",
+      "description": "The AI Datastore for Schemas, BLOBs, and Predictions. Use with your apps or integrate built-in Human Supervision, Data Workflow, and UI Catalog to get the most value out of your AI Data.",
+      "stars": 1908,
+      "pushed_at": "2026-06-22T07:33:28Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://diffgram.com"
+    },
+    {
+      "full_name": "Data-Centric-AI-Community/fg-data-synthetic",
+      "html_url": "https://github.com/Data-Centric-AI-Community/fg-data-synthetic",
+      "description": "Synthetic data generators for tabular and time-series data",
+      "stars": 1652,
+      "pushed_at": "2026-04-23T12:34:53Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://docs.sdk.ydata.ai"
+    },
+    {
+      "full_name": "NorskRegnesentral/skweak",
+      "html_url": "https://github.com/NorskRegnesentral/skweak",
+      "description": "skweak: A software toolkit for weak supervision applied to NLP tasks",
+      "stars": 926,
+      "pushed_at": "2024-09-02T12:48:05Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "facebookincubator/nimble",
+      "html_url": "https://github.com/facebookincubator/nimble",
+      "description": "New and extensible file format for storage of large columnar datasets.",
+      "stars": 729,
+      "pushed_at": "2026-08-07T09:09:07Z",
+      "language": "C++",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "OvidijusParsiunas/myvision",
+      "html_url": "https://github.com/OvidijusParsiunas/myvision",
+      "description": "Computer vision based ML training data generation tool :rocket:",
+      "stars": 611,
+      "pushed_at": "2026-07-30T13:59:19Z",
+      "language": "JavaScript",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://myvision.ai"
+    },
+    {
+      "full_name": "sparkfish/augraphy",
+      "html_url": "https://github.com/sparkfish/augraphy",
+      "description": "Augmentation pipeline for rendering synthetic paper printing, faxing, scanning and copy machine processes",
+      "stars": 565,
+      "pushed_at": "2025-07-20T15:51:59Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://github.com/sparkfish/augraphy"
+    },
+    {
+      "full_name": "alteryx/compose",
+      "html_url": "https://github.com/alteryx/compose",
+      "description": "A machine learning tool for automated prediction engineering. It allows you to easily structure prediction problems and generate labels for supervised learning.",
+      "stars": 514,
+      "pushed_at": "2025-03-31T22:05:37Z",
+      "language": "Python",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": "https://compose.alteryx.com"
+    },
+    {
+      "full_name": "a-maliarov/amazoncaptcha",
+      "html_url": "https://github.com/a-maliarov/amazoncaptcha",
+      "description": "Pure Python, lightweight, Pillow-based solver for Amazon's text captcha.",
+      "stars": 493,
+      "pushed_at": "2026-04-02T05:36:53Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Slava/label-tool",
+      "html_url": "https://github.com/Slava/label-tool",
+      "description": "Web application for image labeling and segmentation",
+      "stars": 350,
+      "pushed_at": "2022-12-09T16:19:39Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": "http://slv.io/label-tool/demo/"
+    },
+    {
+      "full_name": "jmagly/aiwg",
+      "html_url": "https://github.com/jmagly/aiwg",
+      "description": "Cognitive architecture for AI-augmented software development. Specialized agents, structured workflows, and multi-platform deployment. Claude Code \u00b7 Codex \u00b7 Copilot \u00b7 Cursor \u00b7 Factory \u00b7 Warp \u00b7 Windsurf.",
+      "stars": 197,
+      "pushed_at": "2026-08-17T15:45:04Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://aiwg.io"
+    },
+    {
+      "full_name": "d5555/TagEditor",
+      "html_url": "https://github.com/d5555/TagEditor",
+      "description": "\ud83c\udfd6TagEditor - Annotation tool for spaCy",
+      "stars": 193,
+      "pushed_at": "2022-09-23T12:28:14Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Geocene/trainset",
+      "html_url": "https://github.com/Geocene/trainset",
+      "description": "A lightweight web application for brushing labels onto time series data; useful for building training sets.",
+      "stars": 181,
+      "pushed_at": "2023-03-04T03:09:18Z",
+      "language": "JavaScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://trainset.geocene.com/"
+    },
+    {
+      "full_name": "KennethEnevoldsen/augmenty",
+      "html_url": "https://github.com/KennethEnevoldsen/augmenty",
+      "description": "Augmenty is an augmentation library based on spaCy for augmenting texts.",
+      "stars": 156,
+      "pushed_at": "2024-05-24T07:20:11Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://kennethenevoldsen.github.io/augmenty/"
+    },
+    {
+      "full_name": "avinashsen707/AUBOi5-D435-ROS-DOPE",
+      "html_url": "https://github.com/avinashsen707/AUBOi5-D435-ROS-DOPE",
+      "description": "Aubo i5 Dual Arm Collaborative Robot - RealSense D435 - 3D Object Pose Estimation - ROS",
+      "stars": 121,
+      "pushed_at": "2022-06-22T01:28:56Z",
+      "language": "C++",
+      "license_spdx_id": "",
+      "homepage": "https://avinashsen707.github.io/"
+    },
+    {
+      "full_name": "tzano/fountain",
+      "html_url": "https://github.com/tzano/fountain",
+      "description": "Natural Language Data Augmentation Tool for Conversational Systems",
+      "stars": 115,
+      "pushed_at": "2022-12-26T20:36:23Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "alphadl/AgentHER",
+      "html_url": "https://github.com/alphadl/AgentHER",
+      "description": "AgentHER: Hindsight Experience Replay for LLM Agents",
+      "stars": 94,
+      "pushed_at": "2026-03-25T05:04:36Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "xlang-ai/CUA-Gym-Hub",
+      "html_url": "https://github.com/xlang-ai/CUA-Gym-Hub",
+      "description": "CUA-Gym-Hub: mock web apps as reproducible RL training environments for computer-use agents",
+      "stars": 71,
+      "pushed_at": "2026-07-27T22:03:50Z",
+      "language": "JavaScript",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://cua-gym.xlang.ai"
+    },
+    {
+      "full_name": "ableinc/git2txt",
+      "html_url": "https://github.com/ableinc/git2txt",
+      "description": "Convert all files in git repository to .txt files. Useful for training LLMs on your codebase.",
+      "stars": 43,
+      "pushed_at": "2026-07-31T12:03:15Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "InstaPy/instapy-gender-classification",
+      "html_url": "https://github.com/InstaPy/instapy-gender-classification",
+      "description": "\ud83d\udd0e Classification helper for sex classification feature of InstaPy",
+      "stars": 33,
+      "pushed_at": "2024-03-19T23:05:32Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "StevePny/DataAssimBench",
+      "html_url": "https://github.com/StevePny/DataAssimBench",
+      "description": "Benchmarking tools for applying AI/ML to data assimilation",
+      "stars": 30,
+      "pushed_at": "2026-08-17T05:36:44Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "mouadja02/bitcoin-technical-indicators-dataset",
+      "html_url": "https://github.com/mouadja02/bitcoin-technical-indicators-dataset",
+      "description": "Bitcoin Hourly OHLCV with 70+ Technical Indicators | Daily Updated Dataset for ML & Trading Analysis",
+      "stars": 29,
+      "pushed_at": "2026-08-17T00:33:08Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "rhammell/planesnet",
+      "html_url": "https://github.com/rhammell/planesnet",
+      "description": "Labeled training data for detection of aircraft in Planet satellite imagery",
+      "stars": 28,
+      "pushed_at": "2026-01-15T03:58:15Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "ajsanjoaquin/Shapley_Valuation",
+      "html_url": "https://github.com/ajsanjoaquin/Shapley_Valuation",
+      "description": "PyTorch reimplementation of computing Shapley values via Truncated Monte Carlo sampling from \"What is your data worth? Equitable Valuation of Data\" by Amirata Ghorbani and James Zou [ICML 2019]",
+      "stars": 28,
+      "pushed_at": "2026-06-01T12:27:50Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "alea-institute/kl3m-data",
+      "html_url": "https://github.com/alea-institute/kl3m-data",
+      "description": "KL3M training data collection and preprocessing",
+      "stars": 22,
+      "pushed_at": "2025-04-14T12:10:02Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://aleainstitute.ai/data/"
+    }
+  ]
+}

@@ -183,9 +183,12 @@ import argparse
 import csv
 import datetime
 import json
+import sys
 from pathlib import Path
 
 from licenses import OPEN_CLASSES, classify, load_spdx_index
+
+csv.field_size_limit(sys.maxsize)
 
 # Column order matches the live `tools` tab's *current* actual order, which
 # is independent of build.py (a plain DictReader match by name, order-

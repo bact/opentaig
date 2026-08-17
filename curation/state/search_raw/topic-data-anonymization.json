@@ -1,0 +1,207 @@
+{
+  "keyword": "topic:data-anonymization",
+  "query": "topic:data-anonymization stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 20,
+  "repos": [
+    {
+      "full_name": "data-privacy-stack/presidio",
+      "html_url": "https://github.com/data-privacy-stack/presidio",
+      "description": "An open-source framework for detecting, redacting, masking, and anonymizing sensitive data (PII) across text, images, and structured data. Supports NLP, pattern matching, and customizable pipelines.",
+      "stars": 10518,
+      "pushed_at": "2026-08-11T15:20:50Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://presidio.dataprivacystack.org"
+    },
+    {
+      "full_name": "securitybunker/databunker",
+      "html_url": "https://github.com/securitybunker/databunker",
+      "description": "Secure Vault for Customer PII/PHI/PCI/KYC Records",
+      "stars": 1481,
+      "pushed_at": "2026-07-28T09:36:53Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": "https://databunker.org/"
+    },
+    {
+      "full_name": "arx-deidentifier/arx",
+      "html_url": "https://github.com/arx-deidentifier/arx",
+      "description": "ARX is a comprehensive open source data anonymization tool aiming to provide scalability and usability. It supports various anonymization techniques, methods for analyzing data quality and re-identification risks and it supports well-known privacy models, such as k-anonymity, l-diversity, t-closeness and differential privacy.",
+      "stars": 733,
+      "pushed_at": "2025-10-01T15:44:48Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "http://arx.deidentifier.org/"
+    },
+    {
+      "full_name": "dataiku/kiji-proxy",
+      "html_url": "https://github.com/dataiku/kiji-proxy",
+      "description": "Privacy proxy for your OpenAI requests",
+      "stars": 422,
+      "pushed_at": "2026-08-01T09:11:19Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "thoughtbot/top_secret",
+      "html_url": "https://github.com/thoughtbot/top_secret",
+      "description": "Filter sensitive information from free text before sending it to external services or APIs, such as chatbots and LLMs.",
+      "stars": 414,
+      "pushed_at": "2026-05-14T22:41:26Z",
+      "language": "Ruby",
+      "license_spdx_id": "MIT",
+      "homepage": "https://thoughtbot.com/blog/top-secret"
+    },
+    {
+      "full_name": "ArtLabss/open-data-anonymizer",
+      "html_url": "https://github.com/ArtLabss/open-data-anonymizer",
+      "description": "Python Data Anonymization & Masking Library For Data Science Tasks",
+      "stars": 303,
+      "pushed_at": "2023-07-12T09:58:07Z",
+      "language": "Python",
+      "license_spdx_id": "BSD-3-Clause",
+      "homepage": "https://www.artlabs.tech"
+    },
+    {
+      "full_name": "makinacorpus/DbToolsBundle",
+      "html_url": "https://github.com/makinacorpus/DbToolsBundle",
+      "description": "A PHP library to back up, restore and anonymize databases",
+      "stars": 232,
+      "pushed_at": "2026-06-10T13:21:49Z",
+      "language": "PHP",
+      "license_spdx_id": "MIT",
+      "homepage": "https://dbtoolsbundle.readthedocs.io"
+    },
+    {
+      "full_name": "0xdad0/HideDroid",
+      "html_url": "https://github.com/0xdad0/HideDroid",
+      "description": "HideDroid is an Android app that allows the per-app anonymization of collected personal data according to a privacy level chosen by the user.",
+      "stars": 215,
+      "pushed_at": "2024-03-10T20:29:03Z",
+      "language": "Java",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "BMW-InnovationLab/BMW-Anonymization-API",
+      "html_url": "https://github.com/BMW-InnovationLab/BMW-Anonymization-API",
+      "description": "This repository allows you to anonymize sensitive information in images/videos. The solution is fully compatible with the DL-based training/inference solutions that we already published/will publish for Object Detection and Semantic Segmentation.",
+      "stars": 190,
+      "pushed_at": "2024-02-09T14:07:16Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "moyupeng0422/legal-doc-redactor",
+      "html_url": "https://github.com/moyupeng0422/legal-doc-redactor",
+      "description": "\u6cd5\u5f8b\u6587\u4ef6\u8131\u654f/\u8fd8\u539f\u5de5\u5177 - \u667a\u80fd\u8bc6\u522b\u654f\u611f \u4fe1\u606f\uff0c\u652f\u6301\u6279\u91cf\u5904\u7406",
+      "stars": 111,
+      "pushed_at": "2026-03-29T14:58:14Z",
+      "language": "HTML",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "privateai/deid-examples",
+      "html_url": "https://github.com/privateai/deid-examples",
+      "description": "Examples scripts that showcase how to use Private AI Text to de-identify, redact, hash, tokenize, mask and synthesize PII in text.",
+      "stars": 91,
+      "pushed_at": "2026-08-10T13:11:13Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "jftuga/deidentification",
+      "html_url": "https://github.com/jftuga/deidentification",
+      "description": "Deidentify people's names and gender specific pronouns",
+      "stars": 57,
+      "pushed_at": "2025-05-03T12:09:52Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://pypi.org/project/text-deidentification/"
+    },
+    {
+      "full_name": "IFCA-Advanced-Computing/anjana",
+      "html_url": "https://github.com/IFCA-Advanced-Computing/anjana",
+      "description": "ANJANA is a Python library for anonymizing sensitive data",
+      "stars": 49,
+      "pushed_at": "2026-08-17T02:05:52Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://anjana.readthedocs.io/en/latest/"
+    },
+    {
+      "full_name": "aliengiraffe/deidentify",
+      "html_url": "https://github.com/aliengiraffe/deidentify",
+      "description": "Go library that detects personally identifiable information in text and structured data and replaces it with deterministic, format-preserving substitutes.",
+      "stars": 38,
+      "pushed_at": "2026-08-11T18:24:43Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "rapiddweller/datamimic",
+      "html_url": "https://github.com/rapiddweller/datamimic",
+      "description": "Model-driven synthetic test data for CI/CD and analytics - deterministic, privacy-preserving, and domain-aware. Includes Python APIs, XML pipelines, and MCP/IDE integration to orchestrate realistic datasets for finance, healthcare, and other regulated environments.",
+      "stars": 37,
+      "pushed_at": "2026-07-17T07:02:39Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://datamimic.io"
+    },
+    {
+      "full_name": "snaplet/docs",
+      "html_url": "https://github.com/snaplet/docs",
+      "description": "Snaplet Documentation",
+      "stars": 29,
+      "pushed_at": "2024-09-01T18:45:59Z",
+      "language": "HTML",
+      "license_spdx_id": "",
+      "homepage": "https://docs.snaplet.dev"
+    },
+    {
+      "full_name": "Joopinhontas/tokenveil-oss",
+      "html_url": "https://github.com/Joopinhontas/tokenveil-oss",
+      "description": "Real-time data anonymization for LLMs: secure your logs and conversations across cloud or local environments. Docker-ready & Multi-IA support.",
+      "stars": 29,
+      "pushed_at": "2026-08-14T14:24:16Z",
+      "language": "HTML",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://tokenveil.eu/"
+    },
+    {
+      "full_name": "KI-AIM/Cinnamon",
+      "html_url": "https://github.com/KI-AIM/Cinnamon",
+      "description": "Cinnamon is a modular application designed to offer robust functionalities for data anonymization, synthetization, and evaluation.",
+      "stars": 28,
+      "pushed_at": "2026-08-17T14:27:27Z",
+      "language": "Java",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://ki-aim.github.io/cinnamon-docs/"
+    },
+    {
+      "full_name": "thoughtworks-datakind/anonymizer",
+      "html_url": "https://github.com/thoughtworks-datakind/anonymizer",
+      "description": "Library for identification, anonymization and de-anonymization of PII data",
+      "stars": 22,
+      "pushed_at": "2022-12-26T21:44:56Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "fcarvajalbrown/MaskOps",
+      "html_url": "https://github.com/fcarvajalbrown/MaskOps",
+      "description": "High-speed PII masking as a Polars plugin, powered by Rust",
+      "stars": 20,
+      "pushed_at": "2026-08-13T11:48:20Z",
+      "language": "Python",
+      "license_spdx_id": "MPL-2.0",
+      "homepage": "https://fcarvajalbrown.github.io/MaskOps/"
+    }
+  ]
+}

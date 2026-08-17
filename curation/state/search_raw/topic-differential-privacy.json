@@ -1,14 +1,14 @@
 {
   "keyword": "topic:differential-privacy",
-  "query": "topic:differential-privacy stars:>19 pushed:>2025-07-28 archived:false fork:false",
-  "count": 34,
+  "query": "topic:differential-privacy stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 77,
   "repos": [
     {
       "full_name": "interpretml/interpret",
       "html_url": "https://github.com/interpretml/interpret",
       "description": "Fit interpretable models. Explain blackbox machine learning.",
-      "stars": 6905,
-      "pushed_at": "2026-07-27T16:47:16Z",
+      "stars": 6917,
+      "pushed_at": "2026-08-17T06:41:29Z",
       "language": "C++",
       "license_spdx_id": "MIT",
       "homepage": "https://interpret.ml/docs"
@@ -17,8 +17,8 @@
       "full_name": "google/differential-privacy",
       "html_url": "https://github.com/google/differential-privacy",
       "description": "Google's differential privacy libraries.",
-      "stars": 3337,
-      "pushed_at": "2026-07-24T17:04:56Z",
+      "stars": 3341,
+      "pushed_at": "2026-08-17T08:38:38Z",
       "language": "Go",
       "license_spdx_id": "Apache-2.0",
       "homepage": ""
@@ -27,7 +27,7 @@
       "full_name": "secretflow/secretflow",
       "html_url": "https://github.com/secretflow/secretflow",
       "description": "A unified framework for privacy-preserving data analysis and machine learning",
-      "stars": 2689,
+      "stars": 2691,
       "pushed_at": "2026-04-24T07:57:55Z",
       "language": "Python",
       "license_spdx_id": "Apache-2.0",
@@ -37,17 +37,27 @@
       "full_name": "TsingZ0/PFLlib",
       "html_url": "https://github.com/TsingZ0/PFLlib",
       "description": "Master Federated Learning in 2 Hours\u2014Run It on Your PC!",
-      "stars": 2147,
+      "stars": 2152,
       "pushed_at": "2026-01-25T02:31:48Z",
       "language": "Python",
       "license_spdx_id": "Apache-2.0",
       "homepage": "http://www.pfllib.com/"
     },
     {
+      "full_name": "innovation-cat/Awesome-Federated-Machine-Learning",
+      "html_url": "https://github.com/innovation-cat/Awesome-Federated-Machine-Learning",
+      "description": "Everything about federated learning, including research papers, books, codes, tutorials, videos and beyond",
+      "stars": 2089,
+      "pushed_at": "2024-05-30T21:21:42Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
       "full_name": "meta-pytorch/opacus",
       "html_url": "https://github.com/meta-pytorch/opacus",
       "description": "Training PyTorch models with differential privacy",
-      "stars": 1944,
+      "stars": 1951,
       "pushed_at": "2026-07-13T21:37:10Z",
       "language": "Python",
       "license_spdx_id": "Apache-2.0",
@@ -57,8 +67,8 @@
       "full_name": "GreenmaskIO/greenmask",
       "html_url": "https://github.com/GreenmaskIO/greenmask",
       "description": "Database anonymization and test data management",
-      "stars": 1727,
-      "pushed_at": "2026-07-05T08:57:16Z",
+      "stars": 1746,
+      "pushed_at": "2026-08-05T16:06:19Z",
       "language": "Go",
       "license_spdx_id": "Apache-2.0",
       "homepage": "https://greenmask.io"
@@ -67,7 +77,7 @@
       "full_name": "IBM/differential-privacy-library",
       "html_url": "https://github.com/IBM/differential-privacy-library",
       "description": "Diffprivlib: The IBM Differential Privacy Library",
-      "stars": 918,
+      "stars": 920,
       "pushed_at": "2025-09-17T20:40:13Z",
       "language": "Python",
       "license_spdx_id": "MIT",
@@ -77,7 +87,7 @@
       "full_name": "mostly-ai/mostlyai",
       "html_url": "https://github.com/mostly-ai/mostlyai",
       "description": "Synthetic Data SDK \u2728",
-      "stars": 786,
+      "stars": 791,
       "pushed_at": "2026-05-08T15:52:04Z",
       "language": "Python",
       "license_spdx_id": "Apache-2.0",
@@ -87,7 +97,7 @@
       "full_name": "BUAA-BDA/OpenHuFu",
       "html_url": "https://github.com/BUAA-BDA/OpenHuFu",
       "description": "OpenHuFu is an open-sourced data federation system to support collaborative queries over multi databases with security guarantee.",
-      "stars": 734,
+      "stars": 733,
       "pushed_at": "2026-07-23T09:07:39Z",
       "language": "Java",
       "license_spdx_id": "Apache-2.0",
@@ -97,7 +107,7 @@
       "full_name": "KarhouTam/FL-bench",
       "html_url": "https://github.com/KarhouTam/FL-bench",
       "description": "Benchmark of federated learning. Dedicated to the community. \ud83e\udd17",
-      "stars": 688,
+      "stars": 690,
       "pushed_at": "2026-01-25T00:38:30Z",
       "language": "Python",
       "license_spdx_id": "GPL-3.0",
@@ -107,7 +117,7 @@
       "full_name": "OpenMined/PyDP",
       "html_url": "https://github.com/OpenMined/PyDP",
       "description": "The Python Differential Privacy Library. Built on top of: https://github.com/google/differential-privacy",
-      "stars": 549,
+      "stars": 551,
       "pushed_at": "2026-05-11T08:29:17Z",
       "language": "Python",
       "license_spdx_id": "Apache-2.0",
@@ -127,17 +137,27 @@
       "full_name": "opendp/opendp",
       "html_url": "https://github.com/opendp/opendp",
       "description": "The core library of differential privacy algorithms powering the OpenDP Project.",
-      "stars": 426,
-      "pushed_at": "2026-07-28T18:09:36Z",
+      "stars": 430,
+      "pushed_at": "2026-08-16T06:29:34Z",
       "language": "Rust",
       "license_spdx_id": "MIT",
       "homepage": "https://docs.opendp.org"
     },
     {
+      "full_name": "wenzhu23333/Differential-Privacy-Based-Federated-Learning",
+      "html_url": "https://github.com/wenzhu23333/Differential-Privacy-Based-Federated-Learning",
+      "description": "Everything you want about DP-Based Federated Learning, including Papers and Code. (Mechanism: Laplace or Gaussian, Dataset: femnist, shakespeare, mnist, cifar-10 and fashion-mnist. )",
+      "stars": 424,
+      "pushed_at": "2024-10-26T09:46:58Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
       "full_name": "JeffffffFu/Awesome-Differential-Privacy-and-Meachine-Learning",
       "html_url": "https://github.com/JeffffffFu/Awesome-Differential-Privacy-and-Meachine-Learning",
       "description": "Differentially private federated learning: A systematic review (ACM Survey); Adap dp-fl: Differentially private federated learning with adaptive noise (TrustCom'2022)",
-      "stars": 389,
+      "stars": 387,
       "pushed_at": "2025-09-02T17:23:17Z",
       "language": "Python",
       "license_spdx_id": "",
@@ -147,17 +167,27 @@
       "full_name": "apple/pfl-research",
       "html_url": "https://github.com/apple/pfl-research",
       "description": "Simulation framework for accelerating research in Private Federated Learning",
-      "stars": 357,
-      "pushed_at": "2026-07-02T22:13:57Z",
+      "stars": 358,
+      "pushed_at": "2026-08-06T22:14:57Z",
       "language": "Jupyter Notebook",
       "license_spdx_id": "Apache-2.0",
       "homepage": "http://apple.github.io/pfl-research/"
     },
     {
+      "full_name": "Guyanqi/Awesome-Privacy",
+      "html_url": "https://github.com/Guyanqi/Awesome-Privacy",
+      "description": "Repository for collection of research papers on privacy.",
+      "stars": 344,
+      "pushed_at": "2024-07-19T00:05:50Z",
+      "language": "",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
       "full_name": "opendp/smartnoise-sdk",
       "html_url": "https://github.com/opendp/smartnoise-sdk",
       "description": "Tools and service for differentially private processing of tabular and relational data",
-      "stars": 299,
+      "stars": 301,
       "pushed_at": "2026-07-01T09:38:15Z",
       "language": "Python",
       "license_spdx_id": "MIT",
@@ -167,7 +197,7 @@
       "full_name": "usnistgov/PrivacyEngCollabSpace",
       "html_url": "https://github.com/usnistgov/PrivacyEngCollabSpace",
       "description": "Privacy Engineering Collaboration Space",
-      "stars": 279,
+      "stars": 281,
       "pushed_at": "2025-08-18T14:55:37Z",
       "language": "Python",
       "license_spdx_id": "",
@@ -194,24 +224,114 @@
       "homepage": "https://owkin.github.io/FLamby/"
     },
     {
+      "full_name": "Jamie-Cui/awesome-secure-computation",
+      "html_url": "https://github.com/Jamie-Cui/awesome-secure-computation",
+      "description": "Awesome list for cryptographic secure computation paper. This repo includes *Lattice*, *DifferentialPrivacy*, *MPC* and also a comprehensive summary for top conferences.",
+      "stars": 220,
+      "pushed_at": "2024-12-24T06:39:52Z",
+      "language": "",
+      "license_spdx_id": "Unlicense",
+      "homepage": ""
+    },
+    {
+      "full_name": "Billy1900/Awesome-Differential-Privacy",
+      "html_url": "https://github.com/Billy1900/Awesome-Differential-Privacy",
+      "description": "Differential private machine learning",
+      "stars": 199,
+      "pushed_at": "2022-02-10T15:42:31Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://github.com/Billy1900/Differential-Privacy"
+    },
+    {
+      "full_name": "mplspunk/awesome-privacy-engineering",
+      "html_url": "https://github.com/mplspunk/awesome-privacy-engineering",
+      "description": "A curated list of resources related to privacy engineering",
+      "stars": 198,
+      "pushed_at": "2026-08-14T04:00:05Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "lxuechen/private-transformers",
+      "html_url": "https://github.com/lxuechen/private-transformers",
+      "description": "A codebase that makes differentially private training of transformers easy.",
+      "stars": 189,
+      "pushed_at": "2022-12-09T23:48:19Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://arxiv.org/abs/2110.05679"
+    },
+    {
+      "full_name": "tiktok-privacy-innovation/PrivacyGo",
+      "html_url": "https://github.com/tiktok-privacy-innovation/PrivacyGo",
+      "description": "Synergistic fusion of privacy-enhancing technologies for enhanced privacy protection.",
+      "stars": 167,
+      "pushed_at": "2025-01-24T03:48:54Z",
+      "language": "C++",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://privacyinnovation.io/"
+    },
+    {
       "full_name": "awslabs/fast-differential-privacy",
       "html_url": "https://github.com/awslabs/fast-differential-privacy",
       "description": "Fast, memory-efficient, scalable optimization of deep learning with differential privacy",
-      "stars": 146,
+      "stars": 147,
       "pushed_at": "2026-01-22T20:31:59Z",
       "language": "Python",
       "license_spdx_id": "Apache-2.0",
       "homepage": ""
     },
     {
+      "full_name": "BorealisAI/private-data-generation",
+      "html_url": "https://github.com/BorealisAI/private-data-generation",
+      "description": "A toolbox for differentially private data generation",
+      "stars": 132,
+      "pushed_at": "2023-07-06T21:17:00Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "PrivPkt/PrivPkt",
+      "html_url": "https://github.com/PrivPkt/PrivPkt",
+      "description": "Privacy Preserving Collaborative Encrypted Network Traffic Classification (Differential Privacy, Federated Learning, Membership Inference Attack, Encrypted Traffic Classification)",
+      "stars": 130,
+      "pushed_at": "2023-05-01T20:37:29Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
       "full_name": "microsoft/DPSDA",
       "html_url": "https://github.com/microsoft/DPSDA",
       "description": "Private Evolution: Generating DP Synthetic Data without Model Training [ICML 2026, ICLR 2024, ICML 2024 Spotlight]",
-      "stars": 115,
+      "stars": 116,
       "pushed_at": "2026-07-01T20:05:51Z",
       "language": "Python",
       "license_spdx_id": "MIT",
       "homepage": "https://microsoft.github.io/DPSDA/"
+    },
+    {
+      "full_name": "apple/ml-flair",
+      "html_url": "https://github.com/apple/ml-flair",
+      "description": "A large labelled image dataset for benchmarking in federated learning",
+      "stars": 103,
+      "pushed_at": "2024-03-06T16:50:48Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://proceedings.neurips.cc/paper_files/paper/2022/file/f64e55d03e2fe61aa4114e49cb654acb-Paper-Datasets_and_Benchmarks.pdf"
+    },
+    {
+      "full_name": "netsharecmu/NetShare",
+      "html_url": "https://github.com/netsharecmu/NetShare",
+      "description": "(SIGCOMM '22) Practical GAN-based Synthetic IP Header Trace Generation using NetShare",
+      "stars": 100,
+      "pushed_at": "2023-10-08T03:14:20Z",
+      "language": "Python",
+      "license_spdx_id": "BSD-3-Clause-Clear",
+      "homepage": ""
     },
     {
       "full_name": "sunchang0124/dp_cgans",
@@ -221,6 +341,16 @@
       "pushed_at": "2026-05-12T11:54:34Z",
       "language": "Python",
       "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "liuyugeng/ML-Doctor",
+      "html_url": "https://github.com/liuyugeng/ML-Doctor",
+      "description": "Code for ML Doctor",
+      "stars": 91,
+      "pushed_at": "2024-08-14T16:33:04Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
       "homepage": ""
     },
     {
@@ -244,6 +374,56 @@
       "homepage": "https://mostly-ai.github.io/mostlyai-engine/"
     },
     {
+      "full_name": "ipc-lab/private-ml-for-health",
+      "html_url": "https://github.com/ipc-lab/private-ml-for-health",
+      "description": "Dopamine: Differentially Private Federated Learning on Medical Data (AAAI - PPAI)",
+      "stars": 75,
+      "pushed_at": "2025-02-09T22:09:19Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://arxiv.org/abs/2101.11693"
+    },
+    {
+      "full_name": "TsingZ0/FL-IoT",
+      "html_url": "https://github.com/TsingZ0/FL-IoT",
+      "description": "This is a platform containing the datasets and federated learning algorithms in IoT environments.",
+      "stars": 73,
+      "pushed_at": "2024-12-09T09:09:24Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "brubinstein/diffpriv",
+      "html_url": "https://github.com/brubinstein/diffpriv",
+      "description": "Easy differential privacy in R",
+      "stars": 69,
+      "pushed_at": "2022-07-01T05:30:18Z",
+      "language": "R",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://brubinstein.github.io/diffpriv/"
+    },
+    {
+      "full_name": "tanyuqian/redco",
+      "html_url": "https://github.com/tanyuqian/redco",
+      "description": "NAACL '24 (Best Demo Paper RunnerUp) / MlSys @ NeurIPS '23 - RedCoast: A Lightweight Tool to Automate Distributed Training and Inference",
+      "stars": 69,
+      "pushed_at": "2024-12-09T22:56:06Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://tanyuqian.github.io/redco/"
+    },
+    {
+      "full_name": "AI-secure/aug-pe",
+      "html_url": "https://github.com/AI-secure/aug-pe",
+      "description": "[ICML 2024 Spotlight] Differentially Private Synthetic Data via Foundation Model APIs 2: Text",
+      "stars": 61,
+      "pushed_at": "2025-01-11T15:48:07Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://alphapav.github.io/augpe-dpapitext/"
+    },
+    {
       "full_name": "hharcolezi/multi-freq-ldpy",
       "html_url": "https://github.com/hharcolezi/multi-freq-ldpy",
       "description": "Multiple Frequency Estimation Under Local Differential Privacy in Python",
@@ -264,6 +444,56 @@
       "homepage": "https://arxiv.org/abs/2006.05535"
     },
     {
+      "full_name": "sisaman/GAP",
+      "html_url": "https://github.com/sisaman/GAP",
+      "description": "GAP: Differentially Private Graph Neural Networks with Aggregation Perturbation (USENIX Security '23)",
+      "stars": 50,
+      "pushed_at": "2023-07-03T08:40:56Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "CC0-1.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "mbrg/differential-privacy",
+      "html_url": "https://github.com/mbrg/differential-privacy",
+      "description": "Naive implementation of basic Differential-Privacy framework and algorithms",
+      "stars": 49,
+      "pushed_at": "2022-08-30T11:56:17Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Qrlew/qrlew",
+      "html_url": "https://github.com/Qrlew/qrlew",
+      "description": "",
+      "stars": 48,
+      "pushed_at": "2024-12-12T15:11:36Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "kaiiyer/rajappan",
+      "html_url": "https://github.com/kaiiyer/rajappan",
+      "description": "An All in one Project for Digital Privacy. A step towards a PRIVATE FUTURE",
+      "stars": 47,
+      "pushed_at": "2025-01-20T21:28:32Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://kaiiyer.co/rajappan/"
+    },
+    {
+      "full_name": "mrtzh/PrivateMultiplicativeWeights.jl",
+      "html_url": "https://github.com/mrtzh/PrivateMultiplicativeWeights.jl",
+      "description": "Differentially private synthetic data",
+      "stars": 47,
+      "pushed_at": "2026-08-10T10:51:15Z",
+      "language": "Julia",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
       "full_name": "usnistgov/SDNist",
       "html_url": "https://github.com/usnistgov/SDNist",
       "description": "SDNist: Benchmark data and evaluation tools for data synthesizers.",
@@ -274,14 +504,14 @@
       "homepage": ""
     },
     {
-      "full_name": "AI-SDC/SACRO-ML",
-      "html_url": "https://github.com/AI-SDC/SACRO-ML",
-      "description": "Collection of tools and resources for managing the statistical disclosure control of trained machine learning models",
-      "stars": 40,
-      "pushed_at": "2026-07-10T14:52:33Z",
+      "full_name": "thecml/dpsgd-optimizer",
+      "html_url": "https://github.com/thecml/dpsgd-optimizer",
+      "description": "Amortized version of the differentially private SGD algorithm published in \"Deep Learning with Differential Privacy\" by Abadi et al. Enforces privacy by clipping and sanitising the gradients with Gaussian noise during training.",
+      "stars": 44,
+      "pushed_at": "2024-04-12T01:53:57Z",
       "language": "Python",
       "license_spdx_id": "MIT",
-      "homepage": "https://ai-sdc.github.io/SACRO-ML/"
+      "homepage": ""
     },
     {
       "full_name": "ngc436/awesome-vertical-federated-learning",
@@ -294,14 +524,114 @@
       "homepage": ""
     },
     {
+      "full_name": "AI-SDC/SACRO-ML",
+      "html_url": "https://github.com/AI-SDC/SACRO-ML",
+      "description": "Collection of tools and resources for managing the statistical disclosure control of trained machine learning models",
+      "stars": 40,
+      "pushed_at": "2026-08-13T11:50:47Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://ai-sdc.github.io/SACRO-ML/"
+    },
+    {
+      "full_name": "gianlucatruda/TableDiffusion",
+      "html_url": "https://github.com/gianlucatruda/TableDiffusion",
+      "description": "The first differentially-private diffusion model for tabular data",
+      "stars": 35,
+      "pushed_at": "2024-06-05T14:13:47Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://arxiv.org/abs/2308.14784"
+    },
+    {
+      "full_name": "tayebiarasteh/federated_he",
+      "html_url": "https://github.com/tayebiarasteh/federated_he",
+      "description": "Federated learning with homomorphic encryption enables multiple parties to securely co-train artificial intelligence models in pathology and radiology, reaching state-of-the-art performance with privacy guarantees.",
+      "stars": 34,
+      "pushed_at": "2023-12-07T19:18:02Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "HKUST-KnowComp/FKGE",
+      "html_url": "https://github.com/HKUST-KnowComp/FKGE",
+      "description": "Code for CIKM 2021 paper: Differentially Private Federated Knowledge Graphs Embedding (https://arxiv.org/abs/2105.07615)",
+      "stars": 33,
+      "pushed_at": "2022-12-06T05:59:50Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
       "full_name": "dscc-admin-ch/lomas",
       "html_url": "https://github.com/dscc-admin-ch/lomas",
       "description": "Lomas: The data oases hidden behind the mist. A platform for confidential analysis of private data.",
       "stars": 31,
-      "pushed_at": "2026-07-28T14:35:38Z",
+      "pushed_at": "2026-08-17T15:49:34Z",
       "language": "Jupyter Notebook",
       "license_spdx_id": "MIT",
       "homepage": "https://arxiv.org/abs/2406.17087"
+    },
+    {
+      "full_name": "ThaminduR/spark-privacy-preserver",
+      "html_url": "https://github.com/ThaminduR/spark-privacy-preserver",
+      "description": "Anonymizing Library for Apache Spark",
+      "stars": 31,
+      "pushed_at": "2023-11-09T22:23:40Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "Kekkodf/pypantera",
+      "html_url": "https://github.com/Kekkodf/pypantera",
+      "description": "A Python Package for NLP obfuscation using Differential Privacy",
+      "stars": 30,
+      "pushed_at": "2025-07-28T12:36:18Z",
+      "language": "Python",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "hharcolezi/ldp-protocols-mobility-cdrs",
+      "html_url": "https://github.com/hharcolezi/ldp-protocols-mobility-cdrs",
+      "description": "Implementation of local differential privacy mechanisms in Python language.",
+      "stars": 29,
+      "pushed_at": "2022-07-26T12:10:14Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "yuntaod/LDPTrace",
+      "html_url": "https://github.com/yuntaod/LDPTrace",
+      "description": "Source code for LDPTrace: Locally Differentially Private Trajectory Synthesis. VLDB 2023.",
+      "stars": 28,
+      "pushed_at": "2023-11-13T19:07:28Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://arxiv.org/abs/2302.06180"
+    },
+    {
+      "full_name": "nithin42/privacylens",
+      "html_url": "https://github.com/nithin42/privacylens",
+      "description": "Open-source Python library to audit ML pipelines for privacy vulnerabilities  - MIA, PII leakage, model inversion",
+      "stars": 28,
+      "pushed_at": "2026-08-09T19:08:46Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "kenziyuliu/private-cross-silo-fl",
+      "html_url": "https://github.com/kenziyuliu/private-cross-silo-fl",
+      "description": "[NeurIPS 2022] JAX/Haiku implementation of \"On Privacy and Personalization in Cross-Silo Federated Learning\"",
+      "stars": 27,
+      "pushed_at": "2023-04-16T06:36:55Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://arxiv.org/abs/2206.07902"
     },
     {
       "full_name": "yuntaod/SynMeter",
@@ -312,6 +642,76 @@
       "language": "Python",
       "license_spdx_id": "Apache-2.0",
       "homepage": "https://arxiv.org/abs/2402.06806"
+    },
+    {
+      "full_name": "yashmahajan10/llm-differential-privacy-gateway",
+      "html_url": "https://github.com/yashmahajan10/llm-differential-privacy-gateway",
+      "description": "Noisegate: a differential privacy gateway that lets an untrusted LLM agent query sensitive data over MCP (Model Context Protocol), with a formal guarantee no individual's record can leak even if the agent is adversarial - enforcement lives in trusted code below the model, validated by a runnable attack gallery.",
+      "stars": 26,
+      "pushed_at": "2026-08-02T20:54:38Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "meenavyas/Misc",
+      "html_url": "https://github.com/meenavyas/Misc",
+      "description": "Contains interesting projects like Cat face detection, cat face recognition, code generation, Building chatbot, finding similar documents, image segmentation, UCI credit card, anomaly detection, MNIST etc.",
+      "stars": 24,
+      "pushed_at": "2024-06-09T14:33:02Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "anusii/graph-dp",
+      "html_url": "https://github.com/anusii/graph-dp",
+      "description": "Implementations of differentially private release mechanisms for graph statistics",
+      "stars": 24,
+      "pushed_at": "2022-05-06T02:10:13Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "nikosgalanis/data-poisoning-defense-fl",
+      "html_url": "https://github.com/nikosgalanis/data-poisoning-defense-fl",
+      "description": "\ud83d\udc89\ud83d\udd10 Novel algorithm for defending against Data Poisoning Attacks in a Federated Learning scenario",
+      "stars": 24,
+      "pushed_at": "2024-04-22T08:43:18Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "SunnierLee/DP-ImaGen",
+      "html_url": "https://github.com/SunnierLee/DP-ImaGen",
+      "description": "[USENIX Security 2024] PrivImage: Differentially Private Synthetic Image Generation using Diffusion Models with Semantic-Aware Pretraining",
+      "stars": 24,
+      "pushed_at": "2024-11-10T11:20:54Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "eth-sri/dp-sniper",
+      "html_url": "https://github.com/eth-sri/dp-sniper",
+      "description": "A machine-learning-based tool for discovering differential privacy violations in black-box algorithms.",
+      "stars": 23,
+      "pushed_at": "2022-05-26T23:46:01Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "mkucz95/encrypted_ai_finance",
+      "html_url": "https://github.com/mkucz95/encrypted_ai_finance",
+      "description": "Credit Approval Classification Deep Learning Model using Differential Drivacy, Secure Multi-Party Computation, and Federated Learning",
+      "stars": 23,
+      "pushed_at": "2022-11-22T04:13:04Z",
+      "language": "HTML",
+      "license_spdx_id": "MIT",
+      "homepage": ""
     },
     {
       "full_name": "6lyc/FedCEO_Collaborate-with-Each-Other",
@@ -334,6 +734,16 @@
       "homepage": ""
     },
     {
+      "full_name": "mmalekzadeh/privacy-preserving-bandits",
+      "html_url": "https://github.com/mmalekzadeh/privacy-preserving-bandits",
+      "description": "Privacy-Preserving Bandits (MLSys'20)",
+      "stars": 22,
+      "pushed_at": "2022-12-08T03:36:37Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": "https://proceedings.mlsys.org/paper/2020/hash/42a0e188f5033bc65bf8d78622277c4e-Abstract.html"
+    },
+    {
       "full_name": "Urz1/synthetic-data-studio",
       "html_url": "https://github.com/Urz1/synthetic-data-studio",
       "description": "Generate hyper-realistic, privacy-safe synthetic data and compliance packs for regulated startups, Bootcamps, competitions, and Learning.",
@@ -342,6 +752,26 @@
       "language": "TypeScript",
       "license_spdx_id": "MIT",
       "homepage": "https://www.synthdata.studio/"
+    },
+    {
+      "full_name": "qascade/dcr",
+      "html_url": "https://github.com/qascade/dcr",
+      "description": "A PoC framework to orchestrate interoperable Differentially Private Data Clean Room Services using Intel SGX hardware as root of trust.",
+      "stars": 21,
+      "pushed_at": "2023-07-02T20:14:56Z",
+      "language": "Go",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "mikeroyal/Differential-Privacy-Guide",
+      "html_url": "https://github.com/mikeroyal/Differential-Privacy-Guide",
+      "description": "Differential Privacy Guide",
+      "stars": 20,
+      "pushed_at": "2022-01-09T22:27:36Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
     }
   ]
 }
