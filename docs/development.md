@@ -10,12 +10,19 @@ python build.py
 This writes the full site to `site/` (git-ignored). Open `site/index.html`
 in a browser to preview.
 
-For offline development without hitting Google Sheets, set a `file:` path
-under `data.taig` / `data.mapping` / `data.tool_map` / `data.tools` /
-`data.tool_metadata` / `data.terms` / `data.framework` in `config.yaml` (or
-a copy of it) to point at a local CSV instead of a URL — see
-[`tests/config.local.yaml`](../tests/config.local.yaml) for a working
-example against the fixtures in `tests/fixtures/`.
+### Caching and offline builds
+
+`build.py` automatically caches fetched Google Sheets data in `.cache/sheets/`
+(git-ignored) with concurrent downloads and session pooling for fast builds.
+
+Useful options:
+- `python build.py` — builds with default 1-hour cache TTL (fast cached rebuilds).
+- `python build.py --cache-ttl 0` or `python build.py --no-cache` — force a fresh re-fetch of all sheets.
+- `python build.py --offline` — build entirely offline using existing cached sheets without network requests.
+- `python build.py --config tests/config.local.yaml` — build against local CSV fixtures in `tests/fixtures/`.
+
+If a network request to Google Sheets temporarily fails, `build.py` will
+automatically fall back to the cached copy if one exists.
 
 ## One-time GitHub Pages setup
 
