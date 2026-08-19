@@ -20,6 +20,7 @@ Usage:
     python curation/report_triage.py --by keyword
     python curation/report_triage.py --seen-repos curation/state/seen_repos.csv
 """
+
 from __future__ import annotations
 
 import argparse
@@ -48,7 +49,9 @@ def report_by(rows: list[dict], group_field: str) -> None:
         accepted = [r for r in grp if r["verdict"] == "accept"]
         rejected = [r for r in grp if r["verdict"] == "reject"]
         open_src = [r for r in grp if r.get("license_class") in OPEN_CLASSES]
-        print(f"{key:<45} {len(grp):>6} {len(accepted):>9} {len(open_src):>9} {len(rejected):>9}")
+        print(
+            f"{key:<45} {len(grp):>6} {len(accepted):>9} {len(open_src):>9} {len(rejected):>9}"
+        )
 
 
 def report_reject_categories(rows: list[dict]) -> None:
@@ -63,19 +66,27 @@ def report_license_classes(rows: list[dict]) -> None:
     counts = Counter(r.get("license_class") or "(unrecorded)" for r in rows)
     total = len(rows)
     open_n = sum(n for cls, n in counts.items() if cls in OPEN_CLASSES)
-    print(f"\n{total} total judged repo(s), by licence class "
-          f"({open_n} open source: {sorted(OPEN_CLASSES)}):")
+    print(
+        f"\n{total} total judged repo(s), by licence class "
+        f"({open_n} open source: {sorted(OPEN_CLASSES)}):"
+    )
     for cls, n in counts.most_common():
         marker = "*" if cls in OPEN_CLASSES else " "
         print(f"  {marker} {n:>4}  {cls}")
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
     parser.add_argument("--seen-repos", default="curation/state/seen_repos.csv")
-    parser.add_argument("--by", choices=["problem_area", "keyword"], default="problem_area",
-                        help="group the found/accepted/open-source/rejected table by this field "
-                             "(default: problem_area; 'keyword' uses found_via_keyword)")
+    parser.add_argument(
+        "--by",
+        choices=["problem_area", "keyword"],
+        default="problem_area",
+        help="group the found/accepted/open-source/rejected table by this field "
+        "(default: problem_area; 'keyword' uses found_via_keyword)",
+    )
     args = parser.parse_args()
 
     path = Path(args.seen_repos)

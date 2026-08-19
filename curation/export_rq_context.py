@@ -35,6 +35,7 @@ For a curation run against the *live* sheets, run ``build.py`` with the real
 ``config.yaml`` (the default) so ``data.json`` reflects the current sheet
 state before exporting.
 """
+
 from __future__ import annotations
 
 import argparse
@@ -84,9 +85,7 @@ def main() -> None:
     parser.add_argument(
         "--data", default="site/data.json", help="path to a built site/data.json"
     )
-    parser.add_argument(
-        "--out", default="curation/rq_context.json", help="output path"
-    )
+    parser.add_argument("--out", default="curation/rq_context.json", help="output path")
     args = parser.parse_args()
 
     data_path = Path(args.data)
@@ -115,7 +114,9 @@ def main() -> None:
         json.dump(out, f, indent=2, ensure_ascii=False)
 
     mapped = sum(1 for r in rows if r["tools_implement"] or r["tools_eval"])
-    print(f"wrote {len(rows)} research question(s) to {out_path} ({mapped} already have tools)")
+    print(
+        f"wrote {len(rows)} research question(s) to {out_path} ({mapped} already have tools)"
+    )
 
 
 if __name__ == "__main__":

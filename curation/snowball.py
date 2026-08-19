@@ -37,6 +37,7 @@ Output: same two artifacts as search_repos.py --
     keyword regardless of hit count" rule -- a snowball seed that links to
     nothing new is real negative evidence too).
 """
+
 from __future__ import annotations
 
 import argparse
@@ -54,9 +55,17 @@ import requests
 # Reuse search_repos.py's filter/IO logic rather than duplicating it.
 sys.path.insert(0, str(Path(__file__).parent))
 from search_repos import (  # noqa: E402
-    GITHUB_API, DEFAULT_MIN_STARS, DEFAULT_PUSHED_AFTER_MONTHS, DEFAULT_MIN_README_CHARS,
-    cutoff_date, fetch_readme_text, readme_content_length, to_row,
-    load_existing_candidates, append_search_log, slugify,
+    GITHUB_API,
+    DEFAULT_MIN_STARS,
+    DEFAULT_PUSHED_AFTER_MONTHS,
+    DEFAULT_MIN_README_CHARS,
+    cutoff_date,
+    fetch_readme_text,
+    readme_content_length,
+    to_row,
+    load_existing_candidates,
+    append_search_log,
+    slugify,
 )
 
 # github.com/<owner>/<repo> links, excluding non-repo paths (issues, blob,
@@ -64,9 +73,31 @@ from search_repos import (  # noqa: E402
 _REPO_LINK_RE = re.compile(
     r"github\.com/([A-Za-z0-9][\w.-]*)/([A-Za-z0-9][\w.-]*?)(?:\.git)?(?:[/)\]>\s#?]|$)"
 )
-_NON_REPO_OWNERS = {"github", "orgs", "sponsors", "marketplace", "topics", "search", "settings", "apps"}
-_NON_REPO_SUFFIXES = {"issues", "pulls", "actions", "wiki", "releases", "compare", "blob", "tree",
-                       "commits", "discussions", "projects", "security", "pkgs"}
+_NON_REPO_OWNERS = {
+    "github",
+    "orgs",
+    "sponsors",
+    "marketplace",
+    "topics",
+    "search",
+    "settings",
+    "apps",
+}
+_NON_REPO_SUFFIXES = {
+    "issues",
+    "pulls",
+    "actions",
+    "wiki",
+    "releases",
+    "compare",
+    "blob",
+    "tree",
+    "commits",
+    "discussions",
+    "projects",
+    "security",
+    "pkgs",
+}
 
 
 def extract_repo_links(readme_text: str, self_full_name: str) -> list[str]:
@@ -112,37 +143,65 @@ def load_seed_repos_from_candidates(path: Path, limit: int | None) -> list[str]:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--repo", action="append", default=[], dest="repos",
-                         help="seed repo full_name (owner/repo); repeat for multiple")
-    parser.add_argument("--from-candidates", action="store_true",
-                         help="use every repo currently in --out-candidates as a seed")
-    parser.add_argument("--max-seeds", type=int, default=None,
-                         help="cap the number of seed repos read from --from-candidates")
+    parser = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
+    parser.add_argument(
+        "--repo",
+        action="append",
+        default=[],
+        dest="repos",
+        help="seed repo full_name (owner/repo); repeat for multiple",
+    )
+    parser.add_argument(
+        "--from-candidates",
+        action="store_true",
+        help="use every repo currently in --out-candidates as a seed",
+    )
+    parser.add_argument(
+        "--max-seeds",
+        type=int,
+        default=None,
+        help="cap the number of seed repos read from --from-candidates",
+    )
     parser.add_argument("--min-stars", type=int, default=DEFAULT_MIN_STARS)
-    parser.add_argument("--pushed-after-months", type=int, default=DEFAULT_PUSHED_AFTER_MONTHS)
-    parser.add_argument("--min-readme-chars", type=int, default=DEFAULT_MIN_README_CHARS)
+    parser.add_argument(
+        "--pushed-after-months", type=int, default=DEFAULT_PUSHED_AFTER_MONTHS
+    )
+    parser.add_argument(
+        "--min-readme-chars", type=int, default=DEFAULT_MIN_README_CHARS
+    )
     parser.add_argument("--raw-dir", default="curation/state/search_raw")
-    parser.add_argument("--out-candidates", default="curation/state/search_candidates.csv")
+    parser.add_argument(
+        "--out-candidates", default="curation/state/search_candidates.csv"
+    )
     parser.add_argument("--log-path", default="curation/state/search_log.csv")
     args = parser.parse_args()
 
     token = os.environ.get("GITHUB_TOKEN")
     if not token:
-        raise SystemExit("GITHUB_TOKEN is not set -- see curation/README.md's Setup section.")
+        raise SystemExit(
+            "GITHUB_TOKEN is not set -- see curation/README.md's Setup section."
+        )
 
     seeds = list(args.repos)
     if args.from_candidates:
-        seeds += load_seed_repos_from_candidates(Path(args.out_candidates), args.max_seeds)
+        seeds += load_seed_repos_from_candidates(
+            Path(args.out_candidates), args.max_seeds
+        )
     if not seeds:
-        raise SystemExit("no seed repos given -- pass --repo owner/repo (repeatable) or --from-candidates")
+        raise SystemExit(
+            "no seed repos given -- pass --repo owner/repo (repeatable) or --from-candidates"
+        )
 
     session = requests.Session()
-    session.headers.update({
-        "Authorization": f"Bearer {token}",
-        "Accept": "application/vnd.github+json",
-        "X-GitHub-Api-Version": "2022-11-28",
-    })
+    session.headers.update(
+        {
+            "Authorization": f"Bearer {token}",
+            "Accept": "application/vnd.github+json",
+            "X-GitHub-Api-Version": "2022-11-28",
+        }
+    )
 
     pushed_after = cutoff_date(args.pushed_after_months)
     raw_dir = Path(args.raw_dir)
@@ -150,7 +209,9 @@ def main() -> None:
     candidates = load_existing_candidates(Path(args.out_candidates))
     seen_before = set(candidates)
     log_rows = []
-    run_timestamp = datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds")
+    run_timestamp = datetime.datetime.now(datetime.timezone.utc).isoformat(
+        timespec="seconds"
+    )
 
     for seed in seeds:
         print(f"[snowball] seed {seed!r}")
@@ -180,35 +241,50 @@ def main() -> None:
 
         raw_path = raw_dir / f"snowball-{slugify(seed)}.json"
         with open(raw_path, "w", encoding="utf-8") as f:
-            json.dump({"seed": seed, "links_found": links, "kept": checked}, f, indent=2)
+            json.dump(
+                {"seed": seed, "links_found": links, "kept": checked}, f, indent=2
+            )
         print(f"  -> {kept} new candidate(s) passed the filters, saved to {raw_path}")
 
-        log_rows.append({
-            "timestamp_utc": run_timestamp,
-            "keyword": f"snowball:{seed}",
-            "query": f"README links from {seed}",
-            "raw_count": len(links),
-            "new_candidates": kept,
-            "min_stars": args.min_stars,
-            "pushed_after_months": args.pushed_after_months,
-            "min_readme_chars": args.min_readme_chars,
-            "notes": "backward snowballing, not a GitHub search query",
-        })
+        log_rows.append(
+            {
+                "timestamp_utc": run_timestamp,
+                "keyword": f"snowball:{seed}",
+                "query": f"README links from {seed}",
+                "raw_count": len(links),
+                "new_candidates": kept,
+                "min_stars": args.min_stars,
+                "pushed_after_months": args.pushed_after_months,
+                "min_readme_chars": args.min_readme_chars,
+                "notes": "backward snowballing, not a GitHub search query",
+            }
+        )
 
     append_search_log(Path(args.log_path), log_rows)
     print(f"logged {len(log_rows)} seed(s) to {args.log_path}")
 
     out_path = Path(args.out_candidates)
     with open(out_path, "w", encoding="utf-8", newline="") as f:
-        fieldnames = ["full_name", "html_url", "description", "stars", "pushed_at",
-                      "language", "license_spdx_id", "homepage", "found_via_keyword"]
+        fieldnames = [
+            "full_name",
+            "html_url",
+            "description",
+            "stars",
+            "pushed_at",
+            "language",
+            "license_spdx_id",
+            "homepage",
+            "found_via_keyword",
+        ]
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         for row in candidates.values():
             writer.writerow({k: row.get(k, "") for k in fieldnames})
 
     new_count = len(candidates) - len(seen_before)
-    print(f"\nwrote {len(candidates)} total candidate(s) ({new_count} new this run) to {out_path}")
+    print(
+        f"\nwrote {len(candidates)} total candidate(s) ({new_count} new this run) to {out_path}"
+    )
 
 
 if __name__ == "__main__":

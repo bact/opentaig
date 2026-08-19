@@ -177,6 +177,7 @@ Usage:
 
     python curation/emit_candidates.py --judgments path/to/judgments.json
 """
+
 from __future__ import annotations
 
 import argparse
@@ -195,25 +196,72 @@ csv.field_size_limit(sys.maxsize)
 # agnostic) and only matters for the "paste without reformatting" promise
 # below -- re-check against the live header if this ever seems to produce a
 # misaligned paste, since nothing enforces the two staying in sync.
-TOOLS_FIELDNAMES = ["id", "tool_type", "name", "summary", "license", "programming_language",
-                     "homepage", "source", "documentation", "funding", "funder", "paper_url",
-                     "dependents",
-                     "datetime_added", "datetime_checked", "datetime_updated",
-                     "keywords",
-                     "stars", "forks", "watchers", "contributors", "sponsors", "last_commit_date",
-                     "open_issues_count", "releases_count", "latest_release_date",
-                     "readme_url", "license_url", "governance_url", "contributing_url",
-                     "code_of_conduct_url", "security_policy_url", "sbom_url",
-                     "openssf_best_practices_url", "openssf_best_practices_badge_level",
-                     "openssf_scorecard_url", "openssf_scorecard_score",
-                     "openssf_scorecard_branch_protection", "openssf_scorecard_code_review",
-                     "openssf_scorecard_maintained", "openssf_scorecard_vulnerabilities",
-                     "development_status", "software_heritage_id"]
-MAP_FIELDNAMES = ["rq_no", "tool_id", "role", "rationale",
-                   "datetime_added", "datetime_checked", "datetime_updated"]  # matches the live tool_map tab's header exactly
-SEEN_FIELDNAMES = ["full_name", "verdict", "reject_category", "note",
-                    "license_spdx_id", "license_class", "problem_area",
-                    "found_via_keyword", "stars", "timestamp_utc"]
+TOOLS_FIELDNAMES = [
+    "id",
+    "tool_type",
+    "name",
+    "summary",
+    "license",
+    "programming_language",
+    "homepage",
+    "source",
+    "documentation",
+    "funding",
+    "funder",
+    "paper_url",
+    "dependents",
+    "datetime_added",
+    "datetime_checked",
+    "datetime_updated",
+    "keywords",
+    "stars",
+    "forks",
+    "watchers",
+    "contributors",
+    "sponsors",
+    "last_commit_date",
+    "open_issues_count",
+    "releases_count",
+    "latest_release_date",
+    "readme_url",
+    "license_url",
+    "governance_url",
+    "contributing_url",
+    "code_of_conduct_url",
+    "security_policy_url",
+    "sbom_url",
+    "openssf_best_practices_url",
+    "openssf_best_practices_badge_level",
+    "openssf_scorecard_url",
+    "openssf_scorecard_score",
+    "openssf_scorecard_branch_protection",
+    "openssf_scorecard_code_review",
+    "openssf_scorecard_maintained",
+    "openssf_scorecard_vulnerabilities",
+    "development_status",
+    "software_heritage_id",
+]
+MAP_FIELDNAMES = [
+    "rq_no",
+    "tool_id",
+    "role",
+    "rationale",
+    "datetime_added",
+    "datetime_checked",
+    "datetime_updated",
+]  # matches the live tool_map tab's header exactly
+SEEN_FIELDNAMES = [
+    "full_name",
+    "verdict",
+    "reject_category",
+    "note",
+    "license_spdx_id",
+    "license_class",
+    "problem_area",
+    "found_via_keyword",
+    "stars",
+    "timestamp_utc",
+]
 PASS_A_FIELDNAMES = ["tool_id", "rq_no", "verdict", "note", "timestamp_utc"]
 
 VALID_ROLES = {"implement", "eval"}
@@ -290,25 +338,41 @@ def load_search_metadata(path: Path) -> dict:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--judgments", required=True, help="path to the judgments JSON file")
+    parser = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
+    parser.add_argument(
+        "--judgments", required=True, help="path to the judgments JSON file"
+    )
     parser.add_argument("--tools-out", default="curation/candidate_tools.csv")
     parser.add_argument("--map-out", default="curation/candidate_map_updates.csv")
     parser.add_argument("--seen-repos", default="curation/state/seen_repos.csv")
-    parser.add_argument("--pass-a-out", default="curation/state/pass_a_checked.csv",
-                        help="ledger of every (tool_id, rq_no) pairing considered, match or not")
-    parser.add_argument("--search-candidates", default="curation/state/search_candidates.csv",
-                        help="used to look up licence/stars/keyword per repo; a repo absent "
-                             "from it is recorded with whatever the judgment supplied")
-    parser.add_argument("--data-json", default="site/data.json",
-                        help="used to detect tool ids already live in the `tools` tab, so "
-                             "pass-A re-mappings of an existing tool don't re-emit its `tools` "
-                             "row -- only its new `tool_map` row(s). Run `python build.py` "
-                             "first so this reflects the current live sheet.")
-    parser.add_argument("--problem-area", default="",
-                        help="problem area this batch was searched for; recorded on every "
-                             "triage row so per-area counts are computable later. A judgment "
-                             "may override it with its own 'problem_area' key.")
+    parser.add_argument(
+        "--pass-a-out",
+        default="curation/state/pass_a_checked.csv",
+        help="ledger of every (tool_id, rq_no) pairing considered, match or not",
+    )
+    parser.add_argument(
+        "--search-candidates",
+        default="curation/state/search_candidates.csv",
+        help="used to look up licence/stars/keyword per repo; a repo absent "
+        "from it is recorded with whatever the judgment supplied",
+    )
+    parser.add_argument(
+        "--data-json",
+        default="site/data.json",
+        help="used to detect tool ids already live in the `tools` tab, so "
+        "pass-A re-mappings of an existing tool don't re-emit its `tools` "
+        "row -- only its new `tool_map` row(s). Run `python build.py` "
+        "first so this reflects the current live sheet.",
+    )
+    parser.add_argument(
+        "--problem-area",
+        default="",
+        help="problem area this batch was searched for; recorded on every "
+        "triage row so per-area counts are computable later. A judgment "
+        "may override it with its own 'problem_area' key.",
+    )
     args = parser.parse_args()
 
     with open(args.judgments, "r", encoding="utf-8") as f:
@@ -338,7 +402,9 @@ def main() -> None:
         repo = j.get("repo", "")
         verdict = j.get("verdict", "")
         if verdict not in ("accept", "reject"):
-            errors.append(f"{repo}: verdict must be 'accept' or 'reject', got {verdict!r}")
+            errors.append(
+                f"{repo}: verdict must be 'accept' or 'reject', got {verdict!r}"
+            )
             continue
         if repo in seen_repos_in_batch:
             errors.append(f"{repo}: duplicate repo entry in this batch")
@@ -355,31 +421,39 @@ def main() -> None:
         reject_category = j.get("reject_category", "") if verdict == "reject" else ""
         if verdict == "reject":
             if not reject_category:
-                errors.append(f"{repo}: verdict=reject but no 'reject_category' given "
-                              f"(one of: {', '.join(sorted(REJECT_CATEGORIES))})")
+                errors.append(
+                    f"{repo}: verdict=reject but no 'reject_category' given "
+                    f"(one of: {', '.join(sorted(REJECT_CATEGORIES))})"
+                )
             elif reject_category not in REJECT_CATEGORIES:
-                errors.append(f"{repo}: unknown reject_category {reject_category!r} "
-                              f"(one of: {', '.join(sorted(REJECT_CATEGORIES))})")
+                errors.append(
+                    f"{repo}: unknown reject_category {reject_category!r} "
+                    f"(one of: {', '.join(sorted(REJECT_CATEGORIES))})"
+                )
             if not note:
                 errors.append(f"{repo}: verdict=reject but no 'reject_reason' given")
             # Cross-check the agent against the licence data rather than trusting
             # either alone -- a mismatch means one of them needs a second look.
             if reject_category == "not-open-source" and license_class in OPEN_CLASSES:
-                errors.append(f"{repo}: rejected as 'not-open-source' but its licence "
-                              f"{license_spdx!r} classifies as {license_class}")
+                errors.append(
+                    f"{repo}: rejected as 'not-open-source' but its licence "
+                    f"{license_spdx!r} classifies as {license_class}"
+                )
 
-        seen_rows.append({
-            "full_name": repo,
-            "verdict": verdict,
-            "reject_category": reject_category,
-            "note": note,
-            "license_spdx_id": license_spdx,
-            "license_class": license_class,
-            "problem_area": j.get("problem_area", args.problem_area),
-            "found_via_keyword": meta.get("found_via_keyword", ""),
-            "stars": meta.get("stars", ""),
-            "timestamp_utc": timestamp,
-        })
+        seen_rows.append(
+            {
+                "full_name": repo,
+                "verdict": verdict,
+                "reject_category": reject_category,
+                "note": note,
+                "license_spdx_id": license_spdx,
+                "license_class": license_class,
+                "problem_area": j.get("problem_area", args.problem_area),
+                "found_via_keyword": meta.get("found_via_keyword", ""),
+                "stars": meta.get("stars", ""),
+                "timestamp_utc": timestamp,
+            }
+        )
 
         if verdict == "reject":
             continue
@@ -399,88 +473,112 @@ def main() -> None:
             # re-emitting the tools row would duplicate it once pasted in.
             live_tools_skipped += 1
         else:
-            tool_rows.append({
-                "id": tool_id,
-                "tool_type": j.get("tool_type", "software"),
-                "name": j.get("name", tool_id),
-                "summary": j.get("summary", ""),
-                "license": j.get("license", ""),
-                "programming_language": j.get("programming_language", ""),
-                "homepage": j.get("homepage", ""),
-                "source": j.get("source", ""),
-                "documentation": j.get("documentation", ""),
-                "funding": j.get("funding", ""),
-                # Project-quality/community-health columns: left blank here by
-                # design -- run curation/collect_project_metadata.py after this
-                # tool is merged into the live sheet and site/data.json is
-                # rebuilt, rather than having the judging agent try to guess
-                # star counts or OpenSSF scan status by hand. Still listed in
-                # TOOLS_FIELDNAMES so the emitted row's columns line up with
-                # the live tab's, for a clean paste.
-                "stars": j.get("stars", ""),
-                "forks": j.get("forks", ""),
-                "watchers": j.get("watchers", ""),
-                "contributors": j.get("contributors", ""),
-                "sponsors": j.get("sponsors", ""),
-                "keywords": j.get("keywords", ""),
-                "open_issues_count": j.get("open_issues_count", ""),
-                "releases_count": j.get("releases_count", ""),
-                "latest_release_date": j.get("latest_release_date", ""),
-                "last_commit_date": j.get("last_commit_date", ""),
-                "readme_url": j.get("readme_url", ""),
-                "license_url": j.get("license_url", ""),
-                "code_of_conduct_url": j.get("code_of_conduct_url", ""),
-                "contributing_url": j.get("contributing_url", ""),
-                "security_policy_url": j.get("security_policy_url", ""),
-                "governance_url": j.get("governance_url", ""),
-                "sbom_url": j.get("sbom_url", ""),
-                "funder": j.get("funder", ""),
-                "development_status": j.get("development_status", ""),
-                "paper_url": j.get("paper_url", ""),
-                "dependents": j.get("dependents", ""),
-                "software_heritage_id": j.get("software_heritage_id", ""),
-                "openssf_best_practices_url": j.get("openssf_best_practices_url", ""),
-                "openssf_best_practices_badge_level": j.get("openssf_best_practices_badge_level", ""),
-                "openssf_scorecard_url": j.get("openssf_scorecard_url", ""),
-                "openssf_scorecard_score": j.get("openssf_scorecard_score", ""),
-                "openssf_scorecard_branch_protection": j.get("openssf_scorecard_branch_protection", ""),
-                "openssf_scorecard_code_review": j.get("openssf_scorecard_code_review", ""),
-                "openssf_scorecard_maintained": j.get("openssf_scorecard_maintained", ""),
-                "openssf_scorecard_vulnerabilities": j.get("openssf_scorecard_vulnerabilities", ""),
-                "datetime_added": sheet_timestamp,
-                "datetime_checked": sheet_timestamp,
-                "datetime_updated": sheet_timestamp,
-            })
+            tool_rows.append(
+                {
+                    "id": tool_id,
+                    "tool_type": j.get("tool_type", "software"),
+                    "name": j.get("name", tool_id),
+                    "summary": j.get("summary", ""),
+                    "license": j.get("license", ""),
+                    "programming_language": j.get("programming_language", ""),
+                    "homepage": j.get("homepage", ""),
+                    "source": j.get("source", ""),
+                    "documentation": j.get("documentation", ""),
+                    "funding": j.get("funding", ""),
+                    # Project-quality/community-health columns: left blank here by
+                    # design -- run curation/collect_project_metadata.py after this
+                    # tool is merged into the live sheet and site/data.json is
+                    # rebuilt, rather than having the judging agent try to guess
+                    # star counts or OpenSSF scan status by hand. Still listed in
+                    # TOOLS_FIELDNAMES so the emitted row's columns line up with
+                    # the live tab's, for a clean paste.
+                    "stars": j.get("stars", ""),
+                    "forks": j.get("forks", ""),
+                    "watchers": j.get("watchers", ""),
+                    "contributors": j.get("contributors", ""),
+                    "sponsors": j.get("sponsors", ""),
+                    "keywords": j.get("keywords", ""),
+                    "open_issues_count": j.get("open_issues_count", ""),
+                    "releases_count": j.get("releases_count", ""),
+                    "latest_release_date": j.get("latest_release_date", ""),
+                    "last_commit_date": j.get("last_commit_date", ""),
+                    "readme_url": j.get("readme_url", ""),
+                    "license_url": j.get("license_url", ""),
+                    "code_of_conduct_url": j.get("code_of_conduct_url", ""),
+                    "contributing_url": j.get("contributing_url", ""),
+                    "security_policy_url": j.get("security_policy_url", ""),
+                    "governance_url": j.get("governance_url", ""),
+                    "sbom_url": j.get("sbom_url", ""),
+                    "funder": j.get("funder", ""),
+                    "development_status": j.get("development_status", ""),
+                    "paper_url": j.get("paper_url", ""),
+                    "dependents": j.get("dependents", ""),
+                    "software_heritage_id": j.get("software_heritage_id", ""),
+                    "openssf_best_practices_url": j.get(
+                        "openssf_best_practices_url", ""
+                    ),
+                    "openssf_best_practices_badge_level": j.get(
+                        "openssf_best_practices_badge_level", ""
+                    ),
+                    "openssf_scorecard_url": j.get("openssf_scorecard_url", ""),
+                    "openssf_scorecard_score": j.get("openssf_scorecard_score", ""),
+                    "openssf_scorecard_branch_protection": j.get(
+                        "openssf_scorecard_branch_protection", ""
+                    ),
+                    "openssf_scorecard_code_review": j.get(
+                        "openssf_scorecard_code_review", ""
+                    ),
+                    "openssf_scorecard_maintained": j.get(
+                        "openssf_scorecard_maintained", ""
+                    ),
+                    "openssf_scorecard_vulnerabilities": j.get(
+                        "openssf_scorecard_vulnerabilities", ""
+                    ),
+                    "datetime_added": sheet_timestamp,
+                    "datetime_checked": sheet_timestamp,
+                    "datetime_updated": sheet_timestamp,
+                }
+            )
 
         mappings = j.get("mappings", [])
         if not mappings and not j.get("no_rq_mapping_reason"):
-            errors.append(f"{repo}: verdict=accept but no RQ mappings given (if this is "
-                           f"deliberate -- a real tool with no matching RQ in the current "
-                           f"taxonomy yet -- set 'no_rq_mapping_reason' explaining why; it'll "
-                           f"land on the site's 'Pending mapping' list instead of an RQ page)")
+            errors.append(
+                f"{repo}: verdict=accept but no RQ mappings given (if this is "
+                f"deliberate -- a real tool with no matching RQ in the current "
+                f"taxonomy yet -- set 'no_rq_mapping_reason' explaining why; it'll "
+                f"land on the site's 'Pending mapping' list instead of an RQ page)"
+            )
         for m in mappings:
             role = m.get("role", "")
             if role not in VALID_ROLES:
-                errors.append(f"{repo}: mapping role must be 'implement' or 'eval', got {role!r}")
+                errors.append(
+                    f"{repo}: mapping role must be 'implement' or 'eval', got {role!r}"
+                )
                 continue
             if not m.get("rationale"):
-                errors.append(f"{repo}: rq_no {m.get('rq_no')} mapping missing a rationale")
-            map_rows.append({
-                "rq_no": m.get("rq_no", ""),
-                "tool_id": tool_id,
-                "role": role,
-                "rationale": m.get("rationale", ""),
-                "datetime_added": sheet_timestamp,
-                "datetime_checked": sheet_timestamp,
-                "datetime_updated": sheet_timestamp,
-            })
-            pass_a_rows.append({
-                "tool_id": tool_id,
-                "rq_no": m.get("rq_no", ""),
-                "verdict": "match",
-                "note": "",
-                "timestamp_utc": timestamp,
-            })
+                errors.append(
+                    f"{repo}: rq_no {m.get('rq_no')} mapping missing a rationale"
+                )
+            map_rows.append(
+                {
+                    "rq_no": m.get("rq_no", ""),
+                    "tool_id": tool_id,
+                    "role": role,
+                    "rationale": m.get("rationale", ""),
+                    "datetime_added": sheet_timestamp,
+                    "datetime_checked": sheet_timestamp,
+                    "datetime_updated": sheet_timestamp,
+                }
+            )
+            pass_a_rows.append(
+                {
+                    "tool_id": tool_id,
+                    "rq_no": m.get("rq_no", ""),
+                    "verdict": "match",
+                    "note": "",
+                    "timestamp_utc": timestamp,
+                }
+            )
 
         for entry in j.get("checked_no_match", []):
             rq_no = entry if isinstance(entry, str) else entry.get("rq_no", "")
@@ -488,13 +586,15 @@ def main() -> None:
             if not rq_no:
                 errors.append(f"{repo}: checked_no_match entry missing rq_no")
                 continue
-            pass_a_rows.append({
-                "tool_id": tool_id,
-                "rq_no": rq_no,
-                "verdict": "no_match",
-                "note": note,
-                "timestamp_utc": timestamp,
-            })
+            pass_a_rows.append(
+                {
+                    "tool_id": tool_id,
+                    "rq_no": rq_no,
+                    "verdict": "no_match",
+                    "note": note,
+                    "timestamp_utc": timestamp,
+                }
+            )
 
     if errors:
         print("Errors -- fix the judgments file and re-run (nothing was written):")
@@ -503,31 +603,59 @@ def main() -> None:
         raise SystemExit(1)
 
     tools_out = Path(args.tools_out)
-    tools_written, tools_skipped = append_rows(tools_out, TOOLS_FIELDNAMES, tool_rows, ["id"])
+    tools_written, tools_skipped = append_rows(
+        tools_out, TOOLS_FIELDNAMES, tool_rows, ["id"]
+    )
 
     map_out = Path(args.map_out)
-    map_written, map_skipped = append_rows(map_out, MAP_FIELDNAMES, map_rows, ["rq_no", "tool_id", "role"])
+    map_written, map_skipped = append_rows(
+        map_out, MAP_FIELDNAMES, map_rows, ["rq_no", "tool_id", "role"]
+    )
 
     seen_path = Path(args.seen_repos)
-    seen_written, seen_skipped = append_rows(seen_path, SEEN_FIELDNAMES, seen_rows, ["full_name"])
+    seen_written, seen_skipped = append_rows(
+        seen_path, SEEN_FIELDNAMES, seen_rows, ["full_name"]
+    )
 
     pass_a_path = Path(args.pass_a_out)
-    pass_a_written, pass_a_skipped = append_rows(pass_a_path, PASS_A_FIELDNAMES, pass_a_rows, ["tool_id", "rq_no"])
+    pass_a_written, pass_a_skipped = append_rows(
+        pass_a_path, PASS_A_FIELDNAMES, pass_a_rows, ["tool_id", "rq_no"]
+    )
 
-    pending_mapping_count = sum(1 for j in judgments
-                                 if j.get("verdict") == "accept" and not j.get("mappings"))
-    print(f"{tools_written} accepted tool(s) -> {tools_out}"
-          + (f" ({tools_skipped} already present, skipped)" if tools_skipped else "")
-          + (f" ({live_tools_skipped} already live in tools tab, tools-row skipped)" if live_tools_skipped else "")
-          + (f" ({pending_mapping_count} with no RQ mapping -- will show under 'Pending mapping' on the site)"
-             if pending_mapping_count else ""))
-    print(f"{map_written} RQ mapping(s) -> {map_out}"
-          + (f" ({map_skipped} already present, skipped)" if map_skipped else ""))
-    print(f"{seen_written} repo(s) newly logged -> {seen_path}"
-          + (f" ({seen_skipped} already logged, skipped)" if seen_skipped else ""))
+    pending_mapping_count = sum(
+        1 for j in judgments if j.get("verdict") == "accept" and not j.get("mappings")
+    )
+    print(
+        f"{tools_written} accepted tool(s) -> {tools_out}"
+        + (f" ({tools_skipped} already present, skipped)" if tools_skipped else "")
+        + (
+            f" ({live_tools_skipped} already live in tools tab, tools-row skipped)"
+            if live_tools_skipped
+            else ""
+        )
+        + (
+            f" ({pending_mapping_count} with no RQ mapping -- will show under 'Pending mapping' on the site)"
+            if pending_mapping_count
+            else ""
+        )
+    )
+    print(
+        f"{map_written} RQ mapping(s) -> {map_out}"
+        + (f" ({map_skipped} already present, skipped)" if map_skipped else "")
+    )
+    print(
+        f"{seen_written} repo(s) newly logged -> {seen_path}"
+        + (f" ({seen_skipped} already logged, skipped)" if seen_skipped else "")
+    )
     if pass_a_rows:
-        print(f"{pass_a_written} (tool, RQ) pairing(s) logged -> {pass_a_path}"
-              + (f" ({pass_a_skipped} already present, skipped)" if pass_a_skipped else ""))
+        print(
+            f"{pass_a_written} (tool, RQ) pairing(s) logged -> {pass_a_path}"
+            + (
+                f" ({pass_a_skipped} already present, skipped)"
+                if pass_a_skipped
+                else ""
+            )
+        )
 
 
 if __name__ == "__main__":

@@ -30,6 +30,7 @@ Usage:
                        # dedup check is against current data
     python curation/dedup_candidates.py
 """
+
 from __future__ import annotations
 
 import argparse
@@ -75,7 +76,9 @@ def load_seen_repos(seen_path: Path) -> dict:
 
 def main() -> None:
     csv.field_size_limit(sys.maxsize)
-    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
     parser.add_argument("--candidates", default="curation/state/search_candidates.csv")
     parser.add_argument("--data-json", default="site/data.json")
     parser.add_argument("--seen-repos", default="curation/state/seen_repos.csv")

@@ -1,6 +1,6 @@
 # OpenTAIG: Methodology and Findings
 
-How the tool catalog was built, what it found, and — more usefully — where it
+How the tool catalogue was built, what it found, and — more usefully — where it
 found nothing and why. Written as the record behind the site, and as a source
 for writing up the work.
 
@@ -127,16 +127,16 @@ Two further sources proved productive after keyword search saturated:
 Model tiering: no model in the scripts; a cheaper model for keyword scoping and
 coarse pre-filtering; the strongest model, as an isolated subagent, for the
 final implement/eval decision — given only `{tool summary + README excerpt}` ×
-`{pre-filtered RQ shortlist}`, never the full session history or RQ catalog.
+`{pre-filtered RQ shortlist}`, never the full session history or RQ catalogue.
 
 Every rejection carries a category from a closed vocabulary, so rejections are
 countable rather than free text.
 
-### 2.4 Two passes over the catalog
+### 2.4 Two passes over the catalogue
 
 - **Pass A** (no search): re-judge already-accepted tools against questions they
   are *not* yet mapped to. This exists because `dedup_candidates.py` drops any
-  candidate already in the catalog — so keyword search **structurally cannot**
+  candidate already in the catalogue — so keyword search **structurally cannot**
   discover that an existing tool also answers a different question.
 - **Pass B**: expanded keyword and topic search across all questions.
 
@@ -177,7 +177,7 @@ Of **1,618** repositories judged: **130 accepted, 1,488 rejected**; **1,209
 | adversarial-purpose | 4 | 0.3% |
 
 Note that **`not-open-source` is a vanishingly small rejection reason (0.5%)**.
-Open-source availability is not the binding constraint on this catalog;
+Open-source availability is not the binding constraint on this catalogue;
 relevance and substance are.
 
 ---
@@ -239,7 +239,7 @@ two tools had none at all — unreachable from any problem page. Every mapping h
 been created at the single moment its tool was first accepted, judged only
 against the problem area being searched at that time.
 
-This is a methodological warning for any catalog built incrementally by search:
+This is a methodological warning for any catalogue built incrementally by search:
 **mapping density measures curation history, not tool generality.** Pass A
 brought the single-mapped share down to 62% (78 of 126) and eliminated
 zero-mapped tools entirely.
@@ -272,8 +272,8 @@ isolated strongest-model judgment pass given only the 97 question texts and
 [`curation/aiaaic_taxonomy_mapping.py`](../curation/aiaaic_taxonomy_mapping.py)
 for the full mapping and every per-question rationale.
 
-This is a completeness check the RQ catalog cannot perform on itself, because
-the catalog defines its own scope. Reading it against an independently-derived
+This is a completeness check the RQ catalogue cannot perform on itself, because
+the catalogue defines its own scope. Reading it against an independently-derived
 harm taxonomy separates three states: harm addressed and tooled; harm addressed
 but untooled; **harm not addressed at all**.
 
@@ -350,7 +350,7 @@ in `aiaaic_taxonomy_mapping.py`.
 Note also that Political & Economic remains the weakest-tooled type by
 proportion (10/19 tooled, 53%) despite substantial question coverage — down
 from 15 zero-tool questions under the earlier mapping to 9, as tool coverage
-grew elsewhere in the catalog this session, but still trailing every other
+grew elsewhere in the catalogue this session, but still trailing every other
 type except the now-empty Physical. This is the hardware/compute cluster of
 F2, restated in harm terms: the agenda *does* ask how to prevent power
 concentration and model-weight theft; open-source tooling has only partly
@@ -413,19 +413,19 @@ support.
    `tools` tab's manual-entry-only column for GitHub's dependency-graph
    "Used by" count — see `docs/data-schema.md`) is a reasonable adoption
    proxy for a package meant to be imported by other code, but this
-   catalog also includes services, web-based tools, AI agent skills, and
+   catalogue also includes services, web-based tools, AI agent skills, and
    marketplace-installed plugins — categories the dependency-graph concept
    doesn't apply to at all, since nothing declares them as a package
    dependency regardless of how widely used they are. Even for genuine
    libraries, GitHub's own dependents count is commonly reported as
    inflated by forks of downstream dependents (a fork of a project that
    depends on the library shows up as a separate "dependent," whether or
-   not it diverged meaningfully or is still maintained) — this catalog has
+   not it diverged meaningfully or is still maintained) — this catalogue has
    not independently verified the exact mechanism, but the caveat is
    documented here so a future assessor computing any composite
-   project-quality/health score from this catalog's data treats
+   project-quality/health score from this catalogue's data treats
    GitHub-sourced dependents counts as a rough, upper-bound signal, not a
-   precise usage measurement, and doesn't penalize non-library tools for
+   precise usage measurement, and doesn't penalise non-library tools for
    structurally being unable to have one at all.
 
 ---
@@ -438,8 +438,8 @@ specific finding or limitation above, not a general call for "more research."
 ### 6.1 New search axes suggested by this session's own results
 
 - **Use the 36 uncovered specific harms (F6) as a keyword source in their own
-  right.** This session searched *toward* the RQ catalog; it never searched
-  toward the harm gaps the RQ catalog doesn't know it has. Concrete queries the
+  right.** This session searched *toward* the RQ catalogue; it never searched
+  toward the harm gaps the RQ catalogue doesn't know it has. Concrete queries the
   taxonomy suggests directly: `addiction detection app` / `dark pattern
   detector` / `manipulation detection UI` (Psychological — still 7 of 11
   uncovered); `biodiversity impact tracker` / `landfill e-waste tracking` /
@@ -447,7 +447,7 @@ specific finding or limitation above, not a general call for "more research."
   — narrower than before, since `Excessive water consumption` and
   `Electronic waste` are now research-covered by RQ97/98, just not yet
   tool-covered). A hit on any of these would be a genuinely new finding: a
-  tool the RQ catalog's own vocabulary was structurally incapable of
+  tool the RQ catalogue's own vocabulary was structurally incapable of
   surfacing. Separately, `codecarbon`/`ecologits`-adjacent water- and
   e-waste-measurement tools are worth a direct search even though their harm
   is technically "covered" by RQ97/98's generic phrasing — the research

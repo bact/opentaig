@@ -44,7 +44,7 @@
      real link (moss chip), absent is a dashed ghost (not a link, so it's
      not a dead keyboard tab stop), same idiom as _solution_table.html's
      solution_cell(): the link/no-link distinction carries the state for
-     screen readers, not color alone. sbom_url/paper_url are appended
+     screen readers, not colour alone. sbom_url/paper_url are appended
      present-only (no ghost) since only the fixed 10 are quality signals
      worth flagging by their absence. #}
   <div class="tool-doc-checklist">
@@ -94,7 +94,7 @@
   <div class="tool-freshness">
     <p class="tool-freshness-label">Data freshness</p>
     {% if entry.catalog_freshness_parts %}
-    <p>Catalog entry: {% for part in entry.catalog_freshness_parts %}{% if not loop.first %} &middot; {% endif %}{{ part.label }} {{ part.value }}{% endfor %}</p>
+    <p>Catalogue entry: {% for part in entry.catalog_freshness_parts %}{% if not loop.first %} &middot; {% endif %}{{ part.label }} {{ part.value }}{% endfor %}</p>
     {% endif %}
     {% if entry.metadata_freshness_parts %}
     <p>Auto-collected metadata: {% for part in entry.metadata_freshness_parts %}{% if not loop.first %} &middot; {% endif %}{{ part.label }} {{ part.value }}{% endfor %}</p>

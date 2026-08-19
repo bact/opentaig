@@ -6,9 +6,11 @@ SPDX-License-Identifier: CC0-1.0
 
 # OpenTAIG
 
-A catalog of open-source tools mapped to open problems in technical AI
+A catalogue of open-source tools mapped to open problems in technical AI
 governance, and linked to the regulations and ethical principles they help
 address.
+
+Maintained by [Arthit Suriyawongkul](https://github.com/bact).
 
 Inspired by the
 [Open Problems in Technical AI Governance database][taig-db]
@@ -31,7 +33,7 @@ difficulty navigating the site, please open an issue so we can address them.
 The site is **fully static**, hosted on **GitHub Pages**, and generated from
 three separate Google Sheets documents once per build — `TAIG` (the
 upstream question set), `OpenTAIG` (our own framework mappings + tool
-catalog), and `OpenTAIG-auto` (auto-collected project-quality data for each
+catalogue), and `OpenTAIG-auto` (auto-collected project-quality data for each
 tool, kept in its own document so a future automation credential can be
 scoped to write only there — see "The three documents" in
 [`docs/data-schema.md`](docs/data-schema.md) for each one's URL). There is
@@ -63,7 +65,7 @@ against local fixtures, and repo/deployment setup.
 ## Documentation
 
 - [`docs/methodology-and-findings.md`](docs/methodology-and-findings.md) — how
-  the catalog was built, what it found, and what it didn't: coverage results,
+  the catalogue was built, what it found, and what it didn't: coverage results,
   the harm-taxonomy completeness check, and stated limitations.
 - [`docs/data-schema.md`](docs/data-schema.md) — the full Google Sheets
   schema: every tab, every column, how they join.
@@ -88,4 +90,31 @@ Data: [CC0 1.0 Universal][cc0] (public domain).
 See details at the site's [About][about-data] page.
 
 [cc0]: https://creativecommons.org/publicdomain/zero/1.0/
-[about-data]: https://bact.github.io/opentaig/about/#Data
+[about-data]: https://bact.github.io/opentaig/about/#data
+
+## Citation
+
+If you use this catalogue in academic or other work, please cite it as:
+
+> Suriyawongkul, A. (2026). OpenTAIG: A catalogue of open-source tools
+> mapped to open problems in technical AI governance and linked to
+> relevant principles and regulations [Data set]. GitHub.
+> https://github.com/bact/opentaig
+
+```bibtex
+@misc{opentaig,
+  author = {Suriyawongkul, Arthit},
+  title  = {OpenTAIG: A catalogue of open-source tools mapped to open
+            problems in technical AI governance and linked to relevant
+            principles and regulations},
+  year   = {2026},
+  url    = {https://github.com/bact/opentaig},
+  note   = {Accessed: YYYY-MM-DD}
+}
+```
+
+This repository also carries a [`CITATION.cff`](CITATION.cff) file, so
+GitHub can generate a citation in your preferred format automatically —
+look for "Cite this repository" in the sidebar of the repo page. See the
+site's [About][about-data] page for the same citation, always generated
+fresh against the current year.

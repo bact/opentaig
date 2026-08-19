@@ -58,13 +58,16 @@ Usage:
     index = load_spdx_index()
     classify("CC-BY-NC-4.0", index)   # -> "non-free"
 """
+
 from __future__ import annotations
 
 import json
 import urllib.request
 from pathlib import Path
 
-SPDX_URL = "https://raw.githubusercontent.com/spdx/license-list-data/main/json/licenses.json"
+SPDX_URL = (
+    "https://raw.githubusercontent.com/spdx/license-list-data/main/json/licenses.json"
+)
 DEFAULT_CACHE = Path(__file__).parent / "state" / "spdx_licenses.json"
 
 # The default reading of "open source" for aggregate counts. Callers doing a
@@ -72,7 +75,9 @@ DEFAULT_CACHE = Path(__file__).parent / "state" / "spdx_licenses.json"
 OPEN_CLASSES = {"osi-approved", "free-not-osi"}
 
 
-def load_spdx_index(cache_path: Path | str = DEFAULT_CACHE, refresh: bool = False) -> dict:
+def load_spdx_index(
+    cache_path: Path | str = DEFAULT_CACHE, refresh: bool = False
+) -> dict:
     """Returns {licenseId: {is_osi_approved, is_fsf_libre}}, fetching the SPDX
     list on first use and caching it. Pass refresh=True to re-fetch a stale
     cache. Field names follow SPDX 3.0 predicate naming, not the source JSON's
@@ -94,8 +99,15 @@ def load_spdx_index(cache_path: Path | str = DEFAULT_CACHE, refresh: bool = Fals
     }
     cache_path.parent.mkdir(parents=True, exist_ok=True)
     with open(cache_path, "w", encoding="utf-8") as f:
-        json.dump({"licenseListVersion": payload.get("licenseListVersion"),
-                   "licenses": index}, f, indent=1, sort_keys=True)
+        json.dump(
+            {
+                "licenseListVersion": payload.get("licenseListVersion"),
+                "licenses": index,
+            },
+            f,
+            indent=1,
+            sort_keys=True,
+        )
     return index
 
 
@@ -129,6 +141,15 @@ def classify(spdx_id: str, index: dict) -> str:
 if __name__ == "__main__":
     idx = load_spdx_index()
     print(f"{len(idx)} SPDX licence ids cached at {DEFAULT_CACHE}")
-    for probe in ["MIT", "Apache-2.0", "GPL-3.0", "CC-BY-NC-4.0", "CC-BY-4.0",
-                  "Elastic-2.0", "NOASSERTION", "", "Definitely-Not-A-Licence"]:
+    for probe in [
+        "MIT",
+        "Apache-2.0",
+        "GPL-3.0",
+        "CC-BY-NC-4.0",
+        "CC-BY-4.0",
+        "Elastic-2.0",
+        "NOASSERTION",
+        "",
+        "Definitely-Not-A-Licence",
+    ]:
         print(f"  {probe or '(empty)':<26} -> {classify(probe, idx)}")

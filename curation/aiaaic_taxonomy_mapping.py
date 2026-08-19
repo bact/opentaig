@@ -65,6 +65,7 @@ that matters for citation precision.
 CAVEAT: still a starting point for expert review, not a validated
 instrument -- judgment calls flagged in each RQ's `note`.
 """
+
 from __future__ import annotations
 
 import csv
@@ -75,41 +76,89 @@ from pathlib import Path
 # --- The taxonomy: 9 harm types, 69 specific harms (arXiv:2407.01294, Appendix A)
 TAXONOMY = {
     "Autonomy": [
-        "Autonomy/agency loss", "Impersonation/identity theft", "IP/copyright loss",
-        "Personality rights loss"],
+        "Autonomy/agency loss",
+        "Impersonation/identity theft",
+        "IP/copyright loss",
+        "Personality rights loss",
+    ],
     "Physical": [
-        "Bodily injury", "Loss of life", "Personal health deterioration", "Property damage"],
+        "Bodily injury",
+        "Loss of life",
+        "Personal health deterioration",
+        "Property damage",
+    ],
     "Psychological": [
-        "Addiction", "Alienation/isolation", "Anxiety/depression", "Coercion/manipulation",
-        "Dehumanisation/objectification", "Harassment/abuse/intimidation", "Over-reliance",
-        "Radicalisation", "Self-harm", "Sexualisation", "Trauma"],
-    "Reputational": [
-        "Defamation/libel/slander", "Loss of confidence/trust"],
+        "Addiction",
+        "Alienation/isolation",
+        "Anxiety/depression",
+        "Coercion/manipulation",
+        "Dehumanisation/objectification",
+        "Harassment/abuse/intimidation",
+        "Over-reliance",
+        "Radicalisation",
+        "Self-harm",
+        "Sexualisation",
+        "Trauma",
+    ],
+    "Reputational": ["Defamation/libel/slander", "Loss of confidence/trust"],
     "Financial and Business": [
-        "Business operations/infrastructure damage", "Confidentiality loss",
-        "Financial/earnings loss", "Livelihood loss", "Increased competition",
-        "Monopolisation", "Opportunity loss"],
+        "Business operations/infrastructure damage",
+        "Confidentiality loss",
+        "Financial/earnings loss",
+        "Livelihood loss",
+        "Increased competition",
+        "Monopolisation",
+        "Opportunity loss",
+    ],
     "Human Rights and Civil Liberties": [
-        "Benefits/entitlements loss", "Dignity loss", "Discrimination",
-        "Loss of freedom of speech/expression", "Loss of freedom of assembly/association",
-        "Loss of social rights and access to public services", "Loss of right to information",
-        "Loss of right to free elections", "Loss of right to liberty and security",
-        "Loss of right to due process", "Privacy loss"],
+        "Benefits/entitlements loss",
+        "Dignity loss",
+        "Discrimination",
+        "Loss of freedom of speech/expression",
+        "Loss of freedom of assembly/association",
+        "Loss of social rights and access to public services",
+        "Loss of right to information",
+        "Loss of right to free elections",
+        "Loss of right to liberty and security",
+        "Loss of right to due process",
+        "Privacy loss",
+    ],
     "Societal and Cultural": [
-        "Breach of ethics/values/norms", "Cheating/plagiarism", "Chilling effect",
-        "Cultural dispossession", "Damage to public health", "Historical revisionism",
-        "Information degradation", "Job loss/losses", "Labour exploitation",
-        "Loss of creativity/critical thinking", "Stereotyping",
-        "Public service delivery deterioration", "Societal destabilisation",
-        "Societal inequality", "Violence/armed conflict"],
+        "Breach of ethics/values/norms",
+        "Cheating/plagiarism",
+        "Chilling effect",
+        "Cultural dispossession",
+        "Damage to public health",
+        "Historical revisionism",
+        "Information degradation",
+        "Job loss/losses",
+        "Labour exploitation",
+        "Loss of creativity/critical thinking",
+        "Stereotyping",
+        "Public service delivery deterioration",
+        "Societal destabilisation",
+        "Societal inequality",
+        "Violence/armed conflict",
+    ],
     "Political and Economic": [
-        "Critical infrastructure damage", "Economic instability", "Power concentration",
-        "Electoral interference", "Institutional trust loss", "Political instability",
-        "Political manipulation"],
+        "Critical infrastructure damage",
+        "Economic instability",
+        "Power concentration",
+        "Electoral interference",
+        "Institutional trust loss",
+        "Political instability",
+        "Political manipulation",
+    ],
     "Environmental": [
-        "Biodiversity loss", "Carbon emissions", "Electronic waste",
-        "Excessive energy consumption", "Excessive landfill", "Excessive water consumption",
-        "Natural resource depletion", "Pollution"],
+        "Biodiversity loss",
+        "Carbon emissions",
+        "Electronic waste",
+        "Excessive energy consumption",
+        "Excessive landfill",
+        "Excessive water consumption",
+        "Natural resource depletion",
+        "Pollution",
+    ],
 }
 
 AUT, PHY, PSY, REP = "Autonomy", "Physical", "Psychological", "Reputational"
@@ -217,105 +266,552 @@ HARM_DEFINITIONS = {
 }
 
 
-
 MAPPING = {
-    "1": ('direct', [(HR, ['Privacy loss']), (AUT, ['IP/copyright loss']), (SOC, ['Information degradation'])], '"Problematic data" at web scale is concretely personal data, unlicensed copyrighted works, and low-quality/false text; scaling detection is what prevents each from entering training corpora.'),
-    "2": ('direct', [(AUT, ['IP/copyright loss'])], '"Prevent training on unlicensed data" is a verbatim match for misuse of an individual or organisation\'s copyright.'),
-    "3": ('direct', [(AUT, ['IP/copyright loss'])], ''),
-    "4": ('direct', [(HR, ['Privacy loss']), (AUT, ['IP/copyright loss']), (SOC, ['Information degradation'])], 'Same target harms as RQ1; the contribution is doing the detection under restricted access.'),
-    "5": ('direct', [(SOC, ['Information degradation']), (HR, ['Privacy loss'])], 'Contamination with problematic samples (poisoned or otherwise harmful text) degrades what the trained system then outputs; personal data is the other canonical contaminant.'),
-    "6": ('direct', [(SOC, ['Violence/armed conflict']), (HR, ['Privacy loss']), (PSY, ['Sexualisation'])], "Removal-without-signposting framing covers hazardous content (weapons/attack material) and personal data; also covers non-consensual sexual content (e.g. CSAM) in corpora under AIAAIC v1.8's revised Sexualisation definition (non-consensual sexualisation via a technology), which differs from the arXiv paper's older wording."),
-    "7": ('direct', [(AUT, ['IP/copyright loss', 'Personality rights loss']), (HR, ['Privacy loss'])], 'Licence/metadata reporting is the mechanism by which copyright, personal data and likeness/voice-consent claims over training material can be traced and honoured.'),
-    "8": ('enabling', [(HR, ['Privacy loss']), (AUT, ['IP/copyright loss']), (SOC, ['Stereotyping'])], 'Generic audit infrastructure, but the harms large-dataset audits actually surface are personal data, unlicensed material, and representational skew.'),
-    "9": ('direct', [(SOC, ['Stereotyping']), (HR, ['Discrimination'])], '"Persistent bias" as a macro-scale dataset property is precisely over-/under-/non-representation of groups, which then yields unfair treatment on protected attributes.'),
-    "10": ('enabling', [(AUT, ['IP/copyright loss']), (HR, ['Privacy loss']), (SOC, ['Stereotyping'])], '"Suitability for training" is judged mainly on licensing, personal data, and representational composition.'),
-    "11": ('direct', [(SOC, ['Information degradation', 'Stereotyping'])], 'Links problematic training data to degraded and skewed downstream outputs.'),
-    "12": ('enabling', [(AUT, ['IP/copyright loss']), (SOC, ['Cheating/plagiarism', 'Information degradation'])], 'Training-data attribution is the technical basis for copyright claims and for acknowledging whose words/ideas a generation reproduces, and for tracing hallucinations back to their source data.'),
-    "13": ('enabling', [(SOC, ['Violence/armed conflict']), (POL, ['Power concentration'])], 'Chip-specification thresholds are the foundation of compute controls, whose stated purpose is limiting uplift to dangerous capabilities and unchecked concentration of frontier capability.'),
-    "14": ('enabling', [(POL, ['Power concentration']), (SOC, ['Violence/armed conflict'])], 'Governability of compute is what keeps frontier capability from concentrating and from being diverted to weapons/attack development.'),
-    "15": ('enabling', [(SOC, ['Violence/armed conflict']), (POL, ['Power concentration'])], 'Establishes whether distributed small-cluster training can evade compute-based controls.'),
-    "16": ('enabling', [(SOC, ['Violence/armed conflict']), (POL, ['Power concentration'])], 'Detecting decentralised training closes the main evasion route for the same controls.'),
-    "17": ('direct', [(SOC, ['Violence/armed conflict']), (FIN, ['Confidentiality loss'])], 'The RQ explicitly conditions detection on "retaining developer privacy", which is the taxonomy\'s Confidentiality loss (corporate/strategic information), not personal Privacy loss.'),
-    "18": ('enabling', [(SOC, ['Violence/armed conflict'])], 'Workload classification is the measurement substrate for compute-governance regimes aimed at unsanctioned frontier training.'),
-    "19": ('enabling', [], 'Genuinely harm-agnostic: evaluation thoroughness and blindspot discovery apply identically to every harm in the taxonomy, so naming any subset would be arbitrary.'),
-    "20": ('enabling', [(PSY, ['Over-reliance']), (SOC, ['Information degradation'])], 'Contaminated benchmarks inflate apparent capability/safety, producing exactly the unwarranted belief in system quality and complacency that Over-reliance describes.'),
-    "21": ('enabling', [(PSY, ['Over-reliance'])], 'The RQ\'s stated object is a model\'s "limitations and weaknesses"; making those legible is the counter to unfettered belief in system accuracy.'),
-    "22": ('enabling', [(SOC, ['Violence/armed conflict', 'Information degradation']), (PSY, ['Harassment/abuse/intimidation'])], 'Red-teaming at scale is targeted at the standard misuse categories: attack/weapons uplift, disinformation generation, and abusive content.'),
-    "23": ('enabling', [(SOC, ['Violence/armed conflict']), (POL, ['Critical infrastructure damage']), (AUT, ['Autonomy/agency loss'])], 'Agent evaluation targets autonomous action risks: cyber/attack capability, disruption of essential systems, and humans losing effective control over decisions taken on their behalf.'),
-    "24": ('enabling', [(POL, ['Economic instability', 'Critical infrastructure damage']), (SOC, ['Violence/armed conflict'])], 'Interacting-agent networks are the case where emergent collective behaviour hits markets and essential systems, not just individual users.'),
-    "25": ('enabling', [(SOC, ['Societal destabilisation', 'Societal inequality', 'Job loss/losses'])], '"Downstream societal impacts" maps to the taxonomy\'s societal tier; these three are the impacts impact-assessment work most often instruments.'),
-    "26": ('direct', [(HR, ['Discrimination']), (SOC, ['Stereotyping'])], 'Language is an explicitly protected attribute in the Discrimination definition, so evaluation coverage gaps across languages/modalities are themselves the mechanism by which unequal and skewed treatment goes unmeasured.'),
-    "27": ('enabling', [(PSY, ['Over-reliance']), (SOC, ['Information degradation'])], 'Invalid benchmarks produce false beliefs about what a system can safely do.'),
-    "28": ('enabling', [], 'Simulation-environment fidelity is a cross-cutting evaluation-methodology question with no specific harm attached.'),
-    "29": ('direct', [(HR, ['Privacy loss']), (FIN, ['Confidentiality loss'])], ''),
-    "30": ('direct', [(HR, ['Privacy loss'])], ''),
-    "31": ('enabling', [(PSY, ['Over-reliance']), (SOC, ['Information degradation'])], 'Protects the integrity of the measurements on which safety claims rest.'),
-    "32": ('enabling', [(PSY, ['Over-reliance']), (SOC, ['Information degradation'])], 'Same evaluation-integrity target as RQ31, approached from the hosting side.'),
-    "33": ('direct', [(SOC, ['Societal inequality']), (POL, ['Power concentration'])], '"Fairly and equitably between users" targets differential access to compute as an amplifier of status/wealth gaps and of concentrated capability.'),
-    "34": ('direct', [(FIN, ['Monopolisation']), (POL, ['Power concentration'])], 'Interoperability of public compute is the direct counter to lock-in and unfair barriers to entry.'),
-    "35": ('enabling', [(SOC, ['Public service delivery deterioration', 'Violence/armed conflict'])], 'Assurance over publicly funded compute guards both against waste/misallocation of a public system and against diversion of subsidised compute to prohibited uses.'),
-    "36": ('enabling', [(HR, ['Discrimination', 'Privacy loss']), (SOC, ['Information degradation'])], 'Access-tier methodology is generic, but the harms third-party audits are actually commissioned to find are unfair treatment, personal-data exposure, and inaccurate output.'),
-    "37": ('direct', [(SOC, ['Violence/armed conflict', 'Information degradation'])], '"Risks of misuse" of released models resolves to attack/weapons uplift and mass generation of false content.'),
-    "38": ('direct', [(AUT, ['IP/copyright loss']), (FIN, ['Confidentiality loss'])], "Model theft/duplication is misappropriation of the developer's IP and of confidential technical assets."),
-    "39": ('direct', [(FIN, ['Confidentiality loss']), (AUT, ['IP/copyright loss'])], 'The "commercial concerns" side of the trade-off is exactly the confidentiality and IP interest the taxonomy names.'),
-    "40": ('direct', [(HR, ['Privacy loss'])], ''),
-    "41": ('enabling', [(HR, ['Privacy loss'])], 'Allocating data-access duties along the value chain determines who is accountable for exposure of user data.'),
-    "42": ('direct', [(HR, ['Privacy loss']), (FIN, ['Confidentiality loss'])], '"Without revealing individual user identities or sensitive information" matches both the personal and the confidential-information harms.'),
-    "43": ('direct', [(HR, ['Privacy loss']), (FIN, ['Confidentiality loss'])], "MPC across value-chain entities protects both data subjects and each party's commercially sensitive holdings."),
-    "44": ('direct', [(AUT, ['IP/copyright loss']), (HR, ['Privacy loss'])], 'Dataset-membership verification is the evidentiary basis for both copyright claims and data-subject claims against a model.'),
-    "45": ('direct', [(HR, ['Privacy loss']), (AUT, ['IP/copyright loss'])], '"Does not include certain information" is in practice personal data or licensed material.'),
-    "46": ('direct', [(HR, ['Privacy loss']), (AUT, ['IP/copyright loss'])], 'Membership inference repurposed as an audit tool serves the same two claims as RQ44.'),
-    "47": ('direct', [(AUT, ['IP/copyright loss'])], ''),
-    "48": ('direct', [(SOC, ['Violence/armed conflict']), (POL, ['Power concentration'])], 'Chip-location verification exists to enforce export controls against diversion to hostile military/attack use.'),
-    "49": ('direct', [(SOC, ['Violence/armed conflict'])], 'Anti-spoofing hardens the same export-control enforcement.'),
-    "50": ('enabling', [(SOC, ['Violence/armed conflict']), (FIN, ['Confidentiality loss'])], "TEE attestation supports compute-use verification while shielding the attested workload's contents from the verifier."),
-    "51": ('enabling', [(SOC, ['Violence/armed conflict'])], 'Alternative route to the same compute-usage verification goal.'),
-    "52": ('direct', [(HR, ['Privacy loss']), (FIN, ['Confidentiality loss']), (SOC, ['Chilling effect'])], 'This RQ is explicitly about the governance mechanism\'s own misuse potential -- "unnecessarily-broad surveillance" -- so it targets exposure of personal and corporate information and the self-censorship such monitoring induces.'),
-    "53": ('enabling', [(SOC, ['Violence/armed conflict'])], 'Overhead reduction is what makes the compute-verification regime deployable at cluster scale; no harm of its own.'),
-    "54": ('enabling', [], '"Model properties" is left unspecified in the RQ text, so any harm list would be invented rather than grounded.'),
-    "55": ('direct', [(SOC, ['Violence/armed conflict', 'Information degradation']), (PSY, ['Self-harm'])], 'Per-query risk assessment against safety requirements targets the canonical refusal categories: attack/weapons assistance, false information, and self-harm-related content.'),
-    "56": ('enabling', [(POL, ['Institutional trust loss'])], 'Model registries are an oversight instrument; the harm they guard against is erosion of the checks and balances that make public scrutiny of AI meaningful.'),
-    "57": ('direct', [(AUT, ['IP/copyright loss'])], 'Model ownership is the IP interest at stake.'),
-    "58": ('direct', [(AUT, ['IP/copyright loss'])], 'Spoofing-resistance protects the same ownership claim from false assertion.'),
-    "59": ('enabling', [(POL, ['Institutional trust loss']), (REP, ['Loss of confidence/trust'])], "End-to-end audit registries underpin both public-institutional oversight and the ability of counterparties to trust a supplier's claims."),
-    "61": ('direct', [(PSY, ['Over-reliance']), (REP, ['Loss of confidence/trust'])], "Presentation to users is about calibrating user belief in a system's verified status -- too much yields complacency, too little or misleading presentation yields unwarranted distrust."),
-    "62": ('direct', [(FIN, ['Confidentiality loss']), (AUT, ['IP/copyright loss'])], 'ZK proofs are proposed precisely so compliance can be demonstrated "without directly disclosing architectural details".'),
-    "63": ('enabling', [(POL, ['Institutional trust loss']), (REP, ['Loss of confidence/trust'])], 'Guards against the audited-model/deployed-model swap, which would hollow out every downstream assurance.'),
-    "64": ('enabling', [(SOC, ['Violence/armed conflict', 'Information degradation'])], 'Verifying that safety measures are actually live at deployment protects the misuse categories those measures exist to block.'),
-    "65": ('direct', [(SOC, ['Information degradation']), (AUT, ['Impersonation/identity theft']), (POL, ['Electoral interference'])], 'Robust watermarking is the provenance signal against synthetic false content, deepfake impersonation, and voter-targeted fabrication.'),
-    "66": ('direct', [(SOC, ['Information degradation']), (AUT, ['Impersonation/identity theft'])], 'Metadata-level provenance serves the same synthetic-content harms as RQ65.'),
-    "67": ('direct', [(SOC, ['Information degradation', 'Cheating/plagiarism']), (POL, ['Electoral interference'])], 'Detector robustness governs whether synthetic disinformation, election fabrication, and unacknowledged AI-authored work can be identified at all.'),
-    "68": ('direct', [(SOC, ['Information degradation', 'Cheating/plagiarism']), (REP, ['Defamation/libel/slander'])], "This RQ is about detector false positives on genuine-but-edited material; the AIAAIC precedent (AI detectors falsely accusing students) shows the harm is a false accusation about a person's work, not just ecosystem noise."),
-    "69": ('direct', [(HR, ['Privacy loss']), (FIN, ['Confidentiality loss'])], 'Training-data extraction exposes memorised personal data and confidential documents.'),
-    "70": ('direct', [(HR, ['Privacy loss']), (FIN, ['Confidentiality loss'])], ''),
-    "71": ('direct', [(AUT, ['IP/copyright loss']), (FIN, ['Confidentiality loss', 'Business operations/infrastructure damage'])], 'Cluster-level hardware security protects weights as IP, the confidential material they encode, and the cluster itself as a business system against cyberattack.'),
-    "72": ('direct', [(AUT, ['IP/copyright loss']), (SOC, ['Violence/armed conflict'])], 'On-chip licence enforcement is simultaneously an IP-protection mechanism and a use-restriction mechanism against unapproved deployment.'),
-    "73": ('enabling', [(FIN, ['Business operations/infrastructure damage']), (SOC, ['Violence/armed conflict'])], 'Secure firmware update prevents attackers from subverting the on-chip governance layer that the other compute-security RQs depend on.'),
-    "74": ('direct', [(FIN, ['Confidentiality loss']), (AUT, ['IP/copyright loss'])], 'TEE security on accelerators is what keeps processed data and weights from third-party exposure.'),
-    "75": ('enabling', [(AUT, ['IP/copyright loss']), (SOC, ['Violence/armed conflict'])], 'Anti-tamper protects weights physically and keeps diverted/repurposed accelerators from silently escaping controls.'),
-    "76": ('enabling', [(AUT, ['IP/copyright loss']), (SOC, ['Violence/armed conflict'])], 'Same target as RQ75, assessed empirically.'),
-    "77": ('enabling', [(AUT, ['IP/copyright loss']), (SOC, ['Violence/armed conflict'])], 'Self-destruct on tamper is a last-resort protection of weights and of the control regime; the property damage it causes is intended, not a harm the research addresses.'),
-    "78": ('direct', [(SOC, ['Violence/armed conflict']), (POL, ['Power concentration'])], 'Preventing unsanctioned frontier training is aimed at capability uplift for attack/weapons work and at unchecked capability concentration.'),
-    "79": ('direct', [(SOC, ['Violence/armed conflict']), (POL, ['Power concentration'])], 'Conditional export enforcement is the same control regime applied at the border.'),
-    "80": ('direct', [(AUT, ['IP/copyright loss']), (FIN, ['Confidentiality loss']), (SOC, ['Violence/armed conflict'])], 'Weight theft is both an IP/confidentiality loss for the developer and the fastest route by which a safeguarded model reaches an actor who will strip its safeguards.'),
-    "81": ('direct', [(AUT, ['IP/copyright loss']), (FIN, ['Confidentiality loss'])], ''),
-    "82": ('enabling', [(POL, ['Power concentration']), (SOC, ['Violence/armed conflict'])], 'Shared governance mechanisms exist so no single party holds unilateral control over a high-capability model.'),
-    "83": ('direct', [(HR, ['Privacy loss']), (AUT, ['IP/copyright loss'])], 'Unlearning/disgorgement is the remedy demanded in data-subject erasure and copyright-infringement cases; evaluating it determines whether that remedy is real.'),
-    "84": ('direct', [(SOC, ['Information degradation']), (HR, ['Privacy loss'])], "Collateral removal of untargeted concepts degrades the model's factual output quality, which is the cost side of an otherwise privacy/IP-motivated intervention."),
-    "85": ('direct', [(HR, ['Privacy loss', 'Discrimination']), (AUT, ['IP/copyright loss'])], 'Discrimination is included because language is a protected attribute in its definition: unlearning that works only in high-resource languages delivers the erasure remedy unequally.'),
-    "86": ('enabling', [(SOC, ['Violence/armed conflict']), (FIN, ['Business operations/infrastructure damage'])], 'Adversarial-attack detection at deployment guards against both the safeguard-bypass route to dangerous outputs and the disruption of the deployed system itself.'),
-    "87": ('enabling', [(SOC, ['Violence/armed conflict']), (FIN, ['Business operations/infrastructure damage'])], 'Response-side counterpart to RQ86.'),
-    "88": ('direct', [(SOC, ['Violence/armed conflict', 'Information degradation'])], 'Fine-tuning for "malicious tasks" is the standard safeguard-stripping pathway to attack-capable and disinformation-optimised models.'),
-    "89": ('direct', [(SOC, ['Violence/armed conflict']), (POL, ['Critical infrastructure damage'])], '"Dual-use capabilities" in this literature means CBRN and offensive-cyber assistance.'),
-    "90": ('direct', [(SOC, ['Violence/armed conflict']), (POL, ['Critical infrastructure damage'])], "Identity-gating is the access-control counterpart to RQ89's detection."),
-    "91": ('enabling', [], 'Asks which properties should be regulatory targets at all; deliberately harm-agnostic across the whole taxonomy.'),
-    "92": ('enabling', [], 'Standardisation methodology applying to any safety or reliability requirement, hence to any harm.'),
-    "93": ('enabling', [], 'Post-deployment correction is a remediation capability that applies to whichever harm the discovered flaw happens to produce.'),
-    "94": ('enabling', [], 'This is the meta-question that the harm taxonomy itself answers; mapping it to a subset of harms would be circular.'),
-    "95": ('enabling', [], 'Domain-comparative risk question spanning the full taxonomy.'),
-    "96": ('enabling', [], 'Forecasting methodology with no harm-specific commitment in the question text.'),
-    "97": ('direct', [(ENV, ['Carbon emissions', 'Excessive energy consumption', 'Excessive water consumption', 'Electronic waste'])], 'Names environmental impact explicitly; these four are the environmental harms that reporting/disclosure requirements can actually capture (as against upstream extraction and pollution, which the RQ does not reach).'),
-    "98": ('direct', [(ENV, ['Carbon emissions', 'Excessive energy consumption', 'Excessive water consumption', 'Electronic waste'])], 'Measurement-side counterpart to RQ97.'),
+    "1": (
+        "direct",
+        [
+            (HR, ["Privacy loss"]),
+            (AUT, ["IP/copyright loss"]),
+            (SOC, ["Information degradation"]),
+        ],
+        '"Problematic data" at web scale is concretely personal data, unlicensed copyrighted works, and low-quality/false text; scaling detection is what prevents each from entering training corpora.',
+    ),
+    "2": (
+        "direct",
+        [(AUT, ["IP/copyright loss"])],
+        '"Prevent training on unlicensed data" is a verbatim match for misuse of an individual or organisation\'s copyright.',
+    ),
+    "3": ("direct", [(AUT, ["IP/copyright loss"])], ""),
+    "4": (
+        "direct",
+        [
+            (HR, ["Privacy loss"]),
+            (AUT, ["IP/copyright loss"]),
+            (SOC, ["Information degradation"]),
+        ],
+        "Same target harms as RQ1; the contribution is doing the detection under restricted access.",
+    ),
+    "5": (
+        "direct",
+        [(SOC, ["Information degradation"]), (HR, ["Privacy loss"])],
+        "Contamination with problematic samples (poisoned or otherwise harmful text) degrades what the trained system then outputs; personal data is the other canonical contaminant.",
+    ),
+    "6": (
+        "direct",
+        [
+            (SOC, ["Violence/armed conflict"]),
+            (HR, ["Privacy loss"]),
+            (PSY, ["Sexualisation"]),
+        ],
+        "Removal-without-signposting framing covers hazardous content (weapons/attack material) and personal data; also covers non-consensual sexual content (e.g. CSAM) in corpora under AIAAIC v1.8's revised Sexualisation definition (non-consensual sexualisation via a technology), which differs from the arXiv paper's older wording.",
+    ),
+    "7": (
+        "direct",
+        [
+            (AUT, ["IP/copyright loss", "Personality rights loss"]),
+            (HR, ["Privacy loss"]),
+        ],
+        "Licence/metadata reporting is the mechanism by which copyright, personal data and likeness/voice-consent claims over training material can be traced and honoured.",
+    ),
+    "8": (
+        "enabling",
+        [(HR, ["Privacy loss"]), (AUT, ["IP/copyright loss"]), (SOC, ["Stereotyping"])],
+        "Generic audit infrastructure, but the harms large-dataset audits actually surface are personal data, unlicensed material, and representational skew.",
+    ),
+    "9": (
+        "direct",
+        [(SOC, ["Stereotyping"]), (HR, ["Discrimination"])],
+        '"Persistent bias" as a macro-scale dataset property is precisely over-/under-/non-representation of groups, which then yields unfair treatment on protected attributes.',
+    ),
+    "10": (
+        "enabling",
+        [(AUT, ["IP/copyright loss"]), (HR, ["Privacy loss"]), (SOC, ["Stereotyping"])],
+        '"Suitability for training" is judged mainly on licensing, personal data, and representational composition.',
+    ),
+    "11": (
+        "direct",
+        [(SOC, ["Information degradation", "Stereotyping"])],
+        "Links problematic training data to degraded and skewed downstream outputs.",
+    ),
+    "12": (
+        "enabling",
+        [
+            (AUT, ["IP/copyright loss"]),
+            (SOC, ["Cheating/plagiarism", "Information degradation"]),
+        ],
+        "Training-data attribution is the technical basis for copyright claims and for acknowledging whose words/ideas a generation reproduces, and for tracing hallucinations back to their source data.",
+    ),
+    "13": (
+        "enabling",
+        [(SOC, ["Violence/armed conflict"]), (POL, ["Power concentration"])],
+        "Chip-specification thresholds are the foundation of compute controls, whose stated purpose is limiting uplift to dangerous capabilities and unchecked concentration of frontier capability.",
+    ),
+    "14": (
+        "enabling",
+        [(POL, ["Power concentration"]), (SOC, ["Violence/armed conflict"])],
+        "Governability of compute is what keeps frontier capability from concentrating and from being diverted to weapons/attack development.",
+    ),
+    "15": (
+        "enabling",
+        [(SOC, ["Violence/armed conflict"]), (POL, ["Power concentration"])],
+        "Establishes whether distributed small-cluster training can evade compute-based controls.",
+    ),
+    "16": (
+        "enabling",
+        [(SOC, ["Violence/armed conflict"]), (POL, ["Power concentration"])],
+        "Detecting decentralised training closes the main evasion route for the same controls.",
+    ),
+    "17": (
+        "direct",
+        [(SOC, ["Violence/armed conflict"]), (FIN, ["Confidentiality loss"])],
+        'The RQ explicitly conditions detection on "retaining developer privacy", which is the taxonomy\'s Confidentiality loss (corporate/strategic information), not personal Privacy loss.',
+    ),
+    "18": (
+        "enabling",
+        [(SOC, ["Violence/armed conflict"])],
+        "Workload classification is the measurement substrate for compute-governance regimes aimed at unsanctioned frontier training.",
+    ),
+    "19": (
+        "enabling",
+        [],
+        "Genuinely harm-agnostic: evaluation thoroughness and blindspot discovery apply identically to every harm in the taxonomy, so naming any subset would be arbitrary.",
+    ),
+    "20": (
+        "enabling",
+        [(PSY, ["Over-reliance"]), (SOC, ["Information degradation"])],
+        "Contaminated benchmarks inflate apparent capability/safety, producing exactly the unwarranted belief in system quality and complacency that Over-reliance describes.",
+    ),
+    "21": (
+        "enabling",
+        [(PSY, ["Over-reliance"])],
+        "The RQ's stated object is a model's \"limitations and weaknesses\"; making those legible is the counter to unfettered belief in system accuracy.",
+    ),
+    "22": (
+        "enabling",
+        [
+            (SOC, ["Violence/armed conflict", "Information degradation"]),
+            (PSY, ["Harassment/abuse/intimidation"]),
+        ],
+        "Red-teaming at scale is targeted at the standard misuse categories: attack/weapons uplift, disinformation generation, and abusive content.",
+    ),
+    "23": (
+        "enabling",
+        [
+            (SOC, ["Violence/armed conflict"]),
+            (POL, ["Critical infrastructure damage"]),
+            (AUT, ["Autonomy/agency loss"]),
+        ],
+        "Agent evaluation targets autonomous action risks: cyber/attack capability, disruption of essential systems, and humans losing effective control over decisions taken on their behalf.",
+    ),
+    "24": (
+        "enabling",
+        [
+            (POL, ["Economic instability", "Critical infrastructure damage"]),
+            (SOC, ["Violence/armed conflict"]),
+        ],
+        "Interacting-agent networks are the case where emergent collective behaviour hits markets and essential systems, not just individual users.",
+    ),
+    "25": (
+        "enabling",
+        [(SOC, ["Societal destabilisation", "Societal inequality", "Job loss/losses"])],
+        '"Downstream societal impacts" maps to the taxonomy\'s societal tier; these three are the impacts impact-assessment work most often instruments.',
+    ),
+    "26": (
+        "direct",
+        [(HR, ["Discrimination"]), (SOC, ["Stereotyping"])],
+        "Language is an explicitly protected attribute in the Discrimination definition, so evaluation coverage gaps across languages/modalities are themselves the mechanism by which unequal and skewed treatment goes unmeasured.",
+    ),
+    "27": (
+        "enabling",
+        [(PSY, ["Over-reliance"]), (SOC, ["Information degradation"])],
+        "Invalid benchmarks produce false beliefs about what a system can safely do.",
+    ),
+    "28": (
+        "enabling",
+        [],
+        "Simulation-environment fidelity is a cross-cutting evaluation-methodology question with no specific harm attached.",
+    ),
+    "29": ("direct", [(HR, ["Privacy loss"]), (FIN, ["Confidentiality loss"])], ""),
+    "30": ("direct", [(HR, ["Privacy loss"])], ""),
+    "31": (
+        "enabling",
+        [(PSY, ["Over-reliance"]), (SOC, ["Information degradation"])],
+        "Protects the integrity of the measurements on which safety claims rest.",
+    ),
+    "32": (
+        "enabling",
+        [(PSY, ["Over-reliance"]), (SOC, ["Information degradation"])],
+        "Same evaluation-integrity target as RQ31, approached from the hosting side.",
+    ),
+    "33": (
+        "direct",
+        [(SOC, ["Societal inequality"]), (POL, ["Power concentration"])],
+        '"Fairly and equitably between users" targets differential access to compute as an amplifier of status/wealth gaps and of concentrated capability.',
+    ),
+    "34": (
+        "direct",
+        [(FIN, ["Monopolisation"]), (POL, ["Power concentration"])],
+        "Interoperability of public compute is the direct counter to lock-in and unfair barriers to entry.",
+    ),
+    "35": (
+        "enabling",
+        [(SOC, ["Public service delivery deterioration", "Violence/armed conflict"])],
+        "Assurance over publicly funded compute guards both against waste/misallocation of a public system and against diversion of subsidised compute to prohibited uses.",
+    ),
+    "36": (
+        "enabling",
+        [(HR, ["Discrimination", "Privacy loss"]), (SOC, ["Information degradation"])],
+        "Access-tier methodology is generic, but the harms third-party audits are actually commissioned to find are unfair treatment, personal-data exposure, and inaccurate output.",
+    ),
+    "37": (
+        "direct",
+        [(SOC, ["Violence/armed conflict", "Information degradation"])],
+        '"Risks of misuse" of released models resolves to attack/weapons uplift and mass generation of false content.',
+    ),
+    "38": (
+        "direct",
+        [(AUT, ["IP/copyright loss"]), (FIN, ["Confidentiality loss"])],
+        "Model theft/duplication is misappropriation of the developer's IP and of confidential technical assets.",
+    ),
+    "39": (
+        "direct",
+        [(FIN, ["Confidentiality loss"]), (AUT, ["IP/copyright loss"])],
+        'The "commercial concerns" side of the trade-off is exactly the confidentiality and IP interest the taxonomy names.',
+    ),
+    "40": ("direct", [(HR, ["Privacy loss"])], ""),
+    "41": (
+        "enabling",
+        [(HR, ["Privacy loss"])],
+        "Allocating data-access duties along the value chain determines who is accountable for exposure of user data.",
+    ),
+    "42": (
+        "direct",
+        [(HR, ["Privacy loss"]), (FIN, ["Confidentiality loss"])],
+        '"Without revealing individual user identities or sensitive information" matches both the personal and the confidential-information harms.',
+    ),
+    "43": (
+        "direct",
+        [(HR, ["Privacy loss"]), (FIN, ["Confidentiality loss"])],
+        "MPC across value-chain entities protects both data subjects and each party's commercially sensitive holdings.",
+    ),
+    "44": (
+        "direct",
+        [(AUT, ["IP/copyright loss"]), (HR, ["Privacy loss"])],
+        "Dataset-membership verification is the evidentiary basis for both copyright claims and data-subject claims against a model.",
+    ),
+    "45": (
+        "direct",
+        [(HR, ["Privacy loss"]), (AUT, ["IP/copyright loss"])],
+        '"Does not include certain information" is in practice personal data or licensed material.',
+    ),
+    "46": (
+        "direct",
+        [(HR, ["Privacy loss"]), (AUT, ["IP/copyright loss"])],
+        "Membership inference repurposed as an audit tool serves the same two claims as RQ44.",
+    ),
+    "47": ("direct", [(AUT, ["IP/copyright loss"])], ""),
+    "48": (
+        "direct",
+        [(SOC, ["Violence/armed conflict"]), (POL, ["Power concentration"])],
+        "Chip-location verification exists to enforce export controls against diversion to hostile military/attack use.",
+    ),
+    "49": (
+        "direct",
+        [(SOC, ["Violence/armed conflict"])],
+        "Anti-spoofing hardens the same export-control enforcement.",
+    ),
+    "50": (
+        "enabling",
+        [(SOC, ["Violence/armed conflict"]), (FIN, ["Confidentiality loss"])],
+        "TEE attestation supports compute-use verification while shielding the attested workload's contents from the verifier.",
+    ),
+    "51": (
+        "enabling",
+        [(SOC, ["Violence/armed conflict"])],
+        "Alternative route to the same compute-usage verification goal.",
+    ),
+    "52": (
+        "direct",
+        [
+            (HR, ["Privacy loss"]),
+            (FIN, ["Confidentiality loss"]),
+            (SOC, ["Chilling effect"]),
+        ],
+        'This RQ is explicitly about the governance mechanism\'s own misuse potential -- "unnecessarily-broad surveillance" -- so it targets exposure of personal and corporate information and the self-censorship such monitoring induces.',
+    ),
+    "53": (
+        "enabling",
+        [(SOC, ["Violence/armed conflict"])],
+        "Overhead reduction is what makes the compute-verification regime deployable at cluster scale; no harm of its own.",
+    ),
+    "54": (
+        "enabling",
+        [],
+        '"Model properties" is left unspecified in the RQ text, so any harm list would be invented rather than grounded.',
+    ),
+    "55": (
+        "direct",
+        [
+            (SOC, ["Violence/armed conflict", "Information degradation"]),
+            (PSY, ["Self-harm"]),
+        ],
+        "Per-query risk assessment against safety requirements targets the canonical refusal categories: attack/weapons assistance, false information, and self-harm-related content.",
+    ),
+    "56": (
+        "enabling",
+        [(POL, ["Institutional trust loss"])],
+        "Model registries are an oversight instrument; the harm they guard against is erosion of the checks and balances that make public scrutiny of AI meaningful.",
+    ),
+    "57": (
+        "direct",
+        [(AUT, ["IP/copyright loss"])],
+        "Model ownership is the IP interest at stake.",
+    ),
+    "58": (
+        "direct",
+        [(AUT, ["IP/copyright loss"])],
+        "Spoofing-resistance protects the same ownership claim from false assertion.",
+    ),
+    "59": (
+        "enabling",
+        [(POL, ["Institutional trust loss"]), (REP, ["Loss of confidence/trust"])],
+        "End-to-end audit registries underpin both public-institutional oversight and the ability of counterparties to trust a supplier's claims.",
+    ),
+    "61": (
+        "direct",
+        [(PSY, ["Over-reliance"]), (REP, ["Loss of confidence/trust"])],
+        "Presentation to users is about calibrating user belief in a system's verified status -- too much yields complacency, too little or misleading presentation yields unwarranted distrust.",
+    ),
+    "62": (
+        "direct",
+        [(FIN, ["Confidentiality loss"]), (AUT, ["IP/copyright loss"])],
+        'ZK proofs are proposed precisely so compliance can be demonstrated "without directly disclosing architectural details".',
+    ),
+    "63": (
+        "enabling",
+        [(POL, ["Institutional trust loss"]), (REP, ["Loss of confidence/trust"])],
+        "Guards against the audited-model/deployed-model swap, which would hollow out every downstream assurance.",
+    ),
+    "64": (
+        "enabling",
+        [(SOC, ["Violence/armed conflict", "Information degradation"])],
+        "Verifying that safety measures are actually live at deployment protects the misuse categories those measures exist to block.",
+    ),
+    "65": (
+        "direct",
+        [
+            (SOC, ["Information degradation"]),
+            (AUT, ["Impersonation/identity theft"]),
+            (POL, ["Electoral interference"]),
+        ],
+        "Robust watermarking is the provenance signal against synthetic false content, deepfake impersonation, and voter-targeted fabrication.",
+    ),
+    "66": (
+        "direct",
+        [(SOC, ["Information degradation"]), (AUT, ["Impersonation/identity theft"])],
+        "Metadata-level provenance serves the same synthetic-content harms as RQ65.",
+    ),
+    "67": (
+        "direct",
+        [
+            (SOC, ["Information degradation", "Cheating/plagiarism"]),
+            (POL, ["Electoral interference"]),
+        ],
+        "Detector robustness governs whether synthetic disinformation, election fabrication, and unacknowledged AI-authored work can be identified at all.",
+    ),
+    "68": (
+        "direct",
+        [
+            (SOC, ["Information degradation", "Cheating/plagiarism"]),
+            (REP, ["Defamation/libel/slander"]),
+        ],
+        "This RQ is about detector false positives on genuine-but-edited material; the AIAAIC precedent (AI detectors falsely accusing students) shows the harm is a false accusation about a person's work, not just ecosystem noise.",
+    ),
+    "69": (
+        "direct",
+        [(HR, ["Privacy loss"]), (FIN, ["Confidentiality loss"])],
+        "Training-data extraction exposes memorised personal data and confidential documents.",
+    ),
+    "70": ("direct", [(HR, ["Privacy loss"]), (FIN, ["Confidentiality loss"])], ""),
+    "71": (
+        "direct",
+        [
+            (AUT, ["IP/copyright loss"]),
+            (
+                FIN,
+                ["Confidentiality loss", "Business operations/infrastructure damage"],
+            ),
+        ],
+        "Cluster-level hardware security protects weights as IP, the confidential material they encode, and the cluster itself as a business system against cyberattack.",
+    ),
+    "72": (
+        "direct",
+        [(AUT, ["IP/copyright loss"]), (SOC, ["Violence/armed conflict"])],
+        "On-chip licence enforcement is simultaneously an IP-protection mechanism and a use-restriction mechanism against unapproved deployment.",
+    ),
+    "73": (
+        "enabling",
+        [
+            (FIN, ["Business operations/infrastructure damage"]),
+            (SOC, ["Violence/armed conflict"]),
+        ],
+        "Secure firmware update prevents attackers from subverting the on-chip governance layer that the other compute-security RQs depend on.",
+    ),
+    "74": (
+        "direct",
+        [(FIN, ["Confidentiality loss"]), (AUT, ["IP/copyright loss"])],
+        "TEE security on accelerators is what keeps processed data and weights from third-party exposure.",
+    ),
+    "75": (
+        "enabling",
+        [(AUT, ["IP/copyright loss"]), (SOC, ["Violence/armed conflict"])],
+        "Anti-tamper protects weights physically and keeps diverted/repurposed accelerators from silently escaping controls.",
+    ),
+    "76": (
+        "enabling",
+        [(AUT, ["IP/copyright loss"]), (SOC, ["Violence/armed conflict"])],
+        "Same target as RQ75, assessed empirically.",
+    ),
+    "77": (
+        "enabling",
+        [(AUT, ["IP/copyright loss"]), (SOC, ["Violence/armed conflict"])],
+        "Self-destruct on tamper is a last-resort protection of weights and of the control regime; the property damage it causes is intended, not a harm the research addresses.",
+    ),
+    "78": (
+        "direct",
+        [(SOC, ["Violence/armed conflict"]), (POL, ["Power concentration"])],
+        "Preventing unsanctioned frontier training is aimed at capability uplift for attack/weapons work and at unchecked capability concentration.",
+    ),
+    "79": (
+        "direct",
+        [(SOC, ["Violence/armed conflict"]), (POL, ["Power concentration"])],
+        "Conditional export enforcement is the same control regime applied at the border.",
+    ),
+    "80": (
+        "direct",
+        [
+            (AUT, ["IP/copyright loss"]),
+            (FIN, ["Confidentiality loss"]),
+            (SOC, ["Violence/armed conflict"]),
+        ],
+        "Weight theft is both an IP/confidentiality loss for the developer and the fastest route by which a safeguarded model reaches an actor who will strip its safeguards.",
+    ),
+    "81": (
+        "direct",
+        [(AUT, ["IP/copyright loss"]), (FIN, ["Confidentiality loss"])],
+        "",
+    ),
+    "82": (
+        "enabling",
+        [(POL, ["Power concentration"]), (SOC, ["Violence/armed conflict"])],
+        "Shared governance mechanisms exist so no single party holds unilateral control over a high-capability model.",
+    ),
+    "83": (
+        "direct",
+        [(HR, ["Privacy loss"]), (AUT, ["IP/copyright loss"])],
+        "Unlearning/disgorgement is the remedy demanded in data-subject erasure and copyright-infringement cases; evaluating it determines whether that remedy is real.",
+    ),
+    "84": (
+        "direct",
+        [(SOC, ["Information degradation"]), (HR, ["Privacy loss"])],
+        "Collateral removal of untargeted concepts degrades the model's factual output quality, which is the cost side of an otherwise privacy/IP-motivated intervention.",
+    ),
+    "85": (
+        "direct",
+        [(HR, ["Privacy loss", "Discrimination"]), (AUT, ["IP/copyright loss"])],
+        "Discrimination is included because language is a protected attribute in its definition: unlearning that works only in high-resource languages delivers the erasure remedy unequally.",
+    ),
+    "86": (
+        "enabling",
+        [
+            (SOC, ["Violence/armed conflict"]),
+            (FIN, ["Business operations/infrastructure damage"]),
+        ],
+        "Adversarial-attack detection at deployment guards against both the safeguard-bypass route to dangerous outputs and the disruption of the deployed system itself.",
+    ),
+    "87": (
+        "enabling",
+        [
+            (SOC, ["Violence/armed conflict"]),
+            (FIN, ["Business operations/infrastructure damage"]),
+        ],
+        "Response-side counterpart to RQ86.",
+    ),
+    "88": (
+        "direct",
+        [(SOC, ["Violence/armed conflict", "Information degradation"])],
+        'Fine-tuning for "malicious tasks" is the standard safeguard-stripping pathway to attack-capable and disinformation-optimised models.',
+    ),
+    "89": (
+        "direct",
+        [(SOC, ["Violence/armed conflict"]), (POL, ["Critical infrastructure damage"])],
+        '"Dual-use capabilities" in this literature means CBRN and offensive-cyber assistance.',
+    ),
+    "90": (
+        "direct",
+        [(SOC, ["Violence/armed conflict"]), (POL, ["Critical infrastructure damage"])],
+        "Identity-gating is the access-control counterpart to RQ89's detection.",
+    ),
+    "91": (
+        "enabling",
+        [],
+        "Asks which properties should be regulatory targets at all; deliberately harm-agnostic across the whole taxonomy.",
+    ),
+    "92": (
+        "enabling",
+        [],
+        "Standardisation methodology applying to any safety or reliability requirement, hence to any harm.",
+    ),
+    "93": (
+        "enabling",
+        [],
+        "Post-deployment correction is a remediation capability that applies to whichever harm the discovered flaw happens to produce.",
+    ),
+    "94": (
+        "enabling",
+        [],
+        "This is the meta-question that the harm taxonomy itself answers; mapping it to a subset of harms would be circular.",
+    ),
+    "95": (
+        "enabling",
+        [],
+        "Domain-comparative risk question spanning the full taxonomy.",
+    ),
+    "96": (
+        "enabling",
+        [],
+        "Forecasting methodology with no harm-specific commitment in the question text.",
+    ),
+    "97": (
+        "direct",
+        [
+            (
+                ENV,
+                [
+                    "Carbon emissions",
+                    "Excessive energy consumption",
+                    "Excessive water consumption",
+                    "Electronic waste",
+                ],
+            )
+        ],
+        "Names environmental impact explicitly; these four are the environmental harms that reporting/disclosure requirements can actually capture (as against upstream extraction and pollution, which the RQ does not reach).",
+    ),
+    "98": (
+        "direct",
+        [
+            (
+                ENV,
+                [
+                    "Carbon emissions",
+                    "Excessive energy consumption",
+                    "Excessive water consumption",
+                    "Electronic waste",
+                ],
+            )
+        ],
+        "Measurement-side counterpart to RQ97.",
+    ),
 }
 
 
@@ -326,23 +822,27 @@ def main() -> None:
     missing = set(rqs) - set(MAPPING)
     extra = set(MAPPING) - set(rqs)
     if missing or extra:
-        print(f"WARNING unmapped RQs: {sorted(missing)}; unknown RQs in mapping: {sorted(extra)}")
+        print(
+            f"WARNING unmapped RQs: {sorted(missing)}; unknown RQs in mapping: {sorted(extra)}"
+        )
 
     out = Path("curation/aiaaic_taxonomy_mapping.csv")
     rows = []
     for rq_no, r in sorted(rqs.items(), key=lambda kv: int(kv[0])):
         kind, harms, note = MAPPING.get(rq_no, ("unmapped", [], ""))
         n_tools = len(r["tools_implement"]) + len(r["tools_eval"])
-        rows.append({
-            "rq_no": rq_no,
-            "problem_area": r["problem_area"],
-            "question": r["question"],
-            "n_tools": n_tools,
-            "mapping_kind": kind,
-            "harm_types": " | ".join(h for h, _ in harms) or "(cross-cutting)",
-            "specific_harms": " | ".join(s for _, ss in harms for s in ss),
-            "note": note,
-        })
+        rows.append(
+            {
+                "rq_no": rq_no,
+                "problem_area": r["problem_area"],
+                "question": r["question"],
+                "n_tools": n_tools,
+                "mapping_kind": kind,
+                "harm_types": " | ".join(h for h, _ in harms) or "(cross-cutting)",
+                "specific_harms": " | ".join(s for _, ss in harms for s in ss),
+                "note": note,
+            }
+        )
     with open(out, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0]))
         w.writeheader()
@@ -355,16 +855,23 @@ def main() -> None:
         for h, _s in harms:
             by_type[h][kind].append(rq_no)
 
-    print(f"{'HARM TYPE':<34} {'RQs':>4} {'dir':>4} {'enab':>5} {'tooled':>7} {'zero':>5}")
+    print(
+        f"{'HARM TYPE':<34} {'RQs':>4} {'dir':>4} {'enab':>5} {'tooled':>7} {'zero':>5}"
+    )
     print("-" * 64)
     for h in TAXONOMY:
         d = sorted(set(by_type[h]["direct"]), key=int)
         e = sorted(set(by_type[h]["enabling"]), key=int)
         allrq = sorted(set(d) | set(e), key=int)
-        tooled = [q for q in allrq
-                  if len(rqs[q]["tools_implement"]) + len(rqs[q]["tools_eval"]) > 0]
+        tooled = [
+            q
+            for q in allrq
+            if len(rqs[q]["tools_implement"]) + len(rqs[q]["tools_eval"]) > 0
+        ]
         zero = [q for q in allrq if q not in tooled]
-        print(f"{h:<34} {len(allrq):>4} {len(d):>4} {len(e):>5} {len(tooled):>7} {len(zero):>5}")
+        print(
+            f"{h:<34} {len(allrq):>4} {len(d):>4} {len(e):>5} {len(tooled):>7} {len(zero):>5}"
+        )
 
     # ---- Sharpest check: which of the 69 specific harms have NO RQ? --------
     covered = set()
@@ -383,8 +890,10 @@ def main() -> None:
             for s in gaps:
                 print(f"    - {s}")
     n_all = sum(len(v) for v in TAXONOMY.values())
-    print(f"\n{total_uncovered}/{n_all} specific harms have no RQ; "
-          f"{n_all - total_uncovered}/{n_all} have at least one.")
+    print(
+        f"\n{total_uncovered}/{n_all} specific harms have no RQ; "
+        f"{n_all - total_uncovered}/{n_all} have at least one."
+    )
 
 
 if __name__ == "__main__":

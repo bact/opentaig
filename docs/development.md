@@ -58,18 +58,18 @@ unaffected and stay as-is even where they use American spelling already.
 
 ## Notes
 
-- **Visited-link color policy**: the global `a:visited` rule
-  (`assets/style.css`) excludes every link that is its own colored surface
+- **Visited-link colour policy**: the global `a:visited` rule
+  (`assets/style.css`) excludes every link that is its own coloured surface
   -- chips (`.chip`, covers badge/scorecard/licence/language/framework-term/
   doc-checklist/...), `.tool-problem-chip`, `.matrix-cell`,
   `.mini-heatmap-cell`, `.button-primary`, `.skip-link` -- via one
   `:not(...)` chain, rather than a per-component override repeating each
-  one's own color (confirmed unreadable in practice: a visited OpenSSF
+  one's own colour (confirmed unreadable in practice: a visited OpenSSF
   badge chip rendered orange text on a dark moss-green background). Any
-  **new** colored-surface link class needs adding to that same exclusion
+  **new** coloured-surface link class needs adding to that same exclusion
   list; a plain-text link on the page's own background (citation list,
   breadcrumbs, tool-detail links, the tool card's own name link, ...)
-  doesn't need anything -- the visited color is safe there and left as an
+  doesn't need anything -- the visited colour is safe there and left as an
   intentional "you've already opened this" cue.
 - Chip sizing: `.chip` and `.chip-ns` (the small uppercase "Label:" prefix
   used by licence/language/badge/scorecard chips) both pin their own
@@ -79,7 +79,7 @@ unaffected and stay as-is even where they use American spelling already.
   taller than a plain single-size chip (e.g. tool-type) sitting next to it
   in the same row. `.chip-license`/`.chip-language` use the regular sans
   font, not `--font-mono` -- monospace was tried for the licence chip
-  (it's an SPDX identifier, arguably ID-like) but dropped in favor of
+  (it's an SPDX identifier, arguably ID-like) but dropped in favour of
   matching every other chip, once it was clear mixing font-families
   per-chip was adding complexity for very little payoff.
 - `/` is the Landscape page: a Capacity x Target coverage matrix (`_matrix.html`,
@@ -120,7 +120,7 @@ unaffected and stay as-is even where they use American spelling already.
   - **Tool card** (`tools_index.html`): everything lives in one
     `.tool-list-head` row now -- name (`.tool-list-name`, deliberately
     styled bigger/bolder than the rest of the row so it doesn't get lost
-    among all the chips), role, then labeled chips (`License: MIT`,
+    among all the chips), role, then labelled chips (`Licence: MIT`,
     `Language: Python, C++` -- one combined chip for every language, not
     one per language) each using the same `chip-ns` "label: value" grammar
     as the OpenSSF chips (`OpenSSF Best Practices: Gold`, `OpenSSF
@@ -131,11 +131,11 @@ unaffected and stay as-is even where they use American spelling already.
     link) so it reads as a secondary glance-signal, not competing with the
     identity/quality chips. No separate row for any of this -- the summary
     flows directly into "Problems addressed" below it. Badge/Scorecard
-    color buckets (in_progress/passing/silver/gold and low/4-6.9/&ge;7)
+    colour buckets (in_progress/passing/silver/gold and low/4-6.9/&ge;7)
     all reuse the exact same neutral -> moss-soft -> moss -> moss-ink ramp
     `_matrix.html` uses for coverage -- one hue family, increasing
-    saturation = increasing goodness, deliberately not color-per-tier
-    (an earlier ochre/gold choice read as a caution color, not "best").
+    saturation = increasing goodness, deliberately not colour-per-tier
+    (an earlier ochre/gold choice read as a caution colour, not "best").
     All of this is precomputed per-tool in `build_quality_display()`
     (`build.py`) -- date math (`relative_date()`) and count abbreviation
     (`format_count()`, e.g. `27400` -> `"27.4k"`) never happen in the
@@ -183,34 +183,51 @@ unaffected and stay as-is even where they use American spelling already.
     rather than `overflow: hidden` on `.filter-bar`, since that class is
     shared with Problems page's absolute-positioned multiselect dropdowns,
     which `overflow: hidden` would clip. The Tool *detail* page's own
-    license chip stays pointed at its SPDX reference
+    licence chip stays pointed at its SPDX reference
     (`spdx.org/licenses/...`) -- deliberately not this same filter-link,
-    since "what does this license mean" is the relevant question there,
+    since "what does this licence mean" is the relevant question there,
     vs. "show me other tools with it" from the listing card.
   - **Tool detail page** (`tool.html`): a fixed-order, fixed-label,
     always-all-slots "Resources & governance" checklist for 10 fields (Homepage/
-    Source/Documentation/README/License file/Contributing guide/Code of
+    Source/Documentation/README/Licence file/Contributing guide/Code of
     conduct/Security policy/Governance/Funding) plus `sbom_url`/`paper_url`
     appended present-only (no ghost) since only the fixed 10 are meant to
     flag absence. Present is a real `<a class="chip-doc-present">` link;
     absent is a `<span class="chip-doc-missing">` (dashed ghost,
     deliberately *not* a link, so keyboard users don't tab through dead
     stops) with a `visually-hidden` "(not published)" suffix -- link-vs-span
-    carries the state for screen readers, not color alone, same idiom as
-    `_solution_table.html`'s `solution_cell()`. The SPDX license chip
+    carries the state for screen readers, not colour alone, same idiom as
+    `_solution_table.html`'s `solution_cell()`. The SPDX licence chip
     (`chip-license`) is itself the link to `spdx.org` now (no separate
-    "(license text)" link). Bottom of the page, set apart by a top border
+    "(licence text)" link). Bottom of the page, set apart by a top border
     like `.problem-pager`, a small `.tool-freshness` block shows each
     `Freshness`'s `added`/`checked`/`updated` (free-text passthrough, see
     `Freshness`'s docstring) for anyone curious about data staleness --
     `tool.freshness` (the `tools` tab's own curation bookkeeping) and
     `tool.metadata_freshness` (`collect_project_metadata.py`'s, blank if
     the tool has no `tool_metadata` row yet) shown as two separately
-    labeled lines, never merged into one, matching how the two tabs'
+    labelled lines, never merged into one, matching how the two tabs'
     freshness has stayed distinct everywhere else in the codebase. Built
     from `freshness_parts()` (`build.py`) the same blank-guarded/joinable
     shape as `quality_parts` -- plain text, no links, so it adds zero
     keyboard tab stops.
+- **Maintainer credit + citation**: `site.maintainer_name`/`maintainer_url`
+  (`config.yaml`) are the single source for the footer's "maintained by"
+  line (every page) and the About page's own mention -- one place to
+  change, not duplicated per template. The About page's Citation section
+  (`citation_plain`/`citation_bibtex`) is assembled in `build_citation()`
+  (`build.py`), not written directly in the template -- BibTeX's own
+  `{...}` syntax collides with Jinja's `{{ }}` delimiters if attempted
+  inline, so the whole snippet is a precomputed string like every other
+  template-ready value in this file. `citation_year` is sliced from
+  `generated_at` (no second `now.strftime()` call) -- a continuously
+  regenerated, unversioned site doesn't have a real "publication date",
+  so "the year you're citing it" is the usual convention for citing a
+  living/online resource. `CITATION.cff` (repo root, for GitHub's own
+  "Cite this repository" UI) is a hand-maintained static file, not
+  generated from the same config -- GitHub reads it directly from the
+  repo, so it can't be Jinja output -- keep it in sync by hand if the
+  maintainer or license ever changes.
 - If a sheet is ever made private, swap the CSV-export fetch in
   `fetch_source()` (`build.py`) for the Google Sheets API with a service
   account key stored as a GitHub Actions secret.

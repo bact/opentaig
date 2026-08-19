@@ -28,6 +28,7 @@ Usage:
     python curation/validate_qgs.py --qgs-file curation/state/qgs.txt \\
         --keyword-file curation/state/candidate_keywords.txt
 """
+
 from __future__ import annotations
 
 import argparse
@@ -40,55 +41,102 @@ import requests
 
 sys.path.insert(0, str(Path(__file__).parent))
 from search_repos import (  # noqa: E402
-    build_query, search_repositories, cutoff_date,
-    DEFAULT_MIN_STARS, DEFAULT_PUSHED_AFTER_MONTHS, append_search_log,
+    build_query,
+    search_repositories,
+    cutoff_date,
+    DEFAULT_MIN_STARS,
+    DEFAULT_PUSHED_AFTER_MONTHS,
+    append_search_log,
 )
 
 
 def read_lines(path: str) -> list[str]:
     with open(path, "r", encoding="utf-8") as f:
-        return [line.strip() for line in f if line.strip() and not line.strip().startswith("#")]
+        return [
+            line.strip()
+            for line in f
+            if line.strip() and not line.strip().startswith("#")
+        ]
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--qgs", action="append", default=[], dest="qgs",
-                         help="known-relevant repo full_name (owner/repo); repeat for multiple")
-    parser.add_argument("--qgs-file", help="file of owner/repo, one per line (# comments ok)")
-    parser.add_argument("--keyword", action="append", default=[], dest="keywords",
-                         help="candidate keyword to test; repeat for multiple")
-    parser.add_argument("--keyword-file", help="file of keywords, one per line (# comments ok)")
+    parser = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
+    parser.add_argument(
+        "--qgs",
+        action="append",
+        default=[],
+        dest="qgs",
+        help="known-relevant repo full_name (owner/repo); repeat for multiple",
+    )
+    parser.add_argument(
+        "--qgs-file", help="file of owner/repo, one per line (# comments ok)"
+    )
+    parser.add_argument(
+        "--keyword",
+        action="append",
+        default=[],
+        dest="keywords",
+        help="candidate keyword to test; repeat for multiple",
+    )
+    parser.add_argument(
+        "--keyword-file", help="file of keywords, one per line (# comments ok)"
+    )
     parser.add_argument("--min-stars", type=int, default=DEFAULT_MIN_STARS)
-    parser.add_argument("--pushed-after-months", type=int, default=DEFAULT_PUSHED_AFTER_MONTHS)
-    parser.add_argument("--max-pages", type=int, default=3,
-                         help="pages of 100 to fetch per keyword (default 3, higher than "
-                             "search_repos.py's default 1, since recall needs deeper coverage "
-                             "than a real discovery run would bother fetching)")
-    parser.add_argument("--log-path", default="curation/state/search_log.csv",
-                         help="set to /dev/null to skip logging this calibration run")
+    parser.add_argument(
+        "--pushed-after-months", type=int, default=DEFAULT_PUSHED_AFTER_MONTHS
+    )
+    parser.add_argument(
+        "--max-pages",
+        type=int,
+        default=3,
+        help="pages of 100 to fetch per keyword (default 3, higher than "
+        "search_repos.py's default 1, since recall needs deeper coverage "
+        "than a real discovery run would bother fetching)",
+    )
+    parser.add_argument(
+        "--log-path",
+        default="curation/state/search_log.csv",
+        help="set to /dev/null to skip logging this calibration run",
+    )
     args = parser.parse_args()
 
     qgs = list(args.qgs) + (read_lines(args.qgs_file) if args.qgs_file else [])
-    keywords = list(args.keywords) + (read_lines(args.keyword_file) if args.keyword_file else [])
+    keywords = list(args.keywords) + (
+        read_lines(args.keyword_file) if args.keyword_file else []
+    )
     if not qgs:
-        raise SystemExit("no QGS repos given -- pass --qgs owner/repo (repeatable) or --qgs-file")
+        raise SystemExit(
+            "no QGS repos given -- pass --qgs owner/repo (repeatable) or --qgs-file"
+        )
     if not keywords:
-        raise SystemExit("no keywords given -- pass --keyword ... (repeatable) or --keyword-file")
+        raise SystemExit(
+            "no keywords given -- pass --keyword ... (repeatable) or --keyword-file"
+        )
 
     token = os.environ.get("GITHUB_TOKEN")
     if not token:
-        raise SystemExit("GITHUB_TOKEN is not set -- see curation/README.md's Setup section.")
+        raise SystemExit(
+            "GITHUB_TOKEN is not set -- see curation/README.md's Setup section."
+        )
     session = requests.Session()
-    session.headers.update({
-        "Authorization": f"Bearer {token}",
-        "Accept": "application/vnd.github+json",
-        "X-GitHub-Api-Version": "2022-11-28",
-    })
+    session.headers.update(
+        {
+            "Authorization": f"Bearer {token}",
+            "Accept": "application/vnd.github+json",
+            "X-GitHub-Api-Version": "2022-11-28",
+        }
+    )
 
     pushed_after = cutoff_date(args.pushed_after_months)
-    found_by: dict[str, set[str]] = {r: set() for r in qgs}  # qgs repo -> keywords that found it
+    found_by: dict[str, set[str]] = {
+        r: set() for r in qgs
+    }  # qgs repo -> keywords that found it
     log_rows = []
-    run_timestamp = datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds")
+    run_timestamp = datetime.datetime.now(datetime.timezone.utc).isoformat(
+        timespec="seconds"
+    )
     warnings: list = []
 
     for keyword in keywords:
@@ -99,18 +147,20 @@ def main() -> None:
             if repo.lower() in hit_names:
                 found_by[repo].add(keyword)
         print(f"[qgs] {keyword!r} -> {len(items)} hit(s)")
-        log_rows.append({
-            "timestamp_utc": run_timestamp,
-            "keyword": keyword,
-            "query": query,
-            "raw_count": len(items),
-            "new_candidates": 0,
-            "min_stars": args.min_stars,
-            "pushed_after_months": args.pushed_after_months,
-            "min_readme_chars": "skipped",
-            "notes": "qgs-validation: calibration probe, not a discovery run, "
-                     "search_candidates.csv not touched",
-        })
+        log_rows.append(
+            {
+                "timestamp_utc": run_timestamp,
+                "keyword": keyword,
+                "query": query,
+                "raw_count": len(items),
+                "new_candidates": 0,
+                "min_stars": args.min_stars,
+                "pushed_after_months": args.pushed_after_months,
+                "min_readme_chars": "skipped",
+                "notes": "qgs-validation: calibration probe, not a discovery run, "
+                "search_candidates.csv not touched",
+            }
+        )
 
     print("\n--- QGS recall ---")
     covered = 0
@@ -123,9 +173,11 @@ def main() -> None:
     sensitivity = covered / len(qgs) if qgs else 0.0
     print(f"\nquasi-sensitivity: {covered}/{len(qgs)} = {sensitivity:.0%}")
     if sensitivity < 1.0:
-        print("Repos not found by any keyword above need their README vocabulary mined "
-              "for a better phrase -- see curation/README.md source 1 (mine vocabulary "
-              "from accepted tools) -- before this keyword batch is used for a real run.")
+        print(
+            "Repos not found by any keyword above need their README vocabulary mined "
+            "for a better phrase -- see curation/README.md source 1 (mine vocabulary "
+            "from accepted tools) -- before this keyword batch is used for a real run."
+        )
 
     if args.log_path != "/dev/null":
         append_search_log(Path(args.log_path), log_rows)

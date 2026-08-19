@@ -41,6 +41,7 @@ API and the request logic mirrors search_repos.py's proven GitHub calls, but
 it has NOT been exercised against a real response here -- run it once
 locally and sanity-check the output before relying on it.
 """
+
 from __future__ import annotations
 
 import argparse
@@ -57,19 +58,29 @@ import requests
 
 sys.path.insert(0, str(Path(__file__).parent))
 from search_repos import (  # noqa: E402
-    DEFAULT_MIN_STARS, DEFAULT_PUSHED_AFTER_MONTHS, DEFAULT_MIN_README_CHARS,
-    cutoff_date, fetch_readme_text, readme_content_length,
-    load_existing_candidates, append_search_log,
+    DEFAULT_MIN_STARS,
+    DEFAULT_PUSHED_AFTER_MONTHS,
+    DEFAULT_MIN_README_CHARS,
+    cutoff_date,
+    fetch_readme_text,
+    readme_content_length,
+    load_existing_candidates,
+    append_search_log,
 )
 from snowball import fetch_repo, passes_filters, extract_repo_links  # noqa: E402
 
 ARXIV_API = "https://export.arxiv.org/api/query"
-ATOM_NS = {"atom": "http://www.w3.org/2005/Atom", "arxiv": "http://arxiv.org/schemas/atom"}
+ATOM_NS = {
+    "atom": "http://www.w3.org/2005/Atom",
+    "arxiv": "http://arxiv.org/schemas/atom",
+}
 
 
 def search_arxiv(term: str, max_results: int, warnings: list) -> list[dict]:
     """One page of arXiv's Atom search API, parsed into plain dicts."""
-    url = f"{ARXIV_API}?search_query=all:{quote(term)}&start=0&max_results={max_results}"
+    url = (
+        f"{ARXIV_API}?search_query=all:{quote(term)}&start=0&max_results={max_results}"
+    )
     try:
         resp = requests.get(url, timeout=30)
     except requests.RequestException as e:
@@ -81,46 +92,78 @@ def search_arxiv(term: str, max_results: int, warnings: list) -> list[dict]:
     root = ET.fromstring(resp.text)
     entries = []
     for entry in root.findall("atom:entry", ATOM_NS):
-        summary = (entry.findtext("atom:summary", default="", namespaces=ATOM_NS) or "").strip()
-        comment = (entry.findtext("arxiv:comment", default="", namespaces=ATOM_NS) or "").strip()
-        entries.append({
-            "id": entry.findtext("atom:id", default="", namespaces=ATOM_NS),
-            "title": " ".join((entry.findtext("atom:title", default="", namespaces=ATOM_NS) or "").split()),
-            "summary": summary,
-            "comment": comment,
-        })
+        summary = (
+            entry.findtext("atom:summary", default="", namespaces=ATOM_NS) or ""
+        ).strip()
+        comment = (
+            entry.findtext("arxiv:comment", default="", namespaces=ATOM_NS) or ""
+        ).strip()
+        entries.append(
+            {
+                "id": entry.findtext("atom:id", default="", namespaces=ATOM_NS),
+                "title": " ".join(
+                    (
+                        entry.findtext("atom:title", default="", namespaces=ATOM_NS)
+                        or ""
+                    ).split()
+                ),
+                "summary": summary,
+                "comment": comment,
+            }
+        )
     return entries
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--keyword", action="append", required=True, dest="keywords",
-                         help="arXiv search term; repeat --keyword for multiple")
-    parser.add_argument("--max-results", type=int, default=20, help="papers to fetch per keyword")
+    parser = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
+    parser.add_argument(
+        "--keyword",
+        action="append",
+        required=True,
+        dest="keywords",
+        help="arXiv search term; repeat --keyword for multiple",
+    )
+    parser.add_argument(
+        "--max-results", type=int, default=20, help="papers to fetch per keyword"
+    )
     parser.add_argument("--min-stars", type=int, default=DEFAULT_MIN_STARS)
-    parser.add_argument("--pushed-after-months", type=int, default=DEFAULT_PUSHED_AFTER_MONTHS)
-    parser.add_argument("--min-readme-chars", type=int, default=DEFAULT_MIN_README_CHARS)
-    parser.add_argument("--out-candidates", default="curation/state/search_candidates.csv")
+    parser.add_argument(
+        "--pushed-after-months", type=int, default=DEFAULT_PUSHED_AFTER_MONTHS
+    )
+    parser.add_argument(
+        "--min-readme-chars", type=int, default=DEFAULT_MIN_README_CHARS
+    )
+    parser.add_argument(
+        "--out-candidates", default="curation/state/search_candidates.csv"
+    )
     parser.add_argument("--log-path", default="curation/state/search_log.csv")
     args = parser.parse_args()
 
     token = os.environ.get("GITHUB_TOKEN")
     if not token:
-        raise SystemExit("GITHUB_TOKEN is not set -- extracted links are resolved to GitHub repos "
-                          "and need the GitHub API. See curation/README.md's Setup section.")
+        raise SystemExit(
+            "GITHUB_TOKEN is not set -- extracted links are resolved to GitHub repos "
+            "and need the GitHub API. See curation/README.md's Setup section."
+        )
     session = requests.Session()
-    session.headers.update({
-        "Authorization": f"Bearer {token}",
-        "Accept": "application/vnd.github+json",
-        "X-GitHub-Api-Version": "2022-11-28",
-    })
+    session.headers.update(
+        {
+            "Authorization": f"Bearer {token}",
+            "Accept": "application/vnd.github+json",
+            "X-GitHub-Api-Version": "2022-11-28",
+        }
+    )
     pushed_after = cutoff_date(args.pushed_after_months)
 
     candidates = load_existing_candidates(Path(args.out_candidates))
     seen_before = set(candidates)
     warnings: list = []
     log_rows = []
-    run_timestamp = datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds")
+    run_timestamp = datetime.datetime.now(datetime.timezone.utc).isoformat(
+        timespec="seconds"
+    )
 
     for term in args.keywords:
         label = f"arxiv:{term}"
@@ -139,7 +182,9 @@ def main() -> None:
                     continue
                 item = fetch_repo(session, full_name)
                 time.sleep(0.2)
-                if item is None or not passes_filters(item, args.min_stars, pushed_after):
+                if item is None or not passes_filters(
+                    item, args.min_stars, pushed_after
+                ):
                     continue
                 readme = fetch_readme_text(session, full_name, warnings)
                 time.sleep(0.2)
@@ -158,34 +203,49 @@ def main() -> None:
                 }
                 kept += 1
 
-        print(f"  -> {len(papers)} paper(s), {found_links} github link(s) extracted, "
-              f"{kept} new candidate(s) kept")
-        log_rows.append({
-            "timestamp_utc": run_timestamp,
-            "keyword": label,
-            "query": term,
-            "raw_count": len(papers),
-            "new_candidates": kept,
-            "min_stars": args.min_stars,
-            "pushed_after_months": args.pushed_after_months,
-            "min_readme_chars": args.min_readme_chars,
-            "notes": "arXiv abstract/comment link extraction, not a GitHub search",
-        })
+        print(
+            f"  -> {len(papers)} paper(s), {found_links} github link(s) extracted, "
+            f"{kept} new candidate(s) kept"
+        )
+        log_rows.append(
+            {
+                "timestamp_utc": run_timestamp,
+                "keyword": label,
+                "query": term,
+                "raw_count": len(papers),
+                "new_candidates": kept,
+                "min_stars": args.min_stars,
+                "pushed_after_months": args.pushed_after_months,
+                "min_readme_chars": args.min_readme_chars,
+                "notes": "arXiv abstract/comment link extraction, not a GitHub search",
+            }
+        )
 
     append_search_log(Path(args.log_path), log_rows)
     print(f"logged {len(log_rows)} keyword run(s) to {args.log_path}")
 
     out_path = Path(args.out_candidates)
     with open(out_path, "w", encoding="utf-8", newline="") as f:
-        fieldnames = ["full_name", "html_url", "description", "stars", "pushed_at",
-                      "language", "license_spdx_id", "homepage", "found_via_keyword"]
+        fieldnames = [
+            "full_name",
+            "html_url",
+            "description",
+            "stars",
+            "pushed_at",
+            "language",
+            "license_spdx_id",
+            "homepage",
+            "found_via_keyword",
+        ]
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         for row in candidates.values():
             writer.writerow({k: row.get(k, "") for k in fieldnames})
 
     new_count = len(candidates) - len(seen_before)
-    print(f"\nwrote {len(candidates)} total candidate(s) ({new_count} new this run) to {out_path}")
+    print(
+        f"\nwrote {len(candidates)} total candidate(s) ({new_count} new this run) to {out_path}"
+    )
     if warnings:
         print(f"\n{len(warnings)} warning(s):", file=sys.stderr)
         for w in warnings:

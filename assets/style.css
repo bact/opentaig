@@ -129,20 +129,20 @@ body {
 }
 .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 a { color: var(--link); text-decoration-color: var(--ink-4); text-underline-offset: 3px; transition: text-decoration-color var(--dur-quick) var(--ease-out); }
-/* The global visited color only applies to a plain-text link on the page's
+/* The global visited colour only applies to a plain-text link on the page's
    own background (citation list, breadcrumbs, tool-detail links, ...),
    where it's a genuine, low-risk "you've already opened this" cue. It's
-   excluded here from every link that is its OWN colored surface -- chips
+   excluded here from every link that is its OWN coloured surface -- chips
    (badge/scorecard/license/language/framework-term/...), the tool-card's
    problem-preview pill, matrix/heatmap cells, the primary button, and the
    skip link -- because the fixed accent it'd otherwise apply has no idea
    what background it's landing on. Confirmed unreadable in practice: a
    visited OpenSSF badge chip rendered orange text on a dark moss-green
-   background. Each of those surfaces keeps its own text color exactly as
+   background. Each of those surfaces keeps its own text colour exactly as
    it is, visited or not, by simply never competing with this rule --
-   *never* by trying to out-specificity it with a repeated color per
+   *never* by trying to out-specificity it with a repeated colour per
    variant, which is exactly the maintenance trap that let this bug in
-   (every new chip color needs remembering to add one, and it's easy not
+   (every new chip colour needs remembering to add one, and it's easy not
    to). One exclusion list here covers all of them, current and future. */
 a:visited:not(.chip):not(.tool-problem-chip):not(.matrix-cell):not(.mini-heatmap-cell):not(.button-primary):not(.skip-link) {
   color: var(--link-visited);
@@ -219,8 +219,8 @@ main.wrap { padding-top: var(--s-12); padding-bottom: var(--s-16); min-height: 6
 .landscape-hero-text { flex: 1 1 480px; }
 .landscape-title { font-size: var(--text-3xl); font-weight: 700; letter-spacing: var(--tracking-tight); margin: 0 0 var(--s-2); color: var(--ink); }
 .landscape-hero-text .lede { font-size: var(--text-lg); }
-/* Visited-state color is excluded globally above (.button-primary is a
-   solid-color surface, same reasoning as the chips). */
+/* Visited-state colour is excluded globally above (.button-primary is a
+   solid-colour surface, same reasoning as the chips). */
 .button-primary {
   display: inline-block; flex-shrink: 0; background: var(--shu); color: var(--white); text-decoration: none;
   padding: 11px 20px; border-radius: var(--r-1); font-size: var(--text-sm); font-weight: 500;
@@ -262,13 +262,13 @@ main.wrap { padding-top: var(--s-12); padding-bottom: var(--s-16); min-height: 6
 .matrix-cell-some  { background: var(--moss-soft); color: var(--moss-ink); }
 .matrix-cell-good  { background: var(--moss); color: var(--white); }
 .matrix-cell-full  { background: var(--moss-ink); color: var(--white); }
-/* Visited-state color is excluded globally above (.matrix-cell is a
-   colored surface, same reasoning as the chips) -- each bucket's own
-   color rule above already applies regardless of visited state. */
-/* currentColor, not a fixed accent color: each cell already sets its own
-   text color for contrast against its own bucket background (dark ink on
+/* Visited-state colour is excluded globally above (.matrix-cell is a
+   coloured surface, same reasoning as the chips) -- each bucket's own
+   colour rule above already applies regardless of visited state. */
+/* currentColor, not a fixed accent colour: each cell already sets its own
+   text colour for contrast against its own bucket background (dark ink on
    the pale empty/some buckets, white on the darker good/full buckets), so
-   the hover ring always inherits a color that reads clearly on that cell. */
+   the hover ring always inherits a colour that reads clearly on that cell. */
 .matrix-cell:hover { outline: 2px solid currentColor; outline-offset: -2px; }
 .matrix-legend { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2) var(--s-5); margin-top: var(--s-3); }
 .matrix-legend-item { display: flex; align-items: center; gap: 8px; font-size: var(--text-xs); color: var(--ink-3); }
@@ -276,7 +276,7 @@ main.wrap { padding-top: var(--s-12); padding-bottom: var(--s-16); min-height: 6
 
 /* Per-RQ binary have/not-have indicator inside each big matrix cell --
    filled squares use currentColor so they stay legible against whichever
-   bucket color (--matrix-cell-empty/some/good/full) that cell landed in. */
+   bucket colour (--matrix-cell-empty/some/good/full) that cell landed in. */
 .matrix-cell-blocks { display: flex; flex-wrap: wrap; gap: 2px; margin: 1px 0; max-width: 100%; }
 .matrix-cell-block {
   width: 7px; height: 7px; border-radius: 1px; border: 1px solid currentColor;
@@ -387,7 +387,7 @@ main.wrap { padding-top: var(--s-12); padding-bottom: var(--s-16); min-height: 6
 /* The whole header row is a click target (not just the button), so mouse
    users can toggle by clicking the title text; the button remains the one
    real interactive/focusable element carrying aria-expanded, so keyboard and
-   screen-reader behavior is unaffected. */
+   screen-reader behaviour is unaffected. */
 .disclosure-header {
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-3);
   padding: var(--s-4) var(--s-5); cursor: pointer;
@@ -499,7 +499,7 @@ main.wrap { padding-top: var(--s-12); padding-bottom: var(--s-16); min-height: 6
 
 /* Implement/Evaluate x Software/Spec matrix -- only the role-label cell is
    tinted (indigo for implement, moss for evaluate); the data cells stay
-   plain so the tool names themselves aren't sitting on a color block. */
+   plain so the tool names themselves aren't sitting on a colour block. */
 .solution-table {
   border-collapse: collapse; margin: var(--s-1) 0 0; font-size: var(--text-sm);
   width: 100%; table-layout: fixed; border: 1px solid var(--border-soft); border-radius: var(--r-1); overflow: hidden;
@@ -522,8 +522,8 @@ main.wrap { padding-top: var(--s-12); padding-bottom: var(--s-16); min-height: 6
 
 .chip-row, .tags { display: flex; flex-wrap: wrap; gap: var(--s-2); margin: var(--s-2) 0; }
 .chip-row-supplemental { margin-top: var(--s-3); opacity: 0.92; }
-/* Card list view: one muted color for every framework chip so the question
-   and tool names stay the visual focus -- per-framework color coding is
+/* Card list view: one muted colour for every framework chip so the question
+   and tool names stay the visual focus -- per-framework colour coding is
    reserved for the problem detail page's Mapped frameworks section. */
 .chip-row-supplemental .chip {
   background: var(--chip-expertise-bg); color: var(--chip-expertise-fg); border: none;
@@ -568,9 +568,9 @@ a.chip-license:hover { text-decoration: underline; text-decoration-color: curren
    4-step neutral -> moss-soft -> moss -> moss-ink ramp the Landscape
    matrix uses for its empty/some/good/full coverage buckets, reused here
    so "how good" reads the same way everywhere on the site. Gold previously
-   used an amber/ochre color (matching the medal, not the meaning) which
-   read as a caution color rather than "best" -- one hue family, increasing
-   saturation = increasing goodness, is a clearer signal than color-per-tier. */
+   used an amber/ochre colour (matching the medal, not the meaning) which
+   read as a caution colour rather than "best" -- one hue family, increasing
+   saturation = increasing goodness, is a clearer signal than colour-per-tier. */
 .chip-badge-in-progress { background: var(--chip-license-bg); color: var(--chip-license-fg); }
 .chip-badge-passing { background: var(--moss-soft); color: var(--moss-ink); }
 .chip-badge-silver { background: var(--moss); color: var(--white); }
@@ -664,6 +664,20 @@ a.chip-license:hover { text-decoration: underline; text-decoration-color: curren
   padding-left: 1.75em; text-indent: -1.75em;
 }
 .citation-list a { color: var(--shu); text-decoration: underline; }
+
+/* Plain-text (APA-style) and BibTeX citation snippets, About page.
+   Selectable/copyable as plain text -- no copy button, that's the whole
+   affordance a <pre> already gives for free. overflow-x:auto (not
+   white-space:pre-wrap) keeps the BibTeX's own line breaks intact rather
+   than reflowing them, since a reader may paste this straight into a
+   .bib file. */
+.citation-plain { max-width: 68ch; color: var(--ink-2); line-height: var(--leading-body); }
+.citation-bibtex {
+  max-width: 68ch; overflow-x: auto; margin: var(--s-3) 0;
+  padding: var(--s-4); border: 1px solid var(--border); border-radius: var(--r-2);
+  background: var(--bg-alt); font-family: var(--font-mono); font-size: var(--text-sm);
+  line-height: var(--leading-snug);
+}
 
 /* ---- tools index ---- */
 /* Separate cards (a real gap + each item its own bordered/rounded box),

@@ -16,12 +16,12 @@ problem number in the TAIG paper); our own `OpenTAIG` document; and
                  citations + expertise). The spine of the site.
   * "mapping"  -- our framework/regulation mappings, keyed by rq_no. Cells
                  hold semicolon-separated ids referencing the "terms"
-                 catalog below, not free text.
+                 catalogue below, not free text.
   * "tool_map" -- our research-question-to-tool mappings: one row per
                  (rq_no, tool_id, role) pairing plus a rationale, rather
                  than a semicolon list, so a tool can answer more than one
                  RQ and each pairing can carry its own explanation.
-  * "tools"    -- our open-source tool catalog (a tab in the OpenTAIG
+  * "tools"    -- our open-source tool catalogue (a tab in the OpenTAIG
                  sheet). Identity fields (name/homepage/...) plus an
                  optional human override for every project-quality/
                  community-health field also in "tool_metadata" below,
@@ -33,7 +33,7 @@ problem number in the TAIG paper); our own `OpenTAIG` document; and
                  credential can be scoped to touch only this one), 100%
                  written by curation/collect_project_metadata.py. Joined
                  onto "tools" by id; never hand-edited.
-  * "terms"    -- our RGAF/EU_AI_Act/UNESCO/ASEAN/CoE term catalog (a tab in
+  * "terms"    -- our RGAF/EU_AI_Act/UNESCO/ASEAN/CoE term catalogue (a tab in
                  the OpenTAIG sheet), one shared tab across all frameworks,
                  with globally-unique namespaced ids (e.g. `euaiact-a8`).
 
@@ -48,6 +48,7 @@ For local development without network access, set a `file:` path under any
 `data.*` source in config.yaml to read from a local CSV instead of fetching
 from Google Sheets.
 """
+
 from __future__ import annotations
 
 import argparse
@@ -76,6 +77,7 @@ UNMAPPED_TOKENS = {"", "unmapped", "n/a", "none"}
 # Data model
 # --------------------------------------------------------------------------
 
+
 @dataclasses.dataclass
 class Freshness:
     """Row-level bookkeeping, present on every OUR-owned tab (mapping,
@@ -84,6 +86,7 @@ class Freshness:
     changed (a review that finds nothing new updates only `checked`, not
     `updated`). Purely informational -- no build logic reads these yet, they
     exist so a future scheduler/crawler can decide what needs re-fetching."""
+
     added: str = ""
     checked: str = ""
     updated: str = ""
@@ -166,9 +169,10 @@ class Tool:
 @dataclasses.dataclass
 class ToolRationale:
     """A single (tool, why-it-answers-this-RQ) pairing -- one row from the
-    tool_map tab, resolved against the tool catalog. Distinct from Tool
+    tool_map tab, resolved against the tool catalogue. Distinct from Tool
     itself because the same Tool can appear under different RQs with a
     different rationale each time, so the rationale can't live on Tool."""
+
     tool: "Tool"
     rationale: str = ""
     freshness: Freshness = dataclasses.field(default_factory=Freshness)
@@ -200,12 +204,15 @@ class Problem:
     tools_eval: list  # list[ToolRationale]
     search_text: str  # precomputed lowercased text for the client-side search box
     order: int
-    mapping_freshness: Freshness = dataclasses.field(default_factory=Freshness)  # from the `mapping` tab's row for this rq_no
+    mapping_freshness: Freshness = dataclasses.field(
+        default_factory=Freshness
+    )  # from the `mapping` tab's row for this rq_no
 
 
 # --------------------------------------------------------------------------
 # Loading config / data
 # --------------------------------------------------------------------------
+
 
 def load_yaml(path: Path) -> dict:
     with open(path, "r", encoding="utf-8") as f:
@@ -220,7 +227,9 @@ def clean(value: Optional[str]) -> str:
     return " ".join(value.split()).strip()
 
 
-def parse_optional_int(value: Optional[str], context: str, warnings: list) -> Optional[int]:
+def parse_optional_int(
+    value: Optional[str], context: str, warnings: list
+) -> Optional[int]:
     """Blank -> None (most tools don't have this collected yet); anything
     non-blank that isn't a plain integer is a warning, not a crash -- a
     stray "~1,200" or "N/A" pasted by hand shouldn't break the whole build."""
@@ -234,7 +243,9 @@ def parse_optional_int(value: Optional[str], context: str, warnings: list) -> Op
         return None
 
 
-def parse_optional_float(value: Optional[str], context: str, warnings: list) -> Optional[float]:
+def parse_optional_float(
+    value: Optional[str], context: str, warnings: list
+) -> Optional[float]:
     text = clean(value)
     if not text:
         return None
@@ -267,18 +278,32 @@ def parse_optional_float(value: Optional[str], context: str, warnings: list) -> 
 # This makes `tool_metadata` 100% machine-owned -- a collection run can
 # safely overwrite the whole tab, since no hand edit ever lives there; every
 # override, for any field, always goes in `tools` instead.
-METADATA_INT_FIELDS = {"stars", "forks", "watchers", "contributors",
-                        "open_issues_count", "releases_count", "dependents",
-                        "sponsors"}
-METADATA_FLOAT_FIELDS = {"openssf_scorecard_score", "openssf_scorecard_branch_protection",
-                          "openssf_scorecard_code_review", "openssf_scorecard_maintained",
-                          "openssf_scorecard_vulnerabilities"}
+METADATA_INT_FIELDS = {
+    "stars",
+    "forks",
+    "watchers",
+    "contributors",
+    "open_issues_count",
+    "releases_count",
+    "dependents",
+    "sponsors",
+}
+METADATA_FLOAT_FIELDS = {
+    "openssf_scorecard_score",
+    "openssf_scorecard_branch_protection",
+    "openssf_scorecard_code_review",
+    "openssf_scorecard_maintained",
+    "openssf_scorecard_vulnerabilities",
+}
 # field -> Tool attribute. Semicolon list; resolved as a whole raw string,
 # split by the caller (apply_tool_metadata()) via split_simple_list(). A
 # dict, not a set, because "programming_language" (singular, matching the
 # tools/tool_metadata column name) sets the plural `programming_languages`
 # attribute -- `keywords` needs no such rename.
-METADATA_LIST_FIELDS = {"programming_language": "programming_languages", "keywords": "keywords"}
+METADATA_LIST_FIELDS = {
+    "programming_language": "programming_languages",
+    "keywords": "keywords",
+}
 NONE_TOKEN = "none"
 
 # Every project-quality/community-health field, in the order they're laid
@@ -292,22 +317,52 @@ NONE_TOKEN = "none"
 # package manifest's own URL, see collect_project_metadata.py), so all four
 # go through the same override precedence, not a straight `tools`-only read.
 METADATA_FIELDS = [
-    "name", "license", "programming_language", "documentation", "homepage", "funding", "funder",
-    "stars", "forks", "watchers", "contributors",
-    "last_commit_date", "open_issues_count", "releases_count", "latest_release_date",
-    "readme_url", "license_url", "governance_url", "contributing_url",
-    "code_of_conduct_url", "security_policy_url", "sbom_url",
-    "dependents", "paper_url",
-    "openssf_best_practices_url", "openssf_best_practices_badge_level",
-    "openssf_scorecard_url", "openssf_scorecard_score",
-    "openssf_scorecard_branch_protection", "openssf_scorecard_code_review",
-    "openssf_scorecard_maintained", "openssf_scorecard_vulnerabilities",
-    "development_status", "software_heritage_id", "keywords", "sponsors",
+    "name",
+    "license",
+    "programming_language",
+    "documentation",
+    "homepage",
+    "funding",
+    "funder",
+    "stars",
+    "forks",
+    "watchers",
+    "contributors",
+    "last_commit_date",
+    "open_issues_count",
+    "releases_count",
+    "latest_release_date",
+    "readme_url",
+    "license_url",
+    "governance_url",
+    "contributing_url",
+    "code_of_conduct_url",
+    "security_policy_url",
+    "sbom_url",
+    "dependents",
+    "paper_url",
+    "openssf_best_practices_url",
+    "openssf_best_practices_badge_level",
+    "openssf_scorecard_url",
+    "openssf_scorecard_score",
+    "openssf_scorecard_branch_protection",
+    "openssf_scorecard_code_review",
+    "openssf_scorecard_maintained",
+    "openssf_scorecard_vulnerabilities",
+    "development_status",
+    "software_heritage_id",
+    "keywords",
+    "sponsors",
 ]
 
 
-def resolve_metadata_field(tools_raw: Optional[str], metadata_raw: Optional[str],
-                            field: str, context: str, warnings: list):
+def resolve_metadata_field(
+    tools_raw: Optional[str],
+    metadata_raw: Optional[str],
+    field: str,
+    context: str,
+    warnings: list,
+):
     """One field, one tool: apply the tools/tool_metadata precedence rule
     described above and return the correctly-typed final value (str, or
     Optional[int]/Optional[float] per METADATA_INT_FIELDS/METADATA_FLOAT_FIELDS).
@@ -396,7 +451,9 @@ def fetch_source(
                     cache_file.parent.mkdir(parents=True, exist_ok=True)
                     cache_file.write_text(text, encoding="utf-8-sig")
                 except OSError as e:
-                    warnings.append(f"Failed to write cache for {label} to {cache_file}: {e}")
+                    warnings.append(
+                        f"Failed to write cache for {label} to {cache_file}: {e}"
+                    )
             return text
         except requests.RequestException as e:  # pragma: no cover - network
             last_err = e
@@ -449,10 +506,11 @@ def fetch_all_sources(
         )
         return key, text, local_warnings
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=min(len(data_configs), 8)) as executor:
+    with concurrent.futures.ThreadPoolExecutor(
+        max_workers=min(len(data_configs), 8)
+    ) as executor:
         futures = [
-            executor.submit(_fetch_one, key, cfg)
-            for key, cfg in data_configs.items()
+            executor.submit(_fetch_one, key, cfg) for key, cfg in data_configs.items()
         ]
         for f in concurrent.futures.as_completed(futures):
             key, text, local_warnings = f.result()
@@ -476,6 +534,7 @@ def parse_csv_text(text: str) -> list:
 # Cell parsing
 # --------------------------------------------------------------------------
 
+
 def split_simple_list(raw: Optional[str]) -> list:
     """Split a cell on either ';' or ',' -- for values whose individual terms
     have no internal punctuation (e.g. expertise tags like 'ML Theory')."""
@@ -485,7 +544,11 @@ def split_simple_list(raw: Optional[str]) -> list:
     if raw.lower() in UNMAPPED_TOKENS:
         return []
     parts = re.split(r"[;,]", raw)
-    return [p.strip() for p in parts if p.strip() and p.strip().lower() not in UNMAPPED_TOKENS]
+    return [
+        p.strip()
+        for p in parts
+        if p.strip() and p.strip().lower() not in UNMAPPED_TOKENS
+    ]
 
 
 def split_semicolon(raw: Optional[str]) -> list:
@@ -512,7 +575,9 @@ def parse_id_list(raw: Optional[str]) -> list:
     return [p.strip() for p in parts if p.strip()]
 
 
-def parse_freshness(row: dict, colmap: dict, warnings: list, context: str) -> "Freshness":
+def parse_freshness(
+    row: dict, colmap: dict, warnings: list, context: str
+) -> "Freshness":
     """Read the `datetime_added`/`datetime_checked`/`datetime_updated` trio
     present on every OUR-owned tab. Every row is expected to carry all three
     -- warn (don't fail) if any is blank, so a straggler row that predates
@@ -525,11 +590,19 @@ def parse_freshness(row: dict, colmap: dict, warnings: list, context: str) -> "F
         checked=(row.get(colmap.get("datetime_checked", "")) or "").strip(),
         updated=(row.get(colmap.get("datetime_updated", "")) or "").strip(),
     )
-    missing = [name for name, value in
-               (("datetime_added", fresh.added), ("datetime_checked", fresh.checked), ("datetime_updated", fresh.updated))
-               if not value]
+    missing = [
+        name
+        for name, value in (
+            ("datetime_added", fresh.added),
+            ("datetime_checked", fresh.checked),
+            ("datetime_updated", fresh.updated),
+        )
+        if not value
+    ]
     if missing:
-        warnings.append(f"{context}: missing {', '.join(missing)} (every row is expected to carry all three)")
+        warnings.append(
+            f"{context}: missing {', '.join(missing)} (every row is expected to carry all three)"
+        )
     return fresh
 
 
@@ -558,8 +631,9 @@ def safe_id_for_path(tool_id: str) -> str:
 
 
 # --------------------------------------------------------------------------
-# Build tool catalog
+# Build tool catalogue
 # --------------------------------------------------------------------------
+
 
 def build_tool_catalog(rows: list, colmap: dict, warnings: list) -> tuple:
     """Return ({id: Tool}, {id: raw row dict}). Only identity fields (id,
@@ -583,7 +657,9 @@ def build_tool_catalog(rows: list, colmap: dict, warnings: list) -> tuple:
         if not raw_id:
             continue
         if raw_id in catalog:
-            warnings.append(f"tools row {i + 2}: duplicate tool id {raw_id!r}, overwriting earlier entry")
+            warnings.append(
+                f"tools row {i + 2}: duplicate tool id {raw_id!r}, overwriting earlier entry"
+            )
 
         ctx = f"tools row {i + 2} ({raw_id!r})"
         catalog[raw_id] = Tool(
@@ -599,8 +675,14 @@ def build_tool_catalog(rows: list, colmap: dict, warnings: list) -> tuple:
     return catalog, raw_rows
 
 
-def apply_tool_metadata(tool_catalog: dict, tools_raw_rows: dict, metadata_rows: list,
-                        colmap_tools: dict, colmap_metadata: dict, warnings: list) -> None:
+def apply_tool_metadata(
+    tool_catalog: dict,
+    tools_raw_rows: dict,
+    metadata_rows: list,
+    colmap_tools: dict,
+    colmap_metadata: dict,
+    warnings: list,
+) -> None:
     """Resolve every field in METADATA_FIELDS for every tool, per the
     tools/tool_metadata precedence rule documented above
     resolve_metadata_field(), and set it on the matching Tool in place.
@@ -621,7 +703,9 @@ def apply_tool_metadata(tool_catalog: dict, tools_raw_rows: dict, metadata_rows:
             )
             continue
         if raw_id in metadata_by_id:
-            warnings.append(f"tool_metadata row {i + 2}: duplicate tool id {raw_id!r}, overwriting earlier entry")
+            warnings.append(
+                f"tool_metadata row {i + 2}: duplicate tool id {raw_id!r}, overwriting earlier entry"
+            )
         metadata_by_id[raw_id] = row
 
     for raw_id, tool in tool_catalog.items():
@@ -634,7 +718,9 @@ def apply_tool_metadata(tool_catalog: dict, tools_raw_rows: dict, metadata_rows:
             metadata_col = colmap_metadata.get(field)
             tools_raw = tools_row.get(tools_col) if tools_col else None
             metadata_raw = metadata_row.get(metadata_col) if metadata_col else None
-            value = resolve_metadata_field(tools_raw, metadata_raw, field, f"{ctx} [{field}]", warnings)
+            value = resolve_metadata_field(
+                tools_raw, metadata_raw, field, f"{ctx} [{field}]", warnings
+            )
             if field in METADATA_LIST_FIELDS:
                 setattr(tool, METADATA_LIST_FIELDS[field], split_simple_list(value))
             elif field == "name":
@@ -657,9 +743,12 @@ def apply_tool_metadata(tool_catalog: dict, tools_raw_rows: dict, metadata_rows:
             if field == "license":
                 tools_license = clean(tools_raw)
                 metadata_license = clean(metadata_raw)
-                if (tools_license and tools_license.lower() != NONE_TOKEN
-                        and metadata_license
-                        and tools_license.lower() != metadata_license.lower()):
+                if (
+                    tools_license
+                    and tools_license.lower() != NONE_TOKEN
+                    and metadata_license
+                    and tools_license.lower() != metadata_license.lower()
+                ):
                     warnings.append(
                         f"{ctx}: license conflict -- tools tab says {tools_license!r}, "
                         f"tool_metadata (GitHub) says {metadata_license!r}; using the tools "
@@ -670,13 +759,15 @@ def apply_tool_metadata(tool_catalog: dict, tools_raw_rows: dict, metadata_rows:
         # tool_metadata's own freshness, kept separate from `tools`' --
         # blank Freshness() if this tool has no tool_metadata row yet.
         if metadata_row:
-            tool.metadata_freshness = parse_freshness(metadata_row, colmap_metadata, warnings,
-                                                       f"tool_metadata ({raw_id!r})")
+            tool.metadata_freshness = parse_freshness(
+                metadata_row, colmap_metadata, warnings, f"tool_metadata ({raw_id!r})"
+            )
 
 
 # --------------------------------------------------------------------------
-# Build terms catalog (RGAF/EU_AI_Act/UNESCO/ASEAN/CoE terms, one shared tab)
+# Build terms catalogue (RGAF/EU_AI_Act/UNESCO/ASEAN/CoE terms, one shared tab)
 # --------------------------------------------------------------------------
+
 
 def build_terms_catalog(rows: list, colmap: dict, warnings: list) -> dict:
     """Return {id: Term} from the "terms" tab. Ids are expected to be
@@ -689,21 +780,26 @@ def build_terms_catalog(rows: list, colmap: dict, warnings: list) -> dict:
         if not raw_id:
             continue
         if raw_id in catalog:
-            warnings.append(f"terms row {i + 2}: duplicate term id {raw_id!r}, overwriting earlier entry")
+            warnings.append(
+                f"terms row {i + 2}: duplicate term id {raw_id!r}, overwriting earlier entry"
+            )
         catalog[raw_id] = Term(
             id=raw_id,
             framework=(row.get(colmap["framework"]) or "").strip(),
             name=(row.get(colmap["name"]) or "").strip() or raw_id,
             summary=(row.get(colmap["summary"]) or "").strip(),
             url=(row.get(colmap["url"]) or "").strip(),
-            freshness=parse_freshness(row, colmap, warnings, f"terms row {i + 2} ({raw_id!r})"),
+            freshness=parse_freshness(
+                row, colmap, warnings, f"terms row {i + 2} ({raw_id!r})"
+            ),
         )
     return catalog
 
 
 # --------------------------------------------------------------------------
-# Build framework catalog (descriptive metadata, one row per framework key)
+# Build framework catalogue (descriptive metadata, one row per framework key)
 # --------------------------------------------------------------------------
+
 
 def build_framework_catalog(rows: list, colmap: dict, warnings: list) -> dict:
     """Return {id: {name, fullname, summary, homepage, source, group}} from
@@ -715,7 +811,9 @@ def build_framework_catalog(rows: list, colmap: dict, warnings: list) -> dict:
         if not raw_id:
             continue
         if raw_id in catalog:
-            warnings.append(f"framework row {i + 2}: duplicate framework id {raw_id!r}, overwriting earlier entry")
+            warnings.append(
+                f"framework row {i + 2}: duplicate framework id {raw_id!r}, overwriting earlier entry"
+            )
         catalog[raw_id] = {
             "name": (row.get(colmap["name"]) or "").strip(),
             "fullname": (row.get(colmap["fullname"]) or "").strip(),
@@ -723,12 +821,16 @@ def build_framework_catalog(rows: list, colmap: dict, warnings: list) -> dict:
             "homepage": (row.get(colmap["homepage"]) or "").strip(),
             "source": (row.get(colmap["source"]) or "").strip(),
             "group": (row.get(colmap["group"]) or "").strip(),
-            "freshness": parse_freshness(row, colmap, warnings, f"framework row {i + 2} ({raw_id!r})"),
+            "freshness": parse_freshness(
+                row, colmap, warnings, f"framework row {i + 2} ({raw_id!r})"
+            ),
         }
     return catalog
 
 
-def merge_framework_defs(frameworks_config: list, framework_catalog: dict, warnings: list) -> list:
+def merge_framework_defs(
+    frameworks_config: list, framework_catalog: dict, warnings: list
+) -> list:
     """Merge each `frameworks:` config entry (key, column -- the build
     wiring) with its descriptive metadata from the "framework" tab. `label`
     is the tab's `name`; `doc_url` is the tab's `source`, falling back to
@@ -743,8 +845,15 @@ def merge_framework_defs(frameworks_config: list, framework_catalog: dict, warni
                 f"framework {key!r}: no matching row in the framework tab "
                 f"(falling back to the key itself as label, no doc_url)"
             )
-            info = {"name": "", "fullname": "", "summary": "", "homepage": "", "source": "", "group": "",
-                    "freshness": Freshness()}
+            info = {
+                "name": "",
+                "fullname": "",
+                "summary": "",
+                "homepage": "",
+                "source": "",
+                "group": "",
+                "freshness": Freshness(),
+            }
         merged.append(
             {
                 "key": key,
@@ -772,11 +881,14 @@ def merge_framework_defs(frameworks_config: list, framework_catalog: dict, warni
 # Build mapping index (rq_no -> our annotations)
 # --------------------------------------------------------------------------
 
-def build_mapping_index(rows: list, colmap: dict, framework_defs: list, warnings: list) -> dict:
+
+def build_mapping_index(
+    rows: list, colmap: dict, framework_defs: list, warnings: list
+) -> dict:
     """Return {rq_no: {fw_key: [term_ids...], ...}} from the mapping tab. The
     mapping tab's own question-text column is intentionally ignored. Cells
     are plain id lists (';'-separated) -- resolution against the terms
-    catalog happens in build_problems. Tool mappings are NOT here -- see
+    catalogue happens in build_problems. Tool mappings are NOT here -- see
     build_tool_role_index / the tool_map tab."""
     index = {}
     for i, row in enumerate(rows):
@@ -784,13 +896,23 @@ def build_mapping_index(rows: list, colmap: dict, framework_defs: list, warnings
         if not rq_no:
             # A wholly blank trailing row is common in exports; only warn if the
             # row actually carries mapping content that will be silently lost.
-            has_content = any((row.get(fw["column"]) or "").strip() for fw in framework_defs)
+            has_content = any(
+                (row.get(fw["column"]) or "").strip() for fw in framework_defs
+            )
             if has_content:
-                warnings.append(f"mapping row {i + 2}: blank rq_no but has mapping content; row ignored")
+                warnings.append(
+                    f"mapping row {i + 2}: blank rq_no but has mapping content; row ignored"
+                )
             continue
         if rq_no in index:
-            warnings.append(f"mapping row {i + 2}: duplicate rq_no {rq_no!r}, keeping last")
-        entry = {"freshness": parse_freshness(row, colmap, warnings, f"mapping row {i + 2} (rq_no {rq_no!r})")}
+            warnings.append(
+                f"mapping row {i + 2}: duplicate rq_no {rq_no!r}, keeping last"
+            )
+        entry = {
+            "freshness": parse_freshness(
+                row, colmap, warnings, f"mapping row {i + 2} (rq_no {rq_no!r})"
+            )
+        }
         for fw in framework_defs:
             entry[fw["key"]] = parse_id_list(row.get(fw["column"]))
         index[rq_no] = entry
@@ -809,7 +931,7 @@ def build_tool_role_index(rows: list, colmap: dict, warnings: list) -> dict:
     from the tool_map tab -- one row per (rq_no, tool_id, role) pairing, long
     format rather than a semicolon list, so a rationale has somewhere to
     live and adding a pairing never means hand-editing an existing cell.
-    Resolution against the tool catalog happens in build_problems, same
+    Resolution against the tool catalogue happens in build_problems, same
     deferred-resolution pattern as build_mapping_index."""
     index: dict = {}
     seen_pairs = set()
@@ -821,7 +943,9 @@ def build_tool_role_index(rows: list, colmap: dict, warnings: list) -> dict:
         if not rq_no and not tool_id and not role:
             continue  # blank trailing row
         if not rq_no or not tool_id:
-            warnings.append(f"tool_map row {i + 2}: missing rq_no or tool_id; row ignored")
+            warnings.append(
+                f"tool_map row {i + 2}: missing rq_no or tool_id; row ignored"
+            )
             continue
         if role not in VALID_TOOL_ROLES:
             warnings.append(
@@ -830,18 +954,23 @@ def build_tool_role_index(rows: list, colmap: dict, warnings: list) -> dict:
             continue
         pair_key = (rq_no, tool_id, role)
         if pair_key in seen_pairs:
-            warnings.append(f"tool_map row {i + 2}: duplicate ({rq_no}, {tool_id}, {role}) pairing; row ignored")
+            warnings.append(
+                f"tool_map row {i + 2}: duplicate ({rq_no}, {tool_id}, {role}) pairing; row ignored"
+            )
             continue
         seen_pairs.add(pair_key)
         entry = index.setdefault(rq_no, {"implement": [], "eval": []})
         context = f"tool_map row {i + 2} (rq_no {rq_no!r}, tool_id {tool_id!r})"
-        entry[role].append((tool_id, rationale, parse_freshness(row, colmap, warnings, context)))
+        entry[role].append(
+            (tool_id, rationale, parse_freshness(row, colmap, warnings, context))
+        )
     return index
 
 
 # --------------------------------------------------------------------------
 # Build problems (TAIG sheet is the spine)
 # --------------------------------------------------------------------------
+
 
 def build_problems(
     taig_rows: list,
@@ -887,7 +1016,7 @@ def build_problems(
                 if term is None:
                     warnings.append(
                         f"RQ {rq_no}: term id {tid!r} referenced in [{fw['column']}] not found "
-                        f"in the terms tab (check for typos or a missing catalog entry)"
+                        f"in the terms tab (check for typos or a missing catalogue entry)"
                     )
                     continue
                 if term.framework and term.framework != fw_key:
@@ -911,10 +1040,14 @@ def build_problems(
                 if tool is None:
                     warnings.append(
                         f"RQ {rq_no}: tool id {tid!r} referenced in tool_map [{role}] not found "
-                        f"in the Tools tab (check for typos or a missing catalog entry)"
+                        f"in the Tools tab (check for typos or a missing catalogue entry)"
                     )
                     continue
-                resolved.append(ToolRationale(tool=tool, rationale=rationale, freshness=pair_freshness))
+                resolved.append(
+                    ToolRationale(
+                        tool=tool, rationale=rationale, freshness=pair_freshness
+                    )
+                )
             return resolved
 
         tools_implement = resolve_tools("implement")
@@ -922,7 +1055,9 @@ def build_problems(
 
         slug = stable_slug(rq_no, question)
         if slug in seen_slugs:
-            warnings.append(f"TAIG row {i + 2}: slug collision with row {seen_slugs[slug]} (duplicate question?)")
+            warnings.append(
+                f"TAIG row {i + 2}: slug collision with row {seen_slugs[slug]} (duplicate question?)"
+            )
         seen_slugs[slug] = i + 2
 
         search_parts = [question, problem_area]
@@ -973,9 +1108,16 @@ def build_problems(
 # Grouping / indexes
 # --------------------------------------------------------------------------
 
-def ordered_present(values_present: set, configured_order: list, uncategorized_label: str) -> list:
+
+def ordered_present(
+    values_present: set, configured_order: list, uncategorized_label: str
+) -> list:
     ordered = [v for v in configured_order if v in values_present]
-    extras = sorted(v for v in values_present if v not in configured_order and v != uncategorized_label)
+    extras = sorted(
+        v
+        for v in values_present
+        if v not in configured_order and v != uncategorized_label
+    )
     ordered.extend(extras)
     if uncategorized_label in values_present:
         ordered.append(uncategorized_label)
@@ -991,13 +1133,20 @@ def order_by_first_appearance(problems: list) -> list:
     return sorted(first, key=lambda name: first[name])
 
 
-def group_by_taxonomy(problems: list, capacities_order: list, targets_order: list, uncategorized_label: str) -> list:
+def group_by_taxonomy(
+    problems: list,
+    capacities_order: list,
+    targets_order: list,
+    uncategorized_label: str,
+) -> list:
     """Capacity -> Target -> Problem Area -> [problems]. Each capacity/target
     group carries a `slug` (its name, slugified) so templates can anchor-link
     into a specific cell -- e.g. from the matrix overview on the Landscape
     and Tools pages -- without recomputing the slug themselves."""
     capacities_present = {p.capacity for p in problems}
-    cap_order = ordered_present(capacities_present, capacities_order, uncategorized_label)
+    cap_order = ordered_present(
+        capacities_present, capacities_order, uncategorized_label
+    )
 
     groups = []
     for cap in cap_order:
@@ -1010,11 +1159,32 @@ def group_by_taxonomy(problems: list, capacities_order: list, targets_order: lis
             area_groups = []
             for area in order_by_first_appearance(tgt_problems):
                 area_problems = sorted(
-                    (p for p in tgt_problems if p.problem_area == area), key=lambda p: p.order
+                    (p for p in tgt_problems if p.problem_area == area),
+                    key=lambda p: p.order,
                 )
-                area_groups.append({"name": area, "problems": area_problems, "count": len(area_problems)})
-            target_groups.append({"name": tgt, "slug": slugify(tgt), "areas": area_groups, "count": len(tgt_problems)})
-        groups.append({"name": cap, "slug": slugify(cap), "targets": target_groups, "count": len(cap_problems)})
+                area_groups.append(
+                    {
+                        "name": area,
+                        "problems": area_problems,
+                        "count": len(area_problems),
+                    }
+                )
+            target_groups.append(
+                {
+                    "name": tgt,
+                    "slug": slugify(tgt),
+                    "areas": area_groups,
+                    "count": len(tgt_problems),
+                }
+            )
+        groups.append(
+            {
+                "name": cap,
+                "slug": slugify(cap),
+                "targets": target_groups,
+                "count": len(cap_problems),
+            }
+        )
     return groups
 
 
@@ -1051,17 +1221,25 @@ def build_matrix(problems: list, capacities_order: list, targets_order: list) ->
     core_targets = [t for t in targets_order if t != CROSSCUTTING_TARGET]
     cells: dict = {}
     for p in problems:
-        cell = cells.setdefault((p.capacity, p.target), {"total": 0, "covered": 0, "areas": [], "rq_cells": []})
+        cell = cells.setdefault(
+            (p.capacity, p.target),
+            {"total": 0, "covered": 0, "areas": [], "rq_cells": []},
+        )
         cell["total"] += 1
         tool_count = len(p.tools_implement) + len(p.tools_eval)
         if tool_count:
             cell["covered"] += 1
         if p.problem_area not in cell["areas"]:
             cell["areas"].append(p.problem_area)
-        cell["rq_cells"].append({
-            "rq_no": p.rq_no, "slug": p.slug, "question": p.question,
-            "tool_count": tool_count, "has_tool": tool_count > 0,
-        })
+        cell["rq_cells"].append(
+            {
+                "rq_no": p.rq_no,
+                "slug": p.slug,
+                "question": p.question,
+                "tool_count": tool_count,
+                "has_tool": tool_count > 0,
+            }
+        )
 
     empty_cell = {"total": 0, "covered": 0, "areas": [], "rq_cells": []}
     rows = []
@@ -1070,15 +1248,21 @@ def build_matrix(problems: list, capacities_order: list, targets_order: list) ->
         crosscutting = bool(cap_targets) and cap_targets <= {CROSSCUTTING_TARGET}
         if crosscutting:
             cell = cells.get((cap, CROSSCUTTING_TARGET), empty_cell)
-            blocks = [{
-                "target": CROSSCUTTING_TARGET, "target_slug": slugify(CROSSCUTTING_TARGET),
-                "span": len(core_targets), **cell,
-            }]
+            blocks = [
+                {
+                    "target": CROSSCUTTING_TARGET,
+                    "target_slug": slugify(CROSSCUTTING_TARGET),
+                    "span": len(core_targets),
+                    **cell,
+                }
+            ]
         else:
             blocks = []
             for tgt in core_targets:
                 cell = cells.get((cap, tgt), empty_cell)
-                blocks.append({"target": tgt, "target_slug": slugify(tgt), "span": 1, **cell})
+                blocks.append(
+                    {"target": tgt, "target_slug": slugify(tgt), "span": 1, **cell}
+                )
         rows.append({"capacity": cap, "capacity_slug": slugify(cap), "blocks": blocks})
     return rows
 
@@ -1095,7 +1279,9 @@ def relative_date(date_str: str, now: datetime.datetime) -> str:
     if not text:
         return ""
     try:
-        then = datetime.datetime.strptime(text, "%Y-%m-%d").replace(tzinfo=datetime.timezone.utc)
+        then = datetime.datetime.strptime(text, "%Y-%m-%d").replace(
+            tzinfo=datetime.timezone.utc
+        )
     except ValueError:
         return ""
     days = (now.date() - then.date()).days
@@ -1157,7 +1343,9 @@ def _rq_sort_key(p) -> tuple:
         return (1, p.rq_no)
 
 
-def select_highlighted_problems(tool_id: str, problems_for_tool: list, max_shown: int = 3) -> tuple:
+def select_highlighted_problems(
+    tool_id: str, problems_for_tool: list, max_shown: int = 3
+) -> tuple:
     """Pick up to `max_shown` problems to preview on a tool's card. Prefers a
     mix of Implement/Evaluate roles and distinct Capacity x Target
     combinations over just the first N by number, so the preview doesn't
@@ -1183,6 +1371,7 @@ def select_highlighted_problems(tool_id: str, problems_for_tool: list, max_shown
     role_counts = {"implement": 0, "eval": 0}
     pool = list(candidates)
     while pool and len(selected) < max_shown:
+
         def score(c):
             p, roles = c
             dup = 1 if (p.capacity, p.target) in used_cap_target else 0
@@ -1193,6 +1382,7 @@ def select_highlighted_problems(tool_id: str, problems_for_tool: list, max_shown
             else:
                 role_gap = 0 if role_counts["eval"] <= role_counts["implement"] else 1
             return (dup, role_gap)
+
         pool.sort(key=lambda c: (score(c), _rq_sort_key(c[0])))
         p, roles = pool.pop(0)
         selected.append((p, roles))
@@ -1234,10 +1424,14 @@ def build_quality_display(tool: "Tool", now: datetime.datetime) -> dict:
         quality_parts.append({"text": f"{format_count(tool.stars)} stars"})
     if tool.contributors is not None:
         n = tool.contributors
-        quality_parts.append({"text": f"{format_count(n)} contributor{'' if n == 1 else 's'}"})
+        quality_parts.append(
+            {"text": f"{format_count(n)} contributor{'' if n == 1 else 's'}"}
+        )
     release_rel = relative_date(tool.latest_release_date, now)
     if release_rel:
-        quality_parts.append({"text": f"updated {release_rel}", "title": tool.latest_release_date})
+        quality_parts.append(
+            {"text": f"updated {release_rel}", "title": tool.latest_release_date}
+        )
 
     badge_level = clean(tool.openssf_best_practices_badge_level)
     badge_level_class = badge_level.replace("_", "-") if badge_level else None
@@ -1259,7 +1453,9 @@ def build_quality_display(tool: "Tool", now: datetime.datetime) -> dict:
     }
 
 
-def build_tools_index(problems: list, tool_catalog: dict, now: datetime.datetime) -> list:
+def build_tools_index(
+    problems: list, tool_catalog: dict, now: datetime.datetime
+) -> list:
     usage = {tid: [] for tid in tool_catalog}
     for p in problems:
         for pairing in list(p.tools_implement) + list(p.tools_eval):
@@ -1271,24 +1467,64 @@ def build_tools_index(problems: list, tool_catalog: dict, now: datetime.datetime
     for tid, tool in tool_catalog.items():
         tool_problems = usage.get(tid, [])
         highlighted, more_count = select_highlighted_problems(tid, tool_problems)
-        entries.append({
-            "tool": tool,
-            "problems": tool_problems,
-            "highlighted_problems": [
-                {"rq_no": p.rq_no, "slug": p.slug, "label": first_words(p.question)}
-                for p in highlighted
-            ],
-            "more_count": more_count,
-            "catalog_freshness_parts": freshness_parts(tool.freshness),
-            "metadata_freshness_parts": freshness_parts(tool.metadata_freshness),
-            **build_quality_display(tool, now),
-        })
+        entries.append(
+            {
+                "tool": tool,
+                "problems": tool_problems,
+                "highlighted_problems": [
+                    {"rq_no": p.rq_no, "slug": p.slug, "label": first_words(p.question)}
+                    for p in highlighted
+                ],
+                "more_count": more_count,
+                "catalog_freshness_parts": freshness_parts(tool.freshness),
+                "metadata_freshness_parts": freshness_parts(tool.metadata_freshness),
+                **build_quality_display(tool, now),
+            }
+        )
     entries.sort(key=lambda e: e["tool"].name.lower())
     return entries
 
 
+def build_citation(site_cfg: dict, citation_year: str) -> dict:
+    """Plain-text (APA-style) and BibTeX citation snippets for the About
+    page's Citation section -- assembled here, not in the template, same
+    reasoning as every other precomputed display value in this file: the
+    template just prints a ready string, no Jinja brace-escaping headache
+    (BibTeX's own `{...}` syntax collides with Jinja's `{{ }}` delimiters
+    if written directly in a template). "First Last" -> "Last, F."/
+    "Last, First" is a plain last-token-is-surname split, not a general
+    name-parser -- matches how `site.maintainer_name` is written in
+    config.yaml, nothing more elaborate is needed for one name."""
+    name_parts = site_cfg["maintainer_name"].split()
+    surname = name_parts[-1]
+    apa_author = (
+        f"{surname}, {' '.join(p[0] + '.' for p in name_parts[:-1])}"
+        if len(name_parts) > 1
+        else surname
+    )
+    bibtex_author = (
+        f"{surname}, {' '.join(name_parts[:-1])}" if len(name_parts) > 1 else surname
+    )
+
+    title = site_cfg["title"]
+    subtitle = clean(site_cfg["description"]).rstrip(".")
+    repo_url = site_cfg["repo_url"]
+
+    plain = f"{apa_author} ({citation_year}). {title}: {subtitle} [Data set]. GitHub. {repo_url}"
+    bibtex = (
+        "@misc{opentaig,\n"
+        f"  author = {{{bibtex_author}}},\n"
+        f"  title  = {{{title}: {subtitle}}},\n"
+        f"  year   = {{{citation_year}}},\n"
+        f"  url    = {{{repo_url}}},\n"
+        "  note   = {Accessed: YYYY-MM-DD}\n"
+        "}"
+    )
+    return {"citation_plain": plain, "citation_bibtex": bibtex}
+
+
 def format_csl_author(author: dict) -> str:
-    """CSL-JSON author -> one display name. `literal` covers organizations
+    """CSL-JSON author -> one display name. `literal` covers organisations
     and phrases like "et al." that aren't a real person's name."""
     if "literal" in author:
         return author["literal"]
@@ -1333,7 +1569,9 @@ def load_references(path: Path) -> list:
     return references
 
 
-def build_frameworks_index(problems: list, framework_defs: list, terms_catalog: dict) -> dict:
+def build_frameworks_index(
+    problems: list, framework_defs: list, terms_catalog: dict
+) -> dict:
     """fw_key -> {term_id: {"term": Term, "problems": [...]}}, in the terms
     tab's own row order (sheet order). Only the regulatory frameworks get
     browse pages -- expertise does not (it is filter + chips only)."""
@@ -1358,6 +1596,7 @@ def build_frameworks_index(problems: list, framework_defs: list, terms_catalog: 
 # Rendering
 # --------------------------------------------------------------------------
 
+
 def problem_to_public_dict(p: Problem, expertise_key: str) -> dict:
     mappings_out = {}
     for key, value in p.mappings.items():
@@ -1365,7 +1604,12 @@ def problem_to_public_dict(p: Problem, expertise_key: str) -> dict:
             mappings_out[key] = value  # plain list[str]
         else:
             mappings_out[key] = [
-                {"id": t.id, "name": t.name, "url": t.url, "freshness": dataclasses.asdict(t.freshness)}
+                {
+                    "id": t.id,
+                    "name": t.name,
+                    "url": t.url,
+                    "freshness": dataclasses.asdict(t.freshness),
+                }
                 for t in value
             ]
     return {
@@ -1381,13 +1625,23 @@ def problem_to_public_dict(p: Problem, expertise_key: str) -> dict:
         "new_work": p.new_work,
         "mapping_freshness": dataclasses.asdict(p.mapping_freshness),
         "tools_implement": [
-            {"id": t.tool.id, "name": t.tool.name, "homepage": t.tool.homepage, "rationale": t.rationale,
-             "freshness": dataclasses.asdict(t.freshness)}
+            {
+                "id": t.tool.id,
+                "name": t.tool.name,
+                "homepage": t.tool.homepage,
+                "rationale": t.rationale,
+                "freshness": dataclasses.asdict(t.freshness),
+            }
             for t in p.tools_implement
         ],
         "tools_eval": [
-            {"id": t.tool.id, "name": t.tool.name, "homepage": t.tool.homepage, "rationale": t.rationale,
-             "freshness": dataclasses.asdict(t.freshness)}
+            {
+                "id": t.tool.id,
+                "name": t.tool.name,
+                "homepage": t.tool.homepage,
+                "rationale": t.rationale,
+                "freshness": dataclasses.asdict(t.freshness),
+            }
             for t in p.tools_eval
         ],
     }
@@ -1418,19 +1672,35 @@ def render_site(
     expertise_key = expertise_def["key"]
     facet_terms = {}
     for key, terms in frameworks_index.items():
-        facet_terms[key] = sorted((data["term"].name for data in terms.values()), key=str.lower)
-    expertise_terms = sorted({t for p in problems for t in p.mappings.get(expertise_key, [])}, key=str.lower)
+        facet_terms[key] = sorted(
+            (data["term"].name for data in terms.values()), key=str.lower
+        )
+    expertise_terms = sorted(
+        {t for p in problems for t in p.mappings.get(expertise_key, [])}, key=str.lower
+    )
     facet_terms[expertise_key] = expertise_terms
 
     capacities_list = [g["name"] for g in groups]
 
-    matrix = build_matrix(problems, config["taxonomy"]["capacities"], config["taxonomy"]["targets"])
+    matrix = build_matrix(
+        problems, config["taxonomy"]["capacities"], config["taxonomy"]["targets"]
+    )
     capacity_blurbs = config["taxonomy"].get("capacity_blurbs", {})
-    targets_core = [t for t in config["taxonomy"]["targets"] if t != CROSSCUTTING_TARGET]
+    targets_core = [
+        t for t in config["taxonomy"]["targets"] if t != CROSSCUTTING_TARGET
+    ]
 
     site_ctx = {
         "site": config["site"],
         "generated_at": generated_at,
+        # Year only, for the About page's citation snippet -- a continuously
+        # regenerated, unversioned resource doesn't have a meaningful
+        # "publication date" beyond "the year you're citing it", the usual
+        # convention for citing a living/online work. Sliced from
+        # generated_at rather than a second now.strftime() call -- one
+        # timestamp, one source of truth.
+        "citation_year": generated_at[:4],
+        **build_citation(config["site"], generated_at[:4]),
         "frameworks": framework_defs,
         "expertise": expertise_def,
         "facets": facet_defs,
@@ -1438,7 +1708,9 @@ def render_site(
         "capacities_list": capacities_list,
         "problem_count": len(problems),
         "tool_count": len(tool_catalog),
-        "references": load_references(Path(__file__).parent / "data" / "references.json"),
+        "references": load_references(
+            Path(__file__).parent / "data" / "references.json"
+        ),
         "matrix": matrix,
         "capacity_blurbs": capacity_blurbs,
         "targets_core": targets_core,
@@ -1464,7 +1736,10 @@ def render_site(
     # problems-listing page as a special "RQ #0" card rather than silently
     # vanishing from the open-problems view; they still list normally on the
     # tools index.
-    orphan_tools = sorted((e["tool"] for e in tools_index if not e["problems"]), key=lambda t: t.name.lower())
+    orphan_tools = sorted(
+        (e["tool"] for e in tools_index if not e["problems"]),
+        key=lambda t: t.name.lower(),
+    )
 
     # / is the Landscape overview (capacity x target matrix); the problem
     # listing itself ("Explorer") lives at /problems/, each problem at
@@ -1472,14 +1747,20 @@ def render_site(
     # clean trailing-slash URL rather than a bare .html file.
     write(out_dir / "index.html", "landscape.html", root="", active="landscape")
     write(
-        out_dir / "problems" / "index.html", "problems_index.html", root="../",
-        groups=groups, orphan_tools=orphan_tools, active="problems",
+        out_dir / "problems" / "index.html",
+        "problems_index.html",
+        root="../",
+        groups=groups,
+        orphan_tools=orphan_tools,
+        active="problems",
     )
 
     flat_problems = flatten_groups(groups)
     for i, p in enumerate(flat_problems):
         write(
-            out_dir / "problems" / p.slug / "index.html", "problem.html", root="../../",
+            out_dir / "problems" / p.slug / "index.html",
+            "problem.html",
+            root="../../",
             problem=p,
             prev=flat_problems[i - 1] if i > 0 else None,
             next=flat_problems[i + 1] if i + 1 < len(flat_problems) else None,
@@ -1494,13 +1775,21 @@ def render_site(
     for p in flat_problems:
         rq_dir = safe_id_for_path(p.rq_no)
         write(
-            out_dir / "problems" / rq_dir / "index.html", "problem_redirect.html",
-            rq_no=p.rq_no, target=f"../{p.slug}/",
+            out_dir / "problems" / rq_dir / "index.html",
+            "problem_redirect.html",
+            rq_no=p.rq_no,
+            target=f"../{p.slug}/",
         )
 
     # Same directory-per-item pattern for tools: /tools/ listing,
     # /tools/<tool-id>/ detail.
-    write(out_dir / "tools" / "index.html", "tools_index.html", root="../", entries=tools_index, active="tools")
+    write(
+        out_dir / "tools" / "index.html",
+        "tools_index.html",
+        root="../",
+        entries=tools_index,
+        active="tools",
+    )
     for entry in tools_index:
         tool = entry["tool"]
         write(
@@ -1523,7 +1812,10 @@ def render_site(
     for fw in framework_defs:
         for term_id, data in frameworks_index.get(fw["key"], {}).items():
             write(
-                out_dir / "frameworks" / fw["key"] / f"{safe_id_for_path(term_id)}.html",
+                out_dir
+                / "frameworks"
+                / fw["key"]
+                / f"{safe_id_for_path(term_id)}.html",
                 "framework_term.html",
                 root="../../",
                 framework=fw,
@@ -1564,7 +1856,10 @@ def render_site(
                 "origin": "Aggregated from each project's own public repository and package metadata",
                 "license": "See each project's own license -- not set by OpenTAIG",
                 "community_health_signals_also_aggregated_from": [
-                    {"name": "OpenSSF Best Practices", "url": "https://www.bestpractices.dev/"},
+                    {
+                        "name": "OpenSSF Best Practices",
+                        "url": "https://www.bestpractices.dev/",
+                    },
                     {"name": "OpenSSF Scorecard", "url": "https://scorecard.dev/"},
                     {"name": "ecosyste.ms", "url": "https://ecosyste.ms/"},
                 ],
@@ -1578,7 +1873,9 @@ def render_site(
         "problems": [problem_to_public_dict(p, expertise_key) for p in problems],
         "tools": [dataclasses.asdict(t) for t in tool_catalog.values()],
     }
-    (out_dir / "data.json").write_text(json.dumps(data_json, indent=2), encoding="utf-8")
+    (out_dir / "data.json").write_text(
+        json.dumps(data_json, indent=2), encoding="utf-8"
+    )
 
     shutil.copytree(Path(__file__).parent / "assets", out_dir / "assets")
     (out_dir / ".nojekyll").write_text("", encoding="utf-8")
@@ -1593,9 +1890,12 @@ def render_site(
 # Main
 # --------------------------------------------------------------------------
 
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--config", default="config.yaml", help="Path to configuration file")
+    parser.add_argument(
+        "--config", default="config.yaml", help="Path to configuration file"
+    )
     parser.add_argument(
         "--cache-dir",
         default=None,
@@ -1627,7 +1927,9 @@ def main() -> None:
         cache_dir = None
         cache_ttl = 0
     else:
-        cache_cfg = config.get("cache", {}) if isinstance(config.get("cache"), dict) else {}
+        cache_cfg = (
+            config.get("cache", {}) if isinstance(config.get("cache"), dict) else {}
+        )
         cache_dir_str = args.cache_dir or cache_cfg.get("dir", ".cache/sheets")
         cache_dir = Path(cache_dir_str) if cache_dir_str else None
         if args.cache_ttl is not None:
@@ -1652,17 +1954,31 @@ def main() -> None:
     framework_rows = parse_csv_text(raw_csvs["framework"])
 
     colmap = config["columns"]
-    framework_catalog = build_framework_catalog(framework_rows, colmap["framework"], warnings)
-    framework_defs = merge_framework_defs(config["frameworks"], framework_catalog, warnings)
+    framework_catalog = build_framework_catalog(
+        framework_rows, colmap["framework"], warnings
+    )
+    framework_defs = merge_framework_defs(
+        config["frameworks"], framework_catalog, warnings
+    )
     expertise_def = config["expertise"]
     expertise_key = expertise_def["key"]
     facet_defs = list(framework_defs) + [expertise_def]
 
     terms_catalog = build_terms_catalog(terms_rows, colmap["terms"], warnings)
-    tool_catalog, tools_raw_rows = build_tool_catalog(tools_rows, colmap["tools"], warnings)
-    apply_tool_metadata(tool_catalog, tools_raw_rows, tool_metadata_rows,
-                        colmap["tools"], colmap["tool_metadata"], warnings)
-    mapping_index = build_mapping_index(mapping_rows, colmap["mapping"], framework_defs, warnings)
+    tool_catalog, tools_raw_rows = build_tool_catalog(
+        tools_rows, colmap["tools"], warnings
+    )
+    apply_tool_metadata(
+        tool_catalog,
+        tools_raw_rows,
+        tool_metadata_rows,
+        colmap["tools"],
+        colmap["tool_metadata"],
+        warnings,
+    )
+    mapping_index = build_mapping_index(
+        mapping_rows, colmap["mapping"], framework_defs, warnings
+    )
     tool_role_index = build_tool_role_index(tool_map_rows, colmap["tool_map"], warnings)
 
     problems = build_problems(
@@ -1713,7 +2029,9 @@ def main() -> None:
         generated_at,
     )
 
-    print(f"\n[build] wrote {len(problems)} problems, {len(tool_catalog)} tools to {out_dir}/")
+    print(
+        f"\n[build] wrote {len(problems)} problems, {len(tool_catalog)} tools to {out_dir}/"
+    )
 
 
 if __name__ == "__main__":

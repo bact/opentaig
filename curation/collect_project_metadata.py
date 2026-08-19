@@ -379,6 +379,7 @@ Usage:
     python curation/collect_project_metadata.py --fields keywords,sponsors,documentation \\
         --out curation/state/backfill.csv --restart
 """
+
 import argparse
 import csv
 import datetime
@@ -402,10 +403,17 @@ GITHUB_API = "https://api.github.com"
 BESTPRACTICES_API = "https://www.bestpractices.dev/projects.json"
 SCORECARD_API = "https://api.scorecard.dev/projects"
 SPONSORS_API = "https://sponsors.ecosyste.ms/api/v1/accounts"
-REPO_PATH_RE = re.compile(r"github\.com[:/]+([^/]+/[^/.]+?)(?:\.git)?/?$", re.IGNORECASE)
+REPO_PATH_RE = re.compile(
+    r"github\.com[:/]+([^/]+/[^/.]+?)(?:\.git)?/?$", re.IGNORECASE
+)
 SECURITY_POLICY_PATHS = ["SECURITY.md", ".github/SECURITY.md", "docs/SECURITY.md"]
-GOVERNANCE_PATHS = ["GOVERNANCE.md", "MAINTAINERS.md", "MAINTAINERS",
-                     ".github/GOVERNANCE.md", ".github/MAINTAINERS.md"]
+GOVERNANCE_PATHS = [
+    "GOVERNANCE.md",
+    "MAINTAINERS.md",
+    "MAINTAINERS",
+    ".github/GOVERNANCE.md",
+    ".github/MAINTAINERS.md",
+]
 SCORECARD_CHECK_COLUMNS = {
     "Branch-Protection": "openssf_scorecard_branch_protection",
     "Code-Review": "openssf_scorecard_code_review",
@@ -415,7 +423,14 @@ SCORECARD_CHECK_COLUMNS = {
 # Common LICENSE filenames, checked in this order -- first one found wins
 # (stops there even if licenseid can't match its text, rather than trying
 # every remaining name looking for a luckier match).
-LICENSE_FILE_PATHS = ["LICENSE", "LICENSE.md", "LICENSE.txt", "LICENSE-MIT", "COPYING", "COPYING.md"]
+LICENSE_FILE_PATHS = [
+    "LICENSE",
+    "LICENSE.md",
+    "LICENSE.txt",
+    "LICENSE-MIT",
+    "COPYING",
+    "COPYING.md",
+]
 # Ecosystem package-manifest files that make a repo's implementation
 # language(s) unambiguous even when GitHub's own byte-counter is misled by
 # generated/rendered content -- e.g. a semantic-web vocabulary repo that's
@@ -442,7 +457,10 @@ LICENSE_FILE_PATHS = ["LICENSE", "LICENSE.md", "LICENSE.txt", "LICENSE-MIT", "CO
 PACKAGE_MANIFEST_LANGUAGES = [
     ("Cargo.toml", "Rust"),
     ("go.mod", "Go"),
-    ("package.json", "JavaScript"),  # refined to TypeScript if tsconfig.json is also present
+    (
+        "package.json",
+        "JavaScript",
+    ),  # refined to TypeScript if tsconfig.json is also present
     ("pyproject.toml", "Python"),
     ("pom.xml", "Java"),
     ("build.gradle.kts", "Kotlin"),
@@ -464,8 +482,18 @@ PACKAGE_MANIFEST_LANGUAGES = [
 # here just means spending calls checking manifests unnecessarily, not a
 # correctness risk either way.
 NON_IMPLEMENTATION_LANGUAGES = {
-    "HTML", "CSS", "SCSS", "Less", "Markdown", "TeX", "Roff", "XSLT",
-    "YAML", "JSON", "XML", "Jupyter Notebook",
+    "HTML",
+    "CSS",
+    "SCSS",
+    "Less",
+    "Markdown",
+    "TeX",
+    "Roff",
+    "XSLT",
+    "YAML",
+    "JSON",
+    "XML",
+    "Jupyter Notebook",
 }
 # licenseid's similarity score below which a match is discarded outright --
 # treated as "no match" (resolve_license() falls through to whatever's next
@@ -491,7 +519,9 @@ FUNDING_YML_URL_BUILDERS = {
     "liberapay": lambda v: f"https://liberapay.com/{v}",
     "issuehunt": lambda v: f"https://issuehunt.io/r/{v}",
     "otechie": lambda v: f"https://otechie.com/{v}",
-    "lfx_crowdfunding": lambda v: f"https://crowdfunding.lfx.linuxfoundation.org/projects/{v}",
+    "lfx_crowdfunding": lambda v: (
+        f"https://crowdfunding.lfx.linuxfoundation.org/projects/{v}"
+    ),
     "polar": lambda v: f"https://polar.sh/{v}",
     "buy_me_a_coffee": lambda v: f"https://buymeacoffee.com/{v}",
     "custom": lambda v: v,  # already a full URL
@@ -505,18 +535,46 @@ FUNDING_YML_URL_BUILDERS = {
 # columns (positioned here to match, not appended at the end) -- no sheet
 # changes needed for them at this point.
 OUT_FIELDNAMES = [
-    "id", "name", "license", "programming_language", "homepage", "source", "documentation",
-    "funding", "funder", "paper_url",
-    "datetime_added", "datetime_checked", "datetime_updated",
-    "keywords", "stars", "forks", "watchers", "contributors", "sponsors", "last_commit_date",
-    "open_issues_count", "releases_count", "latest_release_date",
-    "readme_url", "license_url", "governance_url", "contributing_url",
-    "code_of_conduct_url", "security_policy_url", "sbom_url",
-    "openssf_best_practices_url", "openssf_best_practices_badge_level",
-    "openssf_scorecard_url", "openssf_scorecard_score",
-    "openssf_scorecard_branch_protection", "openssf_scorecard_code_review",
-    "openssf_scorecard_maintained", "openssf_scorecard_vulnerabilities",
-    "development_status", "software_heritage_id",
+    "id",
+    "name",
+    "license",
+    "programming_language",
+    "homepage",
+    "source",
+    "documentation",
+    "funding",
+    "funder",
+    "paper_url",
+    "datetime_added",
+    "datetime_checked",
+    "datetime_updated",
+    "keywords",
+    "stars",
+    "forks",
+    "watchers",
+    "contributors",
+    "sponsors",
+    "last_commit_date",
+    "open_issues_count",
+    "releases_count",
+    "latest_release_date",
+    "readme_url",
+    "license_url",
+    "governance_url",
+    "contributing_url",
+    "code_of_conduct_url",
+    "security_policy_url",
+    "sbom_url",
+    "openssf_best_practices_url",
+    "openssf_best_practices_badge_level",
+    "openssf_scorecard_url",
+    "openssf_scorecard_score",
+    "openssf_scorecard_branch_protection",
+    "openssf_scorecard_code_review",
+    "openssf_scorecard_maintained",
+    "openssf_scorecard_vulnerabilities",
+    "development_status",
+    "software_heritage_id",
 ]
 
 
@@ -535,8 +593,11 @@ def fetch_raw_file(session: requests.Session, repo_path: str, path: str) -> str 
     script reads -- still a normal authed GitHub API call, just asking for
     raw content instead of the JSON-wrapped-and-base64 default."""
     try:
-        resp = session.get(f"{GITHUB_API}/repos/{repo_path}/contents/{path}",
-                            headers={"Accept": "application/vnd.github.raw+json"}, timeout=30)
+        resp = session.get(
+            f"{GITHUB_API}/repos/{repo_path}/contents/{path}",
+            headers={"Accept": "application/vnd.github.raw+json"},
+            timeout=30,
+        )
         if resp.status_code != 200:
             return None
         return resp.text
@@ -550,10 +611,14 @@ def fetch_repo_core(session: requests.Session, repo_path: str, warnings: list) -
     try:
         resp = session.get(f"{GITHUB_API}/repos/{repo_path}", timeout=30)
         if resp.status_code == 403 and "rate limit" in resp.text.lower():
-            warnings.append(f"{repo_path}: rate limited (resets at {resp.headers.get('X-RateLimit-Reset')})")
+            warnings.append(
+                f"{repo_path}: rate limited (resets at {resp.headers.get('X-RateLimit-Reset')})"
+            )
             return {}
         if resp.status_code != 200:
-            warnings.append(f"{repo_path}: GitHub API returned {resp.status_code} for repo core")
+            warnings.append(
+                f"{repo_path}: GitHub API returned {resp.status_code} for repo core"
+            )
             return {}
         data = resp.json()
         # "NOASSERTION" is GitHub's own detector saying it couldn't classify
@@ -602,14 +667,17 @@ def fetch_repo_core(session: requests.Session, repo_path: str, warnings: list) -
         return {}
 
 
-def fetch_last_page_count(session: requests.Session, url: str, params: dict, warnings: list,
-                          context: str) -> int | None:
+def fetch_last_page_count(
+    session: requests.Session, url: str, params: dict, warnings: list, context: str
+) -> int | None:
     """Shared Link-header pagination trick: per_page=1 makes the last page
     number equal the total count. Used for contributors and releases."""
     try:
         resp = session.get(url, params=params, timeout=30)
         if resp.status_code != 200:
-            return None  # common for empty/archived repos; not worth a warning on its own
+            return (
+                None  # common for empty/archived repos; not worth a warning on its own
+            )
         link = resp.headers.get("Link", "")
         m = re.search(r'page=(\d+)>; rel="last"', link)
         if m:
@@ -620,36 +688,57 @@ def fetch_last_page_count(session: requests.Session, url: str, params: dict, war
         return None
 
 
-def fetch_contributors_count(session: requests.Session, repo_path: str, warnings: list) -> int | None:
+def fetch_contributors_count(
+    session: requests.Session, repo_path: str, warnings: list
+) -> int | None:
     return fetch_last_page_count(
-        session, f"{GITHUB_API}/repos/{repo_path}/contributors",
-        {"per_page": 1, "anon": "true"}, warnings, f"{repo_path} contributors")
+        session,
+        f"{GITHUB_API}/repos/{repo_path}/contributors",
+        {"per_page": 1, "anon": "true"},
+        warnings,
+        f"{repo_path} contributors",
+    )
 
 
 def fetch_releases(session: requests.Session, repo_path: str, warnings: list) -> dict:
     count = fetch_last_page_count(
-        session, f"{GITHUB_API}/repos/{repo_path}/releases",
-        {"per_page": 1}, warnings, f"{repo_path} releases")
+        session,
+        f"{GITHUB_API}/repos/{repo_path}/releases",
+        {"per_page": 1},
+        warnings,
+        f"{repo_path} releases",
+    )
     if not count:
         return {"releases_count": count}
     try:
-        resp = session.get(f"{GITHUB_API}/repos/{repo_path}/releases",
-                            params={"per_page": 1}, timeout=30)
+        resp = session.get(
+            f"{GITHUB_API}/repos/{repo_path}/releases",
+            params={"per_page": 1},
+            timeout=30,
+        )
         latest = resp.json()
         return {
             "releases_count": count,
-            "latest_release_date": (latest[0].get("published_at") or "")[:10] if latest else "",
+            "latest_release_date": (latest[0].get("published_at") or "")[:10]
+            if latest
+            else "",
         }
     except requests.RequestException as e:
         warnings.append(f"{repo_path}: latest release request failed ({e})")
         return {"releases_count": count}
 
 
-def fetch_community_profile(session: requests.Session, repo_path: str, warnings: list) -> dict:
+def fetch_community_profile(
+    session: requests.Session, repo_path: str, warnings: list
+) -> dict:
     try:
-        resp = session.get(f"{GITHUB_API}/repos/{repo_path}/community/profile", timeout=30)
+        resp = session.get(
+            f"{GITHUB_API}/repos/{repo_path}/community/profile", timeout=30
+        )
         if resp.status_code != 200:
-            warnings.append(f"{repo_path}: GitHub API returned {resp.status_code} for community profile")
+            warnings.append(
+                f"{repo_path}: GitHub API returned {resp.status_code} for community profile"
+            )
             return {}
         files = resp.json().get("files") or {}
 
@@ -667,8 +756,10 @@ def fetch_community_profile(session: requests.Session, repo_path: str, warnings:
         license_url = license_entry.get("html_url") or ""
         if license_entry.get("spdx_id") in (None, "NOASSERTION"):
             if license_url:
-                warnings.append(f"{repo_path}: license_url discarded, GitHub's own "
-                                 f"detector returned NOASSERTION for it ({license_url!r})")
+                warnings.append(
+                    f"{repo_path}: license_url discarded, GitHub's own "
+                    f"detector returned NOASSERTION for it ({license_url!r})"
+                )
             license_url = ""
 
         return {
@@ -682,14 +773,18 @@ def fetch_community_profile(session: requests.Session, repo_path: str, warnings:
         return {}
 
 
-def probe_paths(session: requests.Session, repo_path: str, paths: list, default_branch: str) -> str:
+def probe_paths(
+    session: requests.Session, repo_path: str, paths: list, default_branch: str
+) -> str:
     """First of `paths` (repo-root-relative) that exists, as a browsable
     blob URL; "" if none do. Used for security policy and governance/
     maintainers files, neither of which the community profile API reliably
     surfaces."""
     for path in paths:
         try:
-            resp = session.get(f"{GITHUB_API}/repos/{repo_path}/contents/{path}", timeout=30)
+            resp = session.get(
+                f"{GITHUB_API}/repos/{repo_path}/contents/{path}", timeout=30
+            )
             if resp.status_code == 200:
                 return f"https://github.com/{repo_path}/blob/{default_branch}/{path}"
         except requests.RequestException:
@@ -705,7 +800,9 @@ def fetch_sbom_url(session: requests.Session, repo_path: str) -> str:
     JSON directly); fetching it needs the same GitHub auth as any other
     call here."""
     try:
-        resp = session.get(f"{GITHUB_API}/repos/{repo_path}/dependency-graph/sbom", timeout=30)
+        resp = session.get(
+            f"{GITHUB_API}/repos/{repo_path}/dependency-graph/sbom", timeout=30
+        )
         if resp.status_code == 200:
             return f"{GITHUB_API}/repos/{repo_path}/dependency-graph/sbom"
     except requests.RequestException:
@@ -713,7 +810,9 @@ def fetch_sbom_url(session: requests.Session, repo_path: str) -> str:
     return ""
 
 
-def fetch_package_manifests(session: requests.Session, repo_path: str, include_all: bool) -> dict:
+def fetch_package_manifests(
+    session: requests.Session, repo_path: str, include_all: bool
+) -> dict:
     """pyproject.toml is always fetched, `include_all` or not -- it's needed
     for `funding` regardless of whether license/language resolution ever
     reach it (see collect_funding()), so there's no case where skipping it
@@ -750,7 +849,9 @@ def detect_languages_from_manifests(manifests: dict) -> list[str]:
             continue
         if filename == "package.json" and manifests.get("tsconfig.json"):
             language = "TypeScript"
-        if language not in languages:  # pom.xml and build.gradle both map to "Java" -- don't double-add
+        if (
+            language not in languages
+        ):  # pom.xml and build.gradle both map to "Java" -- don't double-add
             languages.append(language)
     return languages
 
@@ -818,8 +919,10 @@ def parse_pom_xml_license_name(text: str, warnings: list, repo_path: str) -> str
         return ""
     # Maven POMs commonly (but not always) declare the default namespace;
     # try both so a namespace-less pom.xml still matches.
-    for path, namespaces in (("m:licenses/m:license/m:name", {"m": "http://maven.apache.org/POM/4.0.0"}),
-                              ("licenses/license/name", None)):
+    for path, namespaces in (
+        ("m:licenses/m:license/m:name", {"m": "http://maven.apache.org/POM/4.0.0"}),
+        ("licenses/license/name", None),
+    ):
         el = root.find(path, namespaces)
         if el is not None and el.text and el.text.strip():
             return el.text.strip()
@@ -833,7 +936,12 @@ def parse_pom_xml_license_name(text: str, warnings: list, repo_path: str) -> str
 # and the `--fields` backfill path below (fetched unconditionally, since
 # that mode skips language/license resolution -- and the manifest-gating
 # triggers built for those -- entirely).
-KEYWORD_MANIFEST_FILENAMES = ["Cargo.toml", "package.json", "pyproject.toml", "composer.json"]
+KEYWORD_MANIFEST_FILENAMES = [
+    "Cargo.toml",
+    "package.json",
+    "pyproject.toml",
+    "composer.json",
+]
 # Manifest files collect_documentation() reads -- just the two ecosystems
 # with an explicit "documentation URL" convention (PyPA's well-known
 # `Documentation` Project-URL label, Cargo's `package.documentation` field).
@@ -868,7 +976,11 @@ def parse_cargo_toml_keywords(text: str, warnings: list, repo_path: str) -> list
         data = tomllib.loads(text)
     except (tomllib.TOMLDecodeError, UnicodeDecodeError):
         return []  # already warned once for this file by the license parser
-    return [k for k in (data.get("package") or {}).get("keywords") or [] if isinstance(k, str) and k]
+    return [
+        k
+        for k in (data.get("package") or {}).get("keywords") or []
+        if isinstance(k, str) and k
+    ]
 
 
 def parse_package_json_keywords(text: str, warnings: list, repo_path: str) -> list[str]:
@@ -879,7 +991,9 @@ def parse_package_json_keywords(text: str, warnings: list, repo_path: str) -> li
     return [k for k in data.get("keywords") or [] if isinstance(k, str) and k]
 
 
-def parse_composer_json_keywords(text: str, warnings: list, repo_path: str) -> list[str]:
+def parse_composer_json_keywords(
+    text: str, warnings: list, repo_path: str
+) -> list[str]:
     try:
         data = json.loads(text)
     except json.JSONDecodeError as e:
@@ -888,7 +1002,9 @@ def parse_composer_json_keywords(text: str, warnings: list, repo_path: str) -> l
     return [k for k in data.get("keywords") or [] if isinstance(k, str) and k]
 
 
-def parse_pyproject_toml_keywords(text: str, warnings: list, repo_path: str) -> list[str]:
+def parse_pyproject_toml_keywords(
+    text: str, warnings: list, repo_path: str
+) -> list[str]:
     """PEP 621's `[project].keywords` (a plain list of strings) is checked
     first; `[tool.poetry].keywords` (Poetry's own pre-PEP-621 convention,
     still common in older or Poetry-only projects that never migrated their
@@ -899,15 +1015,23 @@ def parse_pyproject_toml_keywords(text: str, warnings: list, repo_path: str) -> 
         data = tomllib.loads(text)
     except (tomllib.TOMLDecodeError, UnicodeDecodeError):
         return []
-    project_keywords = [k for k in (data.get("project") or {}).get("keywords") or []
-                         if isinstance(k, str) and k]
+    project_keywords = [
+        k
+        for k in (data.get("project") or {}).get("keywords") or []
+        if isinstance(k, str) and k
+    ]
     if project_keywords:
         return project_keywords
-    return [k for k in (data.get("tool") or {}).get("poetry", {}).get("keywords") or []
-            if isinstance(k, str) and k]
+    return [
+        k
+        for k in (data.get("tool") or {}).get("poetry", {}).get("keywords") or []
+        if isinstance(k, str) and k
+    ]
 
 
-def collect_keywords(topics: list[str], manifests: dict, warnings: list, repo_path: str) -> str:
+def collect_keywords(
+    topics: list[str], manifests: dict, warnings: list, repo_path: str
+) -> str:
     """GitHub's own repo topics (hand-curated tags, the primary source),
     unioned with whatever package-manifest `keywords` fields happen to
     already be in `manifests` -- opportunistic, not a dedicated fetch pass:
@@ -979,11 +1103,17 @@ def fetch_sponsors_count(owner: str, cache: dict, warnings: list) -> int | None:
     try:
         resp = requests.get(f"{SPONSORS_API}/{quote(owner)}", timeout=30)
         if resp.status_code != 200:
-            warnings.append(f"{owner}: sponsors.ecosyste.ms returned {resp.status_code}")
+            warnings.append(
+                f"{owner}: sponsors.ecosyste.ms returned {resp.status_code}"
+            )
             cache[owner] = None
             return None
         data = resp.json()
-        result = data.get("active_sponsors_count") if data.get("has_sponsors_listing") else None
+        result = (
+            data.get("active_sponsors_count")
+            if data.get("has_sponsors_listing")
+            else None
+        )
         cache[owner] = result
         return result
     except requests.RequestException as e:
@@ -992,8 +1122,13 @@ def fetch_sponsors_count(owner: str, cache: dict, warnings: list) -> int | None:
         return None
 
 
-def match_license_text(matcher: "AggregatedLicenseMatcher", text: str, warnings: list,
-                       repo_path: str, source_desc: str) -> str:
+def match_license_text(
+    matcher: "AggregatedLicenseMatcher",
+    text: str,
+    warnings: list,
+    repo_path: str,
+    source_desc: str,
+) -> str:
     """Runs `text` through licenseid's fuzzy SPDX matcher, returning the top
     match's license id -- only if its similarity is at or above
     LICENSEID_CONFIDENCE_FLOOR (0.8). A single trust/no-trust line, not a
@@ -1007,7 +1142,9 @@ def match_license_text(matcher: "AggregatedLicenseMatcher", text: str, warnings:
     try:
         results = matcher.match(text=text)
     except Exception as e:  # licenseid's own exception types aren't documented; don't let one repo's malformed input abort the batch
-        warnings.append(f"{repo_path}: licenseid match against {source_desc} failed ({e})")
+        warnings.append(
+            f"{repo_path}: licenseid match against {source_desc} failed ({e})"
+        )
         return ""
     if not results:
         return ""
@@ -1017,16 +1154,25 @@ def match_license_text(matcher: "AggregatedLicenseMatcher", text: str, warnings:
     if not license_id:
         return ""
     if score < LICENSEID_CONFIDENCE_FLOOR:
-        warnings.append(f"{repo_path}: licenseid's best match for {source_desc} was {license_id!r} "
-                         f"at similarity {score:.2f} (below the {LICENSEID_CONFIDENCE_FLOOR} "
-                         f"confidence floor) -- discarded, not recorded")
+        warnings.append(
+            f"{repo_path}: licenseid's best match for {source_desc} was {license_id!r} "
+            f"at similarity {score:.2f} (below the {LICENSEID_CONFIDENCE_FLOOR} "
+            f"confidence floor) -- discarded, not recorded"
+        )
         return ""
     return license_id
 
 
-def resolve_license(session: requests.Session, repo_path: str, codemeta_license: str,
-                    citation_license: str, manifests: dict, github_license: str, warnings: list,
-                    matcher: "AggregatedLicenseMatcher | None") -> str:
+def resolve_license(
+    session: requests.Session,
+    repo_path: str,
+    codemeta_license: str,
+    citation_license: str,
+    manifests: dict,
+    github_license: str,
+    warnings: list,
+    matcher: "AggregatedLicenseMatcher | None",
+) -> str:
     """Priority chain, first non-empty result wins:
 
     1. codemeta.json's own `license` field (already fetched by the caller)
@@ -1088,7 +1234,9 @@ def resolve_license(session: requests.Session, repo_path: str, codemeta_license:
     if pom_text:
         pom_license_name = parse_pom_xml_license_name(pom_text, warnings, repo_path)
         if pom_license_name:
-            matched = match_license_text(matcher, pom_license_name, warnings, repo_path, "pom.xml")
+            matched = match_license_text(
+                matcher, pom_license_name, warnings, repo_path, "pom.xml"
+            )
             if matched:
                 return matched
 
@@ -1119,7 +1267,9 @@ def funding_yml_urls(text: str, warnings: list, repo_path: str) -> list[str]:
     return urls
 
 
-def pyproject_url_by_label(text: str, label: str, warnings: list, repo_path: str) -> str:
+def pyproject_url_by_label(
+    text: str, label: str, warnings: list, repo_path: str
+) -> str:
     """`[project.urls]`'s value for `label`, matched case/punctuation-
     insensitively against PyPA's well-known Project-URL labels (spec:
     packaging.python.org/en/latest/specifications/well-known-project-urls)
@@ -1201,7 +1351,9 @@ def parse_cargo_toml_homepage(text: str, warnings: list, repo_path: str) -> str:
     return (data.get("package") or {}).get("homepage") or ""
 
 
-def collect_homepage(manifests: dict, github_homepage: str, warnings: list, repo_path: str) -> str:
+def collect_homepage(
+    manifests: dict, github_homepage: str, warnings: list, repo_path: str
+) -> str:
     """Priority: pyproject.toml's `Homepage` well-known Project-URL, then
     package.json's top-level `homepage`, then Cargo.toml's `package.
     homepage`, then GitHub's own repo `homepage` field as the last resort
@@ -1243,7 +1395,9 @@ def fetch_codemeta(session: requests.Session, repo_path: str, warnings: list) ->
     funder = data.get("funder")
     if funder:
         entries = funder if isinstance(funder, list) else [funder]
-        names = [e.get("name") for e in entries if isinstance(e, dict) and e.get("name")]
+        names = [
+            e.get("name") for e in entries if isinstance(e, dict) and e.get("name")
+        ]
         if names:
             result["funder"] = "; ".join(names)
 
@@ -1255,7 +1409,9 @@ def fetch_codemeta(session: requests.Session, repo_path: str, warnings: list) ->
     if isinstance(dev_status, str):
         result["development_status"] = dev_status
     elif isinstance(dev_status, dict):
-        result["development_status"] = dev_status.get("name", "") or dev_status.get("url", "")
+        result["development_status"] = dev_status.get("name", "") or dev_status.get(
+            "url", ""
+        )
 
     citation = data.get("citation")
     if citation:
@@ -1278,7 +1434,11 @@ def fetch_codemeta(session: requests.Session, repo_path: str, warnings: list) ->
     # declaring its license is the most authoritative source available.
     license_val = data.get("license")
     if isinstance(license_val, str) and license_val:
-        result["license"] = license_val.rstrip("/").rsplit("/", 1)[-1] if "/" in license_val else license_val
+        result["license"] = (
+            license_val.rstrip("/").rsplit("/", 1)[-1]
+            if "/" in license_val
+            else license_val
+        )
 
     # `programmingLanguage` can be a bare string, a schema.org
     # ComputerLanguage object ({"name": "Python"}), or a list of either --
@@ -1300,7 +1460,9 @@ def fetch_codemeta(session: requests.Session, repo_path: str, warnings: list) ->
     return result
 
 
-def fetch_citation_cff(session: requests.Session, repo_path: str, warnings: list) -> dict:
+def fetch_citation_cff(
+    session: requests.Session, repo_path: str, warnings: list
+) -> dict:
     text = fetch_raw_file(session, repo_path, "CITATION.cff")
     if not text:
         return {}
@@ -1319,7 +1481,11 @@ def fetch_citation_cff(session: requests.Session, repo_path: str, warnings: list
         result["paper_url"] = paper_url
 
     for entry in data.get("identifiers") or []:
-        if isinstance(entry, dict) and entry.get("type") == "swh" and entry.get("value"):
+        if (
+            isinstance(entry, dict)
+            and entry.get("type") == "swh"
+            and entry.get("value")
+        ):
             result["software_heritage_id"] = entry["value"]
             break
 
@@ -1348,13 +1514,17 @@ def fetch_openssf_best_practices(repo_path: str, warnings: list) -> dict:
     try:
         resp = requests.get(BESTPRACTICES_API, params={"q": repo_name}, timeout=30)
         if resp.status_code != 200:
-            warnings.append(f"{repo_path}: bestpractices.dev returned {resp.status_code}")
+            warnings.append(
+                f"{repo_path}: bestpractices.dev returned {resp.status_code}"
+            )
             return {}
         for project in resp.json():
             if normalize_repo_url(project.get("repo_url", "")) == target:
                 return {
                     "openssf_best_practices_url": f"https://www.bestpractices.dev/projects/{project['id']}",
-                    "openssf_best_practices_badge_level": project.get("badge_level", ""),
+                    "openssf_best_practices_badge_level": project.get(
+                        "badge_level", ""
+                    ),
                 }
         return {}  # not registered -- the normal case for most tools
     except requests.RequestException as e:
@@ -1366,7 +1536,9 @@ def fetch_openssf_scorecard(repo_path: str, warnings: list) -> dict:
     """Plain, unauthenticated request -- scorecard.dev never sees the
     GitHub token either."""
     try:
-        resp = requests.get(f"{SCORECARD_API}/github.com/{quote(repo_path)}", timeout=30)
+        resp = requests.get(
+            f"{SCORECARD_API}/github.com/{quote(repo_path)}", timeout=30
+        )
         if resp.status_code == 404:
             return {}  # never scanned -- the normal case for most tools
         if resp.status_code != 200:
@@ -1387,8 +1559,13 @@ def fetch_openssf_scorecard(repo_path: str, warnings: list) -> dict:
         return {}
 
 
-def collect_funding(session: requests.Session, repo_path: str, codemeta_candidate: str,
-                    pyproject_text: str | None, warnings: list) -> str:
+def collect_funding(
+    session: requests.Session,
+    repo_path: str,
+    codemeta_candidate: str,
+    pyproject_text: str | None,
+    warnings: list,
+) -> str:
     """Always computes and returns whatever it finds -- this script writes
     unconditionally to `tool_metadata`, which is 100% machine-owned;
     "should this override a curated value" is resolved later, in build.py,
@@ -1415,8 +1592,10 @@ def collect_funding(session: requests.Session, repo_path: str, codemeta_candidat
     if not candidates:
         return ""
     if len(candidates) > 1:
-        warnings.append(f"{repo_path}: {len(candidates)} funding URL candidates found "
-                         f"({', '.join(candidates)}); used the first")
+        warnings.append(
+            f"{repo_path}: {len(candidates)} funding URL candidates found "
+            f"({', '.join(candidates)}); used the first"
+        )
     return candidates[0]
 
 
@@ -1459,41 +1638,66 @@ def _backfill_field_missing(tool: dict, field: str) -> bool:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--data-json", default="site/data.json",
-                         help="local build output to read the live tool catalog from")
-    parser.add_argument("--candidates", default=None,
-                         help="collect for tools not yet in the live sheet instead of "
-                              "site/data.json -- point this at candidate_tools.csv (or "
-                              "anything with the same 'id'/'tool_type'/'source' columns) "
-                              "so a batch of freshly-emitted candidates gets its "
-                              "tool_metadata row ready to paste alongside the tools/tool_map "
-                              "rows, in one round-trip instead of pasting tools first, "
-                              "rebuilding, then re-running the collector")
+    parser = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
+    parser.add_argument(
+        "--data-json",
+        default="site/data.json",
+        help="local build output to read the live tool catalog from",
+    )
+    parser.add_argument(
+        "--candidates",
+        default=None,
+        help="collect for tools not yet in the live sheet instead of "
+        "site/data.json -- point this at candidate_tools.csv (or "
+        "anything with the same 'id'/'tool_type'/'source' columns) "
+        "so a batch of freshly-emitted candidates gets its "
+        "tool_metadata row ready to paste alongside the tools/tool_map "
+        "rows, in one round-trip instead of pasting tools first, "
+        "rebuilding, then re-running the collector",
+    )
     parser.add_argument("--out", default="curation/state/tool_metadata.csv")
-    parser.add_argument("--refresh-all", action="store_true",
-                         help="re-collect for every eligible tool, not just ones missing `stars`")
-    parser.add_argument("--restart", action="store_true",
-                         help="ignore any checkpoint in --out and start over from row 1 "
-                              "(overwrites --out instead of resuming it)")
-    parser.add_argument("--sleep", type=float, default=1.0,
-                         help="seconds to sleep between tools (stays polite to the third-party APIs)")
-    parser.add_argument("--limit", type=int, default=None,
-                         help="stop after this many tools this run (for a deliberately small batch)")
-    parser.add_argument("--fields", default=None,
-                         help="comma-separated subset of {keywords,sponsors,documentation,homepage} -- "
-                              "cheaply backfill "
-                              "ONLY these columns for tools already collected (non-blank `stars` "
-                              "in --data-json), skipping every other API call (repo core beyond "
-                              "topics, contributors, releases, community profile, security/"
-                              "governance probes, sbom, codemeta.json, CITATION.cff, funding, "
-                              "license/language resolution, OpenSSF lookups -- none of it runs). "
-                              "Output is a minimal id+field(s) CSV, NOT a full tool_metadata row -- "
-                              "paste it into ONLY those columns in the live sheet, matched by id, "
-                              "never as a row or full-tab replacement (every other column is left "
-                              "unfetched, not just unchanged, so a full-row paste would blank them "
-                              "out). Not compatible with --candidates (nothing to backfill for a "
-                              "tool that's never been collected at all).")
+    parser.add_argument(
+        "--refresh-all",
+        action="store_true",
+        help="re-collect for every eligible tool, not just ones missing `stars`",
+    )
+    parser.add_argument(
+        "--restart",
+        action="store_true",
+        help="ignore any checkpoint in --out and start over from row 1 "
+        "(overwrites --out instead of resuming it)",
+    )
+    parser.add_argument(
+        "--sleep",
+        type=float,
+        default=1.0,
+        help="seconds to sleep between tools (stays polite to the third-party APIs)",
+    )
+    parser.add_argument(
+        "--limit",
+        type=int,
+        default=None,
+        help="stop after this many tools this run (for a deliberately small batch)",
+    )
+    parser.add_argument(
+        "--fields",
+        default=None,
+        help="comma-separated subset of {keywords,sponsors,documentation,homepage} -- "
+        "cheaply backfill "
+        "ONLY these columns for tools already collected (non-blank `stars` "
+        "in --data-json), skipping every other API call (repo core beyond "
+        "topics, contributors, releases, community profile, security/"
+        "governance probes, sbom, codemeta.json, CITATION.cff, funding, "
+        "license/language resolution, OpenSSF lookups -- none of it runs). "
+        "Output is a minimal id+field(s) CSV, NOT a full tool_metadata row -- "
+        "paste it into ONLY those columns in the live sheet, matched by id, "
+        "never as a row or full-tab replacement (every other column is left "
+        "unfetched, not just unchanged, so a full-row paste would blank them "
+        "out). Not compatible with --candidates (nothing to backfill for a "
+        "tool that's never been collected at all).",
+    )
     args = parser.parse_args()
 
     token = os.environ.get("GITHUB_TOKEN")
@@ -1504,11 +1708,13 @@ def main() -> None:
         )
 
     session = requests.Session()
-    session.headers.update({
-        "Authorization": f"Bearer {token}",
-        "Accept": "application/vnd.github+json",
-        "X-GitHub-Api-Version": "2022-11-28",
-    })
+    session.headers.update(
+        {
+            "Authorization": f"Bearer {token}",
+            "Accept": "application/vnd.github+json",
+            "X-GitHub-Api-Version": "2022-11-28",
+        }
+    )
 
     warnings: list = []
     unresolvable_source: list = []
@@ -1524,7 +1730,9 @@ def main() -> None:
         fields = {f.strip() for f in args.fields.split(",") if f.strip()}
         unknown = fields - BACKFILL_FIELDS
         if unknown:
-            raise SystemExit(f"--fields only supports {sorted(BACKFILL_FIELDS)}, got unknown: {sorted(unknown)}")
+            raise SystemExit(
+                f"--fields only supports {sorted(BACKFILL_FIELDS)}, got unknown: {sorted(unknown)}"
+            )
 
     # licenseid's local SQLite index is only needed for the normal run's
     # license resolution (resolve_license()'s steps 5/6) -- --fields
@@ -1535,22 +1743,29 @@ def main() -> None:
         try:
             matcher = AggregatedLicenseMatcher()
         except Exception as e:
-            print(f"[collect] WARNING: licenseid matcher unavailable ({e}) -- license resolution "
-                  f"will skip LICENSE-file text-matching and pom.xml normalization, falling straight "
-                  f"through to GitHub's own detected license wherever codemeta.json and the ecosystem "
-                  f"manifests don't already answer it. Run `licenseid update` to build its local "
-                  f"database (see curation/README.md's Setup), then re-run.")
+            print(
+                f"[collect] WARNING: licenseid matcher unavailable ({e}) -- license resolution "
+                f"will skip LICENSE-file text-matching and pom.xml normalization, falling straight "
+                f"through to GitHub's own detected license wherever codemeta.json and the ecosystem "
+                f"manifests don't already answer it. Run `licenseid update` to build its local "
+                f"database (see curation/README.md's Setup), then re-run."
+            )
 
     if args.candidates:
         candidates_path = Path(args.candidates)
         if not candidates_path.exists():
             raise SystemExit(f"{candidates_path} not found.")
         with open(candidates_path, "r", encoding="utf-8") as f:
-            tools = [{"id": row["id"], "source": row["source"]}
-                     for row in csv.DictReader(f)
-                     if row.get("tool_type") in ("software", "specification") and row.get("source")]
-        print(f"[collect] reading tools from {candidates_path} (not yet live) "
-              f"instead of {args.data_json}")
+            tools = [
+                {"id": row["id"], "source": row["source"]}
+                for row in csv.DictReader(f)
+                if row.get("tool_type") in ("software", "specification")
+                and row.get("source")
+            ]
+        print(
+            f"[collect] reading tools from {candidates_path} (not yet live) "
+            f"instead of {args.data_json}"
+        )
     else:
         data_path = Path(args.data_json)
         if not data_path.exists():
@@ -1563,22 +1778,33 @@ def main() -> None:
             # normal run) -- and, unless --refresh-all, only ones actually
             # missing at least one requested field, so a re-run after a
             # partial paste doesn't redo work for ids already filled in live.
-            tools = [t for t in data.get("tools", [])
-                     if t.get("tool_type") in ("software", "specification")
-                     and t.get("stars") is not None
-                     and (args.refresh_all or any(_backfill_field_missing(t, f) for f in fields))]
+            tools = [
+                t
+                for t in data.get("tools", [])
+                if t.get("tool_type") in ("software", "specification")
+                and t.get("stars") is not None
+                and (
+                    args.refresh_all
+                    or any(_backfill_field_missing(t, f) for f in fields)
+                )
+            ]
         else:
-            tools = [t for t in data.get("tools", [])
-                     if t.get("tool_type") in ("software", "specification")
-                     and (args.refresh_all or t.get("stars") is None)]
+            tools = [
+                t
+                for t in data.get("tools", [])
+                if t.get("tool_type") in ("software", "specification")
+                and (args.refresh_all or t.get("stars") is None)
+            ]
 
     out_path = Path(args.out)
     checkpointed = set() if args.restart else load_checkpointed_ids(out_path)
     if checkpointed:
         before = len(tools)
         tools = [t for t in tools if t["id"] not in checkpointed]
-        print(f"[collect] resuming: {len(checkpointed)} tool(s) already in {out_path} "
-              f"from an earlier run, {before - len(tools)} of them skipped")
+        print(
+            f"[collect] resuming: {len(checkpointed)} tool(s) already in {out_path} "
+            f"from an earlier run, {before - len(tools)} of them skipped"
+        )
 
     if args.limit is not None:
         tools = tools[: args.limit]
@@ -1609,8 +1835,12 @@ def main() -> None:
         # cached per owner across the run). No manifest fetch here is gated
         # behind language/license resolution the way the normal run's is,
         # since that resolution never runs in this mode.
-        manifest_call_count = len(set().union(*(BACKFILL_MANIFEST_FILES.get(f, []) for f in fields)))
-        calls_per_tool = manifest_call_count + (1 if ("keywords" in fields or "homepage" in fields) else 0)
+        manifest_call_count = len(
+            set().union(*(BACKFILL_MANIFEST_FILES.get(f, []) for f in fields))
+        )
+        calls_per_tool = manifest_call_count + (
+            1 if ("keywords" in fields or "homepage" in fields) else 0
+        )
         estimated_calls = len(tools) * calls_per_tool
     else:
         # Rough worst case per tool: repo core (1) + contributors (1) + releases
@@ -1629,18 +1859,29 @@ def main() -> None:
         # network per call), so it doesn't add to either estimate.
         estimated_calls = len(tools) * 20
     if remaining >= 0:
-        print(f"[collect] GitHub rate limit: {remaining}/{rate_limit} remaining "
-              f"(this run needs up to ~{estimated_calls})")
+        print(
+            f"[collect] GitHub rate limit: {remaining}/{rate_limit} remaining "
+            f"(this run needs up to ~{estimated_calls})"
+        )
         if estimated_calls > remaining:
-            print(f"[collect] WARNING: estimated worst-case calls ({estimated_calls}) exceed "
-                  f"remaining quota ({remaining}) -- this run may hit the rate limit partway "
-                  f"through. Already-collected rows stay in {out_path} either way (written "
-                  f"incrementally); re-run the same command later to pick up where it left off, "
-                  f"or pass --limit to deliberately do a smaller batch now.")
+            print(
+                f"[collect] WARNING: estimated worst-case calls ({estimated_calls}) exceed "
+                f"remaining quota ({remaining}) -- this run may hit the rate limit partway "
+                f"through. Already-collected rows stay in {out_path} either way (written "
+                f"incrementally); re-run the same command later to pick up where it left off, "
+                f"or pass --limit to deliberately do a smaller batch now."
+            )
 
-    print(f"[collect] {len(tools)} software tool(s) to process this run"
-          + (f" (--fields {','.join(sorted(fields))})" if fields is not None
-             else " (--refresh-all)" if args.refresh_all else " (missing stars)"))
+    print(
+        f"[collect] {len(tools)} software tool(s) to process this run"
+        + (
+            f" (--fields {','.join(sorted(fields))})"
+            if fields is not None
+            else " (--refresh-all)"
+            if args.refresh_all
+            else " (missing stars)"
+        )
+    )
 
     # "YYYY-MM-DD HH:MM" (UTC, no seconds, no offset), matching every existing
     # datetime_* cell in both live sheets exactly -- see emit_candidates.py's
@@ -1650,17 +1891,25 @@ def main() -> None:
     # --refresh-all re-collection -- "added" here means "last (re-)collected",
     # consistent with tool_metadata being a full-replacement paste with
     # nothing to preserve (see the module docstring).
-    sheet_timestamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M")
+    sheet_timestamp = datetime.datetime.now(datetime.timezone.utc).strftime(
+        "%Y-%m-%d %H:%M"
+    )
 
     # In --fields mode, a minimal id + requested-fields header, NOT
     # OUT_FIELDNAMES -- this file is a column patch, never a full
     # tool_metadata row, so it must never carry the other columns at all
     # (blank would look like "collected, and empty," which is wrong).
-    out_fieldnames = (["id"] + [f for f in OUT_FIELDNAMES if f in fields]) if fields is not None else OUT_FIELDNAMES
+    out_fieldnames = (
+        (["id"] + [f for f in OUT_FIELDNAMES if f in fields])
+        if fields is not None
+        else OUT_FIELDNAMES
+    )
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     write_header = args.restart or not out_path.exists()
-    out_file = open(out_path, "w" if args.restart else "a", encoding="utf-8", newline="")
+    out_file = open(
+        out_path, "w" if args.restart else "a", encoding="utf-8", newline=""
+    )
     writer = csv.DictWriter(out_file, fieldnames=out_fieldnames)
     if write_header:
         writer.writeheader()
@@ -1677,7 +1926,8 @@ def main() -> None:
     # fetches it once per tool, not once per field that happens to want it.
     backfill_manifest_files = (
         sorted(set().union(*(BACKFILL_MANIFEST_FILES.get(f, []) for f in fields)))
-        if fields is not None else []
+        if fields is not None
+        else []
     )
 
     try:
@@ -1695,33 +1945,50 @@ def main() -> None:
                 # collectors are asked for, same as the normal run's shared
                 # `manifests` dict.
                 row = {"id": tool["id"]}
-                manifests = {filename: fetch_raw_file(session, repo_path, filename)
-                             for filename in backfill_manifest_files}
+                manifests = {
+                    filename: fetch_raw_file(session, repo_path, filename)
+                    for filename in backfill_manifest_files
+                }
                 # repo core is only fetched once, shared by `keywords`
                 # (topics) and `homepage` (its own last-resort fallback) --
                 # neither needs it if the other isn't also requested.
-                core = fetch_repo_core(session, repo_path, warnings) \
-                    if ("keywords" in fields or "homepage" in fields) else {}
+                core = (
+                    fetch_repo_core(session, repo_path, warnings)
+                    if ("keywords" in fields or "homepage" in fields)
+                    else {}
+                )
                 if "keywords" in fields:
-                    row["keywords"] = collect_keywords(core.get("topics", []), manifests, warnings, repo_path)
+                    row["keywords"] = collect_keywords(
+                        core.get("topics", []), manifests, warnings, repo_path
+                    )
                 if "documentation" in fields:
-                    row["documentation"] = collect_documentation(manifests, warnings, repo_path)
+                    row["documentation"] = collect_documentation(
+                        manifests, warnings, repo_path
+                    )
                 if "homepage" in fields:
-                    row["homepage"] = collect_homepage(manifests, core.get("homepage", ""), warnings, repo_path)
+                    row["homepage"] = collect_homepage(
+                        manifests, core.get("homepage", ""), warnings, repo_path
+                    )
                 if "sponsors" in fields:
-                    row["sponsors"] = fetch_sponsors_count(repo_path.split("/")[0], sponsors_cache, warnings)
+                    row["sponsors"] = fetch_sponsors_count(
+                        repo_path.split("/")[0], sponsors_cache, warnings
+                    )
 
-                print(f"  [{i}/{len(tools)}] {tool['id']}: "
-                      + " ".join(f"{f}={row.get(f) or '-'}" for f in sorted(fields)))
+                print(
+                    f"  [{i}/{len(tools)}] {tool['id']}: "
+                    + " ".join(f"{f}={row.get(f) or '-'}" for f in sorted(fields))
+                )
                 writer.writerow(row)
                 out_file.flush()
 
                 if i % 20 == 0:
                     remaining, rate_limit = check_rate_limit(session)
                     if 0 <= remaining < 100:
-                        print(f"[collect] stopping early: GitHub rate limit down to "
-                              f"{remaining}/{rate_limit}. {out_path} has everything collected so "
-                              f"far -- re-run the same command once the limit resets to continue.")
+                        print(
+                            f"[collect] stopping early: GitHub rate limit down to "
+                            f"{remaining}/{rate_limit}. {out_path} has everything collected so "
+                            f"far -- re-run the same command once the limit resets to continue."
+                        )
                         break
 
                 time.sleep(args.sleep)
@@ -1733,8 +2000,12 @@ def main() -> None:
             contributors = fetch_contributors_count(session, repo_path, warnings)
             releases = fetch_releases(session, repo_path, warnings)
             profile = fetch_community_profile(session, repo_path, warnings)
-            security_url = probe_paths(session, repo_path, SECURITY_POLICY_PATHS, default_branch)
-            governance_url = probe_paths(session, repo_path, GOVERNANCE_PATHS, default_branch)
+            security_url = probe_paths(
+                session, repo_path, SECURITY_POLICY_PATHS, default_branch
+            )
+            governance_url = probe_paths(
+                session, repo_path, GOVERNANCE_PATHS, default_branch
+            )
             sbom_url = fetch_sbom_url(session, repo_path)
             codemeta = fetch_codemeta(session, repo_path, warnings)
             citation = fetch_citation_cff(session, repo_path, warnings)
@@ -1745,7 +2016,9 @@ def main() -> None:
             # (more structured than CITATION.cff's free-form preferred-citation),
             # CITATION.cff fills in if codemeta didn't have it or doesn't exist.
             paper_url = codemeta.get("paper_url") or citation.get("paper_url", "")
-            swh_id = codemeta.get("software_heritage_id") or citation.get("software_heritage_id", "")
+            swh_id = codemeta.get("software_heritage_id") or citation.get(
+                "software_heritage_id", ""
+            )
 
             # Two independent triggers decide whether the 6-7 ecosystem
             # package-manifest files (Cargo.toml, go.mod, package.json,
@@ -1769,17 +2042,36 @@ def main() -> None:
             # license field ahead of it, only after it's also failed.
             github_language = core.get("programming_language", "")
             github_license = core.get("license", "")
-            language_needs_manifests = (not github_language) or (github_language in NON_IMPLEMENTATION_LANGUAGES)
-            license_needs_manifests = not (codemeta.get("license") or citation.get("license") or github_license)
-            manifests = fetch_package_manifests(session, repo_path,
-                                                include_all=language_needs_manifests or license_needs_manifests)
+            language_needs_manifests = (not github_language) or (
+                github_language in NON_IMPLEMENTATION_LANGUAGES
+            )
+            license_needs_manifests = not (
+                codemeta.get("license") or citation.get("license") or github_license
+            )
+            manifests = fetch_package_manifests(
+                session,
+                repo_path,
+                include_all=language_needs_manifests or license_needs_manifests,
+            )
 
-            funding = collect_funding(session, repo_path, codemeta.get("funding_candidate", ""),
-                                      manifests.get("pyproject.toml"), warnings)
+            funding = collect_funding(
+                session,
+                repo_path,
+                codemeta.get("funding_candidate", ""),
+                manifests.get("pyproject.toml"),
+                warnings,
+            )
 
-            license_value = resolve_license(session, repo_path, codemeta.get("license", ""),
-                                            citation.get("license", ""), manifests,
-                                            github_license, warnings, matcher)
+            license_value = resolve_license(
+                session,
+                repo_path,
+                codemeta.get("license", ""),
+                citation.get("license", ""),
+                manifests,
+                github_license,
+                warnings,
+                matcher,
+            )
 
             if codemeta.get("programming_language"):
                 programming_language_value = codemeta["programming_language"]
@@ -1794,25 +2086,37 @@ def main() -> None:
                 # has no programming language, and blank says exactly
                 # that -- never falls back to the just-rejected GitHub
                 # guess, which would defeat the whole point of rejecting it.
-                programming_language_value = "; ".join(detect_languages_from_manifests(manifests))
+                programming_language_value = "; ".join(
+                    detect_languages_from_manifests(manifests)
+                )
 
             keywords_value = collect_keywords(topics, manifests, warnings, repo_path)
-            sponsors_value = fetch_sponsors_count(repo_path.split("/")[0], sponsors_cache, warnings)
+            sponsors_value = fetch_sponsors_count(
+                repo_path.split("/")[0], sponsors_cache, warnings
+            )
             documentation_value = collect_documentation(manifests, warnings, repo_path)
             # `core["homepage"]` (GitHub's own field) is the last-resort
             # fallback inside collect_homepage() itself, not used directly
             # here -- `row["homepage"]` below overrides whatever `row.
             # update(core)` just set with the full priority-chain result.
-            homepage_value = collect_homepage(manifests, core.get("homepage", ""), warnings, repo_path)
+            homepage_value = collect_homepage(
+                manifests, core.get("homepage", ""), warnings, repo_path
+            )
 
-            print(f"  [{i}/{len(tools)}] {tool['id']}: "
-                  f"stars={core.get('stars', '?')} "
-                  f"license={license_value or '-'} "
-                  f"lang={programming_language_value or '-'} "
-                  f"scorecard={scorecard.get('openssf_scorecard_score', '-')} "
-                  f"best_practices={best_practices.get('openssf_best_practices_badge_level', '-')}")
+            print(
+                f"  [{i}/{len(tools)}] {tool['id']}: "
+                f"stars={core.get('stars', '?')} "
+                f"license={license_value or '-'} "
+                f"lang={programming_language_value or '-'} "
+                f"scorecard={scorecard.get('openssf_scorecard_score', '-')} "
+                f"best_practices={best_practices.get('openssf_best_practices_badge_level', '-')}"
+            )
 
-            row = {"id": tool["id"], "name": tool.get("name", ""), "source": tool.get("source", "")}
+            row = {
+                "id": tool["id"],
+                "name": tool.get("name", ""),
+                "source": tool.get("source", ""),
+            }
             row["datetime_added"] = sheet_timestamp
             row["datetime_checked"] = sheet_timestamp
             row["datetime_updated"] = sheet_timestamp
@@ -1841,15 +2145,22 @@ def main() -> None:
             # session's own tool timeout) loses at most the one in-flight row,
             # never the whole run. See load_checkpointed_ids() for the other
             # half of this: resuming a later run from here.
-            writer.writerow({k: row.get(k, "") if row.get(k) is not None else "" for k in OUT_FIELDNAMES})
+            writer.writerow(
+                {
+                    k: row.get(k, "") if row.get(k) is not None else ""
+                    for k in OUT_FIELDNAMES
+                }
+            )
             out_file.flush()
 
             if i % 20 == 0:
                 remaining, rate_limit = check_rate_limit(session)
                 if 0 <= remaining < 100:
-                    print(f"[collect] stopping early: GitHub rate limit down to "
-                          f"{remaining}/{rate_limit}. {out_path} has everything collected so "
-                          f"far -- re-run the same command once the limit resets to continue.")
+                    print(
+                        f"[collect] stopping early: GitHub rate limit down to "
+                        f"{remaining}/{rate_limit}. {out_path} has everything collected so "
+                        f"far -- re-run the same command once the limit resets to continue."
+                    )
                     break
 
             time.sleep(args.sleep)
@@ -1859,32 +2170,44 @@ def main() -> None:
     total_in_file = len(load_checkpointed_ids(out_path))
     is_full_catalog_run = args.refresh_all and not args.candidates
     if fields is not None:
-        print(f"\n{out_path} now has {total_in_file} row(s) total ({', '.join(sorted(fields))} "
-              f"only) -- this is a COLUMN PATCH, not a tool_metadata row: paste it into ONLY the "
-              f"{'/'.join(sorted(fields))} column(s) of the live sheet, matched by id (e.g. sort "
-              f"both by id and paste-special just those columns). Do NOT paste as a row or full-"
-              f"tab replacement -- every other column was never fetched this run, so that would "
-              f"blank them out for every id in this file.")
+        print(
+            f"\n{out_path} now has {total_in_file} row(s) total ({', '.join(sorted(fields))} "
+            f"only) -- this is a COLUMN PATCH, not a tool_metadata row: paste it into ONLY the "
+            f"{'/'.join(sorted(fields))} column(s) of the live sheet, matched by id (e.g. sort "
+            f"both by id and paste-special just those columns). Do NOT paste as a row or full-"
+            f"tab replacement -- every other column was never fetched this run, so that would "
+            f"blank them out for every id in this file."
+        )
     elif is_full_catalog_run:
-        print(f"\n{out_path} now has {total_in_file} row(s) total -- review, then paste in as "
-              f"a full replacement of the `tool_metadata` sheet's contents (safe: nothing there "
-              f"is ever hand-edited). Use --restart on a periodic full refresh to also drop rows "
-              f"for tools removed from the catalog since the last run.")
+        print(
+            f"\n{out_path} now has {total_in_file} row(s) total -- review, then paste in as "
+            f"a full replacement of the `tool_metadata` sheet's contents (safe: nothing there "
+            f"is ever hand-edited). Use --restart on a periodic full refresh to also drop rows "
+            f"for tools removed from the catalog since the last run."
+        )
     else:
         # Either --candidates (tools not yet live at all) or the default
         # incremental mode (only tools missing `stars`, i.e. never
         # collected) -- either way this file does NOT cover every tool
         # already live in tool_metadata, so pasting it as a full replacement
         # would silently delete every row it doesn't happen to include.
-        source_desc = f"from {args.candidates} (not yet live)" if args.candidates else "missing metadata until now"
-        print(f"\n{out_path} now has {total_in_file} row(s) total ({source_desc}) -- review, "
-              f"then APPEND these rows to the `tool_metadata` sheet alongside its existing "
-              f"content. Do NOT paste as a full replacement -- that would wipe out every "
-              f"already-live tool's collected data. Use --refresh-all (without --candidates) "
-              f"for an actual full-catalog replacement run.")
+        source_desc = (
+            f"from {args.candidates} (not yet live)"
+            if args.candidates
+            else "missing metadata until now"
+        )
+        print(
+            f"\n{out_path} now has {total_in_file} row(s) total ({source_desc}) -- review, "
+            f"then APPEND these rows to the `tool_metadata` sheet alongside its existing "
+            f"content. Do NOT paste as a full replacement -- that would wipe out every "
+            f"already-live tool's collected data. Use --refresh-all (without --candidates) "
+            f"for an actual full-catalog replacement run."
+        )
     if unresolvable_source:
-        print(f"\n{len(unresolvable_source)} tool(s) have no GitHub-style `source` URL "
-              f"and need a manual look (or a GitLab/Codeberg fetch path this script doesn't have yet):")
+        print(
+            f"\n{len(unresolvable_source)} tool(s) have no GitHub-style `source` URL "
+            f"and need a manual look (or a GitLab/Codeberg fetch path this script doesn't have yet):"
+        )
         for tid in unresolvable_source:
             print(f"  - {tid}")
     if warnings:

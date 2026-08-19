@@ -41,6 +41,7 @@ running) so the reconstruction is itself auditable -- a future reader can
 see exactly how the historical categories were derived instead of finding
 opaque values with no explanation.
 """
+
 from __future__ import annotations
 
 import csv
@@ -55,7 +56,9 @@ SEEN_PATH = Path("curation/state/seen_repos.csv")
 CANDIDATES_PATH = Path("curation/state/search_candidates.csv")
 SITE_DATA_PATH = Path("site/data.json")
 
-REPO_PATH_RE = re.compile(r"github\.com[:/]+([^/]+/[^/.]+?)(?:\.git)?/?$", re.IGNORECASE)
+REPO_PATH_RE = re.compile(
+    r"github\.com[:/]+([^/]+/[^/.]+?)(?:\.git)?/?$", re.IGNORECASE
+)
 
 # The 3 rgaf-seed-triage rejects: not in the `tools` tab (rejected, so never
 # merged), so there's no site/data.json row to join against. Looked up
@@ -85,6 +88,7 @@ def load_tools_licenses_by_repo(path: Path) -> dict:
             by_repo[m.group(1).lower()] = tool.get("license", "")
     return by_repo
 
+
 # Timestamp -> (problem_area, source note). Four batches, identified by
 # their shared timestamp_utc (all rows written by one emit_candidates.py
 # run share the run's timestamp).
@@ -105,14 +109,23 @@ CATEGORY_PATTERNS = [
     ("adversarial-purpose", r"adversarial|removes watermark|strips|evade|wrong side"),
     ("not-a-tool-linklist", r"awesome-list|curated (link|paper) list"),
     ("not-a-tool-dataset", r"dataset (repository|release|paper)|benchmark dataset"),
-    ("not-a-tool-paper-artifact", r"single-paper|research code release|research artifact|"
-                                   r"research-notebook|whitepaper|paper release|"
-                                   r"mathematical formulations|circuit designs"),
+    (
+        "not-a-tool-paper-artifact",
+        r"single-paper|research code release|research artifact|"
+        r"research-notebook|whitepaper|paper release|"
+        r"mathematical formulations|circuit designs",
+    ),
     ("commercial-sdk", r"commercial-sdk"),
-    ("not-relevant", r"off-topic|false positive|unrelated|different (problem area|domain)|"
-                      r"not an audit or provenance registry"),
-    ("low-substance", r"low-substance|student/tutorial|tutorial repo|hackathon|vague|"
-                       r"not clearly maintained|thin"),
+    (
+        "not-relevant",
+        r"off-topic|false positive|unrelated|different (problem area|domain)|"
+        r"not an audit or provenance registry",
+    ),
+    (
+        "low-substance",
+        r"low-substance|student/tutorial|tutorial repo|hackathon|vague|"
+        r"not clearly maintained|thin",
+    ),
     ("redundant", r"redundant"),
 ]
 
@@ -141,9 +154,11 @@ def main() -> None:
             continue  # already backfilled or written post-migration; leave alone
 
         meta = cand_meta.get(row["full_name"], {})
-        license_spdx = (meta.get("license_spdx_id", "")
-                         or tools_licenses.get(row["full_name"].lower(), "")
-                         or RGAF_REJECT_LICENSES.get(row["full_name"], ""))
+        license_spdx = (
+            meta.get("license_spdx_id", "")
+            or tools_licenses.get(row["full_name"].lower(), "")
+            or RGAF_REJECT_LICENSES.get(row["full_name"], "")
+        )
         row["license_spdx_id"] = license_spdx
         row["license_class"] = classify(license_spdx, spdx)
         row["found_via_keyword"] = meta.get("found_via_keyword", "")
@@ -166,8 +181,10 @@ def main() -> None:
 
     print(f"Backfilled {len(rows)} row(s) in {SEEN_PATH}")
     if unmatched:
-        print(f"\n{len(unmatched)} reject(s) fell back to 'out-of-scope-narrow' "
-              f"(no regex pattern matched their note -- worth a manual look):")
+        print(
+            f"\n{len(unmatched)} reject(s) fell back to 'out-of-scope-narrow' "
+            f"(no regex pattern matched their note -- worth a manual look):"
+        )
         for name in unmatched:
             print(f"  - {name}")
 

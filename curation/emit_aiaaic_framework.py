@@ -56,6 +56,7 @@ Scope (`--include`):
   all       direct and enabling harms chipped identically, no qualifier. Loses
             the distinction -- implies an RQ targets a harm it only supports.
 """
+
 from __future__ import annotations
 
 import argparse
@@ -80,10 +81,14 @@ HARM_TYPE_DEFS = {
 }
 
 TYPE_SLUG = {
-    "Autonomy": "autonomy", "Physical": "physical", "Psychological": "psychological",
-    "Reputational": "reputational", "Financial and Business": "financial",
+    "Autonomy": "autonomy",
+    "Physical": "physical",
+    "Psychological": "psychological",
+    "Reputational": "reputational",
+    "Financial and Business": "financial",
     "Human Rights and Civil Liberties": "humanrights",
-    "Societal and Cultural": "societal", "Political and Economic": "political",
+    "Societal and Cultural": "societal",
+    "Political and Economic": "political",
     "Environmental": "environmental",
 }
 
@@ -99,14 +104,16 @@ SENTINEL_DEFS = {
         "This question is about a research method or evaluation property "
         "(e.g. measurement thoroughness, mechanistic understanding) that "
         "applies regardless of which harm is being investigated -- not "
-        "mapped to a specific harm type."),
+        "mapped to a specific harm type.",
+    ),
     "indirect": (
         "Supports harm mitigation (indirect)",
         "This question provides infrastructure, methodology, or verification "
         "capability that a harm-mitigation effort would need, without itself "
         "targeting the harm(s) shown here. Distinguished from a direct "
         "mapping so 'this RQ has a harm chip' is not read as 'this RQ's "
-        "own text is about that harm.'"),
+        "own text is about that harm.'",
+    ),
 }
 
 PAPER_URL = "https://arxiv.org/abs/2407.01294"
@@ -120,10 +127,13 @@ def slugify(text: str) -> str:
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(description=__doc__,
-                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
     ap.add_argument("--granularity", choices=["type", "specific"], default="type")
-    ap.add_argument("--include", choices=["qualified", "direct", "all"], default="qualified")
+    ap.add_argument(
+        "--include", choices=["qualified", "direct", "all"], default="qualified"
+    )
     ap.add_argument("--framework-key", default="aiaaic")
     args = ap.parse_args()
 
@@ -131,7 +141,9 @@ def main() -> None:
     tcol = cfg["columns"]["terms"]
     fcol = cfg["columns"]["framework"]
 
-    spec = importlib.util.spec_from_file_location("hm", "curation/aiaaic_taxonomy_mapping.py")
+    spec = importlib.util.spec_from_file_location(
+        "hm", "curation/aiaaic_taxonomy_mapping.py"
+    )
     hm = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(hm)
 
@@ -151,8 +163,10 @@ def main() -> None:
     fw_row = {
         fcol["id"]: key,
         fcol["name"]: "AIAAIC Harms Taxonomy",
-        fcol["fullname"]: ("A Collaborative, Human-Centred Taxonomy of AI, "
-                           "Algorithmic, and Automation Harms"),
+        fcol["fullname"]: (
+            "A Collaborative, Human-Centred Taxonomy of AI, "
+            "Algorithmic, and Automation Harms"
+        ),
         fcol["summary"]: (
             "Nine harm types and 69 specific harms, developed by an independent working "
             "group via expert consultation and crowdsourced annotation testing over the "
@@ -161,7 +175,8 @@ def main() -> None:
             "way the site's other frameworks are crosswalked against an external "
             "authority's own text -- but AIAAIC itself never mapped these specific "
             "research questions, so it's our own crosswalk against their taxonomy, not "
-            "an AIAAIC-authored one."),
+            "an AIAAIC-authored one."
+        ),
         fcol["homepage"]: PAPER_URL,
     }
     if "source" in fcol:
@@ -171,7 +186,9 @@ def main() -> None:
             fw_row[fcol[c]] = now
 
     Path("curation/candidate_framework_aiaaic.csv").write_text("")
-    with open("curation/candidate_framework_aiaaic.csv", "w", newline="", encoding="utf-8") as f:
+    with open(
+        "curation/candidate_framework_aiaaic.csv", "w", newline="", encoding="utf-8"
+    ) as f:
         w = csv.DictWriter(f, fieldnames=list(fw_row))
         w.writeheader()
         w.writerow(fw_row)
@@ -180,43 +197,61 @@ def main() -> None:
     term_rows = []
     if args.granularity == "type":
         for htype, definition in HARM_TYPE_DEFS.items():
-            term_rows.append(stamp({
-                tcol["id"]: f"{key}-{TYPE_SLUG[htype]}",
-                tcol["framework"]: key,
-                tcol["name"]: htype,
-                tcol["summary"]: definition,
-                tcol["url"]: PAPER_URL,
-            }))
+            term_rows.append(
+                stamp(
+                    {
+                        tcol["id"]: f"{key}-{TYPE_SLUG[htype]}",
+                        tcol["framework"]: key,
+                        tcol["name"]: htype,
+                        tcol["summary"]: definition,
+                        tcol["url"]: PAPER_URL,
+                    }
+                )
+            )
         if args.include == "qualified":
             for slug, (name, definition) in SENTINEL_DEFS.items():
-                term_rows.append(stamp({
-                    tcol["id"]: f"{key}-{slug}",
-                    tcol["framework"]: key,
-                    tcol["name"]: name,
-                    tcol["summary"]: definition,
-                    tcol["url"]: "",
-                }))
+                term_rows.append(
+                    stamp(
+                        {
+                            tcol["id"]: f"{key}-{slug}",
+                            tcol["framework"]: key,
+                            tcol["name"]: name,
+                            tcol["summary"]: definition,
+                            tcol["url"]: "",
+                        }
+                    )
+                )
     else:
         for htype, specifics in hm.TAXONOMY.items():
             for s in specifics:
-                term_rows.append(stamp({
-                    tcol["id"]: f"{key}-{TYPE_SLUG[htype]}-{slugify(s)}",
-                    tcol["framework"]: key,
-                    tcol["name"]: s,
-                    tcol["summary"]: f"{htype}: {hm.HARM_DEFINITIONS[s]}",
-                    tcol["url"]: PAPER_URL,
-                }))
+                term_rows.append(
+                    stamp(
+                        {
+                            tcol["id"]: f"{key}-{TYPE_SLUG[htype]}-{slugify(s)}",
+                            tcol["framework"]: key,
+                            tcol["name"]: s,
+                            tcol["summary"]: f"{htype}: {hm.HARM_DEFINITIONS[s]}",
+                            tcol["url"]: PAPER_URL,
+                        }
+                    )
+                )
         if args.include == "qualified":
             for slug, (name, definition) in SENTINEL_DEFS.items():
-                term_rows.append(stamp({
-                    tcol["id"]: f"{key}-{slug}",
-                    tcol["framework"]: key,
-                    tcol["name"]: name,
-                    tcol["summary"]: definition,
-                    tcol["url"]: "",
-                }))
+                term_rows.append(
+                    stamp(
+                        {
+                            tcol["id"]: f"{key}-{slug}",
+                            tcol["framework"]: key,
+                            tcol["name"]: name,
+                            tcol["summary"]: definition,
+                            tcol["url"]: "",
+                        }
+                    )
+                )
 
-    with open("curation/candidate_terms_aiaaic.csv", "w", newline="", encoding="utf-8") as f:
+    with open(
+        "curation/candidate_terms_aiaaic.csv", "w", newline="", encoding="utf-8"
+    ) as f:
         w = csv.DictWriter(f, fieldnames=list(term_rows[0]))
         w.writeheader()
         w.writerows(term_rows)
@@ -237,7 +272,9 @@ def main() -> None:
                 if args.granularity == "type":
                     ids.append(f"{key}-{TYPE_SLUG[htype]}")
                 else:
-                    ids.extend(f"{key}-{TYPE_SLUG[htype]}-{slugify(s)}" for s in specifics)
+                    ids.extend(
+                        f"{key}-{TYPE_SLUG[htype]}-{slugify(s)}" for s in specifics
+                    )
             if kind == "enabling" and args.include == "qualified":
                 ids.append(f"{key}-indirect")
         elif not harms and args.include == "qualified":
@@ -254,20 +291,26 @@ def main() -> None:
             n_direct += 1
         map_rows.append({"rq_no": rq_no, key: ";".join(ids)})
 
-    with open("curation/candidate_map_aiaaic.csv", "w", newline="", encoding="utf-8") as f:
+    with open(
+        "curation/candidate_map_aiaaic.csv", "w", newline="", encoding="utf-8"
+    ) as f:
         w = csv.DictWriter(f, fieldnames=["rq_no", key])
         w.writeheader()
         w.writerows(map_rows)
 
     print(f"granularity={args.granularity}  include={args.include}")
     print("  framework rows : 1   -> curation/candidate_framework_aiaaic.csv")
-    print(f"  term rows      : {len(term_rows):<3} -> curation/candidate_terms_aiaaic.csv")
+    print(
+        f"  term rows      : {len(term_rows):<3} -> curation/candidate_terms_aiaaic.csv"
+    )
     print(f"  map rows       : {len(map_rows):<3} -> curation/candidate_map_aiaaic.csv")
     print(f"    direct harm chip(s)      : {n_direct}")
     print(f"    indirect (enabling)      : {n_indirect}")
     print(f"    crosscutting sentinel    : {n_crosscutting}")
     print(f"    blank (--include direct only, enabling RQs dropped) : {n_blank}")
-    print(f"\nThen add to config.yaml under `frameworks:`:\n\n    - key: {key}\n      column: \"{key}\"")
+    print(
+        f'\nThen add to config.yaml under `frameworks:`:\n\n    - key: {key}\n      column: "{key}"'
+    )
 
 
 if __name__ == "__main__":

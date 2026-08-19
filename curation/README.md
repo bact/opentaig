@@ -51,7 +51,7 @@ worth keeping in mind so they don't get "corrected" away in a future run:
   evidence of a coverage gap in the open-source ecosystem, not a failed
   search. Don't treat an empty result as something to fix by loosening the
   matching rule; report it as-is. Coverage gaps are exactly the kind of
-  signal worth surfacing (e.g. for a paper analyzing which research
+  signal worth surfacing (e.g. for a paper analysing which research
   questions currently have no open tooling at all).
 - **A Creative Commons license (e.g. `CC-BY-NC-4.0`) is not a reason to
   reject a candidate.** CC licenses aren't OSI-approved for software and
@@ -291,7 +291,7 @@ confirmed on real repos:
 - DPV's `CITATION.cff` declares `license: W3C` directly, a real, valid
   SPDX id — resolves authoritatively without `licenseid` ever running.
   (Its `programming_language` gets fixed too now, just differently: `HTML`
-  from GitHub's byte-counter is recognized as implausible, triggers a
+  from GitHub's byte-counter is recognised as implausible, triggers a
   manifest check, and correctly resolves to blank — DPV genuinely isn't
   software in any ecosystem this catches. Blank isn't always the most
   *useful* answer even when it's the *correct* one from this chain's
@@ -358,7 +358,7 @@ up.
 - **Strongest available model, as an isolated subagent** for step 5 (the
   final implement/eval RQ judgment) — give it *only* {candidate summary +
   README excerpt + paper abstract} × {the pre-filtered RQ shortlist}, never
-  the whole session history or the entire research-question catalog. A human review gate follows
+  the whole session history or the entire research-question catalogue. A human review gate follows
   regardless, so it's fine to try the cheaper model for step 5 first and
   escalate only where review shows it's too noisy.
 
@@ -492,7 +492,7 @@ The keyword sources, in the order worth trying:
      cleanly onto the Repository's domain taxonomy. This paper has a
      *second*, separate use on this project beyond keyword mining: it's also
      the source taxonomy for the `aiaaic` framework on the live site itself
-     (a coverage-completeness check on the RQ catalog, not a search input —
+     (a coverage-completeness check on the RQ catalogue, not a search input —
      see `aiaaic_taxonomy_mapping.py` under "Files" below).
    - The named Mitigation/Control categories in
      ["Mapping AI Risk Mitigations"](https://cdn.prod.website-files.com/669550d38372f33552d2516e/6887e58496902e3bcad04a5a_1b0850b4406f7dc6a79365c4b56f0f51_Mapping%20AI%20Risk%20Mitigations.pdf)
@@ -547,7 +547,7 @@ The keyword sources, in the order worth trying:
    Before spending a real search-and-triage pass on a batch of generated
    phrases, sanity-check their *recall* with a **Quasi-Gold-Standard (QGS)**:
    5-10 repos already known to be relevant (ideally spanning several problem
-   areas — ready-made ones are any tool already in the live catalog).
+   areas — ready-made ones are any tool already in the live catalogue).
    `validate_qgs.py` (built) runs each candidate keyword and reports which
    QGS repos it actually finds, without touching `search_candidates.csv`:
 
@@ -693,7 +693,7 @@ The keyword sources, in the order worth trying:
 ### Starter prompts (for reproducibility)
 
 The two prompts below are what actually kicked off real discovery rounds in
-this project, generalized from their original session-specific form (which
+this project, generalised from their original session-specific form (which
 named particular tools to re-check, exact round counts, etc.) so someone
 else — or a future you — can point a fresh Claude Code session at this repo
 and get a *methodologically equivalent* run. "Equivalent" is the honest
@@ -725,7 +725,7 @@ Do, in order:
    re-export it in each Bash call that needs it.
 3. `python build.py` (fetches the live sheets directly) then
    `python curation/export_rq_context.py` — refresh rq_context.json against
-   the real catalog. Report any build warnings; there should be zero,
+   the real catalogue. Report any build warnings; there should be zero,
    including freshness-column ones (every live row carries datetime_added /
    datetime_checked / datetime_updated).
 4. If any staging tab (e.g. `tools_rgaf_seed`) still has untriaged rows,
@@ -822,7 +822,7 @@ Model tiering: no model inside the scripts; cheaper model for keyword
 scoping, summary distillation, and the coarse RQ pre-filter; strongest
 model only for the final per-tool implement/eval judgment, as an isolated
 subagent given just {summary + README excerpt + pre-filtered RQ shortlist}
-— never the whole session history or the full research-question catalog.
+— never the whole session history or the full research-question catalogue.
 If you split a large batch across parallel subagents, synthesize their
 results yourself: each one only sees its own slice and will make
 locally-true, globally-false claims about RQ coverage.
@@ -846,9 +846,9 @@ any candidate already in the `tools` tab, so a search that surfaces an
 *already-accepted* tool for a new RQ is silently discarded before judgment.
 Every mapping in `tool_map` was therefore created at the single moment its
 tool was first accepted, judged only against the area being searched right
-then — which is why most tools in the catalog carry exactly one mapping
+then — which is why most tools in the catalogue carry exactly one mapping
 despite this project's own rule that multi-RQ tools are expected. Re-judging
-the existing catalog against the full RQ set needs no search at all and is
+the existing catalogue against the full RQ set needs no search at all and is
 probably the highest-yield thing in phase 2.
 
 ```text
@@ -866,14 +866,14 @@ Work in bounded batches either way: one problem area, or ~5-10 RQs, per
 batch, stopping for my review after each. Don't try to cover all 97 RQs in
 one run.
 
-=== PASS A: re-map the existing catalog (no search) ===
+=== PASS A: re-map the existing catalogue (no search) ===
 
 `dedup_candidates.py` drops candidates already in the `tools` tab, so
 keyword search structurally cannot find a new RQ for a tool we already
 have. Every existing mapping was made when its tool was first accepted,
 judged only against the problem area being searched at that moment. So:
 
-Take the tools already in the live catalog and re-judge them against RQs
+Take the tools already in the live catalogue and re-judge them against RQs
 they are NOT currently mapped to. Prioritise tools currently carrying only
 one mapping, and RQs with zero coverage. Use the same judgment rules and
 the same model tiering as any other batch — read the tool's README/docs
@@ -909,7 +909,7 @@ text-matching as the true last resort — see
 `collect_project_metadata.py`'s docstring), and it self-corrects a lot on
 its own: DPV used to resolve `programming_language` as `HTML` (its
 rendered spec pages outweigh the actual `.ttl`/`.owl` files in byte
-count); the chain now recognizes `HTML` as an implausible answer,
+count); the chain now recognises `HTML` as an implausible answer,
 searches for an ecosystem manifest, finds none (correct — DPV isn't
 software in any of the ecosystems this catches), and leaves it genuinely
 blank instead. But blank isn't always the *most useful* answer even when
@@ -1090,7 +1090,7 @@ Judgment rules (details in curation/README.md — same as phase 1):
   value is always single-language. Also worth prioritising a batch of
   `collect_project_metadata.py` against pre-existing tools missing
   project-quality data, since pass A already has you re-reading the live
-  catalog.
+  catalogue.
 - **`documentation`/`homepage` are the same as `license`/`programming_language`
   -- leave them blank.** Both are now auto-collected into `tool_metadata`
   from a package manifest's own well-known Project-URL labels (or GitHub's
@@ -1143,7 +1143,7 @@ Judgment rules (details in curation/README.md — same as phase 1):
   zero-coverage figure as a finding until every RQ behind it has been
   through more than one search axis.
 - **A third phase-2 run tested that prediction directly and it held, with
-  six exceptions.** Ran Pass A (re-judging the existing catalog) first,
+  six exceptions.** Ran Pass A (re-judging the existing catalogue) first,
   then topic-tag sweeps (`topic:confidential-computing`,
   `topic:trusted-execution-environment`, `topic:trusted-computing`,
   `topic:sgx`, `topic:hardware-security`, `topic:tpm`), then targeted
@@ -1151,7 +1151,7 @@ Judgment rules (details in curation/README.md — same as phase 1):
   RQ that was still zero at that point. **Resolved from zero:** RQ35 (an
   HPC-allocation-accounting tool, `xdmod`), RQ50 (three independent
   TEE-attestation implementations), RQ57 (`model-provenance-kit`, already
-  in the catalog, re-mapped via Pass A), RQ80 (two infra-level
+  in the catalogue, re-mapped via Pass A), RQ80 (two infra-level
   confidential-computing tools — a third, `marblerun`, was initially
   accepted here too but reversed on user review for its BUSL-1.1 license;
   see "The one rule that shapes everything" above), RQ88 (`TamperBench`, a purpose-built
@@ -1250,7 +1250,7 @@ Model tiering per the README: no model in the scripts; cheaper model for
 keyword scoping and the coarse RQ pre-filter; strongest model only for the
 final per-tool implement/eval judgment, as an isolated subagent given just
 {tool summary + README excerpt + pre-filtered RQ shortlist} — never the
-whole session history or the full RQ catalog. If you split a batch across
+whole session history or the full RQ catalogue. If you split a batch across
 parallel subagents, synthesize their results yourself: each only sees its
 own slice and will make locally-true, globally-false claims about coverage.
 ```
@@ -1271,7 +1271,7 @@ Viability: Governance", "Starter Project Health", "Safety"). Their metric
 definitions live as markdown files across several working-group repos —
 `chaoss/wg-risk` (focus areas: `security`, `transparency`, `business-risk`,
 `dependency-risk-assessment`, `code-quality`, `licensing`) is the most
-relevant one to this catalog's purpose.
+relevant one to this catalogue's purpose.
 [`chaoss/collectoss`](https://github.com/chaoss/collectoss) is their
 reference *collection* tool (Python, PostgreSQL-backed, Docker-distributed)
 for gathering the raw forge data those metrics are computed from —
@@ -1284,7 +1284,7 @@ data sources.
 named CHAOSS metric, confirmed by reading the actual metric definitions
 rather than assumed from the name alone:
 
-| This catalog's column | CHAOSS metric | Note |
+| This catalogue's column | CHAOSS metric | Note |
 | --- | --- | --- |
 | `openssf_best_practices_url`/`_badge_level` | [OpenSSF Best Practices Badge](https://www.chaoss.community/kb/metric-openssf-best-practices-badge/) | exact match — CHAOSS names this metric directly |
 | `sbom_url` | [SPDX Document](https://www.chaoss.community/kbtopic/all-metrics/) | exact match in spirit; CHAOSS's version isn't GitHub-specific |
@@ -1297,7 +1297,7 @@ rather than assumed from the name alone:
 | `funding`/`funder` | Sponsorship, and the *Funding* metrics model | related; CHAOSS's model is broader (impact of funding, not just presence) |
 | `paper_url` | Academic Open Source Project Impact | related, narrower (presence of a citable paper, not impact) |
 
-**What CHAOSS defines that this catalog doesn't have** — candidates for a
+**What CHAOSS defines that this catalogue doesn't have** — candidates for a
 future round, roughly in order of how directly they'd improve on something
 we already collect cheaply:
 
@@ -1307,10 +1307,10 @@ we already collect cheaply:
   (`GET /repos/{owner}/{repo}/stats/contributors`). Strictly more
   informative than our current `contributors` (a raw headcount that treats
   a drive-by one-line fix the same as a maintainer with 40% of all
-  commits) for the exact question this catalog cares about — is a tool a
+  commits) for the exact question this catalogue cares about — is a tool a
   one-person project that could vanish.
 - **Elephant Factor** — the organizational analogue: minimum number of
-  *organizations* (not individuals) responsible for 50% of contributions.
+  *organisations* (not individuals) responsible for 50% of contributions.
   Needs contributor→employer mapping, which GitHub doesn't expose
   directly; harder to collect than Contributor Absence Factor.
 - **Libyears** — average age, in years, of a project's dependencies
@@ -1331,7 +1331,7 @@ we already collect cheaply:
   before adopting Contributor Absence Factor.
 
 None of the above are implemented — this section is the "note it as prior
-art" this catalog owes CHAOSS, plus a concrete starting list if a future
+art" this catalogue owes CHAOSS, plus a concrete starting list if a future
 round wants to close the gap with their more rigorous definitions rather
 than reinventing similar-but-less-precise ones from scratch.
 
@@ -1356,7 +1356,7 @@ API instead. Checked two real candidates rather than assuming:
   repositories/PyThaiNLP%2Fpythainlp`), not assumed from their docs. Their
   `packages.ecosyste.ms` side (per-registry package metadata — PyPI, npm,
   crates.io, ...) was also checked for a `dependents` answer (the
-  one column this catalog deliberately left manual-only, no GitHub API
+  one column this catalogue deliberately left manual-only, no GitHub API
   existing for it) — no explicit dependent-count field surfaced in the
   single package looked up, so that specific gap isn't obviously solved by
   switching, but worth a closer look if this gets picked up later.
@@ -1548,7 +1548,7 @@ been triaged (accepted into `tools`/`tool_map`, or rejected) — see
   tools and stops early below 100 remaining, writes and flushes each row
   immediately rather than batching to the end, and skips ids already in
   `--out` on a re-run (`--restart` to ignore that checkpoint and also drop
-  rows for tools removed from the catalog since the last run; `--limit N`
+  rows for tools removed from the catalogue since the last run; `--limit N`
   for a deliberately small batch) -- so a rate limit, network blip, or
   Ctrl-C loses at most one row, not the whole run. Two real quirks it
   defends against, both confirmed against live data before being handled
@@ -1612,7 +1612,7 @@ been triaged (accepted into `tools`/`tool_map`, or rejected) — see
   per-RQ artifact referenced by the methodology doc, unlike the
   `candidate_*_aiaaic.csv` files below).
 - **`emit_aiaaic_framework.py`** — one-time, already run (results merged into
-  the live sheet 2026-07-29); kept in case the mapping or RQ catalog changes
+  the live sheet 2026-07-29); kept in case the mapping or RQ catalogue changes
   and the `aiaaic` framework's live-sheet rows need re-pasting. Reads
   `aiaaic_taxonomy_mapping.py`'s `MAPPING` and config.yaml's column headers to
   emit `candidate_framework_aiaaic.csv` / `candidate_terms_aiaaic.csv` /
