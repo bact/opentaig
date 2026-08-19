@@ -630,6 +630,19 @@ a.chip-license:hover { text-decoration: underline; text-decoration-color: curren
 .tool-doc-checklist-chips { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--s-2); min-width: 0; flex: 1; }
 .tool-funder { color: var(--ink-3); font-size: var(--text-sm); margin: 0 0 var(--s-4); }
 
+/* Deliberately the least prominent thing on the page -- small, muted,
+   set apart by a top border like .problem-pager below it, so it reads as
+   "for anyone curious about data provenance" rather than main content.
+   Plain text, not links or a data table -- nothing here needs special
+   keyboard handling, and a screen reader reads each line as an ordinary
+   sentence. */
+.tool-freshness {
+  margin-top: var(--s-8); padding-top: var(--s-4); border-top: 1px solid var(--border-soft);
+  font-size: var(--text-xs); color: var(--ink-3); line-height: var(--leading-body);
+}
+.tool-freshness-label { font-weight: 500; margin: 0 0 var(--s-1); }
+.tool-freshness p { margin: 0; }
+
 .problem-pager {
   display: flex; gap: var(--s-6); margin-top: var(--s-12); padding-top: var(--s-5);
   border-top: 1px solid var(--border-soft); font-size: var(--text-sm);

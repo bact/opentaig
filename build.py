@@ -1204,6 +1204,23 @@ def select_highlighted_problems(tool_id: str, problems_for_tool: list, max_shown
     return [c[0] for c in selected], len(candidates) - len(selected)
 
 
+def freshness_parts(fresh: "Freshness") -> list:
+    """A Freshness's added/checked/updated -- free-text strings, any of
+    which may be blank -- as template-ready parts, same blank-guarded,
+    joinable-with-a-separator shape as build_quality_display()'s
+    quality_parts. Lets tool.html render whichever subset of the three is
+    actually present with a plain join loop, no per-field {% if %} in the
+    template."""
+    parts = []
+    if fresh.added:
+        parts.append({"label": "Added", "value": fresh.added})
+    if fresh.checked:
+        parts.append({"label": "Checked", "value": fresh.checked})
+    if fresh.updated:
+        parts.append({"label": "Updated", "value": fresh.updated})
+    return parts
+
+
 def build_quality_display(tool: "Tool", now: datetime.datetime) -> dict:
     """Precomputed, template-ready project-quality/community-health display
     data for one tool's card -- stats line tokens (each independently
@@ -1262,6 +1279,8 @@ def build_tools_index(problems: list, tool_catalog: dict, now: datetime.datetime
                 for p in highlighted
             ],
             "more_count": more_count,
+            "catalog_freshness_parts": freshness_parts(tool.freshness),
+            "metadata_freshness_parts": freshness_parts(tool.metadata_freshness),
             **build_quality_display(tool, now),
         })
     entries.sort(key=lambda e: e["tool"].name.lower())

@@ -199,7 +199,18 @@ unaffected and stay as-is even where they use American spelling already.
     carries the state for screen readers, not color alone, same idiom as
     `_solution_table.html`'s `solution_cell()`. The SPDX license chip
     (`chip-license`) is itself the link to `spdx.org` now (no separate
-    "(license text)" link).
+    "(license text)" link). Bottom of the page, set apart by a top border
+    like `.problem-pager`, a small `.tool-freshness` block shows each
+    `Freshness`'s `added`/`checked`/`updated` (free-text passthrough, see
+    `Freshness`'s docstring) for anyone curious about data staleness --
+    `tool.freshness` (the `tools` tab's own curation bookkeeping) and
+    `tool.metadata_freshness` (`collect_project_metadata.py`'s, blank if
+    the tool has no `tool_metadata` row yet) shown as two separately
+    labeled lines, never merged into one, matching how the two tabs'
+    freshness has stayed distinct everywhere else in the codebase. Built
+    from `freshness_parts()` (`build.py`) the same blank-guarded/joinable
+    shape as `quality_parts` -- plain text, no links, so it adds zero
+    keyboard tab stops.
 - If a sheet is ever made private, swap the CSV-export fetch in
   `fetch_source()` (`build.py`) for the Google Sheets API with a service
   account key stored as a GitHub Actions secret.
