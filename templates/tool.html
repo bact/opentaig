@@ -89,5 +89,17 @@
   {% else %}
   <p class="empty-note">Not yet linked to any open problem in the sheet.</p>
   {% endif %}
+
+  {% if entry.catalog_freshness_parts or entry.metadata_freshness_parts %}
+  <div class="tool-freshness">
+    <p class="tool-freshness-label">Data freshness</p>
+    {% if entry.catalog_freshness_parts %}
+    <p>Catalog entry: {% for part in entry.catalog_freshness_parts %}{% if not loop.first %} &middot; {% endif %}{{ part.label }} {{ part.value }}{% endfor %}</p>
+    {% endif %}
+    {% if entry.metadata_freshness_parts %}
+    <p>Auto-collected metadata: {% for part in entry.metadata_freshness_parts %}{% if not loop.first %} &middot; {% endif %}{{ part.label }} {{ part.value }}{% endfor %}</p>
+    {% endif %}
+  </div>
+  {% endif %}
 </article>
 {% endblock %}
