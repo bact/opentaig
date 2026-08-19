@@ -19,7 +19,7 @@ authors:
 url: "https://bact.github.io/opentaig/"
 repository-code: "https://github.com/bact/opentaig"
 license-url: "https://spdx.org/licenses/Apache-2.0"
-type: software
+type: dataset
 keywords:
   - "AI governance"
   - "technical AI governance"
