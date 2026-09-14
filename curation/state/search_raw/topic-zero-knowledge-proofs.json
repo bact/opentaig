@@ -1,0 +1,757 @@
+{
+  "keyword": "topic:zero-knowledge-proofs",
+  "query": "topic:zero-knowledge-proofs stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 75,
+  "repos": [
+    {
+      "full_name": "mimblewimble/grin",
+      "html_url": "https://github.com/mimblewimble/grin",
+      "description": "Minimal implementation of the Mimblewimble protocol.",
+      "stars": 5098,
+      "pushed_at": "2026-08-11T21:07:55Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://grin.mw/"
+    },
+    {
+      "full_name": "WTFAcademy/WTF-zk",
+      "html_url": "https://github.com/WTFAcademy/WTF-zk",
+      "description": "\u96f6\u77e5\u8bc6\u8bc1\u660e\u5165\u95e8\u6559\u7a0b\u3002Comprehensive Zero-Knowledge Proofs Tutorial. #zk #WIP",
+      "stars": 2135,
+      "pushed_at": "2025-08-29T10:53:26Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "starkware-libs/cairo",
+      "html_url": "https://github.com/starkware-libs/cairo",
+      "description": "Cairo is the first Turing-complete language for creating provable programs for general computation.",
+      "stars": 1905,
+      "pushed_at": "2026-09-14T13:24:47Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "semaphore-protocol/semaphore",
+      "html_url": "https://github.com/semaphore-protocol/semaphore",
+      "description": "A zero-knowledge protocol for anonymous interactions.",
+      "stars": 1085,
+      "pushed_at": "2026-07-08T17:43:36Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://semaphore.pse.dev"
+    },
+    {
+      "full_name": "ZhangJinHaHaHa/AgentLens",
+      "html_url": "https://github.com/ZhangJinHaHaHa/AgentLens",
+      "description": "Agentlens is a trusted agent trading platform.  Here, you can quickly find the Agent that meets your needs, and you can also publish your own Agent to turn it into your digital asset.  We encourage everyone to transform their areas of expertise into Agents and turn them into digital assets, allowing others to see your unique strengths.",
+      "stars": 1034,
+      "pushed_at": "2026-08-24T14:06:00Z",
+      "language": "TypeScript",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "http://203.91.76.159/"
+    },
+    {
+      "full_name": "arkworks-rs/snark",
+      "html_url": "https://github.com/arkworks-rs/snark",
+      "description": "Interfaces for Relations and SNARKs for these relations",
+      "stars": 917,
+      "pushed_at": "2026-04-26T20:02:47Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.arkworks.rs"
+    },
+    {
+      "full_name": "microsoft/Spartan",
+      "html_url": "https://github.com/microsoft/Spartan",
+      "description": "Spartan: High-speed zkSNARKs without trusted setup",
+      "stars": 872,
+      "pushed_at": "2025-10-15T00:02:53Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "firoorg/firo",
+      "html_url": "https://github.com/firoorg/firo",
+      "description": "The privacy-focused cryptocurrency",
+      "stars": 796,
+      "pushed_at": "2026-09-14T12:10:42Z",
+      "language": "C++",
+      "license_spdx_id": "MIT",
+      "homepage": "https://firo.org"
+    },
+    {
+      "full_name": "lambdaclass/lambdaworks",
+      "html_url": "https://github.com/lambdaclass/lambdaworks",
+      "description": "lambdaworks offers implementations for both SNARKs and STARKs provers, along with the flexibility to leverage their individual components for constructing customized SNARKs.",
+      "stars": 737,
+      "pushed_at": "2026-08-14T21:18:41Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://lambdaclass.github.io/lambdaworks/"
+    },
+    {
+      "full_name": "LatticeX-Foundation/Rosetta",
+      "html_url": "https://github.com/LatticeX-Foundation/Rosetta",
+      "description": "A Privacy-Preserving Framework Based on TensorFlow",
+      "stars": 551,
+      "pushed_at": "2022-04-26T02:21:22Z",
+      "language": "C++",
+      "license_spdx_id": "LGPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "EspressoSystems/jellyfish",
+      "html_url": "https://github.com/EspressoSystems/jellyfish",
+      "description": "A Rust Implementation of the PLONK ZKP System and Extensions",
+      "stars": 520,
+      "pushed_at": "2026-09-14T00:29:12Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": "https://jellyfish.docs.espressosys.com"
+    },
+    {
+      "full_name": "LuozhuZhang/awesome-zkevm",
+      "html_url": "https://github.com/LuozhuZhang/awesome-zkevm",
+      "description": "A curated list of awesome zkEVM resources, libraries, tools and more",
+      "stars": 469,
+      "pushed_at": "2023-12-24T16:04:37Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "Raiders0786/web3-security-resources",
+      "html_url": "https://github.com/Raiders0786/web3-security-resources",
+      "description": "Curated Web3 security learning hub for smart contract auditors and protocol teams: roadmaps, audit tools, public reports, fuzzing, formal verification, AI-assisted workflows, offchain security, incident response, and launch checklists.",
+      "stars": 466,
+      "pushed_at": "2026-08-25T18:45:01Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://raiders0786.github.io/web3-security-resources/"
+    },
+    {
+      "full_name": "o1-labs/proof-systems",
+      "html_url": "https://github.com/o1-labs/proof-systems",
+      "description": "The proof systems used by Mina",
+      "stars": 460,
+      "pushed_at": "2026-09-13T07:23:48Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://o1-labs.github.io/proof-systems/"
+    },
+    {
+      "full_name": "yetanotherco/aligned_layer",
+      "html_url": "https://github.com/yetanotherco/aligned_layer",
+      "description": "Aligned builds the tools that turn Ethereum into the world\u2019s financial backend. One-click solution for wallets, rollups, interoperability and ZK services",
+      "stars": 313,
+      "pushed_at": "2026-09-11T20:32:10Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": "https://alignedlayer.com/"
+    },
+    {
+      "full_name": "Quillhash/Zero-Knowledge-Mastery",
+      "html_url": "https://github.com/Quillhash/Zero-Knowledge-Mastery",
+      "description": "This repository contains list of resources to aid your journey of mastering Zero Knowledge Proofs. If you find any resource missing, you can create a pull request and be a contributor of the project.",
+      "stars": 274,
+      "pushed_at": "2025-04-01T04:59:02Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": "https://www.quillaudits.com/services/zksync-audit"
+    },
+    {
+      "full_name": "ZenGo-X/curv",
+      "html_url": "https://github.com/ZenGo-X/curv",
+      "description": "Rust language general purpose elliptic curve cryptography.",
+      "stars": 271,
+      "pushed_at": "2024-07-21T10:12:31Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "keep-starknet-strange/garaga",
+      "html_url": "https://github.com/keep-starknet-strange/garaga",
+      "description": "State-of-the-art Elliptic Curve operations and SNARKS verification for Cairo & Starknet \ud83d\udc3a.",
+      "stars": 259,
+      "pushed_at": "2026-03-18T19:44:14Z",
+      "language": "Cairo",
+      "license_spdx_id": "MIT",
+      "homepage": "https://garaga.gitbook.io/"
+    },
+    {
+      "full_name": "scipr-lab/dizk",
+      "html_url": "https://github.com/scipr-lab/dizk",
+      "description": "Java library for distributed zero knowledge proof systems",
+      "stars": 243,
+      "pushed_at": "2022-04-13T19:55:42Z",
+      "language": "Java",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "zkmopro/mopro",
+      "html_url": "https://github.com/zkmopro/mopro",
+      "description": "Making client-side ZK proving on mobile simple.",
+      "stars": 242,
+      "pushed_at": "2026-09-05T02:21:19Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://zkmopro.org"
+    },
+    {
+      "full_name": "Manta-Network/Manta",
+      "html_url": "https://github.com/Manta-Network/Manta",
+      "description": "The main repo for manta blockchain nodes.",
+      "stars": 236,
+      "pushed_at": "2026-03-27T02:03:01Z",
+      "language": "Rust",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "supranational/sppark",
+      "html_url": "https://github.com/supranational/sppark",
+      "description": "Zero-knowledge template library",
+      "stars": 223,
+      "pushed_at": "2026-06-04T10:12:39Z",
+      "language": "Cuda",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "polytope-labs/hyperbridge",
+      "html_url": "https://github.com/polytope-labs/hyperbridge",
+      "description": "Hyperbridge scales verifiable interoperability",
+      "stars": 222,
+      "pushed_at": "2026-09-14T14:23:53Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.hyperbridge.network/"
+    },
+    {
+      "full_name": "zksecurity/zkBank",
+      "html_url": "https://github.com/zksecurity/zkBank",
+      "description": "zkBank is the most secure banking system in the world, powered by ZK, gnark, and GKR!",
+      "stars": 220,
+      "pushed_at": "2024-06-08T16:14:38Z",
+      "language": "Go",
+      "license_spdx_id": "",
+      "homepage": "https://www.zksecurity.xyz"
+    },
+    {
+      "full_name": "sec-bit/zkPoD-node",
+      "html_url": "https://github.com/sec-bit/zkPoD-node",
+      "description": "zkPoD: A decentralized system for perfect fair data exchange",
+      "stars": 208,
+      "pushed_at": "2023-05-21T08:07:16Z",
+      "language": "Go",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "IntersectMBO/mithril",
+      "html_url": "https://github.com/IntersectMBO/mithril",
+      "description": "Stake-based threshold multi-signatures protocol",
+      "stars": 153,
+      "pushed_at": "2026-09-14T13:55:57Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://mithril.network"
+    },
+    {
+      "full_name": "docknetwork/crypto",
+      "html_url": "https://github.com/docknetwork/crypto",
+      "description": "Rust crypto library for data privacy tools",
+      "stars": 135,
+      "pushed_at": "2026-05-26T04:45:49Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "ZenGo-X/zk-paillier",
+      "html_url": "https://github.com/ZenGo-X/zk-paillier",
+      "description": "A collection of Paillier cryptosystem zero knowledge proofs",
+      "stars": 120,
+      "pushed_at": "2023-05-17T06:23:35Z",
+      "language": "Rust",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "agglayer/agglayer",
+      "html_url": "https://github.com/agglayer/agglayer",
+      "description": "Rust implementation of the Agglayer.",
+      "stars": 118,
+      "pushed_at": "2026-09-11T13:47:08Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "eddieoz/haal",
+      "html_url": "https://github.com/eddieoz/haal",
+      "description": "H\u00e4\u00e4l - Anonymous Electronic Voting System on Public Blockchains",
+      "stars": 116,
+      "pushed_at": "2022-12-09T13:45:31Z",
+      "language": "JavaScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "starkware-bitcoin/raito",
+      "html_url": "https://github.com/starkware-bitcoin/raito",
+      "description": "Bitcoin ZK client written in Cairo.",
+      "stars": 115,
+      "pushed_at": "2025-12-01T10:27:21Z",
+      "language": "Cairo",
+      "license_spdx_id": "MIT",
+      "homepage": "https://raito.wtf"
+    },
+    {
+      "full_name": "VictorColomb/stark-snark-recursive-proofs",
+      "html_url": "https://github.com/VictorColomb/stark-snark-recursive-proofs",
+      "description": "STARK - SNARK recursive zero knowledge proofs, combinaison of the Winterfell library and the Circom language",
+      "stars": 103,
+      "pushed_at": "2023-09-12T15:02:17Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "spring-epfl/zksk",
+      "html_url": "https://github.com/spring-epfl/zksk",
+      "description": "Zero-Knowledge Swiss Knife",
+      "stars": 98,
+      "pushed_at": "2022-12-08T06:05:20Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "LuozhuZhang/zksync-era-ETL",
+      "html_url": "https://github.com/LuozhuZhang/zksync-era-ETL",
+      "description": "Best zkSync-era ETL ever \ud83d\ude1c",
+      "stars": 98,
+      "pushed_at": "2024-01-04T18:18:06Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "namada-net/masp",
+      "html_url": "https://github.com/namada-net/masp",
+      "description": "The multi-asset shielded pool (MASP) provides a unified privacy set for all assets on Namada.",
+      "stars": 92,
+      "pushed_at": "2026-08-07T08:48:26Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://namada.net"
+    },
+    {
+      "full_name": "lovesh/bulletproofs-r1cs-gadgets",
+      "html_url": "https://github.com/lovesh/bulletproofs-r1cs-gadgets",
+      "description": "Arithmatic circuits convertible to R1CS based on Bulletproofs",
+      "stars": 92,
+      "pushed_at": "2022-12-31T16:20:15Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "eth-sri/zkay",
+      "html_url": "https://github.com/eth-sri/zkay",
+      "description": "A programming language and compiler which enable automatic compilation of intuitive data privacy specifications to NIZK-enabled private smart contracts.",
+      "stars": 88,
+      "pushed_at": "2024-01-05T18:01:43Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "0xfuturistic/zkUniswap",
+      "html_url": "https://github.com/0xfuturistic/zkUniswap",
+      "description": "\ud83e\udd84 UniswapV3 fork that computes swaps off-chain in a zero-knowledge virtual machine",
+      "stars": 84,
+      "pushed_at": "2023-10-24T17:53:25Z",
+      "language": "Solidity",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "ora-io/awesome-ora",
+      "html_url": "https://github.com/ora-io/awesome-ora",
+      "description": "A curated list of awesome ORA ecosystem.",
+      "stars": 84,
+      "pushed_at": "2025-03-12T20:07:08Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "ethereum/zkID",
+      "html_url": "https://github.com/ethereum/zkID",
+      "description": "zkID is a team committed to advancing ZKP standards and driving privacy-focused solutions in digital identity.",
+      "stars": 83,
+      "pushed_at": "2026-08-30T14:30:30Z",
+      "language": "TeX",
+      "license_spdx_id": "MIT",
+      "homepage": "https://pse.dev/projects/zk-id"
+    },
+    {
+      "full_name": "Manta-Network/manta-rs",
+      "html_url": "https://github.com/Manta-Network/manta-rs",
+      "description": "Rust Crates for the Manta Network Ecosystem",
+      "stars": 80,
+      "pushed_at": "2023-09-01T15:24:34Z",
+      "language": "Rust",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": "https://github.com/Manta-Network"
+    },
+    {
+      "full_name": "ZenGo-X/bulletproofs",
+      "html_url": "https://github.com/ZenGo-X/bulletproofs",
+      "description": "Bulletproofs and Bulletproofs+ Rust implementation for Aggregated Range Proofs over multiple elliptic curves",
+      "stars": 77,
+      "pushed_at": "2022-12-16T14:30:43Z",
+      "language": "Rust",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "lattice-complete/Lazarus",
+      "html_url": "https://github.com/lattice-complete/Lazarus",
+      "description": "A Framework of Lattice-based Zero-knowledge Arguments in Rust",
+      "stars": 75,
+      "pushed_at": "2026-07-12T12:58:26Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "http://lazarus.lacom.io/"
+    },
+    {
+      "full_name": "PaulRBerg/awesome-zkp-starter-pack",
+      "html_url": "https://github.com/PaulRBerg/awesome-zkp-starter-pack",
+      "description": "A curated collection of links for zero-knowledge proof cryptography used in blockchains",
+      "stars": 75,
+      "pushed_at": "2024-12-02T13:50:22Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": "https://ethresear.ch/t/zero-knowledge-proofs-starter-pack/4519"
+    },
+    {
+      "full_name": "TrustworthyComputing/Zilch",
+      "html_url": "https://github.com/TrustworthyComputing/Zilch",
+      "description": "Zilch: A Framework for Developing Zero-Knowledge Proofs for Any Application",
+      "stars": 71,
+      "pushed_at": "2022-04-01T23:49:56Z",
+      "language": "C++",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "sec-bit/ckb-zkp",
+      "html_url": "https://github.com/sec-bit/ckb-zkp",
+      "description": "Zero Knowledge Proofs Toolkit for CKB",
+      "stars": 70,
+      "pushed_at": "2022-11-02T13:45:19Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "AbdelStark/llm-provable-computer",
+      "html_url": "https://github.com/AbdelStark/llm-provable-computer",
+      "description": "Can LLMs be provable computers?",
+      "stars": 63,
+      "pushed_at": "2026-04-15T13:23:03Z",
+      "language": "Rust",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "LBruyne/Scalable-Collaborative-zkSNARK",
+      "html_url": "https://github.com/LBruyne/Scalable-Collaborative-zkSNARK",
+      "description": "Proof-of-concept implementation of the papers on scalable collaborative zk-SNARKs (coZK) with applications to private proof delegation.",
+      "stars": 59,
+      "pushed_at": "2025-08-02T08:10:48Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": "https://eprint.iacr.org/2024/940"
+    },
+    {
+      "full_name": "o1-labs/zkapp-resource-kit",
+      "html_url": "https://github.com/o1-labs/zkapp-resource-kit",
+      "description": "This repository is a resource kit contains links to all code, tools, documentation, and learning materials necessary to successfully become a zkApp developer and contributor. Add your projects or findings here!",
+      "stars": 58,
+      "pushed_at": "2024-03-10T11:14:39Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "clearmatics/zeth",
+      "html_url": "https://github.com/clearmatics/zeth",
+      "description": "Integration of Zerocash on Ethereum: https://arxiv.org/abs/1904.00905",
+      "stars": 57,
+      "pushed_at": "2023-08-01T23:32:02Z",
+      "language": "C++",
+      "license_spdx_id": "LGPL-3.0",
+      "homepage": "https://clearmatics.github.io/zeth/"
+    },
+    {
+      "full_name": "btq-ag/keelung",
+      "html_url": "https://github.com/btq-ag/keelung",
+      "description": "The Keelung Language. A Haskell-embedded DSL for privacy-preserving computation, designed to optimize zero-knowledge proof generation with support for Snarkjs, Circom, and PLONKish backends.",
+      "stars": 53,
+      "pushed_at": "2024-09-06T06:11:21Z",
+      "language": "Haskell",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://btq.gitbook.io/keelung/"
+    },
+    {
+      "full_name": "zhenfeizhang/pasta-solidity",
+      "html_url": "https://github.com/zhenfeizhang/pasta-solidity",
+      "description": "A Solidity implementation of Halo2's Pasta curves",
+      "stars": 53,
+      "pushed_at": "2023-03-30T10:05:06Z",
+      "language": "Rust",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "LuozhuZhang/zkps-circuit-snark",
+      "html_url": "https://github.com/LuozhuZhang/zkps-circuit-snark",
+      "description": "A zk-SNARK implementation",
+      "stars": 50,
+      "pushed_at": "2022-12-18T18:03:55Z",
+      "language": "Solidity",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "EspressoSystems/veri-zexe",
+      "html_url": "https://github.com/EspressoSystems/veri-zexe",
+      "description": "DPC with Universal Setup",
+      "stars": 46,
+      "pushed_at": "2023-05-25T18:02:45Z",
+      "language": "Rust",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "keep-starknet-strange/awesome-stwo",
+      "html_url": "https://github.com/keep-starknet-strange/awesome-stwo",
+      "description": "A curated list of awesome projects using STWO.",
+      "stars": 39,
+      "pushed_at": "2025-06-27T16:01:54Z",
+      "language": "",
+      "license_spdx_id": "MIT",
+      "homepage": "https://starkware.co"
+    },
+    {
+      "full_name": "docknetwork/crypto-wasm-ts",
+      "html_url": "https://github.com/docknetwork/crypto-wasm-ts",
+      "description": "Typescript abstractions over Rust crypto library's WASM wrapper",
+      "stars": 39,
+      "pushed_at": "2025-12-18T22:34:19Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "KimiWu123/Samples",
+      "html_url": "https://github.com/KimiWu123/Samples",
+      "description": "Samples of Ethereum smart contracts, golang and circom for beginners.",
+      "stars": 37,
+      "pushed_at": "2023-08-18T06:50:09Z",
+      "language": "C++",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "anmolpanwar/E-voting-system-on-blockchain",
+      "html_url": "https://github.com/anmolpanwar/E-voting-system-on-blockchain",
+      "description": "A trust-less voting system based on blockchain to secure the purpose of democracy.",
+      "stars": 33,
+      "pushed_at": "2022-12-08T07:26:43Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "xevisalle/zpie",
+      "html_url": "https://github.com/xevisalle/zpie",
+      "description": "ZPiE: Zero-knowledge Proofs in Embedded systems",
+      "stars": 33,
+      "pushed_at": "2026-03-18T09:20:13Z",
+      "language": "C",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "jarrodwatts/polygon-id",
+      "html_url": "https://github.com/jarrodwatts/polygon-id",
+      "description": "A demo application using Polygon ID to submit ZK proofs of the user's age.",
+      "stars": 31,
+      "pushed_at": "2023-09-24T12:01:51Z",
+      "language": "TypeScript",
+      "license_spdx_id": "",
+      "homepage": "https://polygon-id-demo.vercel.app"
+    },
+    {
+      "full_name": "LayerXcom/bellman-substrate",
+      "html_url": "https://github.com/LayerXcom/bellman-substrate",
+      "description": "A library for supporting zk-SNARKs to Substrate",
+      "stars": 30,
+      "pushed_at": "2022-06-23T09:49:04Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "AlexiaChen/mpvss-rs",
+      "html_url": "https://github.com/AlexiaChen/mpvss-rs",
+      "description": "The library implements a simple Publicly Verifiable Secret Sharing(PVSS) scheme in Rust.",
+      "stars": 29,
+      "pushed_at": "2026-06-03T03:42:38Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "xonoxitron/zk-wasm",
+      "html_url": "https://github.com/xonoxitron/zk-wasm",
+      "description": "\ud83d\udd12 ZK-WASM: Zero-Knowledge Proofs in Rust \ud83e\udd80, compiled to WebAssembly \ud83d\udd78\ufe0f, bridged with JavaScript \ud83d\ude80",
+      "stars": 28,
+      "pushed_at": "2023-05-26T11:56:09Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Concordium/concordium-base",
+      "html_url": "https://github.com/Concordium/concordium-base",
+      "description": "Core Rust and Haskell libraries used by various components of the Concordium blockchain, as well as some tools used for testing and development.",
+      "stars": 27,
+      "pushed_at": "2026-09-10T10:39:52Z",
+      "language": "Rust",
+      "license_spdx_id": "MPL-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "KogarashiNetwork/Kogarashi",
+      "html_url": "https://github.com/KogarashiNetwork/Kogarashi",
+      "description": "\u51e9: A Next-Generation Composable Hybrid Smart Contract and (De)Centralized Merged Application Platform",
+      "stars": 27,
+      "pushed_at": "2024-02-13T05:41:58Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://kogarashinetwork.github.io/"
+    },
+    {
+      "full_name": "AbdelStark/askeladd",
+      "html_url": "https://github.com/AbdelStark/askeladd",
+      "description": "Powering Verifiable Computation for Nostr Data Vending Machines.",
+      "stars": 25,
+      "pushed_at": "2026-07-28T11:39:30Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": "https://askeladd.org"
+    },
+    {
+      "full_name": "delta-mpc/delta-docs",
+      "html_url": "https://github.com/delta-mpc/delta-docs",
+      "description": "Delta Development Documentation",
+      "stars": 24,
+      "pushed_at": "2023-06-08T02:01:59Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.deltampc.com"
+    },
+    {
+      "full_name": "weavechain/bulletproofs",
+      "html_url": "https://github.com/weavechain/bulletproofs",
+      "description": "A pure Java implementation of Bulletproofs using Ristretto. Bulletproofs: short non-interactive zero-knowledge proofs that require no trusted setup",
+      "stars": 23,
+      "pushed_at": "2024-12-04T19:32:58Z",
+      "language": "Java",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "joshbeal/derecho",
+      "html_url": "https://github.com/joshbeal/derecho",
+      "description": "A Rust library for proof-carrying disclosures",
+      "stars": 23,
+      "pushed_at": "2024-04-10T23:55:03Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "Ztarknet/ztarknet",
+      "html_url": "https://github.com/Ztarknet/ztarknet",
+      "description": "Starknet-based L2 on ZCash",
+      "stars": 22,
+      "pushed_at": "2025-12-15T22:22:15Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://ztarknet.cash"
+    },
+    {
+      "full_name": "Veridise/audithub-mcp",
+      "html_url": "https://github.com/Veridise/audithub-mcp",
+      "description": "Connect AI agents to AuditHub\u2019s blockchain security tools. Launch scans, review findings, monitor tasks. Open source, Apache 2.0.",
+      "stars": 22,
+      "pushed_at": "2026-08-16T03:23:17Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "docknetwork/crypto-wasm",
+      "html_url": "https://github.com/docknetwork/crypto-wasm",
+      "description": "WASM wrapper over the crypto library",
+      "stars": 22,
+      "pushed_at": "2025-12-18T22:52:42Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "AvailX/avail-wallet",
+      "html_url": "https://github.com/AvailX/avail-wallet",
+      "description": "An open source, private, self-custodial wallet. Built on the Aleo network.",
+      "stars": 22,
+      "pushed_at": "2024-09-20T19:51:39Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://avail.global"
+    },
+    {
+      "full_name": "vt-asaplab/ezDPS",
+      "html_url": "https://github.com/vt-asaplab/ezDPS",
+      "description": "ezDPS: An Efficient and Zero-Knowledge Machine Learning Inference Pipeline",
+      "stars": 21,
+      "pushed_at": "2023-07-14T13:06:25Z",
+      "language": "Rust",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "ProvablyAI/sourcerykit",
+      "html_url": "https://github.com/ProvablyAI/sourcerykit",
+      "description": "Python SDK for accurate and verifiable agent tool use. Agents verify that answers came from the right source and were not changed. Downstream agents detect 100% of errors and retry to achieve a 50% jump in answer accuracy.",
+      "stars": 20,
+      "pushed_at": "2026-09-14T12:58:21Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "http://provably.ai/"
+    }
+  ]
+}

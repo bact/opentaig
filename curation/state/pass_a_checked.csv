@@ -126,3 +126,62 @@ ezkl,53,match,,2026-08-17T19:06:10+00:00
 ccfingerprint,51,match,,2026-08-17T19:06:10+00:00
 livebench,31,match,,2026-08-17T19:15:13+00:00
 llm-decontaminator,31,match,,2026-08-17T19:15:13+00:00
+ace-riscv,50,match,,2026-09-14T15:01:41+00:00
+ace-riscv,74,no_match,"targets general-purpose RISC-V cores, not AI accelerators, so it says nothing about accelerator-TEE security",2026-09-14T15:01:41+00:00
+enclaver,50,match,,2026-09-14T15:01:41+00:00
+sentient-enclaves-framework,50,match,,2026-09-14T15:01:41+00:00
+sentient-enclaves-framework,39,match,,2026-09-14T15:01:41+00:00
+teaclave-java-tee-sdk,50,match,,2026-09-14T15:01:41+00:00
+trustflow,50,match,,2026-09-14T15:01:41+00:00
+trustflow,29,match,,2026-09-14T15:01:41+00:00
+trustflow,30,match,,2026-09-14T15:01:41+00:00
+ml-doctor,46,match,,2026-09-14T15:01:41+00:00
+ml-doctor,44,match,,2026-09-14T15:01:41+00:00
+ml-doctor,45,no_match,"attacks target individual-record membership, not whether a dataset as a whole has some property",2026-09-14T15:01:41+00:00
+diffpriv,29,match,,2026-09-14T15:01:41+00:00
+diffpriv,30,match,,2026-09-14T15:01:41+00:00
+private-multiplicative-weights,29,match,,2026-09-14T15:01:41+00:00
+private-multiplicative-weights,30,match,,2026-09-14T15:01:41+00:00
+spark-privacy-preserver,29,match,,2026-09-14T15:01:41+00:00
+spark-privacy-preserver,30,no_match,anonymises datasets for release; does not itself provide privacy-preserving training mechanisms,2026-09-14T15:01:41+00:00
+pypantera,40,match,,2026-09-14T15:01:41+00:00
+pypantera,30,match,,2026-09-14T15:01:41+00:00
+pypantera,42,no_match,"the guarantee is differential-privacy-based, not the cryptographic construction RQ42 specifically asks about",2026-09-14T15:01:41+00:00
+privacylens,46,match,,2026-09-14T15:01:41+00:00
+privacylens,44,match,,2026-09-14T15:01:41+00:00
+privacylens,45,match,,2026-09-14T15:01:41+00:00
+noisegate,29,match,,2026-09-14T15:01:41+00:00
+noisegate,40,match,,2026-09-14T15:01:41+00:00
+noisegate,42,no_match,the guarantee is differentially private rather than cryptographic,2026-09-14T15:01:41+00:00
+dp-sniper,29,match,,2026-09-14T15:01:41+00:00
+dp-sniper,30,match,,2026-09-14T15:01:41+00:00
+go-tpm-remote-attestation,50,match,,2026-09-14T15:01:41+00:00
+go-tpm-remote-attestation,48,no_match,"attests chip identity and platform state but carries no location claim, so it does not bear on hardware geolocation",2026-09-14T15:01:41+00:00
+tf-encrypted,30,match,,2026-09-14T15:01:41+00:00
+tf-encrypted,29,match,,2026-09-14T15:01:41+00:00
+tf-encrypted,43,match,,2026-09-14T15:01:41+00:00
+inclavare-containers,50,match,,2026-09-14T15:01:41+00:00
+blindai,50,match,,2026-09-14T15:01:41+00:00
+blindai,39,match,,2026-09-14T15:01:41+00:00
+blindai,36,no_match,provides a confidential black-box query channel but no additional research-relevant access gradations beyond it,2026-09-14T15:01:41+00:00
+conclave-core-sdk,50,match,,2026-09-14T15:01:41+00:00
+acai,74,match,,2026-09-14T15:01:41+00:00
+acai,50,match,,2026-09-14T15:01:41+00:00
+acai,52,no_match,hardens accelerator TEEs but says nothing about constraining their potential for misuse or surveillance,2026-09-14T15:01:41+00:00
+diffuse,38,match,,2026-09-14T15:01:41+00:00
+diffuse,42,no_match,encrypts activations in transit but provides no mechanism for analysing user interaction data,2026-09-14T15:01:41+00:00
+openfhe,42,match,,2026-09-14T15:01:41+00:00
+openfhe,30,match,,2026-09-14T15:01:41+00:00
+openfhe,29,match,,2026-09-14T15:01:41+00:00
+tinynmc,43,match,,2026-09-14T15:01:41+00:00
+transformer-vm,51,match,,2026-09-14T15:01:41+00:00
+transformer-vm,53,no_match,"the design makes the trace directly provable but the project makes no cluster-scale overhead claim, which is what RQ53 turns on",2026-09-14T15:01:41+00:00
+confidential-federated-compute,40,match,,2026-09-14T15:01:41+00:00
+confidential-federated-compute,50,match,,2026-09-14T15:01:41+00:00
+confidential-federated-compute,43,match,,2026-09-14T15:01:41+00:00
+confidential-federated-compute,52,no_match,constrains what server code can do with uploaded data but does not address limiting TEEs' broader surveillance potential,2026-09-14T15:01:41+00:00
+verifiable-mpc,51,match,,2026-09-14T15:01:41+00:00
+verifiable-mpc,43,match,,2026-09-14T15:01:41+00:00
+fleet-intelligence-agent,50,match,,2026-09-14T15:01:41+00:00
+fleet-intelligence-agent,74,match,,2026-09-14T15:01:41+00:00
+fleet-intelligence-agent,48,no_match,"tracks node identity and enrolment, but carries no geolocation claim about where the hardware physically sits",2026-09-14T15:01:41+00:00

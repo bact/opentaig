@@ -1,0 +1,47 @@
+{
+  "keyword": "log anonymization",
+  "query": "log anonymization stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 4,
+  "repos": [
+    {
+      "full_name": "HariSekhon/DevOps-Python-tools",
+      "html_url": "https://github.com/HariSekhon/DevOps-Python-tools",
+      "description": "80+ DevOps & Data CLI Tools - AWS, GCP, GCF Python Cloud Functions, Log Anonymizer, Spark, Hadoop, HBase, Hive, Impala, Linux, Docker, Spark Data Converters & Validators (Avro/Parquet/JSON/CSV/INI/XML/YAML), Travis CI, AWS CloudFormation, Elasticsearch, Solr etc.",
+      "stars": 824,
+      "pushed_at": "2026-02-03T08:04:41Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.linkedin.com/in/HariSekhon"
+    },
+    {
+      "full_name": "DigitaleGesellschaft/Anonip",
+      "html_url": "https://github.com/DigitaleGesellschaft/Anonip",
+      "description": "Anonip is a tool to anonymize IP-addresses in log-files.",
+      "stars": 83,
+      "pushed_at": "2023-01-13T14:27:49Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "flare-collection/flare-redact",
+      "html_url": "https://github.com/flare-collection/flare-redact",
+      "description": "Zero-dependency TypeScript secret and PII redaction for any SDK, logs, HTTP, LLM prompts, and scoped MCP tool boundaries.",
+      "stars": 47,
+      "pushed_at": "2026-08-09T14:55:12Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://flare-collection.github.io/flare-redact/"
+    },
+    {
+      "full_name": "Joopinhontas/tokenveil-oss",
+      "html_url": "https://github.com/Joopinhontas/tokenveil-oss",
+      "description": "Real-time data anonymization for LLMs: secure your logs and conversations across cloud or local environments. Docker-ready & Multi-IA support.",
+      "stars": 29,
+      "pushed_at": "2026-08-14T14:24:16Z",
+      "language": "HTML",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://tokenveil.eu/"
+    }
+  ]
+}

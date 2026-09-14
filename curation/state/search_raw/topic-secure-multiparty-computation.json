@@ -1,0 +1,157 @@
+{
+  "keyword": "topic:secure-multiparty-computation",
+  "query": "topic:secure-multiparty-computation stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 15,
+  "repos": [
+    {
+      "full_name": "secretflow/secretflow",
+      "html_url": "https://github.com/secretflow/secretflow",
+      "description": "A unified framework for privacy-preserving data analysis and machine learning",
+      "stars": 2709,
+      "pushed_at": "2026-04-24T07:57:55Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.secretflow.org.cn/docs/secretflow/en/"
+    },
+    {
+      "full_name": "openfheorg/openfhe-development",
+      "html_url": "https://github.com/openfheorg/openfhe-development",
+      "description": "This is the development repository for the OpenFHE library. The current version is 1.5.1 (released on April 10, 2026).",
+      "stars": 1197,
+      "pushed_at": "2026-09-14T04:45:56Z",
+      "language": "C++",
+      "license_spdx_id": "BSD-2-Clause",
+      "homepage": ""
+    },
+    {
+      "full_name": "data61/MP-SPDZ",
+      "html_url": "https://github.com/data61/MP-SPDZ",
+      "description": "Versatile framework for multi-party computation",
+      "stars": 1180,
+      "pushed_at": "2026-08-17T05:01:07Z",
+      "language": "C++",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "LatticeX-Foundation/Rosetta",
+      "html_url": "https://github.com/LatticeX-Foundation/Rosetta",
+      "description": "A Privacy-Preserving Framework Based on TensorFlow",
+      "stars": 551,
+      "pushed_at": "2022-04-26T02:21:22Z",
+      "language": "C++",
+      "license_spdx_id": "LGPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "lschoe/mpyc",
+      "html_url": "https://github.com/lschoe/mpyc",
+      "description": "MPyC: Multiparty Computation in Python",
+      "stars": 415,
+      "pushed_at": "2026-06-02T10:00:26Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "berry.win.tue.nl/mpyc/"
+    },
+    {
+      "full_name": "secretflow/spu",
+      "html_url": "https://github.com/secretflow/spu",
+      "description": "SPU (Secure Processing Unit) aims to be a provable, measurable secure computation device, which provides computation ability while keeping your private data protected.",
+      "stars": 327,
+      "pushed_at": "2026-09-13T14:20:51Z",
+      "language": "C++",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.secretflow.org.cn/docs/spu/en/"
+    },
+    {
+      "full_name": "OpenMined/SyferText",
+      "html_url": "https://github.com/OpenMined/SyferText",
+      "description": "A privacy preserving NLP framework",
+      "stars": 198,
+      "pushed_at": "2023-05-14T12:06:15Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "tiktok-privacy-innovation/PrivacyGo",
+      "html_url": "https://github.com/tiktok-privacy-innovation/PrivacyGo",
+      "description": "Synergistic fusion of privacy-enhancing technologies for enhanced privacy protection.",
+      "stars": 167,
+      "pushed_at": "2025-01-24T03:48:54Z",
+      "language": "C++",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://privacyinnovation.io/"
+    },
+    {
+      "full_name": "secretflow/kuscia",
+      "html_url": "https://github.com/secretflow/kuscia",
+      "description": "Kuscia(Kubernetes-based Secure Collaborative InfrA) is a K8s-based privacy-preserving computing task orchestration framework.",
+      "stars": 146,
+      "pushed_at": "2026-09-07T11:13:45Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.secretflow.org.cn/docs/kuscia/latest/zh-Hans"
+    },
+    {
+      "full_name": "Alisah-Ozcan/HEonGPU",
+      "html_url": "https://github.com/Alisah-Ozcan/HEonGPU",
+      "description": "HEonGPU is a high-performance library that optimizes Fully Homomorphic Encryption (FHE) on GPUs. Leveraging GPU parallelism, it reduces computational load through concurrent execution. Its multi-stream architecture minimizes data transfer overhead, making it ideal for large-scale encrypted computations with reduced latency.",
+      "stars": 139,
+      "pushed_at": "2026-05-11T09:26:34Z",
+      "language": "Cuda",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "carbynestack/carbynestack",
+      "html_url": "https://github.com/carbynestack/carbynestack",
+      "description": "Cloud native Secure Multiparty Computation Stack",
+      "stars": 94,
+      "pushed_at": "2025-10-27T05:33:53Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://carbynestack.io"
+    },
+    {
+      "full_name": "Stoffel-Labs/stoffel",
+      "html_url": "https://github.com/Stoffel-Labs/stoffel",
+      "description": "",
+      "stars": 71,
+      "pushed_at": "2026-09-11T18:43:57Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://stoffelmpc.com"
+    },
+    {
+      "full_name": "NillionNetwork/tinynmc",
+      "html_url": "https://github.com/NillionNetwork/tinynmc",
+      "description": "Minimal pure-Python implementation of a secure multi-party computation (MPC) protocol for evaluating arithmetic sum-of-products expressions via a non-interactive computation phase.",
+      "stars": 66,
+      "pushed_at": "2024-10-15T02:50:41Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://pypi.org/project/tinynmc"
+    },
+    {
+      "full_name": "nthparty/oblivious",
+      "html_url": "https://github.com/nthparty/oblivious",
+      "description": "Python library that serves as an API for common cryptographic primitives used to implement OPRF, OT, and PSI protocols.",
+      "stars": 26,
+      "pushed_at": "2024-05-08T18:19:00Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://pypi.org/project/oblivious"
+    },
+    {
+      "full_name": "ruidazeng/upsi-revisited",
+      "html_url": "https://github.com/ruidazeng/upsi-revisited",
+      "description": "Updatable Private Set Intersection Revisited: Extended Functionalities, Deletion, and Worst-Case Complexity (Asiacrypt 2024)",
+      "stars": 22,
+      "pushed_at": "2026-02-21T03:18:45Z",
+      "language": "C++",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://eprint.iacr.org/2024/1446"
+    }
+  ]
+}

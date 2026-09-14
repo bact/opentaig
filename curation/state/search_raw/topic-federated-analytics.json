@@ -1,0 +1,47 @@
+{
+  "keyword": "topic:federated-analytics",
+  "query": "topic:federated-analytics stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 4,
+  "repos": [
+    {
+      "full_name": "flwrlabs/flower",
+      "html_url": "https://github.com/flwrlabs/flower",
+      "description": "Flower: A Friendly Federated AI Framework",
+      "stars": 7130,
+      "pushed_at": "2026-09-14T14:42:36Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://flower.ai"
+    },
+    {
+      "full_name": "NVIDIA/NVFlare",
+      "html_url": "https://github.com/NVIDIA/NVFlare",
+      "description": "NVIDIA Federated Learning Application Runtime Environment",
+      "stars": 968,
+      "pushed_at": "2026-09-13T03:02:26Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://nvidia.github.io/NVFlare/"
+    },
+    {
+      "full_name": "securefederatedai/openfederatedlearning",
+      "html_url": "https://github.com/securefederatedai/openfederatedlearning",
+      "description": "An Open Framework for Federated Learning.",
+      "stars": 843,
+      "pushed_at": "2026-08-25T21:38:21Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://openfl.readthedocs.io"
+    },
+    {
+      "full_name": "bioint/MetisFL",
+      "html_url": "https://github.com/bioint/MetisFL",
+      "description": "The first open Federated Learning framework implemented in C++ and Python.",
+      "stars": 523,
+      "pushed_at": "2024-06-27T04:08:49Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://metisfl.org"
+    }
+  ]
+}

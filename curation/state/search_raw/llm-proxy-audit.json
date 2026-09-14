@@ -1,0 +1,127 @@
+{
+  "keyword": "LLM proxy audit",
+  "query": "LLM proxy audit stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 12,
+  "repos": [
+    {
+      "full_name": "toby-bridges/api-relay-audit",
+      "html_url": "https://github.com/toby-bridges/api-relay-audit",
+      "description": "Local security audit for AI API relays and LLM proxies: detects prompt injection, model substitution, tool-call rewriting, SSE anomalies, error leakage, and Web3 wallet risks.",
+      "stars": 833,
+      "pushed_at": "2026-09-13T07:46:28Z",
+      "language": "Python",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://toby-bridges.github.io/api-relay-audit/"
+    },
+    {
+      "full_name": "ThinkWatchProject/ThinkWatch",
+      "html_url": "https://github.com/ThinkWatchProject/ThinkWatch",
+      "description": "Enterprise AI bastion host for secure AI API and MCP access, with unified proxying, RBAC, audit logs, rate limiting, and cost tracking across OpenAI, Anthropic, Gemini, and self-hosted LLMs.",
+      "stars": 813,
+      "pushed_at": "2026-09-14T09:30:34Z",
+      "language": "Rust",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://thinkwat.ch"
+    },
+    {
+      "full_name": "juyterman1000/entroly",
+      "html_url": "https://github.com/juyterman1000/entroly",
+      "description": "Cut AI context cost without trusting the compressor. Every reduction is reversible, byte-exact recoverable, and carries an auditable receipt. Local-first, works through proxy, MCP, SDK, or agent wrapper.",
+      "stars": 443,
+      "pushed_at": "2026-09-14T12:54:16Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://juyterman1000.github.io/entroly/docs/index.html"
+    },
+    {
+      "full_name": "LeenHawk/gproxy",
+      "html_url": "https://github.com/LeenHawk/gproxy",
+      "description": "gproxy is a Rust-based multi-channel LLM proxy that exposes OpenAI / Claude / Gemini-style APIs through a unified gateway, with a built-in admin console, user/key management, and request/usage auditing.",
+      "stars": 237,
+      "pushed_at": "2026-09-14T12:13:33Z",
+      "language": "Rust",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://gproxy.leenhawk.com"
+    },
+    {
+      "full_name": "el1ght/aulite",
+      "html_url": "https://github.com/el1ght/aulite",
+      "description": "EU AI Act compliance proxy for AI systems. Drop-in HTTP proxy that monitors every AI interaction for regulatory risks, logs to a tamper-proof audit trail, and generates legal-grade PDF reports. 143 rules across 8 Annex III domains. Self-hosted, open-core",
+      "stars": 131,
+      "pushed_at": "2026-06-14T21:47:10Z",
+      "language": "TypeScript",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "elliot35/deterministic-agent-control-protocol",
+      "html_url": "https://github.com/elliot35/deterministic-agent-control-protocol",
+      "description": "Governance gateway for AI agents \u2014 bounded, auditable, session-aware control with MCP proxy, shell proxy & HTTP API. Works with Cursor, Claude Code, Codex, and any MCP-compatible agent.",
+      "stars": 88,
+      "pushed_at": "2026-02-12T06:31:56Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.npmjs.com/package/@det-acp/core"
+    },
+    {
+      "full_name": "ax128/AegisGate",
+      "html_url": "https://github.com/ax128/AegisGate",
+      "description": "Open-source security gateway for LLM APIs \u2014 prompt injection detection, PII redaction, dangerous response   sanitization, and audit logging. OpenAI/Claude compatible, MCP & Agent SKILL support. Drop-in proxy for AI coding   agents (Cursor, Claude Code, Codex).",
+      "stars": 67,
+      "pushed_at": "2026-09-14T09:23:09Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://github.com/ax128/AegisGate"
+    },
+    {
+      "full_name": "JUANWANG-BUAA/dsh-full-remote",
+      "html_url": "https://github.com/JUANWANG-BUAA/dsh-full-remote",
+      "description": "Auditable, token-gated DeepSeek Harness remote gateway: mobile QR access, per-device sessions, Host/Origin rewrite, settings/credentials/directory support.",
+      "stars": 40,
+      "pushed_at": "2026-09-12T20:56:46Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.npmjs.com/package/dsh-full-remote"
+    },
+    {
+      "full_name": "openagentidentityprotocol/agentidentityprotocol",
+      "html_url": "https://github.com/openagentidentityprotocol/agentidentityprotocol",
+      "description": "Agent Identity Protocol - Zero-trust security layer for AI agents. Policy enforcement proxy for MCP with Human-in-the-Loop approval, DLP scanning, and audit logging.",
+      "stars": 37,
+      "pushed_at": "2026-03-05T13:49:19Z",
+      "language": "",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/openagentidentityprotocol/openagentidentityprotocol#readme"
+    },
+    {
+      "full_name": "giancarloerra/JanuScope",
+      "html_url": "https://github.com/giancarloerra/JanuScope",
+      "description": "Local-first MCP policy proxy. Tool-block, SQL-mutation gate, PII redact, audit, rate-limit, OpenTelemetry, vault secrets, first-use quarantine, schema pre-inject. No hosted gateway. One YAML Lens wraps any MCP, 20 included (Postgres, MySQL, MongoDB, GitHub, Stripe, Snowflake, etc.). 84% fewer tokens, ~3x faster, holds PII leaks. AGPL or commercial.",
+      "stars": 30,
+      "pushed_at": "2026-09-12T11:55:44Z",
+      "language": "TypeScript",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "prime-radiant-inc/llm-proxy",
+      "html_url": "https://github.com/prime-radiant-inc/llm-proxy",
+      "description": "Transparent logging proxy for LLM API traffic that auto-configures clients and records every request and response to Claude, OpenAI, and other providers for debugging, auditing, and analysis.",
+      "stars": 29,
+      "pushed_at": "2026-09-09T02:28:27Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "fpytloun/intaris",
+      "html_url": "https://github.com/fpytloun/intaris",
+      "description": "Guardrails service for AI agents. Default-deny tool call evaluation with LLM safety analysis, priority-ordered decision matrix, and human-in-the-loop escalations. Session recording, behavioral analysis, MCP proxy, secret redaction, and real-time audit.",
+      "stars": 22,
+      "pushed_at": "2026-09-13T19:59:03Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    }
+  ]
+}

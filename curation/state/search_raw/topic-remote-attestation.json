@@ -1,0 +1,97 @@
+{
+  "keyword": "topic:remote-attestation",
+  "query": "topic:remote-attestation stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 9,
+  "repos": [
+    {
+      "full_name": "GrapheneOS/Auditor",
+      "html_url": "https://github.com/GrapheneOS/Auditor",
+      "description": "Hardware-based attestation and intrusion detection app for Android. It provides both local verification with another Android device via QR codes and optional scheduled server-based verification with support for alert emails. It uses hardware-backed keys and attestation support as the foundation and chains trust to the app for software checks.",
+      "stars": 702,
+      "pushed_at": "2026-09-10T19:25:14Z",
+      "language": "Java",
+      "license_spdx_id": "MIT",
+      "homepage": "https://attestation.app/"
+    },
+    {
+      "full_name": "PrivSec-dev/banking-apps-compat-report",
+      "html_url": "https://github.com/PrivSec-dev/banking-apps-compat-report",
+      "description": "Report and track banking app compatibility with GrapheneOS, including which workarounds may be required.",
+      "stars": 333,
+      "pushed_at": "2026-05-20T17:58:24Z",
+      "language": "",
+      "license_spdx_id": "",
+      "homepage": "https://privsec.dev/posts/android/banking-applications-compatibility-with-grapheneos/"
+    },
+    {
+      "full_name": "google/go-tpm-tools",
+      "html_url": "https://github.com/google/go-tpm-tools",
+      "description": "Go packages built on go-tpm providing a high-level API for using TPMs",
+      "stars": 309,
+      "pushed_at": "2026-09-10T00:18:05Z",
+      "language": "C",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "GrapheneOS/AttestationServer",
+      "html_url": "https://github.com/GrapheneOS/AttestationServer",
+      "description": "attestation.app remote attestation server. Server code for use with the Auditor app: https://github.com/GrapheneOS/Auditor. It provides two services: submission of attestation data samples and a remote attestation implementation with email alerts to go along with the local implementation based on QR code scanning in the app.",
+      "stars": 166,
+      "pushed_at": "2026-09-14T06:21:25Z",
+      "language": "Java",
+      "license_spdx_id": "MIT",
+      "homepage": "https://attestation.app/"
+    },
+    {
+      "full_name": "salrashid123/go_tpm_remote_attestation",
+      "html_url": "https://github.com/salrashid123/go_tpm_remote_attestation",
+      "description": "TPM Remote Attestation protocol using go-tpm and gRPC",
+      "stars": 31,
+      "pushed_at": "2026-09-07T11:05:48Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "google/gce-tcb-verifier",
+      "html_url": "https://github.com/google/gce-tcb-verifier",
+      "description": "Reference code for creating and verifying a GCE firmware signed reference value message.",
+      "stars": 29,
+      "pushed_at": "2026-05-21T16:44:55Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "Fraunhofer-AISEC/cmc",
+      "html_url": "https://github.com/Fraunhofer-AISEC/cmc",
+      "description": "Remote attestation for Trusted and Confidential Computing platforms (TPM, AMD SEV-SNP, Intel SGX/TDX)",
+      "stars": 24,
+      "pushed_at": "2026-09-11T19:18:33Z",
+      "language": "C",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://pkg.go.dev/github.com/Fraunhofer-AISEC/cmc"
+    },
+    {
+      "full_name": "zero-savvy/zk-remote-attestation",
+      "html_url": "https://github.com/zero-savvy/zk-remote-attestation",
+      "description": "Implementation of zRA protocol, a non-interactive method for constructing a transparent remote attestation (RA) protocol based on zkSNARKs.",
+      "stars": 23,
+      "pushed_at": "2025-06-27T19:45:46Z",
+      "language": "Circom",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "kontext-security/attestable-mcp-server",
+      "html_url": "https://github.com/kontext-security/attestable-mcp-server",
+      "description": "Verify that any MCP server is running the intended and untampered code via hardware attestation.",
+      "stars": 21,
+      "pushed_at": "2026-05-20T20:43:30Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://kontext.security"
+    }
+  ]
+}

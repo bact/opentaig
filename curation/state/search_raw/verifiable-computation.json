@@ -1,0 +1,157 @@
+{
+  "keyword": "verifiable computation",
+  "query": "verifiable computation stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 15,
+  "repos": [
+    {
+      "full_name": "brayonpi/hexstellar",
+      "html_url": "https://github.com/brayonpi/hexstellar",
+      "description": "Turn any AI agent into a computational researcher. HexStellar Cortex delivers software-accelerated optimization, quantum computing, scientific computing, decision intelligence, and verifiable execution through a Python CLI and API\u2014with certainty labels, verification receipts, examples, and a free sandbox. Start instantly: pip install hexstellar",
+      "stars": 1205,
+      "pushed_at": "2026-08-27T21:07:24Z",
+      "language": "Python",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "o1-labs/snarky",
+      "html_url": "https://github.com/o1-labs/snarky",
+      "description": "OCaml DSL for verifiable computation",
+      "stars": 507,
+      "pushed_at": "2026-08-05T07:16:35Z",
+      "language": "OCaml",
+      "license_spdx_id": "MIT",
+      "homepage": "https://o1-labs.github.io/snarky/"
+    },
+    {
+      "full_name": "mratsim/constantine",
+      "html_url": "https://github.com/mratsim/constantine",
+      "description": "Constantine: modular, high-performance, zero-dependency  cryptography stack for verifiable computation, proof systems and blockchain protocols.",
+      "stars": 499,
+      "pushed_at": "2026-08-04T12:39:07Z",
+      "language": "Nim",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
+      "full_name": "leonardoalt/fusion",
+      "html_url": "https://github.com/leonardoalt/fusion",
+      "description": "An experimental progressive and fast zkRollup written in Rust, focused on performance, modularity, and applying cutting-edge Verifiable Computation proof systems.",
+      "stars": 118,
+      "pushed_at": "2024-05-06T13:15:07Z",
+      "language": "Rust",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "cawfree/zk-starter",
+      "html_url": "https://github.com/cawfree/zk-starter",
+      "description": "zero knowledge for those with zero knowledge",
+      "stars": 99,
+      "pushed_at": "2023-03-05T23:41:34Z",
+      "language": "Solidity",
+      "license_spdx_id": "MIT",
+      "homepage": "https://twitter.com/cawfree"
+    },
+    {
+      "full_name": "emilianobonassi/zkFHE",
+      "html_url": "https://github.com/emilianobonassi/zkFHE",
+      "description": "Verifiable and confidential computation based on ZKP and FHE, powered by risc0 zkVM.",
+      "stars": 86,
+      "pushed_at": "2023-04-20T16:34:46Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "MystenLabs/nautilus",
+      "html_url": "https://github.com/MystenLabs/nautilus",
+      "description": "Nautilus: Verifiable offchain computation on Sui",
+      "stars": 73,
+      "pushed_at": "2026-08-14T15:54:46Z",
+      "language": "Move",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "octra-labs/pvac_hfhe_cpp",
+      "html_url": "https://github.com/octra-labs/pvac_hfhe_cpp",
+      "description": "pvac-hfhe: PoC for publicly verifiable arithmetic computations with hypergraph based homomorphic encryption over Fp (p = 2^127 - 1), omissions for large numbers and excluded the transfer mechanism for data convertation (applies only to the prod version of octra network). c++17 header-only.",
+      "stars": 60,
+      "pushed_at": "2026-07-09T18:30:07Z",
+      "language": "C++",
+      "license_spdx_id": "GPL-3.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "mercy123-red/mpc-system",
+      "html_url": "https://github.com/mercy123-red/mpc-system",
+      "description": "A secure multi-party computation (MPC) system with Kyber key exchange, Feldman verifiable secret sharing, and support for addition/multiplication over finite fields. Includes client-server architecture and chat-based parameter negotiation.",
+      "stars": 55,
+      "pushed_at": "2026-06-01T07:08:36Z",
+      "language": "HTML",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "uhsr/ChainCryptoAutomationTechX",
+      "html_url": "https://github.com/uhsr/ChainCryptoAutomationTechX",
+      "description": "A framework for building zero-knowledge proof circuits using a custom DSL optimized for elliptic curve arithmetic, enabling verifiable computation with minimal on-chain footprint via Groth16 proofs.",
+      "stars": 54,
+      "pushed_at": "2025-08-02T15:32:39Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "Genentech/compbiobench-runner",
+      "html_url": "https://github.com/Genentech/compbiobench-runner",
+      "description": "CompBioBench: A benchmark of 100 diverse, verifiable questions for agents for computational biology (scripts for running agents)",
+      "stars": 52,
+      "pushed_at": "2026-04-06T22:46:50Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.biorxiv.org/content/10.64898/2026.04.06.716850v1"
+    },
+    {
+      "full_name": "iotexproject/w3bstream",
+      "html_url": "https://github.com/iotexproject/w3bstream",
+      "description": "An offchain computing layer for DePIN verifiable data computation, supporting a variety of validity proofs including Zero Knowledge (ZK), Trusted Execution Environments (TEE), and Multi-party Computation (MPC)",
+      "stars": 45,
+      "pushed_at": "2026-02-12T02:52:46Z",
+      "language": "Solidity",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.iotex.io/depin-infra-modules-dim/w3bstream-depin-verification"
+    },
+    {
+      "full_name": "google-parfait/confidential-federated-compute",
+      "html_url": "https://github.com/google-parfait/confidential-federated-compute",
+      "description": "TEE-hosted binaries for verifiable server-side computation.",
+      "stars": 30,
+      "pushed_at": "2026-09-11T19:04:05Z",
+      "language": "C++",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "toonsegers/verifiable_mpc",
+      "html_url": "https://github.com/toonsegers/verifiable_mpc",
+      "description": "A scheme that produces a zero-knowledge proof of correctness for an MPC computation. The scheme allows anyone, particularly someone external to the secure computation, to check the correctness of the output, while preserving the privacy properties of the MPC protocol.",
+      "stars": 26,
+      "pushed_at": "2024-02-20T08:15:32Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "AbdelStark/askeladd",
+      "html_url": "https://github.com/AbdelStark/askeladd",
+      "description": "Powering Verifiable Computation for Nostr Data Vending Machines.",
+      "stars": 25,
+      "pushed_at": "2026-07-28T11:39:30Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": "https://askeladd.org"
+    }
+  ]
+}

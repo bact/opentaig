@@ -1,0 +1,57 @@
+{
+  "keyword": "PII log redaction",
+  "query": "PII log redaction stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 5,
+  "repos": [
+    {
+      "full_name": "ax128/AegisGate",
+      "html_url": "https://github.com/ax128/AegisGate",
+      "description": "Open-source security gateway for LLM APIs \u2014 prompt injection detection, PII redaction, dangerous response   sanitization, and audit logging. OpenAI/Claude compatible, MCP & Agent SKILL support. Drop-in proxy for AI coding   agents (Cursor, Claude Code, Codex).",
+      "stars": 67,
+      "pushed_at": "2026-09-14T09:23:09Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://github.com/ax128/AegisGate"
+    },
+    {
+      "full_name": "ejirocodes/better-auth-audit-logs",
+      "html_url": "https://github.com/ejirocodes/better-auth-audit-logs",
+      "description": "Audit log plugin for Better Auth. Auto-captures auth events with severity inference, PII redaction, custom storage backends, and retention policies.",
+      "stars": 54,
+      "pushed_at": "2026-08-30T16:07:37Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://npm.im/better-auth-audit-logs"
+    },
+    {
+      "full_name": "flare-collection/flare-redact",
+      "html_url": "https://github.com/flare-collection/flare-redact",
+      "description": "Zero-dependency TypeScript secret and PII redaction for any SDK, logs, HTTP, LLM prompts, and scoped MCP tool boundaries.",
+      "stars": 47,
+      "pushed_at": "2026-08-09T14:55:12Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": "https://flare-collection.github.io/flare-redact/"
+    },
+    {
+      "full_name": "ptukovar/leakguard",
+      "html_url": "https://github.com/ptukovar/leakguard",
+      "description": "Fast, zero-dependency redaction of secrets & PII from text and logs \u2014 in pure Rust.",
+      "stars": 24,
+      "pushed_at": "2026-09-01T08:41:10Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "OmarH-creator/ShareClean",
+      "html_url": "https://github.com/OmarH-creator/ShareClean",
+      "description": "Local-first Python CLI for safer log sharing: redact secrets, tokens, emails, and local paths before posting to GitHub issues, tickets, or AI chats.",
+      "stars": 21,
+      "pushed_at": "2026-09-06T19:34:30Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": "https://omarh-creator.github.io/ShareClean/"
+    }
+  ]
+}

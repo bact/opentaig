@@ -1,13 +1,13 @@
 {
   "keyword": "topic:confidential-computing",
-  "query": "topic:confidential-computing stars:>19 pushed:>2025-07-29 archived:false fork:false",
-  "count": 43,
+  "query": "topic:confidential-computing stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 58,
   "repos": [
     {
       "full_name": "secretflow/secretflow",
       "html_url": "https://github.com/secretflow/secretflow",
       "description": "A unified framework for privacy-preserving data analysis and machine learning",
-      "stars": 2689,
+      "stars": 2709,
       "pushed_at": "2026-04-24T07:57:55Z",
       "language": "Python",
       "license_spdx_id": "Apache-2.0",
@@ -17,8 +17,8 @@
       "full_name": "microsoft/openvmm",
       "html_url": "https://github.com/microsoft/openvmm",
       "description": "Home of OpenVMM and OpenHCL",
-      "stars": 1862,
-      "pushed_at": "2026-07-29T14:50:22Z",
+      "stars": 1905,
+      "pushed_at": "2026-09-11T17:03:11Z",
       "language": "Rust",
       "license_spdx_id": "MIT",
       "homepage": "http://openvmm.dev/"
@@ -27,17 +27,27 @@
       "full_name": "enarx/enarx",
       "html_url": "https://github.com/enarx/enarx",
       "description": "Enarx: Confidential Computing with WebAssembly",
-      "stars": 1425,
+      "stars": 1426,
       "pushed_at": "2026-02-03T19:59:35Z",
       "language": "Rust",
       "license_spdx_id": "Apache-2.0",
       "homepage": "https://enarx.dev/"
     },
     {
+      "full_name": "tf-encrypted/tf-encrypted",
+      "html_url": "https://github.com/tf-encrypted/tf-encrypted",
+      "description": "A Framework for Encrypted Machine Learning in TensorFlow",
+      "stars": 1242,
+      "pushed_at": "2024-09-25T05:32:38Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://tf-encrypted.io/"
+    },
+    {
       "full_name": "apache/teaclave-sgx-sdk",
       "html_url": "https://github.com/apache/teaclave-sgx-sdk",
       "description": "Apache Teaclave\u2122 SGX SDK helps developers to write Intel SGX applications in the Rust programming language, and also known as Rust SGX SDK.",
-      "stars": 1228,
+      "stars": 1230,
       "pushed_at": "2026-06-10T01:21:13Z",
       "language": "Rust",
       "license_spdx_id": "Apache-2.0",
@@ -47,8 +57,8 @@
       "full_name": "data61/MP-SPDZ",
       "html_url": "https://github.com/data61/MP-SPDZ",
       "description": "Versatile framework for multi-party computation",
-      "stars": 1169,
-      "pushed_at": "2026-07-06T05:23:35Z",
+      "stars": 1180,
+      "pushed_at": "2026-08-17T05:01:07Z",
       "language": "C++",
       "license_spdx_id": "NOASSERTION",
       "homepage": ""
@@ -64,11 +74,21 @@
       "homepage": "https://teaclave.apache.org"
     },
     {
+      "full_name": "inclavare-containers/inclavare-containers",
+      "html_url": "https://github.com/inclavare-containers/inclavare-containers",
+      "description": "A novel container runtime, aka confidential container, for cloud-native confidential computing and enclave runtime ecosystem.",
+      "stars": 636,
+      "pushed_at": "2023-04-18T14:43:37Z",
+      "language": "C",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://inclavare-containers.io"
+    },
+    {
       "full_name": "edgelesssys/ego",
       "html_url": "https://github.com/edgelesssys/ego",
       "description": "EGo is an open-source SDK that enables you to develop your own confidential apps in the Go programming language.",
-      "stars": 591,
-      "pushed_at": "2026-03-17T20:48:44Z",
+      "stars": 595,
+      "pushed_at": "2026-09-09T08:41:55Z",
       "language": "Go",
       "license_spdx_id": "MPL-2.0",
       "homepage": "https://www.edgeless.systems/products/ego/"
@@ -77,11 +97,21 @@
       "full_name": "Dstack-TEE/dstack",
       "html_url": "https://github.com/Dstack-TEE/dstack",
       "description": "Open framework for confidential AI",
-      "stars": 518,
-      "pushed_at": "2026-07-29T13:28:24Z",
+      "stars": 543,
+      "pushed_at": "2026-09-14T14:18:48Z",
       "language": "Rust",
       "license_spdx_id": "Apache-2.0",
       "homepage": "https://dstack.org"
+    },
+    {
+      "full_name": "mithril-security/blindai",
+      "html_url": "https://github.com/mithril-security/blindai",
+      "description": "Confidential AI deployment with secure enclaves :lock:",
+      "stars": 512,
+      "pushed_at": "2024-03-19T15:35:39Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://www.mithrilsecurity.io/"
     },
     {
       "full_name": "Maxul/Awesome-SGX-Open-Source",
@@ -101,14 +131,14 @@
       "pushed_at": "2026-06-02T10:00:26Z",
       "language": "Python",
       "license_spdx_id": "MIT",
-      "homepage": ""
+      "homepage": "berry.win.tue.nl/mpyc/"
     },
     {
       "full_name": "intel/confidential-computing-zoo",
       "html_url": "https://github.com/intel/confidential-computing-zoo",
       "description": "Confidential Computing Zoo provides confidential computing solutions based on Intel SGX, TDX, HEXL, etc. technologies.",
-      "stars": 359,
-      "pushed_at": "2026-07-29T07:35:28Z",
+      "stars": 363,
+      "pushed_at": "2026-09-14T00:59:36Z",
       "language": "C++",
       "license_spdx_id": "Apache-2.0",
       "homepage": "https://cczoo.readthedocs.io/en/latest/index.html"
@@ -117,8 +147,8 @@
       "full_name": "microsoft/regorus",
       "html_url": "https://github.com/microsoft/regorus",
       "description": "Regorus - A fast, lightweight Rego (OPA policy language) interpreter written in Rust.",
-      "stars": 334,
-      "pushed_at": "2026-07-27T19:06:42Z",
+      "stars": 345,
+      "pushed_at": "2026-09-14T14:18:07Z",
       "language": "Rust",
       "license_spdx_id": "NOASSERTION",
       "homepage": ""
@@ -128,7 +158,7 @@
       "html_url": "https://github.com/apache/teaclave-trustzone-sdk",
       "description": "Teaclave TrustZone SDK enables safe, functional, and ergonomic development of trustlets.",
       "stars": 284,
-      "pushed_at": "2026-07-16T10:32:25Z",
+      "pushed_at": "2026-09-11T11:50:07Z",
       "language": "Rust",
       "license_spdx_id": "Apache-2.0",
       "homepage": "https://teaclave.apache.org"
@@ -137,8 +167,8 @@
       "full_name": "edgelesssys/marblerun",
       "html_url": "https://github.com/edgelesssys/marblerun",
       "description": "MarbleRun is the control plane for confidential computing. Deploy, scale, and verify your confidential microservices on vanilla Kubernetes. 100% Go, 100% cloud native, 100% confidential.",
-      "stars": 275,
-      "pushed_at": "2026-07-29T12:21:19Z",
+      "stars": 278,
+      "pushed_at": "2026-09-14T06:20:33Z",
       "language": "Go",
       "license_spdx_id": "NOASSERTION",
       "homepage": "https://marblerun.sh"
@@ -147,8 +177,8 @@
       "full_name": "IBM/ACE-RISCV",
       "html_url": "https://github.com/IBM/ACE-RISCV",
       "description": "Assured confidential execution (ACE) implements VM-based trusted execution environment (TEE) for embedded RISC-V systems with focus on a formally verified and auditable firmware.",
-      "stars": 211,
-      "pushed_at": "2026-07-29T02:33:21Z",
+      "stars": 216,
+      "pushed_at": "2026-09-14T01:58:04Z",
       "language": "Rust",
       "license_spdx_id": "Apache-2.0",
       "homepage": ""
@@ -157,8 +187,8 @@
       "full_name": "confidential-containers/trustee",
       "html_url": "https://github.com/confidential-containers/trustee",
       "description": "Attestation and Secret Delivery Components",
-      "stars": 170,
-      "pushed_at": "2026-07-29T13:04:49Z",
+      "stars": 186,
+      "pushed_at": "2026-09-10T01:29:17Z",
       "language": "Rust",
       "license_spdx_id": "Apache-2.0",
       "homepage": ""
@@ -167,18 +197,18 @@
       "full_name": "enclaver-io/enclaver",
       "html_url": "https://github.com/enclaver-io/enclaver",
       "description": "Open source toolkit created to enable easy adoption of software enclaves",
-      "stars": 163,
-      "pushed_at": "2025-12-12T19:24:44Z",
+      "stars": 164,
+      "pushed_at": "2026-08-19T16:42:17Z",
       "language": "Rust",
       "license_spdx_id": "Apache-2.0",
-      "homepage": "https://enclaver.io"
+      "homepage": "https://enclaver-io.github.io/"
     },
     {
       "full_name": "edgelesssys/edgelessrt",
       "html_url": "https://github.com/edgelesssys/edgelessrt",
       "description": "Edgeless RT is an SDK and a runtime for Intel SGX. It combines top-notch Go support with simplicity, robustness and a small TCB. Developing confidential microservices has never been easier! C++17 and Rust (experimental) are also supported.",
       "stars": 143,
-      "pushed_at": "2026-07-15T17:26:41Z",
+      "pushed_at": "2026-09-09T07:33:33Z",
       "language": "C++",
       "license_spdx_id": "MIT",
       "homepage": "https://edgeless.systems"
@@ -197,18 +227,28 @@
       "full_name": "sentient-agi/Sentient-Enclaves-Framework",
       "html_url": "https://github.com/sentient-agi/Sentient-Enclaves-Framework",
       "description": "Sentient Enclaves Framework for Confidential AI & Crypto Apps",
-      "stars": 96,
+      "stars": 102,
       "pushed_at": "2026-03-24T01:33:58Z",
       "language": "Rust",
       "license_spdx_id": "Apache-2.0",
       "homepage": "https://sentient-agi.github.io/Sentient-Enclaves-Framework/"
     },
     {
+      "full_name": "capeprivacy/nitrogen",
+      "html_url": "https://github.com/capeprivacy/nitrogen",
+      "description": "Nitrogen is a tool for deploying web services to AWS Nitro Enclaves.",
+      "stars": 93,
+      "pushed_at": "2023-07-20T13:11:25Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://capeprivacy.com/nitrogen"
+    },
+    {
       "full_name": "ahtavarasmus/lightfriend",
       "html_url": "https://github.com/ahtavarasmus/lightfriend",
       "description": "The first verifiably private cloud AI assistant. Runs in AWS Nitro Enclave with hardware attestation - nobody can access user data, not even the developer. Bridges WhatsApp, Telegram, Signal, email to SMS for dumbphone users.",
-      "stars": 75,
-      "pushed_at": "2026-07-27T22:02:10Z",
+      "stars": 78,
+      "pushed_at": "2026-09-14T14:13:46Z",
       "language": "Rust",
       "license_spdx_id": "AGPL-3.0",
       "homepage": "https://lightfriend.ai"
@@ -217,7 +257,7 @@
       "full_name": "virtee/sev-snp-measure",
       "html_url": "https://github.com/virtee/sev-snp-measure",
       "description": "Calculate AMD SEV/SEV-ES/SEV-SNP measurement for confidential computing",
-      "stars": 74,
+      "stars": 75,
       "pushed_at": "2026-05-28T15:30:19Z",
       "language": "Python",
       "license_spdx_id": "Apache-2.0",
@@ -227,37 +267,47 @@
       "full_name": "riscv/riscv-smmtt",
       "html_url": "https://github.com/riscv/riscv-smmtt",
       "description": "This specification will define the RISC-V privilege ISA extensions required to support Supervisor Domain isolation for multi-tenant security use cases e.g. confidential-computing, trusted platform services, fault isolation and so on.",
-      "stars": 72,
-      "pushed_at": "2026-07-29T09:46:07Z",
+      "stars": 73,
+      "pushed_at": "2026-09-10T14:40:03Z",
       "language": "Makefile",
       "license_spdx_id": "CC-BY-4.0",
       "homepage": "https://riscv.atlassian.net/browse/RVG-65"
     },
     {
-      "full_name": "SJTU-IPADS/HEDB",
-      "html_url": "https://github.com/SJTU-IPADS/HEDB",
-      "description": "Towards A Secure Yet Maintainable Encrypted Database",
-      "stars": 66,
-      "pushed_at": "2025-12-03T10:03:13Z",
-      "language": "C++",
-      "license_spdx_id": "NOASSERTION",
-      "homepage": ""
+      "full_name": "Stoffel-Labs/stoffel",
+      "html_url": "https://github.com/Stoffel-Labs/stoffel",
+      "description": "",
+      "stars": 71,
+      "pushed_at": "2026-09-11T18:43:57Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://stoffelmpc.com"
     },
     {
       "full_name": "riscv-non-isa/riscv-ap-tee",
       "html_url": "https://github.com/riscv-non-isa/riscv-ap-tee",
       "description": "This repo holds the work area and revisions of the non-ISA specification created by the RISC-V AP-TEE TG. This specification defines the programming interfaces (ABI) to support the Confidential VM Extension (CoVE) confidential computing architecture for RISC-V application-processor platforms.",
-      "stars": 66,
+      "stars": 70,
       "pushed_at": "2026-07-16T07:43:46Z",
       "language": "Makefile",
       "license_spdx_id": "CC-BY-4.0",
       "homepage": "https://riscv.atlassian.net/browse/RVG-76"
     },
     {
+      "full_name": "SJTU-IPADS/HEDB",
+      "html_url": "https://github.com/SJTU-IPADS/HEDB",
+      "description": "Towards A Secure Yet Maintainable Encrypted Database",
+      "stars": 67,
+      "pushed_at": "2025-12-03T10:03:13Z",
+      "language": "C++",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": ""
+    },
+    {
       "full_name": "apache/teaclave-java-tee-sdk",
       "html_url": "https://github.com/apache/teaclave-java-tee-sdk",
       "description": "Apache Teaclave (incubating) Java TEE SDK is an open source universal confidential computing framework, making java computation on privacy-sensitive data safe and simple.",
-      "stars": 66,
+      "stars": 67,
       "pushed_at": "2026-07-01T11:40:45Z",
       "language": "Java",
       "license_spdx_id": "Apache-2.0",
@@ -274,14 +324,14 @@
       "homepage": "https://ten.xyz"
     },
     {
-      "full_name": "Stoffel-Labs/stoffel",
-      "html_url": "https://github.com/Stoffel-Labs/stoffel",
-      "description": "",
-      "stars": 63,
-      "pushed_at": "2026-07-27T16:58:55Z",
-      "language": "Rust",
+      "full_name": "R3Conclave/conclave-core-sdk",
+      "html_url": "https://github.com/R3Conclave/conclave-core-sdk",
+      "description": "SDK for creating confidential SGX enclaves in Java, Kotlin and Python",
+      "stars": 44,
+      "pushed_at": "2023-11-09T16:13:33Z",
+      "language": "C++",
       "license_spdx_id": "Apache-2.0",
-      "homepage": "https://stoffelmpc.com"
+      "homepage": "https://conclave.net"
     },
     {
       "full_name": "dineshpinto/awesome-tee-blockchain",
@@ -297,11 +347,31 @@
       "full_name": "secretflow/trustflow",
       "html_url": "https://github.com/secretflow/trustflow",
       "description": "A privacy-preserving computing  system based on TEE.",
-      "stars": 37,
+      "stars": 40,
       "pushed_at": "2026-03-12T06:53:20Z",
       "language": "C++",
       "license_spdx_id": "Apache-2.0",
       "homepage": "https://www.secretflow.org.cn/docs/trustedflow"
+    },
+    {
+      "full_name": "cc-api/evidence-api",
+      "html_url": "https://github.com/cc-api/evidence-api",
+      "description": "Unified API to Access TCG Compliant measurement, event log, quote in Confidential Computing Environment.",
+      "stars": 38,
+      "pushed_at": "2024-11-06T21:29:44Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "enclaive/enclaive-docker-nginx-sgx",
+      "html_url": "https://github.com/enclaive/enclaive-docker-nginx-sgx",
+      "description": "SGX-ready Enclaive Docker Image for Nginx",
+      "stars": 33,
+      "pushed_at": "2022-09-14T15:24:43Z",
+      "language": "C",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
     },
     {
       "full_name": "ten-protocol/ten-documentation",
@@ -314,24 +384,74 @@
       "homepage": "https://docs.ten.xyz"
     },
     {
+      "full_name": "capeprivacy/cli",
+      "html_url": "https://github.com/capeprivacy/cli",
+      "description": "Cape Privacy CLI",
+      "stars": 30,
+      "pushed_at": "2023-05-02T18:21:30Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://docs.capeprivacy.com"
+    },
+    {
+      "full_name": "sectrs-acai/acai",
+      "html_url": "https://github.com/sectrs-acai/acai",
+      "description": "Protecting Accelerator Execution with Arm Confidential Computing Architecture (USENIX Security 2024)",
+      "stars": 30,
+      "pushed_at": "2023-12-11T14:39:46Z",
+      "language": "C",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://sectrs-acai.github.io/"
+    },
+    {
       "full_name": "google/gce-tcb-verifier",
       "html_url": "https://github.com/google/gce-tcb-verifier",
       "description": "Reference code for creating and verifying a GCE firmware signed reference value message.",
-      "stars": 28,
+      "stars": 29,
       "pushed_at": "2026-05-21T16:44:55Z",
       "language": "Go",
       "license_spdx_id": "Apache-2.0",
       "homepage": ""
     },
     {
+      "full_name": "diffuse-systems/diffuse",
+      "html_url": "https://github.com/diffuse-systems/diffuse",
+      "description": "Distributed peer-to-peer LLM inference. Your prompt never leaves your device in clear text.",
+      "stars": 29,
+      "pushed_at": "2026-08-05T10:37:02Z",
+      "language": "Rust",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": "https://diffuse-systems.github.io/diffuse/"
+    },
+    {
+      "full_name": "Phala-Network/phala-cloud",
+      "html_url": "https://github.com/Phala-Network/phala-cloud",
+      "description": "Confidential Computing native cloud platform.",
+      "stars": 28,
+      "pushed_at": "2026-09-13T01:17:11Z",
+      "language": "TypeScript",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://phala.com"
+    },
+    {
       "full_name": "intel/confidential-computing.tee.docs",
       "html_url": "https://github.com/intel/confidential-computing.tee.docs",
       "description": "Documentation related to Intel's Confidential Computing offerings",
-      "stars": 27,
-      "pushed_at": "2026-07-13T11:18:07Z",
-      "language": "Shell",
+      "stars": 28,
+      "pushed_at": "2026-09-10T08:29:21Z",
+      "language": "Python",
       "license_spdx_id": "CC-BY-4.0",
       "homepage": "https://cc-enabling.trustedservices.intel.com/"
+    },
+    {
+      "full_name": "180Protocol/180protocol",
+      "html_url": "https://github.com/180Protocol/180protocol",
+      "description": "Confidential compute for sensitive data sharing and commercial collaboration",
+      "stars": 28,
+      "pushed_at": "2022-10-25T14:16:14Z",
+      "language": "Kotlin",
+      "license_spdx_id": "",
+      "homepage": "http://www.180protocol.com"
     },
     {
       "full_name": "flare-foundation/flare-ai-kit",
@@ -342,26 +462,6 @@
       "language": "Python",
       "license_spdx_id": "Apache-2.0",
       "homepage": ""
-    },
-    {
-      "full_name": "UnlikedOne/diffuse",
-      "html_url": "https://github.com/UnlikedOne/diffuse",
-      "description": "Distributed peer-to-peer LLM inference. Your prompt never leaves your device in clear text.",
-      "stars": 25,
-      "pushed_at": "2026-07-22T06:42:42Z",
-      "language": "Rust",
-      "license_spdx_id": "AGPL-3.0",
-      "homepage": "https://unlikedone.github.io/diffuse/"
-    },
-    {
-      "full_name": "Fraunhofer-AISEC/cmc",
-      "html_url": "https://github.com/Fraunhofer-AISEC/cmc",
-      "description": "Remote attestation for Trusted and Confidential Computing platforms (TPM, AMD SEV-SNP, Intel SGX/TDX)",
-      "stars": 24,
-      "pushed_at": "2026-07-29T08:01:38Z",
-      "language": "C",
-      "license_spdx_id": "Apache-2.0",
-      "homepage": "https://pkg.go.dev/github.com/Fraunhofer-AISEC/cmc"
     },
     {
       "full_name": "capeprivacy/cape-js",
@@ -377,41 +477,71 @@
       "full_name": "opencca/opencca",
       "html_url": "https://github.com/opencca/opencca",
       "description": "OpenCCA: An Open Framework to Enable Arm CCA Research",
-      "stars": 23,
+      "stars": 24,
       "pushed_at": "2025-09-10T10:30:48Z",
       "language": "",
       "license_spdx_id": "",
       "homepage": "https://opencca.github.io/"
     },
     {
-      "full_name": "Phala-Network/phala-cloud",
-      "html_url": "https://github.com/Phala-Network/phala-cloud",
-      "description": "Confidential Computing native cloud platform.",
-      "stars": 23,
-      "pushed_at": "2026-07-29T10:11:37Z",
-      "language": "TypeScript",
+      "full_name": "Fraunhofer-AISEC/cmc",
+      "html_url": "https://github.com/Fraunhofer-AISEC/cmc",
+      "description": "Remote attestation for Trusted and Confidential Computing platforms (TPM, AMD SEV-SNP, Intel SGX/TDX)",
+      "stars": 24,
+      "pushed_at": "2026-09-11T19:18:33Z",
+      "language": "C",
       "license_spdx_id": "Apache-2.0",
-      "homepage": "https://phala.com"
+      "homepage": "https://pkg.go.dev/github.com/Fraunhofer-AISEC/cmc"
     },
     {
-      "full_name": "Foxboron/go-tpm-keyfiles",
-      "html_url": "https://github.com/Foxboron/go-tpm-keyfiles",
-      "description": "TPM 2.0 TSS keyfile library",
-      "stars": 22,
-      "pushed_at": "2026-05-28T18:23:23Z",
-      "language": "Go",
-      "license_spdx_id": "MIT",
-      "homepage": "https://www.hansenpartnership.com/draft-bottomley-tpm2-keys.html"
+      "full_name": "capeprivacy/pycape",
+      "html_url": "https://github.com/capeprivacy/pycape",
+      "description": "The Cape Privacy Python SDK",
+      "stars": 23,
+      "pushed_at": "2023-10-05T13:42:09Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://pydocs.capeprivacy.com"
     },
     {
       "full_name": "inclavare-containers/TNG",
       "html_url": "https://github.com/inclavare-containers/TNG",
       "description": "Trusted Network Gateway: A tool for establishing secure communication tunnels in confidential computing.",
-      "stars": 21,
-      "pushed_at": "2026-07-28T05:47:45Z",
+      "stars": 23,
+      "pushed_at": "2026-09-10T07:04:19Z",
       "language": "Rust",
       "license_spdx_id": "Apache-2.0",
       "homepage": "https://inclavare-containers.github.io/TNG/"
+    },
+    {
+      "full_name": "Foxboron/go-tpm-keyfiles",
+      "html_url": "https://github.com/Foxboron/go-tpm-keyfiles",
+      "description": "TPM 2.0 TSS keyfile library",
+      "stars": 23,
+      "pushed_at": "2026-09-02T20:28:20Z",
+      "language": "Go",
+      "license_spdx_id": "MIT",
+      "homepage": "https://www.hansenpartnership.com/draft-bottomley-tpm2-keys.html"
+    },
+    {
+      "full_name": "salrashid123/confidential_space",
+      "html_url": "https://github.com/salrashid123/confidential_space",
+      "description": "Constructing Trusted Execution Environment (TEE) with GCP Confidential Space",
+      "stars": 22,
+      "pushed_at": "2024-01-09T04:47:52Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "qascade/dcr",
+      "html_url": "https://github.com/qascade/dcr",
+      "description": "A PoC framework to orchestrate interoperable Differentially Private Data Clean Room Services using Intel SGX hardware as root of trust.",
+      "stars": 21,
+      "pushed_at": "2023-07-02T20:14:56Z",
+      "language": "Go",
+      "license_spdx_id": "AGPL-3.0",
+      "homepage": ""
     },
     {
       "full_name": "stefano-garzarella/snp-svsm-vtpm",
@@ -424,11 +554,31 @@
       "homepage": ""
     },
     {
+      "full_name": "NiobiumInc/niobium-client",
+      "html_url": "https://github.com/NiobiumInc/niobium-client",
+      "description": "Open-source FHE client and toolchain. Build fully homomorphic encryption applications with the nb DSL, instrumented OpenFHE, FHETCH API or a CUDA-style library API, record one Polynomial IR trace, and deploy to the Niobium accelerator",
+      "stars": 20,
+      "pushed_at": "2026-09-13T17:18:16Z",
+      "language": "Python",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": ""
+    },
+    {
+      "full_name": "capeprivacy/functions",
+      "html_url": "https://github.com/capeprivacy/functions",
+      "description": "Sample functions for Cape Privacy",
+      "stars": 20,
+      "pushed_at": "2023-09-08T12:24:15Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://docs.capeprivacy.com"
+    },
+    {
       "full_name": "lfedgeai/AegisSovereignAI",
       "html_url": "https://github.com/lfedgeai/AegisSovereignAI",
       "description": "AegisSovereignAI: The Cross-Ecosystem Trust Layer for the Distributed Enterprise. Verifiable Identity, Hardware-Rooted Integrity, and Sovereign AI Governance - from Silicon to Prompt. Unifying AI, Cloud-Native, and Decentralized architectures.",
       "stars": 20,
-      "pushed_at": "2026-05-02T14:48:53Z",
+      "pushed_at": "2026-08-31T02:23:14Z",
       "language": "Go",
       "license_spdx_id": "Apache-2.0",
       "homepage": "https://github.com/lfedgeai/AegisSovereignAI"

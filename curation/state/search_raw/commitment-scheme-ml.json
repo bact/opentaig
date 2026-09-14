@@ -1,0 +1,17 @@
+{
+  "keyword": "commitment scheme ML",
+  "query": "commitment scheme ML stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 1,
+  "repos": [
+    {
+      "full_name": "sec-bit/mle-pcs",
+      "html_url": "https://github.com/sec-bit/mle-pcs",
+      "description": "A research-driven project focused on the Comparison of Multilinear Polynomial Commitment Schemes",
+      "stars": 45,
+      "pushed_at": "2025-10-17T06:16:27Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "",
+      "homepage": ""
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "keyword": "model access gateway",
+  "query": "model access gateway stars:>19 pushed:>2022-01-01 archived:false fork:false",
+  "count": 11,
+  "repos": [
+    {
+      "full_name": "astaxie/TokenHub",
+      "html_url": "https://github.com/astaxie/TokenHub",
+      "description": "TokenHub gives enterprises a private gateway to unify AI model access and governance, making every request controllable, traceable, and attributable.",
+      "stars": 1295,
+      "pushed_at": "2026-09-10T16:30:24Z",
+      "language": "Go",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://thinkinai-labs.github.io/tokenhome/"
+    },
+    {
+      "full_name": "mfoud444/ollamafreeapi",
+      "html_url": "https://github.com/mfoud444/ollamafreeapi",
+      "description": "OllamaFreeAPI: Free Distributed API for Ollama LLMs  Public gateway to our managed Ollama servers with: - Zero-configuration access to 50+ models - Auto load-balanced across global nodes - Free tier with no API keys required - Built on ollama-python",
+      "stars": 312,
+      "pushed_at": "2026-04-15T12:42:44Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": ""
+    },
+    {
+      "full_name": "aws-solutions-library-samples/guidance-for-multi-provider-generative-ai-gateway-on-aws",
+      "html_url": "https://github.com/aws-solutions-library-samples/guidance-for-multi-provider-generative-ai-gateway-on-aws",
+      "description": "This Guidance demonstrates how to streamline access to numerous large language models (LLMs) through a unified, industry-standard API gateway based on OpenAI API standards",
+      "stars": 256,
+      "pushed_at": "2026-08-19T01:28:20Z",
+      "language": "HCL",
+      "license_spdx_id": "MIT-0",
+      "homepage": "https://aws.amazon.com/solutions/guidance/multi-provider-generative-ai-gateway-on-aws"
+    },
+    {
+      "full_name": "aws-solutions-library-samples/guidance-for-a-multi-tenant-generative-ai-gateway-with-cost-and-usage-tracking-on-aws",
+      "html_url": "https://github.com/aws-solutions-library-samples/guidance-for-a-multi-tenant-generative-ai-gateway-with-cost-and-usage-tracking-on-aws",
+      "description": "This Guidance demonstrates how to build an internal Software-as-a-Service (SaaS) platform that provides access to foundation models, like those available through Amazon Bedrock, to different business units or teams within your organization",
+      "stars": 100,
+      "pushed_at": "2026-07-28T11:49:37Z",
+      "language": "Jupyter Notebook",
+      "license_spdx_id": "MIT-0",
+      "homepage": "https://aws.amazon.com/solutions/guidance/tracking-and-managing-costs-on-amazon-bedrock/"
+    },
+    {
+      "full_name": "doublewordai/control-layer",
+      "html_url": "https://github.com/doublewordai/control-layer",
+      "description": "The world\u2019s fastest AI model gateway (450x less overhead than LiteLLM). Unified access to LLMs across endpoints (openAI, self-hosted, etc.) behind a single authentication layer - with API key generation, user management, request logging, and more",
+      "stars": 94,
+      "pushed_at": "2026-09-14T14:39:02Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://doublewordai.github.io/control-layer/"
+    },
+    {
+      "full_name": "mylxsw/llm-gateway",
+      "html_url": "https://github.com/mylxsw/llm-gateway",
+      "description": "Squirrel LLM Gateway is a high-performance, enterprise-grade proxy service designed to unify and manage access to Large Language Model (LLM) providers like OpenAI and Anthropic. It provides intelligent routing, robust failover strategies, comprehensive logging, and a modern management dashboard.",
+      "stars": 70,
+      "pushed_at": "2026-09-11T09:21:21Z",
+      "language": "Python",
+      "license_spdx_id": "",
+      "homepage": "https://squirrel.gulu.ai"
+    },
+    {
+      "full_name": "locomotive-agency/mcp-anywhere",
+      "html_url": "https://github.com/locomotive-agency/mcp-anywhere",
+      "description": "A unified gateway for Model Context Protocol (MCP) servers that lets you discover, configure, and access MCP tools from any GitHub repository through a single endpoint.",
+      "stars": 47,
+      "pushed_at": "2026-07-10T14:19:14Z",
+      "language": "Python",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "JungHoonGhae/opencode-kilo-auth",
+      "html_url": "https://github.com/JungHoonGhae/opencode-kilo-auth",
+      "description": "OpenCode plugin for Kilo Gateway \u2014 access 342+ AI models including 29 free tier models like GLM 5.",
+      "stars": 42,
+      "pushed_at": "2026-09-14T03:54:47Z",
+      "language": "TypeScript",
+      "license_spdx_id": "MIT",
+      "homepage": ""
+    },
+    {
+      "full_name": "cool-japan/rs3gw",
+      "html_url": "https://github.com/cool-japan/rs3gw",
+      "description": "rs3gw (Rust S3 Gateway) is an ultra-lightweight, high-throughput object storage gateway designed for AI model training and scientific computing (HPC) workloads. Powered by the scirs2-io engine, it provides S3-compatible API access with predictable low latency and minimal resource usage.",
+      "stars": 25,
+      "pushed_at": "2026-09-12T14:10:42Z",
+      "language": "Rust",
+      "license_spdx_id": "Apache-2.0",
+      "homepage": "https://github.com/cool-japan/rs3gw"
+    },
+    {
+      "full_name": "zzispp/Hook",
+      "html_url": "https://github.com/zzispp/Hook",
+      "description": "AI API gateway and operations platform for unified model routing, token/RBAC access control, billing, provider management, and monitoring.",
+      "stars": 20,
+      "pushed_at": "2026-08-10T01:38:06Z",
+      "language": "Rust",
+      "license_spdx_id": "MIT",
+      "homepage": "https://zzispp.github.io/Hook"
+    },
+    {
+      "full_name": "nirholas/modelcontextprotocol.name",
+      "html_url": "https://github.com/nirholas/modelcontextprotocol.name",
+      "description": "Give AI agents access to money \ud83d\udcb01,100+ MCP tools \u2014 swap, bridge, stake, lend, trade, and deploy across most blockchains. The open MCP gateway where AI meets DeFi. Trade crypto, swap across DEXs, bridge chains, stake tokens, lend, track whales, read market news, analyze smart contracts, pay other agents autonomously via x402.",
+      "stars": 20,
+      "pushed_at": "2026-09-14T05:48:21Z",
+      "language": "TypeScript",
+      "license_spdx_id": "NOASSERTION",
+      "homepage": "https://modelcontextprotocol.name"
+    }
+  ]
+}
