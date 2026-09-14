@@ -404,7 +404,7 @@ BESTPRACTICES_API = "https://www.bestpractices.dev/projects.json"
 SCORECARD_API = "https://api.scorecard.dev/projects"
 SPONSORS_API = "https://sponsors.ecosyste.ms/api/v1/accounts"
 REPO_PATH_RE = re.compile(
-    r"github\.com[:/]+([^/]+/[^/.]+?)(?:\.git)?/?$", re.IGNORECASE
+    r"github\.com[:/]+([^/]+/[^/]+?)(?:\.git)?/?$", re.IGNORECASE
 )
 SECURITY_POLICY_PATHS = ["SECURITY.md", ".github/SECURITY.md", "docs/SECURITY.md"]
 GOVERNANCE_PATHS = [
@@ -1263,7 +1263,35 @@ def funding_yml_urls(text: str, warnings: list, repo_path: str) -> list[str]:
         if not builder or not value:
             continue
         values = value if isinstance(value, list) else [value]
-        urls.extend(builder(v) for v in values if v)
+        for v in values:
+            if not v:
+                continue
+            url = builder(v)
+            # every builder except "custom" constructs a URL from a bare
+            # username/slug, so it's always well-formed; "custom" is an
+            # identity passthrough of whatever the repo wrote in FUNDING.yml
+            # verbatim, which isn't guaranteed to actually be a bare URL
+            # (seen in the wild: OWASP/www-project-top-10-for-large-language-
+            # model-applications' `custom: [Sponsor 'https://...']` -- a
+            # human label glued onto a quoted URL). Extract the URL from
+            # inside rather than discarding the whole entry -- it's still
+            # the repo's own deliberate, project-specific funding link, more
+            # specific than falling back to a generic candidate.
+            if key == "custom" and not url.startswith(("http://", "https://")):
+                m = re.search(r"https?://\S+", url)
+                if not m:
+                    warnings.append(
+                        f"{repo_path}: FUNDING.yml 'custom' entry {url!r} "
+                        "has no URL in it -- discarded, not recorded"
+                    )
+                    continue
+                extracted = m.group(0).rstrip("'\").,;")
+                warnings.append(
+                    f"{repo_path}: FUNDING.yml 'custom' entry {url!r} isn't "
+                    f"a bare URL -- extracted {extracted!r} from it"
+                )
+                url = extracted
+            urls.append(url)
     return urls
 
 
