@@ -586,3 +586,4 @@ timestamp_utc,keyword,query,raw_count,new_candidates,min_stars,pushed_after_mont
 2026-09-14T14:44:33+00:00,GPU attestation,GPU attestation stars:>19 pushed:>2022-01-01 archived:false fork:false,1,1,19,56,200,
 2026-09-14T14:44:35+00:00,training provenance log,training provenance log stars:>19 pushed:>2022-01-01 archived:false fork:false,0,0,19,56,200,
 2026-09-14T14:44:36+00:00,commitment scheme ML,commitment scheme ML stars:>19 pushed:>2022-01-01 archived:false fork:false,1,1,19,56,200,
+2026-10-26T13:11:54+00:00,userlead:user-lead:State and Memory.docx (LF AI & Data roster),direct repo lookup of 72 repos listed in State and Memory.docx Appendix A,72,41,19,56,200,"user-supplied lead list, not a search; filters applied after direct fetch; machine-learning-exchange/mlx 404, OAAX/Open Voice Interop had no qualifying repo"

@@ -185,3 +185,31 @@ verifiable-mpc,43,match,,2026-09-14T15:01:41+00:00
 fleet-intelligence-agent,50,match,,2026-09-14T15:01:41+00:00
 fleet-intelligence-agent,74,match,,2026-09-14T15:01:41+00:00
 fleet-intelligence-agent,48,no_match,"tracks node identity and enrolment, but carries no geolocation claim about where the hardware physically sits",2026-09-14T15:01:41+00:00
+onnx,34,match,,2026-10-26T13:20:10+00:00
+onnx,54,no_match,"onnx.checker validates graph well-formedness only, not behavioural model properties; it is an input format for verifiers (e.g. VNN-LIB tools), not a verifier itself",2026-10-26T13:20:10+00:00
+fate,30,match,,2026-10-26T13:20:10+00:00
+fate,43,match,,2026-10-26T13:20:10+00:00
+fate,29,no_match,"privacy-preserving joint training, but no dedicated mechanism for third-party auditing of a dataset (unlike pysyft's remote audited computation)",2026-10-26T13:20:10+00:00
+fate,42,no_match,,2026-10-26T13:20:10+00:00
+unity-catalog,56,match,,2026-10-26T13:20:10+00:00
+unity-catalog,7,no_match,stores catalog metadata/tags but defines no licence or reporting requirements,2026-10-26T13:20:10+00:00
+unity-catalog,8,no_match,generic data catalog/access control; no dataset-auditing mechanism in the OSS server,2026-10-26T13:20:10+00:00
+unity-catalog,59,no_match,,2026-10-26T13:20:10+00:00
+openlineage,7,match,,2026-10-26T13:20:10+00:00
+openlineage,59,match,,2026-10-26T13:20:10+00:00
+openlineage,44,no_match,"records declared job inputs, not a verification that a model was (not) trained on a dataset; unlike flowcept it has no ML-training-run provenance capture",2026-10-26T13:20:10+00:00
+openlineage,8,no_match,,2026-10-26T13:20:10+00:00
+openlineage,47,no_match,,2026-10-26T13:20:10+00:00
+open-data-contract-standard,7,match,,2026-10-26T13:20:10+00:00
+open-data-contract-standard,10,match,,2026-10-26T13:20:10+00:00
+open-data-contract-standard,45,no_match,declares data-quality rules but does not itself execute or verify them; enforcement is left to other tools,2026-10-26T13:20:10+00:00
+open-data-contract-standard,47,no_match,,2026-10-26T13:20:10+00:00
+egeria,7,match,,2026-10-26T13:20:10+00:00
+egeria,59,match,,2026-10-26T13:20:10+00:00
+egeria,41,no_match,"can record ownership/custodian/governance responsibilities, but offers no mechanism for deciding how user-data-access responsibilities should be allocated along the AI value chain",2026-10-26T13:20:10+00:00
+egeria,8,no_match,,2026-10-26T13:20:10+00:00
+egeria,10,no_match,,2026-10-26T13:20:10+00:00
+monocle,23,match,,2026-10-26T13:20:10+00:00
+monocle,24,match,,2026-10-26T13:20:10+00:00
+monocle,64,no_match,"production traces could show a safety component was called, but there is no dedicated mechanism for verifying safety measures at deployment",2026-10-26T13:20:10+00:00
+monocle,40,no_match,collects interaction traces but has no privacy-preserving analysis,2026-10-26T13:20:10+00:00
