@@ -682,6 +682,7 @@ def apply_tool_metadata(
     colmap_tools: dict,
     colmap_metadata: dict,
     warnings: list,
+    confirmed_license_overrides: dict | None = None,
 ) -> None:
     """Resolve every field in METADATA_FIELDS for every tool, per the
     tools/tool_metadata precedence rule documented above
@@ -748,6 +749,8 @@ def apply_tool_metadata(
                     and tools_license.lower() != NONE_TOKEN
                     and metadata_license
                     and tools_license.lower() != metadata_license.lower()
+                    and (confirmed_license_overrides or {}).get(raw_id)
+                    != tools_license
                 ):
                     warnings.append(
                         f"{ctx}: license conflict -- tools tab says {tools_license!r}, "
@@ -1975,6 +1978,7 @@ def main() -> None:
         colmap["tools"],
         colmap["tool_metadata"],
         warnings,
+        config.get("confirmed_license_overrides"),
     )
     mapping_index = build_mapping_index(
         mapping_rows, colmap["mapping"], framework_defs, warnings

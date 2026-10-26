@@ -246,6 +246,14 @@ field per tool, per this rule (`resolve_metadata_field()` in `build.py`):
 3. **Otherwise** (the `tools` cell is truly empty), `tool_metadata`'s
    collected value is used.
 
+**Licence conflicts.** `license` is a hard inclusion criterion, so when a
+non-blank `tools` value differs from `tool_metadata`'s (GitHub-detected)
+value, `build.py` warns even though the `tools` value still wins. Once a
+human has reviewed a difference and the override is deliberate, list it under
+`confirmed_license_overrides` in `config.yaml` (`<tool id>: <exact tools-tab
+value>`). The warning is suppressed only while the live `tools` value still
+equals the listed one, so editing that cell later warns again.
+
 `programming_language` resolves as a whole field, not per-language — if
 `tools.programming_language` has anything at all, it wins entirely over
 `tool_metadata`'s value; the two semicolon lists are never merged

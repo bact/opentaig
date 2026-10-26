@@ -351,6 +351,16 @@ frameworks:
   - key: euaiact
     column: "euaiact"
 
+# --- Confirmed licence overrides ----------------------------------------
+# build.py warns when a `tools`-tab licence differs from what GitHub detected
+# (tool_metadata). List a tool here once a human has reviewed the difference
+# and the `tools` value is deliberate: <tool id>: <exact tools-tab value>.
+# The warning is suppressed only while the live value still equals the one
+# listed, so any later change to that cell warns again.
+confirmed_license_overrides:
+  dpv: "W3C-20150513"
+  spdx3: "Community-Spec-1.0"
+
 # --- Relevant expertise (a filter facet, sourced from the TAIG sheet) -------
 # Rendered as chips and offered as a filter, reusing the framework machinery,
 # but styled distinctly since it is not a principle/regulation.
